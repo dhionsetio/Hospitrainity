@@ -1,0 +1,60 @@
+{
+    "activity_code": "HSP-C07-ACT-ROLEPLAY",
+    "choices": [
+        {
+            "feedback": [
+                {
+                    "feedback_type": "error_specific",
+                    "text": "(a) “Housekeeping usually does a good job.” This deflects instead of helping."
+                }
+            ],
+            "id": "53127cbd-6316-53e0-9b0c-e2ce16e39b10",
+            "label": "a",
+            "text": "“Housekeeping usually does a good job.”"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "success",
+                    "text": "(b) “I am so sorry, that is not our standard at all. I will have it cleaned immediately, or I can move you to another room right now. Which would you prefer?” This is the ideal answer, an apology, ownership, and a choice of solution."
+                }
+            ],
+            "id": "ba8f5d6d-7641-56d9-b12b-c3df6dd01636",
+            "label": "b",
+            "text": "“I am so sorry, that is not our standard at all. I will have it cleaned immediately, or I can move you to another room right now. Which would you prefer?”"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "error_specific",
+                    "text": "(c) “Are you sure it is dirty?” This dismisses the guest and will only make it worse."
+                }
+            ],
+            "id": "ef356330-9eb0-5da4-acb5-99f16b0936ce",
+            "label": "c",
+            "text": "“Are you sure it is dirty?”"
+        }
+    ],
+    "code": "HSP-C07-RP-G1",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "c1d9df90-7f76-5d32-8f56-2d190233e099",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 898,
+        "chapter": 7,
+        "heading_path": [
+            "Dealing with Problems and Complaints",
+            "Step 6. Role-play"
+        ],
+        "normalized_text_sha256": "eb6ae068dfdc1b225faf4d8436f04e0c349c8683892c67fca28915727706234c"
+    },
+    "status": "published",
+    "stem": "Guest: “My room is dirty. This is unacceptable.”"
+}

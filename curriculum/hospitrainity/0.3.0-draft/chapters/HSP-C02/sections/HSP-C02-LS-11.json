@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C02",
+  "code": "HSP-C02-LS-11",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "6f21972c-99c6-5d64-9e5e-9314acb3af53",
+  "order": 11,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 204,
+    "chapter": 2,
+    "heading_path": [
+      "Front Desk and Check-In",
+      "Step 8. Confidence check"
+    ],
+    "normalized_text_sha256": "5148e8bd280e8b2e88901b6ad0ea1853c136d1ebc3ae7ba26c2f3efd4c12eee0"
+  },
+  "status": "published",
+  "title": "Step 8. Confidence check"
+}

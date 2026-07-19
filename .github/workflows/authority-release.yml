@@ -1,0 +1,51 @@
+name: protected authority verification
+
+on:
+  workflow_dispatch:
+    inputs:
+      commit_sha:
+        description: Exact signed main-branch commit SHA verified locally before the offline runner is started
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: authority-release-verification
+  cancel-in-progress: false
+
+jobs:
+  verify-authorities:
+    name: Exact-hash authority check on offline Windows runner
+    if: ${{ github.ref == 'refs/heads/main' && inputs.commit_sha == github.sha }}
+    runs-on: [self-hosted, windows, x64, hospitrainity-authority]
+    timeout-minutes: 30
+
+    defaults:
+      run:
+        shell: pwsh
+
+    steps:
+      - name: Checkout the explicitly confirmed commit without stored credentials
+        # actions/checkout v6.0.2; full commit pins are immutable.
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10
+        with:
+          ref: ${{ inputs.commit_sha }}
+          persist-credentials: false
+
+      - name: Refuse a checkout mismatch
+        env:
+          EXPECTED_COMMIT_SHA: ${{ inputs.commit_sha }}
+        run: |
+          $actual = git rev-parse HEAD
+          if ($actual -ne $env:EXPECTED_COMMIT_SHA) {
+              throw 'Checked-out commit does not match the explicitly confirmed SHA.'
+          }
+          Write-Output "CHECKED_OUT_COMMIT_OK sha=$actual"
+
+      - name: Verify protected authority files by exact hash
+        run: powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -File ./scripts/release/verify-authorities.ps1
+
+      - name: State the no-upload boundary
+        run: Write-Output 'AUTHORITY_HANDLING_OK copied=false uploaded=false paths_logged=false'

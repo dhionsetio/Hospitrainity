@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C07",
+  "code": "HSP-C07-LS-06",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "069c8e95-28de-567f-84aa-c9217fecf5f5",
+  "order": 6,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 842,
+    "chapter": 7,
+    "heading_path": [
+      "Dealing with Problems and Complaints",
+      "Step 4. Model dialogue and letter"
+    ],
+    "normalized_text_sha256": "cb0787df34f76525842f4376b7049d80aa8a3b9cd6ffb6e0ddbb765fb44993d9"
+  },
+  "status": "published",
+  "title": "Step 4. Model dialogue and letter"
+}

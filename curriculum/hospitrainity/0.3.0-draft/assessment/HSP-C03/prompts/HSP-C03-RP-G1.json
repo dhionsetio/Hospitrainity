@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C03-ACT-ROLEPLAY",
+  "code": "HSP-C03-RP-G1",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "af5fb8b9-990c-5abb-a75f-3b4338a49ccd",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 302,
+    "chapter": 3,
+    "heading_path": [
+      "Dealing with Customers on the Phone",
+      "Step 6. Role-play"
+    ],
+    "normalized_text_sha256": "36bdc5853ecb61004a12c9492770739dbfb42281200b12c2f422f5e56b3ba693"
+  },
+  "status": "published",
+  "stem": "Caller: “Do you have any rooms for this Saturday?”"
+}

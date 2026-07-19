@@ -1,0 +1,37 @@
+{
+    "activity_code": "HSP-C06-ACT-CONFIDENCE",
+    "code": "HSP-C06-CC-R1",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "0c73bf24-ec74-5e77-a062-88560c3875c3",
+    "language": "en",
+    "order": 1,
+    "provenance_kind": "source_verbatim",
+    "rating_scale": {
+        "max": 5,
+        "min": 1,
+        "values": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ]
+    },
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "rating",
+    "scoring_mode": "unscored_self_report",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 798,
+        "chapter": 6,
+        "heading_path": [
+            "Online and Social Media Customer Service",
+            "Step 8. Confidence check"
+        ],
+        "normalized_text_sha256": "cb89c7ca92f2cef7dd6e680c53990355cce63ec934ddbabb9931f2e321dc2a1c"
+    },
+    "status": "published",
+    "stem": "I can reply quickly and briefly in a friendly, professional tone."
+}

@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C05",
+  "code": "HSP-C05-LS-04",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "c30edb55-f64a-53df-aa3d-46b8fc04419c",
+  "order": 4,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 532,
+    "chapter": 5,
+    "heading_path": [
+      "Customer Care Through Writing",
+      "Step 2. Key vocabulary"
+    ],
+    "normalized_text_sha256": "9b8740b53042de74ccef92153b61db9392b346ac1ffebd77097be51ac1bfb043"
+  },
+  "status": "published",
+  "title": "Step 2. Key vocabulary"
+}

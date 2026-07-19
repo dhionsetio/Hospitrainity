@@ -1,0 +1,412 @@
+{
+    "blocks": [
+        {
+            "id": "a626607c-5dc0-5bc0-82c6-af537cbe0a27",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Try each one first, then open the toggle to check yourself.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 591,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "457b0ccffe30e2688e9b4bddc363e158e25bcf32152f3bdb3c034c9407006a63"
+            },
+            "text": "Try each one first, then open the toggle to check yourself.",
+            "type": "instruction"
+        },
+        {
+            "id": "a45f50c3-14ea-567a-96d6-5f07dacff5b2",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "1. Make it formal:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " rewrite “hey, u got rooms this weekend??”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 592,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "7059891f00a933285daab834c9eb78f7e3c99b165b92f7c01b965e4615938bcc"
+            },
+            "text": "1. Make it formal: rewrite “hey, u got rooms this weekend??”",
+            "type": "list_item"
+        },
+        {
+            "id": "d88e92bc-4ccf-5824-9d8b-a39619ee5849",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Check answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 593,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "59b5b25c3f1225bbc759f0a5877604948e64e3484f2e56aafef146d98cd32a61"
+            },
+            "text": "Check answer",
+            "type": "paragraph"
+        },
+        {
+            "id": "7ff7f6f0-74ef-589c-983a-f3e09021522c",
+            "language": "en",
+            "order": 4,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "A model version: “Dear Sir or Madam, I would like to ask whether you have any rooms available this weekend. Thank you.” Notice the formal greeting, the full words, and the polite tone.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 594,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "b6b49fad58c26d862f8a1a81bb176178b0722e25f2db6dd9015044b431b68aec"
+            },
+            "text": "A model version: “Dear Sir or Madam, I would like to ask whether you have any rooms available this weekend. Thank you.” Notice the formal greeting, the full words, and the polite tone.",
+            "type": "paragraph"
+        },
+        {
+            "id": "7dc33464-1f93-57a4-81ff-206ce7162ab9",
+            "language": "en",
+            "order": 5,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "2. Choose the right sign-off for a formal reply:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " (a) “xoxo” or (b) “Kind regards,” or (c) “later!”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 595,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "6666ad7b2f628360cafbc91fd7f83df6a88bbffe17d65b07ff6f2834d7cc9d67"
+            },
+            "text": "2. Choose the right sign-off for a formal reply: (a) “xoxo” or (b) “Kind regards,” or (c) “later!”",
+            "type": "list_item"
+        },
+        {
+            "id": "617c0afc-25d9-5f07-87d2-0f833c7dbecb",
+            "language": "en",
+            "order": 6,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Check answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 596,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "59b5b25c3f1225bbc759f0a5877604948e64e3484f2e56aafef146d98cd32a61"
+            },
+            "text": "Check answer",
+            "type": "paragraph"
+        },
+        {
+            "id": "f3ddab21-e920-5c69-a7c9-268dc50afe2a",
+            "language": "en",
+            "order": 7,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "(b).",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " “Kind regards,” is warm and professional. The others are far too casual for a guest.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 597,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "f269579dec6d884fef526e6553d68eb1cf98c76aebba6562445e8154f11ef3e2"
+            },
+            "text": "(b). “Kind regards,” is warm and professional. The others are far too casual for a guest.",
+            "type": "paragraph"
+        },
+        {
+            "id": "0d422b5d-cb11-5252-9123-fa8acf87a5c7",
+            "language": "en",
+            "order": 8,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "3. Put the email parts in order:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " sign-off, greeting, body with the information, opening thank-you.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 598,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "9851fd3d98714c7e3b45322cfa6531165c66b979594e37582abb1112eb800875"
+            },
+            "text": "3. Put the email parts in order: sign-off, greeting, body with the information, opening thank-you.",
+            "type": "list_item"
+        },
+        {
+            "id": "f0441f50-f1d2-5e25-9ccd-69796878e78a",
+            "language": "en",
+            "order": 9,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Check answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 599,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "59b5b25c3f1225bbc759f0a5877604948e64e3484f2e56aafef146d98cd32a61"
+            },
+            "text": "Check answer",
+            "type": "paragraph"
+        },
+        {
+            "id": "0f75d9ce-5314-5f9a-aa66-6747c61062b7",
+            "language": "en",
+            "order": 10,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Greeting, then opening thank-you, then the body with the information, then the sign-off.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 600,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "f61c03f8b8b1a9316c7f83fa8e19c96a35351d7a7462bd5eb85d82963d5c9b35"
+            },
+            "text": "Greeting, then opening thank-you, then the body with the information, then the sign-off.",
+            "type": "paragraph"
+        },
+        {
+            "id": "47d4b667-cb28-5f11-ae7c-191a4172a92c",
+            "language": "en",
+            "order": 11,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "4. Warm it up:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " turn the blunt line “We cannot do that.” into something kinder.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 601,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "14b180d5db91a183c592e475e1cf46ea52811aa9dc8103ab42e5f17302268a8a"
+            },
+            "text": "4. Warm it up: turn the blunt line “We cannot do that.” into something kinder.",
+            "type": "list_item"
+        },
+        {
+            "id": "0ec326f5-f16e-5ff6-9109-b8ba49566273",
+            "language": "en",
+            "order": 12,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Check answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 602,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "59b5b25c3f1225bbc759f0a5877604948e64e3484f2e56aafef146d98cd32a61"
+            },
+            "text": "Check answer",
+            "type": "paragraph"
+        },
+        {
+            "id": "f1998c73-1a56-5762-a0b2-1c0769b9c3ad",
+            "language": "en",
+            "order": 13,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Something like “Unfortunately that particular option is not available, but we would be glad to suggest an alternative.” It is honest and warm, and it still says no.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 603,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "fbb491459d4e7ef2245427e2cbddecd7c30fe769c7ee1751ddde11ee2afdcecd"
+            },
+            "text": "Something like “Unfortunately that particular option is not available, but we would be glad to suggest an alternative.” It is honest and warm, and it still says no.",
+            "type": "paragraph"
+        },
+        {
+            "activity_code": "HSP-C05-ACT-PRACTICE",
+            "id": "7f121f89-ae1c-5d0a-84e1-bb330e87a915",
+            "language": "en",
+            "order": 14,
+            "provenance_kind": "derived_navigation",
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 590,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "46863cdae3b9dc41e288c4101ee6d0956fc7857efb3a521dc5b0f48f713be9aa"
+            },
+            "type": "activity_embed"
+        }
+    ],
+    "chapter_code": "HSP-C05",
+    "code": "HSP-C05-LS-08",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "88519710-adba-58f2-8e17-5a94e276cd0a",
+    "language": "en",
+    "order": 8,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 590,
+        "chapter": 5,
+        "heading_path": [
+            "Customer Care Through Writing",
+            "Step 5. Practice"
+        ],
+        "normalized_text_sha256": "46863cdae3b9dc41e288c4101ee6d0956fc7857efb3a521dc5b0f48f713be9aa"
+    },
+    "status": "published",
+    "title": "Step 5. Practice"
+}

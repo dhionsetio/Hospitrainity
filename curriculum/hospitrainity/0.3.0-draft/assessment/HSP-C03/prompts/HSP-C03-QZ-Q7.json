@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C03-ACT-QUIZ",
+  "code": "HSP-C03-QZ-Q7",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "ce7b2d93-e0b6-5701-b3fe-e6c43ed87bc9",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 341,
+    "chapter": 3,
+    "heading_path": [
+      "Dealing with Customers on the Phone",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "824c9a564e26f0a5a3428f24b69956b4d6daf96d7c5c4f68a338eebebcfc009a"
+  },
+  "status": "published",
+  "stem": "Q7. How should you say the reference 452 on the phone? A) “four hundred fifty-two” quickly B) “four, five, two” as single digits C) spell it as letters"
+}

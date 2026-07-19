@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C07",
+  "code": "HSP-C07-LS-11",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "dc43d99c-528f-5cbb-b7ca-a89757dae54b",
+  "order": 11,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 925,
+    "chapter": 7,
+    "heading_path": [
+      "Dealing with Problems and Complaints",
+      "Step 8. Confidence check"
+    ],
+    "normalized_text_sha256": "de3541b7e7f4f5aff977a439df59ffbf2a304ff6fc9152f1e6f7a6991667643c"
+  },
+  "status": "published",
+  "title": "Step 8. Confidence check"
+}

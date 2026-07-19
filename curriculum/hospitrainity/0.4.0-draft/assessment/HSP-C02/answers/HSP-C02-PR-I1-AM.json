@@ -1,0 +1,29 @@
+{
+    "accepted": [
+        "see. “Could I see your passport, please?” is the natural, polite version. “Check” or “look at” sound a little colder in this fixed phrase."
+    ],
+    "accepted_normalized": [
+        "see"
+    ],
+    "accepted_normalized_provenance_kind": "derived_scoring",
+    "code": "HSP-C02-PR-I1-AM",
+    "content_version": "0.4.0-draft",
+    "entity_type": "answer-model",
+    "id": "2508135a-d377-5387-ab00-9f70e8676a8b",
+    "prompt_code": "HSP-C02-PR-I1",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "scoring_mode": "objective_normalized_closed",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 149,
+        "chapter": 2,
+        "heading_path": [
+            "Front Desk and Check-In",
+            "Step 5. Practice"
+        ],
+        "normalized_text_sha256": "c6f3085843849e32acaeae3c2898f546761f5989bb35bc831612cc9b6d2facad"
+    },
+    "status": "published"
+}

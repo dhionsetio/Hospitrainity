@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C05",
+  "code": "HSP-C05-LS-10",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "ca8d97eb-9e15-5e0f-a942-d9ed4395de4c",
+  "order": 10,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 614,
+    "chapter": 5,
+    "heading_path": [
+      "Customer Care Through Writing",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "cec16a1a6506f2bec18b2c2e0a47de666e2a60db99207b21d8aed8ec9c4b0115"
+  },
+  "status": "published",
+  "title": "Step 7. Quiz"
+}

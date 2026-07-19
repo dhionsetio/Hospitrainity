@@ -1,0 +1,26 @@
+{
+  "code": "HSP-C07-QZ-Q6-FB",
+  "content_version": "0.3.0-draft",
+  "entity_type": "feedback-model",
+  "id": "51a626b3-a584-57c2-9186-c040d50d5713",
+  "messages": [
+    {
+      "feedback_type": "model_reveal",
+      "text": "A. Following up is what shows the guest you truly care."
+    }
+  ],
+  "prompt_code": "HSP-C07-QZ-Q6",
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 917,
+    "chapter": 7,
+    "heading_path": [
+      "Dealing with Problems and Complaints",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "517a9107f4ef4a860cd122a2a586f2b2a775418ab77365f632bc55b2d5d14605"
+  },
+  "status": "published"
+}

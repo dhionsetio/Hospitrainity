@@ -1,0 +1,24 @@
+{
+  "accepted": [
+    "(b). Acknowledge it publicly so others see you care, then move the details into a private channel."
+  ],
+  "code": "HSP-C06-PR-I3-AM",
+  "content_version": "0.3.0-draft",
+  "entity_type": "answer-model",
+  "id": "6e0ffdca-243f-5e6d-90d3-0be2bd258c30",
+  "prompt_code": "HSP-C06-PR-I3",
+  "replaced_by": null,
+  "replaces": null,
+  "scoring_mode": "objective_normalized",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 727,
+    "chapter": 6,
+    "heading_path": [
+      "Online and Social Media Customer Service",
+      "Step 5. Practice"
+    ],
+    "normalized_text_sha256": "df239719416ddde2891576d9b17e0e2d59fd1eeef8bda7946616b6bc5dfddc9c"
+  },
+  "status": "published"
+}

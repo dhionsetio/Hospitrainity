@@ -1,0 +1,35 @@
+{
+    "code": "HSP-C04-RP-G3-FB",
+    "content_version": "0.4.0-draft",
+    "entity_type": "feedback-model",
+    "id": "4729d941-30c4-5be7-a86b-670efdc00d4f",
+    "messages": [
+        {
+            "feedback_type": "error_specific",
+            "text": "(a) “This is room service, not the front desk.” Technically true, but cold."
+        },
+        {
+            "feedback_type": "success",
+            "text": "(b) “Of course, I will connect you to the front desk now. One moment, please.” This is the ideal answer, because it transfers the guest warmly and clearly."
+        },
+        {
+            "feedback_type": "error_specific",
+            "text": "(c) “Call them yourself.” Rude and unhelpful."
+        }
+    ],
+    "prompt_code": "HSP-C04-RP-G3",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 468,
+        "chapter": 4,
+        "heading_path": [
+            "The Guest-Services Hotline",
+            "Step 6. Role-play"
+        ],
+        "normalized_text_sha256": "15a46a32e0d0667892df3483a642fb23ebd34b62509337d44ff0335ad822e470"
+    },
+    "status": "published"
+}

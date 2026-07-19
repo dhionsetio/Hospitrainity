@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C07-ACT-QUIZ",
+  "code": "HSP-C07-QZ-Q5",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "0231eae1-9463-569f-b52b-ed99f8784a74",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 912,
+    "chapter": 7,
+    "heading_path": [
+      "Dealing with Problems and Complaints",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "da9ebb0527982099f65cdb5cbd9fde3a1def2588eb0cfde99c4e032a3370818b"
+  },
+  "status": "published",
+  "stem": "Q5. What are the three things to never do? A) listen, apologise, act B) deflect, blame, dismiss C) refund, upgrade, follow up"
+}

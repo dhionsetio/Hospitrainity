@@ -1,0 +1,27 @@
+{
+    "code": "HSP-C03-QZ-Q4-FB",
+    "content_version": "0.4.0-draft",
+    "entity_type": "feedback-model",
+    "id": "0f9475f9-4a83-572c-8ba5-92cb35df7cae",
+    "messages": [
+        {
+            "feedback_type": "model_reveal",
+            "text": "B. It gives the reference and ends on a welcoming note."
+        }
+    ],
+    "prompt_code": "HSP-C03-QZ-Q4",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 341,
+        "chapter": 3,
+        "heading_path": [
+            "Dealing with Customers on the Phone",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "04152051a3ce8557a6d3eb4f55664a40b287fc8247cb90a28f1b71c1e51f6c35"
+    },
+    "status": "published"
+}

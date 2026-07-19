@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C03",
+  "code": "HSP-C03-LS-08",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "d30d0eec-1a81-5634-9217-ff136d6e39a3",
+  "order": 8,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 285,
+    "chapter": 3,
+    "heading_path": [
+      "Dealing with Customers on the Phone",
+      "Step 5. Practice"
+    ],
+    "normalized_text_sha256": "b7dafb52b630b15a01541ec6ae39e667df0fbe9283cd5158b84b640dfe306fab"
+  },
+  "status": "published",
+  "title": "Step 5. Practice"
+}

@@ -1,0 +1,21 @@
+{
+    "active_match_count": 0,
+    "files_scanned": 672,
+    "historical_allowlist": {
+        "database_matches": [
+            {
+                "match": "StayReady to Hospitrainity rebrand",
+                "record": "curriculum_entities:DOC-PROVENANCE-LEGACY-INVENTORY:payload"
+            }
+        ],
+        "file_matches": [
+            {
+                "match": "StayReady to Hospitrainity rebrand",
+                "path": "curriculum/hospitrainity/0.4.0-draft/provenance/legacy-inventory.json"
+            }
+        ]
+    },
+    "pattern": "~stay(?:[\\s_.-]|<[^>]+>)*ready~iu",
+    "status": "verified",
+    "violations": []
+}

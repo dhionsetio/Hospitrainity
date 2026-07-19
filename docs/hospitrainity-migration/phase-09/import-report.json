@@ -1,0 +1,76 @@
+{
+  "approach": "deterministic projection of the validated canonical package into the CP-08 SQLite mirror; idempotent, transactional, FK-enforced",
+  "engine": "node:sqlite (v24.14.1)",
+  "errors": [],
+  "generated_by": "CP-09",
+  "invariants": {
+    "content_digest": "587f7c3dbff22cdd04f591dd07845fd5ca5def2c1707d1aec78e8ac6b6bfb110",
+    "id_integrity_checked": 435,
+    "idempotent": true,
+    "load_script_sha256": "8d33f355502c1bba764f2fe4716bcaedc21cc72ffac97b9319461385482f9918",
+    "projection_checks": 4016,
+    "referential_refs_checked": 525,
+    "referential_unresolved": 0,
+    "registry_id_bearing": 435,
+    "registry_missing": 0
+  },
+  "ok": true,
+  "physical_target": "PostgreSQL 15+ (JSONB) / SQLite mirror",
+  "rows": {
+    "entities": 443,
+    "framework_documents": 7
+  },
+  "standards": [
+    "JSON Schema 2020-12",
+    "SemVer 2.0.0",
+    "RFC 9562 UUIDv5"
+  ],
+  "tables": [
+    {
+      "entity_type": "chapter",
+      "rows": 7,
+      "table": "chapter"
+    },
+    {
+      "entity_type": "lesson-section",
+      "rows": 85,
+      "table": "lesson_section"
+    },
+    {
+      "entity_type": "activity",
+      "rows": 24,
+      "table": "activity"
+    },
+    {
+      "entity_type": "prompt-item",
+      "rows": 102,
+      "table": "prompt_item"
+    },
+    {
+      "entity_type": "answer-model",
+      "rows": 102,
+      "table": "answer_model"
+    },
+    {
+      "entity_type": "feedback-model",
+      "rows": 102,
+      "table": "feedback_model"
+    },
+    {
+      "entity_type": "rubric",
+      "rows": 6,
+      "table": "rubric"
+    },
+    {
+      "entity_type": "source-provenance",
+      "rows": 7,
+      "table": "source_provenance"
+    },
+    {
+      "entity_type": "migration-edge",
+      "rows": 8,
+      "table": "migration_edge"
+    }
+  ],
+  "tool": "hsp-import.mjs"
+}

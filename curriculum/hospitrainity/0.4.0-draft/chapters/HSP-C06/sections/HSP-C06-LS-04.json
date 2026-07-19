@@ -1,0 +1,163 @@
+{
+    "blocks": [
+        {
+            "id": "8e497a35-b81f-5fc8-b6a3-7ac3f0d2acd3",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Read each example out loud once. Saying it is the quickest way to remember it.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 693,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 2. Key vocabulary"
+                ],
+                "normalized_text_sha256": "76c076b1536696db6aa24f33d35148977e5cdfeb40d8235284f37957bc7e5f78"
+            },
+            "text": "Read each example out loud once. Saying it is the quickest way to remember it.",
+            "type": "instruction"
+        },
+        {
+            "caption": "Step 2. Key vocabulary: Word or phrase / What it means / How you might use it",
+            "header": [
+                "Word or phrase",
+                "What it means",
+                "How you might use it"
+            ],
+            "id": "63a7b890-3daa-55bd-94b0-49688b0ccb0e",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "rows": [
+                [
+                    "live chat",
+                    "real-time messaging on a website",
+                    "“Ask us anytime on live chat.”"
+                ],
+                [
+                    "direct message (DM)",
+                    "a private message on social media",
+                    "“Please send us a DM.”"
+                ],
+                [
+                    "response time",
+                    "how quickly you reply",
+                    "“Our response time is under five minutes.”"
+                ],
+                [
+                    "quick reply",
+                    "a saved, ready-made answer",
+                    "“I have a quick reply for that question.”"
+                ],
+                [
+                    "to escalate",
+                    "to pass an issue to a higher level",
+                    "“I will escalate this to the front desk.”"
+                ],
+                [
+                    "chatbot",
+                    "an automated chat assistant",
+                    "“The chatbot answers common questions.”"
+                ],
+                [
+                    "OTA",
+                    "an online travel agency, such as a booking site",
+                    "“The guest booked through an OTA.”"
+                ],
+                [
+                    "review",
+                    "public feedback about the hotel",
+                    "“Thank you for your kind review.”"
+                ],
+                [
+                    "to take it to DM",
+                    "to continue in a private channel",
+                    "“Let us take this to a DM.”"
+                ],
+                [
+                    "to go offline / private",
+                    "to move away from a public thread",
+                    "“Could we continue this privately?”"
+                ],
+                [
+                    "professional tone",
+                    "friendly but appropriate style",
+                    "“Keep a professional tone online.”"
+                ],
+                [
+                    "emoji",
+                    "a small picture that adds warmth",
+                    "“One friendly emoji is plenty.”"
+                ]
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 694,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 2. Key vocabulary"
+                ],
+                "normalized_text_sha256": "132eb5fb63f51cabf451e93a4521bb407faf96204069591f1787769c58b204e5"
+            },
+            "type": "source_table"
+        },
+        {
+            "id": "878561f5-8b51-5217-9a29-294d0d543a5d",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Emoji rule of thumb: one light, friendly emoji can warm up a message nicely. A pile of them starts to look unprofessional. When in doubt, use fewer.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 695,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 2. Key vocabulary"
+                ],
+                "normalized_text_sha256": "ad51b08a9bf87565760b639421e457ee9f7b1daea3b75940289e14fc345192cc"
+            },
+            "text": "Emoji rule of thumb: one light, friendly emoji can warm up a message nicely. A pile of them starts to look unprofessional. When in doubt, use fewer.",
+            "type": "paragraph"
+        }
+    ],
+    "chapter_code": "HSP-C06",
+    "code": "HSP-C06-LS-04",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "08f1351e-d256-5e0a-93e9-ac1784e919d0",
+    "language": "en",
+    "order": 4,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 692,
+        "chapter": 6,
+        "heading_path": [
+            "Online and Social Media Customer Service",
+            "Step 2. Key vocabulary"
+        ],
+        "normalized_text_sha256": "f46a1e0aec2c4e29b3ec8df91525031a99db987a4745d07d5a09266bade29874"
+    },
+    "status": "published",
+    "title": "Step 2. Key vocabulary"
+}

@@ -1,0 +1,130 @@
+{
+    "blocks": [
+        {
+            "id": "5b8b82f8-f00b-5d2d-aa41-c08d3c6d046c",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Answer these quietly for yourself first. There are no right or wrong answers, just a gentle way to warm up.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 674,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Warm-Up"
+                ],
+                "normalized_text_sha256": "dc2b3712b572545e3ee93b53f0dda46eebf01fe5ccce877e4813773942162d9c"
+            },
+            "text": "Answer these quietly for yourself first. There are no right or wrong answers, just a gentle way to warm up.",
+            "type": "instruction"
+        },
+        {
+            "id": "b598322c-40f7-504c-b7be-e9681b25d54a",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "In one word, how do you feel about messaging businesses online?",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 675,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Warm-Up"
+                ],
+                "normalized_text_sha256": "074ffd5c1a9cbbcea000f35bf87dcdaf6dfb60ab28c93a0bb00d642ef912d012"
+            },
+            "text": "In one word, how do you feel about messaging businesses online?",
+            "type": "list_item"
+        },
+        {
+            "id": "f8f23571-1c21-5cb9-acd1-481ce872918f",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Have you ever messaged a business on WhatsApp or Instagram? How quickly did they reply, and how did that feel?",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 676,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Warm-Up"
+                ],
+                "normalized_text_sha256": "8d61308f2eefb60a8404f7c5bd85c4b6d490fa7a6563d7a27b02e37d52ad1937"
+            },
+            "text": "Have you ever messaged a business on WhatsApp or Instagram? How quickly did they reply, and how did that feel?",
+            "type": "list_item"
+        },
+        {
+            "id": "2fc9b111-f0dd-5adb-9c22-41daf0c8787f",
+            "language": "en",
+            "order": 4,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "In your own language, how do you keep a chat message polite but short?",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 677,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Warm-Up"
+                ],
+                "normalized_text_sha256": "aa963cd64407859b8d720eea53e08bedc42e4848774ffd8e06dade879246f377"
+            },
+            "text": "In your own language, how do you keep a chat message polite but short?",
+            "type": "list_item"
+        }
+    ],
+    "chapter_code": "HSP-C06",
+    "code": "HSP-C06-LS-01",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "564cb9ec-d0a1-524c-97ac-e85a2c5d9331",
+    "language": "en",
+    "order": 1,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 673,
+        "chapter": 6,
+        "heading_path": [
+            "Online and Social Media Customer Service",
+            "Warm-Up"
+        ],
+        "normalized_text_sha256": "0d96d7a94cccd70ae6e338c3b3a29d88a9ed37ce481071007cb60d1746da4a65"
+    },
+    "status": "published",
+    "title": "Warm-Up"
+}

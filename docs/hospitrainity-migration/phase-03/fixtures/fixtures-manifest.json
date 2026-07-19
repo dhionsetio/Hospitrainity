@@ -1,0 +1,45 @@
+{
+  "baseline_published": [
+    {
+      "code": "HSP-C02-RP-001",
+      "id": "76432712-b940-502f-8528-f1dbd1e2e73c",
+      "status": "published"
+    }
+  ],
+  "cases": [
+    {
+      "expect": "pass",
+      "file": "valid/activity.valid.json"
+    },
+    {
+      "expect": "pass",
+      "file": "valid/chapter.valid.json"
+    },
+    {
+      "check": "schema",
+      "expect": "fail",
+      "file": "invalid/activity.bad-enum.json"
+    },
+    {
+      "check": "provenance",
+      "expect": "fail",
+      "file": "invalid/activity.missing-provenance.json"
+    },
+    {
+      "check": "schema",
+      "expect": "fail",
+      "file": "invalid/activity.bad-status.json"
+    },
+    {
+      "check": "refs",
+      "expect": "fail",
+      "file": "invalid/activity.broken-ref.json"
+    },
+    {
+      "check": "ids",
+      "expect": "fail",
+      "file": "invalid/activity.mutated-id.json"
+    }
+  ],
+  "note": "Drives the deterministic fixture harness. Each entry asserts an expected result and the check that should catch it."
+}

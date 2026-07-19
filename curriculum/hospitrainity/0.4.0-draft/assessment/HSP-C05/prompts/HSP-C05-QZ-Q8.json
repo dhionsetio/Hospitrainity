@@ -1,0 +1,50 @@
+{
+    "activity_code": "HSP-C05-ACT-QUIZ",
+    "choices": [
+        {
+            "feedback": [],
+            "id": "2c311d26-f7c8-5415-895a-7f8ff34de7ea",
+            "label": "a",
+            "text": "one long paragraph"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "model_reveal",
+                    "text": "B. Short lines and small lists are easy to scan on a phone."
+                }
+            ],
+            "id": "f814db30-ffd8-5876-a48e-384f8ac036d8",
+            "label": "b",
+            "text": "short lines or a small bulleted list"
+        },
+        {
+            "feedback": [],
+            "id": "81d0cde2-0cbf-526a-92b4-4dfc72471d45",
+            "label": "c",
+            "text": "no spacing at all"
+        }
+    ],
+    "code": "HSP-C05-QZ-Q8",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "3ef775de-921d-5e13-8632-6e5d23ab4182",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 649,
+        "chapter": 5,
+        "heading_path": [
+            "Customer Care Through Writing",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "2b7f595187540d392c2872cdbcef6c36dc4a43b20588a7b371b5d2de2e76817e"
+    },
+    "status": "published",
+    "stem": "Q8. Which body is easiest for a guest to read quickly? A) one long paragraph B) short lines or a small bulleted list C) no spacing at all"
+}

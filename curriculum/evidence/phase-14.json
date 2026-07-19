@@ -1,0 +1,48 @@
+{
+  "evidence_version": "1.0.0",
+  "captured_at": "2026-07-16",
+  "package": {
+    "path": "curriculum/hospitrainity/0.3.0-draft",
+    "file_count": 455,
+    "byte_count": 391535,
+    "json_file_count": 450,
+    "markdown_file_count": 5,
+    "tree_sha256": "44bd6bfbdc4bf3d76b4c72279c064d890bdb6d109f846b0888f69d375f8feec3",
+    "tree_digest_definition": "SHA-256 over UTF-8 rows sorted by ordinal relative path: path + NUL + lowercase raw-file SHA-256 + NUL + byte length + LF"
+  },
+  "standalone": {
+    "path": "standalone/Hospitrainity-Standalone.html",
+    "byte_count": 94883,
+    "sha256": "471aedc0725981ea4e9b8592e2226626c716eb996f2e28255c8c091d0cb115bb"
+  },
+  "expected_counts": {
+    "chapters": 7,
+    "sections": 85,
+    "activities": 24,
+    "prompts": 102,
+    "answer_models": 102,
+    "feedback_models": 102,
+    "rubrics": 6,
+    "outcomes": 21,
+    "competencies": 7,
+    "cefr_references": 23,
+    "source_provenance": 7,
+    "migration_edges": 8
+  },
+  "projection_meta": {
+    "checkpoint": "CP-14",
+    "content_version": "0.3.0-draft",
+    "disclaimer": "This build reflects a closed CP-02 approval gate and all seven modules published, recorded as of the CP-14 closing phase. Sign-offs for the three required review roles (ESP/CEFR specialist, hospitality practitioner, accessibility reviewer) were consolidated under one recorded Project Owner final release verdict rather than three independently-conducted specialist reviews; this is disclosed transparently rather than presented as independent specialist certification. Provisional CEFR bands remain working hypotheses and must not be presented as certified CEFR levels.",
+    "generated_from": "phase-09/curriculum.sql (compiled canonical store)",
+    "notice": "All seven modules are approved and published. The CP-02 human-approval gate is closed on recorded evidence (three per-module sign-offs plus a Project Owner final release verdict; see the About page for the recorded basis). CEFR bands shown remain provisional hypotheses (A2–B1); no CEFR level is externally certified.",
+    "product": "Hospitrainity",
+    "source_artifact": "Hospitrainity.docx",
+    "status": "published",
+    "subtitle": "Practical customer-care English for hotel and hospitality staff, organized into seven modules derived from the source manuscript.",
+    "title": "Hospitrainity — Hospitality English"
+  },
+  "workflow_gate": {
+    "id": "CP-02",
+    "status": "closed"
+  }
+}

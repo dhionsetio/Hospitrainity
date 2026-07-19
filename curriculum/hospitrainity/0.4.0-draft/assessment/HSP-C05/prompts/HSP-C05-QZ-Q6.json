@@ -1,0 +1,50 @@
+{
+    "activity_code": "HSP-C05-ACT-QUIZ",
+    "choices": [
+        {
+            "feedback": [
+                {
+                    "feedback_type": "model_reveal",
+                    "text": "A. Apologise, take ownership, and offer a clear fix."
+                }
+            ],
+            "id": "20a28237-261f-591f-974d-655a7d08c5f1",
+            "label": "a",
+            "text": "apologetic and solution-focused"
+        },
+        {
+            "feedback": [],
+            "id": "c3a0e4c7-a690-56bd-9376-8abd63659139",
+            "label": "b",
+            "text": "defensive"
+        },
+        {
+            "feedback": [],
+            "id": "c51b919f-08ed-5a81-bde6-e6e15188a085",
+            "label": "c",
+            "text": "silent"
+        }
+    ],
+    "code": "HSP-C05-QZ-Q6",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "1909bf42-74a5-5ed5-9688-721bf0f37fed",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 643,
+        "chapter": 5,
+        "heading_path": [
+            "Customer Care Through Writing",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "3c8e84ba6699a7b7ed3555f5d782c8fe92f132ebc4476a7d1d8b262bb902c2f7"
+    },
+    "status": "published",
+    "stem": "Q6. When replying to a complaint email, the tone should be ... A) apologetic and solution-focused B) defensive C) silent"
+}

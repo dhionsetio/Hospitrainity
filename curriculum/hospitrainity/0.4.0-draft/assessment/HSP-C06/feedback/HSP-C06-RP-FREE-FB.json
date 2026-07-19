@@ -1,0 +1,27 @@
+{
+    "code": "HSP-C06-RP-FREE-FB",
+    "content_version": "0.4.0-draft",
+    "entity_type": "feedback-model",
+    "id": "84eb98f0-2f31-524c-8ab9-c4584d59dd94",
+    "messages": [
+        {
+            "feedback_type": "model_reveal",
+            "text": "“Hi there, thanks for messaging Grand Serenata. 😊 Check-in is from 2 in the afternoon, and yes, we offer free parking for guests. Let me know if there is anything else I can help with.”"
+        }
+    ],
+    "prompt_code": "HSP-C06-RP-FREE",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 768,
+        "chapter": 6,
+        "heading_path": [
+            "Online and Social Media Customer Service",
+            "Step 6. Role-play"
+        ],
+        "normalized_text_sha256": "6c5199cce70c58a1a21f8b4a9b472c699880aa8e23ed513d4759c97779ec4bdd"
+    },
+    "status": "published"
+}

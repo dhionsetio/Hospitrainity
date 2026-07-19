@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C03-ACT-PRACTICE",
+  "code": "HSP-C03-PR-I3",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "4c3b878f-a16e-55b4-921d-f374fb286556",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "ordering",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 293,
+    "chapter": 3,
+    "heading_path": [
+      "Dealing with Customers on the Phone",
+      "Step 5. Practice"
+    ],
+    "normalized_text_sha256": "67aa61d265afa3a415fb2dc07d567f80c49d8fbf91f1895bfc0980574be3bfd3"
+  },
+  "status": "published",
+  "stem": "3. Put these phone steps in order: give the booking reference, answer with the hotel name, take the caller’s details, confirm by reading back."
+}

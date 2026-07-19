@@ -1,0 +1,34 @@
+{
+  "code": "HSP-C06-RP-G2-FB",
+  "content_version": "0.3.0-draft",
+  "entity_type": "feedback-model",
+  "id": "f161b909-a99b-5efc-bb22-bf303fbb66e3",
+  "messages": [
+    {
+      "feedback_type": "error_specific",
+      "text": "(a) “That is not true.” Arguing in public damages the hotel’s reputation."
+    },
+    {
+      "feedback_type": "success",
+      "text": "(b) “We are so sorry to hear this, and it is not the experience we want for you. Please send us a DM with your booking details so we can make it right.” This is the ideal answer, empathy in public and a move to private."
+    },
+    {
+      "feedback_type": "error_specific",
+      "text": "(c) Ignoring it. Silence looks careless to everyone else reading."
+    }
+  ],
+  "prompt_code": "HSP-C06-RP-G2",
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 739,
+    "chapter": 6,
+    "heading_path": [
+      "Online and Social Media Customer Service",
+      "Step 6. Role-play"
+    ],
+    "normalized_text_sha256": "06c33fb291047f63ef592868aad2840a65e502d30b042fe4a3b521c3d8f99fdf"
+  },
+  "status": "published"
+}

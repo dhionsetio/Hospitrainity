@@ -1,0 +1,39 @@
+{
+    "$schema": "https://json.schemastore.org/package.json",
+    "private": true,
+    "type": "module",
+    "engines": {
+        "node": ">=24 <27",
+        "npm": ">=11"
+    },
+    "scripts": {
+        "build": "vite build",
+        "dev": "vite",
+        "lint:js": "eslint resources/js tests/Node tests/E2E scripts/e2e scripts/curriculum/*.mjs scripts/quality/*.mjs scripts/security/*.mjs eslint.config.js playwright.config.mjs vite.config.js --max-warnings=0",
+        "test:js": "node --test tests/Node/progress.test.mjs tests/Node/learner-dom-safety.test.mjs tests/Node/media-playback.test.mjs tests/Node/exercise-engine.test.mjs tests/Node/canonical-activity.test.mjs tests/Node/canonical-exercise-authoring.test.mjs tests/Node/standalone-projection.test.mjs tests/Node/secret-scan.test.mjs",
+        "test:unit": "npm run test:js",
+        "governance:verify": "node scripts/quality/verify-traceability.mjs && node scripts/security/scan-tracked-secrets.mjs",
+        "test:e2e:prepare": "node scripts/e2e/prepare.mjs",
+        "test:e2e": "npm run test:e2e:prepare && playwright test",
+        "test:quality": "npm run lint:js && npm run test:js && npm run test:e2e"
+    },
+    "devDependencies": {
+        "@alpinejs/csp": "3.15.12",
+        "@eslint/js": "10.0.1",
+        "@fortawesome/fontawesome-free": "7.3.1",
+        "@playwright/test": "1.61.1",
+        "@tailwindcss/aspect-ratio": "^0.4.2",
+        "@tailwindcss/vite": "4.3.3",
+        "concurrently": "^9.0.1",
+        "eslint": "10.7.0",
+        "globals": "17.7.0",
+        "jsdom": "^29.1.1",
+        "laravel-vite-plugin": "^1.2.0",
+        "tailwindcss": "4.3.3",
+        "vite": "^6.2.4"
+    },
+    "allowScripts": {
+        "@tailwindcss/oxide@4.3.3": true,
+        "esbuild@0.25.5": true
+    }
+}

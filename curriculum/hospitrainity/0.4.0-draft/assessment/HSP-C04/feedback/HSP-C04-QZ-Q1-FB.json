@@ -1,0 +1,27 @@
+{
+    "code": "HSP-C04-QZ-Q1-FB",
+    "content_version": "0.4.0-draft",
+    "entity_type": "feedback-model",
+    "id": "8a8b6ed0-8cf5-5857-bdae-3759988b203b",
+    "messages": [
+        {
+            "feedback_type": "model_reveal",
+            "text": "B. Name the service and the hotel, then offer help."
+        }
+    ],
+    "prompt_code": "HSP-C04-QZ-Q1",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 479,
+        "chapter": 4,
+        "heading_path": [
+            "The Guest-Services Hotline",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "eea3bdbc65a4ae1ff81923e01621f0fe249733cb5613fc16bd12c2fe228b54ce"
+    },
+    "status": "published"
+}

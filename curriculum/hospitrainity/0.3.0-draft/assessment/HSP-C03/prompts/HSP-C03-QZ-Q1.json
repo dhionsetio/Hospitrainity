@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C03-ACT-QUIZ",
+  "code": "HSP-C03-QZ-Q1",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "2de239f3-765c-5d5b-a0e8-c615366ad36e",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 323,
+    "chapter": 3,
+    "heading_path": [
+      "Dealing with Customers on the Phone",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "a44e4ce2a05507fbb1c55c9c852003a56a8953b08a67cc276aa5a8c764e3a721"
+  },
+  "status": "published",
+  "stem": "Q1. What is the best way to answer a hotel phone? A) “Yeah?” B) “Good morning, the Grand Serenata Hotel, Maya speaking. How may I help you?” C) “Who is this?”"
+}

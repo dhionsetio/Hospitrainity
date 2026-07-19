@@ -1,0 +1,50 @@
+{
+    "activity_code": "HSP-C03-ACT-QUIZ",
+    "choices": [
+        {
+            "feedback": [],
+            "id": "c5e2bee8-1675-5444-a3a9-7057d2262c62",
+            "label": "a",
+            "text": "“four hundred fifty-two” quickly"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "model_reveal",
+                    "text": "B. Single digits are the clearest on a call."
+                }
+            ],
+            "id": "2d5e2d29-8165-5248-ac1c-cc5dfe5b09f8",
+            "label": "b",
+            "text": "“four, five, two” as single digits"
+        },
+        {
+            "feedback": [],
+            "id": "7df2659a-c154-5a5a-81b9-d599a910156b",
+            "label": "c",
+            "text": "spell it as letters"
+        }
+    ],
+    "code": "HSP-C03-QZ-Q7",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "ce7b2d93-e0b6-5701-b3fe-e6c43ed87bc9",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 348,
+        "chapter": 3,
+        "heading_path": [
+            "Dealing with Customers on the Phone",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "824c9a564e26f0a5a3428f24b69956b4d6daf96d7c5c4f68a338eebebcfc009a"
+    },
+    "status": "published",
+    "stem": "Q7. How should you say the reference 452 on the phone? A) “four hundred fifty-two” quickly B) “four, five, two” as single digits C) spell it as letters"
+}

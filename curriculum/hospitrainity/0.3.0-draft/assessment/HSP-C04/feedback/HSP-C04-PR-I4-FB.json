@@ -1,0 +1,26 @@
+{
+  "code": "HSP-C04-PR-I4-FB",
+  "content_version": "0.3.0-draft",
+  "entity_type": "feedback-model",
+  "id": "414e0d11-761c-50c8-bc92-49e419f446ed",
+  "messages": [
+    {
+      "feedback_type": "model_reveal",
+      "text": "“Three, oh, five,” as single digits with tiny pauses. It is much harder to mishear than “three hundred and five.”"
+    }
+  ],
+  "prompt_code": "HSP-C04-PR-I4",
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 442,
+    "chapter": 4,
+    "heading_path": [
+      "The Guest-Services Hotline",
+      "Step 5. Practice"
+    ],
+    "normalized_text_sha256": "186fae9c2c609e2fdc47ba2ebb85754844143e9fc0d40bd8b0c272f201f2a913"
+  },
+  "status": "published"
+}

@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C02-ACT-ROLEPLAY",
+  "code": "HSP-C02-RP-G3",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "f59414f3-9449-5744-98ae-b24289e1c847",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 168,
+    "chapter": 2,
+    "heading_path": [
+      "Front Desk and Check-In",
+      "Step 6. Role-play"
+    ],
+    "normalized_text_sha256": "f543d91b481dacf7dc283aa8cdcfc8b84d5e8265a8822b2d018fe6e58eb25f78"
+  },
+  "status": "published",
+  "stem": "Guest: “I know I am very early, but is it possible to check in now?”"
+}

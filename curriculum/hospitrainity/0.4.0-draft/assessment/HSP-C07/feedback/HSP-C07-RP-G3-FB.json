@@ -1,0 +1,35 @@
+{
+    "code": "HSP-C07-RP-G3-FB",
+    "content_version": "0.4.0-draft",
+    "entity_type": "feedback-model",
+    "id": "7d18466b-88e0-52ac-9630-a518aa9f0dec",
+    "messages": [
+        {
+            "feedback_type": "error_specific",
+            "text": "(a) “Well, nobody is perfect.” Dismissive and cold."
+        },
+        {
+            "feedback_type": "success",
+            "text": "(b) “I am truly sorry, and I understand why you are frustrated after a second issue. Let me put this right now, and I will speak with my manager to make sure it does not happen again.” This is the ideal answer, empathy, action, and a follow-up promise."
+        },
+        {
+            "feedback_type": "error_specific",
+            "text": "(c) “There is nothing I can do.” This gives up on the guest entirely."
+        }
+    ],
+    "prompt_code": "HSP-C07-RP-G3",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 910,
+        "chapter": 7,
+        "heading_path": [
+            "Dealing with Problems and Complaints",
+            "Step 6. Role-play"
+        ],
+        "normalized_text_sha256": "f804c9afb144d60de72db0ab5800755f23f3a6a9671a363b3abd15376415c9c5"
+    },
+    "status": "published"
+}

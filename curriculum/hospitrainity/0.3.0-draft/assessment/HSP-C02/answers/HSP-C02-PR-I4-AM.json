@@ -1,0 +1,24 @@
+{
+  "accepted": [
+    "Something like “Could I see your passport, please?” A single word can feel like an order, so add “Could I,” the person’s help, and “please.”"
+  ],
+  "code": "HSP-C02-PR-I4-AM",
+  "content_version": "0.3.0-draft",
+  "entity_type": "answer-model",
+  "id": "79df87d2-27a5-50a9-aabc-579ce7b386f0",
+  "prompt_code": "HSP-C02-PR-I4",
+  "replaced_by": null,
+  "replaces": null,
+  "scoring_mode": "objective_normalized",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 154,
+    "chapter": 2,
+    "heading_path": [
+      "Front Desk and Check-In",
+      "Step 5. Practice"
+    ],
+    "normalized_text_sha256": "47eae4f50da7c24f052d0a851616ef00ffbe429639d675b2c4ef1a876fa6df62"
+  },
+  "status": "published"
+}

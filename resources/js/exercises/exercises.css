@@ -1,0 +1,88 @@
+/*
+ * Exercise-engine styles.
+ * Extracted from the inline <style> in resources/views/exercise.blade.php during
+ * FIP Phase 3. Imported by resources/js/exercises/index.js so it is bundled and
+ * loaded only on the exercise page (via that Vite entry).
+ */
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.side-nav-item.active {
+    background-color: #4f46e5;
+    color: white;
+    font-weight: bold;
+    transform: scale(1.1);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Style untuk permainan */
+.feedback-correct {
+    background-color: #dcfce7;
+    border-top-color: #22c55e;
+}
+
+.feedback-incorrect {
+    background-color: #fee2e2;
+    border-top-color: #ef4444;
+}
+
+.word-bank-button,
+.answer-area-button {
+    transition: all 0.2s ease-in-out;
+}
+
+.word-bank-button:disabled {
+    opacity: 0.2;
+    cursor: not-allowed;
+}
+
+.match-item.selected {
+    background-color: #4f46e5;
+    color: white;
+    transform: scale(1.05);
+}
+
+.match-item.correct {
+    background-color: #22c55e;
+    color: white;
+}
+
+.match-item.incorrect {
+    background-color: #ef4444;
+    color: white;
+}
+
+.option-button:hover {
+    background-color: #e0e7ff;
+}
+
+.option-button.correct {
+    background-color: #22c55e;
+    color: white;
+}
+
+.option-button.incorrect {
+    background-color: #ef4444;
+    color: white;
+}
+
+.revealed-char {
+    color: #9ca3af;
+    /* Warna abu-abu untuk huruf yang sudah terungkap */
+}
+
+.highlighted-letter {
+    color: #ef4444;
+    /* Warna merah untuk silent letter */
+    font-weight: bold;
+}

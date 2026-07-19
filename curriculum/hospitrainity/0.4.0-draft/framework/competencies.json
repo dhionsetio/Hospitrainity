@@ -1,0 +1,70 @@
+{
+    "audience": "pre-service D4 BIKBP and Tourism students",
+    "competencies": [
+        {
+            "definition": "Complete guest-facing service exchanges coherently from opening through closure.",
+            "evidence": [
+                "EV-DOCX-001",
+                "EV-INT-001"
+            ],
+            "id": "COMP-SERVICE-INTERACTION",
+            "name": "Guest-service interaction"
+        },
+        {
+            "definition": "Elicit, check, confirm and pass on guest/service information accurately.",
+            "evidence": [
+                "EV-DOCX-001",
+                "EV-INT-001"
+            ],
+            "id": "COMP-INFO-ACCURACY",
+            "name": "Information accuracy and clarification"
+        },
+        {
+            "definition": "Use respectful, warm and channel-appropriate language, tone and attitude.",
+            "evidence": [
+                "EV-DOCX-001",
+                "EV-INT-001"
+            ],
+            "id": "COMP-RAPPORT-POLITENESS",
+            "name": "Hospitality rapport, politeness and register"
+        },
+        {
+            "definition": "Listen, acknowledge, take ownership, propose action and follow up without blame or dismissal.",
+            "evidence": [
+                "EV-DOCX-001",
+                "EV-INT-001"
+            ],
+            "id": "COMP-PROBLEM-SOLVING",
+            "name": "Positive-language problem solving"
+        },
+        {
+            "definition": "Adapt service communication to face-to-face, telephone, written, live-chat and public/private online channels.",
+            "evidence": [
+                "EV-DOCX-001"
+            ],
+            "id": "COMP-CHANNEL-COMM",
+            "name": "Channel-specific communication"
+        },
+        {
+            "definition": "Clarify needs and connect guests or colleagues to the correct person/department while preserving meaning.",
+            "evidence": [
+                "EV-DOCX-001"
+            ],
+            "id": "COMP-MEDIATION-HANDOFF",
+            "name": "Department handoff and mediation"
+        },
+        {
+            "definition": "Monitor confidence, emotional response and next practice action without treating self-report as proficiency.",
+            "evidence": [
+                "EV-DOCX-001",
+                "EV-INT-001"
+            ],
+            "id": "COMP-SELF-REGULATION",
+            "name": "Self-regulation and reflective readiness"
+        }
+    ],
+    "framework_id": "HSP-COMP-FRAMEWORK-DRAFT",
+    "source_of_truth": "Hospitrainity.docx",
+    "status": "draft_pending_qualified_review",
+    "version": "0.2.0-draft"
+}

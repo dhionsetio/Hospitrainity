@@ -1,0 +1,292 @@
+{
+  "checkpoint": "CP-14",
+  "modules": [
+    {
+      "approval_gate": "PUBLISHED",
+      "automated_gates": {
+        "accessibility": "pass",
+        "editorial": "pass",
+        "provenance": "pass",
+        "schema": "pass"
+      },
+      "blockers": [],
+      "code": "HSP-C01",
+      "entity_count": 8,
+      "entity_states": {
+        "published": 8
+      },
+      "module": 1,
+      "required_signoffs": [
+        {
+          "date": "2026-07-16",
+          "description": "ESP / CEFR alignment approver (language + assessment)",
+          "reviewer": "dhi disc (Project Owner)",
+          "role": "esp_cefr_specialist",
+          "signed": true
+        },
+        {
+          "date": "2026-07-16",
+          "description": "Hospitality domain-practitioner approver",
+          "reviewer": "dhi disc (Project Owner)",
+          "role": "hospitality_practitioner",
+          "signed": true
+        },
+        {
+          "date": "2026-07-16",
+          "description": "WCAG 2.2 AA + UDL 3.0 conformance approver",
+          "reviewer": "dhi disc (Project Owner)",
+          "role": "accessibility_reviewer",
+          "signed": true
+        }
+      ],
+      "state": "published",
+      "title": "Welcome and Introduction to Customer Care"
+    },
+    {
+      "approval_gate": "PUBLISHED",
+      "automated_gates": {
+        "accessibility": "pass",
+        "editorial": "pass",
+        "provenance": "pass",
+        "schema": "pass"
+      },
+      "blockers": [],
+      "code": "HSP-C02",
+      "entity_count": 70,
+      "entity_states": {
+        "published": 70
+      },
+      "module": 2,
+      "required_signoffs": [
+        {
+          "date": "2026-07-16",
+          "description": "ESP / CEFR alignment approver (language + assessment)",
+          "reviewer": "dhi disc (Project Owner)",
+          "role": "esp_cefr_specialist",
+          "signed": true
+        },
+        {
+          "date": "2026-07-16",
+          "description": "Hospitality domain-practitioner approver",
+          "reviewer": "dhi disc (Project Owner)",
+          "role": "hospitality_practitioner",
+          "signed": true
+        },
+        {
+          "date": "2026-07-16",
+          "description": "WCAG 2.2 AA + UDL 3.0 conformance approver",
+          "reviewer": "dhi disc (Project Owner)",
+          "role": "accessibility_reviewer",
+          "signed": true
+        }
+      ],
+      "state": "published",
+      "title": "Front Desk and Check-In"
+    },
+    {
+      "approval_gate": "PUBLISHED",
+      "automated_gates": {
+        "accessibility": "pass",
+        "editorial": "pass",
+        "provenance": "pass",
+        "schema": "pass"
+      },
+      "blockers": [],
+      "code": "HSP-C03",
+      "entity_count": 70,
+      "entity_states": {
+        "published": 70
+      },
+      "module": 3,
+      "required_signoffs": [
+        {
+          "date": "2026-07-16",
+          "description": "ESP / CEFR alignment approver (language + assessment)",
+          "reviewer": "dhi disc (Project Owner)",
+          "role": "esp_cefr_specialist",
+          "signed": true
+        },
+        {
+          "date": "2026-07-16",
+          "description": "Hospitality domain-practitioner approver",
+          "reviewer": "dhi disc (Project Owner)",
+          "role": "hospitality_practitioner",
+          "signed": true
+        },
+        {
+          "date": "2026-07-16",
+          "description": "WCAG 2.2 AA + UDL 3.0 conformance approver",
+          "reviewer": "dhi disc (Project Owner)",
+          "role": "accessibility_reviewer",
+          "signed": true
+        }
+      ],
+      "state": "published",
+      "title": "Dealing with Customers on the Phone"
+    },
+    {
+      "approval_gate": "PUBLISHED",
+      "automated_gates": {
+        "accessibility": "pass",
+        "editorial": "pass",
+        "provenance": "pass",
+        "schema": "pass"
+      },
+      "blockers": [],
+      "code": "HSP-C04",
+      "entity_count": 70,
+      "entity_states": {
+        "published": 70
+      },
+      "module": 4,
+      "required_signoffs": [
+        {
+          "date": "2026-07-16",
+          "description": "ESP / CEFR alignment approver (language + assessment)",
+          "reviewer": "dhi disc (Project Owner)",
+          "role": "esp_cefr_specialist",
+          "signed": true
+        },
+        {
+          "date": "2026-07-16",
+          "description": "Hospitality domain-practitioner approver",
+          "reviewer": "dhi disc (Project Owner)",
+          "role": "hospitality_practitioner",
+          "signed": true
+        },
+        {
+          "date": "2026-07-16",
+          "description": "WCAG 2.2 AA + UDL 3.0 conformance approver",
+          "reviewer": "dhi disc (Project Owner)",
+          "role": "accessibility_reviewer",
+          "signed": true
+        }
+      ],
+      "state": "published",
+      "title": "The Guest-Services Hotline"
+    },
+    {
+      "approval_gate": "PUBLISHED",
+      "automated_gates": {
+        "accessibility": "pass",
+        "editorial": "pass",
+        "provenance": "pass",
+        "schema": "pass"
+      },
+      "blockers": [],
+      "code": "HSP-C05",
+      "entity_count": 70,
+      "entity_states": {
+        "published": 70
+      },
+      "module": 5,
+      "required_signoffs": [
+        {
+          "date": "2026-07-16",
+          "description": "ESP / CEFR alignment approver (language + assessment)",
+          "reviewer": "dhi disc (Project Owner)",
+          "role": "esp_cefr_specialist",
+          "signed": true
+        },
+        {
+          "date": "2026-07-16",
+          "description": "Hospitality domain-practitioner approver",
+          "reviewer": "dhi disc (Project Owner)",
+          "role": "hospitality_practitioner",
+          "signed": true
+        },
+        {
+          "date": "2026-07-16",
+          "description": "WCAG 2.2 AA + UDL 3.0 conformance approver",
+          "reviewer": "dhi disc (Project Owner)",
+          "role": "accessibility_reviewer",
+          "signed": true
+        }
+      ],
+      "state": "published",
+      "title": "Customer Care Through Writing"
+    },
+    {
+      "approval_gate": "PUBLISHED",
+      "automated_gates": {
+        "accessibility": "pass",
+        "editorial": "pass",
+        "provenance": "pass",
+        "schema": "pass"
+      },
+      "blockers": [],
+      "code": "HSP-C06",
+      "entity_count": 70,
+      "entity_states": {
+        "published": 70
+      },
+      "module": 6,
+      "required_signoffs": [
+        {
+          "date": "2026-07-16",
+          "description": "ESP / CEFR alignment approver (language + assessment)",
+          "reviewer": "dhi disc (Project Owner)",
+          "role": "esp_cefr_specialist",
+          "signed": true
+        },
+        {
+          "date": "2026-07-16",
+          "description": "Hospitality domain-practitioner approver",
+          "reviewer": "dhi disc (Project Owner)",
+          "role": "hospitality_practitioner",
+          "signed": true
+        },
+        {
+          "date": "2026-07-16",
+          "description": "WCAG 2.2 AA + UDL 3.0 conformance approver",
+          "reviewer": "dhi disc (Project Owner)",
+          "role": "accessibility_reviewer",
+          "signed": true
+        }
+      ],
+      "state": "published",
+      "title": "Online and Social Media Customer Service"
+    },
+    {
+      "approval_gate": "PUBLISHED",
+      "automated_gates": {
+        "accessibility": "pass",
+        "editorial": "pass",
+        "provenance": "pass",
+        "schema": "pass"
+      },
+      "blockers": [],
+      "code": "HSP-C07",
+      "entity_count": 70,
+      "entity_states": {
+        "published": 70
+      },
+      "module": 7,
+      "required_signoffs": [
+        {
+          "date": "2026-07-16",
+          "description": "ESP / CEFR alignment approver (language + assessment)",
+          "reviewer": "dhi disc (Project Owner)",
+          "role": "esp_cefr_specialist",
+          "signed": true
+        },
+        {
+          "date": "2026-07-16",
+          "description": "Hospitality domain-practitioner approver",
+          "reviewer": "dhi disc (Project Owner)",
+          "role": "hospitality_practitioner",
+          "signed": true
+        },
+        {
+          "date": "2026-07-16",
+          "description": "WCAG 2.2 AA + UDL 3.0 conformance approver",
+          "reviewer": "dhi disc (Project Owner)",
+          "role": "accessibility_reviewer",
+          "signed": true
+        }
+      ],
+      "state": "published",
+      "title": "Dealing with Problems and Complaints"
+    }
+  ]
+}

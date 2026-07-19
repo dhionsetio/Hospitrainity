@@ -1,0 +1,27 @@
+{
+    "code": "HSP-C02-QZ-Q7-FB",
+    "content_version": "0.4.0-draft",
+    "entity_type": "feedback-model",
+    "id": "b900df10-c038-59f5-8d76-93f2aa2c19f7",
+    "messages": [
+        {
+            "feedback_type": "model_reveal",
+            "text": "B. Amenities are the extras, such as Wi-Fi, a gym, or a pool."
+        }
+    ],
+    "prompt_code": "HSP-C02-QZ-Q7",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 203,
+        "chapter": 2,
+        "heading_path": [
+            "Front Desk and Check-In",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "b3f1c7777e7e819a8790d50bec663654364c5915e215218b439885053fae3793"
+    },
+    "status": "published"
+}

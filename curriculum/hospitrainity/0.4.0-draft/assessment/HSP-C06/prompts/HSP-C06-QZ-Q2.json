@@ -1,0 +1,50 @@
+{
+    "activity_code": "HSP-C06-ACT-QUIZ",
+    "choices": [
+        {
+            "feedback": [],
+            "id": "d9994dde-0652-5f6b-976e-ab1d0c50be09",
+            "label": "a",
+            "text": "many per message"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "model_reveal",
+                    "text": "B. A little warmth, not an overload."
+                }
+            ],
+            "id": "5418b154-8b3c-578d-993a-c5f18d49abc0",
+            "label": "b",
+            "text": "one light emoji for warmth"
+        },
+        {
+            "feedback": [],
+            "id": "513913ef-2cc1-569b-aae4-e896fd8832d7",
+            "label": "c",
+            "text": "never any at all"
+        }
+    ],
+    "code": "HSP-C06-QZ-Q2",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "477a47e9-a44f-59dc-97de-a392500a04ed",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 774,
+        "chapter": 6,
+        "heading_path": [
+            "Online and Social Media Customer Service",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "1e881522a43a248f8ae524f72a39d38c3c87d0484c8519274abb973c066b580d"
+    },
+    "status": "published",
+    "stem": "Q2. What is professional emoji use? A) many per message B) one light emoji for warmth C) never any at all"
+}

@@ -1,0 +1,117 @@
+{
+  "$id": "https://hospitrainity.curriculum/schema/cefr-references.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "authority": {
+      "type": "string"
+    },
+    "framework": {
+      "type": "string"
+    },
+    "notice": {
+      "type": "string"
+    },
+    "references": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "pattern": "^CEFR-[A-Z0-9-]+$",
+            "type": "string"
+          },
+          "level": {
+            "enum": [
+              "A1",
+              "A2",
+              "B1",
+              "B2",
+              "C1",
+              "C2"
+            ]
+          },
+          "scale": {
+            "type": "string"
+          },
+          "search_uri": {
+            "format": "uri",
+            "type": "string"
+          },
+          "source_location": {
+            "additionalProperties": false,
+            "properties": {
+              "chapter": {
+                "type": "string"
+              },
+              "level": {
+                "type": "string"
+              },
+              "scale": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "chapter",
+              "scale",
+              "level"
+            ],
+            "type": "object"
+          },
+          "source_uri": {
+            "format": "uri",
+            "type": "string"
+          },
+          "verbatim_text": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "verification_status": {
+            "enum": [
+              "machine_checked_human_review_required",
+              "human_verified"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "level",
+          "scale",
+          "verbatim_text",
+          "source_location",
+          "source_uri",
+          "search_uri",
+          "verification_status"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "registry_version": {
+      "type": "string"
+    },
+    "search_uri": {
+      "format": "uri",
+      "type": "string"
+    },
+    "source_uri": {
+      "format": "uri",
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "registry_version",
+    "framework",
+    "authority",
+    "source_uri",
+    "search_uri",
+    "status",
+    "notice",
+    "references"
+  ],
+  "title": "CEFR reference register (CP-02 compatible)",
+  "type": "object"
+}

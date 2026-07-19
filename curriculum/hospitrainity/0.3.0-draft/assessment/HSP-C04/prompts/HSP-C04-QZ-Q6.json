@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C04-ACT-QUIZ",
+  "code": "HSP-C04-QZ-Q6",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "c88b3db8-8ec4-58a1-b76b-68d724c07bb7",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 482,
+    "chapter": 4,
+    "heading_path": [
+      "The Guest-Services Hotline",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "26cda969d9d8e9e1a03212975c8884bc2f8f7caa3748ee8bec34829d9bb03224"
+  },
+  "status": "published",
+  "stem": "Q6. The best moment to get the room number is ... A) at the very end B) right at the start, before the order C) never"
+}

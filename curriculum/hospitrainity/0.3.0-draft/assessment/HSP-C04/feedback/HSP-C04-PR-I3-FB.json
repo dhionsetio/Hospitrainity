@@ -1,0 +1,26 @@
+{
+  "code": "HSP-C04-PR-I3-FB",
+  "content_version": "0.3.0-draft",
+  "entity_type": "feedback-model",
+  "id": "781b64a0-cf88-5bb0-b7c3-dbc95564239a",
+  "messages": [
+    {
+      "feedback_type": "model_reveal",
+      "text": "Answer and find the room, then take the order, then read it back to confirm, then give the estimated time."
+    }
+  ],
+  "prompt_code": "HSP-C04-PR-I3",
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 439,
+    "chapter": 4,
+    "heading_path": [
+      "The Guest-Services Hotline",
+      "Step 5. Practice"
+    ],
+    "normalized_text_sha256": "90c37b87d8d3fd448e5a073f43f2cb0d3f0b061a77bf25ef285e3440ac758601"
+  },
+  "status": "published"
+}

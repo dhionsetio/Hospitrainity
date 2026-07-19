@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C03-ACT-QUIZ",
+  "code": "HSP-C03-QZ-Q6",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "9896d73a-2064-51af-b977-e12dd1fe7da5",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 338,
+    "chapter": 3,
+    "heading_path": [
+      "Dealing with Customers on the Phone",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "10fe50b1929068a29287c378905be2b5df818f69bbad2747c96d91c51d179c35"
+  },
+  "status": "published",
+  "stem": "Q6. “To read back” the details means ... A) to confirm them by repeating them B) to read a book C) to cancel the booking"
+}

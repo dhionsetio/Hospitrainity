@@ -1,0 +1,26 @@
+{
+  "code": "HSP-C03-QZ-Q7-FB",
+  "content_version": "0.3.0-draft",
+  "entity_type": "feedback-model",
+  "id": "989ec9a1-e9f2-5ee6-82e7-98052cfb867d",
+  "messages": [
+    {
+      "feedback_type": "model_reveal",
+      "text": "B. Single digits are the clearest on a call."
+    }
+  ],
+  "prompt_code": "HSP-C03-QZ-Q7",
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 343,
+    "chapter": 3,
+    "heading_path": [
+      "Dealing with Customers on the Phone",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "a09074ecd2deeb8d8345251b7a484035b3f7e9e196cfb203b8a5f592ba5c00c0"
+  },
+  "status": "published"
+}

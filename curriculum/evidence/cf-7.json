@@ -1,0 +1,103 @@
+{
+    "evidence_version": "2.1.0",
+    "source_authority": {
+        "artifact": "Hospitrainity.docx",
+        "sha256": "7f8a2c62db6884498f7a1c2de56e79e39609262944a685fe7eb97f702444cbb4"
+    },
+    "package": {
+        "path": "curriculum/hospitrainity/0.4.0-draft",
+        "file_count": 469,
+        "byte_count": 1473828,
+        "json_file_count": 463,
+        "markdown_file_count": 6,
+        "tree_sha256": "e864b4fcaa9d182b8379cf7d179279114baa7fef46624bcb261be41b8072dc9a",
+        "tree_digest_definition": "SHA-256 over UTF-8 rows sorted by ordinal relative path: path + NUL + lowercase raw-file SHA-256 + NUL + byte length + LF"
+    },
+    "standalone": {
+        "path": "standalone/Hospitrainity-Standalone.html",
+        "byte_count": 707504,
+        "sha256": "55d1418fc75e359f85c9f7bb8ad1d93ea36943859b48f3c18a1db65039bf36c4"
+    },
+    "expected_counts": {
+        "chapters": 7,
+        "sections": 85,
+        "activities": 25,
+        "prompts": 124,
+        "answer_models": 96,
+        "feedback_models": 96,
+        "rubrics": 6,
+        "outcomes": 21,
+        "competencies": 7,
+        "cefr_references": 23,
+        "source_provenance": 7,
+        "migration_edges": 8
+    },
+    "coverage_counts": {
+        "content_blocks": 774,
+        "source_tables": 21,
+        "warm_up_questions": 21,
+        "exercise_prompts": 96,
+        "rating_items": 28,
+        "external_hyperlink_relationships": 18,
+        "non_empty_accepted_strings": 90,
+        "feedback_and_guidance_strings": 138
+    },
+    "projection_meta": {
+        "checkpoint": "CF-7",
+        "content_version": "0.4.0-draft",
+        "disclaimer": "This development projection exposes all seven compiled chapters for local verification; chapter lifecycle status does not constitute release approval of 0.4.0-draft. CF-7 release review remains open. Earlier CP-14 evidence records a Project Owner verdict consolidated across the ESP/CEFR, hospitality-practitioner, and accessibility roles rather than three independently conducted specialist reviews; it must not be represented as independent specialist certification. Provisional CEFR bands remain working hypotheses and must not be presented as certified CEFR levels.",
+        "generated_from": "Hospitrainity.docx via the deterministic scripts/curriculum source compiler; framework metadata migrated from 0.3.0-draft.",
+        "notice": "Source-fidelity development package generated from the authoritative DOCX. CF-7 technical evidence does not authorize publication; final publication remains gated by the recorded human decisions and reviews.",
+        "product": "Hospitrainity",
+        "source_artifact": "Hospitrainity.docx",
+        "status": "development",
+        "subtitle": "Practical customer-care English for hotel and hospitality staff, organized into seven modules derived from the source manuscript.",
+        "title": "Hospitrainity — Hospitality English"
+    },
+    "workflow_gate": {
+        "id": "CF-7",
+        "status": "open"
+    },
+    "quality_gates": {
+        "active_brand": {
+            "status": "verified",
+            "artifact": "curriculum/evidence/cf-7-brand-guard.json",
+            "sha256": "b71a87b8d8bcd6864c92a79a0e6b6cfb7acf936a5519afa00cb3d38b12b8cefe",
+            "bytes": 639
+        },
+        "external_links": {
+            "status": "review_required",
+            "artifact": "curriculum/evidence/cf-7-link-health.json",
+            "sha256": "12f3774fb47608d202c15cbcc49410b7f40f5e024b555a6df43ffa197ea4fc45",
+            "bytes": 13713
+        },
+        "wcag_2_2_aa": {
+            "status": "automated_verified_manual_review_open",
+            "artifact": "curriculum/evidence/cf-7-wcag.json",
+            "sha256": "f53ca934b263867b05a881ef3f0b1f2be32422a751392c973214c2b2d0164e13",
+            "bytes": 5205
+        },
+        "source_visual_comparison": {
+            "status": "verified",
+            "artifact": "curriculum/evidence/cf-7-visual-comparison.json",
+            "sha256": "eadebe9d3929c6849f7eb0669d8e9ed08d53f0c074ca9283f5ff652fd5fe368c",
+            "bytes": 10217
+        }
+    },
+    "human_gates": {
+        "status": "open",
+        "required": [
+            "learner_response_retention_or_account_lifetime_approval",
+            "qualified_esp_cefr_review",
+            "hospitality_practitioner_review",
+            "accessibility_review",
+            "external_link_replacement_or_removal_decisions",
+            "content_owner_release_approval"
+        ]
+    },
+    "release_decision": {
+        "package_version": "0.4.0-draft",
+        "lifecycle_status": "draft",
+        "decision": "retain_draft_until_every_human_and_technical_gate_passes"
+    }
+}

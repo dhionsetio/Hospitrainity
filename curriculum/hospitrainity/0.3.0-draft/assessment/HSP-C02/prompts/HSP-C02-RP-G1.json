@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C02-ACT-ROLEPLAY",
+  "code": "HSP-C02-RP-G1",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "b29ce63e-84e1-57f1-b73d-3d15d0bda9cf",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 158,
+    "chapter": 2,
+    "heading_path": [
+      "Front Desk and Check-In",
+      "Step 6. Role-play"
+    ],
+    "normalized_text_sha256": "64e72b3eb24ffa2f22ea0659182d2115871220cbeaa06e10c7158eefb73f4335"
+  },
+  "status": "published",
+  "stem": "Guest: “Hi, I think I have a booking, but I am not sure it went through.”"
+}

@@ -1,0 +1,50 @@
+{
+    "activity_code": "HSP-C04-ACT-QUIZ",
+    "choices": [
+        {
+            "feedback": [
+                {
+                    "feedback_type": "model_reveal",
+                    "text": "A. Guests relax when they know how long to wait."
+                }
+            ],
+            "id": "ac256e69-b33f-5dce-94ff-00756f76fc43",
+            "label": "a",
+            "text": "it sets a clear expectation"
+        },
+        {
+            "feedback": [],
+            "id": "8ed60f26-a4e9-5e90-9b44-9b3e6228b46e",
+            "label": "b",
+            "text": "it wastes time"
+        },
+        {
+            "feedback": [],
+            "id": "889862b8-7b85-5c5e-a197-0e284384bedc",
+            "label": "c",
+            "text": "it confuses the guest"
+        }
+    ],
+    "code": "HSP-C04-QZ-Q5",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "40ec8240-8e8d-5797-b2ad-1b05c45c90cc",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 489,
+        "chapter": 4,
+        "heading_path": [
+            "The Guest-Services Hotline",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "6adcca327fa37645a1466467916e6b19501a34611cad51a64fadf6776fd1b9b3"
+    },
+    "status": "published",
+    "stem": "Q5. Giving an estimated time helps because ... A) it sets a clear expectation B) it wastes time C) it confuses the guest"
+}

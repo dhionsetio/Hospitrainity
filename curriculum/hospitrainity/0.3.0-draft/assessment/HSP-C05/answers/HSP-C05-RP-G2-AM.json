@@ -1,0 +1,24 @@
+{
+  "accepted": [
+    "b"
+  ],
+  "code": "HSP-C05-RP-G2-AM",
+  "content_version": "0.3.0-draft",
+  "entity_type": "answer-model",
+  "id": "11ca9221-beb5-5c22-af89-0f68f7e9994c",
+  "prompt_code": "HSP-C05-RP-G2",
+  "replaced_by": null,
+  "replaces": null,
+  "scoring_mode": "objective_exact",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 599,
+    "chapter": 5,
+    "heading_path": [
+      "Customer Care Through Writing",
+      "Step 6. Role-play (drafting)"
+    ],
+    "normalized_text_sha256": "4f779b0a2a47674ed07dc371955a5e540de72431a0ecf773326ce68b6958f2a2"
+  },
+  "status": "published"
+}

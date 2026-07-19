@@ -1,0 +1,50 @@
+{
+    "activity_code": "HSP-C07-ACT-QUIZ",
+    "choices": [
+        {
+            "feedback": [],
+            "id": "ea89910f-b18d-5346-8574-ca7ca8aacc40",
+            "label": "a",
+            "text": "listen, apologise, act"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "model_reveal",
+                    "text": "B. Never deflect, blame, or dismiss."
+                }
+            ],
+            "id": "b5698611-b13e-5511-b095-5cf2c59fafcf",
+            "label": "b",
+            "text": "deflect, blame, dismiss"
+        },
+        {
+            "feedback": [],
+            "id": "61f27065-7d26-5ce3-901d-19cfaf0e55b7",
+            "label": "c",
+            "text": "refund, upgrade, follow up"
+        }
+    ],
+    "code": "HSP-C07-QZ-Q5",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "0231eae1-9463-569f-b52b-ed99f8784a74",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 931,
+        "chapter": 7,
+        "heading_path": [
+            "Dealing with Problems and Complaints",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "da9ebb0527982099f65cdb5cbd9fde3a1def2588eb0cfde99c4e032a3370818b"
+    },
+    "status": "published",
+    "stem": "Q5. What are the three things to never do? A) listen, apologise, act B) deflect, blame, dismiss C) refund, upgrade, follow up"
+}

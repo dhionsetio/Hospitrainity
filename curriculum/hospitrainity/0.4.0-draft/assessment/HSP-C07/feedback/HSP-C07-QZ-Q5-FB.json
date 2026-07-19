@@ -1,0 +1,27 @@
+{
+    "code": "HSP-C07-QZ-Q5-FB",
+    "content_version": "0.4.0-draft",
+    "entity_type": "feedback-model",
+    "id": "14267e1d-a9fc-511a-a4fa-c3b5ff3f5270",
+    "messages": [
+        {
+            "feedback_type": "model_reveal",
+            "text": "B. Never deflect, blame, or dismiss."
+        }
+    ],
+    "prompt_code": "HSP-C07-QZ-Q5",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 933,
+        "chapter": 7,
+        "heading_path": [
+            "Dealing with Problems and Complaints",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "b5d70c39b42d2d08c92717f4829e2f96c183587ad16d2381c8428312c3a1f944"
+    },
+    "status": "published"
+}

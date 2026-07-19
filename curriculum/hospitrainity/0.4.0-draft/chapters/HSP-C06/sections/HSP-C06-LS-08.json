@@ -1,0 +1,472 @@
+{
+    "blocks": [
+        {
+            "id": "ea4f50bf-f3a4-5f81-b089-b82205f51d52",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Try each one first, then open the toggle to check yourself.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 734,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "457b0ccffe30e2688e9b4bddc363e158e25bcf32152f3bdb3c034c9407006a63"
+            },
+            "text": "Try each one first, then open the toggle to check yourself.",
+            "type": "instruction"
+        },
+        {
+            "id": "463cb27c-b29a-53d2-adc1-5de93f0a2ca6",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "1. Choose the better chat reply to “What time is check-in?”",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " (a) a long, formal paragraph or (b) “Hi there. ",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "😊",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Check-in is from 2 in the afternoon. Anything else I can help with?”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 735,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "cd947df3db947f79511ba1f8c01c9b864abf622c2dabf0b22cbbf2a74719fdf1"
+            },
+            "text": "1. Choose the better chat reply to “What time is check-in?” (a) a long, formal paragraph or (b) “Hi there. 😊 Check-in is from 2 in the afternoon. Anything else I can help with?”",
+            "type": "list_item"
+        },
+        {
+            "id": "382dbd30-b5b6-51d9-a849-57540d645ade",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Check answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 736,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "59b5b25c3f1225bbc759f0a5877604948e64e3484f2e56aafef146d98cd32a61"
+            },
+            "text": "Check answer",
+            "type": "paragraph"
+        },
+        {
+            "id": "625334fb-33b1-5a61-a57d-6e4dc2439c8b",
+            "language": "en",
+            "order": 4,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "(b).",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Chat should be short, warm, and direct, not a formal essay.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 737,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "728d70fba9dec6861615d2f2e7bce6e97aabf85888d298079bc655ed4f8a22b1"
+            },
+            "text": "(b). Chat should be short, warm, and direct, not a formal essay.",
+            "type": "paragraph"
+        },
+        {
+            "id": "85523d0b-4c51-5b8f-9f4a-3a9bf7dfe1d0",
+            "language": "en",
+            "order": 5,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "2. Which emoji use is professional?",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " (a) “Sure. ",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "😊",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "” or (b) “Sure!!! ",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "🎉🔥💯😂",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 738,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "3fc3fc14b4474e4072296504d20f70882a67104e6fb39a70247de8a777cd1c2f"
+            },
+            "text": "2. Which emoji use is professional? (a) “Sure. 😊” or (b) “Sure!!! 🎉🔥💯😂”",
+            "type": "list_item"
+        },
+        {
+            "id": "0eb60bba-0885-54b1-bdfb-699710800e62",
+            "language": "en",
+            "order": 6,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Check answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 739,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "59b5b25c3f1225bbc759f0a5877604948e64e3484f2e56aafef146d98cd32a61"
+            },
+            "text": "Check answer",
+            "type": "paragraph"
+        },
+        {
+            "id": "28111527-4230-5bb3-90c7-ff9f55788aaf",
+            "language": "en",
+            "order": 7,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "(a).",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " One light emoji adds warmth. A pile of them looks unprofessional.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 740,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "39cecf566936a8b28e5ef16a2c2110939b62297912cee4b484c5a1655a878619"
+            },
+            "text": "(a). One light emoji adds warmth. A pile of them looks unprofessional.",
+            "type": "paragraph"
+        },
+        {
+            "id": "a5fa945f-c1d7-5a49-9cf0-0616abb0ee03",
+            "language": "en",
+            "order": 8,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "3. A guest posts a complaint publicly on Instagram. What is the best move?",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " (a) argue publicly, or (b) ",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "apologise",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " briefly and invite them to DM, or (c) delete or ignore it",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 741,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "293c6870a4f77f0598f6d1537a0cb46582c890f59c6fed9cca77a89513669975"
+            },
+            "text": "3. A guest posts a complaint publicly on Instagram. What is the best move? (a) argue publicly, or (b) apologise briefly and invite them to DM, or (c) delete or ignore it",
+            "type": "list_item"
+        },
+        {
+            "id": "8a00eb1e-7de9-5f60-b613-32aa203f95f8",
+            "language": "en",
+            "order": 9,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Check answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 742,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "59b5b25c3f1225bbc759f0a5877604948e64e3484f2e56aafef146d98cd32a61"
+            },
+            "text": "Check answer",
+            "type": "paragraph"
+        },
+        {
+            "id": "92b2d22a-266c-50d6-ab6f-0efdd52893dd",
+            "language": "en",
+            "order": 10,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "(b).",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Acknowledge it publicly so others see you care, then move the details into a private channel.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 743,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "df239719416ddde2891576d9b17e0e2d59fd1eeef8bda7946616b6bc5dfddc9c"
+            },
+            "text": "(b). Acknowledge it publicly so others see you care, then move the details into a private channel.",
+            "type": "paragraph"
+        },
+        {
+            "id": "2842854c-1c73-59ae-a110-82722506c5ef",
+            "language": "en",
+            "order": 11,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "4. Speed check:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " you cannot answer fully right now. What do you send?",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 744,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "4d238da88309f599aa096b64dd1d8191abcdd70521edb7a76d4c471c7a3d5c51"
+            },
+            "text": "4. Speed check: you cannot answer fully right now. What do you send?",
+            "type": "list_item"
+        },
+        {
+            "id": "9e0e40b6-952c-5b1f-9c69-a13c0ecbd104",
+            "language": "en",
+            "order": 12,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Check answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 745,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "59b5b25c3f1225bbc759f0a5877604948e64e3484f2e56aafef146d98cd32a61"
+            },
+            "text": "Check answer",
+            "type": "paragraph"
+        },
+        {
+            "id": "fc530eeb-2127-5ba4-8851-2b0ba870d283",
+            "language": "en",
+            "order": 13,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Something like “Thanks for your message. Let me check that for you and I will be right back.” A quick holding reply reassures the guest that they were heard.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 746,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "c78f9528588208c1d9154df1471e7445871da532e09c3f92da028e0ca9ec2e4a"
+            },
+            "text": "Something like “Thanks for your message. Let me check that for you and I will be right back.” A quick holding reply reassures the guest that they were heard.",
+            "type": "paragraph"
+        },
+        {
+            "activity_code": "HSP-C06-ACT-PRACTICE",
+            "id": "e77c3242-b55b-5cf6-aee9-7e7b3bc73640",
+            "language": "en",
+            "order": 14,
+            "provenance_kind": "derived_navigation",
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 733,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "46863cdae3b9dc41e288c4101ee6d0956fc7857efb3a521dc5b0f48f713be9aa"
+            },
+            "type": "activity_embed"
+        }
+    ],
+    "chapter_code": "HSP-C06",
+    "code": "HSP-C06-LS-08",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "5d7193b1-2846-5453-bb9f-5ac5389e1cf2",
+    "language": "en",
+    "order": 8,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 733,
+        "chapter": 6,
+        "heading_path": [
+            "Online and Social Media Customer Service",
+            "Step 5. Practice"
+        ],
+        "normalized_text_sha256": "46863cdae3b9dc41e288c4101ee6d0956fc7857efb3a521dc5b0f48f713be9aa"
+    },
+    "status": "published",
+    "title": "Step 5. Practice"
+}

@@ -1,0 +1,7 @@
+{
+  "canonical_code": null,
+  "disposition": "deferred",
+  "entity_type": "migration-edge",
+  "legacy_ref": "course.json#module:Pre-Learning",
+  "note": "Foundational alphabet/pronunciation/grammar/numbers scaffolding. No corresponding chapter in Hospitrainity.docx (DEC-001 sole-source). Retain as optional pre-course scaffolding only if approved in CP-06; not authored from the source of truth."
+}

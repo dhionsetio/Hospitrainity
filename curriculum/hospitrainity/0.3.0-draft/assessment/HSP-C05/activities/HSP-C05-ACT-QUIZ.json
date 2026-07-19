@@ -1,0 +1,39 @@
+{
+  "accessibility": [
+    "text_alt",
+    "keyboard_path",
+    "non_color_cue",
+    "no_timing_dependency"
+  ],
+  "cefr_activity": "reception",
+  "channel": "written_correspondence",
+  "code": "HSP-C05-ACT-QUIZ",
+  "content_version": "0.3.0-draft",
+  "entity_type": "activity",
+  "id": "68476520-58e7-5a3c-b18f-c93926024217",
+  "lesson_code": "HSP-C05-LS-10",
+  "outcome_codes": [
+    "OUT-M05-01",
+    "OUT-M05-02",
+    "OUT-M05-03"
+  ],
+  "participation": "individual",
+  "pedagogical_function": "formative_check",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "scoring_mode": "objective_exact",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 614,
+    "chapter": 5,
+    "heading_path": [
+      "Customer Care Through Writing",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "cec16a1a6506f2bec18b2c2e0a47de666e2a60db99207b21d8aed8ec9c4b0115"
+  },
+  "status": "published",
+  "timing": "asynchronous",
+  "title": "Step 7. Quiz"
+}

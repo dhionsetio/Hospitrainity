@@ -1,0 +1,37 @@
+{
+    "activity_code": "HSP-C02-ACT-CONFIDENCE",
+    "code": "HSP-C02-CC-R4",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "77bfe58b-b4ba-533a-b678-337575232fc6",
+    "language": "en",
+    "order": 4,
+    "provenance_kind": "source_verbatim",
+    "rating_scale": {
+        "max": 5,
+        "min": 1,
+        "values": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ]
+    },
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "rating",
+    "scoring_mode": "unscored_self_report",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 210,
+        "chapter": 2,
+        "heading_path": [
+            "Front Desk and Check-In",
+            "Step 8. Confidence check"
+        ],
+        "normalized_text_sha256": "95a9f009090e9417a6ff211fe1efa1c9ae477095cd02d23958a78ba15599e0a9"
+    },
+    "status": "published",
+    "stem": "I can keep a warm, polite tone from start to finish."
+}

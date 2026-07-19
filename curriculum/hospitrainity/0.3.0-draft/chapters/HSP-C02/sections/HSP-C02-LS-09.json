@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C02",
+  "code": "HSP-C02-LS-09",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "5aecafcb-7ef4-56eb-abe4-e68678dc0490",
+  "order": 9,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 156,
+    "chapter": 2,
+    "heading_path": [
+      "Front Desk and Check-In",
+      "Step 6. Role-play"
+    ],
+    "normalized_text_sha256": "1a71a4ebb9f047dc4050da169c522d5309b8aa05a69be057e0d17e4b6ca384c6"
+  },
+  "status": "published",
+  "title": "Step 6. Role-play"
+}

@@ -1,0 +1,404 @@
+{
+    "approval_requirements": [
+        "Qualified ESP/CEFR reviewer checks every descriptor transcription and alignment rationale.",
+        "Hospitality practitioner checks task authenticity and evidence conditions.",
+        "Learner diagnostic evidence is compared before any public CEFR level claim."
+    ],
+    "module_count": 7,
+    "outcome_count": 21,
+    "outcomes": [
+        {
+            "cefr_reference_ids": [],
+            "competency_ids": [
+                "COMP-RAPPORT-POLITENESS"
+            ],
+            "evidence_conditions": [
+                "Selects or explains the service principle shown in a DOCX-derived scenario."
+            ],
+            "id": "OUT-M01-01",
+            "module": 1,
+            "provisional_band": "local",
+            "statement": "Can identify warmth, attentiveness and problem-solving in a hotel customer-care situation.",
+            "status": "draft_pending_qualified_review",
+            "type": "knowledge"
+        },
+        {
+            "cefr_reference_ids": [
+                "CEFR-A2-SOCIO-01"
+            ],
+            "competency_ids": [
+                "COMP-RAPPORT-POLITENESS",
+                "COMP-PROBLEM-SOLVING"
+            ],
+            "evidence_conditions": [
+                "Produces a warm alternative that states what can be done and offers a next step."
+            ],
+            "id": "OUT-M01-02",
+            "module": 1,
+            "provisional_band": "A2",
+            "statement": "Can replace a negative service response with a simple, positive next-step response.",
+            "status": "draft_pending_qualified_review",
+            "type": "performance"
+        },
+        {
+            "cefr_reference_ids": [],
+            "competency_ids": [
+                "COMP-SELF-REGULATION"
+            ],
+            "evidence_conditions": [
+                "Completes non-graded confidence check and names one next action."
+            ],
+            "id": "OUT-M01-03",
+            "module": 1,
+            "provisional_band": "local",
+            "statement": "Can record confidence and choose a next practice action without treating self-rating as proficiency.",
+            "status": "draft_pending_qualified_review",
+            "type": "reflection"
+        },
+        {
+            "cefr_reference_ids": [
+                "CEFR-A2-INFO-01",
+                "CEFR-A2-SOCIO-02"
+            ],
+            "competency_ids": [
+                "COMP-SERVICE-INTERACTION",
+                "COMP-RAPPORT-POLITENESS"
+            ],
+            "evidence_conditions": [
+                "Completes all opening, confirmation and closing stages in order."
+            ],
+            "id": "OUT-M02-01",
+            "module": 2,
+            "provisional_band": "A2",
+            "statement": "Can greet a guest, confirm a reservation and close a routine check-in warmly.",
+            "status": "draft_pending_qualified_review",
+            "type": "performance"
+        },
+        {
+            "cefr_reference_ids": [
+                "CEFR-A2-INFO-02"
+            ],
+            "competency_ids": [
+                "COMP-INFO-ACCURACY"
+            ],
+            "evidence_conditions": [
+                "Elicits and repeats the required booking details without material error."
+            ],
+            "id": "OUT-M02-02",
+            "module": 2,
+            "provisional_band": "A2",
+            "statement": "Can request identification and confirm room and stay details accurately.",
+            "status": "draft_pending_qualified_review",
+            "type": "performance"
+        },
+        {
+            "cefr_reference_ids": [
+                "CEFR-A2-GOODS-01",
+                "CEFR-A2-INFO-02"
+            ],
+            "competency_ids": [
+                "COMP-SERVICE-INTERACTION",
+                "COMP-INFO-ACCURACY"
+            ],
+            "evidence_conditions": [
+                "Provides the DOCX-specified information and a clear offer of help."
+            ],
+            "id": "OUT-M02-03",
+            "module": 2,
+            "provisional_band": "A2",
+            "statement": "Can explain key-card, breakfast and hotel information and offer further help.",
+            "status": "draft_pending_qualified_review",
+            "type": "performance"
+        },
+        {
+            "cefr_reference_ids": [
+                "CEFR-A2-SOCIO-02"
+            ],
+            "competency_ids": [
+                "COMP-CHANNEL-COMM",
+                "COMP-RAPPORT-POLITENESS"
+            ],
+            "evidence_conditions": [
+                "Uses hotel/name/offer-of-help opening and a polite close."
+            ],
+            "id": "OUT-M03-01",
+            "module": 3,
+            "provisional_band": "A2",
+            "statement": "Can open and close a routine hotel telephone call professionally.",
+            "status": "draft_pending_qualified_review",
+            "type": "performance"
+        },
+        {
+            "cefr_reference_ids": [
+                "CEFR-B1-INFO-01",
+                "CEFR-A2-CLAR-01",
+                "CEFR-B1-CLAR-01"
+            ],
+            "competency_ids": [
+                "COMP-INFO-ACCURACY",
+                "COMP-CHANNEL-COMM"
+            ],
+            "evidence_conditions": [
+                "Requests clarification when needed and reads back all critical details."
+            ],
+            "id": "OUT-M03-02",
+            "module": 3,
+            "provisional_band": "A2-B1",
+            "statement": "Can clarify, spell and read back caller details to confirm accuracy.",
+            "status": "draft_pending_qualified_review",
+            "type": "performance"
+        },
+        {
+            "cefr_reference_ids": [
+                "CEFR-A2-MSG-01",
+                "CEFR-B1-MSG-01"
+            ],
+            "competency_ids": [
+                "COMP-CHANNEL-COMM",
+                "COMP-MEDIATION-HANDOFF"
+            ],
+            "evidence_conditions": [
+                "Records caller, contact and message; explains hold/transfer action."
+            ],
+            "id": "OUT-M03-03",
+            "module": 3,
+            "provisional_band": "A2-B1",
+            "statement": "Can take a short message and place, hold or transfer a call politely.",
+            "status": "draft_pending_qualified_review",
+            "type": "performance"
+        },
+        {
+            "cefr_reference_ids": [
+                "CEFR-A2-INFO-02"
+            ],
+            "competency_ids": [
+                "COMP-INFO-ACCURACY",
+                "COMP-CHANNEL-COMM"
+            ],
+            "evidence_conditions": [
+                "Obtains and confirms room number and request."
+            ],
+            "id": "OUT-M04-01",
+            "module": 4,
+            "provisional_band": "A2",
+            "statement": "Can identify a hotline caller’s room and service need.",
+            "status": "draft_pending_qualified_review",
+            "type": "performance"
+        },
+        {
+            "cefr_reference_ids": [
+                "CEFR-A2-GOODS-02",
+                "CEFR-A2-INFO-01"
+            ],
+            "competency_ids": [
+                "COMP-SERVICE-INTERACTION",
+                "COMP-INFO-ACCURACY"
+            ],
+            "evidence_conditions": [
+                "Order and timing match the prompt; read-back is complete."
+            ],
+            "id": "OUT-M04-02",
+            "module": 4,
+            "provisional_band": "A2",
+            "statement": "Can take and read back a routine order and communicate an estimated time.",
+            "status": "draft_pending_qualified_review",
+            "type": "performance"
+        },
+        {
+            "cefr_reference_ids": [
+                "CEFR-A2-GOAL-01",
+                "CEFR-B1-INFO-02"
+            ],
+            "competency_ids": [
+                "COMP-MEDIATION-HANDOFF",
+                "COMP-PROBLEM-SOLVING"
+            ],
+            "evidence_conditions": [
+                "Names correct handoff and a specific follow-up step."
+            ],
+            "id": "OUT-M04-03",
+            "module": 4,
+            "provisional_band": "A2-B1",
+            "statement": "Can transfer a request to the correct department and state a follow-up action.",
+            "status": "draft_pending_qualified_review",
+            "type": "performance"
+        },
+        {
+            "cefr_reference_ids": [
+                "CEFR-A2-MSG-02",
+                "CEFR-A2-SOCIO-01"
+            ],
+            "competency_ids": [
+                "COMP-CHANNEL-COMM",
+                "COMP-RAPPORT-POLITENESS"
+            ],
+            "evidence_conditions": [
+                "Includes all required sections and keeps a professional neutral register."
+            ],
+            "id": "OUT-M05-01",
+            "module": 5,
+            "provisional_band": "A2-B1",
+            "statement": "Can structure a clear service email with suitable opening, body, action and close.",
+            "status": "draft_pending_qualified_review",
+            "type": "performance"
+        },
+        {
+            "cefr_reference_ids": [
+                "CEFR-B1-INFO-01",
+                "CEFR-B1-MSG-01"
+            ],
+            "competency_ids": [
+                "COMP-INFO-ACCURACY",
+                "COMP-CHANNEL-COMM"
+            ],
+            "evidence_conditions": [
+                "Written details match the scenario and identify any next action."
+            ],
+            "id": "OUT-M05-02",
+            "module": 5,
+            "provisional_band": "B1",
+            "statement": "Can confirm booking or enquiry details accurately in writing.",
+            "status": "draft_pending_qualified_review",
+            "type": "performance"
+        },
+        {
+            "cefr_reference_ids": [
+                "CEFR-A2-CORR-01",
+                "CEFR-B1-MSG-01"
+            ],
+            "competency_ids": [
+                "COMP-PROBLEM-SOLVING",
+                "COMP-RAPPORT-POLITENESS"
+            ],
+            "evidence_conditions": [
+                "Response contains all four service-recovery components without unsupported promises."
+            ],
+            "id": "OUT-M05-03",
+            "module": 5,
+            "provisional_band": "A2-B1",
+            "statement": "Can respond to a written concern with thanks, apology, action and further-help language.",
+            "status": "draft_pending_qualified_review",
+            "type": "performance"
+        },
+        {
+            "cefr_reference_ids": [
+                "CEFR-A2-ONLINE-CONV-01"
+            ],
+            "competency_ids": [
+                "COMP-CHANNEL-COMM",
+                "COMP-RAPPORT-POLITENESS"
+            ],
+            "evidence_conditions": [
+                "Reply acknowledges the message, answers or routes it, and remains concise."
+            ],
+            "id": "OUT-M06-01",
+            "module": 6,
+            "provisional_band": "A2",
+            "statement": "Can produce a brief, warm and professional reply in live chat or social media.",
+            "status": "draft_pending_qualified_review",
+            "type": "performance"
+        },
+        {
+            "cefr_reference_ids": [
+                "CEFR-A2-ONLINE-TX-01",
+                "CEFR-A2-CLAR-01"
+            ],
+            "competency_ids": [
+                "COMP-CHANNEL-COMM",
+                "COMP-INFO-ACCURACY"
+            ],
+            "evidence_conditions": [
+                "Obtains missing information and resolves or routes the routine request."
+            ],
+            "id": "OUT-M06-02",
+            "module": 6,
+            "provisional_band": "A2",
+            "statement": "Can handle a routine online request using formulaic service language and clarification.",
+            "status": "draft_pending_qualified_review",
+            "type": "performance"
+        },
+        {
+            "cefr_reference_ids": [
+                "CEFR-B1-ONLINE-TX-01",
+                "CEFR-B1-ONLINE-TX-02",
+                "CEFR-B1-GOAL-01"
+            ],
+            "competency_ids": [
+                "COMP-PROBLEM-SOLVING",
+                "COMP-MEDIATION-HANDOFF",
+                "COMP-CHANNEL-COMM"
+            ],
+            "evidence_conditions": [
+                "Protects private details, names the private/escalation channel and commits to follow-up."
+            ],
+            "id": "OUT-M06-03",
+            "module": 6,
+            "provisional_band": "B1",
+            "statement": "Can move a sensitive public complaint to a private channel and escalate with a clear next step.",
+            "status": "draft_pending_qualified_review",
+            "type": "performance"
+        },
+        {
+            "cefr_reference_ids": [
+                "CEFR-B1-SOCIO-01"
+            ],
+            "competency_ids": [
+                "COMP-PROBLEM-SOLVING",
+                "COMP-RAPPORT-POLITENESS",
+                "COMP-SELF-REGULATION"
+            ],
+            "evidence_conditions": [
+                "Response demonstrates empathy and a specific sincere apology."
+            ],
+            "id": "OUT-M07-01",
+            "module": 7,
+            "provisional_band": "B1",
+            "statement": "Can listen, acknowledge impact and apologise without blaming or dismissing the guest.",
+            "status": "draft_pending_qualified_review",
+            "type": "performance"
+        },
+        {
+            "cefr_reference_ids": [
+                "CEFR-B1-GOODS-01",
+                "CEFR-B1-GOAL-01"
+            ],
+            "competency_ids": [
+                "COMP-PROBLEM-SOLVING",
+                "COMP-SERVICE-INTERACTION"
+            ],
+            "evidence_conditions": [
+                "Explains issue, owns next action and offers an approved solution."
+            ],
+            "id": "OUT-M07-02",
+            "module": 7,
+            "provisional_band": "B1",
+            "statement": "Can explain the problem, take ownership and offer an appropriate solution or next action.",
+            "status": "draft_pending_qualified_review",
+            "type": "performance"
+        },
+        {
+            "cefr_reference_ids": [
+                "CEFR-B1-MSG-01",
+                "CEFR-B1-INFO-02"
+            ],
+            "competency_ids": [
+                "COMP-PROBLEM-SOLVING",
+                "COMP-CHANNEL-COMM",
+                "COMP-INFO-ACCURACY"
+            ],
+            "evidence_conditions": [
+                "Checks resolution, records outcome and offers further help."
+            ],
+            "id": "OUT-M07-03",
+            "module": 7,
+            "provisional_band": "B1",
+            "statement": "Can follow up a complaint orally or in writing to confirm resolution.",
+            "status": "draft_pending_qualified_review",
+            "type": "performance"
+        }
+    ],
+    "provenance_kind": "derived_review",
+    "review_status": "provisional",
+    "status": "draft_pending_qualified_review",
+    "version": "0.2.0-draft"
+}

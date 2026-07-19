@@ -1,0 +1,201 @@
+{
+    "blocks": [
+        {
+            "id": "285bb08e-1e80-566d-9bd1-436190e3ecc0",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Here is a habit that sharpens your writing fast. Take any short reply you have written and read it out loud once. If a sentence feels stiff or cold, rewrite it the way you would actually say it to a guest at the desk, then check that it is still polite. Reading aloud is the quickest way to hear the difference between correct writing and warm writing.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 658,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Take it further"
+                ],
+                "normalized_text_sha256": "e380946cea1b56f7d2d353f0bba03c2dfdd62c5e4f566e6141e822657291729e"
+            },
+            "text": "Here is a habit that sharpens your writing fast. Take any short reply you have written and read it out loud once. If a sentence feels stiff or cold, rewrite it the way you would actually say it to a guest at the desk, then check that it is still polite. Reading aloud is the quickest way to hear the difference between correct writing and warm writing.",
+            "type": "paragraph"
+        },
+        {
+            "id": "ddcb3c14-e337-51e6-b166-38ee8d455bd9",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Written customer care and register",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 660,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Take it further"
+                ],
+                "normalized_text_sha256": "0515972c12a57a8acb176b0962df22b96d4782776e99b7ef96cca7b0b098ce96"
+            },
+            "text": "Written customer care and register",
+            "type": "heading"
+        },
+        {
+            "id": "8e3e0c0f-9804-55d1-b44a-64575af1f509",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "The most useful new idea for writing is register, which simply means how formal you choose to sound. Match your tone to your reader, and with guests that means warm and professional. Reliable standard phrases help too, so you are never staring at a blank screen. Here is a handy set:",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 661,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Take it further"
+                ],
+                "normalized_text_sha256": "40aff3acb52db92b8e1f61d002975a576da8fdbe2e05b2dc76c066c4a772c05c"
+            },
+            "text": "The most useful new idea for writing is register, which simply means how formal you choose to sound. Match your tone to your reader, and with guests that means warm and professional. Reliable standard phrases help too, so you are never staring at a blank screen. Here is a handy set:",
+            "type": "paragraph"
+        },
+        {
+            "caption": "Take it further: Purpose / Formal and safe with guests / Warm and neutral",
+            "header": [
+                "Purpose",
+                "Formal and safe with guests",
+                "Warm and neutral"
+            ],
+            "id": "d3106a38-4114-5f7f-911f-a8af81ac95d0",
+            "language": "en",
+            "order": 4,
+            "provenance_kind": "source_verbatim",
+            "rows": [
+                [
+                    "Opening",
+                    "Dear Mr. Chen,",
+                    "Hello David,"
+                ],
+                [
+                    "Saying thanks",
+                    "Thank you for your email.",
+                    "Thanks so much for getting in touch."
+                ],
+                [
+                    "Offering more help",
+                    "Please do not hesitate to contact us.",
+                    "Just let me know if you need anything else."
+                ],
+                [
+                    "Sign-off",
+                    "Yours sincerely,",
+                    "Kind regards,"
+                ]
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 662,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Take it further"
+                ],
+                "normalized_text_sha256": "88630ecdf5fc217e9efd2fa3c6ac04a2fa2d43f64e416bbf147c543b7a3ae165"
+            },
+            "type": "source_table"
+        },
+        {
+            "id": "9a8c7a6f-d807-5255-b344-3f2aa6a04193",
+            "language": "en",
+            "order": 5,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Positive language works on paper too. Instead of “We cannot do that,” try “What we can do is ...” and then offer the alternative. The message stays honest, but the door stays open.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 663,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Take it further"
+                ],
+                "normalized_text_sha256": "d860349dd0e6a2bbc5ff47dac5e63dd9d0232f089d713429d3c6a8a9d5ec418d"
+            },
+            "text": "Positive language works on paper too. Instead of “We cannot do that,” try “What we can do is ...” and then offer the alternative. The message stays honest, but the door stays open.",
+            "type": "paragraph"
+        },
+        {
+            "id": "ab168603-f702-5bae-aecd-38b2a8909d71",
+            "language": "en",
+            "order": 6,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Choose your register on purpose. You can always warm up a formal message, but a message that is too casual is hard to take back.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 664,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Take it further"
+                ],
+                "normalized_text_sha256": "e5ca06a608e5568b970aca507c4055b7bfb0d2c29e39c7ffbd15298951873d28"
+            },
+            "text": "Choose your register on purpose. You can always warm up a formal message, but a message that is too casual is hard to take back.",
+            "type": "instruction"
+        }
+    ],
+    "chapter_code": "HSP-C05",
+    "code": "HSP-C05-LS-12",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "330d4095-6a19-593b-b63d-5ba9f449a87f",
+    "language": "en",
+    "order": 12,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 657,
+        "chapter": 5,
+        "heading_path": [
+            "Customer Care Through Writing",
+            "Take it further"
+        ],
+        "normalized_text_sha256": "b19a89522b9f73e505f3b0dd1e4759f15eb4c7fc7b935b00b917e9c2c9ae6dc7"
+    },
+    "status": "published",
+    "title": "Take it further"
+}

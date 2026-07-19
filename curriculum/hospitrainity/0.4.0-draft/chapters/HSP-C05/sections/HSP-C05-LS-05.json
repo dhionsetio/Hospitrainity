@@ -1,0 +1,480 @@
+{
+    "blocks": [
+        {
+            "id": "ad90d392-7d4c-5523-9879-04a244c60b2d",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Opening warmly",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 550,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "7342a4fb7c803794e54a176e3252941ef953c046d5a63052c9e33be2c3e71b99"
+            },
+            "text": "Opening warmly",
+            "type": "heading"
+        },
+        {
+            "id": "158bd94c-3216-54bd-b9b2-d4f947e2298d",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "“Dear Mr. or Ms. [name], thank you for your email.”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 551,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "4c00438aadb4f87a03986efc02d07339a7816920b59dc6cb06667bafb7d77284"
+            },
+            "text": "“Dear Mr. or Ms. [name], thank you for your email.”",
+            "type": "list_item"
+        },
+        {
+            "id": "e02cc5b7-d74c-5791-bab0-61405e2eb0b4",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Confirming and giving information",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 552,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "ba3554286e6f0358fc55fc9674198a09eedb4ef76969e36660b180a364cbba8f"
+            },
+            "text": "Confirming and giving information",
+            "type": "heading"
+        },
+        {
+            "id": "5cf73095-ebe8-5167-8e2f-acd52d6c3bdb",
+            "language": "en",
+            "order": 4,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "“We are pleased to confirm your booking for a Deluxe Room from the fifth to the seventh.”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 553,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "74e4db9016fee80cf9f5c70a0c9aa0e07605cdc4e124151555caca5d17e2d1c0"
+            },
+            "text": "“We are pleased to confirm your booking for a Deluxe Room from the fifth to the seventh.”",
+            "type": "list_item"
+        },
+        {
+            "id": "55ffc8da-67a1-5479-a0b2-7311d622d8e0",
+            "language": "en",
+            "order": 5,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "“Please find the details below.”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 554,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "f94cab764bf9b0fd4997741fa17be8e4e83a478c7abe695383b8d77eb94e3664"
+            },
+            "text": "“Please find the details below.”",
+            "type": "list_item"
+        },
+        {
+            "id": "dd78af66-8d04-5937-8521-d3490f89eb6d",
+            "language": "en",
+            "order": 6,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Handling a request or a concern in writing",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 555,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "336465463551012e6ccdddb47bcbc9aad6dbc9eb36dbc7d50c81f113ae4e8e68"
+            },
+            "text": "Handling a request or a concern in writing",
+            "type": "heading"
+        },
+        {
+            "id": "1385cb49-e879-5ace-8760-eaf21ffab93f",
+            "language": "en",
+            "order": 7,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "“We ",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "apologise",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " for any inconvenience, and we are happy to help.”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 556,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "12f72035549260a879c46dd23b2c44822d2d33d106faa17ee6f07351a07cd3b9"
+            },
+            "text": "“We apologise for any inconvenience, and we are happy to help.”",
+            "type": "list_item"
+        },
+        {
+            "id": "30586038-1103-5fe8-9aa9-ba2ab44c394e",
+            "language": "en",
+            "order": 8,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Closing with an offer of help",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 557,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "28a7548e48ba38db9db0c8322562bf136daffd4f8967573ec9b55beae63ca4fa"
+            },
+            "text": "Closing with an offer of help",
+            "type": "heading"
+        },
+        {
+            "id": "704341b4-5b8d-50e8-ac6c-4d57dda570c0",
+            "language": "en",
+            "order": 9,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "“If you have any further questions, please do not hesitate to contact us.”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 558,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "928b37163dfae3cc56b3110daea9d38b306685be9bcda75e858bf6163a1fa0c3"
+            },
+            "text": "“If you have any further questions, please do not hesitate to contact us.”",
+            "type": "list_item"
+        },
+        {
+            "id": "b9a9a498-28c4-5452-80de-894dc1056c2d",
+            "language": "en",
+            "order": 10,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Signing off",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 559,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "6273d26e7e78e2b0ad17d8aca7678b48fc36e1bc6ed77484491ad16291dd60f9"
+            },
+            "text": "Signing off",
+            "type": "heading"
+        },
+        {
+            "id": "0c6640be-4a96-5b92-83a7-6395c35b27e0",
+            "language": "en",
+            "order": 11,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "“Kind regards, [your name], Grand Serenata Hotel”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 560,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "161b740e717546e99eea5accb276ebed5f0b618368ea3ea1370688d67df4ff9a"
+            },
+            "text": "“Kind regards, [your name], Grand Serenata Hotel”",
+            "type": "list_item"
+        },
+        {
+            "id": "82e3ca1e-f8e5-503a-9602-b9c629f2273b",
+            "language": "en",
+            "order": 12,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Making your writing sound human",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 562,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "a4ee22a2ac25b631535a606db38a0cb04a91fd20e0ff0e7e80d71603323547e6"
+            },
+            "text": "Making your writing sound human",
+            "type": "heading"
+        },
+        {
+            "id": "8c53a51d-96d3-5e3f-bb8a-50ba2db10ac5",
+            "language": "en",
+            "order": 13,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Professional does not have to mean stiff. A few habits keep your emails warm:",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 563,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "32d8d2025f1851b5b59cd98c0c847ce66e681334f52332fe6a29907aaf032ed4"
+            },
+            "text": "Professional does not have to mean stiff. A few habits keep your emails warm:",
+            "type": "paragraph"
+        },
+        {
+            "id": "cf50e691-b08a-5f74-94c0-fce10103dafc",
+            "language": "en",
+            "order": 14,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Read your reply out loud before sending. If it sounds cold to your ear, it will read cold too.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 564,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "28ca95c4eeebd97da69763b7ae703d7d52658de0a43067576f92fc6eb7ac8eb6"
+            },
+            "text": "Read your reply out loud before sending. If it sounds cold to your ear, it will read cold too.",
+            "type": "list_item"
+        },
+        {
+            "id": "b68e31b6-8d4a-5ba8-84f9-f4a6789e7c06",
+            "language": "en",
+            "order": 15,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Use the guest’s name in the greeting. It is the written version of eye contact.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 565,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "d568289ff9c8e84ac8d43f7e2a8f3f30c03d89c0a202eccea9f09749de9c2fc2"
+            },
+            "text": "Use the guest’s name in the greeting. It is the written version of eye contact.",
+            "type": "list_item"
+        },
+        {
+            "id": "ceb4d722-29f0-5446-85fb-726db73dc747",
+            "language": "en",
+            "order": 16,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Prefer short, clear sentences over long, tangled ones.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 566,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "4489478855ce0ba0972b39f306eba8b53458c18c2543c4e6638d0a23b7cbd79d"
+            },
+            "text": "Prefer short, clear sentences over long, tangled ones.",
+            "type": "list_item"
+        },
+        {
+            "id": "2c392542-7414-5efa-8faa-eebe61bb9130",
+            "language": "en",
+            "order": 17,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Always end with a door left open, such as an offer to help further.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 567,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "2d991b74b8ac842a22f7ff41cea43d1defa64bb49672ed1026f5d9d062dc3fa0"
+            },
+            "text": "Always end with a door left open, such as an offer to help further.",
+            "type": "list_item"
+        }
+    ],
+    "chapter_code": "HSP-C05",
+    "code": "HSP-C05-LS-05",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "851674b3-361c-5fa2-aa4e-472023f3b5ae",
+    "language": "en",
+    "order": 5,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 549,
+        "chapter": 5,
+        "heading_path": [
+            "Customer Care Through Writing",
+            "Step 3. Useful phrases, grouped by what they do"
+        ],
+        "normalized_text_sha256": "a243cc51c9162617601595ebed11b2491b70a601429f52ce4cbd192f271f326a"
+    },
+    "status": "published",
+    "title": "Step 3. Useful phrases, grouped by what they do"
+}

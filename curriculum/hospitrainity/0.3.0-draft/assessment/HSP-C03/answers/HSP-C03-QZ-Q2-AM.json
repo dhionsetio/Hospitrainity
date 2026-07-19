@@ -1,0 +1,24 @@
+{
+  "accepted": [
+    "B"
+  ],
+  "code": "HSP-C03-QZ-Q2-AM",
+  "content_version": "0.3.0-draft",
+  "entity_type": "answer-model",
+  "id": "0c0099d2-d9b5-5990-8c18-a32f3bacdeaa",
+  "prompt_code": "HSP-C03-QZ-Q2",
+  "replaced_by": null,
+  "replaces": null,
+  "scoring_mode": "objective_exact",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 328,
+    "chapter": 3,
+    "heading_path": [
+      "Dealing with Customers on the Phone",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "2ca36b34034d3087a74abd2b543831985f63cb1c52f63f7e813e21f9a122b445"
+  },
+  "status": "published"
+}

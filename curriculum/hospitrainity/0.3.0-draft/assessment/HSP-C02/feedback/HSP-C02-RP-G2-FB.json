@@ -1,0 +1,34 @@
+{
+  "code": "HSP-C02-RP-G2-FB",
+  "content_version": "0.3.0-draft",
+  "entity_type": "feedback-model",
+  "id": "eb2fddf2-39db-54eb-a8d9-70b963db8ff3",
+  "messages": [
+    {
+      "feedback_type": "success",
+      "text": "(a) “Let me see what I can do for you. We have a room on the fourth floor with a city view. Would that suit you?” This is the ideal answer, because it offers a solution warmly."
+    },
+    {
+      "feedback_type": "error_specific",
+      "text": "(b) “Maybe. We will see.” This is vague and sounds dismissive."
+    },
+    {
+      "feedback_type": "error_specific",
+      "text": "(c) “All rooms are the same.” This shuts the guest down instead of helping."
+    }
+  ],
+  "prompt_code": "HSP-C02-RP-G2",
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 163,
+    "chapter": 2,
+    "heading_path": [
+      "Front Desk and Check-In",
+      "Step 6. Role-play"
+    ],
+    "normalized_text_sha256": "221843c2818e55314cbba7f6b327606f4b7eae171a2d28cfdf40c4ab92da112d"
+  },
+  "status": "published"
+}

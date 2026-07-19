@@ -1,0 +1,40 @@
+{
+  "accessibility": [
+    "text_alt",
+    "keyboard_path",
+    "non_color_cue",
+    "no_timing_dependency",
+    "transcript"
+  ],
+  "cefr_activity": "interaction",
+  "channel": "spoken_ftf",
+  "code": "HSP-C07-ACT-ROLEPLAY",
+  "content_version": "0.3.0-draft",
+  "entity_type": "activity",
+  "id": "d6542b3c-b9b9-52ee-81f1-d92694a842c8",
+  "lesson_code": "HSP-C07-LS-09",
+  "outcome_codes": [
+    "OUT-M07-01",
+    "OUT-M07-02",
+    "OUT-M07-03"
+  ],
+  "participation": "staff_guest",
+  "pedagogical_function": "freer_task",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "role_play",
+  "scoring_mode": "rubric",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 877,
+    "chapter": 7,
+    "heading_path": [
+      "Dealing with Problems and Complaints",
+      "Step 6. Role-play"
+    ],
+    "normalized_text_sha256": "20de8aeea56442b8a2dedfa6964d233a0e0c775fb70c081706fdbfe4fb51eb52"
+  },
+  "status": "published",
+  "timing": "synchronous",
+  "title": "Step 6. Role-play"
+}

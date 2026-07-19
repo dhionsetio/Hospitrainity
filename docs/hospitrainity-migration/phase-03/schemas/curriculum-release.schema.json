@@ -1,0 +1,38 @@
+{
+  "$id": "https://hospitrainity.curriculum/schema/curriculum-release.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "checksums": {
+      "additionalProperties": {
+        "$ref": "https://hospitrainity.curriculum/schema/_meta.schema.json#/$defs/sha256"
+      },
+      "type": "object"
+    },
+    "content_version": {
+      "$ref": "https://hospitrainity.curriculum/schema/_meta.schema.json#/$defs/semver"
+    },
+    "namespace": {
+      "$ref": "https://hospitrainity.curriculum/schema/_meta.schema.json#/$defs/uuid"
+    },
+    "package": {
+      "const": "hospitrainity"
+    },
+    "schema_version": {
+      "$ref": "https://hospitrainity.curriculum/schema/_meta.schema.json#/$defs/semver"
+    },
+    "status": {
+      "$ref": "https://hospitrainity.curriculum/schema/_meta.schema.json#/$defs/status"
+    }
+  },
+  "required": [
+    "package",
+    "schema_version",
+    "content_version",
+    "status",
+    "namespace",
+    "checksums"
+  ],
+  "title": "Curriculum release manifest",
+  "type": "object"
+}

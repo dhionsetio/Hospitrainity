@@ -1,0 +1,50 @@
+{
+    "activity_code": "HSP-C03-ACT-QUIZ",
+    "choices": [
+        {
+            "feedback": [],
+            "id": "3c58a324-6fce-5e3d-8a46-3fe006cbb389",
+            "label": "a",
+            "text": "to end the call"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "model_reveal",
+                    "text": "B. It pauses the call while you check something."
+                }
+            ],
+            "id": "cae792d7-4343-5ad7-8a6b-5990bc977aba",
+            "label": "b",
+            "text": "to pause the call politely"
+        },
+        {
+            "feedback": [],
+            "id": "8f63bbb2-d427-56ea-a484-a79876d62087",
+            "label": "c",
+            "text": "to transfer the call"
+        }
+    ],
+    "code": "HSP-C03-QZ-Q2",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "586f1b3f-257e-5ece-814c-ff4ee06ccd04",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 333,
+        "chapter": 3,
+        "heading_path": [
+            "Dealing with Customers on the Phone",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "a78988297a4163043b357d2045d05db42b41f407b3b52230e62c873fc3812c3d"
+    },
+    "status": "published",
+    "stem": "Q2. “To put someone on hold” means ... A) to end the call B) to pause the call politely C) to transfer the call"
+}

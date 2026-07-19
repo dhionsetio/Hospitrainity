@@ -1,0 +1,288 @@
+{
+    "blocks": [
+        {
+            "id": "2ac8c210-1a45-5ce3-8bc6-7b6a49b40d6d",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Here is a useful challenge. Write three saved “quick replies” for your hotel that you could reuse every day, one for check-in time, one for the Wi-Fi, and one for breakfast hours. Keep each one short, warm, and to one friendly emoji. These are exactly the messages a chatbot could send instantly.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 801,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Take it further"
+                ],
+                "normalized_text_sha256": "9e7b4ff8c68efba5fa582fb8e3b7bef1afb1b365a6dfefda6410a5de88812a89"
+            },
+            "text": "Here is a useful challenge. Write three saved “quick replies” for your hotel that you could reuse every day, one for check-in time, one for the Wi-Fi, and one for breakfast hours. Keep each one short, warm, and to one friendly emoji. These are exactly the messages a chatbot could send instantly.",
+            "type": "paragraph"
+        },
+        {
+            "id": "16d388fa-856e-5e01-a02f-d07daeb81cd1",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Bringing the principles online",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 803,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Take it further"
+                ],
+                "normalized_text_sha256": "2aa5f16af6d7c3d0256af0d04e66ba16e0fc7bbddfc2b9f159e348c2a3fe27c4"
+            },
+            "text": "Bringing the principles online",
+            "type": "heading"
+        },
+        {
+            "id": "8355aace-c889-582e-814f-bd121a323620",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "The timeless principles of customer care carry straight across to a chat window, even though live chat and social media are newer than they are.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 804,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Take it further"
+                ],
+                "normalized_text_sha256": "d6bb4fe3b46ccf305b6c9b9bbe8aac0fd10dbcd56e58fe6a9dfe6313f9045f29"
+            },
+            "text": "The timeless principles of customer care carry straight across to a chat window, even though live chat and social media are newer than they are.",
+            "type": "paragraph"
+        },
+        {
+            "id": "4ee595b6-eff1-52f3-a69c-92a1f2297d4c",
+            "language": "en",
+            "order": 4,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Every message is a moment of truth",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": ", and online that moment is often public or easy to screenshot, so it counts double.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 805,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Take it further"
+                ],
+                "normalized_text_sha256": "872ae83f7cfbca3e2039a85b710f673a1d4f6e861ed4f3328395170c47c5fb47"
+            },
+            "text": "Every message is a moment of truth, and online that moment is often public or easy to screenshot, so it counts double.",
+            "type": "list_item"
+        },
+        {
+            "id": "194ca230-7b11-59ae-ac1b-41000ffc87bc",
+            "language": "en",
+            "order": 5,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Positive language matters even more here",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": ", because there is no warm tone of voice to soften a plain “no.” Your words have to do all of it.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 806,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Take it further"
+                ],
+                "normalized_text_sha256": "19fe5d7dcc8d91f84b57fd19a3c0a3c028865f9dda521fc743acac30eba1f915"
+            },
+            "text": "Positive language matters even more here, because there is no warm tone of voice to soften a plain “no.” Your words have to do all of it.",
+            "type": "list_item"
+        },
+        {
+            "id": "9f828287-f7a2-5585-a642-f58ad4c06e2b",
+            "language": "en",
+            "order": 6,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Internal customers still count.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " The front desk and housekeeping are exactly who you escalate a chat to, so keep those handovers warm too.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 807,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Take it further"
+                ],
+                "normalized_text_sha256": "5a6fca04711269d7913a45d56c40a836d348f4e0ca5dc1ff80559fab68e3f165"
+            },
+            "text": "Internal customers still count. The front desk and housekeeping are exactly who you escalate a chat to, so keep those handovers warm too.",
+            "type": "list_item"
+        },
+        {
+            "id": "5570e52f-a893-5654-a323-0933fd6bc55e",
+            "language": "en",
+            "order": 7,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Here is positive language, shaped for a quick chat:",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 808,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Take it further"
+                ],
+                "normalized_text_sha256": "1d34fd15b60597a45a4ec7e17ad62985531a30e2e6ec31c1a111010d447873bb"
+            },
+            "text": "Here is positive language, shaped for a quick chat:",
+            "type": "paragraph"
+        },
+        {
+            "caption": "Take it further: Instead of typing this / Try typing this",
+            "header": [
+                "Instead of typing this",
+                "Try typing this"
+            ],
+            "id": "1a373e0b-c8af-5288-8dd8-a5b7867b07a9",
+            "language": "en",
+            "order": 8,
+            "provenance_kind": "source_verbatim",
+            "rows": [
+                [
+                    "We do not do that.",
+                    "What we can do is this, and I would be glad to set it up for you. 😊"
+                ],
+                [
+                    "You have to call us.",
+                    "The quickest way is a short call, and here is the number. Happy to help either way."
+                ],
+                [
+                    "Wrong page, this is a hotel.",
+                    "Thanks for reaching out. You have reached Grand Serenata, how can I help?"
+                ]
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 809,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Take it further"
+                ],
+                "normalized_text_sha256": "deba3ed72fb7476b81e6b25ef7524ac78d952edfff0b3d2243ca8ceef514c8ff"
+            },
+            "type": "source_table"
+        },
+        {
+            "id": "bcdf50de-5808-5496-899f-6ac867aa7d15",
+            "language": "en",
+            "order": 9,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "The channel is new, but the heart of it is old. Be warm, be positive, and treat every reply as a small moment of truth.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 810,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Take it further"
+                ],
+                "normalized_text_sha256": "8d41bb0d696ce6d4154f223bf9cc436adced6e38bb78a16dd2b3bdb0671f3ada"
+            },
+            "text": "The channel is new, but the heart of it is old. Be warm, be positive, and treat every reply as a small moment of truth.",
+            "type": "paragraph"
+        }
+    ],
+    "chapter_code": "HSP-C06",
+    "code": "HSP-C06-LS-12",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "3832ae73-fc4c-516a-b8e4-96e33f4c97bf",
+    "language": "en",
+    "order": 12,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 800,
+        "chapter": 6,
+        "heading_path": [
+            "Online and Social Media Customer Service",
+            "Take it further"
+        ],
+        "normalized_text_sha256": "b19a89522b9f73e505f3b0dd1e4759f15eb4c7fc7b935b00b917e9c2c9ae6dc7"
+    },
+    "status": "published",
+    "title": "Take it further"
+}

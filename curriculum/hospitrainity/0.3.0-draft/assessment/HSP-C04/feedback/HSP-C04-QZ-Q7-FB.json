@@ -1,0 +1,26 @@
+{
+  "code": "HSP-C04-QZ-Q7-FB",
+  "content_version": "0.3.0-draft",
+  "entity_type": "feedback-model",
+  "id": "b6f3eb1d-b4ed-512d-82c8-74e04b923adc",
+  "messages": [
+    {
+      "feedback_type": "model_reveal",
+      "text": "B. Single digits are the clearest and hardest to mishear."
+    }
+  ],
+  "prompt_code": "HSP-C04-QZ-Q7",
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 487,
+    "chapter": 4,
+    "heading_path": [
+      "The Guest-Services Hotline",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "683c85208cea5b42427cf34169828128d060cccbba989114956b6881b8cba196"
+  },
+  "status": "published"
+}

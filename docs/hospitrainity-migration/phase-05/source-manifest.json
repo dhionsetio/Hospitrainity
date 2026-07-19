@@ -1,0 +1,42 @@
+{
+  "checkpoint": "CP-05",
+  "phase": "Assessment and feedback specification",
+  "date": "2026-07-15",
+  "source_of_truth": {
+    "artifact": "Hospitrainity.docx",
+    "sha256": "7f8a2c62db6884498f7a1c2de56e79e39609262944a685fe7eb97f702444cbb4"
+  },
+  "inputs": {
+    "source_zip": {
+      "name": "Hospitrainity-Source-Phase4.zip",
+      "sha256": "642ceebd7f674d3f5cc42674735c46cddf906d3e263ba3fcc2fdbaaab34c47d6"
+    },
+    "standalone_html": {
+      "name": "Hospitrainity-Standalone.html (CP-04)",
+      "sha256": "70888f11870336539c0bab67d17f3efcfc46bf649ae9659e2cb891bc3995a704"
+    }
+  },
+  "outputs": {
+    "standalone_html": {
+      "name": "Hospitrainity-Standalone.html (CP-05)",
+      "sha256": "6f5de8dc37468e9411229d9646b7d82e43a46ca2a1b607409a0d422babd36b06"
+    },
+    "note": "Hospitrainity-Source-Phase5.zip checksum is reported in the checkpoint delivery message; a zip cannot embed its own hash."
+  },
+  "entities_added": {
+    "activity": 24,
+    "prompt-item": 102,
+    "answer-model": 102,
+    "feedback-model": 102,
+    "rubric": 6,
+    "total": 336
+  },
+  "registry": { "before": 151, "after": 487, "registry_version": "1.2.0" },
+  "provenance": "provenance/assessment-digest.json (336 normalized SHA-256 entries, generated_by CP-05)",
+  "validation": "node docs/hospitrainity-migration/phase-03/tools/hsp-validate.mjs all --strict => 8/8",
+  "invariants": [
+    "CP-02 framework/*.json byte-identical",
+    "CP-04 provenance/docx-digest.json unchanged",
+    "learner-facing standalone payload unchanged (provenance metadata only)"
+  ]
+}

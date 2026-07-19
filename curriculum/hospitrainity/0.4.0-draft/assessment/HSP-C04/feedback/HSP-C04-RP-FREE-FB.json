@@ -1,0 +1,27 @@
+{
+    "code": "HSP-C04-RP-FREE-FB",
+    "content_version": "0.4.0-draft",
+    "entity_type": "feedback-model",
+    "id": "30a112ed-adf1-5377-8804-f43a013f3c47",
+    "messages": [
+        {
+            "feedback_type": "model_reveal",
+            "text": "“Guest services, Grand Serenata Hotel. How may I help you? ... Certainly, may I have your room number? ... May I take your order? ... Let me read that back to you: two breakfast sets and one orange juice, to room 210. That will be about twenty-five minutes. Thank you for calling, and enjoy your morning.”"
+        }
+    ],
+    "prompt_code": "HSP-C04-RP-FREE",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 474,
+        "chapter": 4,
+        "heading_path": [
+            "The Guest-Services Hotline",
+            "Step 6. Role-play"
+        ],
+        "normalized_text_sha256": "492095c61e868053c09c1218104db2cf01222708df23363b564a0130e95f97c1"
+    },
+    "status": "published"
+}

@@ -1,0 +1,34 @@
+{
+  "code": "HSP-C04-RP-G2-FB",
+  "content_version": "0.3.0-draft",
+  "entity_type": "feedback-model",
+  "id": "a2ed478b-35fe-5c70-9c36-b5ed9b8a5120",
+  "messages": [
+    {
+      "feedback_type": "error_specific",
+      "text": "(a) “Everyone is in a hurry.” Dismissive and cold."
+    },
+    {
+      "feedback_type": "success",
+      "text": "(b) “Of course. That is two coffees and one sandwich to your room. May I have your room number? It will be about fifteen minutes.” This is the ideal answer, fast, accurate, and warm."
+    },
+    {
+      "feedback_type": "error_specific",
+      "text": "(c) “We will see.” Vague and discouraging."
+    }
+  ],
+  "prompt_code": "HSP-C04-RP-G2",
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 451,
+    "chapter": 4,
+    "heading_path": [
+      "The Guest-Services Hotline",
+      "Step 6. Role-play"
+    ],
+    "normalized_text_sha256": "5e058572544ab0749af91207d967a8642ac2a93eb6a90927776d469f05ffde0e"
+  },
+  "status": "published"
+}

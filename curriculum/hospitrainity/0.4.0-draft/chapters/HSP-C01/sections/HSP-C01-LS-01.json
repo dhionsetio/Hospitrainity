@@ -1,0 +1,130 @@
+{
+    "blocks": [
+        {
+            "id": "06c479ad-f6e1-5e2c-afe3-e508b5a4e90e",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Every chapter opens with two or three easy, non-technical questions. There are no wrong answers. Their purpose is simply to help you settle in before the practice begins. Try today’s:",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 30,
+                "chapter": 1,
+                "heading_path": [
+                    "Welcome and Introduction to Customer Care",
+                    "Warm-Up"
+                ],
+                "normalized_text_sha256": "382461000f232af0e24e1cff679512e9007f604decaef2a5f560edd364225cf8"
+            },
+            "text": "Every chapter opens with two or three easy, non-technical questions. There are no wrong answers. Their purpose is simply to help you settle in before the practice begins. Try today’s:",
+            "type": "paragraph"
+        },
+        {
+            "id": "4365c354-e827-54df-b7ce-ee0a62a7fc6f",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "In one word, how are you feeling about learning English right now?",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 31,
+                "chapter": 1,
+                "heading_path": [
+                    "Welcome and Introduction to Customer Care",
+                    "Warm-Up"
+                ],
+                "normalized_text_sha256": "13d96c3821ff05f1166079bff1fb37e40cf1ddd000766e695418558694d8d61a"
+            },
+            "text": "In one word, how are you feeling about learning English right now?",
+            "type": "list_item"
+        },
+        {
+            "id": "bc220561-d63b-53c3-9299-6daeeb30dad8",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Have you ever received wonderful service somewhere? What made it feel so good?",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 32,
+                "chapter": 1,
+                "heading_path": [
+                    "Welcome and Introduction to Customer Care",
+                    "Warm-Up"
+                ],
+                "normalized_text_sha256": "d077bfbb798dc702493d935cc0594d853dea22d8e7dc92f63ecdaa8ccc094149"
+            },
+            "text": "Have you ever received wonderful service somewhere? What made it feel so good?",
+            "type": "list_item"
+        },
+        {
+            "id": "eb1cba56-6dfb-563c-9d52-a150479c3d91",
+            "language": "en",
+            "order": 4,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "In your own language, what does “good hospitality” mean to you?",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 33,
+                "chapter": 1,
+                "heading_path": [
+                    "Welcome and Introduction to Customer Care",
+                    "Warm-Up"
+                ],
+                "normalized_text_sha256": "c53197798637e0539bd0afea19f3867a48b089d11dc3dbdffd854f848719b494"
+            },
+            "text": "In your own language, what does “good hospitality” mean to you?",
+            "type": "list_item"
+        }
+    ],
+    "chapter_code": "HSP-C01",
+    "code": "HSP-C01-LS-01",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "d13f129f-38bc-574a-8672-d309f5771944",
+    "language": "en",
+    "order": 1,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 29,
+        "chapter": 1,
+        "heading_path": [
+            "Welcome and Introduction to Customer Care",
+            "Warm-Up"
+        ],
+        "normalized_text_sha256": "0d96d7a94cccd70ae6e338c3b3a29d88a9ed37ce481071007cb60d1746da4a65"
+    },
+    "status": "published",
+    "title": "Warm-Up"
+}

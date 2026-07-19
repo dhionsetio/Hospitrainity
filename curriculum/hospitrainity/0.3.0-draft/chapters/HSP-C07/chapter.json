@@ -1,0 +1,25 @@
+{
+  "code": "HSP-C07",
+  "content_version": "0.3.0-draft",
+  "entity_type": "chapter",
+  "id": "41f8a03b-77c2-5f7c-8a1f-b65ed2be1731",
+  "module": 7,
+  "outcome_codes": [
+    "OUT-M07-01",
+    "OUT-M07-02",
+    "OUT-M07-03"
+  ],
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 799,
+    "chapter": 7,
+    "heading_path": [
+      "Dealing with Problems and Complaints"
+    ],
+    "normalized_text_sha256": "ebf90b66c09369df398f1b38fc3c527371e2da78bf125cd36734a762612b5c22"
+  },
+  "status": "published",
+  "title": "Dealing with Problems and Complaints"
+}

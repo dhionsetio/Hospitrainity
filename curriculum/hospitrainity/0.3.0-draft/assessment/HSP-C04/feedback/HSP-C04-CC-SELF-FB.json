@@ -1,0 +1,26 @@
+{
+  "code": "HSP-C04-CC-SELF-FB",
+  "content_version": "0.3.0-draft",
+  "entity_type": "feedback-model",
+  "id": "8a669a5e-d687-5b0e-bd1d-3767b5c681f2",
+  "messages": [
+    {
+      "feedback_type": "next_step",
+      "text": "Rate yourself honestly, from 1 (not confident yet) to 5 (very confident). This is only for you, and it is a good way to see your progress."
+    }
+  ],
+  "prompt_code": "HSP-C04-CC-SELF",
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 492,
+    "chapter": 4,
+    "heading_path": [
+      "The Guest-Services Hotline",
+      "Step 8. Confidence check"
+    ],
+    "normalized_text_sha256": "cd3074671db07959557a6493c99cdfca8103db85c6eb67d0ff485f6e9e15afec"
+  },
+  "status": "published"
+}

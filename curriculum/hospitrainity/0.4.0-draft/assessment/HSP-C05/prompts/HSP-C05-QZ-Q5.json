@@ -1,0 +1,50 @@
+{
+    "activity_code": "HSP-C05-ACT-QUIZ",
+    "choices": [
+        {
+            "feedback": [],
+            "id": "5c934d76-56cb-544b-9207-ddef0c1cc7a7",
+            "label": "a",
+            "text": "sign-off, then body, then greeting"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "model_reveal",
+                    "text": "B. Greeting first, sign-off last."
+                }
+            ],
+            "id": "07eae80c-71ed-5365-bddf-611282c26076",
+            "label": "b",
+            "text": "greeting, then opening, then body, then sign-off"
+        },
+        {
+            "feedback": [],
+            "id": "92fe5fbb-c74e-51cd-9bce-2b7af275a75f",
+            "label": "c",
+            "text": "body, then greeting, then sign-off"
+        }
+    ],
+    "code": "HSP-C05-QZ-Q5",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "efdd5422-7002-514a-9e6a-1eb7a207e5ba",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 640,
+        "chapter": 5,
+        "heading_path": [
+            "Customer Care Through Writing",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "4c1879645ce5ae2f875f7252dfaed2258904bb859fd7856c9414e2c24c7f8ca5"
+    },
+    "status": "published",
+    "stem": "Q5. What is the correct order of an email? A) sign-off, then body, then greeting B) greeting, then opening, then body, then sign-off C) body, then greeting, then sign-off"
+}

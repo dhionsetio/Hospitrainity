@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C07",
+  "code": "HSP-C07-LS-07",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "2104d5b2-ca91-563c-b1c4-c6399b9e02c1",
+  "order": 7,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 854,
+    "chapter": 7,
+    "heading_path": [
+      "Dealing with Problems and Complaints",
+      "Common mistakes to avoid"
+    ],
+    "normalized_text_sha256": "5d041e0e9de7c2e09e71cb0d7eb0dc832aed6d40545ec9ba7768be409cf9a3f0"
+  },
+  "status": "published",
+  "title": "Common mistakes to avoid"
+}

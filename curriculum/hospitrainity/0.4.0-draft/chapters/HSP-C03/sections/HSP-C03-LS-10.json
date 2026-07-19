@@ -1,0 +1,764 @@
+{
+    "blocks": [
+        {
+            "id": "0faef8ba-0044-535c-8d6b-03f19f481125",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Q1.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " What is the best way to answer a hotel phone? A) “Yeah?” B) “Good morning, the Grand Serenata Hotel, Maya speaking. How may I help you?” C) “Who is this?”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 330,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "a44e4ce2a05507fbb1c55c9c852003a56a8953b08a67cc276aa5a8c764e3a721"
+            },
+            "text": "Q1. What is the best way to answer a hotel phone? A) “Yeah?” B) “Good morning, the Grand Serenata Hotel, Maya speaking. How may I help you?” C) “Who is this?”",
+            "type": "paragraph"
+        },
+        {
+            "id": "82a0c61e-1f91-5a4a-8b23-5d768b101d1f",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 331,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "b2a3aa602762a782e47a4f8e93bb5ae1b8819d1b92b7e6ceb3ef46a3c7077eb0"
+            },
+            "text": "Answer",
+            "type": "instruction"
+        },
+        {
+            "id": "1898cc2d-d69e-5e0e-8f56-df13c1c4b119",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "B.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Hotel name, your name, and an offer to help.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 332,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "fb4698bcfdfed818a133a855cb2599993184882146806fecf2988bd49612e184"
+            },
+            "text": "B. Hotel name, your name, and an offer to help.",
+            "type": "paragraph"
+        },
+        {
+            "id": "02690553-54d1-5a2e-ba5b-db1fc733885f",
+            "language": "en",
+            "order": 4,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Q2.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " “To put someone on hold” means ... A) to end the call B) to pause the call politely C) to transfer the call",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 333,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "a78988297a4163043b357d2045d05db42b41f407b3b52230e62c873fc3812c3d"
+            },
+            "text": "Q2. “To put someone on hold” means ... A) to end the call B) to pause the call politely C) to transfer the call",
+            "type": "paragraph"
+        },
+        {
+            "id": "79a903e3-cb6e-57a9-8693-b57d2aba480d",
+            "language": "en",
+            "order": 5,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 334,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "b2a3aa602762a782e47a4f8e93bb5ae1b8819d1b92b7e6ceb3ef46a3c7077eb0"
+            },
+            "text": "Answer",
+            "type": "instruction"
+        },
+        {
+            "id": "52d2f4d3-1421-504c-b816-d5fdecf683a2",
+            "language": "en",
+            "order": 6,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "B.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " It pauses the call while you check something.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 335,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "2ca36b34034d3087a74abd2b543831985f63cb1c52f63f7e813e21f9a122b445"
+            },
+            "text": "B. It pauses the call while you check something.",
+            "type": "paragraph"
+        },
+        {
+            "id": "86d9bf0e-5fa2-5cd7-ba0a-a0866fb90913",
+            "language": "en",
+            "order": 7,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Q3.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Why should you read a guest’s details back? A) to fill time B) to catch mistakes before they become booking errors C) it is polite but pointless",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 336,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "51566dd367516e2218954cb8a99cb65510ea0e402b5999692fe154b9c63d69c7"
+            },
+            "text": "Q3. Why should you read a guest’s details back? A) to fill time B) to catch mistakes before they become booking errors C) it is polite but pointless",
+            "type": "paragraph"
+        },
+        {
+            "id": "d157e2f6-dfc7-5dc9-903b-5bf2b63c2cd5",
+            "language": "en",
+            "order": 8,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 337,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "b2a3aa602762a782e47a4f8e93bb5ae1b8819d1b92b7e6ceb3ef46a3c7077eb0"
+            },
+            "text": "Answer",
+            "type": "instruction"
+        },
+        {
+            "id": "244d80b9-7cbc-5b83-bac4-d3260216443d",
+            "language": "en",
+            "order": 9,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "B.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Reading back is your safety net against errors.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 338,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "0beee2f8c7e3f172def593e2c4e5c53d683a4e9cdafb7e3c2139bfd478315ce4"
+            },
+            "text": "B. Reading back is your safety net against errors.",
+            "type": "paragraph"
+        },
+        {
+            "id": "6a90c563-bfff-5b66-862c-0ff10d0f6f4a",
+            "language": "en",
+            "order": 10,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Q4.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " What is a warm way to close? A) “Bye.” B) “Your booking reference is 452. Thank you for calling, and we look forward to welcoming you.” C) “That is all.”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 339,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "35dea76a461d5af2f292e3c0d85b9974706548454bc1dbd2cbbf8f568ccd8e16"
+            },
+            "text": "Q4. What is a warm way to close? A) “Bye.” B) “Your booking reference is 452. Thank you for calling, and we look forward to welcoming you.” C) “That is all.”",
+            "type": "paragraph"
+        },
+        {
+            "id": "85785e1c-2aff-53d4-a73d-d2b7e40b49cd",
+            "language": "en",
+            "order": 11,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 340,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "b2a3aa602762a782e47a4f8e93bb5ae1b8819d1b92b7e6ceb3ef46a3c7077eb0"
+            },
+            "text": "Answer",
+            "type": "instruction"
+        },
+        {
+            "id": "55035740-8f78-5e6a-bbe7-112b560ee369",
+            "language": "en",
+            "order": 12,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "B.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " It gives the reference and ends on a welcoming note.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 341,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "04152051a3ce8557a6d3eb4f55664a40b287fc8247cb90a28f1b71c1e51f6c35"
+            },
+            "text": "B. It gives the reference and ends on a welcoming note.",
+            "type": "paragraph"
+        },
+        {
+            "id": "da5d0f5b-b465-59d6-bd8c-23e64ee9af36",
+            "language": "en",
+            "order": 13,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Q5.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " The line is unclear. What should you do? A) hang up B) politely ask them to repeat, or repeat slowly yourself C) shout",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 342,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "aad9c04564e17f80b4eac5ca31d1592b1a1a56c55d8b4697ba027c23f5249140"
+            },
+            "text": "Q5. The line is unclear. What should you do? A) hang up B) politely ask them to repeat, or repeat slowly yourself C) shout",
+            "type": "paragraph"
+        },
+        {
+            "id": "2aa89e19-cdc5-5bfc-80c0-567d9737e574",
+            "language": "en",
+            "order": 14,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 343,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "b2a3aa602762a782e47a4f8e93bb5ae1b8819d1b92b7e6ceb3ef46a3c7077eb0"
+            },
+            "text": "Answer",
+            "type": "instruction"
+        },
+        {
+            "id": "acb6e54c-bbec-5a0e-8f9c-10c43c788677",
+            "language": "en",
+            "order": 15,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "B.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Stay patient and help them hear you.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 344,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "054f2818a41ee7391844ebf6a88413d933d47aa10bedfb1ab709a42c366e9367"
+            },
+            "text": "B. Stay patient and help them hear you.",
+            "type": "paragraph"
+        },
+        {
+            "id": "cb6a1fe7-5a14-5e9a-8769-739e880532b4",
+            "language": "en",
+            "order": 16,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Q6.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " “To read back” the details means ... A) to confirm them by repeating them B) to read a book C) to cancel the booking",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 345,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "10fe50b1929068a29287c378905be2b5df818f69bbad2747c96d91c51d179c35"
+            },
+            "text": "Q6. “To read back” the details means ... A) to confirm them by repeating them B) to read a book C) to cancel the booking",
+            "type": "paragraph"
+        },
+        {
+            "id": "46b39bd0-a413-5aef-8908-6119be9f5d6d",
+            "language": "en",
+            "order": 17,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 346,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "b2a3aa602762a782e47a4f8e93bb5ae1b8819d1b92b7e6ceb3ef46a3c7077eb0"
+            },
+            "text": "Answer",
+            "type": "instruction"
+        },
+        {
+            "id": "6ed2acf7-2d05-5d43-9ff6-45441cdfa499",
+            "language": "en",
+            "order": 18,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "A.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " You repeat the details out loud to confirm them.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 347,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "3d9604bf45a394f7529ceb466264eba8a14b44e9a04477619923c05d43ea438c"
+            },
+            "text": "A. You repeat the details out loud to confirm them.",
+            "type": "paragraph"
+        },
+        {
+            "id": "e6306fd9-23f8-5b85-b84a-6d94e53e42a3",
+            "language": "en",
+            "order": 19,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Q7.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " How should you say the reference 452 on the phone? A) “four hundred fifty-two” quickly B) “four, five, two” as single digits C) spell it as letters",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 348,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "824c9a564e26f0a5a3428f24b69956b4d6daf96d7c5c4f68a338eebebcfc009a"
+            },
+            "text": "Q7. How should you say the reference 452 on the phone? A) “four hundred fifty-two” quickly B) “four, five, two” as single digits C) spell it as letters",
+            "type": "paragraph"
+        },
+        {
+            "id": "767814a2-4e60-54a8-a3b6-746e55ad62ae",
+            "language": "en",
+            "order": 20,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 349,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "b2a3aa602762a782e47a4f8e93bb5ae1b8819d1b92b7e6ceb3ef46a3c7077eb0"
+            },
+            "text": "Answer",
+            "type": "instruction"
+        },
+        {
+            "id": "9cbd7d3c-4b7c-5c4b-a15c-130bedbe7f1e",
+            "language": "en",
+            "order": 21,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "B.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Single digits are the clearest on a call.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 350,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "a09074ecd2deeb8d8345251b7a484035b3f7e9e196cfb203b8a5f592ba5c00c0"
+            },
+            "text": "B. Single digits are the clearest on a call.",
+            "type": "paragraph"
+        },
+        {
+            "id": "bb107165-a97c-59ab-9604-9860953a2c67",
+            "language": "en",
+            "order": 22,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Q8.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " A caller needs the restaurant, not reservations. What is best? A) say “wrong number” B) transfer them warmly and tell them what you are doing C) hang up",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 351,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "b77c0af33351665e7e1b9c2f95a90b54b2801dccc3f2a77ae3feb90d7681260c"
+            },
+            "text": "Q8. A caller needs the restaurant, not reservations. What is best? A) say “wrong number” B) transfer them warmly and tell them what you are doing C) hang up",
+            "type": "paragraph"
+        },
+        {
+            "id": "583f9f27-fba2-5966-a775-06ab9125b79c",
+            "language": "en",
+            "order": 23,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 352,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "b2a3aa602762a782e47a4f8e93bb5ae1b8819d1b92b7e6ceb3ef46a3c7077eb0"
+            },
+            "text": "Answer",
+            "type": "instruction"
+        },
+        {
+            "id": "4e6646af-dbdd-59d4-984e-175427ca4859",
+            "language": "en",
+            "order": 24,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "B.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Explain, then transfer, so the caller always feels looked after.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 353,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "84237b1197211ac29ef7cb7e8602510ab1c9eedf9a279e8e44ce8c2085b110c2"
+            },
+            "text": "B. Explain, then transfer, so the caller always feels looked after.",
+            "type": "paragraph"
+        },
+        {
+            "activity_code": "HSP-C03-ACT-QUIZ",
+            "id": "1e925880-29da-5564-8824-257718e700b1",
+            "language": "en",
+            "order": 25,
+            "provenance_kind": "derived_navigation",
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 329,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "5afd42f19a54588d7aae41ef09f0b06aee1aa8c3e9a32e8e5aac6991901c2156"
+            },
+            "type": "activity_embed"
+        }
+    ],
+    "chapter_code": "HSP-C03",
+    "code": "HSP-C03-LS-10",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "8d6b103f-1d48-50d9-afd1-958f17239964",
+    "language": "en",
+    "order": 10,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 329,
+        "chapter": 3,
+        "heading_path": [
+            "Dealing with Customers on the Phone",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "5afd42f19a54588d7aae41ef09f0b06aee1aa8c3e9a32e8e5aac6991901c2156"
+    },
+    "status": "published",
+    "title": "Step 7. Quiz"
+}

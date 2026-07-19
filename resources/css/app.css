@@ -1,0 +1,80 @@
+@import "@fortawesome/fontawesome-free/css/all.min.css";
+@import "tailwindcss";
+@source "../views";
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: ui-sans-serif, system-ui, sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji";
+}
+
+[x-cloak] {
+    display: none !important;
+}
+
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+    outline: 3px solid #4f46e5;
+    outline-offset: 3px;
+}
+
+.side-nav-item.active {
+    background-color: #4f46e5;
+    color: #fff;
+    font-weight: 700;
+    transform: scale(1.1);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.clickable-word {
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.clickable-word:hover {
+    color: #4f46e5;
+}
+
+.hsp-progress {
+    appearance: none;
+    width: 100%;
+    height: 0.625rem;
+    overflow: hidden;
+    border: 0;
+    border-radius: 9999px;
+    background: #e5e7eb;
+}
+
+.hsp-progress::-webkit-progress-bar {
+    border-radius: 9999px;
+    background: #e5e7eb;
+}
+
+.hsp-progress::-webkit-progress-value {
+    border-radius: 9999px;
+    background: #22c55e;
+}
+
+.hsp-progress::-moz-progress-bar {
+    border-radius: 9999px;
+    background: #22c55e;
+}
+
+.hsp-progress-blue::-webkit-progress-value {
+    background: #2563eb;
+}
+
+.hsp-progress-blue::-moz-progress-bar {
+    background: #2563eb;
+}

@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C05-ACT-ROLEPLAY",
+  "code": "HSP-C05-RP-G2",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "8afa4be8-1e56-5636-b339-e35daf9bbdc5",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 599,
+    "chapter": 5,
+    "heading_path": [
+      "Customer Care Through Writing",
+      "Step 6. Role-play (drafting)"
+    ],
+    "normalized_text_sha256": "a9ca68fd1d43384f0269e1309bcd43e0b5134fe6643cff492126c816a5a07a79"
+  },
+  "status": "published",
+  "stem": "A guest writes an upset email about being charged twice."
+}

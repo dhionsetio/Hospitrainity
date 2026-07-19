@@ -1,0 +1,26 @@
+{
+  "code": "HSP-C02-CC-SELF-FB",
+  "content_version": "0.3.0-draft",
+  "entity_type": "feedback-model",
+  "id": "0b7af84b-086b-5785-8a82-4d12d468c161",
+  "messages": [
+    {
+      "feedback_type": "next_step",
+      "text": "Rate yourself honestly, from 1 (not confident yet) to 5 (very confident). This is for you, and it is a good way to watch your progress across the book."
+    }
+  ],
+  "prompt_code": "HSP-C02-CC-SELF",
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 204,
+    "chapter": 2,
+    "heading_path": [
+      "Front Desk and Check-In",
+      "Step 8. Confidence check"
+    ],
+    "normalized_text_sha256": "72b19e5fb44aebac76700b9d13714de9572bd100d2e7554e4bebae0d535dff4f"
+  },
+  "status": "published"
+}

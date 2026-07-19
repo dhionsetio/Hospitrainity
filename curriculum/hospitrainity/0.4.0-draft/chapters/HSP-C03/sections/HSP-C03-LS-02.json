@@ -1,0 +1,78 @@
+{
+    "blocks": [
+        {
+            "id": "c2df4fbd-37f1-5980-b932-fb0df16e72b7",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "A phone call is often a guest’s first contact with your hotel, sometimes even before they have decided to book. Because they cannot see you, everything they judge comes through in your tone, your clarity, and how carefully you confirm what they said. One skill sits underneath all of this, and it is active listening, which simply means truly paying attention, then repeating key details back so the guest knows they were heard.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 238,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Why this matters"
+                ],
+                "normalized_text_sha256": "b6459d151897f8e8bf9e56ef8cb4e2266aca8dcde8fc1a9ef26b265bef718cfd"
+            },
+            "text": "A phone call is often a guest’s first contact with your hotel, sometimes even before they have decided to book. Because they cannot see you, everything they judge comes through in your tone, your clarity, and how carefully you confirm what they said. One skill sits underneath all of this, and it is active listening, which simply means truly paying attention, then repeating key details back so the guest knows they were heard.",
+            "type": "paragraph"
+        },
+        {
+            "id": "e4c2c20a-c2c6-5684-aa50-d9e52909e82e",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Good to know: it helps to listen twice as much as you speak. On the phone, reading details back to the caller is one of the easiest ways to prevent mistakes and build trust. See the further reading at the end of this chapter.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 239,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Why this matters"
+                ],
+                "normalized_text_sha256": "b7aceff5a1327b7d8fbb75c8360a52f57cf5aae066ace64b95da9751ef518bc8"
+            },
+            "text": "Good to know: it helps to listen twice as much as you speak. On the phone, reading details back to the caller is one of the easiest ways to prevent mistakes and build trust. See the further reading at the end of this chapter.",
+            "type": "paragraph"
+        }
+    ],
+    "chapter_code": "HSP-C03",
+    "code": "HSP-C03-LS-02",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "f9ac6dd0-5e85-5c08-8503-566cb517748f",
+    "language": "en",
+    "order": 2,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 237,
+        "chapter": 3,
+        "heading_path": [
+            "Dealing with Customers on the Phone",
+            "Why this matters"
+        ],
+        "normalized_text_sha256": "8893dff34c02db6a4e9bb13792e41320671581fe96a8c65721b2267627a48aec"
+    },
+    "status": "published",
+    "title": "Why this matters"
+}

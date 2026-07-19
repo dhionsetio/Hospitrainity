@@ -1,0 +1,37 @@
+{
+    "activity_code": "HSP-C04-ACT-CONFIDENCE",
+    "code": "HSP-C04-CC-R2",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "3bfd138d-d7ee-5323-b248-fabac2aec886",
+    "language": "en",
+    "order": 2,
+    "provenance_kind": "source_verbatim",
+    "rating_scale": {
+        "max": 5,
+        "min": 1,
+        "values": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ]
+    },
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "rating",
+    "scoring_mode": "unscored_self_report",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 504,
+        "chapter": 4,
+        "heading_path": [
+            "The Guest-Services Hotline",
+            "Step 8. Confidence check"
+        ],
+        "normalized_text_sha256": "fb783c6706a2ba8422204026874f259cc463dcaf378840ef10eadfbfb336fba8"
+    },
+    "status": "published",
+    "stem": "I can take an order and read it back accurately."
+}

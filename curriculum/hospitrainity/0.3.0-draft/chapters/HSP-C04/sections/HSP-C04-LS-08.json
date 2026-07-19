@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C04",
+  "code": "HSP-C04-LS-08",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "a1ae763a-b17a-5824-88aa-fcefcd345f2d",
+  "order": 8,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 429,
+    "chapter": 4,
+    "heading_path": [
+      "The Guest-Services Hotline",
+      "Step 5. Practice"
+    ],
+    "normalized_text_sha256": "17deb93d21343198662dc320ee7f7abdd869d2c8ee15a0dd5904c1e6fe8fffb3"
+  },
+  "status": "published",
+  "title": "Step 5. Practice"
+}

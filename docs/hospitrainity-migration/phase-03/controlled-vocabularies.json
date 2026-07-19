@@ -1,0 +1,106 @@
+{
+  "generated_by": "CP-03",
+  "note": "Single source of enumerations shared by schemas, validator and both renderers. Schema enums are generated from this file.",
+  "registry_version": "1.0.0",
+  "vocabularies": {
+    "accessibility": [
+      "text_alt",
+      "transcript",
+      "keyboard_path",
+      "non_color_cue",
+      "no_timing_dependency"
+    ],
+    "cefr_activity": [
+      "reception",
+      "production",
+      "interaction",
+      "mediation"
+    ],
+    "change_class": [
+      "editorial",
+      "substantive"
+    ],
+    "channel": [
+      "spoken_ftf",
+      "telecommunications",
+      "written_correspondence",
+      "live_chat",
+      "social_public_reply",
+      "async_message",
+      "multimodal_online"
+    ],
+    "feedback_type": [
+      "success",
+      "error_specific",
+      "hint",
+      "model_reveal",
+      "next_step"
+    ],
+    "legacy_exercise_type": [
+      "spelling_quiz",
+      "matching_game",
+      "fill_in_the_blank",
+      "listening_task",
+      "sentence_scramble",
+      "translation_match",
+      "fill_with_options",
+      "multiple_choice_quiz",
+      "fill_multiple_blanks",
+      "silent_letter_hunt",
+      "sound_sorting",
+      "sequencing",
+      "speaking_practice",
+      "pronunciation_drill"
+    ],
+    "outcome_type": [
+      "knowledge",
+      "performance",
+      "reflection"
+    ],
+    "participation": [
+      "individual",
+      "pair",
+      "staff_guest",
+      "team_handoff",
+      "public_to_private_escalation"
+    ],
+    "pedagogical_function": [
+      "diagnostic",
+      "model_noticing",
+      "guided_practice",
+      "freer_task",
+      "formative_check",
+      "summative_evidence",
+      "reflection"
+    ],
+    "response_form": [
+      "selection",
+      "ordering",
+      "short_text",
+      "extended_text",
+      "spoken_rehearsal",
+      "role_play",
+      "service_artifact",
+      "self_rating"
+    ],
+    "scoring_mode": [
+      "none",
+      "objective_exact",
+      "objective_normalized",
+      "rubric",
+      "self_report"
+    ],
+    "status": [
+      "draft",
+      "review",
+      "approved",
+      "published",
+      "retired"
+    ],
+    "timing": [
+      "synchronous",
+      "asynchronous",
+      "mixed"
+    ]
+  }
+}

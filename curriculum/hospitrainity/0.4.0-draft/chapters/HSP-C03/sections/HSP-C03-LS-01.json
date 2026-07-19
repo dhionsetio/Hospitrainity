@@ -1,0 +1,130 @@
+{
+    "blocks": [
+        {
+            "id": "a2e5c57c-4010-5f67-a64f-7dde141d4faf",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Answer these quietly for yourself first. No right or wrong answers, just a gentle way to warm up.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 233,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Warm-Up"
+                ],
+                "normalized_text_sha256": "cb7a22a59a1691989c2458152e98537c88ae09ffaa722ff92a23d36e59214da3"
+            },
+            "text": "Answer these quietly for yourself first. No right or wrong answers, just a gentle way to warm up.",
+            "type": "instruction"
+        },
+        {
+            "id": "2b71206a-93c4-516f-bc38-7c096822980d",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "In one word, how do you feel about speaking English on the phone?",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 234,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Warm-Up"
+                ],
+                "normalized_text_sha256": "27fb4135b049a0f99b6830b57c5819c6aae1e6d721e59493b71fce935d6c6a06"
+            },
+            "text": "In one word, how do you feel about speaking English on the phone?",
+            "type": "list_item"
+        },
+        {
+            "id": "c03a5592-8ac2-576a-bd7d-d717c40d3a45",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "When did you last call a business? What were the very first words you said?",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 235,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Warm-Up"
+                ],
+                "normalized_text_sha256": "66f9f7fa86105453b42d7dc4ed4e47c6e445d0f0cb4373ceae54d77f96b91f36"
+            },
+            "text": "When did you last call a business? What were the very first words you said?",
+            "type": "list_item"
+        },
+        {
+            "id": "ecfbf3fd-b35e-53b3-955d-830b40540383",
+            "language": "en",
+            "order": 4,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "In your own language, how do you answer a work phone politely?",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 236,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Warm-Up"
+                ],
+                "normalized_text_sha256": "2670785d8d001b89cb7710a6852f65b51b954cdc9fe1b83d7544b134cd54c45a"
+            },
+            "text": "In your own language, how do you answer a work phone politely?",
+            "type": "list_item"
+        }
+    ],
+    "chapter_code": "HSP-C03",
+    "code": "HSP-C03-LS-01",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "ea753495-4903-55b8-9c32-987ed623d8bb",
+    "language": "en",
+    "order": 1,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 232,
+        "chapter": 3,
+        "heading_path": [
+            "Dealing with Customers on the Phone",
+            "Warm-Up"
+        ],
+        "normalized_text_sha256": "0d96d7a94cccd70ae6e338c3b3a29d88a9ed37ce481071007cb60d1746da4a65"
+    },
+    "status": "published",
+    "title": "Warm-Up"
+}

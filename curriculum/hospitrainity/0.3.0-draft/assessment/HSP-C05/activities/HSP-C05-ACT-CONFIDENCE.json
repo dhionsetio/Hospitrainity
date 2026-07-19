@@ -1,0 +1,39 @@
+{
+  "accessibility": [
+    "text_alt",
+    "keyboard_path",
+    "non_color_cue",
+    "no_timing_dependency"
+  ],
+  "cefr_activity": "production",
+  "channel": "written_correspondence",
+  "code": "HSP-C05-ACT-CONFIDENCE",
+  "content_version": "0.3.0-draft",
+  "entity_type": "activity",
+  "id": "f0a8eafe-311b-5c89-986f-b2ff2d8611b8",
+  "lesson_code": "HSP-C05-LS-11",
+  "outcome_codes": [
+    "OUT-M05-01",
+    "OUT-M05-02",
+    "OUT-M05-03"
+  ],
+  "participation": "individual",
+  "pedagogical_function": "reflection",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "self_rating",
+  "scoring_mode": "self_report",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 640,
+    "chapter": 5,
+    "heading_path": [
+      "Customer Care Through Writing",
+      "Step 8. Confidence check"
+    ],
+    "normalized_text_sha256": "de3541b7e7f4f5aff977a439df59ffbf2a304ff6fc9152f1e6f7a6991667643c"
+  },
+  "status": "published",
+  "timing": "asynchronous",
+  "title": "Step 8. Confidence check"
+}

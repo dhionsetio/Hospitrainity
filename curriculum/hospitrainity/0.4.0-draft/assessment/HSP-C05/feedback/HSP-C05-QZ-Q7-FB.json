@@ -1,0 +1,27 @@
+{
+    "code": "HSP-C05-QZ-Q7-FB",
+    "content_version": "0.4.0-draft",
+    "entity_type": "feedback-model",
+    "id": "e772f4cb-7e02-594a-8f2d-2a75735cec7c",
+    "messages": [
+        {
+            "feedback_type": "model_reveal",
+            "text": "B. A clear subject line sets the topic before the guest even opens the message."
+        }
+    ],
+    "prompt_code": "HSP-C05-QZ-Q7",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 648,
+        "chapter": 5,
+        "heading_path": [
+            "Customer Care Through Writing",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "0c05f1858bc564e708b9587c4ee6ef08ddff3ff6f385a77c2b8413672cdb4310"
+    },
+    "status": "published"
+}

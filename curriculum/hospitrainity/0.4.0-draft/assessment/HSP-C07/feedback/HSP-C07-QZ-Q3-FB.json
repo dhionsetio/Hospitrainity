@@ -1,0 +1,27 @@
+{
+    "code": "HSP-C07-QZ-Q3-FB",
+    "content_version": "0.4.0-draft",
+    "entity_type": "feedback-model",
+    "id": "cfd238d1-ed0b-5d7c-9884-36913e865a8e",
+    "messages": [
+        {
+            "feedback_type": "model_reveal",
+            "text": "B. You own the fix, personally."
+        }
+    ],
+    "prompt_code": "HSP-C07-QZ-Q3",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 927,
+        "chapter": 7,
+        "heading_path": [
+            "Dealing with Problems and Complaints",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "025283cf08334745842be895ffe0a009a981749ee70f45e0e814a3aff3d4d704"
+    },
+    "status": "published"
+}

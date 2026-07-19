@@ -1,0 +1,28 @@
+{
+    "accepted": [
+        "A"
+    ],
+    "code": "HSP-C07-QZ-Q8-AM",
+    "content_version": "0.4.0-draft",
+    "correct_choice_ids": [
+        "972ebb3e-10ec-5546-aa9a-1cd2d3d0085a"
+    ],
+    "entity_type": "answer-model",
+    "id": "f6fc0e67-3167-58c6-8f2d-47a08be0a988",
+    "prompt_code": "HSP-C07-QZ-Q8",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 1,
+        "chapter": 7,
+        "heading_path": [
+            "Dealing with Problems and Complaints",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "559aead08264d5795d3909718cdd05abd49572e84fe55590eef31a88a08fdffd"
+    },
+    "status": "published"
+}

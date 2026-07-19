@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C05-ACT-QUIZ",
+  "code": "HSP-C05-QZ-Q1",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "16a41f79-0576-555c-afe3-4b74f97aebaf",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 615,
+    "chapter": 5,
+    "heading_path": [
+      "Customer Care Through Writing",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "ec73357af97f47f4fa74b9b213f49e02169a2d0743326b0e161bc9ee508c84b1"
+  },
+  "status": "published",
+  "stem": "Q1. What is the best formal greeting? A) “Yo,” B) “Dear Mr. Chen,” C) “Hey there,”"
+}

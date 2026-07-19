@@ -1,0 +1,130 @@
+{
+    "blocks": [
+        {
+            "id": "1efa485d-5f78-5789-9e39-d6e125aa6b5e",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Rate yourself honestly, from 1 (not confident yet) to 5 (very confident). This is just for you, and it is a good way to see your progress.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 356,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 8. Confidence check"
+                ],
+                "normalized_text_sha256": "8ae726d271eb7a0bf90a65a1207e47b0e727c521ff95159d8c7f245ec46d05b7"
+            },
+            "text": "Rate yourself honestly, from 1 (not confident yet) to 5 (very confident). This is just for you, and it is a good way to see your progress.",
+            "type": "instruction"
+        },
+        {
+            "caption": "Step 8. Confidence check: Statement / 1 / 2 / 3 / 4 / 5",
+            "header": [
+                "Statement",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5"
+            ],
+            "id": "1b07a637-daf4-53d7-9fbc-3be917e50635",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "rows": [
+                [
+                    "I can answer the hotel phone professionally.",
+                    "☐",
+                    "☐",
+                    "☐",
+                    "☐",
+                    "☐"
+                ],
+                [
+                    "I can take a booking and its details over the phone.",
+                    "☐",
+                    "☐",
+                    "☐",
+                    "☐",
+                    "☐"
+                ],
+                [
+                    "I can confirm details by reading them back and spelling names.",
+                    "☐",
+                    "☐",
+                    "☐",
+                    "☐",
+                    "☐"
+                ],
+                [
+                    "I can put a caller on hold and close the call politely.",
+                    "☐",
+                    "☐",
+                    "☐",
+                    "☐",
+                    "☐"
+                ]
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 357,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 8. Confidence check"
+                ],
+                "normalized_text_sha256": "1f261edeea5dd0300f9c4bcbd4ea33cedf57c71646daa89917a3ba43c73212af"
+            },
+            "type": "source_table"
+        },
+        {
+            "activity_code": "HSP-C03-ACT-CONFIDENCE",
+            "id": "a9ee54e9-5b09-5841-8042-4b59524a68e3",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "derived_navigation",
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 355,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 8. Confidence check"
+                ],
+                "normalized_text_sha256": "7831b9b1655261ee807dd6e8e3ddc00ca3104240995c2c77bdaa0c3831fbaad6"
+            },
+            "type": "activity_embed"
+        }
+    ],
+    "chapter_code": "HSP-C03",
+    "code": "HSP-C03-LS-11",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "804d6167-a936-5029-9c59-f2925106c950",
+    "language": "en",
+    "order": 11,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 355,
+        "chapter": 3,
+        "heading_path": [
+            "Dealing with Customers on the Phone",
+            "Step 8. Confidence check"
+        ],
+        "normalized_text_sha256": "7831b9b1655261ee807dd6e8e3ddc00ca3104240995c2c77bdaa0c3831fbaad6"
+    },
+    "status": "published",
+    "title": "Step 8. Confidence check"
+}

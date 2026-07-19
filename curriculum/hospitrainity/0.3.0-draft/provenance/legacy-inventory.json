@@ -1,0 +1,97 @@
+{
+  "binding_rules_applied": [
+    "DEC-001 DOCX sole source",
+    "DEC-002 seven equal modules/chapters",
+    "DEC-005 rewrite when aligned",
+    "Grand Serenata only / Youkata Stay banned",
+    "StayReady to Hospitrainity rebrand"
+  ],
+  "disposition_counts": {
+    "deferred": 1,
+    "dropped": 3,
+    "migrated": 0,
+    "rewritten": 3
+  },
+  "generated_by": "CP-04",
+  "legacy_source": "database/data/course.json",
+  "legacy_totals": {
+    "lessons": 24,
+    "modules": 8
+  },
+  "modules": [
+    {
+      "canonical_chapter": null,
+      "disposition": "deferred",
+      "legacy_lessons": 8,
+      "legacy_module": "Pre-Learning",
+      "rationale": "Foundational alphabet/pronunciation/grammar/numbers scaffolding. No corresponding chapter in Hospitrainity.docx (DEC-001 sole-source). Retain as optional pre-course scaffolding only if approved in CP-06; not authored from the source of truth."
+    },
+    {
+      "canonical_chapter": "HSP-C02",
+      "disposition": "rewritten",
+      "legacy_lessons": 2,
+      "legacy_module": "Greetings and Basic Interactions",
+      "rationale": "Greeting/welcome and politeness folded into Chapter 2 (Front Desk and Check-In); intro framing also in Chapter 1. Rewritten from DOCX, not ported verbatim (DEC-005)."
+    },
+    {
+      "canonical_chapter": "HSP-C02",
+      "disposition": "rewritten",
+      "legacy_lessons": 2,
+      "legacy_module": "Check-In Procedures",
+      "rationale": "Reservation verification, policies and requests map directly to Chapter 2. Rewritten from DOCX."
+    },
+    {
+      "canonical_chapter": null,
+      "disposition": "dropped",
+      "legacy_lessons": 4,
+      "legacy_module": "Hotel Amenities and Services",
+      "rationale": "No dedicated chapter in Hospitrainity.docx; amenities appear only as a minor \"offer a little extra\" phrase set inside Chapter 2. Not a standalone module in the source of truth."
+    },
+    {
+      "canonical_chapter": "HSP-C07",
+      "disposition": "rewritten",
+      "legacy_lessons": 2,
+      "legacy_module": "Handling Guest Requests and Issues",
+      "rationale": "Complaints and problem handling are covered by Chapter 7 (Dealing with Problems and Complaints) and its framework. Rewritten from DOCX."
+    },
+    {
+      "canonical_chapter": null,
+      "disposition": "dropped",
+      "legacy_lessons": 2,
+      "legacy_module": "Check-Out Procedures",
+      "rationale": "Check-out/billing is outside the 7-chapter scope of Hospitrainity.docx. Not authored from the source of truth."
+    },
+    {
+      "canonical_chapter": "HSP-C03",
+      "disposition": "rewritten",
+      "legacy_lessons": 2,
+      "legacy_module": "Telephone Etiquette",
+      "rationale": "Phone customer service maps to Chapter 3 (Dealing with Customers on the Phone); the guest-services hotline is Chapter 4. Rewritten from DOCX."
+    },
+    {
+      "canonical_chapter": null,
+      "disposition": "dropped",
+      "legacy_lessons": 2,
+      "legacy_module": "Emergency Situations",
+      "rationale": "No emergency chapter in Hospitrainity.docx. Safety-critical escalation is partly reflected in Chapter 7 complaint handling but emergencies are not in the source of truth."
+    }
+  ],
+  "net_new_chapters": [
+    {
+      "code": "HSP-C04",
+      "note": "New content family in the DOCX with no legacy module equivalent.",
+      "title": "The Guest-Services Hotline"
+    },
+    {
+      "code": "HSP-C05",
+      "note": "Email/written correspondence; no legacy module.",
+      "title": "Customer Care Through Writing"
+    },
+    {
+      "code": "HSP-C06",
+      "note": "Public social reply / live chat; no legacy module.",
+      "title": "Online and Social Media Customer Service"
+    }
+  ],
+  "source_of_truth": "Hospitrainity.docx"
+}

@@ -1,0 +1,35 @@
+{
+    "code": "HSP-C03-RP-G1-FB",
+    "content_version": "0.4.0-draft",
+    "entity_type": "feedback-model",
+    "id": "6b5bd479-6d7c-506d-b1b1-1f34435c220d",
+    "messages": [
+        {
+            "feedback_type": "error_specific",
+            "text": "(a) “I do not know.” Unhelpful, and it leaves the caller stuck."
+        },
+        {
+            "feedback_type": "success",
+            "text": "(b) “Let me check availability for Saturday for you. One moment, please.” This is the ideal answer, calm and action-focused."
+        },
+        {
+            "feedback_type": "error_specific",
+            "text": "(c) “Probably not.” Vague and discouraging."
+        }
+    ],
+    "prompt_code": "HSP-C03-RP-G1",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 311,
+        "chapter": 3,
+        "heading_path": [
+            "Dealing with Customers on the Phone",
+            "Step 6. Role-play"
+        ],
+        "normalized_text_sha256": "9e3f7b948942ecd2ab0168c35ed3875c6c6bd87032f5c4dafeb8df5797bec7cc"
+    },
+    "status": "published"
+}

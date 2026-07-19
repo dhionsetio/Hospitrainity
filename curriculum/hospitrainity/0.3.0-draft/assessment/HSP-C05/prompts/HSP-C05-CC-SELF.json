@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C05-ACT-CONFIDENCE",
+  "code": "HSP-C05-CC-SELF",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "ca6d3862-d141-59a2-9b5d-46a7023b37eb",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "self_rating",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 640,
+    "chapter": 5,
+    "heading_path": [
+      "Customer Care Through Writing",
+      "Step 8. Confidence check"
+    ],
+    "normalized_text_sha256": "8ae726d271eb7a0bf90a65a1207e47b0e727c521ff95159d8c7f245ec46d05b7"
+  },
+  "status": "published",
+  "stem": "Rate yourself honestly, from 1 (not confident yet) to 5 (very confident). This is just for you, and it is a good way to see your progress."
+}

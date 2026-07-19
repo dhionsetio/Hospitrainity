@@ -1,0 +1,26 @@
+{
+  "code": "HSP-C04-PR-I1-FB",
+  "content_version": "0.3.0-draft",
+  "entity_type": "feedback-model",
+  "id": "95c07a1c-9c50-5d98-9a4d-19cbfbb7053b",
+  "messages": [
+    {
+      "feedback_type": "model_reveal",
+      "text": "read. “Let me read that back to you” confirms the order and catches errors before they reach the kitchen."
+    }
+  ],
+  "prompt_code": "HSP-C04-PR-I1",
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 433,
+    "chapter": 4,
+    "heading_path": [
+      "The Guest-Services Hotline",
+      "Step 5. Practice"
+    ],
+    "normalized_text_sha256": "7632b92e012355056e8781ef9af356249eafb9284afb18aff12127e693c6cd6c"
+  },
+  "status": "published"
+}

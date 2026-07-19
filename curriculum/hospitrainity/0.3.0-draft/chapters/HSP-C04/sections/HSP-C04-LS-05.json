@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C04",
+  "code": "HSP-C04-LS-05",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "06d8ad10-3b81-5e33-92ef-1c020f2af2b2",
+  "order": 5,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 393,
+    "chapter": 4,
+    "heading_path": [
+      "The Guest-Services Hotline",
+      "Step 3. Useful phrases, grouped by what they do"
+    ],
+    "normalized_text_sha256": "f22fb4be360818d06e19e9449745a729b3631de6c8a723acedd48a6fff3d8ae1"
+  },
+  "status": "published",
+  "title": "Step 3. Useful phrases, grouped by what they do"
+}

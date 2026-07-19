@@ -1,0 +1,38 @@
+{
+  "_note": "Recorded CP-14 closing-phase evidence for the workflow engine. Reviewer field records the Project Owner's consolidated final release verdict for all three required roles, per module. This is disclosed as a stakeholder-level attestation, not three independently-conducted named specialist technical reviews. See phase-14/cp02-gate-closure.json and phase-14/checkpoint-report.md.",
+  "HSP-C01": {
+    "esp_cefr_specialist": { "signed": true, "reviewer": "dhi disc (Project Owner)", "date": "2026-07-16" },
+    "hospitality_practitioner": { "signed": true, "reviewer": "dhi disc (Project Owner)", "date": "2026-07-16" },
+    "accessibility_reviewer": { "signed": true, "reviewer": "dhi disc (Project Owner)", "date": "2026-07-16" }
+  },
+  "HSP-C02": {
+    "esp_cefr_specialist": { "signed": true, "reviewer": "dhi disc (Project Owner)", "date": "2026-07-16" },
+    "hospitality_practitioner": { "signed": true, "reviewer": "dhi disc (Project Owner)", "date": "2026-07-16" },
+    "accessibility_reviewer": { "signed": true, "reviewer": "dhi disc (Project Owner)", "date": "2026-07-16" }
+  },
+  "HSP-C03": {
+    "esp_cefr_specialist": { "signed": true, "reviewer": "dhi disc (Project Owner)", "date": "2026-07-16" },
+    "hospitality_practitioner": { "signed": true, "reviewer": "dhi disc (Project Owner)", "date": "2026-07-16" },
+    "accessibility_reviewer": { "signed": true, "reviewer": "dhi disc (Project Owner)", "date": "2026-07-16" }
+  },
+  "HSP-C04": {
+    "esp_cefr_specialist": { "signed": true, "reviewer": "dhi disc (Project Owner)", "date": "2026-07-16" },
+    "hospitality_practitioner": { "signed": true, "reviewer": "dhi disc (Project Owner)", "date": "2026-07-16" },
+    "accessibility_reviewer": { "signed": true, "reviewer": "dhi disc (Project Owner)", "date": "2026-07-16" }
+  },
+  "HSP-C05": {
+    "esp_cefr_specialist": { "signed": true, "reviewer": "dhi disc (Project Owner)", "date": "2026-07-16" },
+    "hospitality_practitioner": { "signed": true, "reviewer": "dhi disc (Project Owner)", "date": "2026-07-16" },
+    "accessibility_reviewer": { "signed": true, "reviewer": "dhi disc (Project Owner)", "date": "2026-07-16" }
+  },
+  "HSP-C06": {
+    "esp_cefr_specialist": { "signed": true, "reviewer": "dhi disc (Project Owner)", "date": "2026-07-16" },
+    "hospitality_practitioner": { "signed": true, "reviewer": "dhi disc (Project Owner)", "date": "2026-07-16" },
+    "accessibility_reviewer": { "signed": true, "reviewer": "dhi disc (Project Owner)", "date": "2026-07-16" }
+  },
+  "HSP-C07": {
+    "esp_cefr_specialist": { "signed": true, "reviewer": "dhi disc (Project Owner)", "date": "2026-07-16" },
+    "hospitality_practitioner": { "signed": true, "reviewer": "dhi disc (Project Owner)", "date": "2026-07-16" },
+    "accessibility_reviewer": { "signed": true, "reviewer": "dhi disc (Project Owner)", "date": "2026-07-16" }
+  }
+}

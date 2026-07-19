@@ -1,0 +1,264 @@
+{
+    "blocks": [
+        {
+            "id": "b3b49f5f-2270-560a-b699-40b6bb8742d7",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "You are a reservations agent at the Grand Serenata Hotel.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 242,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 1. The scenario"
+                ],
+                "normalized_text_sha256": "49baa99d65ad2c8f880c9ca3cd0349b607fb7cdb2f484d4d43317302c2530e1a"
+            },
+            "text": "You are a reservations agent at the Grand Serenata Hotel.",
+            "type": "heading"
+        },
+        {
+            "id": "1bfa54b9-b2ac-563f-a83f-7e55f092ec81",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "The phone rings. The caller might want to check availability, make a booking, or simply ask a question. Your job flows in a natural order:",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 243,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 1. The scenario"
+                ],
+                "normalized_text_sha256": "d323dce7e299d0f2bbd9fa58028978df5679ea5128c258cecdd35a21931fa1c2"
+            },
+            "text": "The phone rings. The caller might want to check availability, make a booking, or simply ask a question. Your job flows in a natural order:",
+            "type": "paragraph"
+        },
+        {
+            "id": "28bd0247-95fd-5d3c-ac28-0f4d89391075",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Answer",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " professionally, with the hotel name, your name, and an offer of help.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 244,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 1. The scenario"
+                ],
+                "normalized_text_sha256": "837e9e567924b39b2016805dabd020782fa311fb9fb0e69ad864ad430758ed7a"
+            },
+            "text": "Answer professionally, with the hotel name, your name, and an offer of help.",
+            "type": "list_item"
+        },
+        {
+            "id": "a4f444f9-0a00-5037-ae63-c97776caa8d5",
+            "language": "en",
+            "order": 4,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Listen",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " carefully and work out what the caller needs.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 245,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 1. The scenario"
+                ],
+                "normalized_text_sha256": "74c35c6477b21aef29ea0b6b7a81138c0ce6c311fc4f43b6abdb025dbaf9a1b8"
+            },
+            "text": "Listen carefully and work out what the caller needs.",
+            "type": "list_item"
+        },
+        {
+            "id": "105c0095-e258-5cb3-98cb-37e341c6cbda",
+            "language": "en",
+            "order": 5,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Take",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " the details, such as the dates, room type, name, and contact number.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 246,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 1. The scenario"
+                ],
+                "normalized_text_sha256": "bb43b0368ad64da8c357035587d784fd75b47d15b7a4c07075de05cc0a1d0f60"
+            },
+            "text": "Take the details, such as the dates, room type, name, and contact number.",
+            "type": "list_item"
+        },
+        {
+            "id": "bcb51aff-278e-5ffa-8e63-3822934c7650",
+            "language": "en",
+            "order": 6,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Confirm",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " by reading everything back, and spell names or repeat numbers slowly.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 247,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 1. The scenario"
+                ],
+                "normalized_text_sha256": "63a2db74ec29d255d58c0d57c421070e1e2ca67f46d4ef159157e5298d8587f5"
+            },
+            "text": "Confirm by reading everything back, and spell names or repeat numbers slowly.",
+            "type": "list_item"
+        },
+        {
+            "id": "c6e2e724-0c2d-50ac-9d51-905c87f998e4",
+            "language": "en",
+            "order": 7,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Give",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " the booking reference and close on a warm note.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 248,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 1. The scenario"
+                ],
+                "normalized_text_sha256": "5eabd7706b7eda031efae8bb05202cf7feede151ec9d70e7626f41e0422a01db"
+            },
+            "text": "Give the booking reference and close on a warm note.",
+            "type": "list_item"
+        },
+        {
+            "id": "e0c99570-dce0-55c2-9598-f57113bb78da",
+            "language": "en",
+            "order": 8,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Because the caller cannot see you, small things matter more, such as a friendly voice and a clear, unhurried pace.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 249,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 1. The scenario"
+                ],
+                "normalized_text_sha256": "f91dcac9fa3dc34ff517b382616e7469695fc2db04703093b0521a8d5b6a1975"
+            },
+            "text": "Because the caller cannot see you, small things matter more, such as a friendly voice and a clear, unhurried pace.",
+            "type": "paragraph"
+        }
+    ],
+    "chapter_code": "HSP-C03",
+    "code": "HSP-C03-LS-03",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "7e18e2a5-d12f-54aa-8871-5a6eb36f34bc",
+    "language": "en",
+    "order": 3,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 241,
+        "chapter": 3,
+        "heading_path": [
+            "Dealing with Customers on the Phone",
+            "Step 1. The scenario"
+        ],
+        "normalized_text_sha256": "fe02f71c74a8a1d450fbab7f3052d29fd5a7c6cce679fd0160234ed9cf9bdf53"
+    },
+    "status": "published",
+    "title": "Step 1. The scenario"
+}

@@ -1,0 +1,29 @@
+{
+    "accepted": [
+        "“Three, oh, five,” as single digits with tiny pauses. It is much harder to mishear than “three hundred and five.”"
+    ],
+    "accepted_normalized": [
+        "three oh five"
+    ],
+    "accepted_normalized_provenance_kind": "derived_scoring",
+    "code": "HSP-C04-PR-I4-AM",
+    "content_version": "0.4.0-draft",
+    "entity_type": "answer-model",
+    "id": "dfa410a6-6ebe-50ef-b8cd-e856c7d1a933",
+    "prompt_code": "HSP-C04-PR-I4",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "scoring_mode": "objective_normalized_closed",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 452,
+        "chapter": 4,
+        "heading_path": [
+            "The Guest-Services Hotline",
+            "Step 5. Practice"
+        ],
+        "normalized_text_sha256": "186fae9c2c609e2fdc47ba2ebb85754844143e9fc0d40bd8b0c272f201f2a913"
+    },
+    "status": "published"
+}

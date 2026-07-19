@@ -1,0 +1,20 @@
+{
+  "code": "HSP-C01-PROV",
+  "content_version": "0.3.0-draft",
+  "entity_type": "source-provenance",
+  "excerpt_sha256": "f19802ec27b3e6d2a195350884bdb752d150f175e2be227bdca7e804211ff5c6",
+  "id": "48affa7e-b73e-5be6-87c9-e66eaa013c4e",
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 27,
+    "chapter": 1,
+    "heading_path": [
+      "Welcome and Introduction to Customer Care"
+    ],
+    "normalized_text_sha256": "f19802ec27b3e6d2a195350884bdb752d150f175e2be227bdca7e804211ff5c6"
+  },
+  "status": "draft",
+  "target_code": "HSP-C01"
+}

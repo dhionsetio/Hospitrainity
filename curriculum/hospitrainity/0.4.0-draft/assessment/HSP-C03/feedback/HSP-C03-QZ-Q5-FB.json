@@ -1,0 +1,27 @@
+{
+    "code": "HSP-C03-QZ-Q5-FB",
+    "content_version": "0.4.0-draft",
+    "entity_type": "feedback-model",
+    "id": "c01c7e0e-2b18-5fb0-817c-cd65f8095dba",
+    "messages": [
+        {
+            "feedback_type": "model_reveal",
+            "text": "B. Stay patient and help them hear you."
+        }
+    ],
+    "prompt_code": "HSP-C03-QZ-Q5",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 344,
+        "chapter": 3,
+        "heading_path": [
+            "Dealing with Customers on the Phone",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "054f2818a41ee7391844ebf6a88413d933d47aa10bedfb1ab709a42c366e9367"
+    },
+    "status": "published"
+}

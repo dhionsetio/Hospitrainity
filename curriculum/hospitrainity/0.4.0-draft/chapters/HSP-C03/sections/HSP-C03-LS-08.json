@@ -1,0 +1,430 @@
+{
+    "blocks": [
+        {
+            "id": "a90483af-d750-50b9-acd5-ab2cd1c5daa3",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Try each one first, then open the toggle to check yourself.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 293,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "457b0ccffe30e2688e9b4bddc363e158e25bcf32152f3bdb3c034c9407006a63"
+            },
+            "text": "Try each one first, then open the toggle to check yourself.",
+            "type": "instruction"
+        },
+        {
+            "id": "8fe81d80-cbc9-55c0-963c-4bf551e18943",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "1. Fill the blank:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " “May I ",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "_____",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " you on hold for a moment?”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 294,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "87bc45fa7ee4dce252b801a36c0b2b4f1bfd5e855d8eec336514b0f4e5de90c3"
+            },
+            "text": "1. Fill the blank: “May I _____ you on hold for a moment?”",
+            "type": "list_item"
+        },
+        {
+            "id": "a8a1c877-b3a9-581d-a479-c69ea7640d7a",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Check answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 295,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "59b5b25c3f1225bbc759f0a5877604948e64e3484f2e56aafef146d98cd32a61"
+            },
+            "text": "Check answer",
+            "type": "paragraph"
+        },
+        {
+            "id": "e7cc7bad-f12b-5b76-8f4d-08eb14590da7",
+            "language": "en",
+            "order": 4,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "put.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " The fixed phrase is “to put someone on hold.” A warm follow-up is “Thank you for waiting.”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 296,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "379125ce8a907bc4c1ae1868f1cc15bf955d5d6653427a416b0d4fd85f2ffdad"
+            },
+            "text": "put. The fixed phrase is “to put someone on hold.” A warm follow-up is “Thank you for waiting.”",
+            "type": "instruction"
+        },
+        {
+            "id": "caa53230-8743-55ab-9688-0c6eee1c9487",
+            "language": "en",
+            "order": 5,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "2. Choose the best phone opener:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " (a) “Hello?” or (b) “Good morning, the Grand Serenata Hotel, Maya speaking. How may I help you?”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 297,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "7382cee31cdd9e22fce540603d3a7b1d30b062c060634f7c777594a87722af05"
+            },
+            "text": "2. Choose the best phone opener: (a) “Hello?” or (b) “Good morning, the Grand Serenata Hotel, Maya speaking. How may I help you?”",
+            "type": "list_item"
+        },
+        {
+            "id": "f0192c8c-a5f2-5885-9f04-7166bbe48890",
+            "language": "en",
+            "order": 6,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Check answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 298,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "59b5b25c3f1225bbc759f0a5877604948e64e3484f2e56aafef146d98cd32a61"
+            },
+            "text": "Check answer",
+            "type": "paragraph"
+        },
+        {
+            "id": "b7ed0f84-32ea-50dd-bca9-0c12adc3d278",
+            "language": "en",
+            "order": 7,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "(b).",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " It names the hotel and you, then offers help. A clear opener sets a professional tone from the first second.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 299,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "a1575ead73acef37095b9094adfb107e11cdfbe71b77f69145223581a0ac6a01"
+            },
+            "text": "(b). It names the hotel and you, then offers help. A clear opener sets a professional tone from the first second.",
+            "type": "paragraph"
+        },
+        {
+            "id": "52a6af1d-dbcc-5c91-917f-6cef7d16e01f",
+            "language": "en",
+            "order": 8,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "3. Put these phone steps in order:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " give the booking reference, answer with the hotel name, take the caller’s details, confirm by reading back.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 300,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "67aa61d265afa3a415fb2dc07d567f80c49d8fbf91f1895bfc0980574be3bfd3"
+            },
+            "text": "3. Put these phone steps in order: give the booking reference, answer with the hotel name, take the caller’s details, confirm by reading back.",
+            "type": "list_item"
+        },
+        {
+            "id": "ef1b4ea6-c314-5aeb-9578-85e9981e7b21",
+            "language": "en",
+            "order": 9,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Check answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 301,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "59b5b25c3f1225bbc759f0a5877604948e64e3484f2e56aafef146d98cd32a61"
+            },
+            "text": "Check answer",
+            "type": "paragraph"
+        },
+        {
+            "id": "b48461a0-a259-5d98-9e2a-b5bd78cb1aaa",
+            "language": "en",
+            "order": 10,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Answer with the hotel name, then take the caller’s details, then confirm by reading back, then give the booking reference.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 302,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "aedf48017ea2cd8e096dc7e88c575f62c7ebfbf94d498d78e25921f7cc79c3d1"
+            },
+            "text": "Answer with the hotel name, then take the caller’s details, then confirm by reading back, then give the booking reference.",
+            "type": "instruction"
+        },
+        {
+            "id": "1e260bf2-f369-5810-a3b2-f9e65c6f1da5",
+            "language": "en",
+            "order": 11,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "4. Say this number clearly for the phone:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " how would you say the reference 452 out loud?",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 303,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "19f25ca5d436d5f9355277aa324f07ee4d4e11e94626ff36bc0dc09de356418b"
+            },
+            "text": "4. Say this number clearly for the phone: how would you say the reference 452 out loud?",
+            "type": "list_item"
+        },
+        {
+            "id": "487157d4-e79e-51f5-968a-168d58c33fab",
+            "language": "en",
+            "order": 12,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Check answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 304,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "59b5b25c3f1225bbc759f0a5877604948e64e3484f2e56aafef146d98cd32a61"
+            },
+            "text": "Check answer",
+            "type": "paragraph"
+        },
+        {
+            "id": "d4a21ba5-6498-5e17-9d65-9c70afe5d8c6",
+            "language": "en",
+            "order": 13,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "“Four, five, two,” as single digits with small pauses. Saying “four hundred and fifty-two” is easy to mishear on a call.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 305,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "25dcaaa6a7ab7089326dea33c937a0dc3a04b222da1079ad58f78c06a60f2b02"
+            },
+            "text": "“Four, five, two,” as single digits with small pauses. Saying “four hundred and fifty-two” is easy to mishear on a call.",
+            "type": "paragraph"
+        },
+        {
+            "activity_code": "HSP-C03-ACT-PRACTICE",
+            "id": "572f10b4-feda-579a-ad68-f2056e780d13",
+            "language": "en",
+            "order": 14,
+            "provenance_kind": "derived_navigation",
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 292,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "46863cdae3b9dc41e288c4101ee6d0956fc7857efb3a521dc5b0f48f713be9aa"
+            },
+            "type": "activity_embed"
+        }
+    ],
+    "chapter_code": "HSP-C03",
+    "code": "HSP-C03-LS-08",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "d30d0eec-1a81-5634-9217-ff136d6e39a3",
+    "language": "en",
+    "order": 8,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 292,
+        "chapter": 3,
+        "heading_path": [
+            "Dealing with Customers on the Phone",
+            "Step 5. Practice"
+        ],
+        "normalized_text_sha256": "46863cdae3b9dc41e288c4101ee6d0956fc7857efb3a521dc5b0f48f713be9aa"
+    },
+    "status": "published",
+    "title": "Step 5. Practice"
+}

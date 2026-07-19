@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C01",
+  "code": "HSP-C01-LS-01",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "d13f129f-38bc-574a-8672-d309f5771944",
+  "order": 1,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 29,
+    "chapter": 1,
+    "heading_path": [
+      "Welcome and Introduction to Customer Care",
+      "Warm-Up"
+    ],
+    "normalized_text_sha256": "efa190f1407b9c0ca373fae2d8c98cda6af20f9dbfec2a0c6cee8289bd052628"
+  },
+  "status": "published",
+  "title": "Warm-Up"
+}

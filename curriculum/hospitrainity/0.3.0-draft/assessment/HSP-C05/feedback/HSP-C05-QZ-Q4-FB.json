@@ -1,0 +1,26 @@
+{
+  "code": "HSP-C05-QZ-Q4-FB",
+  "content_version": "0.3.0-draft",
+  "entity_type": "feedback-model",
+  "id": "9605034a-c31c-512c-b534-e314c7fb30ee",
+  "messages": [
+    {
+      "feedback_type": "model_reveal",
+      "text": "A. A professional register represents the hotel well."
+    }
+  ],
+  "prompt_code": "HSP-C05-QZ-Q4",
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 626,
+    "chapter": 5,
+    "heading_path": [
+      "Customer Care Through Writing",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "1793273888aa8ef926c4931e9ea4748385079b65f7e3bac664afed3aa10bb661"
+  },
+  "status": "published"
+}

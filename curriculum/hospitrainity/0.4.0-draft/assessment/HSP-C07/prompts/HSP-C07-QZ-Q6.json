@@ -1,0 +1,50 @@
+{
+    "activity_code": "HSP-C07-ACT-QUIZ",
+    "choices": [
+        {
+            "feedback": [
+                {
+                    "feedback_type": "model_reveal",
+                    "text": "A. Following up is what shows the guest you truly care."
+                }
+            ],
+            "id": "f5fc7bda-431b-59d3-b9a4-59ec3006ac98",
+            "label": "a",
+            "text": "to reassure the guest and confirm it is resolved"
+        },
+        {
+            "feedback": [],
+            "id": "dd5552bf-01e4-5d42-bad0-cac9b91398d2",
+            "label": "b",
+            "text": "to end the conversation quickly"
+        },
+        {
+            "feedback": [],
+            "id": "b55d7f47-b971-55a7-a176-1383df27c1d8",
+            "label": "c",
+            "text": "to charge the guest again"
+        }
+    ],
+    "code": "HSP-C07-QZ-Q6",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "07a9522c-575f-5ffc-a942-a157e1257428",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 934,
+        "chapter": 7,
+        "heading_path": [
+            "Dealing with Problems and Complaints",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "c6ae28b59cf0c3e3d621c33539f17b18813e9c65f5c6752187ca78d6efd1cf34"
+    },
+    "status": "published",
+    "stem": "Q6. What is the purpose of the follow-up step? A) to reassure the guest and confirm it is resolved B) to end the conversation quickly C) to charge the guest again"
+}

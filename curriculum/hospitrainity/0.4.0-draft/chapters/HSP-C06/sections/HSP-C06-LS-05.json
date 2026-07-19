@@ -1,0 +1,518 @@
+{
+    "blocks": [
+        {
+            "id": "523ea83f-2f4a-5e45-b177-021fbc1a66ed",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Greeting warmly",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 698,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "19b25f1ffba4f6fd67c06410460065cfd55d1b7b96c15f172fbefafc9c09d1fe"
+            },
+            "text": "Greeting warmly",
+            "type": "heading"
+        },
+        {
+            "id": "cf0a3340-e137-5b88-b9ed-40594ff63447",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "“Hi there, thanks for reaching out to Grand Serenata. How can I help? ",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "😊",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 699,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "cb63a2d36aee099f8a8724b20e8f98ccc8ad323190f680f3f8fee601c75e4c37"
+            },
+            "text": "“Hi there, thanks for reaching out to Grand Serenata. How can I help? 😊”",
+            "type": "list_item"
+        },
+        {
+            "id": "6db8e8d7-71ed-5a08-a285-5359600a247b",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Giving quick information",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 700,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "d7112be0c280d34c0716377f298332cdde2b2807cb96805a00312d1ad2f175d2"
+            },
+            "text": "Giving quick information",
+            "type": "heading"
+        },
+        {
+            "id": "fb79daec-570b-5b8e-8997-a85a7b9c7b37",
+            "language": "en",
+            "order": 4,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "“Yes, we have rooms available this weekend. Would you like me to send the details?”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 701,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "35aa0608cd171659cfea1b39a752f6fa0a0fe1f05bb5aec76723e56b784bcab6"
+            },
+            "text": "“Yes, we have rooms available this weekend. Would you like me to send the details?”",
+            "type": "list_item"
+        },
+        {
+            "id": "0a101f43-b1cb-5128-9a3d-c55baea458eb",
+            "language": "en",
+            "order": 5,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Moving to a private channel",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 702,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "6147cb6b4317da6f42a3ca0545f3ea99c7952308a2c0d97c88f307ba8a57d614"
+            },
+            "text": "Moving to a private channel",
+            "type": "heading"
+        },
+        {
+            "id": "5bdb3098-a964-5ff6-8b77-cca4bd42a024",
+            "language": "en",
+            "order": 6,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "“We would love to help. Could you send us a direct message with your booking details?”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 703,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "05e52a379dcdb86cccdad4bfc5774da00b574ab6391966c4e63e4889f9edda8b"
+            },
+            "text": "“We would love to help. Could you send us a direct message with your booking details?”",
+            "type": "list_item"
+        },
+        {
+            "id": "02dd5c95-b5b3-5326-87a0-e398db4b8458",
+            "language": "en",
+            "order": 7,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Responding to a public review",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 704,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "57f80889667adb16ccdafbafb0535a7d8b6ccf443b468baca4e7c3d00610247f"
+            },
+            "text": "Responding to a public review",
+            "type": "heading"
+        },
+        {
+            "id": "9c7abeab-3786-52f3-b0d7-30c17e2aad80",
+            "language": "en",
+            "order": 8,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "“Thank you for your feedback. We are sorry to hear this, and we would like to make it right, so please send us a DM.”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 705,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "4c793c40597a995b76da22720466e263556c1da2bb1b411382118eba42654adb"
+            },
+            "text": "“Thank you for your feedback. We are sorry to hear this, and we would like to make it right, so please send us a DM.”",
+            "type": "list_item"
+        },
+        {
+            "id": "821a61b7-b87c-52b5-8913-87870e90d526",
+            "language": "en",
+            "order": 9,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Handing it to the front desk",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 706,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "01803ee58cc0571e02aed15699e126fecc1136c7cf7adf62662aefbf379713e7"
+            },
+            "text": "Handing it to the front desk",
+            "type": "heading"
+        },
+        {
+            "id": "f558a809-5163-57b0-8cd2-880feafd2216",
+            "language": "en",
+            "order": 10,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "“Let me connect you with our front desk team, who can sort this out for you.”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 707,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "2a7f3ece893752151c288f796855a6b8e37c896a7b1af50ba53cc849210628f3"
+            },
+            "text": "“Let me connect you with our front desk team, who can sort this out for you.”",
+            "type": "list_item"
+        },
+        {
+            "id": "e6e00c87-4ed4-586f-ac77-1f8b18206646",
+            "language": "en",
+            "order": 11,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Closing kindly",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 708,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "f7f94372b046f0d27f35de98c706560502e4b8a622aa182eef143a1b5556a426"
+            },
+            "text": "Closing kindly",
+            "type": "heading"
+        },
+        {
+            "id": "b5d5f933-5789-545e-b446-63fde1b5ae76",
+            "language": "en",
+            "order": 12,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "“Happy to help, and have a lovely day. ",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "😊",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 709,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "c06d274cab819a032d3bfaef791ed46e12179abb627235b2b190f3f4cf5147d2"
+            },
+            "text": "“Happy to help, and have a lovely day. 😊”",
+            "type": "list_item"
+        },
+        {
+            "id": "b8916668-0c9f-57c2-9e4f-85a34a355794",
+            "language": "en",
+            "order": 13,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Sounding human, not automated",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 711,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "660184d56892f6fca3b54de176c0f28926a612e3d927e34432ed8e3451c300be"
+            },
+            "text": "Sounding human, not automated",
+            "type": "heading"
+        },
+        {
+            "id": "46057dd1-4e5a-555e-889b-d1cec7f6e2a8",
+            "language": "en",
+            "order": 14,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "The irony of online service is that it is easy to sound like a robot. Keep it human with these habits:",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 712,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "4995eefecf84c48f26e573e404763da9d548e93b50784863e9583bb0c6d724ee"
+            },
+            "text": "The irony of online service is that it is easy to sound like a robot. Keep it human with these habits:",
+            "type": "paragraph"
+        },
+        {
+            "id": "96fa6618-c287-550e-93de-4cf6e229dd94",
+            "language": "en",
+            "order": 15,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Write the way you would speak to a friendly guest, just a little more polished.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 713,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "feaff7dcb7a71f8165b00fa2151ce378723277d038aac56f44dcf3d2b7d1431e"
+            },
+            "text": "Write the way you would speak to a friendly guest, just a little more polished.",
+            "type": "list_item"
+        },
+        {
+            "id": "bdd1603c-168c-5286-aa9c-f8530f1aacb3",
+            "language": "en",
+            "order": 16,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Keep sentences short. Long paragraphs feel heavy on a phone screen.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 714,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "9b87203616e3d19b6e279d898bfe715c6b54713e9f869d63c5cb7e71200a66cf"
+            },
+            "text": "Keep sentences short. Long paragraphs feel heavy on a phone screen.",
+            "type": "list_item"
+        },
+        {
+            "id": "54fa932f-6bbb-5cc2-adac-1b083b43ddfc",
+            "language": "en",
+            "order": 17,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Answer the actual question first, then offer more help.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 715,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "d390c68509c97d31ab42d8b1944a0ad44185914a14a70ffc01af5cc65cecf661"
+            },
+            "text": "Answer the actual question first, then offer more help.",
+            "type": "list_item"
+        },
+        {
+            "id": "f24fd056-1965-5d4f-8438-5c02adca18b5",
+            "language": "en",
+            "order": 18,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Reply quickly, even if it is only to say you are looking into it.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 716,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "627a3834d6927f4a51a64e74bcf074994b13b85e00f7f0f54b10ee781fee4ef6"
+            },
+            "text": "Reply quickly, even if it is only to say you are looking into it.",
+            "type": "list_item"
+        }
+    ],
+    "chapter_code": "HSP-C06",
+    "code": "HSP-C06-LS-05",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "2a3b135b-9630-5107-8b67-60a07912a55b",
+    "language": "en",
+    "order": 5,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 697,
+        "chapter": 6,
+        "heading_path": [
+            "Online and Social Media Customer Service",
+            "Step 3. Useful phrases, grouped by what they do"
+        ],
+        "normalized_text_sha256": "a243cc51c9162617601595ebed11b2491b70a601429f52ce4cbd192f271f326a"
+    },
+    "status": "published",
+    "title": "Step 3. Useful phrases, grouped by what they do"
+}

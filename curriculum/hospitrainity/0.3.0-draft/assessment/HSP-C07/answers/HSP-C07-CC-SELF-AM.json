@@ -1,0 +1,21 @@
+{
+  "code": "HSP-C07-CC-SELF-AM",
+  "content_version": "0.3.0-draft",
+  "entity_type": "answer-model",
+  "id": "980b8cfc-88bf-5121-8d4f-40b88c6fdc4d",
+  "prompt_code": "HSP-C07-CC-SELF",
+  "replaced_by": null,
+  "replaces": null,
+  "scoring_mode": "self_report",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 925,
+    "chapter": 7,
+    "heading_path": [
+      "Dealing with Problems and Complaints",
+      "Step 8. Confidence check"
+    ],
+    "normalized_text_sha256": "8ae726d271eb7a0bf90a65a1207e47b0e727c521ff95159d8c7f245ec46d05b7"
+  },
+  "status": "published"
+}

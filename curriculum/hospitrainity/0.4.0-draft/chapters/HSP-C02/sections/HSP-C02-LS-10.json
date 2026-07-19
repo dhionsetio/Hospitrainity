@@ -1,0 +1,764 @@
+{
+    "blocks": [
+        {
+            "id": "8475cfb2-ff7f-5e93-abe1-f9b4ec56bd69",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Q1.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Which is the most polite way to ask for a document? A) “Give me your ID.” B) “Could I see your ID, please?” C) “ID.”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 183,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "89133015e998999f90311961e0d2575f113bc703e2b3c17bd300e1af0bcceaa8"
+            },
+            "text": "Q1. Which is the most polite way to ask for a document? A) “Give me your ID.” B) “Could I see your ID, please?” C) “ID.”",
+            "type": "paragraph"
+        },
+        {
+            "id": "2475b456-fac0-59f2-829a-105167c255da",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 184,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "b2a3aa602762a782e47a4f8e93bb5ae1b8819d1b92b7e6ceb3ef46a3c7077eb0"
+            },
+            "text": "Answer",
+            "type": "instruction"
+        },
+        {
+            "id": "ac264391-c4af-56ac-8555-207ec27e9d78",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "B.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " “Could I ... please?” is the polite, service-friendly form.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 185,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "dd2d4937c34cb167dfc67a61864ba2cf2dd742bd50006d3d7114f045998f8277"
+            },
+            "text": "B. “Could I ... please?” is the polite, service-friendly form.",
+            "type": "paragraph"
+        },
+        {
+            "id": "94789e2c-8031-55f2-a8a1-e2751cfd08fb",
+            "language": "en",
+            "order": 4,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Q2.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " A guest arrives with no booking. They are a ... A) walk-in guest B) key card C) voucher",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 186,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "29051bbde8838ea7f79ae8f4de2f1871e435c178a0c0d0117e6466eeec86cb27"
+            },
+            "text": "Q2. A guest arrives with no booking. They are a ... A) walk-in guest B) key card C) voucher",
+            "type": "paragraph"
+        },
+        {
+            "id": "693222c3-c347-5f23-9af8-bc6c895d11d0",
+            "language": "en",
+            "order": 5,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 187,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "b2a3aa602762a782e47a4f8e93bb5ae1b8819d1b92b7e6ceb3ef46a3c7077eb0"
+            },
+            "text": "Answer",
+            "type": "instruction"
+        },
+        {
+            "id": "15c04628-c0a2-58c5-9447-8b2eb7e4b430",
+            "language": "en",
+            "order": 6,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "A.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " A guest with no reservation is a walk-in guest.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 188,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "135371c59e60574284599c446d21e56c111c69eec66f71b2cbe4dc01670a3ffd"
+            },
+            "text": "A. A guest with no reservation is a walk-in guest.",
+            "type": "paragraph"
+        },
+        {
+            "id": "2ef4a6c9-b640-5cad-bcab-a79512b09ff3",
+            "language": "en",
+            "order": 7,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Q3.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Which phrase best confirms the booking details? A) “Is that correct?” B) “Who cares?” C) “Maybe.”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 189,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "a22527307e357c4e52e492974e5bc1c3120913fbc321d3b2893d12d49a2541d1"
+            },
+            "text": "Q3. Which phrase best confirms the booking details? A) “Is that correct?” B) “Who cares?” C) “Maybe.”",
+            "type": "paragraph"
+        },
+        {
+            "id": "be656337-f095-5c80-a664-0e029def2653",
+            "language": "en",
+            "order": 8,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 190,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "b2a3aa602762a782e47a4f8e93bb5ae1b8819d1b92b7e6ceb3ef46a3c7077eb0"
+            },
+            "text": "Answer",
+            "type": "instruction"
+        },
+        {
+            "id": "670e9176-b196-5d5b-9553-33c41016efd4",
+            "language": "en",
+            "order": 9,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "A.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " “Is that correct?” confirms the details clearly and politely.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 191,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "25409718891d1ba00d0a1714fe961debb98aa2615a01e354c0ea2625f82cb61e"
+            },
+            "text": "A. “Is that correct?” confirms the details clearly and politely.",
+            "type": "paragraph"
+        },
+        {
+            "id": "17dab784-81c1-5950-85ec-4902bc5c7c47",
+            "language": "en",
+            "order": 10,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Q4.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " What is a warm way to close the interaction? A) “Bye.” B) “Enjoy your stay.” C) “Next.”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 192,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "6b6ba613f94a82adb4196c21ec92e44dcb645252c2607a4735804c4687424e4d"
+            },
+            "text": "Q4. What is a warm way to close the interaction? A) “Bye.” B) “Enjoy your stay.” C) “Next.”",
+            "type": "paragraph"
+        },
+        {
+            "id": "e72182f2-145d-52da-9dee-d3f420069458",
+            "language": "en",
+            "order": 11,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 193,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "b2a3aa602762a782e47a4f8e93bb5ae1b8819d1b92b7e6ceb3ef46a3c7077eb0"
+            },
+            "text": "Answer",
+            "type": "instruction"
+        },
+        {
+            "id": "fe85edee-a3fa-51c1-b151-23effbefe5e2",
+            "language": "en",
+            "order": 12,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "B.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " “Enjoy your stay” leaves a warm final impression.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 194,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "34b78b3d64f83962cd07f2ead675712fa5f869310fb69e7b824c2e397854bb0d"
+            },
+            "text": "B. “Enjoy your stay” leaves a warm final impression.",
+            "type": "paragraph"
+        },
+        {
+            "id": "ea3bf852-1e21-522d-b866-e7d7bd8b9a40",
+            "language": "en",
+            "order": 13,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Q5.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " When do you usually share breakfast and Wi-Fi information? A) before greeting B) when you hand over the key C) never",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 195,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "edfc559e86e9cec3022525c13af0a0ce36a5ab1f3ee6131130e1642ca348d266"
+            },
+            "text": "Q5. When do you usually share breakfast and Wi-Fi information? A) before greeting B) when you hand over the key C) never",
+            "type": "paragraph"
+        },
+        {
+            "id": "058710b2-a2cb-5142-871b-729ed123db77",
+            "language": "en",
+            "order": 14,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 196,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "b2a3aa602762a782e47a4f8e93bb5ae1b8819d1b92b7e6ceb3ef46a3c7077eb0"
+            },
+            "text": "Answer",
+            "type": "instruction"
+        },
+        {
+            "id": "0c466e46-b328-59e1-bf79-2c863cfc9d65",
+            "language": "en",
+            "order": 15,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "B.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " The key and the practical details, such as floor, breakfast, and Wi-Fi, naturally go together near the end.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 197,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "494c59344871101c128b426cf9e35ca7ffa0361774117bffdcd583f3fc2bc0ca"
+            },
+            "text": "B. The key and the practical details, such as floor, breakfast, and Wi-Fi, naturally go together near the end.",
+            "type": "paragraph"
+        },
+        {
+            "id": "49f9eb89-9200-533a-8fe5-080196febfd5",
+            "language": "en",
+            "order": 16,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Q6.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " A guest looks exhausted. Which reply shows the best hospitality? A) “Sign here.” B) “Welcome. You must have had a long trip, so let us get you checked in quickly so you can rest.” C) “Hurry up, please.”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 198,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "69ea004bb976cd63c52e3412b9049d070fafbbc348874c4f9d7efb17439b125b"
+            },
+            "text": "Q6. A guest looks exhausted. Which reply shows the best hospitality? A) “Sign here.” B) “Welcome. You must have had a long trip, so let us get you checked in quickly so you can rest.” C) “Hurry up, please.”",
+            "type": "paragraph"
+        },
+        {
+            "id": "be4eee7c-7efe-510e-ab1e-198f26d324a0",
+            "language": "en",
+            "order": 17,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 199,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "b2a3aa602762a782e47a4f8e93bb5ae1b8819d1b92b7e6ceb3ef46a3c7077eb0"
+            },
+            "text": "Answer",
+            "type": "instruction"
+        },
+        {
+            "id": "28dccadd-8df5-5dae-a1d5-cb2c56e7df8c",
+            "language": "en",
+            "order": 18,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "B.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Warmth, empathy, and efficient action together make strong hospitality.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 200,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "5326ef9e5acb3418b1911593baa00685d28e3b65413b8e051bb01e6736a810e2"
+            },
+            "text": "B. Warmth, empathy, and efficient action together make strong hospitality.",
+            "type": "paragraph"
+        },
+        {
+            "id": "c3c5df9e-2a39-54b1-a135-151e354039b7",
+            "language": "en",
+            "order": 19,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Q7.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " “Amenities” means ... A) complaints B) the extra services and facilities C) room numbers",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 201,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "135cbef870fdf6cf31e9cd14c153a497989c2dc8663fb49bb22e5fb913ef1d2e"
+            },
+            "text": "Q7. “Amenities” means ... A) complaints B) the extra services and facilities C) room numbers",
+            "type": "paragraph"
+        },
+        {
+            "id": "3f92a92d-3eeb-5a52-9ff5-3db608a1d76d",
+            "language": "en",
+            "order": 20,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 202,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "b2a3aa602762a782e47a4f8e93bb5ae1b8819d1b92b7e6ceb3ef46a3c7077eb0"
+            },
+            "text": "Answer",
+            "type": "instruction"
+        },
+        {
+            "id": "75355518-5cd6-5df9-bf4a-f48796e0256b",
+            "language": "en",
+            "order": 21,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "B.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Amenities are the extras, such as Wi-Fi, a gym, or a pool.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 203,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "b3f1c7777e7e819a8790d50bec663654364c5915e215218b439885053fae3793"
+            },
+            "text": "B. Amenities are the extras, such as Wi-Fi, a gym, or a pool.",
+            "type": "paragraph"
+        },
+        {
+            "id": "ae5be7fb-4999-5ef7-a11c-b04874a34a04",
+            "language": "en",
+            "order": 22,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Q8.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " The room is not ready yet. What is the best thing to do? A) tell the guest to come back later B) offer to store their luggage while they wait C) ignore the problem",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 204,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "96e7d9f7842292c595b3b85ef5a2fdecb1f921195190b8354b592a547a77c648"
+            },
+            "text": "Q8. The room is not ready yet. What is the best thing to do? A) tell the guest to come back later B) offer to store their luggage while they wait C) ignore the problem",
+            "type": "paragraph"
+        },
+        {
+            "id": "4704228e-abea-5e94-8468-4ef40b4962e1",
+            "language": "en",
+            "order": 23,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 205,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "b2a3aa602762a782e47a4f8e93bb5ae1b8819d1b92b7e6ceb3ef46a3c7077eb0"
+            },
+            "text": "Answer",
+            "type": "instruction"
+        },
+        {
+            "id": "7a4ab84a-677e-5c90-9a67-9fc59ec5da1e",
+            "language": "en",
+            "order": 24,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "B.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Offering to hold their luggage keeps the guest comfortable and shows you care.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 206,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "cb42711ca9f194443f9b03256bb9cb4c25667170610f8a19dc408c529f5f81d7"
+            },
+            "text": "B. Offering to hold their luggage keeps the guest comfortable and shows you care.",
+            "type": "paragraph"
+        },
+        {
+            "activity_code": "HSP-C02-ACT-QUIZ",
+            "id": "c772ebf7-ac6e-56d9-8a77-2de465ed6f6c",
+            "language": "en",
+            "order": 25,
+            "provenance_kind": "derived_navigation",
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 182,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "5afd42f19a54588d7aae41ef09f0b06aee1aa8c3e9a32e8e5aac6991901c2156"
+            },
+            "type": "activity_embed"
+        }
+    ],
+    "chapter_code": "HSP-C02",
+    "code": "HSP-C02-LS-10",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "959c6a1d-59d7-5be2-a07a-fefce607b8b1",
+    "language": "en",
+    "order": 10,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 182,
+        "chapter": 2,
+        "heading_path": [
+            "Front Desk and Check-In",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "5afd42f19a54588d7aae41ef09f0b06aee1aa8c3e9a32e8e5aac6991901c2156"
+    },
+    "status": "published",
+    "title": "Step 7. Quiz"
+}

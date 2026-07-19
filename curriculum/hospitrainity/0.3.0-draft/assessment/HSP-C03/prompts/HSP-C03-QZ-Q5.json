@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C03-ACT-QUIZ",
+  "code": "HSP-C03-QZ-Q5",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "3da94770-54e6-595a-8449-13f0f7a8c119",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 335,
+    "chapter": 3,
+    "heading_path": [
+      "Dealing with Customers on the Phone",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "aad9c04564e17f80b4eac5ca31d1592b1a1a56c55d8b4697ba027c23f5249140"
+  },
+  "status": "published",
+  "stem": "Q5. The line is unclear. What should you do? A) hang up B) politely ask them to repeat, or repeat slowly yourself C) shout"
+}

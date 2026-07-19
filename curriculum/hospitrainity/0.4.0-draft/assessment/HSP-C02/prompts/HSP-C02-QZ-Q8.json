@@ -1,0 +1,50 @@
+{
+    "activity_code": "HSP-C02-ACT-QUIZ",
+    "choices": [
+        {
+            "feedback": [],
+            "id": "1a071eaf-e74f-5c58-b922-a3443a74d1b9",
+            "label": "a",
+            "text": "tell the guest to come back later"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "model_reveal",
+                    "text": "B. Offering to hold their luggage keeps the guest comfortable and shows you care."
+                }
+            ],
+            "id": "3cd39c1f-ad95-53ae-9352-3eb97d806ffa",
+            "label": "b",
+            "text": "offer to store their luggage while they wait"
+        },
+        {
+            "feedback": [],
+            "id": "db514b33-8dec-57ca-a257-451e7ef08c17",
+            "label": "c",
+            "text": "ignore the problem"
+        }
+    ],
+    "code": "HSP-C02-QZ-Q8",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "dc95e9e7-247a-5fc5-a08d-d6c3fa544817",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 204,
+        "chapter": 2,
+        "heading_path": [
+            "Front Desk and Check-In",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "96e7d9f7842292c595b3b85ef5a2fdecb1f921195190b8354b592a547a77c648"
+    },
+    "status": "published",
+    "stem": "Q8. The room is not ready yet. What is the best thing to do? A) tell the guest to come back later B) offer to store their luggage while they wait C) ignore the problem"
+}

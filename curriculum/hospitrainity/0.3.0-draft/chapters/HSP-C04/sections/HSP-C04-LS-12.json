@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C04",
+  "code": "HSP-C04-LS-12",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "9211ff11-7c83-5f9f-b0c7-3fb048761790",
+  "order": 12,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 495,
+    "chapter": 4,
+    "heading_path": [
+      "The Guest-Services Hotline",
+      "Take it further"
+    ],
+    "normalized_text_sha256": "f0828006649e0f2fb80c198f5b98c883a54c910e90c66f8164a21e9200828c7b"
+  },
+  "status": "published",
+  "title": "Take it further"
+}

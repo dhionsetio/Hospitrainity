@@ -1,0 +1,175 @@
+{
+    "blocks": [
+        {
+            "id": "578367aa-6430-5e0e-8f3b-67941a097061",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Read each example out loud once, because saying a word is the fastest way to remember it.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 99,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 2. Key vocabulary"
+                ],
+                "normalized_text_sha256": "b36ada020ecea51323997fc7bdfbb9e898735f9f472139aebed8d351b8b0a0a1"
+            },
+            "text": "Read each example out loud once, because saying a word is the fastest way to remember it.",
+            "type": "instruction"
+        },
+        {
+            "caption": "Step 2. Key vocabulary: Word or phrase / What it means / How you might say it",
+            "header": [
+                "Word or phrase",
+                "What it means",
+                "How you might say it"
+            ],
+            "id": "a95b5560-bb1c-52d2-9f84-ed66b916ff37",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "rows": [
+                [
+                    "reservation / booking",
+                    "a room arranged in advance",
+                    "“I have a reservation under Chen.”"
+                ],
+                [
+                    "front desk / reception",
+                    "the counter where guests check in",
+                    "“Please come to the front desk.”"
+                ],
+                [
+                    "to check in",
+                    "to register when you arrive",
+                    "“I would like to check in, please.”"
+                ],
+                [
+                    "to check out",
+                    "to settle up and leave",
+                    "“What time is check-out?”"
+                ],
+                [
+                    "walk-in guest",
+                    "a guest who arrives with no booking",
+                    "“We have one room left for walk-in guests.”"
+                ],
+                [
+                    "ID / passport",
+                    "an identity document",
+                    "“Could I see your passport, please?”"
+                ],
+                [
+                    "key card",
+                    "the card that opens the room",
+                    "“Here is your key card.”"
+                ],
+                [
+                    "amenities",
+                    "the extra services and facilities",
+                    "“Our amenities include free Wi-Fi and a gym.”"
+                ],
+                [
+                    "breakfast voucher",
+                    "a ticket that pays for breakfast",
+                    "“Here is your breakfast voucher.”"
+                ],
+                [
+                    "luggage",
+                    "a guest’s bags",
+                    "“May I help you with your luggage?”"
+                ],
+                [
+                    "deposit",
+                    "money held in case of extra charges",
+                    "“We take a small deposit at check-in.”"
+                ],
+                [
+                    "to confirm",
+                    "to check that something is correct",
+                    "“Let me confirm your booking.”"
+                ]
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 100,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 2. Key vocabulary"
+                ],
+                "normalized_text_sha256": "a1bb92eb037fbcb7fc1007ad58477d4cb3212d7b29234d6b59b068cd98ae7b56"
+            },
+            "type": "source_table"
+        },
+        {
+            "id": "5d28979c-9379-5838-b150-3e4b521517aa",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Quick pronunciation helpers: “reservation” is four beats, rez-er-VAY-shun. “amenities” is stressed in the middle, a-MEN-",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "i",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "-tees. “luggage” rhymes with “baggage.” Clear and friendly always beats fast and flawless.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 101,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 2. Key vocabulary"
+                ],
+                "normalized_text_sha256": "699053d6ef1efd391c1eae58bb694f54a6a9d0886b41c06109fad061a51d67ce"
+            },
+            "text": "Quick pronunciation helpers: “reservation” is four beats, rez-er-VAY-shun. “amenities” is stressed in the middle, a-MEN-i-tees. “luggage” rhymes with “baggage.” Clear and friendly always beats fast and flawless.",
+            "type": "paragraph"
+        }
+    ],
+    "chapter_code": "HSP-C02",
+    "code": "HSP-C02-LS-04",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "29f5fc35-ee50-5527-9912-fa197a9a23bf",
+    "language": "en",
+    "order": 4,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 98,
+        "chapter": 2,
+        "heading_path": [
+            "Front Desk and Check-In",
+            "Step 2. Key vocabulary"
+        ],
+        "normalized_text_sha256": "f46a1e0aec2c4e29b3ec8df91525031a99db987a4745d07d5a09266bade29874"
+    },
+    "status": "published",
+    "title": "Step 2. Key vocabulary"
+}

@@ -1,0 +1,37 @@
+{
+    "activity_code": "HSP-C06-ACT-CONFIDENCE",
+    "code": "HSP-C06-CC-R4",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "05b4550d-ba99-5b4c-b92a-01688fc5442d",
+    "language": "en",
+    "order": 4,
+    "provenance_kind": "source_verbatim",
+    "rating_scale": {
+        "max": 5,
+        "min": 1,
+        "values": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ]
+    },
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "rating",
+    "scoring_mode": "unscored_self_report",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 798,
+        "chapter": 6,
+        "heading_path": [
+            "Online and Social Media Customer Service",
+            "Step 8. Confidence check"
+        ],
+        "normalized_text_sha256": "53177d680536340537cca2c309d8a87ae3f84734339555de76c376ed9c1529c6"
+    },
+    "status": "published",
+    "stem": "I can decide when to hand a message to the front desk."
+}

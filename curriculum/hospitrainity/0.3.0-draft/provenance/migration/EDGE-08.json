@@ -1,0 +1,7 @@
+{
+  "canonical_code": null,
+  "disposition": "dropped",
+  "entity_type": "migration-edge",
+  "legacy_ref": "course.json#module:Emergency Situations",
+  "note": "No emergency chapter in Hospitrainity.docx. Safety-critical escalation is partly reflected in Chapter 7 complaint handling but emergencies are not in the source of truth."
+}

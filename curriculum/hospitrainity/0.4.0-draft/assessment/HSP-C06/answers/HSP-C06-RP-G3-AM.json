@@ -1,0 +1,28 @@
+{
+    "accepted": [
+        "b"
+    ],
+    "code": "HSP-C06-RP-G3-AM",
+    "content_version": "0.4.0-draft",
+    "correct_choice_ids": [
+        "94a29543-20a4-520d-8c7f-680070103f2b"
+    ],
+    "entity_type": "answer-model",
+    "id": "0421ab52-1d4f-5425-a485-2924f5bfb392",
+    "prompt_code": "HSP-C06-RP-G3",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 1,
+        "chapter": 6,
+        "heading_path": [
+            "Online and Social Media Customer Service",
+            "Step 6. Role-play"
+        ],
+        "normalized_text_sha256": "3e23e8160039594a33894f6564e1b1348bbd7a0088d42c4acb73eeaed59c009d"
+    },
+    "status": "published"
+}

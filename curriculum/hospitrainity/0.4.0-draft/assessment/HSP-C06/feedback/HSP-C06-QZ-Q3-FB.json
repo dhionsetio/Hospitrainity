@@ -1,0 +1,27 @@
+{
+    "code": "HSP-C06-QZ-Q3-FB",
+    "content_version": "0.4.0-draft",
+    "entity_type": "feedback-model",
+    "id": "da47157c-790b-5a88-b4de-53867c5989c6",
+    "messages": [
+        {
+            "feedback_type": "model_reveal",
+            "text": "B. Apologise in public, then resolve in private."
+        }
+    ],
+    "prompt_code": "HSP-C06-QZ-Q3",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 779,
+        "chapter": 6,
+        "heading_path": [
+            "Online and Social Media Customer Service",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "adf042ce5419c7c5ddef12003f300e68a9045cfd32eb1d679ee047fc0c5dccb5"
+    },
+    "status": "published"
+}

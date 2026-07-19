@@ -1,0 +1,78 @@
+{
+    "blocks": [
+        {
+            "id": "c2d6eee1-4779-599a-a929-de7ef5cf7f31",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Online messages are often public, or at least easy to screenshot, so every reply is a little advertisement for your hotel. Guests have also grown used to fast service, and their patience online is short. Studies of social media service have found that a large majority of people who reach out expect a reply within an hour, yet only a minority of businesses actually manage it. That gap is your opportunity, because a quick, kind reply genuinely stands out.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 679,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Why this matters"
+                ],
+                "normalized_text_sha256": "7b12fbfed7562adb1520e63104306760fca665ecd2eed81c7e89d15db6d66eeb"
+            },
+            "text": "Online messages are often public, or at least easy to screenshot, so every reply is a little advertisement for your hotel. Guests have also grown used to fast service, and their patience online is short. Studies of social media service have found that a large majority of people who reach out expect a reply within an hour, yet only a minority of businesses actually manage it. That gap is your opportunity, because a quick, kind reply genuinely stands out.",
+            "type": "paragraph"
+        },
+        {
+            "id": "fc788d90-75dc-5236-b26a-a4421caaa440",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Good to know: research suggests that around three quarters of customers who message a brand on social media expect a response within the hour. Speed really is part of the service now. See the further reading at the end of this chapter.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 680,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Why this matters"
+                ],
+                "normalized_text_sha256": "42ac034d1b1c9a7e062959c0d46832b7d750281fee54a67b806a4f9d5555b2b6"
+            },
+            "text": "Good to know: research suggests that around three quarters of customers who message a brand on social media expect a response within the hour. Speed really is part of the service now. See the further reading at the end of this chapter.",
+            "type": "paragraph"
+        }
+    ],
+    "chapter_code": "HSP-C06",
+    "code": "HSP-C06-LS-02",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "bae35652-f825-59c4-ac67-5ea412464a2d",
+    "language": "en",
+    "order": 2,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 678,
+        "chapter": 6,
+        "heading_path": [
+            "Online and Social Media Customer Service",
+            "Why this matters"
+        ],
+        "normalized_text_sha256": "8893dff34c02db6a4e9bb13792e41320671581fe96a8c65721b2267627a48aec"
+    },
+    "status": "published",
+    "title": "Why this matters"
+}

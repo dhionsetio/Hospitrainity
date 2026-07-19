@@ -1,0 +1,26 @@
+{
+  "code": "HSP-C06-PR-I1-FB",
+  "content_version": "0.3.0-draft",
+  "entity_type": "feedback-model",
+  "id": "504cf784-344e-5d50-b37b-b577cd9f6a52",
+  "messages": [
+    {
+      "feedback_type": "model_reveal",
+      "text": "(b). Chat should be short, warm, and direct, not a formal essay."
+    }
+  ],
+  "prompt_code": "HSP-C06-PR-I1",
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 721,
+    "chapter": 6,
+    "heading_path": [
+      "Online and Social Media Customer Service",
+      "Step 5. Practice"
+    ],
+    "normalized_text_sha256": "728d70fba9dec6861615d2f2e7bce6e97aabf85888d298079bc655ed4f8a22b1"
+  },
+  "status": "published"
+}

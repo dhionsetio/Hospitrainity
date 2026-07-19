@@ -1,0 +1,27 @@
+{
+    "code": "HSP-C03-QZ-Q3-FB",
+    "content_version": "0.4.0-draft",
+    "entity_type": "feedback-model",
+    "id": "e879302e-e6c2-5596-9673-ecaa8b214b7e",
+    "messages": [
+        {
+            "feedback_type": "model_reveal",
+            "text": "B. Reading back is your safety net against errors."
+        }
+    ],
+    "prompt_code": "HSP-C03-QZ-Q3",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 338,
+        "chapter": 3,
+        "heading_path": [
+            "Dealing with Customers on the Phone",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "0beee2f8c7e3f172def593e2c4e5c53d683a4e9cdafb7e3c2139bfd478315ce4"
+    },
+    "status": "published"
+}

@@ -1,0 +1,34 @@
+{
+  "code": "HSP-C07-RP-G1-FB",
+  "content_version": "0.3.0-draft",
+  "entity_type": "feedback-model",
+  "id": "914aa31d-4228-5542-852f-61013f8baa21",
+  "messages": [
+    {
+      "feedback_type": "error_specific",
+      "text": "(a) “Housekeeping usually does a good job.” This deflects instead of helping."
+    },
+    {
+      "feedback_type": "success",
+      "text": "(b) “I am so sorry, that is not our standard at all. I will have it cleaned immediately, or I can move you to another room right now. Which would you prefer?” This is the ideal answer, an apology, ownership, and a choice of solution."
+    },
+    {
+      "feedback_type": "error_specific",
+      "text": "(c) “Are you sure it is dirty?” This dismisses the guest and will only make it worse."
+    }
+  ],
+  "prompt_code": "HSP-C07-RP-G1",
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 879,
+    "chapter": 7,
+    "heading_path": [
+      "Dealing with Problems and Complaints",
+      "Step 6. Role-play"
+    ],
+    "normalized_text_sha256": "b611b2cf9cb9d888c1d5ab70d4e313c6aec2771a2cb01ef6aafb48cdae918cd6"
+  },
+  "status": "published"
+}

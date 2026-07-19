@@ -1,0 +1,109 @@
+{
+  "checkpoint": "CP-12",
+  "checks": [
+    {
+      "detail": "total=487 (want 487), authored=428 (428), excluded=59 (59), status={\"draft\":59,\"review\":428}",
+      "evidence": {
+        "regByType": {
+          "activity": 24,
+          "answer-model": 102,
+          "cefr-reference": 23,
+          "chapter": 7,
+          "competency": 7,
+          "competency-framework": 1,
+          "feedback-model": 102,
+          "lesson-section": 85,
+          "outcome": 21,
+          "prompt-item": 102,
+          "rubric": 6,
+          "source-provenance": 7
+        },
+        "regStatus": {
+          "draft": 59,
+          "review": 428
+        }
+      },
+      "id": "A_registry_totals",
+      "name": "Registry inventory totals",
+      "status": "pass"
+    },
+    {
+      "detail": "all 8 tables match registry",
+      "evidence": {
+        "rows": {
+          "activity": 24,
+          "answer_model": 102,
+          "chapter": 7,
+          "feedback_model": 102,
+          "lesson_section": 85,
+          "prompt_item": 102,
+          "rubric": 6,
+          "source_provenance": 7
+        }
+      },
+      "id": "B_store_vs_registry",
+      "name": "Compiled store rows match registry counts",
+      "status": "pass"
+    },
+    {
+      "detail": "chapters =(7), sections =(store 85/vm 85), activities =(24), prompts =(102), outcomes =(21)",
+      "id": "C_store_vs_viewmodel",
+      "name": "Store entities == rendered view-model",
+      "status": "pass"
+    },
+    {
+      "detail": "counts ok {\"activities\":24,\"chapters\":7,\"outcomes\":21,\"prompts\":102,\"sections\":85}; integrity ok (store accepted[]>0 = 90, report says 90); orphanActs=0; youkata=0",
+      "id": "D_render_report",
+      "name": "Render-report counts + integrity match store",
+      "status": "pass"
+    },
+    {
+      "detail": "all activity->chapter references resolve",
+      "id": "E_link_integrity",
+      "name": "Every activity resolves under its module",
+      "status": "pass"
+    },
+    {
+      "detail": "modules review+blocked=true, gate open=true, ledger blocked+unsigned=true, report ok=true, registry statuses ok=true",
+      "id": "F_lifecycle_workflow",
+      "name": "Lifecycle + approval gate consistent everywhere",
+      "status": "pass"
+    },
+    {
+      "detail": "render#1=fe380bde4995 render#2=fe380bde4995 delivered=fe380bde4995",
+      "id": "G_determinism",
+      "name": "Renderer is deterministic and matches delivered standalone",
+      "status": "pass"
+    },
+    {
+      "detail": "8/8 checks passed",
+      "id": "H1_validate",
+      "name": "Structural validation 8/8",
+      "status": "pass"
+    },
+    {
+      "detail": "a11y: 24 activities | declared-vs-required: 24 conform, 0 gap(s)",
+      "id": "H2_a11y",
+      "name": "Accessibility conformance (WCAG 2.2 AA + UDL, source)",
+      "status": "pass"
+    },
+    {
+      "detail": "editorial scan: 428 entities | errors=0 warn=0 info=4",
+      "id": "H3_editorial",
+      "name": "Editorial scan (no errors; no banned tokens in content)",
+      "status": "pass"
+    },
+    {
+      "detail": "chapter cards(incl literal)=8, main=true, skiplink=true, htmlLang=true, navCurrent=true, aboutWfTable=true, gateOpen=true, outcomesList=true, activityPrompts=true, chapterReviewBadges=true, youkataInContent=false",
+      "id": "I_dom_paint",
+      "name": "Rendered DOM paints and matches the model",
+      "status": "pass"
+    }
+  ],
+  "failed": 0,
+  "generated_from": "phase-09/curriculum.sql + phase-11 ledgers + rendered standalone",
+  "ok": true,
+  "passed": 11,
+  "standalone_sha256": "fe380bde4995191bb610ca29ad04cf809531c009c49b1967cf95612ec47d01ba",
+  "total_checks": 11
+}

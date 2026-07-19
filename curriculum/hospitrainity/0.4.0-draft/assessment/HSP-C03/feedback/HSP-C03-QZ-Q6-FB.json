@@ -1,0 +1,27 @@
+{
+    "code": "HSP-C03-QZ-Q6-FB",
+    "content_version": "0.4.0-draft",
+    "entity_type": "feedback-model",
+    "id": "474a6e31-5fbe-50c1-beb1-13beb7a7fb64",
+    "messages": [
+        {
+            "feedback_type": "model_reveal",
+            "text": "A. You repeat the details out loud to confirm them."
+        }
+    ],
+    "prompt_code": "HSP-C03-QZ-Q6",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 347,
+        "chapter": 3,
+        "heading_path": [
+            "Dealing with Customers on the Phone",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "3d9604bf45a394f7529ceb466264eba8a14b44e9a04477619923c05d43ea438c"
+    },
+    "status": "published"
+}

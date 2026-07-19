@@ -1,0 +1,33 @@
+{
+    "canonical": {
+        "chapters": 7,
+        "exercise_prompts": 96,
+        "external_hyperlink_relationships": 18,
+        "feedback_strings_including_guidance": 138,
+        "non_empty_accepted_strings": 90,
+        "ordering_prompts": 5,
+        "rating_items": 28,
+        "role_play_prompts": 4,
+        "sections": 85,
+        "selection_prompts": 74,
+        "service_artifact_prompts": 2,
+        "short_text_prompts": 11,
+        "source_tables": 21,
+        "warm_up_questions": 21
+    },
+    "coverage": {
+        "classification_rule": "All non-empty paragraph and table blocks between the 85 ordered section markers are emitted; front matter is inventoried but is not learner-section content.",
+        "unclassified_source_blocks": 0
+    },
+    "ooxml": {
+        "external_hyperlink_relationships": 18,
+        "paragraphs": 946,
+        "tables": 21,
+        "unique_external_targets": 16
+    },
+    "source": {
+        "artifact": "Hospitrainity.docx",
+        "bytes": 117314,
+        "sha256": "7f8a2c62db6884498f7a1c2de56e79e39609262944a685fe7eb97f702444cbb4"
+    }
+}

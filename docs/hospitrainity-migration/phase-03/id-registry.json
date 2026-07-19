@@ -1,0 +1,3417 @@
+{
+  "entries": [
+    {
+      "code": "HSP-COMP-FRAMEWORK-DRAFT",
+      "entity_type": "competency-framework",
+      "origin": "CP-02",
+      "status": "draft",
+      "uuid": "90400d2d-18e9-5acd-a467-29a80a6f8757"
+    },
+    {
+      "code": "COMP-SERVICE-INTERACTION",
+      "entity_type": "competency",
+      "origin": "CP-02",
+      "status": "draft",
+      "uuid": "bb7cc54a-3218-5ae1-924e-51b61e2075c7"
+    },
+    {
+      "code": "COMP-INFO-ACCURACY",
+      "entity_type": "competency",
+      "origin": "CP-02",
+      "status": "draft",
+      "uuid": "eb1754e2-a1cb-5b30-8696-6bcd825d2a2c"
+    },
+    {
+      "code": "COMP-RAPPORT-POLITENESS",
+      "entity_type": "competency",
+      "origin": "CP-02",
+      "status": "draft",
+      "uuid": "d26f6330-5afc-5004-8ef9-c546a399a1e2"
+    },
+    {
+      "code": "COMP-PROBLEM-SOLVING",
+      "entity_type": "competency",
+      "origin": "CP-02",
+      "status": "draft",
+      "uuid": "a7b23305-b0d6-5c11-8158-6ff239397866"
+    },
+    {
+      "code": "COMP-CHANNEL-COMM",
+      "entity_type": "competency",
+      "origin": "CP-02",
+      "status": "draft",
+      "uuid": "12b2deab-84d3-544c-96af-11e24dbd7cf6"
+    },
+    {
+      "code": "COMP-MEDIATION-HANDOFF",
+      "entity_type": "competency",
+      "origin": "CP-02",
+      "status": "draft",
+      "uuid": "1f53aa37-a9d7-5539-bbc8-9b7557478b1e"
+    },
+    {
+      "code": "COMP-SELF-REGULATION",
+      "entity_type": "competency",
+      "origin": "CP-02",
+      "status": "draft",
+      "uuid": "a0f584e4-f1cd-5da1-966f-3531ab8dd716"
+    },
+    {
+      "code": "OUT-M01-01",
+      "entity_type": "outcome",
+      "origin": "CP-02",
+      "status": "draft",
+      "uuid": "42f10265-fe19-595f-a1dc-912113c22c57"
+    },
+    {
+      "code": "OUT-M01-02",
+      "entity_type": "outcome",
+      "origin": "CP-02",
+      "status": "draft",
+      "uuid": "0ec7cc60-ece3-56f3-87a5-ad2089f5e939"
+    },
+    {
+      "code": "OUT-M01-03",
+      "entity_type": "outcome",
+      "origin": "CP-02",
+      "status": "draft",
+      "uuid": "1e79c512-2212-5701-8e0a-94b9813757cf"
+    },
+    {
+      "code": "OUT-M02-01",
+      "entity_type": "outcome",
+      "origin": "CP-02",
+      "status": "draft",
+      "uuid": "e7f291d1-57b3-53bb-b873-15539f938e10"
+    },
+    {
+      "code": "OUT-M02-02",
+      "entity_type": "outcome",
+      "origin": "CP-02",
+      "status": "draft",
+      "uuid": "ab1e5f2c-0ead-570f-b5b4-ca10d784e1c5"
+    },
+    {
+      "code": "OUT-M02-03",
+      "entity_type": "outcome",
+      "origin": "CP-02",
+      "status": "draft",
+      "uuid": "aec2fa65-ac41-5dce-8b84-8a0989997d0c"
+    },
+    {
+      "code": "OUT-M03-01",
+      "entity_type": "outcome",
+      "origin": "CP-02",
+      "status": "draft",
+      "uuid": "73de26de-696a-58f3-a5f8-9510cb4e5265"
+    },
+    {
+      "code": "OUT-M03-02",
+      "entity_type": "outcome",
+      "origin": "CP-02",
+      "status": "draft",
+      "uuid": "599c6874-d776-5703-b275-915d37cdf8aa"
+    },
+    {
+      "code": "OUT-M03-03",
+      "entity_type": "outcome",
+      "origin": "CP-02",
+      "status": "draft",
+      "uuid": "296807c0-a6e8-5f98-ac14-c17c3dca4cd6"
+    },
+    {
+      "code": "OUT-M04-01",
+      "entity_type": "outcome",
+      "origin": "CP-02",
+      "status": "draft",
+      "uuid": "456243f9-9a95-5194-8cc7-78907268fe94"
+    },
+    {
+      "code": "OUT-M04-02",
+      "entity_type": "outcome",
+      "origin": "CP-02",
+      "status": "draft",
+      "uuid": "bb38dc75-af20-581b-84f8-2073b0cbac2e"
+    },
+    {
+      "code": "OUT-M04-03",
+      "entity_type": "outcome",
+      "origin": "CP-02",
+      "status": "draft",
+      "uuid": "ddfd6c51-3e4e-5bfe-ad22-35607e0688f2"
+    },
+    {
+      "code": "OUT-M05-01",
+      "entity_type": "outcome",
+      "origin": "CP-02",
+      "status": "draft",
+      "uuid": "c808cbbc-9091-5922-8b49-26e8ee7f60ff"
+    },
+    {
+      "code": "OUT-M05-02",
+      "entity_type": "outcome",
+      "origin": "CP-02",
+      "status": "draft",
+      "uuid": "bfd4ca62-dabf-5ce1-b66a-5104448f44b8"
+    },
+    {
+      "code": "OUT-M05-03",
+      "entity_type": "outcome",
+      "origin": "CP-02",
+      "status": "draft",
+      "uuid": "5cdf2113-f175-59b1-9d97-486670eb1e15"
+    },
+    {
+      "code": "OUT-M06-01",
+      "entity_type": "outcome",
+      "origin": "CP-02",
+      "status": "draft",
+      "uuid": "c0165446-d700-52e2-bf0d-54a321ea552a"
+    },
+    {
+      "code": "OUT-M06-02",
+      "entity_type": "outcome",
+      "origin": "CP-02",
+      "status": "draft",
+      "uuid": "6337204e-0e3f-5010-9860-8acbe13ee188"
+    },
+    {
+      "code": "OUT-M06-03",
+      "entity_type": "outcome",
+      "origin": "CP-02",
+      "status": "draft",
+      "uuid": "e8d8079d-7d9c-5e2e-99fb-5e661d8e19f4"
+    },
+    {
+      "code": "OUT-M07-01",
+      "entity_type": "outcome",
+      "origin": "CP-02",
+      "status": "draft",
+      "uuid": "ef4c710b-fed3-5374-82e2-1e2a366a8c79"
+    },
+    {
+      "code": "OUT-M07-02",
+      "entity_type": "outcome",
+      "origin": "CP-02",
+      "status": "draft",
+      "uuid": "dbae3c31-f08a-5f67-ac34-52eb8497aa65"
+    },
+    {
+      "code": "OUT-M07-03",
+      "entity_type": "outcome",
+      "origin": "CP-02",
+      "status": "draft",
+      "uuid": "6cbd8e1d-092a-54a4-a4e3-a74989ef2ab3"
+    },
+    {
+      "code": "CEFR-A2-INFO-01",
+      "entity_type": "cefr-reference",
+      "origin": "CP-02",
+      "status": "draft",
+      "uuid": "00b4766e-9c6a-5b85-93a7-0cb7f728445c"
+    },
+    {
+      "code": "CEFR-A2-INFO-02",
+      "entity_type": "cefr-reference",
+      "origin": "CP-02",
+      "status": "draft",
+      "uuid": "5c2213e9-42d9-5821-bef6-93adda3940dc"
+    },
+    {
+      "code": "CEFR-B1-INFO-01",
+      "entity_type": "cefr-reference",
+      "origin": "CP-02",
+      "status": "draft",
+      "uuid": "6e6ec0d7-10f5-50ac-8d15-0c31152793c3"
+    },
+    {
+      "code": "CEFR-B1-INFO-02",
+      "entity_type": "cefr-reference",
+      "origin": "CP-02",
+      "status": "draft",
+      "uuid": "4d36b728-559a-5277-831f-19d6ec0e4d7c"
+    },
+    {
+      "code": "CEFR-A2-GOODS-01",
+      "entity_type": "cefr-reference",
+      "origin": "CP-02",
+      "status": "draft",
+      "uuid": "cac94a1e-9e0d-50f8-8c66-0b68fa0c54a3"
+    },
+    {
+      "code": "CEFR-A2-GOODS-02",
+      "entity_type": "cefr-reference",
+      "origin": "CP-02",
+      "status": "draft",
+      "uuid": "7f03bc60-1da9-5900-93b7-6ba35a823208"
+    },
+    {
+      "code": "CEFR-B1-GOODS-01",
+      "entity_type": "cefr-reference",
+      "origin": "CP-02",
+      "status": "draft",
+      "uuid": "3ca3a525-d78a-52e4-9502-51c1ac5d5f6c"
+    },
+    {
+      "code": "CEFR-A2-GOAL-01",
+      "entity_type": "cefr-reference",
+      "origin": "CP-02",
+      "status": "draft",
+      "uuid": "e86b1848-9079-5282-8490-d09e6e3e90b2"
+    },
+    {
+      "code": "CEFR-B1-GOAL-01",
+      "entity_type": "cefr-reference",
+      "origin": "CP-02",
+      "status": "draft",
+      "uuid": "4be377e9-c108-5b93-9985-ef7164447e15"
+    },
+    {
+      "code": "CEFR-A2-MSG-01",
+      "entity_type": "cefr-reference",
+      "origin": "CP-02",
+      "status": "draft",
+      "uuid": "b06e961c-9650-55cc-9e7f-411ed7a57bbe"
+    },
+    {
+      "code": "CEFR-A2-MSG-02",
+      "entity_type": "cefr-reference",
+      "origin": "CP-02",
+      "status": "draft",
+      "uuid": "b0ec975f-6c5c-5629-92b1-94bc8fc9486f"
+    },
+    {
+      "code": "CEFR-B1-MSG-01",
+      "entity_type": "cefr-reference",
+      "origin": "CP-02",
+      "status": "draft",
+      "uuid": "9cb56bd4-f324-5da0-a52b-f8d30bd853d6"
+    },
+    {
+      "code": "CEFR-A2-CLAR-01",
+      "entity_type": "cefr-reference",
+      "origin": "CP-02",
+      "status": "draft",
+      "uuid": "bf421749-bc6b-5eb6-9fd1-7efe8bdc56d8"
+    },
+    {
+      "code": "CEFR-B1-CLAR-01",
+      "entity_type": "cefr-reference",
+      "origin": "CP-02",
+      "status": "draft",
+      "uuid": "4206394a-5e3a-5eac-b647-8f18a5987b73"
+    },
+    {
+      "code": "CEFR-A2-CORR-01",
+      "entity_type": "cefr-reference",
+      "origin": "CP-02",
+      "status": "draft",
+      "uuid": "9240851e-cc60-520e-ab97-2f03489292d8"
+    },
+    {
+      "code": "CEFR-A2-ONLINE-TX-01",
+      "entity_type": "cefr-reference",
+      "origin": "CP-02",
+      "status": "draft",
+      "uuid": "74d93c51-f859-5a7e-b316-8c3703492fc1"
+    },
+    {
+      "code": "CEFR-B1-ONLINE-TX-01",
+      "entity_type": "cefr-reference",
+      "origin": "CP-02",
+      "status": "draft",
+      "uuid": "745b1c61-4cfa-5bcf-a01e-d104ee11d7a7"
+    },
+    {
+      "code": "CEFR-B1-ONLINE-TX-02",
+      "entity_type": "cefr-reference",
+      "origin": "CP-02",
+      "status": "draft",
+      "uuid": "9af858f2-4cb8-5008-b14a-2de3f85f6b18"
+    },
+    {
+      "code": "CEFR-A2-ONLINE-CONV-01",
+      "entity_type": "cefr-reference",
+      "origin": "CP-02",
+      "status": "draft",
+      "uuid": "66093a08-a07f-5744-bae2-42ce8aabdf4c"
+    },
+    {
+      "code": "CEFR-B1-ONLINE-CONV-01",
+      "entity_type": "cefr-reference",
+      "origin": "CP-02",
+      "status": "draft",
+      "uuid": "7e4c38fa-3918-5741-bef3-cea22472c26f"
+    },
+    {
+      "code": "CEFR-A2-SOCIO-01",
+      "entity_type": "cefr-reference",
+      "origin": "CP-02",
+      "status": "draft",
+      "uuid": "9d5f616a-a9cb-5feb-91da-ac3214242e10"
+    },
+    {
+      "code": "CEFR-A2-SOCIO-02",
+      "entity_type": "cefr-reference",
+      "origin": "CP-02",
+      "status": "draft",
+      "uuid": "8f8abd45-cb24-57d3-9078-17c3090e3282"
+    },
+    {
+      "code": "CEFR-B1-SOCIO-01",
+      "entity_type": "cefr-reference",
+      "origin": "CP-02",
+      "status": "draft",
+      "uuid": "3648ad19-75a4-54b6-abb3-6f6f2c24dba6"
+    },
+    {
+      "code": "HSP-C01",
+      "entity_type": "chapter",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "0499ebdb-540a-597a-8b56-18ff88fbfcde"
+    },
+    {
+      "code": "HSP-C01-PROV",
+      "entity_type": "source-provenance",
+      "origin": "CP-04+",
+      "status": "draft",
+      "uuid": "48affa7e-b73e-5be6-87c9-e66eaa013c4e"
+    },
+    {
+      "code": "HSP-C01-LS-01",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "d13f129f-38bc-574a-8672-d309f5771944"
+    },
+    {
+      "code": "HSP-C01-LS-02",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "b34decd1-a821-591a-b750-e17bee8c171e"
+    },
+    {
+      "code": "HSP-C01-LS-03",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "9ed9d026-ff4d-59b5-bc35-bc6a36edeee7"
+    },
+    {
+      "code": "HSP-C01-LS-04",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "07c7b4a4-6804-5baf-b955-f8d80869a549"
+    },
+    {
+      "code": "HSP-C01-LS-05",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "dde037b0-5f1c-5f1d-b736-118ed4cca1a8"
+    },
+    {
+      "code": "HSP-C01-LS-06",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "01a8469a-3f6c-56c6-acc5-c46337907518"
+    },
+    {
+      "code": "HSP-C01-LS-07",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "10f9d8f9-8a6f-5e9e-9e24-ef41a3784c14"
+    },
+    {
+      "code": "HSP-C02",
+      "entity_type": "chapter",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "ae026504-70d2-54e9-aeea-c5464dfe2a66"
+    },
+    {
+      "code": "HSP-C02-PROV",
+      "entity_type": "source-provenance",
+      "origin": "CP-04+",
+      "status": "draft",
+      "uuid": "046454a4-ff92-50f8-bd5c-a7b0bc4958d8"
+    },
+    {
+      "code": "HSP-C02-LS-01",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "bd7d10fa-9c23-5598-b81b-5c8fc305df86"
+    },
+    {
+      "code": "HSP-C02-LS-02",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "bfb1e954-a2a0-5fbd-8e86-fc3ca24bbd44"
+    },
+    {
+      "code": "HSP-C02-LS-03",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "a2bb1de3-f990-5421-80da-aa204c632e42"
+    },
+    {
+      "code": "HSP-C02-LS-04",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "29f5fc35-ee50-5527-9912-fa197a9a23bf"
+    },
+    {
+      "code": "HSP-C02-LS-05",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "17394b63-5cc3-5dbe-aca0-faf83cdc91c7"
+    },
+    {
+      "code": "HSP-C02-LS-06",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "94a8b12e-73e7-5b3d-b38d-b41ce4a378c4"
+    },
+    {
+      "code": "HSP-C02-LS-07",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "054a7bc8-671c-5727-83a7-0371d4c49e5c"
+    },
+    {
+      "code": "HSP-C02-LS-08",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "8800ced4-2423-510b-a011-b42fb4c852bd"
+    },
+    {
+      "code": "HSP-C02-LS-09",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "5aecafcb-7ef4-56eb-abe4-e68678dc0490"
+    },
+    {
+      "code": "HSP-C02-LS-10",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "959c6a1d-59d7-5be2-a07a-fefce607b8b1"
+    },
+    {
+      "code": "HSP-C02-LS-11",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "6f21972c-99c6-5d64-9e5e-9314acb3af53"
+    },
+    {
+      "code": "HSP-C02-LS-12",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "f8540365-aefa-5698-a3e1-9f175d261f6e"
+    },
+    {
+      "code": "HSP-C02-LS-13",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "fa468a24-95c8-50ae-90a8-b456003791f0"
+    },
+    {
+      "code": "HSP-C03",
+      "entity_type": "chapter",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "ab5f0a33-22d1-5309-8880-a3879474fff5"
+    },
+    {
+      "code": "HSP-C03-PROV",
+      "entity_type": "source-provenance",
+      "origin": "CP-04+",
+      "status": "draft",
+      "uuid": "465a4358-002c-5d34-91ad-6893c437df29"
+    },
+    {
+      "code": "HSP-C03-LS-01",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "ea753495-4903-55b8-9c32-987ed623d8bb"
+    },
+    {
+      "code": "HSP-C03-LS-02",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "f9ac6dd0-5e85-5c08-8503-566cb517748f"
+    },
+    {
+      "code": "HSP-C03-LS-03",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "7e18e2a5-d12f-54aa-8871-5a6eb36f34bc"
+    },
+    {
+      "code": "HSP-C03-LS-04",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "9c0987e1-19f1-55e6-94a4-f7c214cf6c09"
+    },
+    {
+      "code": "HSP-C03-LS-05",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "07e89803-8168-552a-b88b-be864bbf78b4"
+    },
+    {
+      "code": "HSP-C03-LS-06",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "e82dc8de-7e20-5068-b30f-2a62b95ddb90"
+    },
+    {
+      "code": "HSP-C03-LS-07",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "d34276ee-0006-574c-95ed-66272c11e57d"
+    },
+    {
+      "code": "HSP-C03-LS-08",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "d30d0eec-1a81-5634-9217-ff136d6e39a3"
+    },
+    {
+      "code": "HSP-C03-LS-09",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "49903f4a-186d-5bb4-b7df-5ff53cb1bfff"
+    },
+    {
+      "code": "HSP-C03-LS-10",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "8d6b103f-1d48-50d9-afd1-958f17239964"
+    },
+    {
+      "code": "HSP-C03-LS-11",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "804d6167-a936-5029-9c59-f2925106c950"
+    },
+    {
+      "code": "HSP-C03-LS-12",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "4a4fc01e-484a-5839-b999-38e5d5e1d695"
+    },
+    {
+      "code": "HSP-C03-LS-13",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "a67eea84-b7e1-596d-8a44-514c828385f4"
+    },
+    {
+      "code": "HSP-C04",
+      "entity_type": "chapter",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "6966ffce-1d4e-52d5-8139-7fdf65f46de5"
+    },
+    {
+      "code": "HSP-C04-PROV",
+      "entity_type": "source-provenance",
+      "origin": "CP-04+",
+      "status": "draft",
+      "uuid": "d369c025-e3ce-5e1f-ba46-03bc8b195450"
+    },
+    {
+      "code": "HSP-C04-LS-01",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "195aeebf-f52b-51f9-b815-7f161a2b99a4"
+    },
+    {
+      "code": "HSP-C04-LS-02",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "92a64fbb-5e38-5a78-a821-e3222cb913ba"
+    },
+    {
+      "code": "HSP-C04-LS-03",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "c493f644-4148-5ef8-8652-64fe396a31d9"
+    },
+    {
+      "code": "HSP-C04-LS-04",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "944da27d-27ad-504c-85d8-b48a0480644c"
+    },
+    {
+      "code": "HSP-C04-LS-05",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "06d8ad10-3b81-5e33-92ef-1c020f2af2b2"
+    },
+    {
+      "code": "HSP-C04-LS-06",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "bf60f3c3-8f4b-5e37-8e84-bf0f5abfc0d5"
+    },
+    {
+      "code": "HSP-C04-LS-07",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "fbbe6a67-0aa6-5ae0-8249-93fc41503a1f"
+    },
+    {
+      "code": "HSP-C04-LS-08",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "a1ae763a-b17a-5824-88aa-fcefcd345f2d"
+    },
+    {
+      "code": "HSP-C04-LS-09",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "1d051d9b-2554-5d10-9eb3-9eead7d782a9"
+    },
+    {
+      "code": "HSP-C04-LS-10",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "643a3d62-02cc-5fd7-8b9a-1ab9f29a26be"
+    },
+    {
+      "code": "HSP-C04-LS-11",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "a460899b-eddc-5ac0-9917-bfbded552437"
+    },
+    {
+      "code": "HSP-C04-LS-12",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "9211ff11-7c83-5f9f-b0c7-3fb048761790"
+    },
+    {
+      "code": "HSP-C04-LS-13",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "e964beeb-3d86-554a-ba75-20085930cc71"
+    },
+    {
+      "code": "HSP-C05",
+      "entity_type": "chapter",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "bcba456e-f170-5e60-8144-3e5dabb69e3b"
+    },
+    {
+      "code": "HSP-C05-PROV",
+      "entity_type": "source-provenance",
+      "origin": "CP-04+",
+      "status": "draft",
+      "uuid": "99ed88e3-3c1d-58b7-9944-25c9e39bac8d"
+    },
+    {
+      "code": "HSP-C05-LS-01",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "4a1d5371-d5d9-527c-84bb-271fd7b772bd"
+    },
+    {
+      "code": "HSP-C05-LS-02",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "a2793d2d-a0ab-5392-b263-0b622a1c1803"
+    },
+    {
+      "code": "HSP-C05-LS-03",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "9143daff-7a0f-589a-9951-5d2523d155de"
+    },
+    {
+      "code": "HSP-C05-LS-04",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "c30edb55-f64a-53df-aa3d-46b8fc04419c"
+    },
+    {
+      "code": "HSP-C05-LS-05",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "851674b3-361c-5fa2-aa4e-472023f3b5ae"
+    },
+    {
+      "code": "HSP-C05-LS-06",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "ee63b9ff-e01d-5aae-aaad-4a2d8bd7862f"
+    },
+    {
+      "code": "HSP-C05-LS-07",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "847add7e-d29f-5966-8cda-8af5faf244f8"
+    },
+    {
+      "code": "HSP-C05-LS-08",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "88519710-adba-58f2-8e17-5a94e276cd0a"
+    },
+    {
+      "code": "HSP-C05-LS-09",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "a6f0ed0e-36d2-52ef-bcdb-f983d26d898c"
+    },
+    {
+      "code": "HSP-C05-LS-10",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "ca8d97eb-9e15-5e0f-a942-d9ed4395de4c"
+    },
+    {
+      "code": "HSP-C05-LS-11",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "7ccbe232-78d2-5350-a75b-944567f3df30"
+    },
+    {
+      "code": "HSP-C05-LS-12",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "330d4095-6a19-593b-b63d-5ba9f449a87f"
+    },
+    {
+      "code": "HSP-C05-LS-13",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "28941fc0-1ec7-5c5a-93d8-0f90256c2b56"
+    },
+    {
+      "code": "HSP-C06",
+      "entity_type": "chapter",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "3df67cda-c129-5852-bec0-05964ef33425"
+    },
+    {
+      "code": "HSP-C06-PROV",
+      "entity_type": "source-provenance",
+      "origin": "CP-04+",
+      "status": "draft",
+      "uuid": "2b4b5f38-a83a-5cd7-abe9-44059b79ee83"
+    },
+    {
+      "code": "HSP-C06-LS-01",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "564cb9ec-d0a1-524c-97ac-e85a2c5d9331"
+    },
+    {
+      "code": "HSP-C06-LS-02",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "bae35652-f825-59c4-ac67-5ea412464a2d"
+    },
+    {
+      "code": "HSP-C06-LS-03",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "acec0a4c-acca-5e6d-8381-ec8d4f461f30"
+    },
+    {
+      "code": "HSP-C06-LS-04",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "08f1351e-d256-5e0a-93e9-ac1784e919d0"
+    },
+    {
+      "code": "HSP-C06-LS-05",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "2a3b135b-9630-5107-8b67-60a07912a55b"
+    },
+    {
+      "code": "HSP-C06-LS-06",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "2b695845-e3c0-5cd4-8916-ab5d2c36bd65"
+    },
+    {
+      "code": "HSP-C06-LS-07",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "81e7a240-501b-506f-b814-6d536d9626ff"
+    },
+    {
+      "code": "HSP-C06-LS-08",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "5d7193b1-2846-5453-bb9f-5ac5389e1cf2"
+    },
+    {
+      "code": "HSP-C06-LS-09",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "5a8bfd16-1374-5e82-8630-dc551e5a7650"
+    },
+    {
+      "code": "HSP-C06-LS-10",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "75ab1622-ed6b-5191-94c1-0913fc918f41"
+    },
+    {
+      "code": "HSP-C06-LS-11",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "1a8af21c-1572-56f2-a9bf-d84cbe67eac4"
+    },
+    {
+      "code": "HSP-C06-LS-12",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "3832ae73-fc4c-516a-b8e4-96e33f4c97bf"
+    },
+    {
+      "code": "HSP-C06-LS-13",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "12d39817-1bf8-532b-897c-f47fbb66ff21"
+    },
+    {
+      "code": "HSP-C07",
+      "entity_type": "chapter",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "41f8a03b-77c2-5f7c-8a1f-b65ed2be1731"
+    },
+    {
+      "code": "HSP-C07-PROV",
+      "entity_type": "source-provenance",
+      "origin": "CP-04+",
+      "status": "draft",
+      "uuid": "feee7038-ddd1-5ed6-b11f-d38a0b0d8e95"
+    },
+    {
+      "code": "HSP-C07-LS-01",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "c26f12f8-3a4f-5064-b912-af34f2afa85e"
+    },
+    {
+      "code": "HSP-C07-LS-02",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "2fe3a414-04c2-520f-a8dd-b893c41af816"
+    },
+    {
+      "code": "HSP-C07-LS-03",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "1a295e15-b75b-5ebd-9274-0e77b119a758"
+    },
+    {
+      "code": "HSP-C07-LS-04",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "f1c158bc-3d92-598c-b4fd-189243af0be7"
+    },
+    {
+      "code": "HSP-C07-LS-05",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "32a6cee2-3e72-5cc9-8379-31a0ecd8dec2"
+    },
+    {
+      "code": "HSP-C07-LS-06",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "069c8e95-28de-567f-84aa-c9217fecf5f5"
+    },
+    {
+      "code": "HSP-C07-LS-07",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "2104d5b2-ca91-563c-b1c4-c6399b9e02c1"
+    },
+    {
+      "code": "HSP-C07-LS-08",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "cfbb45e2-3bcf-5152-bba4-3387b65a08f0"
+    },
+    {
+      "code": "HSP-C07-LS-09",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "a9e7d2df-3578-51ef-9817-f1932377ca39"
+    },
+    {
+      "code": "HSP-C07-LS-10",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "6a3b932d-20d4-596b-b111-f0f860b32bbb"
+    },
+    {
+      "code": "HSP-C07-LS-11",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "dc43d99c-528f-5cbb-b7ca-a89757dae54b"
+    },
+    {
+      "code": "HSP-C07-LS-12",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "b3961f00-0954-5719-93cd-3192f53a09ea"
+    },
+    {
+      "code": "HSP-C07-LS-13",
+      "entity_type": "lesson-section",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "62cf73c9-2edd-5101-a792-efdf60991c15"
+    },
+    {
+      "code": "HSP-C02-ACT-QUIZ",
+      "entity_type": "activity",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "eae86ee1-8726-561a-aea3-68c7b40c6731"
+    },
+    {
+      "code": "HSP-C02-QZ-Q1",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "c1ca71dc-4045-552d-b291-972c806aefa4"
+    },
+    {
+      "code": "HSP-C02-QZ-Q1-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "e3377760-b69a-51a8-82b2-0b5a79602e05"
+    },
+    {
+      "code": "HSP-C02-QZ-Q1-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "fad0d3b1-88c6-5f57-859a-753d9d875f8e"
+    },
+    {
+      "code": "HSP-C02-QZ-Q2",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "98f25136-6912-5905-88a8-1599ffb2783c"
+    },
+    {
+      "code": "HSP-C02-QZ-Q2-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "8908e1cf-f8ba-5003-a631-b4d8598805b1"
+    },
+    {
+      "code": "HSP-C02-QZ-Q2-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "93ed2dd6-3017-5cee-ae10-8918c71cb375"
+    },
+    {
+      "code": "HSP-C02-QZ-Q3",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "cbe714d5-c0a0-593d-b9f5-7826ddea1312"
+    },
+    {
+      "code": "HSP-C02-QZ-Q3-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "4140a6a9-1f2f-5235-99ae-a2dfc7f92806"
+    },
+    {
+      "code": "HSP-C02-QZ-Q3-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "622ccbe2-17bc-5d30-ad95-2a1d3db6a15e"
+    },
+    {
+      "code": "HSP-C02-QZ-Q4",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "637d89f5-ba3b-5e3c-9315-37c971e00971"
+    },
+    {
+      "code": "HSP-C02-QZ-Q4-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "1aecc151-f41f-59e9-b68b-c6060698a6f2"
+    },
+    {
+      "code": "HSP-C02-QZ-Q4-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "89d7a592-1972-51ca-8f31-ed7dfe9cc70b"
+    },
+    {
+      "code": "HSP-C02-QZ-Q5",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "f86c9499-b6ad-5c70-8179-6fc6140a8e3d"
+    },
+    {
+      "code": "HSP-C02-QZ-Q5-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "74173e55-c65e-5ba1-b3e1-0d653960b221"
+    },
+    {
+      "code": "HSP-C02-QZ-Q5-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "c3c7a5de-778d-5f3f-a4f6-53bb4d805e1a"
+    },
+    {
+      "code": "HSP-C02-QZ-Q6",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "db4a4b60-1216-5f2d-a9e8-0c62fe5c2133"
+    },
+    {
+      "code": "HSP-C02-QZ-Q6-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "bc4cbc2d-d997-5c6d-a88a-8ba49078c5e9"
+    },
+    {
+      "code": "HSP-C02-QZ-Q6-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "d5200dda-ebc7-5a02-86f2-3b4312209f93"
+    },
+    {
+      "code": "HSP-C02-QZ-Q7",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "303524ab-f3ff-5132-a2d6-6faf85707dd8"
+    },
+    {
+      "code": "HSP-C02-QZ-Q7-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "b3671371-4b57-57a0-9306-6eba3a3cf3c4"
+    },
+    {
+      "code": "HSP-C02-QZ-Q7-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "b900df10-c038-59f5-8d76-93f2aa2c19f7"
+    },
+    {
+      "code": "HSP-C02-QZ-Q8",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "dc95e9e7-247a-5fc5-a08d-d6c3fa544817"
+    },
+    {
+      "code": "HSP-C02-QZ-Q8-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "23eeae79-e579-5dad-a392-1f857c86e35c"
+    },
+    {
+      "code": "HSP-C02-QZ-Q8-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "a661f7b7-5d87-5bea-97dc-54ba9226f174"
+    },
+    {
+      "code": "HSP-C02-ACT-PRACTICE",
+      "entity_type": "activity",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "4c5a55ea-1d90-5a25-8c44-6929939e81b4"
+    },
+    {
+      "code": "HSP-C02-PR-I1",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "08ae344d-5e18-5b9d-9872-15af0ad7ffdb"
+    },
+    {
+      "code": "HSP-C02-PR-I1-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "2508135a-d377-5387-ab00-9f70e8676a8b"
+    },
+    {
+      "code": "HSP-C02-PR-I1-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "419a70ff-5022-5e39-b771-9d74c03f51ca"
+    },
+    {
+      "code": "HSP-C02-PR-I2",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "7376ce18-de54-572f-baea-7cbd81098016"
+    },
+    {
+      "code": "HSP-C02-PR-I2-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "f201ed49-64cd-5a89-a68c-aba698b1714d"
+    },
+    {
+      "code": "HSP-C02-PR-I2-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "8d71d7dd-ec9e-5c21-9643-6103f56f9c80"
+    },
+    {
+      "code": "HSP-C02-PR-I3",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "dcfb3eb7-27d5-5977-a905-d6c424604cb5"
+    },
+    {
+      "code": "HSP-C02-PR-I3-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "058a58d4-0b37-5265-ae61-844e1a204866"
+    },
+    {
+      "code": "HSP-C02-PR-I3-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "e7cafa26-853d-5aa9-928a-9668f6ca172b"
+    },
+    {
+      "code": "HSP-C02-PR-I4",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "ef1d1312-0385-5e0e-b7b4-6815b96a2dd3"
+    },
+    {
+      "code": "HSP-C02-PR-I4-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "79df87d2-27a5-50a9-aabc-579ce7b386f0"
+    },
+    {
+      "code": "HSP-C02-PR-I4-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "c5552fbc-a321-5860-bc4b-87d8d3121bdd"
+    },
+    {
+      "code": "HSP-C02-ACT-ROLEPLAY",
+      "entity_type": "activity",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "60098cb9-4e81-5613-aedf-6a96deb8a034"
+    },
+    {
+      "code": "HSP-C02-RP-G1",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "b29ce63e-84e1-57f1-b73d-3d15d0bda9cf"
+    },
+    {
+      "code": "HSP-C02-RP-G1-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "e4651a92-852d-556f-bdc0-e7f3f70d9537"
+    },
+    {
+      "code": "HSP-C02-RP-G1-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "24165e6e-9fbf-56bd-bf92-385c184ac406"
+    },
+    {
+      "code": "HSP-C02-RP-G2",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "aa6658fa-78a2-5c6a-b7ed-b56041b4146d"
+    },
+    {
+      "code": "HSP-C02-RP-G2-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "7ea42572-7c7c-5a40-964d-4481f35aaa40"
+    },
+    {
+      "code": "HSP-C02-RP-G2-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "eb2fddf2-39db-54eb-a8d9-70b963db8ff3"
+    },
+    {
+      "code": "HSP-C02-RP-G3",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "f59414f3-9449-5744-98ae-b24289e1c847"
+    },
+    {
+      "code": "HSP-C02-RP-G3-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "b0d276f8-ac71-5833-883f-0af2b11a4635"
+    },
+    {
+      "code": "HSP-C02-RP-G3-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "4452d35e-7514-5eeb-8c76-af9fe030a7ed"
+    },
+    {
+      "code": "HSP-C02-RP-FREE",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "fc780c95-b793-5f80-bacc-6c21cf16cce7"
+    },
+    {
+      "code": "HSP-C02-RP-FREE-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "a8d22d22-46ea-513a-bdeb-92e56658930e"
+    },
+    {
+      "code": "HSP-C02-RP-FREE-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "93747995-0b13-5679-9ad9-f28aaf721ee7"
+    },
+    {
+      "code": "HSP-C02-RP-RUBRIC",
+      "entity_type": "rubric",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "92c61577-8407-5c02-8914-faa8f625b740"
+    },
+    {
+      "code": "HSP-C02-ACT-CONFIDENCE",
+      "entity_type": "activity",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "66c6e675-f3cf-529b-ad74-6604db8eeeca"
+    },
+    {
+      "code": "HSP-C02-CC-SELF",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "c87fec5f-1e49-5a22-9532-b4bb8a223511"
+    },
+    {
+      "code": "HSP-C02-CC-SELF-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "2c9ce859-447e-5828-aa35-c7135a9c2b8b"
+    },
+    {
+      "code": "HSP-C02-CC-SELF-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "0b7af84b-086b-5785-8a82-4d12d468c161"
+    },
+    {
+      "code": "HSP-C03-ACT-QUIZ",
+      "entity_type": "activity",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "6d5adb27-c8be-5a58-a459-f296c0376925"
+    },
+    {
+      "code": "HSP-C03-QZ-Q1",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "2de239f3-765c-5d5b-a0e8-c615366ad36e"
+    },
+    {
+      "code": "HSP-C03-QZ-Q1-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "97a622d0-f606-59e6-abe1-f925e7b4a7a1"
+    },
+    {
+      "code": "HSP-C03-QZ-Q1-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "67124794-8921-55fd-b9ad-d25230a165c3"
+    },
+    {
+      "code": "HSP-C03-QZ-Q2",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "586f1b3f-257e-5ece-814c-ff4ee06ccd04"
+    },
+    {
+      "code": "HSP-C03-QZ-Q2-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "0c0099d2-d9b5-5990-8c18-a32f3bacdeaa"
+    },
+    {
+      "code": "HSP-C03-QZ-Q2-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "4260f81b-a2e0-560d-84c8-1d2521203625"
+    },
+    {
+      "code": "HSP-C03-QZ-Q3",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "26d61997-1045-565b-a66b-5de3586635dc"
+    },
+    {
+      "code": "HSP-C03-QZ-Q3-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "449bde69-9b84-50d9-b97d-faa5b097752c"
+    },
+    {
+      "code": "HSP-C03-QZ-Q3-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "e879302e-e6c2-5596-9673-ecaa8b214b7e"
+    },
+    {
+      "code": "HSP-C03-QZ-Q4",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "797643a9-54ad-54e9-a92a-a6f6ddd41be9"
+    },
+    {
+      "code": "HSP-C03-QZ-Q4-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "066096e0-2b48-555a-a6f6-89d30e918ea7"
+    },
+    {
+      "code": "HSP-C03-QZ-Q4-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "0f9475f9-4a83-572c-8ba5-92cb35df7cae"
+    },
+    {
+      "code": "HSP-C03-QZ-Q5",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "3da94770-54e6-595a-8449-13f0f7a8c119"
+    },
+    {
+      "code": "HSP-C03-QZ-Q5-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "c3978691-cab8-5b8b-afda-aaefc50502b3"
+    },
+    {
+      "code": "HSP-C03-QZ-Q5-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "c01c7e0e-2b18-5fb0-817c-cd65f8095dba"
+    },
+    {
+      "code": "HSP-C03-QZ-Q6",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "9896d73a-2064-51af-b977-e12dd1fe7da5"
+    },
+    {
+      "code": "HSP-C03-QZ-Q6-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "129d22d6-6d10-5860-8b2b-935422c066f0"
+    },
+    {
+      "code": "HSP-C03-QZ-Q6-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "474a6e31-5fbe-50c1-beb1-13beb7a7fb64"
+    },
+    {
+      "code": "HSP-C03-QZ-Q7",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "ce7b2d93-e0b6-5701-b3fe-e6c43ed87bc9"
+    },
+    {
+      "code": "HSP-C03-QZ-Q7-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "6f051842-f8b3-5562-baee-20855e82b22f"
+    },
+    {
+      "code": "HSP-C03-QZ-Q7-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "989ec9a1-e9f2-5ee6-82e7-98052cfb867d"
+    },
+    {
+      "code": "HSP-C03-QZ-Q8",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "08fa5f6f-2d55-5d1e-a323-f63bea0fe8d9"
+    },
+    {
+      "code": "HSP-C03-QZ-Q8-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "280e8f81-1160-5c2a-b17f-47f151e44a6e"
+    },
+    {
+      "code": "HSP-C03-QZ-Q8-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "9caed2c7-9a4c-5bc3-91f9-9cee23e8fbcc"
+    },
+    {
+      "code": "HSP-C03-ACT-PRACTICE",
+      "entity_type": "activity",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "4d6cfe46-31fa-53c5-9c12-3a96aa76faa0"
+    },
+    {
+      "code": "HSP-C03-PR-I1",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "7de923cf-5aef-5e34-adbc-be46f77bdaee"
+    },
+    {
+      "code": "HSP-C03-PR-I1-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "5c455b44-de2e-5098-8f2f-45fa5c9c231e"
+    },
+    {
+      "code": "HSP-C03-PR-I1-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "b7e77ea8-32da-5960-92f4-07d2fc79113e"
+    },
+    {
+      "code": "HSP-C03-PR-I2",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "663951b6-5742-5189-8baf-94c0cf8338e8"
+    },
+    {
+      "code": "HSP-C03-PR-I2-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "701784a2-24cc-5bf2-9dab-d55e88678ae6"
+    },
+    {
+      "code": "HSP-C03-PR-I2-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "f057c0b4-4214-50ad-840b-4832a8b12fa1"
+    },
+    {
+      "code": "HSP-C03-PR-I3",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "4c3b878f-a16e-55b4-921d-f374fb286556"
+    },
+    {
+      "code": "HSP-C03-PR-I3-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "994c9295-aabd-5a06-9b7b-36fdc13f37ae"
+    },
+    {
+      "code": "HSP-C03-PR-I3-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "eeb70508-4a3d-5129-92eb-641c5d77797e"
+    },
+    {
+      "code": "HSP-C03-PR-I4",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "e39c22c3-d319-5f94-9f01-29555c9bac70"
+    },
+    {
+      "code": "HSP-C03-PR-I4-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "9b6e3af7-aefe-56cf-a2c2-1b6e8fe043c4"
+    },
+    {
+      "code": "HSP-C03-PR-I4-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "f3eb925b-7a2a-5c4e-8872-258c6a573483"
+    },
+    {
+      "code": "HSP-C03-ACT-ROLEPLAY",
+      "entity_type": "activity",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "91b64b0a-2af5-574e-b2ff-1410faa8478f"
+    },
+    {
+      "code": "HSP-C03-RP-G1",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "af5fb8b9-990c-5abb-a75f-3b4338a49ccd"
+    },
+    {
+      "code": "HSP-C03-RP-G1-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "819a2c5c-26af-58c5-bd06-cce366092229"
+    },
+    {
+      "code": "HSP-C03-RP-G1-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "6b5bd479-6d7c-506d-b1b1-1f34435c220d"
+    },
+    {
+      "code": "HSP-C03-RP-G2",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "bf043806-7bc1-55af-9b44-af86f490ec36"
+    },
+    {
+      "code": "HSP-C03-RP-G2-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "5d8e1218-955e-54fb-b46d-c7a2edde1eb4"
+    },
+    {
+      "code": "HSP-C03-RP-G2-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "1603e2bc-2b0d-5675-9451-e7375eb63c47"
+    },
+    {
+      "code": "HSP-C03-RP-G3",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "0c1035a1-7769-5129-89b3-67e93e454f62"
+    },
+    {
+      "code": "HSP-C03-RP-G3-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "f2bd27fd-150c-595a-853a-0b7552d73e12"
+    },
+    {
+      "code": "HSP-C03-RP-G3-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "4c9b65a3-081c-54f1-a6f7-cd05e64e74a5"
+    },
+    {
+      "code": "HSP-C03-RP-FREE",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "47d86c10-52ed-57ad-a09f-c16550dd070b"
+    },
+    {
+      "code": "HSP-C03-RP-FREE-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "5917aa85-af90-58f8-8e12-b30a12d5e400"
+    },
+    {
+      "code": "HSP-C03-RP-FREE-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "3fb48dab-c29f-5710-b641-d952bcc227fe"
+    },
+    {
+      "code": "HSP-C03-RP-RUBRIC",
+      "entity_type": "rubric",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "af73f849-574b-5a0e-8beb-4831eafcdbfb"
+    },
+    {
+      "code": "HSP-C03-ACT-CONFIDENCE",
+      "entity_type": "activity",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "297b21cd-75a9-5136-a9e1-a8a59f6ab895"
+    },
+    {
+      "code": "HSP-C03-CC-SELF",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "965be959-7e9e-5a41-b786-b74d4755b0e2"
+    },
+    {
+      "code": "HSP-C03-CC-SELF-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "8d429ce8-a1eb-51cb-8c67-5567e32ea231"
+    },
+    {
+      "code": "HSP-C03-CC-SELF-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "c480ec40-cd4c-5e10-9bd7-270261c416ce"
+    },
+    {
+      "code": "HSP-C04-ACT-QUIZ",
+      "entity_type": "activity",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "01bfdb31-b629-5461-8b0d-91c7c49eefa2"
+    },
+    {
+      "code": "HSP-C04-QZ-Q1",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "586fd212-67b3-5228-a406-5c71e63c8b8a"
+    },
+    {
+      "code": "HSP-C04-QZ-Q1-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "f319839d-f810-5511-a515-71dc65e3b165"
+    },
+    {
+      "code": "HSP-C04-QZ-Q1-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "8a8b6ed0-8cf5-5857-bdae-3759988b203b"
+    },
+    {
+      "code": "HSP-C04-QZ-Q2",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "65f5a8aa-9834-54a5-9de0-aa4f6a631ff2"
+    },
+    {
+      "code": "HSP-C04-QZ-Q2-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "9860e586-7469-5ecf-8b26-3587f0aae1e6"
+    },
+    {
+      "code": "HSP-C04-QZ-Q2-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "588bf17b-3958-5610-a6d7-b269179eefba"
+    },
+    {
+      "code": "HSP-C04-QZ-Q3",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "13377da8-265a-5808-a7d8-a8cd0cb6fcee"
+    },
+    {
+      "code": "HSP-C04-QZ-Q3-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "58e0833e-ffe1-5a8b-9e34-6e8f9f1721f0"
+    },
+    {
+      "code": "HSP-C04-QZ-Q3-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "8453c013-ffb5-59cc-af0d-cf15eed6a981"
+    },
+    {
+      "code": "HSP-C04-QZ-Q4",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "9d52196a-feb8-5a5b-b4bb-789ca231b434"
+    },
+    {
+      "code": "HSP-C04-QZ-Q4-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "16bdffd8-2567-55ea-8c2d-28a4e346fcd1"
+    },
+    {
+      "code": "HSP-C04-QZ-Q4-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "a7a80f31-2b99-50dd-95ed-496fb801f4e4"
+    },
+    {
+      "code": "HSP-C04-QZ-Q5",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "40ec8240-8e8d-5797-b2ad-1b05c45c90cc"
+    },
+    {
+      "code": "HSP-C04-QZ-Q5-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "ff0c0bed-f38c-57dc-a433-a520aca51d2d"
+    },
+    {
+      "code": "HSP-C04-QZ-Q5-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "274c4007-c573-5c30-8a13-342980fd53db"
+    },
+    {
+      "code": "HSP-C04-QZ-Q6",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "c88b3db8-8ec4-58a1-b76b-68d724c07bb7"
+    },
+    {
+      "code": "HSP-C04-QZ-Q6-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "5a58f97a-e01c-5e75-a640-f1d5823c922d"
+    },
+    {
+      "code": "HSP-C04-QZ-Q6-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "9bf0a3c3-ee5b-56c6-a638-b6d02db7d326"
+    },
+    {
+      "code": "HSP-C04-QZ-Q7",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "97381a92-effb-597c-8f57-d1acadcf2ec3"
+    },
+    {
+      "code": "HSP-C04-QZ-Q7-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "32a61733-7b84-5d19-9115-e284d746aef5"
+    },
+    {
+      "code": "HSP-C04-QZ-Q7-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "b6f3eb1d-b4ed-512d-82c8-74e04b923adc"
+    },
+    {
+      "code": "HSP-C04-QZ-Q8",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "9f9f50d6-c85d-50ed-9d06-2cb4569e4a23"
+    },
+    {
+      "code": "HSP-C04-QZ-Q8-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "ede01fc5-d447-55e6-b8b0-e47e02fbeaa1"
+    },
+    {
+      "code": "HSP-C04-QZ-Q8-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "150fc04c-f8c1-5bbb-a83a-9c2bde8fde6e"
+    },
+    {
+      "code": "HSP-C04-ACT-PRACTICE",
+      "entity_type": "activity",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "38ca8652-d220-592b-a33d-b1e7a3f32aea"
+    },
+    {
+      "code": "HSP-C04-PR-I1",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "9c260375-0f38-5678-9fbe-371c05f0beaa"
+    },
+    {
+      "code": "HSP-C04-PR-I1-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "e96b5acd-9b3c-59b3-8fcc-24e038a2a7d4"
+    },
+    {
+      "code": "HSP-C04-PR-I1-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "95c07a1c-9c50-5d98-9a4d-19cbfbb7053b"
+    },
+    {
+      "code": "HSP-C04-PR-I2",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "abb2db2e-5226-5e37-9144-2b1363ef4723"
+    },
+    {
+      "code": "HSP-C04-PR-I2-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "de8cae8e-449d-59ad-b7d4-63d7bd51bdbd"
+    },
+    {
+      "code": "HSP-C04-PR-I2-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "b02bc010-b11c-5799-b3bd-d065687327f8"
+    },
+    {
+      "code": "HSP-C04-PR-I3",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "9b266e0d-a3b6-5239-bf0a-40d602717488"
+    },
+    {
+      "code": "HSP-C04-PR-I3-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "e8d7a06a-8d27-5cbb-b251-6fca5b531474"
+    },
+    {
+      "code": "HSP-C04-PR-I3-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "781b64a0-cf88-5bb0-b7c3-dbc95564239a"
+    },
+    {
+      "code": "HSP-C04-PR-I4",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "bf88aa00-70b0-52b1-bb1e-38f2fc3b227e"
+    },
+    {
+      "code": "HSP-C04-PR-I4-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "dfa410a6-6ebe-50ef-b8cd-e856c7d1a933"
+    },
+    {
+      "code": "HSP-C04-PR-I4-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "414e0d11-761c-50c8-bc92-49e419f446ed"
+    },
+    {
+      "code": "HSP-C04-ACT-ROLEPLAY",
+      "entity_type": "activity",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "a0a43279-f76e-5f3e-af0d-406163a43e76"
+    },
+    {
+      "code": "HSP-C04-RP-G1",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "b4d4b681-8dae-5e2b-b51d-69dd5701e5a4"
+    },
+    {
+      "code": "HSP-C04-RP-G1-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "89551806-7f04-5da6-8f53-c4e8561caed5"
+    },
+    {
+      "code": "HSP-C04-RP-G1-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "2a94e5a8-f9b9-5bef-9eba-ab391221b8c2"
+    },
+    {
+      "code": "HSP-C04-RP-G2",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "e69858b8-bbcb-53ac-80a1-128a37bc5438"
+    },
+    {
+      "code": "HSP-C04-RP-G2-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "759fa622-f9fe-5f2b-a1b3-c6d6c386aea1"
+    },
+    {
+      "code": "HSP-C04-RP-G2-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "a2ed478b-35fe-5c70-9c36-b5ed9b8a5120"
+    },
+    {
+      "code": "HSP-C04-RP-G3",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "37e5e289-7623-50c9-816e-e4d3e98b3f22"
+    },
+    {
+      "code": "HSP-C04-RP-G3-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "eedae279-7aa4-5133-adcd-dbf39fcb2213"
+    },
+    {
+      "code": "HSP-C04-RP-G3-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "4729d941-30c4-5be7-a86b-670efdc00d4f"
+    },
+    {
+      "code": "HSP-C04-RP-FREE",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "790df4a2-244f-5b2b-9807-e993134bbc3b"
+    },
+    {
+      "code": "HSP-C04-RP-FREE-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "7ae6755b-3e8c-51c9-a4e6-e9ed55b03efc"
+    },
+    {
+      "code": "HSP-C04-RP-FREE-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "30a112ed-adf1-5377-8804-f43a013f3c47"
+    },
+    {
+      "code": "HSP-C04-RP-RUBRIC",
+      "entity_type": "rubric",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "f4c6423d-519f-53b8-9c19-9ac4c908b05c"
+    },
+    {
+      "code": "HSP-C04-ACT-CONFIDENCE",
+      "entity_type": "activity",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "858356e1-a029-5c4f-90fa-5a9a13effc9d"
+    },
+    {
+      "code": "HSP-C04-CC-SELF",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "b1f0c6c7-2d94-5ec0-8ccb-909177b5e70f"
+    },
+    {
+      "code": "HSP-C04-CC-SELF-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "ef392e03-0c66-58c4-88c9-632154769f19"
+    },
+    {
+      "code": "HSP-C04-CC-SELF-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "8a669a5e-d687-5b0e-bd1d-3767b5c681f2"
+    },
+    {
+      "code": "HSP-C05-ACT-QUIZ",
+      "entity_type": "activity",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "68476520-58e7-5a3c-b18f-c93926024217"
+    },
+    {
+      "code": "HSP-C05-QZ-Q1",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "16a41f79-0576-555c-afe3-4b74f97aebaf"
+    },
+    {
+      "code": "HSP-C05-QZ-Q1-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "ca95f837-336d-54ce-b010-08101ca55c0a"
+    },
+    {
+      "code": "HSP-C05-QZ-Q1-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "feaaaa2e-64d4-5ae8-b943-86536f8e652e"
+    },
+    {
+      "code": "HSP-C05-QZ-Q2",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "42b53ca4-877b-5f9f-bece-0adb7bc85a18"
+    },
+    {
+      "code": "HSP-C05-QZ-Q2-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "4bf36f9f-ccd0-58a1-bbbc-dca0d1d2d459"
+    },
+    {
+      "code": "HSP-C05-QZ-Q2-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "d9034c9a-9c0e-5605-a07c-7ed76af3aa5b"
+    },
+    {
+      "code": "HSP-C05-QZ-Q3",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "b3ce640a-6bd9-5157-a909-3b21eead6894"
+    },
+    {
+      "code": "HSP-C05-QZ-Q3-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "127cc900-0736-5480-91dc-85d86df797c2"
+    },
+    {
+      "code": "HSP-C05-QZ-Q3-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "956db73e-7933-5d97-87e8-5764138feadc"
+    },
+    {
+      "code": "HSP-C05-QZ-Q4",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "dc6768ef-fc2e-5e31-804e-177a2b973a34"
+    },
+    {
+      "code": "HSP-C05-QZ-Q4-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "5cfeeb45-f2cb-5c3d-9e6f-1e7c9816c618"
+    },
+    {
+      "code": "HSP-C05-QZ-Q4-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "9605034a-c31c-512c-b534-e314c7fb30ee"
+    },
+    {
+      "code": "HSP-C05-QZ-Q5",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "efdd5422-7002-514a-9e6a-1eb7a207e5ba"
+    },
+    {
+      "code": "HSP-C05-QZ-Q5-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "02439e59-a68b-51a0-82f6-7c8aa545b9bd"
+    },
+    {
+      "code": "HSP-C05-QZ-Q5-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "88dee79e-cf66-51e4-b5fc-045979fc1429"
+    },
+    {
+      "code": "HSP-C05-QZ-Q6",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "1909bf42-74a5-5ed5-9688-721bf0f37fed"
+    },
+    {
+      "code": "HSP-C05-QZ-Q6-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "63a5beb7-3705-56e4-9dcf-7adfd8473e64"
+    },
+    {
+      "code": "HSP-C05-QZ-Q6-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "13e80bf3-9ff6-5392-a392-9555617bb844"
+    },
+    {
+      "code": "HSP-C05-QZ-Q7",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "a9ed07ff-37bf-50b6-9d15-db3af1d276da"
+    },
+    {
+      "code": "HSP-C05-QZ-Q7-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "ca8d9920-832e-5632-8527-c82a50659984"
+    },
+    {
+      "code": "HSP-C05-QZ-Q7-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "e772f4cb-7e02-594a-8f2d-2a75735cec7c"
+    },
+    {
+      "code": "HSP-C05-QZ-Q8",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "3ef775de-921d-5e13-8632-6e5d23ab4182"
+    },
+    {
+      "code": "HSP-C05-QZ-Q8-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "3cb86bdd-591f-530a-8e3f-d3e27a0eeebe"
+    },
+    {
+      "code": "HSP-C05-QZ-Q8-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "747566b2-9001-559f-a285-7df4b2b6f785"
+    },
+    {
+      "code": "HSP-C05-ACT-PRACTICE",
+      "entity_type": "activity",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "fcd3f38c-fb33-5d44-a358-cf856ac7ba41"
+    },
+    {
+      "code": "HSP-C05-PR-I1",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "643bbbb2-67a7-5462-917f-3eabfb25599a"
+    },
+    {
+      "code": "HSP-C05-PR-I1-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "7cfc4679-da2f-59de-94b9-5402316cc1ae"
+    },
+    {
+      "code": "HSP-C05-PR-I1-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "2c96f844-36fd-5886-9125-c81b0aac3df9"
+    },
+    {
+      "code": "HSP-C05-PR-I2",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "e58e8d10-4aa4-5322-bd13-3810c8b1e974"
+    },
+    {
+      "code": "HSP-C05-PR-I2-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "f6f7b43d-62f8-5e8c-8e3b-9427efa7c150"
+    },
+    {
+      "code": "HSP-C05-PR-I2-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "1ff90cfd-4189-5dfe-997d-f07f3d549ee3"
+    },
+    {
+      "code": "HSP-C05-PR-I3",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "524aac52-346b-58d3-91d5-4dc979dac3cc"
+    },
+    {
+      "code": "HSP-C05-PR-I3-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "8142c158-ddf7-5280-acd2-ce74952bbd13"
+    },
+    {
+      "code": "HSP-C05-PR-I3-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "cd8bfe19-8cc0-5d1b-ad05-77c5d6441cab"
+    },
+    {
+      "code": "HSP-C05-PR-I4",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "87f4623b-ef62-5be8-95bc-35bf7b4beefd"
+    },
+    {
+      "code": "HSP-C05-PR-I4-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "355ebe19-5825-51df-a60a-0c92ef771303"
+    },
+    {
+      "code": "HSP-C05-PR-I4-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "90886729-f0e0-517b-9162-5f050726ca68"
+    },
+    {
+      "code": "HSP-C05-ACT-ROLEPLAY",
+      "entity_type": "activity",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "0f4362ae-8bf1-5652-8c51-0029d85a00d4"
+    },
+    {
+      "code": "HSP-C05-RP-G1",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "3b73cf75-1ff4-55ff-b410-8f75c0169b20"
+    },
+    {
+      "code": "HSP-C05-RP-G1-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "6adf4c81-cf2a-5126-ac33-b68df7c005e5"
+    },
+    {
+      "code": "HSP-C05-RP-G1-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "defe3fe2-f780-5cf8-a619-fae495d60f57"
+    },
+    {
+      "code": "HSP-C05-RP-G2",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "8afa4be8-1e56-5636-b339-e35daf9bbdc5"
+    },
+    {
+      "code": "HSP-C05-RP-G2-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "11ca9221-beb5-5c22-af89-0f68f7e9994c"
+    },
+    {
+      "code": "HSP-C05-RP-G2-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "2c027abd-d097-5b13-920f-77fc7994fd86"
+    },
+    {
+      "code": "HSP-C05-RP-G3",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "8fb96438-48fa-5dc3-958e-24bdab0c9e1d"
+    },
+    {
+      "code": "HSP-C05-RP-G3-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "5abda9f7-be60-5f3e-81ec-42cc7f3a19f8"
+    },
+    {
+      "code": "HSP-C05-RP-G3-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "32137b9f-f66b-5372-8437-1610b4a88d2b"
+    },
+    {
+      "code": "HSP-C05-RP-FREE",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "7d9f756a-7413-5694-9734-af250b7cf6c7"
+    },
+    {
+      "code": "HSP-C05-RP-FREE-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "9f9a3640-f62f-5d84-8c66-93cc1141b6d2"
+    },
+    {
+      "code": "HSP-C05-RP-FREE-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "d60b598a-f06e-5f4d-8412-ebb35efe9620"
+    },
+    {
+      "code": "HSP-C05-RP-RUBRIC",
+      "entity_type": "rubric",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "2677aa2e-7f1f-5670-9360-8af3d9a9599e"
+    },
+    {
+      "code": "HSP-C05-ACT-CONFIDENCE",
+      "entity_type": "activity",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "f0a8eafe-311b-5c89-986f-b2ff2d8611b8"
+    },
+    {
+      "code": "HSP-C05-CC-SELF",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "ca6d3862-d141-59a2-9b5d-46a7023b37eb"
+    },
+    {
+      "code": "HSP-C05-CC-SELF-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "01594d1f-2e19-5803-beef-7009c0ad4b51"
+    },
+    {
+      "code": "HSP-C05-CC-SELF-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "e95ecbaa-0f6b-5caf-85ac-f1f2d977ef96"
+    },
+    {
+      "code": "HSP-C06-ACT-QUIZ",
+      "entity_type": "activity",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "d3137805-41c4-5ddf-9e54-0ecd96cfda25"
+    },
+    {
+      "code": "HSP-C06-QZ-Q1",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "1dd0a7dc-3f90-5fb2-a1ee-8f05378fb4ca"
+    },
+    {
+      "code": "HSP-C06-QZ-Q1-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "eb07cc75-75b4-5fee-a020-a4fa15856d7c"
+    },
+    {
+      "code": "HSP-C06-QZ-Q1-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "f36c53db-e6db-5ee1-9789-72f28839b096"
+    },
+    {
+      "code": "HSP-C06-QZ-Q2",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "477a47e9-a44f-59dc-97de-a392500a04ed"
+    },
+    {
+      "code": "HSP-C06-QZ-Q2-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "a37ab63b-3bab-5ed5-a578-153d5343f4c1"
+    },
+    {
+      "code": "HSP-C06-QZ-Q2-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "c67d66ff-26a4-5c10-bb39-07408c7516fc"
+    },
+    {
+      "code": "HSP-C06-QZ-Q3",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "40ca26e8-6fcd-584b-9af6-6db5886d7026"
+    },
+    {
+      "code": "HSP-C06-QZ-Q3-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "8b113176-0c7f-53a3-85a3-4c4b52304ac4"
+    },
+    {
+      "code": "HSP-C06-QZ-Q3-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "da47157c-790b-5a88-b4de-53867c5989c6"
+    },
+    {
+      "code": "HSP-C06-QZ-Q4",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "81092e8b-a17a-550f-9198-dab2b80202cd"
+    },
+    {
+      "code": "HSP-C06-QZ-Q4-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "06ee4124-98bf-53c5-947d-46548c930e79"
+    },
+    {
+      "code": "HSP-C06-QZ-Q4-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "a06d9bfd-7ab1-5480-a23e-336e2de1b258"
+    },
+    {
+      "code": "HSP-C06-QZ-Q5",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "4c55adb8-3a02-5d8a-80f4-4f89212d08db"
+    },
+    {
+      "code": "HSP-C06-QZ-Q5-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "f854efb0-8067-5d68-ae78-43f6ca06bfe8"
+    },
+    {
+      "code": "HSP-C06-QZ-Q5-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "d8eb5759-6eee-5eb9-86d6-48c35de32a4a"
+    },
+    {
+      "code": "HSP-C06-QZ-Q6",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "3d7a1c7d-78d0-5cae-b431-ee08b6d877ca"
+    },
+    {
+      "code": "HSP-C06-QZ-Q6-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "7fcc730c-8a07-57c9-9b5e-c7817ae0ac9b"
+    },
+    {
+      "code": "HSP-C06-QZ-Q6-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "7073e917-4d7a-5f9e-bff0-b5f4d8f79322"
+    },
+    {
+      "code": "HSP-C06-QZ-Q7",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "3f2052a5-96f5-5a2b-a225-40bb9795b8c0"
+    },
+    {
+      "code": "HSP-C06-QZ-Q7-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "646d0455-6390-59e9-9a2a-3b77158ab701"
+    },
+    {
+      "code": "HSP-C06-QZ-Q7-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "5c51fe91-7210-5c10-9e16-e6f847f9d395"
+    },
+    {
+      "code": "HSP-C06-QZ-Q8",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "ea0c1559-b71d-57bd-bc28-7398a842de26"
+    },
+    {
+      "code": "HSP-C06-QZ-Q8-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "dae7b21b-bd8e-5907-a7c0-3982b4d22570"
+    },
+    {
+      "code": "HSP-C06-QZ-Q8-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "96193475-98df-5277-93d3-a4723fb106b2"
+    },
+    {
+      "code": "HSP-C06-ACT-PRACTICE",
+      "entity_type": "activity",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "e326f712-0889-5861-89f3-f4fade85f194"
+    },
+    {
+      "code": "HSP-C06-PR-I1",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "d97d11aa-85d4-52c5-96bf-dd783b1bba7b"
+    },
+    {
+      "code": "HSP-C06-PR-I1-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "60a8c51e-fc78-57b7-8ba6-fb21ee530926"
+    },
+    {
+      "code": "HSP-C06-PR-I1-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "504cf784-344e-5d50-b37b-b577cd9f6a52"
+    },
+    {
+      "code": "HSP-C06-PR-I2",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "605cb7b4-7e1b-531b-a334-72feeb26655d"
+    },
+    {
+      "code": "HSP-C06-PR-I2-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "ae376cfa-e5f5-5322-a91a-2fb4d45ccc96"
+    },
+    {
+      "code": "HSP-C06-PR-I2-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "694ecf11-bd8f-519d-88ba-902cf1dd7963"
+    },
+    {
+      "code": "HSP-C06-PR-I3",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "beee8342-d941-5355-939a-1b5cb9c70797"
+    },
+    {
+      "code": "HSP-C06-PR-I3-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "6e0ffdca-243f-5e6d-90d3-0be2bd258c30"
+    },
+    {
+      "code": "HSP-C06-PR-I3-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "56076e43-6a3c-5e79-b8c9-e0744cea8cc3"
+    },
+    {
+      "code": "HSP-C06-PR-I4",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "8b539d2f-18cd-5e10-b222-407347c86f61"
+    },
+    {
+      "code": "HSP-C06-PR-I4-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "a30eb57d-daf9-5a75-b6dc-f41457e8d180"
+    },
+    {
+      "code": "HSP-C06-PR-I4-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "745ddcde-7b0a-5797-b5fb-9a4fed006808"
+    },
+    {
+      "code": "HSP-C06-ACT-ROLEPLAY",
+      "entity_type": "activity",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "2775ebfa-27cf-5fc9-9ef1-c59a63c5ef0d"
+    },
+    {
+      "code": "HSP-C06-RP-G1",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "314915ae-59a5-5a14-b5f7-b0f05bf99068"
+    },
+    {
+      "code": "HSP-C06-RP-G1-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "fe38501d-9656-58bf-8664-500eda189c93"
+    },
+    {
+      "code": "HSP-C06-RP-G1-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "af6780ce-ccf1-54c1-aac8-3cb77fd92a91"
+    },
+    {
+      "code": "HSP-C06-RP-G2",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "5762b88d-35dc-5ffa-b952-62ad3d50e222"
+    },
+    {
+      "code": "HSP-C06-RP-G2-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "d48b3506-49cc-5418-b316-2e4deecd7743"
+    },
+    {
+      "code": "HSP-C06-RP-G2-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "f161b909-a99b-5efc-bb22-bf303fbb66e3"
+    },
+    {
+      "code": "HSP-C06-RP-G3",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "bf76bcae-f4db-5168-9265-b106ea092012"
+    },
+    {
+      "code": "HSP-C06-RP-G3-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "0421ab52-1d4f-5425-a485-2924f5bfb392"
+    },
+    {
+      "code": "HSP-C06-RP-G3-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "3cee48a0-2c09-53ea-80ff-5b62ce562244"
+    },
+    {
+      "code": "HSP-C06-RP-FREE",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "b7002987-4cf5-5591-adec-a66d8d5d37a0"
+    },
+    {
+      "code": "HSP-C06-RP-FREE-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "dbe1f1b1-f628-5bf5-9278-daa7cf1c34a1"
+    },
+    {
+      "code": "HSP-C06-RP-FREE-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "84eb98f0-2f31-524c-8ab9-c4584d59dd94"
+    },
+    {
+      "code": "HSP-C06-RP-RUBRIC",
+      "entity_type": "rubric",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "d44f2cda-59d6-5b12-89f6-b8abb8324baf"
+    },
+    {
+      "code": "HSP-C06-ACT-CONFIDENCE",
+      "entity_type": "activity",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "839b9e23-c97d-50d7-97fa-333c3d89ca3d"
+    },
+    {
+      "code": "HSP-C06-CC-SELF",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "6035ee36-d55c-562b-a7d7-79e16c809991"
+    },
+    {
+      "code": "HSP-C06-CC-SELF-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "4cd5f5c3-b21a-5d8e-9480-caaad31e2bbb"
+    },
+    {
+      "code": "HSP-C06-CC-SELF-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "51789669-3d8d-5248-894f-d8bd25f27618"
+    },
+    {
+      "code": "HSP-C07-ACT-QUIZ",
+      "entity_type": "activity",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "f1c36c7a-3fa9-5d78-9c3b-6b34be9d17b1"
+    },
+    {
+      "code": "HSP-C07-QZ-Q1",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "ade62564-7a79-5f10-84f9-f77ab3eb0a29"
+    },
+    {
+      "code": "HSP-C07-QZ-Q1-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "fd6bd282-7b22-567d-b3d9-02a055bacffa"
+    },
+    {
+      "code": "HSP-C07-QZ-Q1-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "85428d12-571e-5ebc-bc5f-37a8ce6a2326"
+    },
+    {
+      "code": "HSP-C07-QZ-Q2",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "9e627ed4-286d-5a18-b04e-a01f359c1dc4"
+    },
+    {
+      "code": "HSP-C07-QZ-Q2-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "02ac8a75-cd32-52fb-9ec7-b317ef47b1f4"
+    },
+    {
+      "code": "HSP-C07-QZ-Q2-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "b2baa702-6e46-5465-92bc-f5c4ab5f8123"
+    },
+    {
+      "code": "HSP-C07-QZ-Q3",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "be97a5dc-5238-5564-ad2b-016983873e10"
+    },
+    {
+      "code": "HSP-C07-QZ-Q3-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "db5b6512-2522-5801-945c-8082ec640bf6"
+    },
+    {
+      "code": "HSP-C07-QZ-Q3-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "cfd238d1-ed0b-5d7c-9884-36913e865a8e"
+    },
+    {
+      "code": "HSP-C07-QZ-Q4",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "a0126955-bae3-5c73-899d-1ae54767ca6e"
+    },
+    {
+      "code": "HSP-C07-QZ-Q4-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "93068524-cc49-57a8-8306-c1ad970a2755"
+    },
+    {
+      "code": "HSP-C07-QZ-Q4-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "e67756c2-39be-5fb8-b5ec-fe9d64143a3e"
+    },
+    {
+      "code": "HSP-C07-QZ-Q5",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "0231eae1-9463-569f-b52b-ed99f8784a74"
+    },
+    {
+      "code": "HSP-C07-QZ-Q5-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "742dda23-b476-5789-9996-b82641f1a01b"
+    },
+    {
+      "code": "HSP-C07-QZ-Q5-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "14267e1d-a9fc-511a-a4fa-c3b5ff3f5270"
+    },
+    {
+      "code": "HSP-C07-QZ-Q6",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "07a9522c-575f-5ffc-a942-a157e1257428"
+    },
+    {
+      "code": "HSP-C07-QZ-Q6-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "0bcae108-c8a4-59a5-8018-4b353c900cf8"
+    },
+    {
+      "code": "HSP-C07-QZ-Q6-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "51a626b3-a584-57c2-9186-c040d50d5713"
+    },
+    {
+      "code": "HSP-C07-QZ-Q7",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "335bd417-c50b-5f87-ac66-499a814a8044"
+    },
+    {
+      "code": "HSP-C07-QZ-Q7-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "f229041f-2c51-5698-9cbb-e7ee7dab0095"
+    },
+    {
+      "code": "HSP-C07-QZ-Q7-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "62f4594c-0ded-5c64-9419-f1e1b8524c0b"
+    },
+    {
+      "code": "HSP-C07-QZ-Q8",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "c2b89b5d-0e28-5717-aba4-0c40d8b1c763"
+    },
+    {
+      "code": "HSP-C07-QZ-Q8-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "f6fc0e67-3167-58c6-8f2d-47a08be0a988"
+    },
+    {
+      "code": "HSP-C07-QZ-Q8-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "5814c21f-f363-5218-9af9-2659a26a8433"
+    },
+    {
+      "code": "HSP-C07-ACT-PRACTICE",
+      "entity_type": "activity",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "aeb4c01c-2814-54a7-ac39-6987f2d91177"
+    },
+    {
+      "code": "HSP-C07-PR-I1",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "ac25dd2e-877c-53d8-84d2-9b9ad2b1c2c5"
+    },
+    {
+      "code": "HSP-C07-PR-I1-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "288fc1c9-17c8-59c1-a013-ae3ff76fb304"
+    },
+    {
+      "code": "HSP-C07-PR-I1-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "9012499b-2f3c-51b4-a219-67a23ce4a565"
+    },
+    {
+      "code": "HSP-C07-PR-I2",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "a48b50e5-ece3-5169-ae49-3320286fdac7"
+    },
+    {
+      "code": "HSP-C07-PR-I2-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "d23a990d-bfac-5201-8696-1012009788e8"
+    },
+    {
+      "code": "HSP-C07-PR-I2-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "02876622-6537-5fec-ba1c-749b9e6a5dff"
+    },
+    {
+      "code": "HSP-C07-PR-I3",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "71794ed7-e89d-5782-9932-78a4013b18de"
+    },
+    {
+      "code": "HSP-C07-PR-I3-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "30c0e811-bd68-5604-8638-d1ea82ff6213"
+    },
+    {
+      "code": "HSP-C07-PR-I3-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "3c4c037f-6210-5538-a5a7-704bb7e4d839"
+    },
+    {
+      "code": "HSP-C07-PR-I4",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "8a022e02-3896-527d-9479-ef8f85153830"
+    },
+    {
+      "code": "HSP-C07-PR-I4-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "b88a48e3-5b55-5f89-acde-d67511f97e2f"
+    },
+    {
+      "code": "HSP-C07-PR-I4-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "0b6786df-63d3-54dd-b1bd-bd14cc566266"
+    },
+    {
+      "code": "HSP-C07-ACT-ROLEPLAY",
+      "entity_type": "activity",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "d6542b3c-b9b9-52ee-81f1-d92694a842c8"
+    },
+    {
+      "code": "HSP-C07-RP-G1",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "c1d9df90-7f76-5d32-8f56-2d190233e099"
+    },
+    {
+      "code": "HSP-C07-RP-G1-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "b2a5e65d-0e43-52df-ab97-b6a410769751"
+    },
+    {
+      "code": "HSP-C07-RP-G1-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "914aa31d-4228-5542-852f-61013f8baa21"
+    },
+    {
+      "code": "HSP-C07-RP-G2",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "fa048ac1-2736-526b-a30e-d21530836a8b"
+    },
+    {
+      "code": "HSP-C07-RP-G2-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "6e42bd87-0400-5172-ab0a-38a7e4c9223c"
+    },
+    {
+      "code": "HSP-C07-RP-G2-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "f3aa8ffa-f7a4-51b4-89e6-e01a7b92aeef"
+    },
+    {
+      "code": "HSP-C07-RP-G3",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "12871fb2-cdf3-5201-8cb6-170ea131ec59"
+    },
+    {
+      "code": "HSP-C07-RP-G3-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "47c67317-c2e7-534c-a4dc-bbd26924bda3"
+    },
+    {
+      "code": "HSP-C07-RP-G3-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "7d18466b-88e0-52ac-9630-a518aa9f0dec"
+    },
+    {
+      "code": "HSP-C07-RP-FREE",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "0867d561-23d9-5a65-a6fd-b7f188f3ca7a"
+    },
+    {
+      "code": "HSP-C07-RP-FREE-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "0e235347-606b-5463-a8b4-a4ce9758df52"
+    },
+    {
+      "code": "HSP-C07-RP-FREE-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "184f92eb-4ba3-5feb-bfc5-ee74c6ebb2ca"
+    },
+    {
+      "code": "HSP-C07-RP-RUBRIC",
+      "entity_type": "rubric",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "e67ebc92-05d8-57c7-b1b5-c11cc73dc902"
+    },
+    {
+      "code": "HSP-C07-ACT-CONFIDENCE",
+      "entity_type": "activity",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "bc3753de-ebe6-57e6-a7e2-033566b40f97"
+    },
+    {
+      "code": "HSP-C07-CC-SELF",
+      "entity_type": "prompt-item",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "a632ffcc-680e-5573-8d08-4207c4689760"
+    },
+    {
+      "code": "HSP-C07-CC-SELF-AM",
+      "entity_type": "answer-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "980b8cfc-88bf-5121-8d4f-40b88c6fdc4d"
+    },
+    {
+      "code": "HSP-C07-CC-SELF-FB",
+      "entity_type": "feedback-model",
+      "origin": "CP-04+",
+      "status": "published",
+      "uuid": "52db983e-1fa6-5694-b2f1-91bf40c74e48"
+    }
+  ],
+  "namespace": "cc9dd546-ebaf-51c7-b86f-307d16a22f42",
+  "namespace_seed": "uuidv5(URL_NS 6ba7b811-9dad-11d1-80b4-00c04fd430c8, \"https://hospitrainity.curriculum/id\")",
+  "registry_version": "1.4.0",
+  "uuid_version": 5
+}

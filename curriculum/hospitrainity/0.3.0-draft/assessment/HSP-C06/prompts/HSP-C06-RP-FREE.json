@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C06-ACT-ROLEPLAY",
+  "code": "HSP-C06-RP-FREE",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "b7002987-4cf5-5591-adec-a66d8d5d37a0",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "service_artifact",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 750,
+    "chapter": 6,
+    "heading_path": [
+      "Online and Social Media Customer Service",
+      "Step 6. Role-play"
+    ],
+    "normalized_text_sha256": "1cabbbb0d0c31a123aee673fa50e9c7adc3cb7e277b097c3460808eec5763f5d"
+  },
+  "status": "published",
+  "stem": "Prompt: Reply to a WhatsApp message that asks about the check-in time and parking."
+}

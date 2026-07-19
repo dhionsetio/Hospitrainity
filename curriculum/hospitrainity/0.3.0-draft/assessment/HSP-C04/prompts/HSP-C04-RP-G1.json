@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C04-ACT-ROLEPLAY",
+  "code": "HSP-C04-RP-G1",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "b4d4b681-8dae-5e2b-b51d-69dd5701e5a4",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 446,
+    "chapter": 4,
+    "heading_path": [
+      "The Guest-Services Hotline",
+      "Step 6. Role-play"
+    ],
+    "normalized_text_sha256": "73fc14d81669cbb8ed897f4ac260a66cabbe9def3036817b47e2d892bf998d16"
+  },
+  "status": "published",
+  "stem": "Guest: “Can you send someone to fix the air conditioning?”"
+}

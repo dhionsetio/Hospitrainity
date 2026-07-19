@@ -1,0 +1,78 @@
+{
+    "blocks": [
+        {
+            "id": "e0581298-0299-52bd-b5e7-67d06510b77a",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "On a busy hotline, the guest cannot see how many other calls you are juggling, and they should not have to. What they feel is simply whether you listened and whether you got their order right. This is where active listening earns its keep, because repeating the order back is the easiest way to catch a mistake before it reaches the kitchen. A calm voice and an accurate read-back can make even a thirty-second call feel like great service.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 385,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Why this matters"
+                ],
+                "normalized_text_sha256": "05e8afcbe6fffcd64c029e2f84ea8a0c140fc6e8f1cda6172a8787dcf5d1eb39"
+            },
+            "text": "On a busy hotline, the guest cannot see how many other calls you are juggling, and they should not have to. What they feel is simply whether you listened and whether you got their order right. This is where active listening earns its keep, because repeating the order back is the easiest way to catch a mistake before it reaches the kitchen. A calm voice and an accurate read-back can make even a thirty-second call feel like great service.",
+            "type": "paragraph"
+        },
+        {
+            "id": "6647ccbb-34e2-5c27-9a8e-81d749e231a7",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Good to know: active listening reduces repeat calls and misunderstandings, because the guest does not have to explain themselves twice. See the further reading at the end of this chapter.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 386,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Why this matters"
+                ],
+                "normalized_text_sha256": "84dc371b7d0dabd9bd1ab90bfec75726b920993ba18772ff4a4543b52eb0079b"
+            },
+            "text": "Good to know: active listening reduces repeat calls and misunderstandings, because the guest does not have to explain themselves twice. See the further reading at the end of this chapter.",
+            "type": "paragraph"
+        }
+    ],
+    "chapter_code": "HSP-C04",
+    "code": "HSP-C04-LS-02",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "92a64fbb-5e38-5a78-a821-e3222cb913ba",
+    "language": "en",
+    "order": 2,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 384,
+        "chapter": 4,
+        "heading_path": [
+            "The Guest-Services Hotline",
+            "Why this matters"
+        ],
+        "normalized_text_sha256": "8893dff34c02db6a4e9bb13792e41320671581fe96a8c65721b2267627a48aec"
+    },
+    "status": "published",
+    "title": "Why this matters"
+}

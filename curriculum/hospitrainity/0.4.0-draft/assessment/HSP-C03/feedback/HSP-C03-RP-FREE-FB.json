@@ -1,0 +1,27 @@
+{
+    "code": "HSP-C03-RP-FREE-FB",
+    "content_version": "0.4.0-draft",
+    "entity_type": "feedback-model",
+    "id": "3fb48dab-c29f-5710-b641-d952bcc227fe",
+    "messages": [
+        {
+            "feedback_type": "model_reveal",
+            "text": "“Good afternoon, the Grand Serenata Hotel, Maya speaking. How may I help you? ... I would be happy to help. Let me check availability for those two nights. ... Yes, we have a room. Could I take your name and a contact number? ... Let me read that back to be sure. ... Your booking reference is four, five, three. Thank you for calling, and we look forward to welcoming you.”"
+        }
+    ],
+    "prompt_code": "HSP-C03-RP-FREE",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 327,
+        "chapter": 3,
+        "heading_path": [
+            "Dealing with Customers on the Phone",
+            "Step 6. Role-play"
+        ],
+        "normalized_text_sha256": "c6e07fbc84e4c228fd766c2143d51057440aa0d69bcda4a46efa3b5603c6fe0c"
+    },
+    "status": "published"
+}

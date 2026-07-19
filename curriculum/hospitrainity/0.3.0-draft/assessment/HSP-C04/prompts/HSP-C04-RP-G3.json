@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C04-ACT-ROLEPLAY",
+  "code": "HSP-C04-RP-G3",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "37e5e289-7623-50c9-816e-e4d3e98b3f22",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 456,
+    "chapter": 4,
+    "heading_path": [
+      "The Guest-Services Hotline",
+      "Step 6. Role-play"
+    ],
+    "normalized_text_sha256": "8a5bf847a1d9c7d2f5dd61855af309d509deb9f27f1dc607a825cbbb01fb9714"
+  },
+  "status": "published",
+  "stem": "Guest: “Actually, can you connect me to the front desk about my bill?”"
+}

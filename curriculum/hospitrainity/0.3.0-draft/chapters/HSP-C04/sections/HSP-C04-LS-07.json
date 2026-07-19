@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C04",
+  "code": "HSP-C04-LS-07",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "fbbe6a67-0aa6-5ae0-8249-93fc41503a1f",
+  "order": 7,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 421,
+    "chapter": 4,
+    "heading_path": [
+      "The Guest-Services Hotline",
+      "Common mistakes to avoid"
+    ],
+    "normalized_text_sha256": "2817343d0de74cb0a6cf0148c5a24c194d035880a8ac6fdb4ef6896b18fd0d6d"
+  },
+  "status": "published",
+  "title": "Common mistakes to avoid"
+}

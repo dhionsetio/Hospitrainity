@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C06-ACT-QUIZ",
+  "code": "HSP-C06-QZ-Q3",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "40ca26e8-6fcd-584b-9af6-6db5886d7026",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 761,
+    "chapter": 6,
+    "heading_path": [
+      "Online and Social Media Customer Service",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "e34d6d20db8844830776c28d3689d88f32eda799b310f730dd2102feb171b743"
+  },
+  "status": "published",
+  "stem": "Q3. How should a public complaint be handled? A) argued in public B) acknowledged publicly, then moved to a private DM C) deleted"
+}

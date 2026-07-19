@@ -1,0 +1,24 @@
+{
+  "accepted": [
+    "b"
+  ],
+  "code": "HSP-C07-RP-G2-AM",
+  "content_version": "0.3.0-draft",
+  "entity_type": "answer-model",
+  "id": "6e42bd87-0400-5172-ab0a-38a7e4c9223c",
+  "prompt_code": "HSP-C07-RP-G2",
+  "replaced_by": null,
+  "replaces": null,
+  "scoring_mode": "objective_exact",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 884,
+    "chapter": 7,
+    "heading_path": [
+      "Dealing with Problems and Complaints",
+      "Step 6. Role-play"
+    ],
+    "normalized_text_sha256": "0292edf602104be44ba29b03f52bfe103c9a6310e1a5138d3c935e903801c72a"
+  },
+  "status": "published"
+}

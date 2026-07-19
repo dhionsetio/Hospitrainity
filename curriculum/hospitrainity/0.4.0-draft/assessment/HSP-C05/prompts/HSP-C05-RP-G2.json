@@ -1,0 +1,60 @@
+{
+    "activity_code": "HSP-C05-ACT-ROLEPLAY",
+    "choices": [
+        {
+            "feedback": [
+                {
+                    "feedback_type": "error_specific",
+                    "text": "(a) No reply at all. Silence makes the situation worse."
+                }
+            ],
+            "id": "977b30bb-23da-5404-8436-cdb2203354c0",
+            "label": "a",
+            "text": "No reply at all."
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "success",
+                    "text": "(b) “Dear Mr. Chen, thank you for letting us know, and please accept our sincere apologies. We have reviewed your bill and are correcting the duplicate charge now. The refund should appear within three to five days. Kind regards, Maya.” This is the ideal answer, an apology, ownership, and a clear action."
+                }
+            ],
+            "id": "1f161e05-39b2-5b05-b290-cb9a8607fcd7",
+            "label": "b",
+            "text": "“Dear Mr. Chen, thank you for letting us know, and please accept our sincere apologies. We have reviewed your bill and are correcting the duplicate charge now. The refund should appear within three to five days. Kind regards, Maya.”"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "error_specific",
+                    "text": "(c) “That is not our fault.” Defensive and cold, and it will only anger the guest further."
+                }
+            ],
+            "id": "e112c451-a72b-58dc-844b-b571444f51cc",
+            "label": "c",
+            "text": "“That is not our fault.”"
+        }
+    ],
+    "code": "HSP-C05-RP-G2",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "8afa4be8-1e56-5636-b339-e35daf9bbdc5",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 612,
+        "chapter": 5,
+        "heading_path": [
+            "Customer Care Through Writing",
+            "Step 6. Role-play (drafting)"
+        ],
+        "normalized_text_sha256": "a9ca68fd1d43384f0269e1309bcd43e0b5134fe6643cff492126c816a5a07a79"
+    },
+    "status": "published",
+    "stem": "A guest writes an upset email about being charged twice."
+}

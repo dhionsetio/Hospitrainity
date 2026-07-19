@@ -1,0 +1,26 @@
+{
+  "code": "HSP-C02-QZ-Q1-FB",
+  "content_version": "0.3.0-draft",
+  "entity_type": "feedback-model",
+  "id": "fad0d3b1-88c6-5f57-859a-753d9d875f8e",
+  "messages": [
+    {
+      "feedback_type": "model_reveal",
+      "text": "B. “Could I ... please?” is the polite, service-friendly form."
+    }
+  ],
+  "prompt_code": "HSP-C02-QZ-Q1",
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 181,
+    "chapter": 2,
+    "heading_path": [
+      "Front Desk and Check-In",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "dd2d4937c34cb167dfc67a61864ba2cf2dd742bd50006d3d7114f045998f8277"
+  },
+  "status": "published"
+}

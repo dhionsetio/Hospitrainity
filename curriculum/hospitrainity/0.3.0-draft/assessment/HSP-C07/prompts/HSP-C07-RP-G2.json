@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C07-ACT-ROLEPLAY",
+  "code": "HSP-C07-RP-G2",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "fa048ac1-2736-526b-a30e-d21530836a8b",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 884,
+    "chapter": 7,
+    "heading_path": [
+      "Dealing with Problems and Complaints",
+      "Step 6. Role-play"
+    ],
+    "normalized_text_sha256": "863d89a683c03d6cc2176996a6fd11644f6ab9bebc897f6ecc8cc08f4757c46f"
+  },
+  "status": "published",
+  "stem": "Guest: “You charged me twice.”"
+}

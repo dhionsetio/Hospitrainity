@@ -1,0 +1,268 @@
+{
+    "blocks": [
+        {
+            "id": "61ebfc87-c7b3-5400-af55-9628fcc5bbe1",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "A guest at the Grand Serenata Hotel is upset.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Perhaps the room was noisy, or it was not clean, or there was a mistake on the bill. Complaints are emotional and they happen in stages, so you need to manage your own tone, follow a clear framework, and turn a bad moment into a recovered guest. In this chapter you will ",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "practise",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " both a face-to-face conversation and a written letter of apology.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 829,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 1. The scenario and the framework"
+                ],
+                "normalized_text_sha256": "f1f57a26cf1880d957b3dc4bf294c01a7d110845e7414165ba9d279e87b679bb"
+            },
+            "text": "A guest at the Grand Serenata Hotel is upset. Perhaps the room was noisy, or it was not clean, or there was a mistake on the bill. Complaints are emotional and they happen in stages, so you need to manage your own tone, follow a clear framework, and turn a bad moment into a recovered guest. In this chapter you will practise both a face-to-face conversation and a written letter of apology.",
+            "type": "paragraph"
+        },
+        {
+            "id": "51cbdf30-b7d9-5bfc-ba06-0884d972d0d5",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "The L-A-A-F complaint framework, your reliable four steps:",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 830,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 1. The scenario and the framework"
+                ],
+                "normalized_text_sha256": "e20560006bd49d464abfa89caf3d5854d69f9585d99798fbd7dabc578f7caddf"
+            },
+            "text": "The L-A-A-F complaint framework, your reliable four steps:",
+            "type": "heading"
+        },
+        {
+            "id": "34da9c50-2b30-5a53-8a12-c59b2ba11ae6",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Listen.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Let the guest speak fully. Do not interrupt, and do not defend.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 831,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 1. The scenario and the framework"
+                ],
+                "normalized_text_sha256": "238dacf626952eecf5306c2143898cf1532af39486d01b0863ed1e4983953dc8"
+            },
+            "text": "Listen. Let the guest speak fully. Do not interrupt, and do not defend.",
+            "type": "list_item"
+        },
+        {
+            "id": "91e88a05-a3cf-5af3-9eba-4a32543c6bc9",
+            "language": "en",
+            "order": 4,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Apologise",
+                    "underline": false
+                },
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": " and ",
+                    "underline": false
+                },
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "empathise",
+                    "underline": false
+                },
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": ".",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Offer a sincere apology, and show that you understand how they feel.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 832,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 1. The scenario and the framework"
+                ],
+                "normalized_text_sha256": "0767a9d48bdc54565251dc88fc4f4329e863370370e4985de6d5e498f5545c63"
+            },
+            "text": "Apologise and empathise. Offer a sincere apology, and show that you understand how they feel.",
+            "type": "list_item"
+        },
+        {
+            "id": "e52834c8-4144-59a9-9169-a4c626a38e66",
+            "language": "en",
+            "order": 5,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Act.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Take ownership and offer a concrete solution right now.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 833,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 1. The scenario and the framework"
+                ],
+                "normalized_text_sha256": "8cb20e25863db327a0c2aa53bef1ef77b19dac273a99d53ada78825b1789300f"
+            },
+            "text": "Act. Take ownership and offer a concrete solution right now.",
+            "type": "list_item"
+        },
+        {
+            "id": "ff05e788-c7e9-52be-a017-3e63aa309c10",
+            "language": "en",
+            "order": 6,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Follow up.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Reassure the guest, and check back to be sure it is truly resolved.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 834,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 1. The scenario and the framework"
+                ],
+                "normalized_text_sha256": "87883f1d88e84f26ee67a96293ea856e201ed3aa0cda210a0dac40a5cde836b9"
+            },
+            "text": "Follow up. Reassure the guest, and check back to be sure it is truly resolved.",
+            "type": "list_item"
+        },
+        {
+            "id": "c30949a5-52b0-5cb5-b2d7-46e88b03d481",
+            "language": "en",
+            "order": 7,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "And the three things to never do: do not deflect, do not blame, and do not dismiss.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 835,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 1. The scenario and the framework"
+                ],
+                "normalized_text_sha256": "c250d58b696ea3795e20c67702f1bf2a565065828189a2dbdb28765aff43e993"
+            },
+            "text": "And the three things to never do: do not deflect, do not blame, and do not dismiss.",
+            "type": "paragraph"
+        }
+    ],
+    "chapter_code": "HSP-C07",
+    "code": "HSP-C07-LS-03",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "1a295e15-b75b-5ebd-9274-0e77b119a758",
+    "language": "en",
+    "order": 3,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 828,
+        "chapter": 7,
+        "heading_path": [
+            "Dealing with Problems and Complaints",
+            "Step 1. The scenario and the framework"
+        ],
+        "normalized_text_sha256": "b4b70f96b7e0749c36785c0d5d7f11045245db19416753ac22c1405ad342cf0e"
+    },
+    "status": "published",
+    "title": "Step 1. The scenario and the framework"
+}

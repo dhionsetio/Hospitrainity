@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C02-ACT-QUIZ",
+  "code": "HSP-C02-QZ-Q3",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "cbe714d5-c0a0-593d-b9f5-7826ddea1312",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 185,
+    "chapter": 2,
+    "heading_path": [
+      "Front Desk and Check-In",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "a22527307e357c4e52e492974e5bc1c3120913fbc321d3b2893d12d49a2541d1"
+  },
+  "status": "published",
+  "stem": "Q3. Which phrase best confirms the booking details? A) “Is that correct?” B) “Who cares?” C) “Maybe.”"
+}

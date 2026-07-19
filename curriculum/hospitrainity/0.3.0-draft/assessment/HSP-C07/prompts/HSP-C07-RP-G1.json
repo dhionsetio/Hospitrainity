@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C07-ACT-ROLEPLAY",
+  "code": "HSP-C07-RP-G1",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "c1d9df90-7f76-5d32-8f56-2d190233e099",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 879,
+    "chapter": 7,
+    "heading_path": [
+      "Dealing with Problems and Complaints",
+      "Step 6. Role-play"
+    ],
+    "normalized_text_sha256": "eb6ae068dfdc1b225faf4d8436f04e0c349c8683892c67fca28915727706234c"
+  },
+  "status": "published",
+  "stem": "Guest: “My room is dirty. This is unacceptable.”"
+}

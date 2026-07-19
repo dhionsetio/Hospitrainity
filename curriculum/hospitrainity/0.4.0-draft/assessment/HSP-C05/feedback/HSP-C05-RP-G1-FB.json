@@ -1,0 +1,35 @@
+{
+    "code": "HSP-C05-RP-G1-FB",
+    "content_version": "0.4.0-draft",
+    "entity_type": "feedback-model",
+    "id": "defe3fe2-f780-5cf8-a619-fae495d60f57",
+    "messages": [
+        {
+            "feedback_type": "error_specific",
+            "text": "(a) “Yes.” Too short, and it answers only half of the question."
+        },
+        {
+            "feedback_type": "success",
+            "text": "(b) “Dear Guest, thank you for your enquiry. Yes, we have a Double Room available this weekend at 90 dollars per night, breakfast included. Please let us know if you would like to book. Kind regards, Maya.” This is the ideal answer, complete, tidy, and warm."
+        },
+        {
+            "feedback_type": "error_specific",
+            "text": "(c) “idk, check the website.” Unhelpful and far too casual."
+        }
+    ],
+    "prompt_code": "HSP-C05-RP-G1",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 609,
+        "chapter": 5,
+        "heading_path": [
+            "Customer Care Through Writing",
+            "Step 6. Role-play (drafting)"
+        ],
+        "normalized_text_sha256": "15e97807462e79b1c359438a524519e858d66348309cfc79b1468f959ef37042"
+    },
+    "status": "published"
+}

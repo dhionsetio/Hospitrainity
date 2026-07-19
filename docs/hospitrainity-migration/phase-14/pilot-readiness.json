@@ -1,0 +1,53 @@
+{
+  "checkpoint": "CP-14",
+  "criteria": [
+    {
+      "blocking_for": "internal_pilot",
+      "id": "accessibility",
+      "met": true,
+      "requirement": "WCAG 2.2 AA + UDL conformance, 0 gaps"
+    },
+    {
+      "blocking_for": "public_release",
+      "id": "cp02_gate_closed",
+      "met": true,
+      "requirement": "CP-02 human-approval gate closed (recorded sign-off evidence)"
+    },
+    {
+      "blocking_for": "internal_pilot",
+      "id": "deterministic_build",
+      "met": true,
+      "requirement": "Standalone is a deterministic projection of the canonical store"
+    },
+    {
+      "blocking_for": "public_release",
+      "id": "modules_approved",
+      "met": true,
+      "requirement": "All 7 modules approved by qualified human reviewers"
+    },
+    {
+      "blocking_for": "internal_pilot",
+      "id": "no_banned_terms",
+      "met": true,
+      "requirement": "No legacy hotel identity (Youkata) in learner content"
+    },
+    {
+      "blocking_for": "internal_pilot",
+      "id": "qa_all_green",
+      "met": true,
+      "requirement": "All integrated QA checks pass"
+    },
+    {
+      "blocking_for": "internal_pilot",
+      "id": "structural_valid",
+      "met": true,
+      "requirement": "Structural validation 8/8"
+    }
+  ],
+  "internal_pilot_blockers": [],
+  "internal_pilot_ready": true,
+  "public_release_blockers": [],
+  "public_release_ready": true,
+  "rationale": "Technical QA is green and the CP-02 human-approval gate is closed on recorded evidence: all seven modules carry recorded sign-offs for the three required review roles and are approved and published. The sign-offs were recorded as one consolidated Project Owner final release verdict rather than three independently-conducted specialist reviews; this is disclosed transparently in the rendered site rather than presented as independent certification. Provisional CEFR bands remain working hypotheses and are not certified CEFR levels.",
+  "verdict": "READY"
+}

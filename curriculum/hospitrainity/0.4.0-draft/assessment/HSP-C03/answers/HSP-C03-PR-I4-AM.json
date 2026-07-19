@@ -1,0 +1,29 @@
+{
+    "accepted": [
+        "“Four, five, two,” as single digits with small pauses. Saying “four hundred and fifty-two” is easy to mishear on a call."
+    ],
+    "accepted_normalized": [
+        "four five two"
+    ],
+    "accepted_normalized_provenance_kind": "derived_scoring",
+    "code": "HSP-C03-PR-I4-AM",
+    "content_version": "0.4.0-draft",
+    "entity_type": "answer-model",
+    "id": "9b6e3af7-aefe-56cf-a2c2-1b6e8fe043c4",
+    "prompt_code": "HSP-C03-PR-I4",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "scoring_mode": "objective_normalized_closed",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 305,
+        "chapter": 3,
+        "heading_path": [
+            "Dealing with Customers on the Phone",
+            "Step 5. Practice"
+        ],
+        "normalized_text_sha256": "25dcaaa6a7ab7089326dea33c937a0dc3a04b222da1079ad58f78c06a60f2b02"
+    },
+    "status": "published"
+}

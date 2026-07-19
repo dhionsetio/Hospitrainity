@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C05",
+  "code": "HSP-C05-LS-13",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "28941fc0-1ec7-5c5a-93d8-0f90256c2b56",
+  "order": 13,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 651,
+    "chapter": 5,
+    "heading_path": [
+      "Customer Care Through Writing",
+      "Further reading"
+    ],
+    "normalized_text_sha256": "664f1aadc77a0a1ceb89513fcc1e6a0d5fd197b4d8b1433a727969ce29bb7cd2"
+  },
+  "status": "published",
+  "title": "Further reading"
+}

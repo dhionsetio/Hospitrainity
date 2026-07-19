@@ -1,0 +1,44 @@
+{
+  "checkpoint": "CP-06",
+  "phase": "Editorial, references, SME review",
+  "date": "2026-07-15",
+  "source_of_truth": {
+    "artifact": "Hospitrainity.docx",
+    "sha256": "7f8a2c62db6884498f7a1c2de56e79e39609262944a685fe7eb97f702444cbb4"
+  },
+  "inputs": {
+    "source_zip": {
+      "name": "Hospitrainity-Source-Phase5.zip",
+      "sha256": "2c7109fc231ed773a13e30dbb3d96fd6088a3e050dd59d31ff32586c1aaec2c7"
+    },
+    "standalone_html": {
+      "name": "Hospitrainity-Standalone.html (CP-05)",
+      "sha256": "6f5de8dc37468e9411229d9646b7d82e43a46ca2a1b607409a0d422babd36b06"
+    }
+  },
+  "outputs": {
+    "standalone_html": {
+      "name": "Hospitrainity-Standalone.html (CP-06)",
+      "sha256": "094b97593bafa345ae222776e5ee0f6f143aedd50e15f94c41ff695b3ecab64a"
+    },
+    "note": "Hospitrainity-Source-Phase6.zip checksum is reported in the checkpoint delivery message; a zip cannot embed its own hash."
+  },
+  "added_docs": [
+    "docs/hospitrainity-migration/phase-06/README.md",
+    "docs/hospitrainity-migration/phase-06/editorial-register.json",
+    "docs/hospitrainity-migration/phase-06/references.md",
+    "docs/hospitrainity-migration/phase-06/sme-review-packet.md",
+    "docs/hospitrainity-migration/phase-06/checkpoint-report.md",
+    "docs/hospitrainity-migration/phase-06/source-manifest.json",
+    "docs/hospitrainity-migration/phase-03/tools/hsp-editorial.mjs"
+  ],
+  "editorial_scan": { "entities": 428, "errors": 0, "warnings": 0, "info": 4, "info_note": "all 4 are the channel-appropriate emoji in Chapter 6 content" },
+  "validation": "node docs/hospitrainity-migration/phase-03/tools/hsp-validate.mjs all --strict => 8/8",
+  "invariants": [
+    "no content or assessment entity mutated (all CP-04/CP-05 provenance hashes still verify)",
+    "CP-02 framework/*.json byte-identical",
+    "provenance/docx-digest.json and provenance/assessment-digest.json unchanged",
+    "registry unchanged at 487 entries (registry_version 1.2.0)",
+    "learner-facing standalone payload unchanged (provenance marker only)"
+  ]
+}

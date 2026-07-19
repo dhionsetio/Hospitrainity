@@ -1,0 +1,698 @@
+{
+  "approach": "document-relational hybrid: canonical entity in doc JSONB + extracted scalar columns + code FKs + lifecycle CHECK",
+  "framework_documents": [
+    "assessment-digest",
+    "cefr-references",
+    "competencies",
+    "docx-digest",
+    "legacy-inventory",
+    "outcome-alignments",
+    "package"
+  ],
+  "generated_by": "CP-08",
+  "physical_target": "PostgreSQL 15+ (JSONB); SQLite mirror for the offline standalone renderer",
+  "standards": [
+    "JSON Schema 2020-12",
+    "SemVer 2.0.0 (schema_version vs content_version)",
+    "RFC 9562 UUIDv5 ids"
+  ],
+  "tables": [
+    {
+      "canonical_column": "doc jsonb (full canonical entity)",
+      "columns": [
+        {
+          "name": "accessibility",
+          "nullable": true,
+          "type": "jsonb"
+        },
+        {
+          "name": "cefr_activity",
+          "nullable": true,
+          "type": "text"
+        },
+        {
+          "name": "channel",
+          "nullable": true,
+          "type": "text"
+        },
+        {
+          "name": "code",
+          "nullable": false,
+          "type": "text"
+        },
+        {
+          "name": "content_version",
+          "nullable": false,
+          "type": "text"
+        },
+        {
+          "name": "entity_type",
+          "nullable": false,
+          "type": "text"
+        },
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "uuid"
+        },
+        {
+          "name": "lesson_code",
+          "nullable": true,
+          "type": "text"
+        },
+        {
+          "name": "outcome_codes",
+          "nullable": true,
+          "type": "jsonb"
+        },
+        {
+          "name": "participation",
+          "nullable": true,
+          "type": "text"
+        },
+        {
+          "name": "pedagogical_function",
+          "nullable": true,
+          "type": "text"
+        },
+        {
+          "name": "replaced_by",
+          "nullable": true,
+          "type": "jsonb"
+        },
+        {
+          "name": "replaces",
+          "nullable": true,
+          "type": "jsonb"
+        },
+        {
+          "name": "response_form",
+          "nullable": true,
+          "type": "text"
+        },
+        {
+          "name": "scoring_mode",
+          "nullable": true,
+          "type": "text"
+        },
+        {
+          "name": "source_locator",
+          "nullable": true,
+          "type": "jsonb"
+        },
+        {
+          "name": "status",
+          "nullable": false,
+          "type": "text"
+        },
+        {
+          "name": "timing",
+          "nullable": true,
+          "type": "text"
+        },
+        {
+          "name": "title",
+          "nullable": true,
+          "type": "text"
+        }
+      ],
+      "entity_type": "activity",
+      "foreign_keys": [
+        {
+          "cardinality": "one",
+          "column": "lesson_code",
+          "nullable": false,
+          "references": "lesson-section"
+        },
+        {
+          "cardinality": "many",
+          "column": "outcome_codes",
+          "nullable": false,
+          "references": "outcome"
+        }
+      ],
+      "primary_key": "id",
+      "row_count": 24,
+      "table": "activity",
+      "unique": [
+        "code"
+      ]
+    },
+    {
+      "canonical_column": "doc jsonb (full canonical entity)",
+      "columns": [
+        {
+          "name": "accepted",
+          "nullable": true,
+          "type": "jsonb"
+        },
+        {
+          "name": "code",
+          "nullable": false,
+          "type": "text"
+        },
+        {
+          "name": "content_version",
+          "nullable": false,
+          "type": "text"
+        },
+        {
+          "name": "entity_type",
+          "nullable": false,
+          "type": "text"
+        },
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "uuid"
+        },
+        {
+          "name": "prompt_code",
+          "nullable": true,
+          "type": "text"
+        },
+        {
+          "name": "replaced_by",
+          "nullable": true,
+          "type": "jsonb"
+        },
+        {
+          "name": "replaces",
+          "nullable": true,
+          "type": "jsonb"
+        },
+        {
+          "name": "scoring_mode",
+          "nullable": true,
+          "type": "text"
+        },
+        {
+          "name": "source_locator",
+          "nullable": true,
+          "type": "jsonb"
+        },
+        {
+          "name": "status",
+          "nullable": false,
+          "type": "text"
+        }
+      ],
+      "entity_type": "answer-model",
+      "foreign_keys": [
+        {
+          "cardinality": "one",
+          "column": "prompt_code",
+          "nullable": false,
+          "references": "prompt-item"
+        }
+      ],
+      "primary_key": "id",
+      "row_count": 102,
+      "table": "answer_model",
+      "unique": [
+        "code"
+      ]
+    },
+    {
+      "canonical_column": "doc jsonb (full canonical entity)",
+      "columns": [
+        {
+          "name": "code",
+          "nullable": false,
+          "type": "text"
+        },
+        {
+          "name": "content_version",
+          "nullable": false,
+          "type": "text"
+        },
+        {
+          "name": "entity_type",
+          "nullable": false,
+          "type": "text"
+        },
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "uuid"
+        },
+        {
+          "name": "module",
+          "nullable": true,
+          "type": "text"
+        },
+        {
+          "name": "outcome_codes",
+          "nullable": true,
+          "type": "jsonb"
+        },
+        {
+          "name": "replaced_by",
+          "nullable": true,
+          "type": "jsonb"
+        },
+        {
+          "name": "replaces",
+          "nullable": true,
+          "type": "jsonb"
+        },
+        {
+          "name": "source_locator",
+          "nullable": true,
+          "type": "jsonb"
+        },
+        {
+          "name": "status",
+          "nullable": false,
+          "type": "text"
+        },
+        {
+          "name": "title",
+          "nullable": true,
+          "type": "text"
+        }
+      ],
+      "entity_type": "chapter",
+      "foreign_keys": [
+        {
+          "cardinality": "many",
+          "column": "outcome_codes",
+          "nullable": false,
+          "references": "outcome"
+        }
+      ],
+      "primary_key": "id",
+      "row_count": 7,
+      "table": "chapter",
+      "unique": [
+        "code"
+      ]
+    },
+    {
+      "canonical_column": "doc jsonb (full canonical entity)",
+      "columns": [
+        {
+          "name": "code",
+          "nullable": false,
+          "type": "text"
+        },
+        {
+          "name": "content_version",
+          "nullable": false,
+          "type": "text"
+        },
+        {
+          "name": "entity_type",
+          "nullable": false,
+          "type": "text"
+        },
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "uuid"
+        },
+        {
+          "name": "messages",
+          "nullable": true,
+          "type": "jsonb"
+        },
+        {
+          "name": "prompt_code",
+          "nullable": true,
+          "type": "text"
+        },
+        {
+          "name": "replaced_by",
+          "nullable": true,
+          "type": "jsonb"
+        },
+        {
+          "name": "replaces",
+          "nullable": true,
+          "type": "jsonb"
+        },
+        {
+          "name": "source_locator",
+          "nullable": true,
+          "type": "jsonb"
+        },
+        {
+          "name": "status",
+          "nullable": false,
+          "type": "text"
+        }
+      ],
+      "entity_type": "feedback-model",
+      "foreign_keys": [
+        {
+          "cardinality": "one",
+          "column": "prompt_code",
+          "nullable": false,
+          "references": "prompt-item"
+        }
+      ],
+      "primary_key": "id",
+      "row_count": 102,
+      "table": "feedback_model",
+      "unique": [
+        "code"
+      ]
+    },
+    {
+      "canonical_column": "doc jsonb (full canonical entity)",
+      "columns": [
+        {
+          "name": "chapter_code",
+          "nullable": true,
+          "type": "text"
+        },
+        {
+          "name": "code",
+          "nullable": false,
+          "type": "text"
+        },
+        {
+          "name": "content_version",
+          "nullable": false,
+          "type": "text"
+        },
+        {
+          "name": "entity_type",
+          "nullable": false,
+          "type": "text"
+        },
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "uuid"
+        },
+        {
+          "name": "order",
+          "nullable": true,
+          "type": "integer"
+        },
+        {
+          "name": "replaced_by",
+          "nullable": true,
+          "type": "jsonb"
+        },
+        {
+          "name": "replaces",
+          "nullable": true,
+          "type": "jsonb"
+        },
+        {
+          "name": "source_locator",
+          "nullable": true,
+          "type": "jsonb"
+        },
+        {
+          "name": "status",
+          "nullable": false,
+          "type": "text"
+        },
+        {
+          "name": "title",
+          "nullable": true,
+          "type": "text"
+        }
+      ],
+      "entity_type": "lesson-section",
+      "foreign_keys": [
+        {
+          "cardinality": "one",
+          "column": "chapter_code",
+          "nullable": false,
+          "references": "chapter"
+        }
+      ],
+      "primary_key": "id",
+      "row_count": 85,
+      "table": "lesson_section",
+      "unique": [
+        "code"
+      ]
+    },
+    {
+      "canonical_column": "doc jsonb (full canonical entity)",
+      "columns": [
+        {
+          "name": "canonical_code",
+          "nullable": true,
+          "type": "text"
+        },
+        {
+          "name": "disposition",
+          "nullable": true,
+          "type": "text"
+        },
+        {
+          "name": "entity_type",
+          "nullable": false,
+          "type": "text"
+        },
+        {
+          "name": "legacy_ref",
+          "nullable": true,
+          "type": "text"
+        },
+        {
+          "name": "note",
+          "nullable": true,
+          "type": "text"
+        }
+      ],
+      "entity_type": "migration-edge",
+      "foreign_keys": [
+        {
+          "cardinality": "one",
+          "column": "canonical_code",
+          "nullable": true,
+          "references": "ANY_ENTITY"
+        }
+      ],
+      "primary_key": null,
+      "row_count": 8,
+      "table": "migration_edge",
+      "unique": [
+        "code"
+      ]
+    },
+    {
+      "canonical_column": "doc jsonb (full canonical entity)",
+      "columns": [
+        {
+          "name": "activity_code",
+          "nullable": true,
+          "type": "text"
+        },
+        {
+          "name": "code",
+          "nullable": false,
+          "type": "text"
+        },
+        {
+          "name": "content_version",
+          "nullable": false,
+          "type": "text"
+        },
+        {
+          "name": "entity_type",
+          "nullable": false,
+          "type": "text"
+        },
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "uuid"
+        },
+        {
+          "name": "replaced_by",
+          "nullable": true,
+          "type": "jsonb"
+        },
+        {
+          "name": "replaces",
+          "nullable": true,
+          "type": "jsonb"
+        },
+        {
+          "name": "response_form",
+          "nullable": true,
+          "type": "text"
+        },
+        {
+          "name": "source_locator",
+          "nullable": true,
+          "type": "jsonb"
+        },
+        {
+          "name": "status",
+          "nullable": false,
+          "type": "text"
+        },
+        {
+          "name": "stem",
+          "nullable": true,
+          "type": "text"
+        }
+      ],
+      "entity_type": "prompt-item",
+      "foreign_keys": [
+        {
+          "cardinality": "one",
+          "column": "activity_code",
+          "nullable": false,
+          "references": "activity"
+        }
+      ],
+      "primary_key": "id",
+      "row_count": 102,
+      "table": "prompt_item",
+      "unique": [
+        "code"
+      ]
+    },
+    {
+      "canonical_column": "doc jsonb (full canonical entity)",
+      "columns": [
+        {
+          "name": "activity_code",
+          "nullable": true,
+          "type": "text"
+        },
+        {
+          "name": "code",
+          "nullable": false,
+          "type": "text"
+        },
+        {
+          "name": "content_version",
+          "nullable": false,
+          "type": "text"
+        },
+        {
+          "name": "criteria",
+          "nullable": true,
+          "type": "jsonb"
+        },
+        {
+          "name": "entity_type",
+          "nullable": false,
+          "type": "text"
+        },
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "uuid"
+        },
+        {
+          "name": "replaced_by",
+          "nullable": true,
+          "type": "jsonb"
+        },
+        {
+          "name": "replaces",
+          "nullable": true,
+          "type": "jsonb"
+        },
+        {
+          "name": "source_locator",
+          "nullable": true,
+          "type": "jsonb"
+        },
+        {
+          "name": "status",
+          "nullable": false,
+          "type": "text"
+        }
+      ],
+      "entity_type": "rubric",
+      "foreign_keys": [
+        {
+          "cardinality": "one",
+          "column": "activity_code",
+          "nullable": false,
+          "references": "activity"
+        }
+      ],
+      "primary_key": "id",
+      "row_count": 6,
+      "table": "rubric",
+      "unique": [
+        "code"
+      ]
+    },
+    {
+      "canonical_column": "doc jsonb (full canonical entity)",
+      "columns": [
+        {
+          "name": "code",
+          "nullable": false,
+          "type": "text"
+        },
+        {
+          "name": "content_version",
+          "nullable": false,
+          "type": "text"
+        },
+        {
+          "name": "entity_type",
+          "nullable": false,
+          "type": "text"
+        },
+        {
+          "name": "excerpt_sha256",
+          "nullable": true,
+          "type": "text"
+        },
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "uuid"
+        },
+        {
+          "name": "replaced_by",
+          "nullable": true,
+          "type": "jsonb"
+        },
+        {
+          "name": "replaces",
+          "nullable": true,
+          "type": "jsonb"
+        },
+        {
+          "name": "source_locator",
+          "nullable": true,
+          "type": "jsonb"
+        },
+        {
+          "name": "status",
+          "nullable": false,
+          "type": "text"
+        },
+        {
+          "name": "target_code",
+          "nullable": true,
+          "type": "text"
+        }
+      ],
+      "entity_type": "source-provenance",
+      "foreign_keys": [
+        {
+          "cardinality": "one",
+          "column": "target_code",
+          "nullable": false,
+          "references": "ANY_ENTITY"
+        }
+      ],
+      "primary_key": "id",
+      "row_count": 7,
+      "table": "source_provenance",
+      "unique": [
+        "code"
+      ]
+    }
+  ],
+  "tool": "hsp-datamodel.mjs"
+}

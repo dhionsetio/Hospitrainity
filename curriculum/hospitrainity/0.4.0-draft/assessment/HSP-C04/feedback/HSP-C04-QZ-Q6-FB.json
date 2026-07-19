@@ -1,0 +1,27 @@
+{
+    "code": "HSP-C04-QZ-Q6-FB",
+    "content_version": "0.4.0-draft",
+    "entity_type": "feedback-model",
+    "id": "9bf0a3c3-ee5b-56c6-a638-b6d02db7d326",
+    "messages": [
+        {
+            "feedback_type": "model_reveal",
+            "text": "B. Get the room first, so nothing is lost if the call drops."
+        }
+    ],
+    "prompt_code": "HSP-C04-QZ-Q6",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 494,
+        "chapter": 4,
+        "heading_path": [
+            "The Guest-Services Hotline",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "54986b834b58bb3b9ced705ac4493f4812092d89a72d2a33b54201faf99509b3"
+    },
+    "status": "published"
+}

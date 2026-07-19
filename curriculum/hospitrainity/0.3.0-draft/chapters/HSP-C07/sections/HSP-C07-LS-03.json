@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C07",
+  "code": "HSP-C07-LS-03",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "1a295e15-b75b-5ebd-9274-0e77b119a758",
+  "order": 3,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 810,
+    "chapter": 7,
+    "heading_path": [
+      "Dealing with Problems and Complaints",
+      "Step 1. The scenario and the framework"
+    ],
+    "normalized_text_sha256": "e188ac2c213e34aae0429469337c48a4c142bb5f627a00271191a40b8c505d71"
+  },
+  "status": "published",
+  "title": "Step 1. The scenario and the framework"
+}

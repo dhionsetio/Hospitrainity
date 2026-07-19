@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C06",
+  "code": "HSP-C06-LS-11",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "1a8af21c-1572-56f2-a9bf-d84cbe67eac4",
+  "order": 11,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 780,
+    "chapter": 6,
+    "heading_path": [
+      "Online and Social Media Customer Service",
+      "Step 8. Confidence check"
+    ],
+    "normalized_text_sha256": "de3541b7e7f4f5aff977a439df59ffbf2a304ff6fc9152f1e6f7a6991667643c"
+  },
+  "status": "published",
+  "title": "Step 8. Confidence check"
+}

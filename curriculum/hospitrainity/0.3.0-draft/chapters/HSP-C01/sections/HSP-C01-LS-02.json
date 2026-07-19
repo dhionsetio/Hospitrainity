@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C01",
+  "code": "HSP-C01-LS-02",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "b34decd1-a821-591a-b750-e17bee8c171e",
+  "order": 2,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 35,
+    "chapter": 1,
+    "heading_path": [
+      "Welcome and Introduction to Customer Care",
+      "How this book works"
+    ],
+    "normalized_text_sha256": "9715d5cfccb8bd5df51c2e5ec3cac29822fdfaf3186d912db168b182fa6a2132"
+  },
+  "status": "published",
+  "title": "How this book works"
+}

@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C03-ACT-ROLEPLAY",
+  "code": "HSP-C03-RP-G3",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "0c1035a1-7769-5129-89b3-67e93e454f62",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 312,
+    "chapter": 3,
+    "heading_path": [
+      "Dealing with Customers on the Phone",
+      "Step 6. Role-play"
+    ],
+    "normalized_text_sha256": "e7d31570247c97357ef7d0975f7ce7c000cd78024ad0925f827fbf59d8259ddc"
+  },
+  "status": "published",
+  "stem": "Caller: “Actually, I need to speak to someone about a dinner booking.”"
+}

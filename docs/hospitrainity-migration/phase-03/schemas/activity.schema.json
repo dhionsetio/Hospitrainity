@@ -1,0 +1,165 @@
+{
+  "$id": "https://hospitrainity.curriculum/schema/activity.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "$ref": "https://hospitrainity.curriculum/schema/_meta.schema.json#/$defs/meta"
+    }
+  ],
+  "properties": {
+    "accessibility": {
+      "items": {
+        "enum": [
+          "text_alt",
+          "transcript",
+          "keyboard_path",
+          "non_color_cue",
+          "no_timing_dependency"
+        ]
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "cefr_activity": {
+      "enum": [
+        "reception",
+        "production",
+        "interaction",
+        "mediation"
+      ]
+    },
+    "channel": {
+      "enum": [
+        "spoken_ftf",
+        "telecommunications",
+        "written_correspondence",
+        "live_chat",
+        "social_public_reply",
+        "async_message",
+        "multimodal_online"
+      ]
+    },
+    "code": {
+      "$ref": "https://hospitrainity.curriculum/schema/_meta.schema.json#/$defs/editorial_code"
+    },
+    "content_version": {
+      "$ref": "https://hospitrainity.curriculum/schema/_meta.schema.json#/$defs/semver"
+    },
+    "entity_type": {
+      "const": "activity"
+    },
+    "id": {
+      "$ref": "https://hospitrainity.curriculum/schema/_meta.schema.json#/$defs/uuid"
+    },
+    "lesson_code": {
+      "$ref": "https://hospitrainity.curriculum/schema/_meta.schema.json#/$defs/editorial_code"
+    },
+    "outcome_codes": {
+      "items": {
+        "$ref": "https://hospitrainity.curriculum/schema/_meta.schema.json#/$defs/editorial_code"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "participation": {
+      "enum": [
+        "individual",
+        "pair",
+        "staff_guest",
+        "team_handoff",
+        "public_to_private_escalation"
+      ]
+    },
+    "pedagogical_function": {
+      "enum": [
+        "diagnostic",
+        "model_noticing",
+        "guided_practice",
+        "freer_task",
+        "formative_check",
+        "summative_evidence",
+        "reflection"
+      ]
+    },
+    "replaced_by": {
+      "oneOf": [
+        {
+          "$ref": "https://hospitrainity.curriculum/schema/_meta.schema.json#/$defs/uuid"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "replaces": {
+      "oneOf": [
+        {
+          "$ref": "https://hospitrainity.curriculum/schema/_meta.schema.json#/$defs/uuid"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "response_form": {
+      "enum": [
+        "selection",
+        "ordering",
+        "short_text",
+        "extended_text",
+        "spoken_rehearsal",
+        "role_play",
+        "service_artifact",
+        "self_rating"
+      ]
+    },
+    "scoring_mode": {
+      "enum": [
+        "none",
+        "objective_exact",
+        "objective_normalized",
+        "rubric",
+        "self_report"
+      ]
+    },
+    "source_locator": {
+      "$ref": "https://hospitrainity.curriculum/schema/_meta.schema.json#/$defs/source_locator"
+    },
+    "status": {
+      "$ref": "https://hospitrainity.curriculum/schema/_meta.schema.json#/$defs/status"
+    },
+    "timing": {
+      "enum": [
+        "synchronous",
+        "asynchronous",
+        "mixed"
+      ]
+    },
+    "title": {
+      "minLength": 1,
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "code",
+    "content_version",
+    "status",
+    "entity_type",
+    "source_locator",
+    "lesson_code",
+    "title",
+    "cefr_activity",
+    "channel",
+    "timing",
+    "participation",
+    "pedagogical_function",
+    "response_form",
+    "scoring_mode",
+    "accessibility",
+    "outcome_codes"
+  ],
+  "title": "Learning activity",
+  "type": "object"
+}

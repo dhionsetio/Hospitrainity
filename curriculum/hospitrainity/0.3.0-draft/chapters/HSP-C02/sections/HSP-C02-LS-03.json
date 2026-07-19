@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C02",
+  "code": "HSP-C02-LS-03",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "a2bb1de3-f990-5421-80da-aa204c632e42",
+  "order": 3,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 84,
+    "chapter": 2,
+    "heading_path": [
+      "Front Desk and Check-In",
+      "Step 1. The scenario"
+    ],
+    "normalized_text_sha256": "385e42e9ad1976ed4c675c2348f81bf35cead8d1fb895ff7e876836b90238065"
+  },
+  "status": "published",
+  "title": "Step 1. The scenario"
+}

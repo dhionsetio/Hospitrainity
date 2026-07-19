@@ -1,0 +1,39 @@
+{
+  "accessibility": [
+    "text_alt",
+    "keyboard_path",
+    "non_color_cue",
+    "no_timing_dependency"
+  ],
+  "cefr_activity": "production",
+  "channel": "spoken_ftf",
+  "code": "HSP-C07-ACT-PRACTICE",
+  "content_version": "0.3.0-draft",
+  "entity_type": "activity",
+  "id": "aeb4c01c-2814-54a7-ac39-6987f2d91177",
+  "lesson_code": "HSP-C07-LS-08",
+  "outcome_codes": [
+    "OUT-M07-01",
+    "OUT-M07-02",
+    "OUT-M07-03"
+  ],
+  "participation": "individual",
+  "pedagogical_function": "guided_practice",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "short_text",
+  "scoring_mode": "objective_normalized",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 862,
+    "chapter": 7,
+    "heading_path": [
+      "Dealing with Problems and Complaints",
+      "Step 5. Practice"
+    ],
+    "normalized_text_sha256": "7c03be688d06b06ebcb074cf79ad7acb95f16ba0fda500990f671472e2e195d3"
+  },
+  "status": "published",
+  "timing": "asynchronous",
+  "title": "Step 5. Practice"
+}

@@ -1,0 +1,327 @@
+{
+  "checkpoint": "CP-11",
+  "modules": [
+    {
+      "approval_gate": "BLOCKED",
+      "automated_gates": {
+        "accessibility": "pass",
+        "editorial": "pass",
+        "provenance": "pass",
+        "schema": "pass"
+      },
+      "blockers": [
+        "CP-02 human-approval gate open",
+        "unsigned: esp_cefr_specialist",
+        "unsigned: hospitality_practitioner",
+        "unsigned: accessibility_reviewer"
+      ],
+      "code": "HSP-C01",
+      "entity_count": 8,
+      "entity_states": {
+        "review": 8
+      },
+      "module": 1,
+      "required_signoffs": [
+        {
+          "date": null,
+          "description": "ESP / CEFR alignment approver (language + assessment)",
+          "reviewer": null,
+          "role": "esp_cefr_specialist",
+          "signed": false
+        },
+        {
+          "date": null,
+          "description": "Hospitality domain-practitioner approver",
+          "reviewer": null,
+          "role": "hospitality_practitioner",
+          "signed": false
+        },
+        {
+          "date": null,
+          "description": "WCAG 2.2 AA + UDL 3.0 conformance approver",
+          "reviewer": null,
+          "role": "accessibility_reviewer",
+          "signed": false
+        }
+      ],
+      "state": "review",
+      "title": "Welcome and Introduction to Customer Care"
+    },
+    {
+      "approval_gate": "BLOCKED",
+      "automated_gates": {
+        "accessibility": "pass",
+        "editorial": "pass",
+        "provenance": "pass",
+        "schema": "pass"
+      },
+      "blockers": [
+        "CP-02 human-approval gate open",
+        "unsigned: esp_cefr_specialist",
+        "unsigned: hospitality_practitioner",
+        "unsigned: accessibility_reviewer"
+      ],
+      "code": "HSP-C02",
+      "entity_count": 70,
+      "entity_states": {
+        "review": 70
+      },
+      "module": 2,
+      "required_signoffs": [
+        {
+          "date": null,
+          "description": "ESP / CEFR alignment approver (language + assessment)",
+          "reviewer": null,
+          "role": "esp_cefr_specialist",
+          "signed": false
+        },
+        {
+          "date": null,
+          "description": "Hospitality domain-practitioner approver",
+          "reviewer": null,
+          "role": "hospitality_practitioner",
+          "signed": false
+        },
+        {
+          "date": null,
+          "description": "WCAG 2.2 AA + UDL 3.0 conformance approver",
+          "reviewer": null,
+          "role": "accessibility_reviewer",
+          "signed": false
+        }
+      ],
+      "state": "review",
+      "title": "Front Desk and Check-In"
+    },
+    {
+      "approval_gate": "BLOCKED",
+      "automated_gates": {
+        "accessibility": "pass",
+        "editorial": "pass",
+        "provenance": "pass",
+        "schema": "pass"
+      },
+      "blockers": [
+        "CP-02 human-approval gate open",
+        "unsigned: esp_cefr_specialist",
+        "unsigned: hospitality_practitioner",
+        "unsigned: accessibility_reviewer"
+      ],
+      "code": "HSP-C03",
+      "entity_count": 70,
+      "entity_states": {
+        "review": 70
+      },
+      "module": 3,
+      "required_signoffs": [
+        {
+          "date": null,
+          "description": "ESP / CEFR alignment approver (language + assessment)",
+          "reviewer": null,
+          "role": "esp_cefr_specialist",
+          "signed": false
+        },
+        {
+          "date": null,
+          "description": "Hospitality domain-practitioner approver",
+          "reviewer": null,
+          "role": "hospitality_practitioner",
+          "signed": false
+        },
+        {
+          "date": null,
+          "description": "WCAG 2.2 AA + UDL 3.0 conformance approver",
+          "reviewer": null,
+          "role": "accessibility_reviewer",
+          "signed": false
+        }
+      ],
+      "state": "review",
+      "title": "Dealing with Customers on the Phone"
+    },
+    {
+      "approval_gate": "BLOCKED",
+      "automated_gates": {
+        "accessibility": "pass",
+        "editorial": "pass",
+        "provenance": "pass",
+        "schema": "pass"
+      },
+      "blockers": [
+        "CP-02 human-approval gate open",
+        "unsigned: esp_cefr_specialist",
+        "unsigned: hospitality_practitioner",
+        "unsigned: accessibility_reviewer"
+      ],
+      "code": "HSP-C04",
+      "entity_count": 70,
+      "entity_states": {
+        "review": 70
+      },
+      "module": 4,
+      "required_signoffs": [
+        {
+          "date": null,
+          "description": "ESP / CEFR alignment approver (language + assessment)",
+          "reviewer": null,
+          "role": "esp_cefr_specialist",
+          "signed": false
+        },
+        {
+          "date": null,
+          "description": "Hospitality domain-practitioner approver",
+          "reviewer": null,
+          "role": "hospitality_practitioner",
+          "signed": false
+        },
+        {
+          "date": null,
+          "description": "WCAG 2.2 AA + UDL 3.0 conformance approver",
+          "reviewer": null,
+          "role": "accessibility_reviewer",
+          "signed": false
+        }
+      ],
+      "state": "review",
+      "title": "The Guest-Services Hotline"
+    },
+    {
+      "approval_gate": "BLOCKED",
+      "automated_gates": {
+        "accessibility": "pass",
+        "editorial": "pass",
+        "provenance": "pass",
+        "schema": "pass"
+      },
+      "blockers": [
+        "CP-02 human-approval gate open",
+        "unsigned: esp_cefr_specialist",
+        "unsigned: hospitality_practitioner",
+        "unsigned: accessibility_reviewer"
+      ],
+      "code": "HSP-C05",
+      "entity_count": 70,
+      "entity_states": {
+        "review": 70
+      },
+      "module": 5,
+      "required_signoffs": [
+        {
+          "date": null,
+          "description": "ESP / CEFR alignment approver (language + assessment)",
+          "reviewer": null,
+          "role": "esp_cefr_specialist",
+          "signed": false
+        },
+        {
+          "date": null,
+          "description": "Hospitality domain-practitioner approver",
+          "reviewer": null,
+          "role": "hospitality_practitioner",
+          "signed": false
+        },
+        {
+          "date": null,
+          "description": "WCAG 2.2 AA + UDL 3.0 conformance approver",
+          "reviewer": null,
+          "role": "accessibility_reviewer",
+          "signed": false
+        }
+      ],
+      "state": "review",
+      "title": "Customer Care Through Writing"
+    },
+    {
+      "approval_gate": "BLOCKED",
+      "automated_gates": {
+        "accessibility": "pass",
+        "editorial": "pass",
+        "provenance": "pass",
+        "schema": "pass"
+      },
+      "blockers": [
+        "CP-02 human-approval gate open",
+        "unsigned: esp_cefr_specialist",
+        "unsigned: hospitality_practitioner",
+        "unsigned: accessibility_reviewer"
+      ],
+      "code": "HSP-C06",
+      "entity_count": 70,
+      "entity_states": {
+        "review": 70
+      },
+      "module": 6,
+      "required_signoffs": [
+        {
+          "date": null,
+          "description": "ESP / CEFR alignment approver (language + assessment)",
+          "reviewer": null,
+          "role": "esp_cefr_specialist",
+          "signed": false
+        },
+        {
+          "date": null,
+          "description": "Hospitality domain-practitioner approver",
+          "reviewer": null,
+          "role": "hospitality_practitioner",
+          "signed": false
+        },
+        {
+          "date": null,
+          "description": "WCAG 2.2 AA + UDL 3.0 conformance approver",
+          "reviewer": null,
+          "role": "accessibility_reviewer",
+          "signed": false
+        }
+      ],
+      "state": "review",
+      "title": "Online and Social Media Customer Service"
+    },
+    {
+      "approval_gate": "BLOCKED",
+      "automated_gates": {
+        "accessibility": "pass",
+        "editorial": "pass",
+        "provenance": "pass",
+        "schema": "pass"
+      },
+      "blockers": [
+        "CP-02 human-approval gate open",
+        "unsigned: esp_cefr_specialist",
+        "unsigned: hospitality_practitioner",
+        "unsigned: accessibility_reviewer"
+      ],
+      "code": "HSP-C07",
+      "entity_count": 70,
+      "entity_states": {
+        "review": 70
+      },
+      "module": 7,
+      "required_signoffs": [
+        {
+          "date": null,
+          "description": "ESP / CEFR alignment approver (language + assessment)",
+          "reviewer": null,
+          "role": "esp_cefr_specialist",
+          "signed": false
+        },
+        {
+          "date": null,
+          "description": "Hospitality domain-practitioner approver",
+          "reviewer": null,
+          "role": "hospitality_practitioner",
+          "signed": false
+        },
+        {
+          "date": null,
+          "description": "WCAG 2.2 AA + UDL 3.0 conformance approver",
+          "reviewer": null,
+          "role": "accessibility_reviewer",
+          "signed": false
+        }
+      ],
+      "state": "review",
+      "title": "Dealing with Problems and Complaints"
+    }
+  ]
+}

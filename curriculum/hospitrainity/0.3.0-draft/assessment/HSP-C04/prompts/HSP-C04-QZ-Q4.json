@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C04-ACT-QUIZ",
+  "code": "HSP-C04-QZ-Q4",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "9d52196a-feb8-5a5b-b4bb-789ca231b434",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 476,
+    "chapter": 4,
+    "heading_path": [
+      "The Guest-Services Hotline",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "04fe5a6fceccd76f93df293e5bb2e24959a86f7643c33a2b3d2c451c6ff92a9f"
+  },
+  "status": "published",
+  "stem": "Q4. “Customer-centered” means ... A) focused on the guest’s needs B) focused only on speed C) focused only on the rules"
+}

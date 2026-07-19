@@ -1,0 +1,26 @@
+{
+  "code": "HSP-C07-QZ-Q8-FB",
+  "content_version": "0.3.0-draft",
+  "entity_type": "feedback-model",
+  "id": "5814c21f-f363-5218-9af9-2659a26a8433",
+  "messages": [
+    {
+      "feedback_type": "model_reveal",
+      "text": "A. It is the art of winning a guest back after something went wrong."
+    }
+  ],
+  "prompt_code": "HSP-C07-QZ-Q8",
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 923,
+    "chapter": 7,
+    "heading_path": [
+      "Dealing with Problems and Complaints",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "d5dbf6bd9810d8dd97a63b44ec39cce1d227599683c69e60c1b215e211bbca3b"
+  },
+  "status": "published"
+}

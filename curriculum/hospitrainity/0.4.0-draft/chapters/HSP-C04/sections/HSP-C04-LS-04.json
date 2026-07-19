@@ -1,0 +1,163 @@
+{
+    "blocks": [
+        {
+            "id": "ffafec12-95dd-5089-81a8-e110978283ca",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Read each example out loud once. Saying it is the quickest way to remember it.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 399,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 2. Key vocabulary"
+                ],
+                "normalized_text_sha256": "76c076b1536696db6aa24f33d35148977e5cdfeb40d8235284f37957bc7e5f78"
+            },
+            "text": "Read each example out loud once. Saying it is the quickest way to remember it.",
+            "type": "instruction"
+        },
+        {
+            "caption": "Step 2. Key vocabulary: Word or phrase / What it means / How you might say it",
+            "header": [
+                "Word or phrase",
+                "What it means",
+                "How you might say it"
+            ],
+            "id": "f9c71e7f-26bd-5191-85c0-d388dbb4b5b3",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "rows": [
+                [
+                    "hotline",
+                    "a direct service phone line",
+                    "“Please call the guest-services hotline.”"
+                ],
+                [
+                    "room service",
+                    "food or drinks brought to the room",
+                    "“I would like to order room service.”"
+                ],
+                [
+                    "to place an order",
+                    "to request items",
+                    "“May I place an order, please?”"
+                ],
+                [
+                    "to read back",
+                    "to repeat an order to confirm it",
+                    "“Let me read that back to you.”"
+                ],
+                [
+                    "to transfer",
+                    "to pass the call to a department",
+                    "“I will transfer you to housekeeping.”"
+                ],
+                [
+                    "department",
+                    "a section of the hotel",
+                    "“Which department do you need?”"
+                ],
+                [
+                    "estimated time",
+                    "how long something will take",
+                    "“The estimated time is about twenty minutes.”"
+                ],
+                [
+                    "on its way",
+                    "coming soon",
+                    "“Your order is on its way.”"
+                ],
+                [
+                    "to follow up",
+                    "to check back a little later",
+                    "“I will follow up shortly.”"
+                ],
+                [
+                    "right away",
+                    "immediately",
+                    "“I will send someone right away.”"
+                ],
+                [
+                    "courtesy call",
+                    "a friendly check-in call",
+                    "“This is just a courtesy call to confirm.”"
+                ],
+                [
+                    "customer-centered",
+                    "focused on the guest’s needs",
+                    "“We take a customer-centered approach.”"
+                ]
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 400,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 2. Key vocabulary"
+                ],
+                "normalized_text_sha256": "718aea4427f0ee2c25fb9cf782ed2d44531ce0d7da1b060e509f8292cad04862"
+            },
+            "type": "source_table"
+        },
+        {
+            "id": "f75f3bcd-7f57-55e1-94c1-f94274ca2252",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Order-taking tip: for amounts and room numbers, say each digit on its own, so room 305 becomes “three, oh, five.” It feels slower for a second, but it saves you from sending two coffees to the wrong room.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 401,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 2. Key vocabulary"
+                ],
+                "normalized_text_sha256": "f3d2dfb736da4ab5e920170315440431048f5e1652e3e62606d2dabd05b51916"
+            },
+            "text": "Order-taking tip: for amounts and room numbers, say each digit on its own, so room 305 becomes “three, oh, five.” It feels slower for a second, but it saves you from sending two coffees to the wrong room.",
+            "type": "paragraph"
+        }
+    ],
+    "chapter_code": "HSP-C04",
+    "code": "HSP-C04-LS-04",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "944da27d-27ad-504c-85d8-b48a0480644c",
+    "language": "en",
+    "order": 4,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 398,
+        "chapter": 4,
+        "heading_path": [
+            "The Guest-Services Hotline",
+            "Step 2. Key vocabulary"
+        ],
+        "normalized_text_sha256": "f46a1e0aec2c4e29b3ec8df91525031a99db987a4745d07d5a09266bade29874"
+    },
+    "status": "published",
+    "title": "Step 2. Key vocabulary"
+}

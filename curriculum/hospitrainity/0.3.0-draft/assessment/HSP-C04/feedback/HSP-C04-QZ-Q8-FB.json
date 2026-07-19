@@ -1,0 +1,26 @@
+{
+  "code": "HSP-C04-QZ-Q8-FB",
+  "content_version": "0.3.0-draft",
+  "entity_type": "feedback-model",
+  "id": "150fc04c-f8c1-5bbb-a83a-9c2bde8fde6e",
+  "messages": [
+    {
+      "feedback_type": "model_reveal",
+      "text": "B. Calm and accurate beats fast and flustered every time."
+    }
+  ],
+  "prompt_code": "HSP-C04-QZ-Q8",
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 490,
+    "chapter": 4,
+    "heading_path": [
+      "The Guest-Services Hotline",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "c4bf4b17e2736556ddf0705060f3f0c7dec5ed3e884c45283827d0ef599736af"
+  },
+  "status": "published"
+}

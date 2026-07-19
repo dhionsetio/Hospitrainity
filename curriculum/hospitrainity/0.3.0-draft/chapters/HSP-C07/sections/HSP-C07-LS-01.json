@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C07",
+  "code": "HSP-C07-LS-01",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "c26f12f8-3a4f-5064-b912-af34f2afa85e",
+  "order": 1,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 801,
+    "chapter": 7,
+    "heading_path": [
+      "Dealing with Problems and Complaints",
+      "Warm-Up"
+    ],
+    "normalized_text_sha256": "5d960ef1f79e2abf3b42852b7df7cbbde785d8129dfff854bc4272cb3b36ca80"
+  },
+  "status": "published",
+  "title": "Warm-Up"
+}

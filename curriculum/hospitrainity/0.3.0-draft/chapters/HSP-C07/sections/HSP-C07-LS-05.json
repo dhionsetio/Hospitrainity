@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C07",
+  "code": "HSP-C07-LS-05",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "32a6cee2-3e72-5cc9-8379-31a0ecd8dec2",
+  "order": 5,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 823,
+    "chapter": 7,
+    "heading_path": [
+      "Dealing with Problems and Complaints",
+      "Step 3. Useful phrases, mapped to the framework"
+    ],
+    "normalized_text_sha256": "b764df89a331a2d593ece91648dfb3facf409130232c50c431705db9e9248b85"
+  },
+  "status": "published",
+  "title": "Step 3. Useful phrases, mapped to the framework"
+}

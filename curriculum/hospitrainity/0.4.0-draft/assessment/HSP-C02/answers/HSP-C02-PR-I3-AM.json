@@ -1,0 +1,31 @@
+{
+    "accepted": [
+        "Greet the guest, then confirm the reservation, then ask for the passport, then hand over the key. Following this order keeps everything smooth."
+    ],
+    "code": "HSP-C02-PR-I3-AM",
+    "content_version": "0.4.0-draft",
+    "correct_order": [
+        "16efba13-2144-5e97-aa81-fd792797ef61",
+        "4c389586-1374-5eb2-8705-58c386395831",
+        "06d375c9-b560-5d95-a582-8d695a169ae3",
+        "cbef05c4-cc6f-5c50-aef8-3150178bb2d1"
+    ],
+    "entity_type": "answer-model",
+    "id": "058a58d4-0b37-5265-ae61-844e1a204866",
+    "prompt_code": "HSP-C02-PR-I3",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "scoring_mode": "objective_ordered",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 155,
+        "chapter": 2,
+        "heading_path": [
+            "Front Desk and Check-In",
+            "Step 5. Practice"
+        ],
+        "normalized_text_sha256": "841fd5b5fb5f97418672f8ed0153ee831a15d30fc3313b1ebb59de2d085aecd7"
+    },
+    "status": "published"
+}

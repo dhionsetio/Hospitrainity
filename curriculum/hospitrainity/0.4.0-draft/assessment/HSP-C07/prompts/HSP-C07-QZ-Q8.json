@@ -1,0 +1,50 @@
+{
+    "activity_code": "HSP-C07-ACT-QUIZ",
+    "choices": [
+        {
+            "feedback": [
+                {
+                    "feedback_type": "model_reveal",
+                    "text": "A. It is the art of winning a guest back after something went wrong."
+                }
+            ],
+            "id": "972ebb3e-10ec-5546-aa9a-1cd2d3d0085a",
+            "label": "a",
+            "text": "turning an unhappy guest back into a happy one"
+        },
+        {
+            "feedback": [],
+            "id": "a6457fe8-693e-56f7-b547-61b2573c515a",
+            "label": "b",
+            "text": "repairing broken equipment"
+        },
+        {
+            "feedback": [],
+            "id": "8e171b87-1857-57b3-b5b0-005a66570578",
+            "label": "c",
+            "text": "recovering a lost booking"
+        }
+    ],
+    "code": "HSP-C07-QZ-Q8",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "c2b89b5d-0e28-5717-aba4-0c40d8b1c763",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 940,
+        "chapter": 7,
+        "heading_path": [
+            "Dealing with Problems and Complaints",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "be222241c92a0e492eed4eb8b6bd3682b4863e7b0958f53a1742db3ddb7d47a0"
+    },
+    "status": "published",
+    "stem": "Q8. What is “service recovery”? A) turning an unhappy guest back into a happy one B) repairing broken equipment C) recovering a lost booking"
+}

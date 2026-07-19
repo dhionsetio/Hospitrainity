@@ -1,0 +1,196 @@
+{
+    "blocks": [
+        {
+            "id": "4121bf4b-749b-523c-9818-f9e32f59a902",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Guest:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Hi, do you have rooms for this Saturday?",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 719,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 4. Model chat exchange"
+                ],
+                "normalized_text_sha256": "9ce58e42aa0b28a1e950437663249b1dca4a495680862f0366ee9327579d2294"
+            },
+            "speaker": "Guest",
+            "text": "Hi, do you have rooms for this Saturday?",
+            "type": "dialogue_turn"
+        },
+        {
+            "id": "05076c6a-1582-59bc-b06d-bd20b37b5be4",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "You:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Hi there, thanks for reaching out to Grand Serenata. ",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "😊",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Yes, we do. A Deluxe Room is available for Saturday at 80 dollars per night. Would you like me to hold it for you?",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 720,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 4. Model chat exchange"
+                ],
+                "normalized_text_sha256": "5f9ba054cd8123c7232dec216e63d88d430112ae41264c52bb2e2965baf77ec3"
+            },
+            "speaker": "You",
+            "text": "Hi there, thanks for reaching out to Grand Serenata. 😊 Yes, we do. A Deluxe Room is available for Saturday at 80 dollars per night. Would you like me to hold it for you?",
+            "type": "dialogue_turn"
+        },
+        {
+            "id": "a5318cce-b187-5ce6-8bc3-6cb789200f19",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Guest:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Yes please.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 721,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 4. Model chat exchange"
+                ],
+                "normalized_text_sha256": "7e3855cc418331d4f1fac8f0aabffa9b43ac897e203eb1e02d534ac30489e9be"
+            },
+            "speaker": "Guest",
+            "text": "Yes please.",
+            "type": "dialogue_turn"
+        },
+        {
+            "id": "59c58c63-460e-5d43-adc4-874af16e7422",
+            "language": "en",
+            "order": 4,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "You:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Wonderful. Could you send us a DM with your name and contact number so we can confirm it?",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 722,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 4. Model chat exchange"
+                ],
+                "normalized_text_sha256": "a9da6e03a06a882afd16f621b7aa8dac0c94300251c742ca965d0fba00c0c2ac"
+            },
+            "speaker": "You",
+            "text": "Wonderful. Could you send us a DM with your name and contact number so we can confirm it?",
+            "type": "dialogue_turn"
+        },
+        {
+            "id": "f04bdbf5-14d1-5a92-a037-8d7c1f8ff7cc",
+            "language": "en",
+            "order": 5,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Notice how the reply works: a warm hello, a clear answer, one friendly emoji, and a simple next step. It is short, but it never feels cold, and it moves the personal details into a private channel.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 723,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 4. Model chat exchange"
+                ],
+                "normalized_text_sha256": "ddd0ddfd5871e6aca3dba889e7aba11312cbc1cd60131d8e9262d74f5c6e50e1"
+            },
+            "text": "Notice how the reply works: a warm hello, a clear answer, one friendly emoji, and a simple next step. It is short, but it never feels cold, and it moves the personal details into a private channel.",
+            "type": "paragraph"
+        }
+    ],
+    "chapter_code": "HSP-C06",
+    "code": "HSP-C06-LS-06",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "2b695845-e3c0-5cd4-8916-ab5d2c36bd65",
+    "language": "en",
+    "order": 6,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 718,
+        "chapter": 6,
+        "heading_path": [
+            "Online and Social Media Customer Service",
+            "Step 4. Model chat exchange"
+        ],
+        "normalized_text_sha256": "1bfaa4617ee7f1c7f8de5afba365ad2278bbd1992e28dd38d0df5c238676f659"
+    },
+    "status": "published",
+    "title": "Step 4. Model chat exchange"
+}

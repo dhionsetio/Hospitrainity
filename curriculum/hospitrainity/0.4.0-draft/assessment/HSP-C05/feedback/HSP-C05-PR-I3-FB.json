@@ -1,0 +1,27 @@
+{
+    "code": "HSP-C05-PR-I3-FB",
+    "content_version": "0.4.0-draft",
+    "entity_type": "feedback-model",
+    "id": "cd8bfe19-8cc0-5d1b-ad05-77c5d6441cab",
+    "messages": [
+        {
+            "feedback_type": "model_reveal",
+            "text": "Greeting, then opening thank-you, then the body with the information, then the sign-off."
+        }
+    ],
+    "prompt_code": "HSP-C05-PR-I3",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 600,
+        "chapter": 5,
+        "heading_path": [
+            "Customer Care Through Writing",
+            "Step 5. Practice"
+        ],
+        "normalized_text_sha256": "f61c03f8b8b1a9316c7f83fa8e19c96a35351d7a7462bd5eb85d82963d5c9b35"
+    },
+    "status": "published"
+}

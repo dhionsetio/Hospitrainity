@@ -1,0 +1,130 @@
+{
+    "blocks": [
+        {
+            "id": "004c6126-cb2b-5197-954d-e5429b28f404",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Rate yourself honestly, from 1 (not confident yet) to 5 (very confident). This is only for you, and it is a good way to see your progress.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 503,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 8. Confidence check"
+                ],
+                "normalized_text_sha256": "cd3074671db07959557a6493c99cdfca8103db85c6eb67d0ff485f6e9e15afec"
+            },
+            "text": "Rate yourself honestly, from 1 (not confident yet) to 5 (very confident). This is only for you, and it is a good way to see your progress.",
+            "type": "instruction"
+        },
+        {
+            "caption": "Step 8. Confidence check: Statement / 1 / 2 / 3 / 4 / 5",
+            "header": [
+                "Statement",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5"
+            ],
+            "id": "13f22dbb-75ba-5c6c-8828-092d77ce8242",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "rows": [
+                [
+                    "I can answer a hotline call and find out the guest’s room.",
+                    "☐",
+                    "☐",
+                    "☐",
+                    "☐",
+                    "☐"
+                ],
+                [
+                    "I can take an order and read it back accurately.",
+                    "☐",
+                    "☐",
+                    "☐",
+                    "☐",
+                    "☐"
+                ],
+                [
+                    "I can transfer a call to the right department politely.",
+                    "☐",
+                    "☐",
+                    "☐",
+                    "☐",
+                    "☐"
+                ],
+                [
+                    "I can stay warm and customer-centered under time pressure.",
+                    "☐",
+                    "☐",
+                    "☐",
+                    "☐",
+                    "☐"
+                ]
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 504,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 8. Confidence check"
+                ],
+                "normalized_text_sha256": "da52b733c1ea063d897400e2945e86b6002fbb1802d6747e8effb653ca7b466a"
+            },
+            "type": "source_table"
+        },
+        {
+            "activity_code": "HSP-C04-ACT-CONFIDENCE",
+            "id": "1ab5c769-396e-5ab1-936b-cd65ca404c30",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "derived_navigation",
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 502,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 8. Confidence check"
+                ],
+                "normalized_text_sha256": "7831b9b1655261ee807dd6e8e3ddc00ca3104240995c2c77bdaa0c3831fbaad6"
+            },
+            "type": "activity_embed"
+        }
+    ],
+    "chapter_code": "HSP-C04",
+    "code": "HSP-C04-LS-11",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "a460899b-eddc-5ac0-9917-bfbded552437",
+    "language": "en",
+    "order": 11,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 502,
+        "chapter": 4,
+        "heading_path": [
+            "The Guest-Services Hotline",
+            "Step 8. Confidence check"
+        ],
+        "normalized_text_sha256": "7831b9b1655261ee807dd6e8e3ddc00ca3104240995c2c77bdaa0c3831fbaad6"
+    },
+    "status": "published",
+    "title": "Step 8. Confidence check"
+}

@@ -1,0 +1,460 @@
+{
+    "blocks": [
+        {
+            "id": "ca4dea2d-a660-501e-8802-56f90cf3ba1a",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "R",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " stands for Receptionist, and ",
+                    "underline": false
+                },
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "G",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " stands for Guest.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 862,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 4. Model dialogue and letter"
+                ],
+                "normalized_text_sha256": "cfc3517fb473908e51fa64decf51b5f6403086e4a4252590158ba7a31ac99b1e"
+            },
+            "text": "R stands for Receptionist, and G stands for Guest.",
+            "type": "paragraph"
+        },
+        {
+            "id": "a12ef0f9-2cdf-557d-aac5-2a86bfb5984b",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "G:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " I could not sleep at all. The room next door was so noisy.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "\n",
+                    "underline": false
+                },
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "R:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " I understand, and I am very sorry to hear about this. That must have been very frustrating.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "\n",
+                    "underline": false
+                },
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "G:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " It was terrible.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "\n",
+                    "underline": false
+                },
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "R:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " I sincerely ",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "apologise",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " for the inconvenience. Let me fix this for you right away. I will move you to a quieter room on a higher floor immediately.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "\n",
+                    "underline": false
+                },
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "G:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Okay, thank you.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "\n",
+                    "underline": false
+                },
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "R:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " As an apology, we would also like to offer you a complimentary breakfast. I will personally check later to make sure everything is now to your satisfaction.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "\n",
+                    "underline": false
+                },
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "G:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " I really appreciate that.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "\n",
+                    "underline": false
+                },
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "R:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Thank you for your patience, and again, my sincere apologies.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 863,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 4. Model dialogue and letter"
+                ],
+                "normalized_text_sha256": "508969ff6f99a2dd17fd053041940ce3e97b618b296ec04b4d179bfb8266fefd"
+            },
+            "text": "G: I could not sleep at all. The room next door was so noisy.\nR: I understand, and I am very sorry to hear about this. That must have been very frustrating.\nG: It was terrible.\nR: I sincerely apologise for the inconvenience. Let me fix this for you right away. I will move you to a quieter room on a higher floor immediately.\nG: Okay, thank you.\nR: As an apology, we would also like to offer you a complimentary breakfast. I will personally check later to make sure everything is now to your satisfaction.\nG: I really appreciate that.\nR: Thank you for your patience, and again, my sincere apologies.",
+            "type": "paragraph"
+        },
+        {
+            "id": "b1dd28db-d4a6-501d-a85e-adb2a1aa79b4",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Notice the four beats of the framework in action: the receptionist listened, ",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "apologised",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " with empathy, acted with a real solution, and promised to follow up. Not one word was spent defending or blaming, and that is exactly why it works.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 864,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 4. Model dialogue and letter"
+                ],
+                "normalized_text_sha256": "4e13d74540ee57fc384b614dcc9146f6ad87d9ddc2299df6d02bad90fd196986"
+            },
+            "text": "Notice the four beats of the framework in action: the receptionist listened, apologised with empathy, acted with a real solution, and promised to follow up. Not one word was spent defending or blaming, and that is exactly why it works.",
+            "type": "paragraph"
+        },
+        {
+            "id": "d2e4ba87-f1cb-514d-84a0-b45855d12754",
+            "language": "en",
+            "order": 4,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "A model letter of apology:",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 865,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 4. Model dialogue and letter"
+                ],
+                "normalized_text_sha256": "3a86a485d7c732b4e86f210d4857dedb98270b1c3dd925f0621ef7a8612f95dd"
+            },
+            "text": "A model letter of apology:",
+            "type": "heading"
+        },
+        {
+            "id": "f4238a5e-0599-532e-9d97-c2a00dcf2e0a",
+            "language": "en",
+            "order": 5,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Dear Mr. Chen,",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 866,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 4. Model dialogue and letter"
+                ],
+                "normalized_text_sha256": "a66790c14de0e4408c0044151561a6f93856f88ca21033b1478246225f073f06"
+            },
+            "text": "Dear Mr. Chen,",
+            "type": "heading"
+        },
+        {
+            "id": "06cecb2d-d319-5e99-8558-c11f4bec12e8",
+            "language": "en",
+            "order": 6,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Thank you for taking the time to share your feedback. Please accept our sincere apologies for the noise during your stay, as we understand how important a restful night is.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 867,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 4. Model dialogue and letter"
+                ],
+                "normalized_text_sha256": "7913765843e14a29508bc0e90d14745b29fc4bd3da2488a1f11dde616ccf009b"
+            },
+            "text": "Thank you for taking the time to share your feedback. Please accept our sincere apologies for the noise during your stay, as we understand how important a restful night is.",
+            "type": "paragraph"
+        },
+        {
+            "id": "2ac8a33a-e84a-5d67-81b3-7597fa865521",
+            "language": "en",
+            "order": 7,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "We have raised the issue with our team so that we can prevent it from happening again. As a gesture of goodwill, we would be glad to offer you a complimentary night on your next visit.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 868,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 4. Model dialogue and letter"
+                ],
+                "normalized_text_sha256": "86ccf167ba1b8b65f093c53a449329272e3e16d122263f9f6513697036afcb36"
+            },
+            "text": "We have raised the issue with our team so that we can prevent it from happening again. As a gesture of goodwill, we would be glad to offer you a complimentary night on your next visit.",
+            "type": "paragraph"
+        },
+        {
+            "id": "6c499137-0334-5840-b7aa-d28843695e52",
+            "language": "en",
+            "order": 8,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "We truly hope to have the chance to welcome you back and give you the stay you deserve.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 869,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 4. Model dialogue and letter"
+                ],
+                "normalized_text_sha256": "eefc217573621aa60be7a3039e174ca55ffad5cc8a4cf1b70fc67918617fa174"
+            },
+            "text": "We truly hope to have the chance to welcome you back and give you the stay you deserve.",
+            "type": "paragraph"
+        },
+        {
+            "id": "07f50c11-2318-5ca5-9092-0c084c81c4f5",
+            "language": "en",
+            "order": 9,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Kind regards,",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 870,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 4. Model dialogue and letter"
+                ],
+                "normalized_text_sha256": "06d55b43ca584e8e5dd6cfb5d9e0f4538f7c6a57910314a9b29dcb9094c84d8d"
+            },
+            "text": "Kind regards,",
+            "type": "paragraph"
+        },
+        {
+            "id": "d3300caa-2c86-541c-bb8d-6cb9299ed174",
+            "language": "en",
+            "order": 10,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Maya, Guest Relations, Grand Serenata Hotel",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 871,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 4. Model dialogue and letter"
+                ],
+                "normalized_text_sha256": "a080f1152ad33740c12fdba657444c40c72ca9c81b7e2f2affa8f31c9b40498a"
+            },
+            "text": "Maya, Guest Relations, Grand Serenata Hotel",
+            "type": "paragraph"
+        }
+    ],
+    "chapter_code": "HSP-C07",
+    "code": "HSP-C07-LS-06",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "069c8e95-28de-567f-84aa-c9217fecf5f5",
+    "language": "en",
+    "order": 6,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 861,
+        "chapter": 7,
+        "heading_path": [
+            "Dealing with Problems and Complaints",
+            "Step 4. Model dialogue and letter"
+        ],
+        "normalized_text_sha256": "f80725a35b7fdd7cd12cb76b5cb1f92509ccc84880b7dc7e7bd407b80498d761"
+    },
+    "status": "published",
+    "title": "Step 4. Model dialogue and letter"
+}

@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C06-ACT-ROLEPLAY",
+  "code": "HSP-C06-RP-G1",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "314915ae-59a5-5a14-b5f7-b0f05bf99068",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 734,
+    "chapter": 6,
+    "heading_path": [
+      "Online and Social Media Customer Service",
+      "Step 6. Role-play"
+    ],
+    "normalized_text_sha256": "259427eae45a28a1f682b35a582a0c94ff97765ef232805b9b31eb05716ac817"
+  },
+  "status": "published",
+  "stem": "DM: “Is breakfast included in the room price?”"
+}

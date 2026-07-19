@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C03-ACT-CONFIDENCE",
+  "code": "HSP-C03-CC-SELF",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "965be959-7e9e-5a41-b786-b74d4755b0e2",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "self_rating",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 348,
+    "chapter": 3,
+    "heading_path": [
+      "Dealing with Customers on the Phone",
+      "Step 8. Confidence check"
+    ],
+    "normalized_text_sha256": "8ae726d271eb7a0bf90a65a1207e47b0e727c521ff95159d8c7f245ec46d05b7"
+  },
+  "status": "published",
+  "stem": "Rate yourself honestly, from 1 (not confident yet) to 5 (very confident). This is just for you, and it is a good way to see your progress."
+}

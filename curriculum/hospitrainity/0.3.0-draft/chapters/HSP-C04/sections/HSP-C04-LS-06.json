@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C04",
+  "code": "HSP-C04-LS-06",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "bf60f3c3-8f4b-5e37-8e84-bf0f5abfc0d5",
+  "order": 6,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 416,
+    "chapter": 4,
+    "heading_path": [
+      "The Guest-Services Hotline",
+      "Step 4. Model dialogue"
+    ],
+    "normalized_text_sha256": "6179e4bed261ae318a029b8e87186fe00b22c260666f611d1c81bcf95c69fcae"
+  },
+  "status": "published",
+  "title": "Step 4. Model dialogue"
+}

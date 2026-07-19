@@ -1,0 +1,26 @@
+{
+  "code": "HSP-C02-QZ-Q2-FB",
+  "content_version": "0.3.0-draft",
+  "entity_type": "feedback-model",
+  "id": "93ed2dd6-3017-5cee-ae10-8918c71cb375",
+  "messages": [
+    {
+      "feedback_type": "model_reveal",
+      "text": "A. A guest with no reservation is a walk-in guest."
+    }
+  ],
+  "prompt_code": "HSP-C02-QZ-Q2",
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 184,
+    "chapter": 2,
+    "heading_path": [
+      "Front Desk and Check-In",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "135371c59e60574284599c446d21e56c111c69eec66f71b2cbe4dc01670a3ffd"
+  },
+  "status": "published"
+}

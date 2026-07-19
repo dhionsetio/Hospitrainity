@@ -1,0 +1,60 @@
+{
+    "activity_code": "HSP-C06-ACT-ROLEPLAY",
+    "choices": [
+        {
+            "feedback": [
+                {
+                    "feedback_type": "error_specific",
+                    "text": "(a) “Check our website.” Unhelpful, and it makes the guest do the work."
+                }
+            ],
+            "id": "220fa90d-77cb-5a43-9848-38a4218b9b16",
+            "label": "a",
+            "text": "“Check our website.”"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "success",
+                    "text": "(b) “Hi there. 😊 Yes, breakfast is included in all of our room rates. Anything else I can help with?” This is the ideal answer, warm, clear, and it offers more help."
+                }
+            ],
+            "id": "f3210c6f-b659-50d0-ad2a-eb3501c6e863",
+            "label": "b",
+            "text": "“Hi there. 😊 Yes, breakfast is included in all of our room rates. Anything else I can help with?”"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "error_specific",
+                    "text": "(c) “Yes.” Correct, but a little cold. A friendly word or two would lift it."
+                }
+            ],
+            "id": "1fa22452-2907-5f02-9bf0-abdb4df8e33e",
+            "label": "c",
+            "text": "“Yes.”"
+        }
+    ],
+    "code": "HSP-C06-RP-G1",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "314915ae-59a5-5a14-b5f7-b0f05bf99068",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 750,
+        "chapter": 6,
+        "heading_path": [
+            "Online and Social Media Customer Service",
+            "Step 6. Role-play"
+        ],
+        "normalized_text_sha256": "259427eae45a28a1f682b35a582a0c94ff97765ef232805b9b31eb05716ac817"
+    },
+    "status": "published",
+    "stem": "DM: “Is breakfast included in the room price?”"
+}

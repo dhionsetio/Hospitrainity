@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C05-ACT-QUIZ",
+  "code": "HSP-C05-QZ-Q5",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "efdd5422-7002-514a-9e6a-1eb7a207e5ba",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 627,
+    "chapter": 5,
+    "heading_path": [
+      "Customer Care Through Writing",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "4c1879645ce5ae2f875f7252dfaed2258904bb859fd7856c9414e2c24c7f8ca5"
+  },
+  "status": "published",
+  "stem": "Q5. What is the correct order of an email? A) sign-off, then body, then greeting B) greeting, then opening, then body, then sign-off C) body, then greeting, then sign-off"
+}

@@ -1,0 +1,20 @@
+{
+    "code": "HSP-C03-PROV",
+    "content_version": "0.4.0-draft",
+    "entity_type": "source-provenance",
+    "excerpt_sha256": "d7c3404e9df6d9b1aeb8c73ca11ef4c349ca406485312d040152c4d315ee4a5c",
+    "id": "465a4358-002c-5d34-91ad-6893c437df29",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "block_index": 224,
+        "chapter": 3,
+        "heading_path": [
+            "Dealing with Customers on the Phone"
+        ],
+        "normalized_text_sha256": "d7c3404e9df6d9b1aeb8c73ca11ef4c349ca406485312d040152c4d315ee4a5c"
+    },
+    "status": "draft",
+    "target_code": "HSP-C03"
+}

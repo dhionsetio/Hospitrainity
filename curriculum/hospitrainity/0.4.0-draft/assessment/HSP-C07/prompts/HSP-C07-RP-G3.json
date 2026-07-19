@@ -1,0 +1,60 @@
+{
+    "activity_code": "HSP-C07-ACT-ROLEPLAY",
+    "choices": [
+        {
+            "feedback": [
+                {
+                    "feedback_type": "error_specific",
+                    "text": "(a) “Well, nobody is perfect.” Dismissive and cold."
+                }
+            ],
+            "id": "6cad5c5e-6251-5df1-a1f8-99b4ee145443",
+            "label": "a",
+            "text": "“Well, nobody is perfect.”"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "success",
+                    "text": "(b) “I am truly sorry, and I understand why you are frustrated after a second issue. Let me put this right now, and I will speak with my manager to make sure it does not happen again.” This is the ideal answer, empathy, action, and a follow-up promise."
+                }
+            ],
+            "id": "74656c58-6758-51c0-b0df-1b8287e59472",
+            "label": "b",
+            "text": "“I am truly sorry, and I understand why you are frustrated after a second issue. Let me put this right now, and I will speak with my manager to make sure it does not happen again.”"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "error_specific",
+                    "text": "(c) “There is nothing I can do.” This gives up on the guest entirely."
+                }
+            ],
+            "id": "85d747ce-08e3-56b1-8bd6-25bebd0ea65d",
+            "label": "c",
+            "text": "“There is nothing I can do.”"
+        }
+    ],
+    "code": "HSP-C07-RP-G3",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "12871fb2-cdf3-5201-8cb6-170ea131ec59",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 908,
+        "chapter": 7,
+        "heading_path": [
+            "Dealing with Problems and Complaints",
+            "Step 6. Role-play"
+        ],
+        "normalized_text_sha256": "7f6de5bbaa2143571ef26a809e84350898c6e3639493956ffce54e8baf6947a2"
+    },
+    "status": "published",
+    "stem": "Guest: “This is the second time I have had a problem here.”"
+}

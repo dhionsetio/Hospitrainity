@@ -1,0 +1,208 @@
+{
+    "report_version": "1.1.0",
+    "status": "verified",
+    "checked_at": "2026-07-17T20:19:59.6155534Z",
+    "source_authority": {
+        "artifact": "Hospitrainity.docx",
+        "bytes": 117314,
+        "sha256": "7f8a2c62db6884498f7a1c2de56e79e39609262944a685fe7eb97f702444cbb4"
+    },
+    "source_document_render": {
+        "status": "verified",
+        "source_copy_sha256": "7f8a2c62db6884498f7a1c2de56e79e39609262944a685fe7eb97f702444cbb4",
+        "source_mutated": false,
+        "renderer": {
+            "name": "LibreOffice",
+            "version": "26.2.4.2",
+            "build": "0229ac7c27e2813501e42cebb96b98aa08214e30",
+            "filter": "writer_pdf_Export",
+            "stabilization": "Exact-hash source copy and LibreOffice profile were placed under a short no-space temporary path; SAL_DISABLESKIA=1 was set for this conversion."
+        },
+        "pdf": {
+            "path": "storage/framework/testing/cf7/docx-pdf-libreoffice-retry/Hospitrainity.pdf",
+            "bytes": 784548,
+            "sha256": "28dead0e773cf44a7c5e9da203b00ecb5b7e2872eeeb32a9be9625e62b5680d5",
+            "pages": 58,
+            "page_size_points": {
+                "width": 612,
+                "height": 792,
+                "name": "Letter"
+            },
+            "pdf_version": "1.7"
+        },
+        "raster_review": {
+            "renderer": "Poppler pdftoppm",
+            "dpi": 150,
+            "page_count": 58,
+            "page_dimensions_pixels": {
+                "width": 1275,
+                "height": 1650
+            },
+            "pages_inspected": 58,
+            "temporary_page_images_retained": false
+        },
+        "inspection": {
+            "status": "verified",
+            "findings": [
+                "All 58 pages were inspected at original raster detail.",
+                "No unreadable clipping, overlapping text, missing content, missing glyphs, or broken table borders were found.",
+                "Emoji and checkbox glyphs render visibly in the applicable chapters.",
+                "LibreOffice page 14 shows one continued bullet line with atypical indentation; the text remains present and readable.",
+                "LibreOffice page 49 contains one further-reading bullet on an otherwise mostly blank page; the link text remains present and readable."
+            ]
+        },
+        "attempt_history": [
+            {
+                "renderer": "bundled render_docx.py before LibreOffice installation",
+                "result": "blocked",
+                "reason": "LibreOffice was not installed or discoverable at that time."
+            },
+            {
+                "renderer": "Microsoft Word 16 COM, hidden/read-only with macros and link updates disabled",
+                "result": "blocked_after_120_seconds",
+                "reason": "Automation did not return from Documents.Open and produced no PDF; only the newly spawned automation process was stopped."
+            },
+            {
+                "renderer": "bundled render_docx.py after LibreOffice installation",
+                "result": "timed_out_after_300_seconds",
+                "reason": "The process produced no persistent PDF or page images before the bounded timeout."
+            },
+            {
+                "renderer": "direct LibreOffice conversion using a workspace-path profile",
+                "result": "crashed",
+                "reason": "soffice.bin exited with Windows status 0xC0000409; the Application log identified ucrtbase.dll/BEX64. No PDF was produced."
+            },
+            {
+                "renderer": "direct LibreOffice conversion using the stabilized no-space profile/source-copy path",
+                "result": "verified",
+                "reason": "The exact-hash copy converted successfully in 22.4 seconds and produced the recorded 58-page PDF."
+            }
+        ]
+    },
+    "web_render": {
+        "status": "verified",
+        "browser": "Playwright Chromium",
+        "browser_errors": [],
+        "screenshots": [
+            {
+                "section_code": "HSP-C02-LS-04",
+                "path": "curriculum/evidence/cf-7-web-visuals/HSP-C02-LS-04-vocabulary-table-1280.png",
+                "sha256": "e4759ef0ed65c09106101cd76fa01fac90a15073d138e9fcad2008864fe82076",
+                "bytes": 74597,
+                "viewport": {
+                    "width": 1280,
+                    "height": 900
+                },
+                "metrics": {
+                    "client_width": 1280,
+                    "scroll_width": 1280,
+                    "heading": "Step 2. Key vocabulary",
+                    "table_count": 1,
+                    "external_link_count": 0
+                }
+            },
+            {
+                "section_code": "HSP-C05-LS-06",
+                "path": "curriculum/evidence/cf-7-web-visuals/HSP-C05-LS-06-model-email-1280.png",
+                "sha256": "24e3ca3377d95209a323f574ec8945bdaf7bcadd5d08ea388cf4402d26e2d5a3",
+                "bytes": 63794,
+                "viewport": {
+                    "width": 1280,
+                    "height": 900
+                },
+                "metrics": {
+                    "client_width": 1280,
+                    "scroll_width": 1280,
+                    "heading": "Step 4. Model email",
+                    "table_count": 0,
+                    "external_link_count": 0
+                }
+            },
+            {
+                "section_code": "HSP-C07-LS-06",
+                "path": "curriculum/evidence/cf-7-web-visuals/HSP-C07-LS-06-model-dialogue-letter-1280.png",
+                "sha256": "ec422596c5a0d6af8b048f668430439c85f920eeff3e7abadf1080bac9161b8a",
+                "bytes": 86562,
+                "viewport": {
+                    "width": 1280,
+                    "height": 900
+                },
+                "metrics": {
+                    "client_width": 1280,
+                    "scroll_width": 1280,
+                    "heading": "Step 4. Model dialogue and letter",
+                    "table_count": 0,
+                    "external_link_count": 0
+                }
+            },
+            {
+                "section_code": "HSP-C02-LS-04",
+                "path": "curriculum/evidence/cf-7-web-visuals/HSP-C02-LS-04-vocabulary-table-320.png",
+                "sha256": "b873c4b2fed678ce677567d25d153e488a9b02739414ca53f47622068523ba6d",
+                "bytes": 77727,
+                "viewport": {
+                    "width": 320,
+                    "height": 720
+                },
+                "metrics": {
+                    "client_width": 320,
+                    "scroll_width": 320,
+                    "table_region_client_width": 246,
+                    "table_region_scroll_width": 336
+                }
+            }
+        ]
+    },
+    "comparison": {
+        "status": "verified",
+        "method": "Full source-render inspection plus representative source-to-web semantic, structural, and responsive visual comparison.",
+        "cases": [
+            {
+                "section_code": "HSP-C02-LS-04",
+                "source_pdf_pages": [
+                    8,
+                    9
+                ],
+                "web_screenshots": [
+                    "curriculum/evidence/cf-7-web-visuals/HSP-C02-LS-04-vocabulary-table-1280.png",
+                    "curriculum/evidence/cf-7-web-visuals/HSP-C02-LS-04-vocabulary-table-320.png"
+                ],
+                "result": "verified",
+                "observations": "Vocabulary row order, meanings, examples, and the contiguous a-MEN-i-tees pronunciation are preserved. Desktop shows the full table; mobile keeps the page at viewport width and contains the wide table in its own horizontal scroll region."
+            },
+            {
+                "section_code": "HSP-C05-LS-06",
+                "source_pdf_pages": [
+                    36
+                ],
+                "web_screenshots": [
+                    "curriculum/evidence/cf-7-web-visuals/HSP-C05-LS-06-model-email-1280.png"
+                ],
+                "result": "verified",
+                "observations": "Subject, greeting, paragraphs, three-item detail list, next step, sign-off, author line, and explanatory note preserve the source order and wording without clipping or artificial run breaks."
+            },
+            {
+                "section_code": "HSP-C07-LS-06",
+                "source_pdf_pages": [
+                    53
+                ],
+                "web_screenshots": [
+                    "curriculum/evidence/cf-7-web-visuals/HSP-C07-LS-06-model-dialogue-letter-1280.png"
+                ],
+                "result": "verified",
+                "observations": "Receptionist/guest labels remain attached to their dialogue, and the explanatory paragraph plus apology-letter heading, salutation, body paragraphs, sign-off, and author line preserve source wording and sequence."
+            }
+        ],
+        "intentional_adaptations": [
+            "The browser experience uses responsive cards, section navigation, and application typography rather than reproducing Word pagination.",
+            "Wide source tables use a keyboard-focusable horizontal scroll region on narrow screens instead of shrinking text or overflowing the page.",
+            "Interactive exercise controls and answer-reveal behavior are application experiences; the comparison does not require them to resemble Word's static print layout pixel-for-pixel."
+        ],
+        "conclusion": "The representative web sections are faithful semantic and structural projections of the exact-hash source. No material omission or source-order inconsistency was found in the compared content."
+    },
+    "limitations": [
+        "LibreOffice is not Microsoft Word; pagination, font metrics, and list indentation can differ slightly between rendering engines.",
+        "All 58 source pages were inspected, but browser screenshot comparison is representative rather than a screenshot pair for every one of the 85 web sections.",
+        "This technical visual review does not replace the open qualified accessibility, ESP/CEFR, hospitality-practitioner, link, retention, and content-owner release gates."
+    ]
+}

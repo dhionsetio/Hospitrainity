@@ -1,0 +1,50 @@
+{
+    "activity_code": "HSP-C02-ACT-QUIZ",
+    "choices": [
+        {
+            "feedback": [],
+            "id": "e3067264-ddde-59d0-a0ed-6cd5702bc298",
+            "label": "a",
+            "text": "“Give me your ID.”"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "model_reveal",
+                    "text": "B. “Could I ... please?” is the polite, service-friendly form."
+                }
+            ],
+            "id": "2744d6e1-7177-568f-9aab-ca1cb36dd107",
+            "label": "b",
+            "text": "“Could I see your ID, please?”"
+        },
+        {
+            "feedback": [],
+            "id": "b1cf61d8-46a5-54ce-af73-dd2d99c3dcc1",
+            "label": "c",
+            "text": "“ID.”"
+        }
+    ],
+    "code": "HSP-C02-QZ-Q1",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "c1ca71dc-4045-552d-b291-972c806aefa4",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 183,
+        "chapter": 2,
+        "heading_path": [
+            "Front Desk and Check-In",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "89133015e998999f90311961e0d2575f113bc703e2b3c17bd300e1af0bcceaa8"
+    },
+    "status": "published",
+    "stem": "Q1. Which is the most polite way to ask for a document? A) “Give me your ID.” B) “Could I see your ID, please?” C) “ID.”"
+}

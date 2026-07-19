@@ -1,0 +1,39 @@
+{
+  "accessibility": [
+    "text_alt",
+    "keyboard_path",
+    "non_color_cue",
+    "no_timing_dependency"
+  ],
+  "cefr_activity": "reception",
+  "channel": "spoken_ftf",
+  "code": "HSP-C07-ACT-QUIZ",
+  "content_version": "0.3.0-draft",
+  "entity_type": "activity",
+  "id": "f1c36c7a-3fa9-5d78-9c3b-6b34be9d17b1",
+  "lesson_code": "HSP-C07-LS-10",
+  "outcome_codes": [
+    "OUT-M07-01",
+    "OUT-M07-02",
+    "OUT-M07-03"
+  ],
+  "participation": "individual",
+  "pedagogical_function": "formative_check",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "scoring_mode": "objective_exact",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 899,
+    "chapter": 7,
+    "heading_path": [
+      "Dealing with Problems and Complaints",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "179071a0ef712d9b477052843678ed72ca3acc03eb3193f30bf07b51cb197e52"
+  },
+  "status": "published",
+  "timing": "asynchronous",
+  "title": "Step 7. Quiz"
+}

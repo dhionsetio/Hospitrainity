@@ -1,0 +1,328 @@
+{
+    "blocks": [
+        {
+            "id": "bcd650eb-9ced-51ed-b958-f312e8ca7c11",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Every chapter follows the same simple rhythm, so once you learn one, you already know how to move through them all.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 36,
+                "chapter": 1,
+                "heading_path": [
+                    "Welcome and Introduction to Customer Care",
+                    "How this book works"
+                ],
+                "normalized_text_sha256": "5ae876d15d50254c0fd4b8d715c869df26bc57953155d34ebc3312b56dc67ef8"
+            },
+            "text": "Every chapter follows the same simple rhythm, so once you learn one, you already know how to move through them all.",
+            "type": "paragraph"
+        },
+        {
+            "id": "daee22ca-a401-50df-a589-855c3bf098bd",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Warm-up",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": ", where you settle in.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 37,
+                "chapter": 1,
+                "heading_path": [
+                    "Welcome and Introduction to Customer Care",
+                    "How this book works"
+                ],
+                "normalized_text_sha256": "dd979ee5e97e582997cd75a3540865e6914ab33bdd07f629a7f4bf8e08f25812"
+            },
+            "text": "Warm-up, where you settle in.",
+            "type": "list_item"
+        },
+        {
+            "id": "a1089101-a540-5168-991a-76428dab859d",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Scenario",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": ", where you meet a real hotel situation.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 38,
+                "chapter": 1,
+                "heading_path": [
+                    "Welcome and Introduction to Customer Care",
+                    "How this book works"
+                ],
+                "normalized_text_sha256": "d9b5ff25cf120f41a85294e0c2d308d0597c98d93a2f2094b059d16b46ed1108"
+            },
+            "text": "Scenario, where you meet a real hotel situation.",
+            "type": "list_item"
+        },
+        {
+            "id": "def62a4e-078b-59fd-9765-fb23be235d42",
+            "language": "en",
+            "order": 4,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Vocabulary and phrases",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": ", the words and lines you will actually need.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 39,
+                "chapter": 1,
+                "heading_path": [
+                    "Welcome and Introduction to Customer Care",
+                    "How this book works"
+                ],
+                "normalized_text_sha256": "76e3ae15ceeed4210c31c45b8096c1b2aadcf4cc9d3faeaf887ed3367c904e82"
+            },
+            "text": "Vocabulary and phrases, the words and lines you will actually need.",
+            "type": "list_item"
+        },
+        {
+            "id": "8c6af921-0995-5f1b-8b72-3603249c17cf",
+            "language": "en",
+            "order": 5,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Model example",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": ", where you see the skill done well.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 40,
+                "chapter": 1,
+                "heading_path": [
+                    "Welcome and Introduction to Customer Care",
+                    "How this book works"
+                ],
+                "normalized_text_sha256": "f9f37ae80a5a8aa303d3cc6fb3a71ed6274eef16aa5ab820d6ca14bf3ede6acd"
+            },
+            "text": "Model example, where you see the skill done well.",
+            "type": "list_item"
+        },
+        {
+            "id": "16aa30ca-fd33-5557-a350-3b5ea2972f48",
+            "language": "en",
+            "order": 6,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Practice and role-play",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": ", where you try it yourself and check your answers.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 41,
+                "chapter": 1,
+                "heading_path": [
+                    "Welcome and Introduction to Customer Care",
+                    "How this book works"
+                ],
+                "normalized_text_sha256": "3f4c64eef482362f30ab301a72489237cec07b9c9586c8b112d934ad72822fef"
+            },
+            "text": "Practice and role-play, where you try it yourself and check your answers.",
+            "type": "list_item"
+        },
+        {
+            "id": "5e034fb0-4e04-5204-ba17-5256855036c4",
+            "language": "en",
+            "order": 7,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Quiz",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": ", where you check your understanding.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 42,
+                "chapter": 1,
+                "heading_path": [
+                    "Welcome and Introduction to Customer Care",
+                    "How this book works"
+                ],
+                "normalized_text_sha256": "318ecb93396d8ea40e4bee11de6585632fc54ee697f9a15f079efe42821f705c"
+            },
+            "text": "Quiz, where you check your understanding.",
+            "type": "list_item"
+        },
+        {
+            "id": "77359bc9-b70b-591f-8e5c-8ba8d550930c",
+            "language": "en",
+            "order": 8,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Confidence check",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": ", where you rate how ready you feel.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 43,
+                "chapter": 1,
+                "heading_path": [
+                    "Welcome and Introduction to Customer Care",
+                    "How this book works"
+                ],
+                "normalized_text_sha256": "15384d633e3c9117f5dfe81a8c3e2884b8171da763e312bbf975aa541b086764"
+            },
+            "text": "Confidence check, where you rate how ready you feel.",
+            "type": "list_item"
+        },
+        {
+            "id": "b0fb8a29-4267-56ea-9470-16926a108ebb",
+            "language": "en",
+            "order": 9,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Along the way you will step into different roles, such as a receptionist, a phone agent, and a chat host, all at one friendly hotel, the Grand Serenata Hotel.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 44,
+                "chapter": 1,
+                "heading_path": [
+                    "Welcome and Introduction to Customer Care",
+                    "How this book works"
+                ],
+                "normalized_text_sha256": "8061001f2abf1380e3d5c1b57cb74ceaef99c0582794c3fd3f0314b1679e7577"
+            },
+            "text": "Along the way you will step into different roles, such as a receptionist, a phone agent, and a chat host, all at one friendly hotel, the Grand Serenata Hotel.",
+            "type": "paragraph"
+        },
+        {
+            "id": "8a8fd7e5-1ee8-578d-bb10-8c58bbac5549",
+            "language": "en",
+            "order": 10,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "A tip before you begin: you do not need to be perfect, and you do not need to rush. Take one chapter at a time, say the phrases out loud when you can, and let your confidence build naturally.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 45,
+                "chapter": 1,
+                "heading_path": [
+                    "Welcome and Introduction to Customer Care",
+                    "How this book works"
+                ],
+                "normalized_text_sha256": "0156eb6d500696f1ec496b105bb31e1297004e52dfbae43d0889fa6e91ae23e3"
+            },
+            "text": "A tip before you begin: you do not need to be perfect, and you do not need to rush. Take one chapter at a time, say the phrases out loud when you can, and let your confidence build naturally.",
+            "type": "paragraph"
+        }
+    ],
+    "chapter_code": "HSP-C01",
+    "code": "HSP-C01-LS-02",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "b34decd1-a821-591a-b750-e17bee8c171e",
+    "language": "en",
+    "order": 2,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 35,
+        "chapter": 1,
+        "heading_path": [
+            "Welcome and Introduction to Customer Care",
+            "How this book works"
+        ],
+        "normalized_text_sha256": "25f40f132791f0253fdeaa64cba974dcd119bb6704853ede202190e12af5e79e"
+    },
+    "status": "published",
+    "title": "How this book works"
+}

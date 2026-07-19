@@ -1,0 +1,466 @@
+{
+    "blocks": [
+        {
+            "id": "2192052e-b69a-555c-b20d-bd8af5ba3781",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Listen and acknowledge",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 843,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 3. Useful phrases, mapped to the framework"
+                ],
+                "normalized_text_sha256": "e031da16478a852167dfbdbd95fde039bd530a26ba7a4249471baa1796e55ced"
+            },
+            "text": "Listen and acknowledge",
+            "type": "heading"
+        },
+        {
+            "id": "f0476f2c-ad97-5c0b-8e1a-8aabf81bf920",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "“I understand, and I am very sorry to hear about this.”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 844,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 3. Useful phrases, mapped to the framework"
+                ],
+                "normalized_text_sha256": "1f0cb546dfb5f6bb06c7096e99b625ebaf448b66519d1950b3ca168aea8d2d13"
+            },
+            "text": "“I understand, and I am very sorry to hear about this.”",
+            "type": "list_item"
+        },
+        {
+            "id": "e47ee11d-273e-5a63-b74f-cda532722c2a",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Apologise",
+                    "underline": false
+                },
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": " and ",
+                    "underline": false
+                },
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "empathise",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 845,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 3. Useful phrases, mapped to the framework"
+                ],
+                "normalized_text_sha256": "0d87045b836a3a1c0a40ab14a7e8bc823e1e2961705f8b685aafc77ee8179a18"
+            },
+            "text": "Apologise and empathise",
+            "type": "heading"
+        },
+        {
+            "id": "04756180-e1cd-5e50-b411-8e51c271d113",
+            "language": "en",
+            "order": 4,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "“I sincerely ",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "apologise",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " for the inconvenience. That must have been very frustrating.”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 846,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 3. Useful phrases, mapped to the framework"
+                ],
+                "normalized_text_sha256": "ad4db06baaa8e77742a261e24bcdbc651c6cea84a462d0d149255ecfc2886455"
+            },
+            "text": "“I sincerely apologise for the inconvenience. That must have been very frustrating.”",
+            "type": "list_item"
+        },
+        {
+            "id": "d0ede98e-ebdf-573f-9f32-7875566e23a5",
+            "language": "en",
+            "order": 5,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Act, take ownership, and offer a solution",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 847,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 3. Useful phrases, mapped to the framework"
+                ],
+                "normalized_text_sha256": "cc193268d8e68a812f74c89b500a9b9a1d6804fb941e8be21e71474dfc746ec6"
+            },
+            "text": "Act, take ownership, and offer a solution",
+            "type": "heading"
+        },
+        {
+            "id": "0e1e35e8-e1c4-5599-90a2-7caada50ace3",
+            "language": "en",
+            "order": 6,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "“Let me fix this for you right away. I will move you to another room immediately.”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 848,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 3. Useful phrases, mapped to the framework"
+                ],
+                "normalized_text_sha256": "dd20b134a53085e935616a8b64c0105ba01dcb8677f09438c3801c7a9bf9c5a7"
+            },
+            "text": "“Let me fix this for you right away. I will move you to another room immediately.”",
+            "type": "list_item"
+        },
+        {
+            "id": "c9a76e9c-f740-5f14-ac94-6926fc9562c1",
+            "language": "en",
+            "order": 7,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Offer a goodwill gesture",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 849,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 3. Useful phrases, mapped to the framework"
+                ],
+                "normalized_text_sha256": "46ba4d0649ca01f5fa5874ee53cbd2fa11fb56246bc9b955494e042adf5ea956"
+            },
+            "text": "Offer a goodwill gesture",
+            "type": "heading"
+        },
+        {
+            "id": "048a520f-1a4a-5964-b2f2-34c93d722b57",
+            "language": "en",
+            "order": 8,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "“As an apology, we would like to offer you a complimentary breakfast.”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 850,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 3. Useful phrases, mapped to the framework"
+                ],
+                "normalized_text_sha256": "375e7d1c2b6c0686034b6f4891543b5277e7ae918013b5650e4208e44a0e634b"
+            },
+            "text": "“As an apology, we would like to offer you a complimentary breakfast.”",
+            "type": "list_item"
+        },
+        {
+            "id": "e351ddfd-bdd2-5c67-938d-e59e1b06dd7e",
+            "language": "en",
+            "order": 9,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Follow up and reassure",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 851,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 3. Useful phrases, mapped to the framework"
+                ],
+                "normalized_text_sha256": "edd2bb2c1b8e635b81c04376413e72e64d991ce7459c4334b8d7c3d837bc462f"
+            },
+            "text": "Follow up and reassure",
+            "type": "heading"
+        },
+        {
+            "id": "d072485a-c5bf-53ab-9e37-293d6388c7ba",
+            "language": "en",
+            "order": 10,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "“I will personally check later to make sure everything is now to your satisfaction.”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 852,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 3. Useful phrases, mapped to the framework"
+                ],
+                "normalized_text_sha256": "7471ad447cb3e2055ccc898743d23fb3950fe7ea18c7e0c9cc53e065cc5ce299"
+            },
+            "text": "“I will personally check later to make sure everything is now to your satisfaction.”",
+            "type": "list_item"
+        },
+        {
+            "id": "8bfdd314-ff0b-57ec-8785-6e6bae2996b5",
+            "language": "en",
+            "order": 11,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Staying calm when the guest is not",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 854,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 3. Useful phrases, mapped to the framework"
+                ],
+                "normalized_text_sha256": "301389986d74d908d331fdd7674c91c16eb88d500fc428e5ecea2fceede02fb6"
+            },
+            "text": "Staying calm when the guest is not",
+            "type": "heading"
+        },
+        {
+            "id": "2bbb3094-cda2-5143-b9e6-6a3639b7e922",
+            "language": "en",
+            "order": 12,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "This is the emotional heart of the job, so give yourself a few anchors:",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 855,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 3. Useful phrases, mapped to the framework"
+                ],
+                "normalized_text_sha256": "035e94498ef6346fbb83e7f137e7c5709dd044d4627b74714b0319163eab1dfc"
+            },
+            "text": "This is the emotional heart of the job, so give yourself a few anchors:",
+            "type": "paragraph"
+        },
+        {
+            "id": "0f90befa-26da-5b3d-bfeb-e9517e278223",
+            "language": "en",
+            "order": 13,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Take a breath and let the guest finish. People calm down when they feel heard.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 856,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 3. Useful phrases, mapped to the framework"
+                ],
+                "normalized_text_sha256": "90e60a96c2a29fa8084e959183672c10c03a84f581b24f8f5c4c92c688ff43b6"
+            },
+            "text": "Take a breath and let the guest finish. People calm down when they feel heard.",
+            "type": "list_item"
+        },
+        {
+            "id": "bb56fad9-39dc-5a6d-b511-5fe614b6407e",
+            "language": "en",
+            "order": 14,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Never take the anger personally. They are upset with the situation, not with you.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 857,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 3. Useful phrases, mapped to the framework"
+                ],
+                "normalized_text_sha256": "228a83cfaf6d70c6e80bb01ae3b79d8be846488c41c751b34a31d5fa2f4ff20b"
+            },
+            "text": "Never take the anger personally. They are upset with the situation, not with you.",
+            "type": "list_item"
+        },
+        {
+            "id": "1d9028aa-a30f-5b92-b1d2-cbd300ea657d",
+            "language": "en",
+            "order": 15,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Say sorry for the experience even when it was not your fault. It is about their feelings, not about blame.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 858,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 3. Useful phrases, mapped to the framework"
+                ],
+                "normalized_text_sha256": "9d93e59b084b8fea260ecc4f5f9094c1f81e9e59431e76e033cd3e2d9bdbb578"
+            },
+            "text": "Say sorry for the experience even when it was not your fault. It is about their feelings, not about blame.",
+            "type": "list_item"
+        },
+        {
+            "id": "0a8ae1a2-03d0-55f9-800e-57ccc5d14d41",
+            "language": "en",
+            "order": 16,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Slow down. A calm, steady voice quietly invites the guest to calm down too.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 859,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 3. Useful phrases, mapped to the framework"
+                ],
+                "normalized_text_sha256": "7e134776761fb547b9f80b4b01d9475c125a87591d2b75523ab4d4bb60959c66"
+            },
+            "text": "Slow down. A calm, steady voice quietly invites the guest to calm down too.",
+            "type": "list_item"
+        }
+    ],
+    "chapter_code": "HSP-C07",
+    "code": "HSP-C07-LS-05",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "32a6cee2-3e72-5cc9-8379-31a0ecd8dec2",
+    "language": "en",
+    "order": 5,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 842,
+        "chapter": 7,
+        "heading_path": [
+            "Dealing with Problems and Complaints",
+            "Step 3. Useful phrases, mapped to the framework"
+        ],
+        "normalized_text_sha256": "145b72dd1a712c17e1feedfa72b8e76c878985f02fc6bd845671f0095025bae6"
+    },
+    "status": "published",
+    "title": "Step 3. Useful phrases, mapped to the framework"
+}

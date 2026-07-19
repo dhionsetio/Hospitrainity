@@ -1,0 +1,26 @@
+{
+  "code": "HSP-C06-CC-SELF-FB",
+  "content_version": "0.3.0-draft",
+  "entity_type": "feedback-model",
+  "id": "51789669-3d8d-5248-894f-d8bd25f27618",
+  "messages": [
+    {
+      "feedback_type": "next_step",
+      "text": "Rate yourself honestly, from 1 (not confident yet) to 5 (very confident). This is just for you, and it is a good way to see your progress."
+    }
+  ],
+  "prompt_code": "HSP-C06-CC-SELF",
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 780,
+    "chapter": 6,
+    "heading_path": [
+      "Online and Social Media Customer Service",
+      "Step 8. Confidence check"
+    ],
+    "normalized_text_sha256": "8ae726d271eb7a0bf90a65a1207e47b0e727c521ff95159d8c7f245ec46d05b7"
+  },
+  "status": "published"
+}

@@ -1,0 +1,51 @@
+{
+    "accessibility": [
+        "text_alt",
+        "keyboard_path",
+        "non_color_cue",
+        "no_timing_dependency"
+    ],
+    "cefr_activity": "production",
+    "channel": "telecommunications",
+    "code": "HSP-C03-ACT-PRACTICE",
+    "completion_rule": "all_required_items_attempted_and_checked",
+    "completion_rule_provenance_kind": "derived_workflow",
+    "content_version": "0.4.0-draft",
+    "entity_type": "activity",
+    "id": "4d6cfe46-31fa-53c5-9c12-3a96aa76faa0",
+    "lesson_code": "HSP-C03-LS-08",
+    "outcome_codes": [
+        "OUT-M03-01",
+        "OUT-M03-02",
+        "OUT-M03-03"
+    ],
+    "participation": "individual",
+    "pedagogical_function": "guided_practice",
+    "prompt_scoring_modes": [
+        "objective_choice",
+        "objective_normalized_closed",
+        "objective_ordered"
+    ],
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "mixed",
+    "response_forms": [
+        "ordering",
+        "selection",
+        "short_text"
+    ],
+    "scoring_mode": "mixed",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "block_index": 285,
+        "chapter": 3,
+        "heading_path": [
+            "Dealing with Customers on the Phone",
+            "Step 5. Practice"
+        ],
+        "normalized_text_sha256": "b7dafb52b630b15a01541ec6ae39e667df0fbe9283cd5158b84b640dfe306fab"
+    },
+    "status": "published",
+    "timing": "asynchronous",
+    "title": "Step 5. Practice"
+}

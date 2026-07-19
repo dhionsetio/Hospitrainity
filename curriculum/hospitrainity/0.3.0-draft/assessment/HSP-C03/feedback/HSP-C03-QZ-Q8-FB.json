@@ -1,0 +1,26 @@
+{
+  "code": "HSP-C03-QZ-Q8-FB",
+  "content_version": "0.3.0-draft",
+  "entity_type": "feedback-model",
+  "id": "9caed2c7-9a4c-5bc3-91f9-9cee23e8fbcc",
+  "messages": [
+    {
+      "feedback_type": "model_reveal",
+      "text": "B. Explain, then transfer, so the caller always feels looked after."
+    }
+  ],
+  "prompt_code": "HSP-C03-QZ-Q8",
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 346,
+    "chapter": 3,
+    "heading_path": [
+      "Dealing with Customers on the Phone",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "84237b1197211ac29ef7cb7e8602510ab1c9eedf9a279e8e44ce8c2085b110c2"
+  },
+  "status": "published"
+}

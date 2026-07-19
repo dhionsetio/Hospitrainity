@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C06",
+  "code": "HSP-C06-LS-13",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "12d39817-1bf8-532b-897c-f47fbb66ff21",
+  "order": 13,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 794,
+    "chapter": 6,
+    "heading_path": [
+      "Online and Social Media Customer Service",
+      "Further reading"
+    ],
+    "normalized_text_sha256": "c62f9752133a4414d93e840d91c7afd1f3b7b5a349216bd56cea524d29b45b9d"
+  },
+  "status": "published",
+  "title": "Further reading"
+}

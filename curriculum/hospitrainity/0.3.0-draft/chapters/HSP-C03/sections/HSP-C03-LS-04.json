@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C03",
+  "code": "HSP-C03-LS-04",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "9c0987e1-19f1-55e6-94a4-f7c214cf6c09",
+  "order": 4,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 245,
+    "chapter": 3,
+    "heading_path": [
+      "Dealing with Customers on the Phone",
+      "Step 2. Key vocabulary"
+    ],
+    "normalized_text_sha256": "2a2aeefb5e7549a6434122f09cacc00ae2ff0e690020d47da88ba99b3a9e3e43"
+  },
+  "status": "published",
+  "title": "Step 2. Key vocabulary"
+}

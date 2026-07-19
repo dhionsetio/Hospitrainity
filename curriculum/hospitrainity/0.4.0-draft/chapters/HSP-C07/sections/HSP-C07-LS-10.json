@@ -1,0 +1,800 @@
+{
+    "blocks": [
+        {
+            "id": "04039396-029b-53ec-9446-64f13b233468",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Q1.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " What is the first step when a guest complains? A) defend the hotel B) listen C) offer a discount straight away",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 919,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "5b325fcd3aada09934d2d8d07b7e0d393e8e58b8f1ae56610415df90b6adbcd6"
+            },
+            "text": "Q1. What is the first step when a guest complains? A) defend the hotel B) listen C) offer a discount straight away",
+            "type": "paragraph"
+        },
+        {
+            "id": "2a0409ce-5099-557d-b92b-98701f3163e2",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 920,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "b2a3aa602762a782e47a4f8e93bb5ae1b8819d1b92b7e6ceb3ef46a3c7077eb0"
+            },
+            "text": "Answer",
+            "type": "instruction"
+        },
+        {
+            "id": "0e54a6fa-0dcf-5447-8ebd-45051409f089",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "B.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Listen first, so the guest feels heard.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 921,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "39ab748d17c84985a9b27d961d50ee2f347c64061cf322b3e520003b2c28c042"
+            },
+            "text": "B. Listen first, so the guest feels heard.",
+            "type": "paragraph"
+        },
+        {
+            "id": "a02c098d-748c-5052-834c-ee05bf283307",
+            "language": "en",
+            "order": 4,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Q2.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Which is a sincere apology? A) “Rules are rules.” B) “I sincerely ",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "apologise",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " for the inconvenience.” C) “Calm down.”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 922,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "d49a0067f5ab3bc62a8b7572dd31beb95e69382a1575832a394d1fc8fe7e710d"
+            },
+            "text": "Q2. Which is a sincere apology? A) “Rules are rules.” B) “I sincerely apologise for the inconvenience.” C) “Calm down.”",
+            "type": "paragraph"
+        },
+        {
+            "id": "96e29119-75a5-511c-83f4-14be8b94daf8",
+            "language": "en",
+            "order": 5,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 923,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "b2a3aa602762a782e47a4f8e93bb5ae1b8819d1b92b7e6ceb3ef46a3c7077eb0"
+            },
+            "text": "Answer",
+            "type": "instruction"
+        },
+        {
+            "id": "8044f7a1-832b-587f-a500-62db890a38cf",
+            "language": "en",
+            "order": 6,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "B.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " It is sincere and specific.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 924,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "53414730c733988030dec11ca6f7e298d95d34332c9c4b06775de7e07930e60d"
+            },
+            "text": "B. It is sincere and specific.",
+            "type": "paragraph"
+        },
+        {
+            "id": "24eedcd2-ef99-57da-8b9b-8bdff4bebe04",
+            "language": "en",
+            "order": 7,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Q3.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " “Taking ownership” means ... A) blaming the system B) accepting responsibility and acting C) sending the guest away",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 925,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "9fd68178d24fea0497d7f5155935ae2e9540569e8cca11c36e95dda87eabc126"
+            },
+            "text": "Q3. “Taking ownership” means ... A) blaming the system B) accepting responsibility and acting C) sending the guest away",
+            "type": "paragraph"
+        },
+        {
+            "id": "89f9b4f0-4eba-53f7-95d5-3ba61a2a436e",
+            "language": "en",
+            "order": 8,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 926,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "b2a3aa602762a782e47a4f8e93bb5ae1b8819d1b92b7e6ceb3ef46a3c7077eb0"
+            },
+            "text": "Answer",
+            "type": "instruction"
+        },
+        {
+            "id": "6202bc38-7c7c-5e39-b974-5140b7463a77",
+            "language": "en",
+            "order": 9,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "B.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " You own the fix, personally.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 927,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "025283cf08334745842be895ffe0a009a981749ee70f45e0e814a3aff3d4d704"
+            },
+            "text": "B. You own the fix, personally.",
+            "type": "paragraph"
+        },
+        {
+            "id": "3f33a5d2-aa1e-5385-b7ca-f64290b355d7",
+            "language": "en",
+            "order": 10,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Q4.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " A “goodwill gesture” is ... A) a kind extra to make up for the problem B) a punishment C) an official complaint form",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 928,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "315a6aa9b0d8edd53d57178bb8c5beabe4ed641fe2e98ed33c480b12d16ba1e4"
+            },
+            "text": "Q4. A “goodwill gesture” is ... A) a kind extra to make up for the problem B) a punishment C) an official complaint form",
+            "type": "paragraph"
+        },
+        {
+            "id": "ce0da51a-a186-54a1-974d-c43bdc9d7672",
+            "language": "en",
+            "order": 11,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 929,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "b2a3aa602762a782e47a4f8e93bb5ae1b8819d1b92b7e6ceb3ef46a3c7077eb0"
+            },
+            "text": "Answer",
+            "type": "instruction"
+        },
+        {
+            "id": "bb90deb8-1f86-57da-8ad0-4760bf4e06fc",
+            "language": "en",
+            "order": 12,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "A.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " For example, a free breakfast or an upgrade.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 930,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "34f0e894a26f837f04403d0abca34c2e3dc70d4a2d06559f4c4a46919e1067ae"
+            },
+            "text": "A. For example, a free breakfast or an upgrade.",
+            "type": "paragraph"
+        },
+        {
+            "id": "31a6c50c-1862-518c-a804-83822bbc6e29",
+            "language": "en",
+            "order": 13,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Q5.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " What are the three things to never do? A) listen, ",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "apologise",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": ", act B) deflect, blame, dismiss C) refund, upgrade, follow up",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 931,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "da9ebb0527982099f65cdb5cbd9fde3a1def2588eb0cfde99c4e032a3370818b"
+            },
+            "text": "Q5. What are the three things to never do? A) listen, apologise, act B) deflect, blame, dismiss C) refund, upgrade, follow up",
+            "type": "paragraph"
+        },
+        {
+            "id": "58f162f0-9d31-54a7-87e8-c2a447658df4",
+            "language": "en",
+            "order": 14,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 932,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "b2a3aa602762a782e47a4f8e93bb5ae1b8819d1b92b7e6ceb3ef46a3c7077eb0"
+            },
+            "text": "Answer",
+            "type": "instruction"
+        },
+        {
+            "id": "42fa1ab8-2d1e-5cb8-a3fd-537d1d1e54e5",
+            "language": "en",
+            "order": 15,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "B.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Never deflect, blame, or dismiss.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 933,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "b5d70c39b42d2d08c92717f4829e2f96c183587ad16d2381c8428312c3a1f944"
+            },
+            "text": "B. Never deflect, blame, or dismiss.",
+            "type": "paragraph"
+        },
+        {
+            "id": "3bc3624c-4655-5312-adbd-d795088f9414",
+            "language": "en",
+            "order": 16,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Q6.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " What is the purpose of the follow-up step? A) to reassure the guest and confirm it is resolved B) to end the conversation quickly C) to charge the guest again",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 934,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "c6ae28b59cf0c3e3d621c33539f17b18813e9c65f5c6752187ca78d6efd1cf34"
+            },
+            "text": "Q6. What is the purpose of the follow-up step? A) to reassure the guest and confirm it is resolved B) to end the conversation quickly C) to charge the guest again",
+            "type": "paragraph"
+        },
+        {
+            "id": "fd51be74-d36e-535d-9112-6dcfbfe5b479",
+            "language": "en",
+            "order": 17,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 935,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "b2a3aa602762a782e47a4f8e93bb5ae1b8819d1b92b7e6ceb3ef46a3c7077eb0"
+            },
+            "text": "Answer",
+            "type": "instruction"
+        },
+        {
+            "id": "7d3d5051-7b04-5458-bd3f-56b70d1c192d",
+            "language": "en",
+            "order": 18,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "A.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Following up is what shows the guest you truly care.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 936,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "517a9107f4ef4a860cd122a2a586f2b2a775418ab77365f632bc55b2d5d14605"
+            },
+            "text": "A. Following up is what shows the guest you truly care.",
+            "type": "paragraph"
+        },
+        {
+            "id": "8f4d5bf1-b28e-51f3-af51-6b91bade2e97",
+            "language": "en",
+            "order": 19,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Q7.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " A guest is angry and it is not your fault. What should you ",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "apologise",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " for? A) nothing, since it is not your fault B) their poor experience, because it is about their feelings C) only if a manager tells you to",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 937,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "3183af6232c9f0798d742dcaeca69f6d59c2fd0bab0f71280d6ef217086b6b8a"
+            },
+            "text": "Q7. A guest is angry and it is not your fault. What should you apologise for? A) nothing, since it is not your fault B) their poor experience, because it is about their feelings C) only if a manager tells you to",
+            "type": "paragraph"
+        },
+        {
+            "id": "62eb20c5-01e4-5c20-8071-ee6bc1386eef",
+            "language": "en",
+            "order": 20,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 938,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "b2a3aa602762a782e47a4f8e93bb5ae1b8819d1b92b7e6ceb3ef46a3c7077eb0"
+            },
+            "text": "Answer",
+            "type": "instruction"
+        },
+        {
+            "id": "abdde6eb-c4b4-5675-8f92-3cba42e2b8f3",
+            "language": "en",
+            "order": 21,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "B.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " You can be sorry for the experience without assigning blame.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 939,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "895aaa91d40a65294739017e4561899965a9ec36573bb89bcf3e4916aa57cdcf"
+            },
+            "text": "B. You can be sorry for the experience without assigning blame.",
+            "type": "paragraph"
+        },
+        {
+            "id": "237e9f55-c51e-54c5-8f98-7cbf9bf0806c",
+            "language": "en",
+            "order": 22,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Q8.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " What is “service recovery”? A) turning an unhappy guest back into a happy one B) repairing broken equipment C) recovering a lost booking",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 940,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "be222241c92a0e492eed4eb8b6bd3682b4863e7b0958f53a1742db3ddb7d47a0"
+            },
+            "text": "Q8. What is “service recovery”? A) turning an unhappy guest back into a happy one B) repairing broken equipment C) recovering a lost booking",
+            "type": "paragraph"
+        },
+        {
+            "id": "ef2ccfa0-d672-51d1-9011-20a1211201a8",
+            "language": "en",
+            "order": 23,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 941,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "b2a3aa602762a782e47a4f8e93bb5ae1b8819d1b92b7e6ceb3ef46a3c7077eb0"
+            },
+            "text": "Answer",
+            "type": "instruction"
+        },
+        {
+            "id": "4034c474-33e5-55c3-aa0e-d9eb597eee81",
+            "language": "en",
+            "order": 24,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "A.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " It is the art of winning a guest back after something went wrong.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 942,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "d5dbf6bd9810d8dd97a63b44ec39cce1d227599683c69e60c1b215e211bbca3b"
+            },
+            "text": "A. It is the art of winning a guest back after something went wrong.",
+            "type": "paragraph"
+        },
+        {
+            "activity_code": "HSP-C07-ACT-QUIZ",
+            "id": "5bc94f73-d5bb-5633-b6f4-33ad0465101c",
+            "language": "en",
+            "order": 25,
+            "provenance_kind": "derived_navigation",
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 918,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "5afd42f19a54588d7aae41ef09f0b06aee1aa8c3e9a32e8e5aac6991901c2156"
+            },
+            "type": "activity_embed"
+        }
+    ],
+    "chapter_code": "HSP-C07",
+    "code": "HSP-C07-LS-10",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "6a3b932d-20d4-596b-b111-f0f860b32bbb",
+    "language": "en",
+    "order": 10,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 918,
+        "chapter": 7,
+        "heading_path": [
+            "Dealing with Problems and Complaints",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "5afd42f19a54588d7aae41ef09f0b06aee1aa8c3e9a32e8e5aac6991901c2156"
+    },
+    "status": "published",
+    "title": "Step 7. Quiz"
+}

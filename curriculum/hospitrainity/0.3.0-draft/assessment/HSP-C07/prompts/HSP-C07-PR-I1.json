@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C07-ACT-PRACTICE",
+  "code": "HSP-C07-PR-I1",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "ac25dd2e-877c-53d8-84d2-9b9ad2b1c2c5",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "short_text",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 864,
+    "chapter": 7,
+    "heading_path": [
+      "Dealing with Problems and Complaints",
+      "Step 5. Practice"
+    ],
+    "normalized_text_sha256": "909526d763df6de66959807ff3696ba72689eb750de12bc156e48be970619a3f"
+  },
+  "status": "published",
+  "stem": "1. Which framework step is this? “I sincerely apologise for the inconvenience.”"
+}

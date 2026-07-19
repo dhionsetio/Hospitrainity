@@ -1,0 +1,50 @@
+{
+    "activity_code": "HSP-C03-ACT-QUIZ",
+    "choices": [
+        {
+            "feedback": [],
+            "id": "dd5b1e4f-0bd6-54c7-be4e-9228e483c9ef",
+            "label": "a",
+            "text": "“Bye.”"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "model_reveal",
+                    "text": "B. It gives the reference and ends on a welcoming note."
+                }
+            ],
+            "id": "f9b0894f-aa2d-57ea-bdff-abd3445590a2",
+            "label": "b",
+            "text": "“Your booking reference is 452. Thank you for calling, and we look forward to welcoming you.”"
+        },
+        {
+            "feedback": [],
+            "id": "eac69c3a-28c2-56af-9f3b-d85129a9b463",
+            "label": "c",
+            "text": "“That is all.”"
+        }
+    ],
+    "code": "HSP-C03-QZ-Q4",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "797643a9-54ad-54e9-a92a-a6f6ddd41be9",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 339,
+        "chapter": 3,
+        "heading_path": [
+            "Dealing with Customers on the Phone",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "35dea76a461d5af2f292e3c0d85b9974706548454bc1dbd2cbbf8f568ccd8e16"
+    },
+    "status": "published",
+    "stem": "Q4. What is a warm way to close? A) “Bye.” B) “Your booking reference is 452. Thank you for calling, and we look forward to welcoming you.” C) “That is all.”"
+}

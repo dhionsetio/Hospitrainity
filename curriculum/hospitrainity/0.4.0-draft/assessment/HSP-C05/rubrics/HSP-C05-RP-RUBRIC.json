@@ -1,0 +1,60 @@
+{
+    "activity_code": "HSP-C05-ACT-ROLEPLAY",
+    "code": "HSP-C05-RP-RUBRIC",
+    "content_version": "0.4.0-draft",
+    "criteria": [
+        {
+            "code": "HSP-C05-RP-RUBRIC-WARMTH",
+            "descriptor": "Warm, professional welcome and tone",
+            "levels": [
+                "Not yet",
+                "Developing",
+                "Strong"
+            ]
+        },
+        {
+            "code": "HSP-C05-RP-RUBRIC-SOLUTION",
+            "descriptor": "Offers help and moves toward a concrete solution",
+            "levels": [
+                "Not yet",
+                "Developing",
+                "Strong"
+            ]
+        },
+        {
+            "code": "HSP-C05-RP-RUBRIC-POLITENESS",
+            "descriptor": "Polite, softened language (e.g. \"Could I ... please\")",
+            "levels": [
+                "Not yet",
+                "Developing",
+                "Strong"
+            ]
+        },
+        {
+            "code": "HSP-C05-RP-RUBRIC-PROGRESSION",
+            "descriptor": "Calmly moves the interaction to the next step",
+            "levels": [
+                "Not yet",
+                "Developing",
+                "Strong"
+            ]
+        }
+    ],
+    "entity_type": "rubric",
+    "id": "2677aa2e-7f1f-5670-9360-8af3d9a9599e",
+    "provenance_kind": "derived_review",
+    "replaced_by": null,
+    "replaces": null,
+    "review_status": "provisional",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "block_index": 592,
+        "chapter": 5,
+        "heading_path": [
+            "Customer Care Through Writing",
+            "Step 6. Role-play (drafting)"
+        ],
+        "normalized_text_sha256": "e3a036a87173d7758391c7e3e99c05dd466a86767209b985eb8c0ac87de3ed46"
+    },
+    "status": "published"
+}

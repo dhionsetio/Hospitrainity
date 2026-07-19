@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C02",
+  "code": "HSP-C02-LS-08",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "8800ced4-2423-510b-a011-b42fb4c852bd",
+  "order": 8,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 141,
+    "chapter": 2,
+    "heading_path": [
+      "Front Desk and Check-In",
+      "Step 5. Practice"
+    ],
+    "normalized_text_sha256": "ada07234842f50fb3792fd5f7014ce417c4de003f32e7d95bc43eda3b65e540b"
+  },
+  "status": "published",
+  "title": "Step 5. Practice"
+}

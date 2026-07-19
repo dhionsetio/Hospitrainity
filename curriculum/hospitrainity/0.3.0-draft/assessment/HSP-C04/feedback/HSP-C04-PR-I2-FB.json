@@ -1,0 +1,26 @@
+{
+  "code": "HSP-C04-PR-I2-FB",
+  "content_version": "0.3.0-draft",
+  "entity_type": "feedback-model",
+  "id": "b02bc010-b11c-5799-b3bd-d065687327f8",
+  "messages": [
+    {
+      "feedback_type": "model_reveal",
+      "text": "(b). Even under pressure, a warm welcome costs nothing and means a lot."
+    }
+  ],
+  "prompt_code": "HSP-C04-PR-I2",
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 436,
+    "chapter": 4,
+    "heading_path": [
+      "The Guest-Services Hotline",
+      "Step 5. Practice"
+    ],
+    "normalized_text_sha256": "10ac5076afcc1c6bf43ac37552a0be7c33e21d2c2efb9a5394458d8dbafea018"
+  },
+  "status": "published"
+}

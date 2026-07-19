@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C02",
+  "code": "HSP-C02-LS-06",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "94a8b12e-73e7-5b3d-b38d-b41ce4a378c4",
+  "order": 6,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 128,
+    "chapter": 2,
+    "heading_path": [
+      "Front Desk and Check-In",
+      "Step 4. Model dialogue"
+    ],
+    "normalized_text_sha256": "e8220d5631196c5b1a6cc2770b8ad3ab3b1207b8cdc75ecf692c8c094889db29"
+  },
+  "status": "published",
+  "title": "Step 4. Model dialogue"
+}

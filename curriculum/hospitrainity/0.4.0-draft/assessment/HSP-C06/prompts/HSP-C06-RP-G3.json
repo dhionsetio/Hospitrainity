@@ -1,0 +1,60 @@
+{
+    "activity_code": "HSP-C06-ACT-ROLEPLAY",
+    "choices": [
+        {
+            "feedback": [
+                {
+                    "feedback_type": "error_specific",
+                    "text": "(a) “Maybe.” Vague and unhelpful."
+                }
+            ],
+            "id": "2e6e88ea-e84d-5628-8411-367b8882594f",
+            "label": "a",
+            "text": "“Maybe.”"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "success",
+                    "text": "(b) “Of course, I would be happy to help with that. Could you send me your booking reference so I can check availability for Saturday?” This is the ideal answer, warm, and it gathers what is needed privately."
+                }
+            ],
+            "id": "94a29543-20a4-520d-8c7f-680070103f2b",
+            "label": "b",
+            "text": "“Of course, I would be happy to help with that. Could you send me your booking reference so I can check availability for Saturday?”"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "error_specific",
+                    "text": "(c) “We do not do changes.” Cold, and it shuts the guest down."
+                }
+            ],
+            "id": "7838d93f-1d9c-50de-84f7-8f4f62fb965b",
+            "label": "c",
+            "text": "“We do not do changes.”"
+        }
+    ],
+    "code": "HSP-C06-RP-G3",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "bf76bcae-f4db-5168-9265-b106ea092012",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 760,
+        "chapter": 6,
+        "heading_path": [
+            "Online and Social Media Customer Service",
+            "Step 6. Role-play"
+        ],
+        "normalized_text_sha256": "abd7e1db52fa15383cec68c33b3ae574cfa97631b3a23c811fe0ccd4cd51c08e"
+    },
+    "status": "published",
+    "stem": "DM: “Can I change my booking from Friday to Saturday?”"
+}

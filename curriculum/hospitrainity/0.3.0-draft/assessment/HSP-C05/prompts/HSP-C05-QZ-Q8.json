@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C05-ACT-QUIZ",
+  "code": "HSP-C05-QZ-Q8",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "3ef775de-921d-5e13-8632-6e5d23ab4182",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 636,
+    "chapter": 5,
+    "heading_path": [
+      "Customer Care Through Writing",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "2b7f595187540d392c2872cdbcef6c36dc4a43b20588a7b371b5d2de2e76817e"
+  },
+  "status": "published",
+  "stem": "Q8. Which body is easiest for a guest to read quickly? A) one long paragraph B) short lines or a small bulleted list C) no spacing at all"
+}

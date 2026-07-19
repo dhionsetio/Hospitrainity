@@ -1,0 +1,25 @@
+{
+    "activity_code": "HSP-C03-ACT-PRACTICE",
+    "code": "HSP-C03-PR-I1",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "7de923cf-5aef-5e34-adbc-be46f77bdaee",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "short_text",
+    "scoring_mode": "objective_normalized_closed",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 294,
+        "chapter": 3,
+        "heading_path": [
+            "Dealing with Customers on the Phone",
+            "Step 5. Practice"
+        ],
+        "normalized_text_sha256": "87bc45fa7ee4dce252b801a36c0b2b4f1bfd5e855d8eec336514b0f4e5de90c3"
+    },
+    "status": "published",
+    "stem": "1. Fill the blank: “May I _____ you on hold for a moment?”"
+}

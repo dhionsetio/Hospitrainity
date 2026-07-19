@@ -1,0 +1,47 @@
+{
+    "accessibility": [
+        "text_alt",
+        "keyboard_path",
+        "non_color_cue",
+        "no_timing_dependency"
+    ],
+    "cefr_activity": "reception",
+    "channel": "social_public_reply",
+    "code": "HSP-C06-ACT-QUIZ",
+    "completion_rule": "all_required_items_attempted_and_checked",
+    "completion_rule_provenance_kind": "derived_workflow",
+    "content_version": "0.4.0-draft",
+    "entity_type": "activity",
+    "id": "d3137805-41c4-5ddf-9e54-0ecd96cfda25",
+    "lesson_code": "HSP-C06-LS-10",
+    "outcome_codes": [
+        "OUT-M06-01",
+        "OUT-M06-02",
+        "OUT-M06-03"
+    ],
+    "participation": "individual",
+    "pedagogical_function": "formative_check",
+    "prompt_scoring_modes": [
+        "objective_choice"
+    ],
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "response_forms": [
+        "selection"
+    ],
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "block_index": 754,
+        "chapter": 6,
+        "heading_path": [
+            "Online and Social Media Customer Service",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "7adf701971dfee338cfcbb911ec5f3219a7f686dc1362dd03957ba4e6b18f75f"
+    },
+    "status": "published",
+    "timing": "asynchronous",
+    "title": "Step 7. Quiz"
+}

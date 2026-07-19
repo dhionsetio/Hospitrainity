@@ -1,0 +1,34 @@
+{
+  "code": "HSP-C04-RP-G1-FB",
+  "content_version": "0.3.0-draft",
+  "entity_type": "feedback-model",
+  "id": "2a94e5a8-f9b9-5bef-9eba-ab391221b8c2",
+  "messages": [
+    {
+      "feedback_type": "error_specific",
+      "text": "(a) “That is not my department.” Unhelpful, and it leaves the guest stuck."
+    },
+    {
+      "feedback_type": "success",
+      "text": "(b) “I am sorry to hear that. I will put you through to maintenance right away. One moment, please.” This is the ideal answer, empathy followed by action."
+    },
+    {
+      "feedback_type": "error_specific",
+      "text": "(c) “Try turning it off and on.” This pushes the work back onto the guest."
+    }
+  ],
+  "prompt_code": "HSP-C04-RP-G1",
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 446,
+    "chapter": 4,
+    "heading_path": [
+      "The Guest-Services Hotline",
+      "Step 6. Role-play"
+    ],
+    "normalized_text_sha256": "06447c82d431e9f97f8ab53d8eeb38191ed64e9edbccb3c2ed3c4e3474ecf43a"
+  },
+  "status": "published"
+}

@@ -1,0 +1,26 @@
+{
+  "code": "HSP-C03-CC-SELF-FB",
+  "content_version": "0.3.0-draft",
+  "entity_type": "feedback-model",
+  "id": "c480ec40-cd4c-5e10-9bd7-270261c416ce",
+  "messages": [
+    {
+      "feedback_type": "next_step",
+      "text": "Rate yourself honestly, from 1 (not confident yet) to 5 (very confident). This is just for you, and it is a good way to see your progress."
+    }
+  ],
+  "prompt_code": "HSP-C03-CC-SELF",
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 348,
+    "chapter": 3,
+    "heading_path": [
+      "Dealing with Customers on the Phone",
+      "Step 8. Confidence check"
+    ],
+    "normalized_text_sha256": "8ae726d271eb7a0bf90a65a1207e47b0e727c521ff95159d8c7f245ec46d05b7"
+  },
+  "status": "published"
+}

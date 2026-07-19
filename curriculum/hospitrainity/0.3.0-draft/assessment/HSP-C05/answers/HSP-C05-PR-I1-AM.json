@@ -1,0 +1,24 @@
+{
+  "accepted": [
+    "A model version: “Dear Sir or Madam, I would like to ask whether you have any rooms available this weekend. Thank you.” Notice the formal greeting, the full words, and the polite tone."
+  ],
+  "code": "HSP-C05-PR-I1-AM",
+  "content_version": "0.3.0-draft",
+  "entity_type": "answer-model",
+  "id": "7cfc4679-da2f-59de-94b9-5402316cc1ae",
+  "prompt_code": "HSP-C05-PR-I1",
+  "replaced_by": null,
+  "replaces": null,
+  "scoring_mode": "objective_normalized",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 581,
+    "chapter": 5,
+    "heading_path": [
+      "Customer Care Through Writing",
+      "Step 5. Practice"
+    ],
+    "normalized_text_sha256": "b6b49fad58c26d862f8a1a81bb176178b0722e25f2db6dd9015044b431b68aec"
+  },
+  "status": "published"
+}

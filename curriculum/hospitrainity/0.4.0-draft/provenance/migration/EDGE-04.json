@@ -1,0 +1,7 @@
+{
+    "canonical_code": null,
+    "disposition": "dropped",
+    "entity_type": "migration-edge",
+    "legacy_ref": "course.json#module:Hotel Amenities and Services",
+    "note": "No dedicated chapter in Hospitrainity.docx; amenities appear only as a minor \"offer a little extra\" phrase set inside Chapter 2. Not a standalone module in the source of truth."
+}

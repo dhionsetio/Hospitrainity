@@ -1,0 +1,37 @@
+{
+    "activity_code": "HSP-C07-ACT-CONFIDENCE",
+    "code": "HSP-C07-CC-R2",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "f2dec262-ccca-5dcd-b1b5-1d885fc2ed65",
+    "language": "en",
+    "order": 2,
+    "provenance_kind": "source_verbatim",
+    "rating_scale": {
+        "max": 5,
+        "min": 1,
+        "values": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ]
+    },
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "rating",
+    "scoring_mode": "unscored_self_report",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 946,
+        "chapter": 7,
+        "heading_path": [
+            "Dealing with Problems and Complaints",
+            "Step 8. Confidence check"
+        ],
+        "normalized_text_sha256": "975886f399a7d44bb3707668958fbfa30916a40eab4f6beb98cef84165d4292a"
+    },
+    "status": "published",
+    "stem": "I can apologise sincerely and show empathy."
+}

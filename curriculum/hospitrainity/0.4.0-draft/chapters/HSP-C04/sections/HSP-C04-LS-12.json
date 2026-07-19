@@ -1,0 +1,270 @@
+{
+    "blocks": [
+        {
+            "id": "1f756cd7-d7ae-52f4-9b53-e695706da97d",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Here is a quick drill that builds real speed. Have a friend read you a short order and a room number a little faster than feels comfortable, then read it straight back and add an estimated time. Do it three times. This trains the exact reflex a hotline needs, which is to listen, read back, and confirm, all without losing your warmth.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 507,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Take it further"
+                ],
+                "normalized_text_sha256": "96a40289187130c126780d8b5380bff6cbb522631fa10821d60ad831cf547e9c"
+            },
+            "text": "Here is a quick drill that builds real speed. Have a friend read you a short order and a room number a little faster than feels comfortable, then read it straight back and add an estimated time. Do it three times. This trains the exact reflex a hotline needs, which is to listen, read back, and confirm, all without losing your warmth.",
+            "type": "paragraph"
+        },
+        {
+            "id": "885337fe-8712-5cab-8755-18f554792736",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Efficiency with a human voice",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 509,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Take it further"
+                ],
+                "normalized_text_sha256": "6ae24efca05450049abd07a82d57ea08bd85a00a29d195bcfeffbc6b756d9bfc"
+            },
+            "text": "Efficiency with a human voice",
+            "type": "heading"
+        },
+        {
+            "id": "fc598551-0f7f-5774-9fd3-b1f4cd38a750",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Be efficient, but never let yourself sound like a machine. Scripts and saved replies are genuinely useful, yet the guest should always feel spoken to, not simply processed. A few pointers:",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 510,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Take it further"
+                ],
+                "normalized_text_sha256": "28e8f8bb500d96a0bd7451294a6bd05d16771309113883483cc1f005b865cd04"
+            },
+            "text": "Be efficient, but never let yourself sound like a machine. Scripts and saved replies are genuinely useful, yet the guest should always feel spoken to, not simply processed. A few pointers:",
+            "type": "paragraph"
+        },
+        {
+            "id": "655afa26-ae44-5606-a69e-6fce367a53bb",
+            "language": "en",
+            "order": 4,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Keep any script light and natural, so it sounds like you and not like a recording.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 511,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Take it further"
+                ],
+                "normalized_text_sha256": "f3a0bd4622e9f41bcf9c022cc3a0f3ef6dee4806a68826d1d36364f31b2b3a3b"
+            },
+            "text": "Keep any script light and natural, so it sounds like you and not like a recording.",
+            "type": "list_item"
+        },
+        {
+            "id": "c5a574a0-830c-5ee7-92d5-ffb3913595a2",
+            "language": "en",
+            "order": 5,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Confirm everything by reading it back, especially orders and room numbers.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 512,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Take it further"
+                ],
+                "normalized_text_sha256": "eec8d0de6ff541fbdcf6a5b34d77e55b4b12c40165d8b16e9805959a83f693b3"
+            },
+            "text": "Confirm everything by reading it back, especially orders and room numbers.",
+            "type": "list_item"
+        },
+        {
+            "id": "71f1da88-a782-5fc5-a0a5-a2860f24f1c3",
+            "language": "en",
+            "order": 6,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Use the guest’s name, because it turns a transaction into a conversation.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 513,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Take it further"
+                ],
+                "normalized_text_sha256": "853b03dd1f8457a4161a58d227276fb7aa8d4d01cefd7d16f809b3a941eb35e6"
+            },
+            "text": "Use the guest’s name, because it turns a transaction into a conversation.",
+            "type": "list_item"
+        },
+        {
+            "id": "badc9072-55b5-5efb-8218-7713217b171f",
+            "language": "en",
+            "order": 7,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Watch out for the classic trap of sounding rushed, which quietly tells the guest they are a bother. Positive language is the fix:",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 514,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Take it further"
+                ],
+                "normalized_text_sha256": "3b8dc65903c2a2db3b5f2c83fe064d617633f44f10f189fefc32d753053b38fe"
+            },
+            "text": "Watch out for the classic trap of sounding rushed, which quietly tells the guest they are a bother. Positive language is the fix:",
+            "type": "paragraph"
+        },
+        {
+            "caption": "Take it further: Instead of saying this / Try saying this",
+            "header": [
+                "Instead of saying this",
+                "Try saying this"
+            ],
+            "id": "8f9a211a-f4a0-5cc3-86fe-26cedc03794e",
+            "language": "en",
+            "order": 8,
+            "provenance_kind": "source_verbatim",
+            "rows": [
+                [
+                    "We are too busy right now.",
+                    "Thank you for your patience, I am happy to help you now."
+                ],
+                [
+                    "That is not this department.",
+                    "Let me connect you with the right team who can sort this out."
+                ],
+                [
+                    "Anything else? (said in a rush)",
+                    "Is there anything else I can help you with this evening?"
+                ]
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 515,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Take it further"
+                ],
+                "normalized_text_sha256": "1ea4f84c6c15fde65fc3f2ad51e4a58bd84efe4070a9ded340c97d8c8d83007a"
+            },
+            "type": "source_table"
+        },
+        {
+            "id": "60c3f653-9bd8-537d-bcd9-1293d708838d",
+            "language": "en",
+            "order": 9,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Speed is welcome, but warmth is what the guest remembers. A calm, accurate read-back gives you both at once.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 516,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Take it further"
+                ],
+                "normalized_text_sha256": "31a35dd75fc6a1cb661b293f6ad57b2300361c8d869b29ca20953c6c31e11e61"
+            },
+            "text": "Speed is welcome, but warmth is what the guest remembers. A calm, accurate read-back gives you both at once.",
+            "type": "paragraph"
+        }
+    ],
+    "chapter_code": "HSP-C04",
+    "code": "HSP-C04-LS-12",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "9211ff11-7c83-5f9f-b0c7-3fb048761790",
+    "language": "en",
+    "order": 12,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 506,
+        "chapter": 4,
+        "heading_path": [
+            "The Guest-Services Hotline",
+            "Take it further"
+        ],
+        "normalized_text_sha256": "b19a89522b9f73e505f3b0dd1e4759f15eb4c7fc7b935b00b917e9c2c9ae6dc7"
+    },
+    "status": "published",
+    "title": "Take it further"
+}

@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C07-ACT-QUIZ",
+  "code": "HSP-C07-QZ-Q2",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "9e627ed4-286d-5a18-b04e-a01f359c1dc4",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 903,
+    "chapter": 7,
+    "heading_path": [
+      "Dealing with Problems and Complaints",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "d49a0067f5ab3bc62a8b7572dd31beb95e69382a1575832a394d1fc8fe7e710d"
+  },
+  "status": "published",
+  "stem": "Q2. Which is a sincere apology? A) “Rules are rules.” B) “I sincerely apologise for the inconvenience.” C) “Calm down.”"
+}

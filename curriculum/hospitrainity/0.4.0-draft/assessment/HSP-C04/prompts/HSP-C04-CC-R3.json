@@ -1,0 +1,37 @@
+{
+    "activity_code": "HSP-C04-ACT-CONFIDENCE",
+    "code": "HSP-C04-CC-R3",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "0d1be189-ffeb-5522-8fde-f4c771fee570",
+    "language": "en",
+    "order": 3,
+    "provenance_kind": "source_verbatim",
+    "rating_scale": {
+        "max": 5,
+        "min": 1,
+        "values": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ]
+    },
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "rating",
+    "scoring_mode": "unscored_self_report",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 504,
+        "chapter": 4,
+        "heading_path": [
+            "The Guest-Services Hotline",
+            "Step 8. Confidence check"
+        ],
+        "normalized_text_sha256": "f3f086ab4672996e216015e6010a6fb410ec3d2e802ea4340d1d4a103bdc479a"
+    },
+    "status": "published",
+    "stem": "I can transfer a call to the right department politely."
+}

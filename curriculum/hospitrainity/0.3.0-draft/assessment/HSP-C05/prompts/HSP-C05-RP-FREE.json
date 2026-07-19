@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C05-ACT-ROLEPLAY",
+  "code": "HSP-C05-RP-FREE",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "7d9f756a-7413-5694-9734-af250b7cf6c7",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "service_artifact",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 610,
+    "chapter": 5,
+    "heading_path": [
+      "Customer Care Through Writing",
+      "Step 6. Role-play (drafting)"
+    ],
+    "normalized_text_sha256": "5813c2181281e8f3803a4b30783058e5167f6b8d7a2e94d9bda38ab77b152d9f"
+  },
+  "status": "published",
+  "stem": "Prompt: Write a short booking-confirmation email for a guest who reserved one night in a Deluxe Room, arriving next Friday."
+}

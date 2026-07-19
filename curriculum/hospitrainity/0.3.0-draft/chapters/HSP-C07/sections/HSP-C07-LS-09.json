@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C07",
+  "code": "HSP-C07-LS-09",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "a9e7d2df-3578-51ef-9817-f1932377ca39",
+  "order": 9,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 877,
+    "chapter": 7,
+    "heading_path": [
+      "Dealing with Problems and Complaints",
+      "Step 6. Role-play"
+    ],
+    "normalized_text_sha256": "20de8aeea56442b8a2dedfa6964d233a0e0c775fb70c081706fdbfe4fb51eb52"
+  },
+  "status": "published",
+  "title": "Step 6. Role-play"
+}

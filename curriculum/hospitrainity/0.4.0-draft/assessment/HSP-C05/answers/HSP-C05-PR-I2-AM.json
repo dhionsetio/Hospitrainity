@@ -1,0 +1,28 @@
+{
+    "accepted": [
+        "(b). “Kind regards,” is warm and professional. The others are far too casual for a guest."
+    ],
+    "code": "HSP-C05-PR-I2-AM",
+    "content_version": "0.4.0-draft",
+    "correct_choice_ids": [
+        "abf7a410-a921-5b76-a87e-adff55e758a4"
+    ],
+    "entity_type": "answer-model",
+    "id": "f6f7b43d-62f8-5e8c-8e3b-9427efa7c150",
+    "prompt_code": "HSP-C05-PR-I2",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 597,
+        "chapter": 5,
+        "heading_path": [
+            "Customer Care Through Writing",
+            "Step 5. Practice"
+        ],
+        "normalized_text_sha256": "f269579dec6d884fef526e6553d68eb1cf98c76aebba6562445e8154f11ef3e2"
+    },
+    "status": "published"
+}

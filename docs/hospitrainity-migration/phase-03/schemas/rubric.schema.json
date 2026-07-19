@@ -1,0 +1,93 @@
+{
+  "$id": "https://hospitrainity.curriculum/schema/rubric.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "$ref": "https://hospitrainity.curriculum/schema/_meta.schema.json#/$defs/meta"
+    }
+  ],
+  "properties": {
+    "activity_code": {
+      "$ref": "https://hospitrainity.curriculum/schema/_meta.schema.json#/$defs/editorial_code"
+    },
+    "code": {
+      "$ref": "https://hospitrainity.curriculum/schema/_meta.schema.json#/$defs/editorial_code"
+    },
+    "content_version": {
+      "$ref": "https://hospitrainity.curriculum/schema/_meta.schema.json#/$defs/semver"
+    },
+    "criteria": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "$ref": "https://hospitrainity.curriculum/schema/_meta.schema.json#/$defs/editorial_code"
+          },
+          "descriptor": {
+            "type": "string"
+          },
+          "levels": {
+            "items": {
+              "type": "string"
+            },
+            "minItems": 2,
+            "type": "array"
+          }
+        },
+        "required": [
+          "code",
+          "descriptor",
+          "levels"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "entity_type": {
+      "const": "rubric"
+    },
+    "id": {
+      "$ref": "https://hospitrainity.curriculum/schema/_meta.schema.json#/$defs/uuid"
+    },
+    "replaced_by": {
+      "oneOf": [
+        {
+          "$ref": "https://hospitrainity.curriculum/schema/_meta.schema.json#/$defs/uuid"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "replaces": {
+      "oneOf": [
+        {
+          "$ref": "https://hospitrainity.curriculum/schema/_meta.schema.json#/$defs/uuid"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "source_locator": {
+      "$ref": "https://hospitrainity.curriculum/schema/_meta.schema.json#/$defs/source_locator"
+    },
+    "status": {
+      "$ref": "https://hospitrainity.curriculum/schema/_meta.schema.json#/$defs/status"
+    }
+  },
+  "required": [
+    "id",
+    "code",
+    "content_version",
+    "status",
+    "entity_type",
+    "source_locator",
+    "activity_code",
+    "criteria"
+  ],
+  "title": "Rubric",
+  "type": "object"
+}

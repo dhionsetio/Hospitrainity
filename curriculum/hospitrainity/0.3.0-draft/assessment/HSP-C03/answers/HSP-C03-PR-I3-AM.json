@@ -1,0 +1,24 @@
+{
+  "accepted": [
+    "Answer with the hotel name, then take the caller’s details, then confirm by reading back, then give the booking reference."
+  ],
+  "code": "HSP-C03-PR-I3-AM",
+  "content_version": "0.3.0-draft",
+  "entity_type": "answer-model",
+  "id": "994c9295-aabd-5a06-9b7b-36fdc13f37ae",
+  "prompt_code": "HSP-C03-PR-I3",
+  "replaced_by": null,
+  "replaces": null,
+  "scoring_mode": "objective_normalized",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 295,
+    "chapter": 3,
+    "heading_path": [
+      "Dealing with Customers on the Phone",
+      "Step 5. Practice"
+    ],
+    "normalized_text_sha256": "aedf48017ea2cd8e096dc7e88c575f62c7ebfbf94d498d78e25921f7cc79c3d1"
+  },
+  "status": "published"
+}

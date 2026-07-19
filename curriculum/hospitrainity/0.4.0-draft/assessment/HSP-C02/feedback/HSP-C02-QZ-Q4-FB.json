@@ -1,0 +1,27 @@
+{
+    "code": "HSP-C02-QZ-Q4-FB",
+    "content_version": "0.4.0-draft",
+    "entity_type": "feedback-model",
+    "id": "89d7a592-1972-51ca-8f31-ed7dfe9cc70b",
+    "messages": [
+        {
+            "feedback_type": "model_reveal",
+            "text": "B. “Enjoy your stay” leaves a warm final impression."
+        }
+    ],
+    "prompt_code": "HSP-C02-QZ-Q4",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 194,
+        "chapter": 2,
+        "heading_path": [
+            "Front Desk and Check-In",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "34b78b3d64f83962cd07f2ead675712fa5f869310fb69e7b824c2e397854bb0d"
+    },
+    "status": "published"
+}

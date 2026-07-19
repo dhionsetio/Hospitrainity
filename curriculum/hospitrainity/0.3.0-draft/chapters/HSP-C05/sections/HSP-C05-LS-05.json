@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C05",
+  "code": "HSP-C05-LS-05",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "851674b3-361c-5fa2-aa4e-472023f3b5ae",
+  "order": 5,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 536,
+    "chapter": 5,
+    "heading_path": [
+      "Customer Care Through Writing",
+      "Step 3. Useful phrases, grouped by what they do"
+    ],
+    "normalized_text_sha256": "dcd8b3b8d55230925236d71c3b29354b00a97bbdf06020ddb4f9367ada6f6d39"
+  },
+  "status": "published",
+  "title": "Step 3. Useful phrases, grouped by what they do"
+}

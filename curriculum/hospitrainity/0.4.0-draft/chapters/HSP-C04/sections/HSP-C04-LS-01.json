@@ -1,0 +1,142 @@
+{
+    "blocks": [
+        {
+            "id": "6035698a-50f5-53e0-ad2f-c2466ecf4b20",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Answer these quietly for yourself first. There are no right or wrong answers, just a gentle way to settle in.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 380,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Warm-Up"
+                ],
+                "normalized_text_sha256": "1047b2d011688e153b8736464e9bd7f9824d84ca9427d37673fd2e7e96a20dac"
+            },
+            "text": "Answer these quietly for yourself first. There are no right or wrong answers, just a gentle way to settle in.",
+            "type": "instruction"
+        },
+        {
+            "id": "75f77ba4-0856-52a5-8726-58a939820523",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "In one word, how do you feel when you have to work quickly?",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 381,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Warm-Up"
+                ],
+                "normalized_text_sha256": "f26864c98c5bf1aa790256f5e6ffc3055f31890e2184c5326699eba58bebfdaa"
+            },
+            "text": "In one word, how do you feel when you have to work quickly?",
+            "type": "list_item"
+        },
+        {
+            "id": "12ec7eb8-ea03-5327-8584-a4a6061e699a",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Have you ever called a hotline or a call ",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "centre",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "? What made it feel good, or not so good?",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 382,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Warm-Up"
+                ],
+                "normalized_text_sha256": "4d48913f60eaf3156b31938db427e63ce6d51823334f0b17e41741da122f589e"
+            },
+            "text": "Have you ever called a hotline or a call centre? What made it feel good, or not so good?",
+            "type": "list_item"
+        },
+        {
+            "id": "e767484b-cf5d-5e0c-b9bf-5a0cd308781e",
+            "language": "en",
+            "order": 4,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "In your own language, how do you politely ask someone to wait, or move them to another person?",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 383,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Warm-Up"
+                ],
+                "normalized_text_sha256": "b387a12eff7e78a4eeab3a76d0656db2d39d18ddab9d36d63259e97186dec988"
+            },
+            "text": "In your own language, how do you politely ask someone to wait, or move them to another person?",
+            "type": "list_item"
+        }
+    ],
+    "chapter_code": "HSP-C04",
+    "code": "HSP-C04-LS-01",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "195aeebf-f52b-51f9-b815-7f161a2b99a4",
+    "language": "en",
+    "order": 1,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 379,
+        "chapter": 4,
+        "heading_path": [
+            "The Guest-Services Hotline",
+            "Warm-Up"
+        ],
+        "normalized_text_sha256": "0d96d7a94cccd70ae6e338c3b3a29d88a9ed37ce481071007cb60d1746da4a65"
+    },
+    "status": "published",
+    "title": "Warm-Up"
+}

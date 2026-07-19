@@ -1,0 +1,60 @@
+{
+    "activity_code": "HSP-C02-ACT-ROLEPLAY",
+    "choices": [
+        {
+            "feedback": [
+                {
+                    "feedback_type": "success",
+                    "text": "(a) “Let me see what I can do for you. We have a room on the fourth floor with a city view. Would that suit you?” This is the ideal answer, because it offers a solution warmly."
+                }
+            ],
+            "id": "a74da304-d04d-5cd0-98a1-7d5b604d46a3",
+            "label": "a",
+            "text": "“Let me see what I can do for you. We have a room on the fourth floor with a city view. Would that suit you?”"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "error_specific",
+                    "text": "(b) “Maybe. We will see.” This is vague and sounds dismissive."
+                }
+            ],
+            "id": "a89dc20f-fed0-5236-9f59-4c1bded2a171",
+            "label": "b",
+            "text": "“Maybe. We will see.”"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "error_specific",
+                    "text": "(c) “All rooms are the same.” This shuts the guest down instead of helping."
+                }
+            ],
+            "id": "fc2d8c46-946b-59d0-8028-376b351a9fe5",
+            "label": "c",
+            "text": "“All rooms are the same.”"
+        }
+    ],
+    "code": "HSP-C02-RP-G2",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "aa6658fa-78a2-5c6a-b7ed-b56041b4146d",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 167,
+        "chapter": 2,
+        "heading_path": [
+            "Front Desk and Check-In",
+            "Step 6. Role-play"
+        ],
+        "normalized_text_sha256": "19ec61b0ba70a955dd56302433b01306cce4cb45eba9fbbfacb55fded12faf32"
+    },
+    "status": "published",
+    "stem": "Guest: “Can I have a room on a high floor with a nice view?”"
+}

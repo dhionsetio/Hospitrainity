@@ -1,0 +1,41 @@
+{
+  "$id": "https://hospitrainity.curriculum/schema/migration-edge.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "canonical_code": {
+      "oneOf": [
+        {
+          "$ref": "https://hospitrainity.curriculum/schema/_meta.schema.json#/$defs/editorial_code"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "disposition": {
+      "enum": [
+        "migrated",
+        "rewritten",
+        "dropped",
+        "deferred"
+      ]
+    },
+    "entity_type": {
+      "const": "migration-edge"
+    },
+    "legacy_ref": {
+      "type": "string"
+    },
+    "note": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "entity_type",
+    "legacy_ref",
+    "disposition"
+  ],
+  "title": "Legacy migration edge",
+  "type": "object"
+}

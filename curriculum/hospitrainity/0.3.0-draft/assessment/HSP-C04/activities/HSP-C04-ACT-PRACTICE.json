@@ -1,0 +1,39 @@
+{
+  "accessibility": [
+    "text_alt",
+    "keyboard_path",
+    "non_color_cue",
+    "no_timing_dependency"
+  ],
+  "cefr_activity": "production",
+  "channel": "telecommunications",
+  "code": "HSP-C04-ACT-PRACTICE",
+  "content_version": "0.3.0-draft",
+  "entity_type": "activity",
+  "id": "38ca8652-d220-592b-a33d-b1e7a3f32aea",
+  "lesson_code": "HSP-C04-LS-08",
+  "outcome_codes": [
+    "OUT-M04-01",
+    "OUT-M04-02",
+    "OUT-M04-03"
+  ],
+  "participation": "individual",
+  "pedagogical_function": "guided_practice",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "short_text",
+  "scoring_mode": "objective_normalized",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 429,
+    "chapter": 4,
+    "heading_path": [
+      "The Guest-Services Hotline",
+      "Step 5. Practice"
+    ],
+    "normalized_text_sha256": "17deb93d21343198662dc320ee7f7abdd869d2c8ee15a0dd5904c1e6fe8fffb3"
+  },
+  "status": "published",
+  "timing": "asynchronous",
+  "title": "Step 5. Practice"
+}

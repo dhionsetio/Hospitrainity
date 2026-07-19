@@ -1,0 +1,27 @@
+{
+    "code": "HSP-C04-QZ-Q4-FB",
+    "content_version": "0.4.0-draft",
+    "entity_type": "feedback-model",
+    "id": "a7a80f31-2b99-50dd-95ed-496fb801f4e4",
+    "messages": [
+        {
+            "feedback_type": "model_reveal",
+            "text": "A. The guest’s needs come first, even when you are busy."
+        }
+    ],
+    "prompt_code": "HSP-C04-QZ-Q4",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 488,
+        "chapter": 4,
+        "heading_path": [
+            "The Guest-Services Hotline",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "9a8360d0cec4564d2bce863c6bb52ba9b05bc14fe4b590ea227ebb207344fbde"
+    },
+    "status": "published"
+}

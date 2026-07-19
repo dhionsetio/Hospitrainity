@@ -1,0 +1,26 @@
+{
+  "code": "HSP-C07-PR-I4-FB",
+  "content_version": "0.3.0-draft",
+  "entity_type": "feedback-model",
+  "id": "0b6786df-63d3-54dd-b1bd-bd14cc566266",
+  "messages": [
+    {
+      "feedback_type": "model_reveal",
+      "text": "Something like “I am so sorry, an hour is far too long to wait, and I completely understand your frustration.” Lead with empathy before you explain or fix anything."
+    }
+  ],
+  "prompt_code": "HSP-C07-PR-I4",
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 875,
+    "chapter": 7,
+    "heading_path": [
+      "Dealing with Problems and Complaints",
+      "Step 5. Practice"
+    ],
+    "normalized_text_sha256": "7ed23892fe02ed452a3833e863b5c28c9e3c7f3f727c904d1cfbf9468e1513b5"
+  },
+  "status": "published"
+}

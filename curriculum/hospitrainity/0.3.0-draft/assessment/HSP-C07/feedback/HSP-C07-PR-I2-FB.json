@@ -1,0 +1,26 @@
+{
+  "code": "HSP-C07-PR-I2-FB",
+  "content_version": "0.3.0-draft",
+  "entity_type": "feedback-model",
+  "id": "02876622-6537-5fec-ba1c-749b9e6a5dff",
+  "messages": [
+    {
+      "feedback_type": "model_reveal",
+      "text": "(b). Taking ownership means acting, not blaming someone else."
+    }
+  ],
+  "prompt_code": "HSP-C07-PR-I2",
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 869,
+    "chapter": 7,
+    "heading_path": [
+      "Dealing with Problems and Complaints",
+      "Step 5. Practice"
+    ],
+    "normalized_text_sha256": "cec1abc9997b5c7688c38be4ee02ad05a930e48506a6b259a0029daea9d9ba45"
+  },
+  "status": "published"
+}

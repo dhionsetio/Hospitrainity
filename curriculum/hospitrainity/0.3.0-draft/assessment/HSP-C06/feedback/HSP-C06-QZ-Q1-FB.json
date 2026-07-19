@@ -1,0 +1,26 @@
+{
+  "code": "HSP-C06-QZ-Q1-FB",
+  "content_version": "0.3.0-draft",
+  "entity_type": "feedback-model",
+  "id": "f36c53db-e6db-5ee1-9789-72f28839b096",
+  "messages": [
+    {
+      "feedback_type": "model_reveal",
+      "text": "B. Concise and friendly wins online."
+    }
+  ],
+  "prompt_code": "HSP-C06-QZ-Q1",
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 757,
+    "chapter": 6,
+    "heading_path": [
+      "Online and Social Media Customer Service",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "c3043d195acba4001ce1f668d1409f3454338871315850828e8cc7bf2a925874"
+  },
+  "status": "published"
+}

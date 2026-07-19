@@ -1,0 +1,77 @@
+{
+  "$id": "https://hospitrainity.curriculum/schema/chapter.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "$ref": "https://hospitrainity.curriculum/schema/_meta.schema.json#/$defs/meta"
+    }
+  ],
+  "properties": {
+    "code": {
+      "$ref": "https://hospitrainity.curriculum/schema/_meta.schema.json#/$defs/editorial_code"
+    },
+    "content_version": {
+      "$ref": "https://hospitrainity.curriculum/schema/_meta.schema.json#/$defs/semver"
+    },
+    "entity_type": {
+      "const": "chapter"
+    },
+    "id": {
+      "$ref": "https://hospitrainity.curriculum/schema/_meta.schema.json#/$defs/uuid"
+    },
+    "module": {
+      "maximum": 7,
+      "minimum": 1,
+      "type": "integer"
+    },
+    "outcome_codes": {
+      "items": {
+        "$ref": "https://hospitrainity.curriculum/schema/_meta.schema.json#/$defs/editorial_code"
+      },
+      "type": "array"
+    },
+    "replaced_by": {
+      "oneOf": [
+        {
+          "$ref": "https://hospitrainity.curriculum/schema/_meta.schema.json#/$defs/uuid"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "replaces": {
+      "oneOf": [
+        {
+          "$ref": "https://hospitrainity.curriculum/schema/_meta.schema.json#/$defs/uuid"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "source_locator": {
+      "$ref": "https://hospitrainity.curriculum/schema/_meta.schema.json#/$defs/source_locator"
+    },
+    "status": {
+      "$ref": "https://hospitrainity.curriculum/schema/_meta.schema.json#/$defs/status"
+    },
+    "title": {
+      "minLength": 1,
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "code",
+    "content_version",
+    "status",
+    "entity_type",
+    "source_locator",
+    "module",
+    "title"
+  ],
+  "title": "Chapter (top-level module)",
+  "type": "object"
+}

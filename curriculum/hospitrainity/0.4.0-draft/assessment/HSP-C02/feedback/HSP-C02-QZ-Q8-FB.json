@@ -1,0 +1,27 @@
+{
+    "code": "HSP-C02-QZ-Q8-FB",
+    "content_version": "0.4.0-draft",
+    "entity_type": "feedback-model",
+    "id": "a661f7b7-5d87-5bea-97dc-54ba9226f174",
+    "messages": [
+        {
+            "feedback_type": "model_reveal",
+            "text": "B. Offering to hold their luggage keeps the guest comfortable and shows you care."
+        }
+    ],
+    "prompt_code": "HSP-C02-QZ-Q8",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 206,
+        "chapter": 2,
+        "heading_path": [
+            "Front Desk and Check-In",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "cb42711ca9f194443f9b03256bb9cb4c25667170610f8a19dc408c529f5f81d7"
+    },
+    "status": "published"
+}

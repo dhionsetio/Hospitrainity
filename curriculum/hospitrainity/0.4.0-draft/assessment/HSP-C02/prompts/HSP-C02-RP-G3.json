@@ -1,0 +1,60 @@
+{
+    "activity_code": "HSP-C02-ACT-ROLEPLAY",
+    "choices": [
+        {
+            "feedback": [
+                {
+                    "feedback_type": "error_specific",
+                    "text": "(a) “No, check-in is at 2. Come back later.” This is cold and unhelpful."
+                }
+            ],
+            "id": "c1f98b94-4478-5972-b1c8-a6de29b0c132",
+            "label": "a",
+            "text": "“No, check-in is at 2. Come back later.”"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "success",
+                    "text": "(b) “Let me check whether your room is ready. If it is not quite ready yet, I would be happy to store your luggage so you can relax in the meantime.” This is the ideal answer, warm and solution-focused."
+                }
+            ],
+            "id": "bab18c5d-0e64-5c71-b8b7-5e37ce97601a",
+            "label": "b",
+            "text": "“Let me check whether your room is ready. If it is not quite ready yet, I would be happy to store your luggage so you can relax in the meantime.”"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "error_specific",
+                    "text": "(c) “That is against the rules.” This hides behind policy instead of helping."
+                }
+            ],
+            "id": "8cdd3ec9-8877-529d-ae0a-2d59594b6dc5",
+            "label": "c",
+            "text": "“That is against the rules.”"
+        }
+    ],
+    "code": "HSP-C02-RP-G3",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "f59414f3-9449-5744-98ae-b24289e1c847",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 172,
+        "chapter": 2,
+        "heading_path": [
+            "Front Desk and Check-In",
+            "Step 6. Role-play"
+        ],
+        "normalized_text_sha256": "f543d91b481dacf7dc283aa8cdcfc8b84d5e8265a8822b2d018fe6e58eb25f78"
+    },
+    "status": "published",
+    "stem": "Guest: “I know I am very early, but is it possible to check in now?”"
+}

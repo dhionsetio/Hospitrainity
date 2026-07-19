@@ -1,0 +1,81 @@
+{
+  "checkpoint": "CP-10",
+  "phase": "Renderer implementation",
+  "date": "2026-07-15",
+  "source_of_truth": {
+    "artifact": "Hospitrainity.docx",
+    "sha256": "7f8a2c62db6884498f7a1c2de56e79e39609262944a685fe7eb97f702444cbb4"
+  },
+  "inputs": {
+    "source_zip": {
+      "name": "Hospitrainity-Source-Phase9.zip",
+      "sha256": "461216904653256f2b991546b4f1560b78f4afc48df48eb55e08cb49d5973a0a"
+    },
+    "standalone_html": {
+      "name": "Hospitrainity-Standalone.html (CP-09)",
+      "sha256": "603b65ae67803ac03361e474b6e81f0ec5eb980c14cb378e4e240513ce018c6d"
+    },
+    "compiled_store": {
+      "name": "phase-09/curriculum.sql",
+      "sha256": "b45a5e883ef4a13ddbd5d2c3a64ff55224435e8a897f7140fe356561695836e0"
+    }
+  },
+  "outputs": {
+    "standalone_html": {
+      "name": "Hospitrainity-Standalone.html (CP-10)",
+      "sha256": "16a93e2b49cb30b10e38e914a018b5b3d4836b66578f150a3b45216eb0939e7a",
+      "bytes": 89494,
+      "note": "First standalone that is a GENERATED PROJECTION of the compiled canonical store; the frozen legacy window.STAYREADY blob is retired."
+    },
+    "note": "Hospitrainity-Source-Phase10.zip checksum is reported in the checkpoint delivery message; a zip cannot embed its own hash."
+  },
+  "added_docs": [
+    "docs/hospitrainity-migration/phase-10/README.md",
+    "docs/hospitrainity-migration/phase-10/renderer-spec.md",
+    "docs/hospitrainity-migration/phase-10/checkpoint-report.md",
+    "docs/hospitrainity-migration/phase-10/source-manifest.json",
+    "docs/hospitrainity-migration/phase-10/view-model.json",
+    "docs/hospitrainity-migration/phase-10/render-report.json",
+    "docs/hospitrainity-migration/phase-03/tools/hsp-render.mjs",
+    "docs/hospitrainity-migration/phase-03/tools/render-template.html"
+  ],
+  "renderer": {
+    "tool": "docs/hospitrainity-migration/phase-03/tools/hsp-render.mjs",
+    "sha256": "e98e39c0ef1e32fc67ea146d6aa3412e887bbeb598fd561d46bfc4e3057ab9f9",
+    "template": "docs/hospitrainity-migration/phase-03/tools/render-template.html",
+    "template_sha256": "a7ae5859822c7474c1cd73293f070243d3e8821620ed0f6d6127f87e4a1e93a0",
+    "engine": "node:sqlite (built-in, --experimental-sqlite)",
+    "generated_from": "phase-09/curriculum.sql",
+    "deterministic": true,
+    "view_model": {
+      "file": "docs/hospitrainity-migration/phase-10/view-model.json",
+      "sha256": "0bcebe0e0e375a24dcb503869e6565b5fb4e6aaf122141bf80fc0935c144296a"
+    },
+    "render_report": {
+      "file": "docs/hospitrainity-migration/phase-10/render-report.json",
+      "sha256": "713db923755e047b1fb4ebcd6fe8b199f123c5c8f76e8a21fc1af838ee9b46ed"
+    },
+    "counts": { "chapters": 7, "sections": 85, "activities": 24, "prompts": 102, "outcomes": 21 },
+    "integrity": {
+      "orphan_activities": 0,
+      "unplaced_prompts": 0,
+      "prompts_with_answer_model": 102,
+      "prompts_with_model_answer_text": 90,
+      "prompts_with_feedback": 102,
+      "rubrics": 6,
+      "youkata_occurrences": 0
+    }
+  },
+  "chosen_technique": "deterministic read-only projection of the CP-09 compiled canonical store (node:sqlite) into a single dependency-free vanilla-JS standalone; hash-router SPA; data injected as an inline application/json island; WCAG 2.2 AA + UDL 3.0 affordances per CP-07; identical inputs produce byte-identical output",
+  "standards": ["WCAG 2.2 AA", "CAST UDL 3.0", "JSON Schema 2020-12", "SemVer 2.0.0", "RFC 9562 UUIDv5"],
+  "validation": "node docs/hospitrainity-migration/phase-03/tools/hsp-validate.mjs all --strict => 8/8",
+  "invariants": [
+    "renderer is read-only over the compiled store; no canonical content mutated",
+    "curriculum/ package tree byte-identical to CP-09 (verified by recursive diff)",
+    "CP-02 framework/*.json byte-identical; both provenance digests unchanged",
+    "id-registry unchanged at 487 entries (registry_version 1.2.0)",
+    "standalone contains zero occurrences of the banned legacy hotel identity (Youkata)",
+    "render is deterministic: two runs from the same store produce byte-identical HTML",
+    "StayReady display title retained; StayReady->Hospitrainity rebrand remains deferred to CP-13"
+  ]
+}

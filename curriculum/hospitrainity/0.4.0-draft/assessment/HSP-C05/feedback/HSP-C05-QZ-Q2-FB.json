@@ -1,0 +1,27 @@
+{
+    "code": "HSP-C05-QZ-Q2-FB",
+    "content_version": "0.4.0-draft",
+    "entity_type": "feedback-model",
+    "id": "d9034c9a-9c0e-5605-a07c-7ed76af3aa5b",
+    "messages": [
+        {
+            "feedback_type": "model_reveal",
+            "text": "A. It is warm and professional."
+        }
+    ],
+    "prompt_code": "HSP-C05-QZ-Q2",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 633,
+        "chapter": 5,
+        "heading_path": [
+            "Customer Care Through Writing",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "5d536853759bd6b29fb334667545df5a1647303990de30b0f7efc2a997d34052"
+    },
+    "status": "published"
+}

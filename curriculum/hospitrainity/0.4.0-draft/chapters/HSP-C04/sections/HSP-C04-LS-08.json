@@ -1,0 +1,430 @@
+{
+    "blocks": [
+        {
+            "id": "3b536124-5ae1-5e12-98a7-3da6c7cd8d26",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Try each one first, then open the toggle to check yourself.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 440,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "457b0ccffe30e2688e9b4bddc363e158e25bcf32152f3bdb3c034c9407006a63"
+            },
+            "text": "Try each one first, then open the toggle to check yourself.",
+            "type": "instruction"
+        },
+        {
+            "id": "0b1ed32c-3f2a-5169-acb9-67da9f8040a3",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "1. Fill the blank:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " “Let me ",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "_____",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " that back to you: one club sandwich and a pot of tea.”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 441,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "7278180ef0988ecf15773de34332b4f3d9749c6be38b48d1b465c8498b1313f1"
+            },
+            "text": "1. Fill the blank: “Let me _____ that back to you: one club sandwich and a pot of tea.”",
+            "type": "list_item"
+        },
+        {
+            "id": "a19b7880-7e99-560c-a80f-003d1c5881fc",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Check answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 442,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "59b5b25c3f1225bbc759f0a5877604948e64e3484f2e56aafef146d98cd32a61"
+            },
+            "text": "Check answer",
+            "type": "paragraph"
+        },
+        {
+            "id": "89429577-1e57-5672-ab5d-e7cda9c08eec",
+            "language": "en",
+            "order": 4,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "read.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " “Let me read that back to you” confirms the order and catches errors before they reach the kitchen.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 443,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "7632b92e012355056e8781ef9af356249eafb9284afb18aff12127e693c6cd6c"
+            },
+            "text": "read. “Let me read that back to you” confirms the order and catches errors before they reach the kitchen.",
+            "type": "instruction"
+        },
+        {
+            "id": "b7632382-8f9c-5c1b-becb-2b9c026ccd1d",
+            "language": "en",
+            "order": 5,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "2. Choose the customer-centered reply when you are busy:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " (a) “We are busy, call later.” or (b) “Thank you for waiting. How may I help you?”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 444,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "f1efef18f2cee42ef87962cc4000cda258a7c7154ee65a199e3b723c837c489e"
+            },
+            "text": "2. Choose the customer-centered reply when you are busy: (a) “We are busy, call later.” or (b) “Thank you for waiting. How may I help you?”",
+            "type": "list_item"
+        },
+        {
+            "id": "4a229aea-10f3-5760-b875-4010c0b9650c",
+            "language": "en",
+            "order": 6,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Check answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 445,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "59b5b25c3f1225bbc759f0a5877604948e64e3484f2e56aafef146d98cd32a61"
+            },
+            "text": "Check answer",
+            "type": "paragraph"
+        },
+        {
+            "id": "59cb0d06-5206-555e-b95b-0a931bd5256e",
+            "language": "en",
+            "order": 7,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "(b).",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Even under pressure, a warm welcome costs nothing and means a lot.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 446,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "10ac5076afcc1c6bf43ac37552a0be7c33e21d2c2efb9a5394458d8dbafea018"
+            },
+            "text": "(b). Even under pressure, a warm welcome costs nothing and means a lot.",
+            "type": "paragraph"
+        },
+        {
+            "id": "364440ce-ab2f-5b55-9983-e18c3c90b834",
+            "language": "en",
+            "order": 8,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "3. Put these steps in the right order:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " give the estimated time, answer and find the room, take the order, read it back to confirm.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 447,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "87f6e20fd175bda5b053640082e902f64399617d39dec378a82448e74ab6092e"
+            },
+            "text": "3. Put these steps in the right order: give the estimated time, answer and find the room, take the order, read it back to confirm.",
+            "type": "list_item"
+        },
+        {
+            "id": "7f4dafb8-e882-590f-a168-149fe583c84c",
+            "language": "en",
+            "order": 9,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Check answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 448,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "59b5b25c3f1225bbc759f0a5877604948e64e3484f2e56aafef146d98cd32a61"
+            },
+            "text": "Check answer",
+            "type": "paragraph"
+        },
+        {
+            "id": "40b84442-c87e-5a7f-96ed-905160747428",
+            "language": "en",
+            "order": 10,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Answer and find the room, then take the order, then read it back to confirm, then give the estimated time.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 449,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "90c37b87d8d3fd448e5a073f43f2cb0d3f0b061a77bf25ef285e3440ac758601"
+            },
+            "text": "Answer and find the room, then take the order, then read it back to confirm, then give the estimated time.",
+            "type": "instruction"
+        },
+        {
+            "id": "c90e1a0a-7d48-57ff-a688-749b5d442184",
+            "language": "en",
+            "order": 11,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "4. Say it clearly:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " how would you read room number 305 out loud on the phone?",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 450,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "61d99a05bfba994fbebc5fa30c2e2bb4df461581cb85e20cb96703302d5eddc0"
+            },
+            "text": "4. Say it clearly: how would you read room number 305 out loud on the phone?",
+            "type": "list_item"
+        },
+        {
+            "id": "961f6fd5-f972-56de-88bf-ef981318b026",
+            "language": "en",
+            "order": 12,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Check answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 451,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "59b5b25c3f1225bbc759f0a5877604948e64e3484f2e56aafef146d98cd32a61"
+            },
+            "text": "Check answer",
+            "type": "paragraph"
+        },
+        {
+            "id": "acae0033-dc48-57a8-b554-dcc4be9afcc9",
+            "language": "en",
+            "order": 13,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "“Three, oh, five,” as single digits with tiny pauses. It is much harder to mishear than “three hundred and five.”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 452,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "186fae9c2c609e2fdc47ba2ebb85754844143e9fc0d40bd8b0c272f201f2a913"
+            },
+            "text": "“Three, oh, five,” as single digits with tiny pauses. It is much harder to mishear than “three hundred and five.”",
+            "type": "paragraph"
+        },
+        {
+            "activity_code": "HSP-C04-ACT-PRACTICE",
+            "id": "60cbc3e2-3cd3-5cc8-9086-0cf1c5109a51",
+            "language": "en",
+            "order": 14,
+            "provenance_kind": "derived_navigation",
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 439,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "46863cdae3b9dc41e288c4101ee6d0956fc7857efb3a521dc5b0f48f713be9aa"
+            },
+            "type": "activity_embed"
+        }
+    ],
+    "chapter_code": "HSP-C04",
+    "code": "HSP-C04-LS-08",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "a1ae763a-b17a-5824-88aa-fcefcd345f2d",
+    "language": "en",
+    "order": 8,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 439,
+        "chapter": 4,
+        "heading_path": [
+            "The Guest-Services Hotline",
+            "Step 5. Practice"
+        ],
+        "normalized_text_sha256": "46863cdae3b9dc41e288c4101ee6d0956fc7857efb3a521dc5b0f48f713be9aa"
+    },
+    "status": "published",
+    "title": "Step 5. Practice"
+}

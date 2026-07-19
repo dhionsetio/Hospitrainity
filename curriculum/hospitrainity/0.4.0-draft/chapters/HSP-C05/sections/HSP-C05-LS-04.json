@@ -1,0 +1,163 @@
+{
+    "blocks": [
+        {
+            "id": "99882ce7-252d-5066-8b9b-adce29066d73",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Read each example out loud once. Even for writing, hearing the phrase helps it stick.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 545,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 2. Key vocabulary"
+                ],
+                "normalized_text_sha256": "b3950b033971e76176b526d9a0c0c0717c555ba95904301f5217c0085958b8cb"
+            },
+            "text": "Read each example out loud once. Even for writing, hearing the phrase helps it stick.",
+            "type": "instruction"
+        },
+        {
+            "caption": "Step 2. Key vocabulary: Word or phrase / What it means / How you might use it",
+            "header": [
+                "Word or phrase",
+                "What it means",
+                "How you might use it"
+            ],
+            "id": "61d46593-a3e6-5090-87e7-050c6b07b55a",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "rows": [
+                [
+                    "salutation / greeting",
+                    "the opening line of a message",
+                    "“Dear Mr. Chen,”"
+                ],
+                [
+                    "sign-off",
+                    "the closing line",
+                    "“Kind regards,”"
+                ],
+                [
+                    "register",
+                    "how formal or casual the tone is",
+                    "“Use a formal register with guests.”"
+                ],
+                [
+                    "enquiry / inquiry",
+                    "a question or request",
+                    "“Thank you for your enquiry.”"
+                ],
+                [
+                    "to confirm",
+                    "to make something certain",
+                    "“We are pleased to confirm your booking.”"
+                ],
+                [
+                    "attachment",
+                    "a file added to an email",
+                    "“Please see the attachment below.”"
+                ],
+                [
+                    "to look forward to",
+                    "a warm, polite way to mention the future",
+                    "“We look forward to welcoming you.”"
+                ],
+                [
+                    "prompt reply",
+                    "a quick response",
+                    "“Thank you for your prompt reply.”"
+                ],
+                [
+                    "body",
+                    "the main part of the message",
+                    "“Keep the body clear and short.”"
+                ],
+                [
+                    "to apologise",
+                    "to say sorry sincerely",
+                    "“We apologise for the inconvenience.”"
+                ],
+                [
+                    "please do not hesitate",
+                    "a warm offer of further help",
+                    "“Please do not hesitate to contact us.”"
+                ],
+                [
+                    "subject line",
+                    "the short title of the email",
+                    "“Write a clear subject line.”"
+                ]
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 546,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 2. Key vocabulary"
+                ],
+                "normalized_text_sha256": "616af378776b0d4ebb54281a11240dc1c3e0dba90b4704aafd73bf5fc2c9d4e2"
+            },
+            "type": "source_table"
+        },
+        {
+            "id": "ae63884d-7fce-5c86-965b-53a10d3fdf6d",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Register in one line: formal writing uses full words and titles, such as “Dear Mr. Chen” and “I would be happy to help.” Casual writing uses short forms and slang, such as “Hey” and “no worries.” With guests, lean formal and warm. You can always soften a formal message, but a too-casual one is hard to take back.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 547,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 2. Key vocabulary"
+                ],
+                "normalized_text_sha256": "373bea3bbb6b5eb82912d37b33dd6cbdd949ea22d5a67c99d539d5053f7adec2"
+            },
+            "text": "Register in one line: formal writing uses full words and titles, such as “Dear Mr. Chen” and “I would be happy to help.” Casual writing uses short forms and slang, such as “Hey” and “no worries.” With guests, lean formal and warm. You can always soften a formal message, but a too-casual one is hard to take back.",
+            "type": "paragraph"
+        }
+    ],
+    "chapter_code": "HSP-C05",
+    "code": "HSP-C05-LS-04",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "c30edb55-f64a-53df-aa3d-46b8fc04419c",
+    "language": "en",
+    "order": 4,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 544,
+        "chapter": 5,
+        "heading_path": [
+            "Customer Care Through Writing",
+            "Step 2. Key vocabulary"
+        ],
+        "normalized_text_sha256": "f46a1e0aec2c4e29b3ec8df91525031a99db987a4745d07d5a09266bade29874"
+    },
+    "status": "published",
+    "title": "Step 2. Key vocabulary"
+}

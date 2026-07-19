@@ -1,0 +1,37 @@
+{
+    "activity_code": "HSP-C05-ACT-CONFIDENCE",
+    "code": "HSP-C05-CC-R3",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "cffe5037-356f-5916-b99e-f6a18456da11",
+    "language": "en",
+    "order": 3,
+    "provenance_kind": "source_verbatim",
+    "rating_scale": {
+        "max": 5,
+        "min": 1,
+        "values": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ]
+    },
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "rating",
+    "scoring_mode": "unscored_self_report",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 655,
+        "chapter": 5,
+        "heading_path": [
+            "Customer Care Through Writing",
+            "Step 8. Confidence check"
+        ],
+        "normalized_text_sha256": "8418a2fab608ca561b410d7a4d28890a366a02e72cff93f8cad8a79841396000"
+    },
+    "status": "published",
+    "stem": "I can confirm a booking in writing."
+}

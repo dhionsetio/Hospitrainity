@@ -1,0 +1,39 @@
+{
+  "accessibility": [
+    "text_alt",
+    "keyboard_path",
+    "non_color_cue",
+    "no_timing_dependency"
+  ],
+  "cefr_activity": "production",
+  "channel": "written_correspondence",
+  "code": "HSP-C05-ACT-ROLEPLAY",
+  "content_version": "0.3.0-draft",
+  "entity_type": "activity",
+  "id": "0f4362ae-8bf1-5652-8c51-0029d85a00d4",
+  "lesson_code": "HSP-C05-LS-09",
+  "outcome_codes": [
+    "OUT-M05-01",
+    "OUT-M05-02",
+    "OUT-M05-03"
+  ],
+  "participation": "staff_guest",
+  "pedagogical_function": "freer_task",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "service_artifact",
+  "scoring_mode": "rubric",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 592,
+    "chapter": 5,
+    "heading_path": [
+      "Customer Care Through Writing",
+      "Step 6. Role-play (drafting)"
+    ],
+    "normalized_text_sha256": "e3a036a87173d7758391c7e3e99c05dd466a86767209b985eb8c0ac87de3ed46"
+  },
+  "status": "published",
+  "timing": "asynchronous",
+  "title": "Step 6. Role-play (drafting)"
+}

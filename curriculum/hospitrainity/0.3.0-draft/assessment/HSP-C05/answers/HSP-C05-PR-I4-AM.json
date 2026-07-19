@@ -1,0 +1,24 @@
+{
+  "accepted": [
+    "Something like “Unfortunately that particular option is not available, but we would be glad to suggest an alternative.” It is honest and warm, and it still says no."
+  ],
+  "code": "HSP-C05-PR-I4-AM",
+  "content_version": "0.3.0-draft",
+  "entity_type": "answer-model",
+  "id": "355ebe19-5825-51df-a60a-0c92ef771303",
+  "prompt_code": "HSP-C05-PR-I4",
+  "replaced_by": null,
+  "replaces": null,
+  "scoring_mode": "objective_normalized",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 590,
+    "chapter": 5,
+    "heading_path": [
+      "Customer Care Through Writing",
+      "Step 5. Practice"
+    ],
+    "normalized_text_sha256": "fbb491459d4e7ef2245427e2cbddecd7c30fe769c7ee1751ddde11ee2afdcecd"
+  },
+  "status": "published"
+}

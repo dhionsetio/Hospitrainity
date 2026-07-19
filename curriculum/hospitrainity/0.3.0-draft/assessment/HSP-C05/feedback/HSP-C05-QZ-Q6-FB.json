@@ -1,0 +1,26 @@
+{
+  "code": "HSP-C05-QZ-Q6-FB",
+  "content_version": "0.3.0-draft",
+  "entity_type": "feedback-model",
+  "id": "13e80bf3-9ff6-5392-a392-9555617bb844",
+  "messages": [
+    {
+      "feedback_type": "model_reveal",
+      "text": "A. Apologise, take ownership, and offer a clear fix."
+    }
+  ],
+  "prompt_code": "HSP-C05-QZ-Q6",
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 632,
+    "chapter": 5,
+    "heading_path": [
+      "Customer Care Through Writing",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "9cc5daf23f313c2d9657d662402ca8c0d2420dbdcb9c08b11e58fedb3ebf3419"
+  },
+  "status": "published"
+}

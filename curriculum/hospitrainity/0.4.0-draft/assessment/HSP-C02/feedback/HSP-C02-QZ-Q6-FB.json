@@ -1,0 +1,27 @@
+{
+    "code": "HSP-C02-QZ-Q6-FB",
+    "content_version": "0.4.0-draft",
+    "entity_type": "feedback-model",
+    "id": "d5200dda-ebc7-5a02-86f2-3b4312209f93",
+    "messages": [
+        {
+            "feedback_type": "model_reveal",
+            "text": "B. Warmth, empathy, and efficient action together make strong hospitality."
+        }
+    ],
+    "prompt_code": "HSP-C02-QZ-Q6",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 200,
+        "chapter": 2,
+        "heading_path": [
+            "Front Desk and Check-In",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "5326ef9e5acb3418b1911593baa00685d28e3b65413b8e051bb01e6736a810e2"
+    },
+    "status": "published"
+}

@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C04",
+  "code": "HSP-C04-LS-02",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "92a64fbb-5e38-5a78-a821-e3222cb913ba",
+  "order": 2,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 375,
+    "chapter": 4,
+    "heading_path": [
+      "The Guest-Services Hotline",
+      "Why this matters"
+    ],
+    "normalized_text_sha256": "69f987804c564f8da8a0e9e6f36098fe122e8766e2f5b416198cbbd10b9d53cb"
+  },
+  "status": "published",
+  "title": "Why this matters"
+}

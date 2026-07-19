@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C06",
+  "code": "HSP-C06-LS-03",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "acec0a4c-acca-5e6d-8381-ec8d4f461f30",
+  "order": 3,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 667,
+    "chapter": 6,
+    "heading_path": [
+      "Online and Social Media Customer Service",
+      "Step 1. The scenario"
+    ],
+    "normalized_text_sha256": "b629bcf4b58833ea80e8d5f1d164acd75a3309dc46b12c2cbb45a21e64b45711"
+  },
+  "status": "published",
+  "title": "Step 1. The scenario"
+}

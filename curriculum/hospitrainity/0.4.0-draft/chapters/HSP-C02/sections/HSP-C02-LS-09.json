@@ -1,0 +1,591 @@
+{
+    "blocks": [
+        {
+            "id": "e79a9c2c-52de-5287-8be3-7f2eafe3720b",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Guided mode (pick the best response, then check)",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 161,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "8b5c1e17e91dac6eca1351f72f3ad5c3f74412725d84779192885e8a7d4310a7"
+            },
+            "text": "Guided mode (pick the best response, then check)",
+            "type": "heading"
+        },
+        {
+            "id": "5857579a-05a1-55f1-9a9f-03dc71fda8e4",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Guest:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " “Hi, I think I have a booking, but I am not sure it went through.”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 162,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "64e72b3eb24ffa2f22ea0659182d2115871220cbeaa06e10c7158eefb73f4335"
+            },
+            "speaker": "Guest",
+            "text": "“Hi, I think I have a booking, but I am not sure it went through.”",
+            "type": "dialogue_turn"
+        },
+        {
+            "id": "b049c1a1-532f-550f-ae1e-a0990699beb4",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Reveal the options and feedback",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 163,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "6dc878d750298bcb4a4f27b0ad5920cbcec919db017ef2f3a46fa28770873d4e"
+            },
+            "text": "Reveal the options and feedback",
+            "type": "paragraph"
+        },
+        {
+            "id": "5380d9ca-f66e-530f-af22-36915710c471",
+            "language": "en",
+            "order": 4,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "(a) “I do not know. Check your email.” This is unhelpful and pushes the problem back to the guest.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 164,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "4f7f05e4e9175f601b6d8414783b8372424c8b3812f0b59738f7713092343c66"
+            },
+            "text": "(a) “I do not know. Check your email.” This is unhelpful and pushes the problem back to the guest.",
+            "type": "paragraph"
+        },
+        {
+            "id": "dfa97bac-4ee4-55ea-abb9-214e8f714093",
+            "language": "en",
+            "order": 5,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "(b) “No problem at all, let me check that for you. May I have your name, please?” This is the ideal answer. It reassures the guest and moves calmly to the next step.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 165,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "2db395b597be9acaca240104c047558713a04b418fbf00559d5e1d1bfedab6b6"
+            },
+            "text": "(b) “No problem at all, let me check that for you. May I have your name, please?” This is the ideal answer. It reassures the guest and moves calmly to the next step.",
+            "type": "paragraph"
+        },
+        {
+            "id": "b8f0f3c0-074e-5eed-bd98-b2d889c4e79f",
+            "language": "en",
+            "order": 6,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "(c) “That is not my job.” This is rude and unprofessional.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 166,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "73c851807aee8ffa1d09708b813e30950948cc8026e5f79f62dafbe15ce5a028"
+            },
+            "text": "(c) “That is not my job.” This is rude and unprofessional.",
+            "type": "paragraph"
+        },
+        {
+            "id": "ddbcd22a-1694-53d6-adae-bc67b9c97a05",
+            "language": "en",
+            "order": 7,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Guest:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " “Can I have a room on a high floor with a nice view?”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 167,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "19ec61b0ba70a955dd56302433b01306cce4cb45eba9fbbfacb55fded12faf32"
+            },
+            "speaker": "Guest",
+            "text": "“Can I have a room on a high floor with a nice view?”",
+            "type": "dialogue_turn"
+        },
+        {
+            "id": "6980ca4e-89e6-55a9-acae-182b720c30d8",
+            "language": "en",
+            "order": 8,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Reveal the options and feedback",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 168,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "6dc878d750298bcb4a4f27b0ad5920cbcec919db017ef2f3a46fa28770873d4e"
+            },
+            "text": "Reveal the options and feedback",
+            "type": "paragraph"
+        },
+        {
+            "id": "76eee390-9826-5d11-92ea-5033d0497d99",
+            "language": "en",
+            "order": 9,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "(a) “Let me see what I can do for you. We have a room on the fourth floor with a city view. Would that suit you?” This is the ideal answer, because it offers a solution warmly.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 169,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "ec090d28c2b09b23e6e9a3ec7b450c90a40f48b13c826d0eaebbc0874c09cebc"
+            },
+            "text": "(a) “Let me see what I can do for you. We have a room on the fourth floor with a city view. Would that suit you?” This is the ideal answer, because it offers a solution warmly.",
+            "type": "paragraph"
+        },
+        {
+            "id": "314f1b79-dd59-542b-84a3-488f3c09f0f7",
+            "language": "en",
+            "order": 10,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "(b) “Maybe. We will see.” This is vague and sounds dismissive.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 170,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "4876bc8c57e2d6b5c0178b18e365935a4d02e8d5b2e9087df3a8296f00222330"
+            },
+            "text": "(b) “Maybe. We will see.” This is vague and sounds dismissive.",
+            "type": "paragraph"
+        },
+        {
+            "id": "0f2a4f38-a5d5-5217-ac21-a17488d1203e",
+            "language": "en",
+            "order": 11,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "(c) “All rooms are the same.” This shuts the guest down instead of helping.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 171,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "a630e6739def3d471354e4278752124350ed38ec164d28ab9d2566405b33d47b"
+            },
+            "text": "(c) “All rooms are the same.” This shuts the guest down instead of helping.",
+            "type": "paragraph"
+        },
+        {
+            "id": "143cb254-7fa9-51e7-9fec-fa604211609e",
+            "language": "en",
+            "order": 12,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Guest:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " “I know I am very early, but is it possible to check in now?”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 172,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "f543d91b481dacf7dc283aa8cdcfc8b84d5e8265a8822b2d018fe6e58eb25f78"
+            },
+            "speaker": "Guest",
+            "text": "“I know I am very early, but is it possible to check in now?”",
+            "type": "dialogue_turn"
+        },
+        {
+            "id": "781c1685-d5b0-53eb-9fb5-07f011c29ec8",
+            "language": "en",
+            "order": 13,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Reveal the options and feedback",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 173,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "6dc878d750298bcb4a4f27b0ad5920cbcec919db017ef2f3a46fa28770873d4e"
+            },
+            "text": "Reveal the options and feedback",
+            "type": "paragraph"
+        },
+        {
+            "id": "874e5feb-3826-5199-b8cf-40a476b103e7",
+            "language": "en",
+            "order": 14,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "(a) “No, check-in is at 2. Come back later.” This is cold and unhelpful.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 174,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "b42cfb7c965e7ecd251600de6f7d75fb13c2204e4bfc1e67b00203cf3ca2419c"
+            },
+            "text": "(a) “No, check-in is at 2. Come back later.” This is cold and unhelpful.",
+            "type": "paragraph"
+        },
+        {
+            "id": "8262b90d-5aa1-5698-8a48-ab141fb68928",
+            "language": "en",
+            "order": 15,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "(b) “Let me check whether your room is ready. If it is not quite ready yet, I would be happy to store your luggage so you can relax in the meantime.” This is the ideal answer, warm and solution-focused.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 175,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "5a432d2714bf4ff7f67310f8be993e952788412613fdff4d9d00dbede7b0dbc3"
+            },
+            "text": "(b) “Let me check whether your room is ready. If it is not quite ready yet, I would be happy to store your luggage so you can relax in the meantime.” This is the ideal answer, warm and solution-focused.",
+            "type": "paragraph"
+        },
+        {
+            "id": "66ad790a-96d5-576d-b108-3e9429c7d58f",
+            "language": "en",
+            "order": 16,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "(c) “That is against the rules.” This hides behind policy instead of helping.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 176,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "7ad4e085a84a4832f3ab89e671f9597bd1d9062e61aa2161938c401577a64a6f"
+            },
+            "text": "(c) “That is against the rules.” This hides behind policy instead of helping.",
+            "type": "paragraph"
+        },
+        {
+            "id": "ed4a3e3b-1471-5f40-93b6-9f95ef486d36",
+            "language": "en",
+            "order": 17,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Free mode (your turn, speak or write your own answer)",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 177,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "6c342355148bccd8a90347b4d0badde4e3d86baba374a58aa359fd82c001d9bb"
+            },
+            "text": "Free mode (your turn, speak or write your own answer)",
+            "type": "heading"
+        },
+        {
+            "id": "e61fa2c2-1057-5402-8c1b-fb7b61623404",
+            "language": "en",
+            "order": 18,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Prompt:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " A walk-in guest with no reservation asks, “Do you have any rooms available for tonight?” Greet them, respond, and guide them into starting a check-in.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 178,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "3b041f5d59121b7a6d3924b8763719469f384e1a309cb9d7399d81b0bf3b3477"
+            },
+            "text": "Prompt: A walk-in guest with no reservation asks, “Do you have any rooms available for tonight?” Greet them, respond, and guide them into starting a check-in.",
+            "type": "instruction"
+        },
+        {
+            "id": "96144780-72a1-54f3-af59-dd2619129212",
+            "language": "en",
+            "order": 19,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "See a model answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 179,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "115cd5fb848ceef36134cf981997fcf0d145aca19ef299453b13791da2b2b176"
+            },
+            "text": "See a model answer",
+            "type": "paragraph"
+        },
+        {
+            "id": "103e2e28-2d9f-5c6d-bddb-987e8eb269e5",
+            "language": "en",
+            "order": 20,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "“Good evening, welcome to the Grand Serenata Hotel. Yes, we do have a room available for tonight, a lovely Deluxe Room. Would you like to take it? Wonderful. I will just need your passport and a card for the deposit, and I will have you checked in right away.” This works because it greets warmly, offers a clear solution, and moves smoothly into the steps.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 180,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "39f3f936ff4ae160b5027a894025a470b8133aa756f5f776b75f21b458ea164b"
+            },
+            "text": "“Good evening, welcome to the Grand Serenata Hotel. Yes, we do have a room available for tonight, a lovely Deluxe Room. Would you like to take it? Wonderful. I will just need your passport and a card for the deposit, and I will have you checked in right away.” This works because it greets warmly, offers a clear solution, and moves smoothly into the steps.",
+            "type": "paragraph"
+        },
+        {
+            "activity_code": "HSP-C02-ACT-ROLEPLAY",
+            "id": "bd57a5b2-8dd7-552a-9b15-053815e558e8",
+            "language": "en",
+            "order": 21,
+            "provenance_kind": "derived_navigation",
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 160,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "2820d9182be9f0c2b25264c9853f2df9c8c0866110449f03bf85a3cd5e08c862"
+            },
+            "type": "activity_embed"
+        }
+    ],
+    "chapter_code": "HSP-C02",
+    "code": "HSP-C02-LS-09",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "5aecafcb-7ef4-56eb-abe4-e68678dc0490",
+    "language": "en",
+    "order": 9,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 160,
+        "chapter": 2,
+        "heading_path": [
+            "Front Desk and Check-In",
+            "Step 6. Role-play"
+        ],
+        "normalized_text_sha256": "2820d9182be9f0c2b25264c9853f2df9c8c0866110449f03bf85a3cd5e08c862"
+    },
+    "status": "published",
+    "title": "Step 6. Role-play"
+}

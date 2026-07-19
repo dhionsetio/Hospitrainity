@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C03",
+  "code": "HSP-C03-LS-09",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "49903f4a-186d-5bb4-b7df-5ff53cb1bfff",
+  "order": 9,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 300,
+    "chapter": 3,
+    "heading_path": [
+      "Dealing with Customers on the Phone",
+      "Step 6. Role-play"
+    ],
+    "normalized_text_sha256": "90da32d1370242dcc0944bcfc3f59838711a978f0d7df1a346cb033632194e1e"
+  },
+  "status": "published",
+  "title": "Step 6. Role-play"
+}

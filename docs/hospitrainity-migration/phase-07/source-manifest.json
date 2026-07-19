@@ -1,0 +1,47 @@
+{
+  "checkpoint": "CP-07",
+  "phase": "Accessibility, UDL, media requirements",
+  "date": "2026-07-15",
+  "source_of_truth": {
+    "artifact": "Hospitrainity.docx",
+    "sha256": "7f8a2c62db6884498f7a1c2de56e79e39609262944a685fe7eb97f702444cbb4"
+  },
+  "inputs": {
+    "source_zip": {
+      "name": "Hospitrainity-Source-Phase6.zip",
+      "sha256": "9f46ba8e686c2023f9e6bfd100e0713f100fcb10942630aff5d10f34d4411290"
+    },
+    "standalone_html": {
+      "name": "Hospitrainity-Standalone.html (CP-06)",
+      "sha256": "094b97593bafa345ae222776e5ee0f6f143aedd50e15f94c41ff695b3ecab64a"
+    }
+  },
+  "outputs": {
+    "standalone_html": {
+      "name": "Hospitrainity-Standalone.html (CP-07)",
+      "sha256": "fbe311a1b25a040478c441becaddce868206fcf3fc93c1779e72b149cb79ad2d"
+    },
+    "note": "Hospitrainity-Source-Phase7.zip checksum is reported in the checkpoint delivery message; a zip cannot embed its own hash."
+  },
+  "added_docs": [
+    "docs/hospitrainity-migration/phase-07/README.md",
+    "docs/hospitrainity-migration/phase-07/accessibility-udl-spec.md",
+    "docs/hospitrainity-migration/phase-07/media-requirements.md",
+    "docs/hospitrainity-migration/phase-07/a11y-requirements.json",
+    "docs/hospitrainity-migration/phase-07/a11y-conformance.json",
+    "docs/hospitrainity-migration/phase-07/checkpoint-report.md",
+    "docs/hospitrainity-migration/phase-07/source-manifest.json",
+    "docs/hospitrainity-migration/phase-03/tools/hsp-a11y.mjs"
+  ],
+  "a11y_conformance": { "activities": 24, "conform": 24, "gaps": 0 },
+  "standards": { "wcag": "WCAG 2.2 AA (2023-10-05)", "udl": "CAST UDL 3.0 (2024)" },
+  "validation": "node docs/hospitrainity-migration/phase-03/tools/hsp-validate.mjs all --strict => 8/8",
+  "invariants": [
+    "no content or assessment entity mutated (all CP-04/CP-05 provenance hashes still verify)",
+    "CP-02 framework/*.json byte-identical",
+    "provenance/docx-digest.json and provenance/assessment-digest.json unchanged",
+    "registry unchanged at 487 entries (registry_version 1.2.0)",
+    "assets/ directory unchanged (no media authored)",
+    "learner-facing standalone payload unchanged (provenance marker only)"
+  ]
+}

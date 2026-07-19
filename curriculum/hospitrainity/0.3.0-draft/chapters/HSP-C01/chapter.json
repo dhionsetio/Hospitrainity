@@ -1,0 +1,25 @@
+{
+  "code": "HSP-C01",
+  "content_version": "0.3.0-draft",
+  "entity_type": "chapter",
+  "id": "0499ebdb-540a-597a-8b56-18ff88fbfcde",
+  "module": 1,
+  "outcome_codes": [
+    "OUT-M01-01",
+    "OUT-M01-02",
+    "OUT-M01-03"
+  ],
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 27,
+    "chapter": 1,
+    "heading_path": [
+      "Welcome and Introduction to Customer Care"
+    ],
+    "normalized_text_sha256": "f19802ec27b3e6d2a195350884bdb752d150f175e2be227bdca7e804211ff5c6"
+  },
+  "status": "published",
+  "title": "Welcome and Introduction to Customer Care"
+}

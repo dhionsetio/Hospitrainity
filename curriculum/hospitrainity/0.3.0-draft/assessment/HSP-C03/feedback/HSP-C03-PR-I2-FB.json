@@ -1,0 +1,26 @@
+{
+  "code": "HSP-C03-PR-I2-FB",
+  "content_version": "0.3.0-draft",
+  "entity_type": "feedback-model",
+  "id": "f057c0b4-4214-50ad-840b-4832a8b12fa1",
+  "messages": [
+    {
+      "feedback_type": "model_reveal",
+      "text": "(b). It names the hotel and you, then offers help. A clear opener sets a professional tone from the first second."
+    }
+  ],
+  "prompt_code": "HSP-C03-PR-I2",
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 292,
+    "chapter": 3,
+    "heading_path": [
+      "Dealing with Customers on the Phone",
+      "Step 5. Practice"
+    ],
+    "normalized_text_sha256": "a1575ead73acef37095b9094adfb107e11cdfbe71b77f69145223581a0ac6a01"
+  },
+  "status": "published"
+}

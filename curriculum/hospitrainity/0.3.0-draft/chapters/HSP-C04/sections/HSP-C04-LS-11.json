@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C04",
+  "code": "HSP-C04-LS-11",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "a460899b-eddc-5ac0-9917-bfbded552437",
+  "order": 11,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 492,
+    "chapter": 4,
+    "heading_path": [
+      "The Guest-Services Hotline",
+      "Step 8. Confidence check"
+    ],
+    "normalized_text_sha256": "6ef7afb19b0e9de25f82cf24f661c7dad40ec38d5badf27cdf624f4021cd6e76"
+  },
+  "status": "published",
+  "title": "Step 8. Confidence check"
+}

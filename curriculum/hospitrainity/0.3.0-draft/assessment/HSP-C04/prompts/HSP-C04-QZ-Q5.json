@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C04-ACT-QUIZ",
+  "code": "HSP-C04-QZ-Q5",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "40ec8240-8e8d-5797-b2ad-1b05c45c90cc",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 479,
+    "chapter": 4,
+    "heading_path": [
+      "The Guest-Services Hotline",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "6adcca327fa37645a1466467916e6b19501a34611cad51a64fadf6776fd1b9b3"
+  },
+  "status": "published",
+  "stem": "Q5. Giving an estimated time helps because ... A) it sets a clear expectation B) it wastes time C) it confuses the guest"
+}

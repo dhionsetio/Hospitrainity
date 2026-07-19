@@ -1,0 +1,50 @@
+{
+    "activity_code": "HSP-C03-ACT-QUIZ",
+    "choices": [
+        {
+            "feedback": [],
+            "id": "6f8fda65-bdf5-55f4-8c60-ae1c272810d0",
+            "label": "a",
+            "text": "hang up"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "model_reveal",
+                    "text": "B. Stay patient and help them hear you."
+                }
+            ],
+            "id": "41b7e4f0-2bf7-5e8d-b416-0c6479a92b59",
+            "label": "b",
+            "text": "politely ask them to repeat, or repeat slowly yourself"
+        },
+        {
+            "feedback": [],
+            "id": "23cb50db-8a2d-5aaa-9a30-9b114d8f38e3",
+            "label": "c",
+            "text": "shout"
+        }
+    ],
+    "code": "HSP-C03-QZ-Q5",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "3da94770-54e6-595a-8449-13f0f7a8c119",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 342,
+        "chapter": 3,
+        "heading_path": [
+            "Dealing with Customers on the Phone",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "aad9c04564e17f80b4eac5ca31d1592b1a1a56c55d8b4697ba027c23f5249140"
+    },
+    "status": "published",
+    "stem": "Q5. The line is unclear. What should you do? A) hang up B) politely ask them to repeat, or repeat slowly yourself C) shout"
+}

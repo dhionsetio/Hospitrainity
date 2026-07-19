@@ -1,0 +1,121 @@
+{
+    "blocks": [
+        {
+            "id": "2e6bbd37-d5be-5044-b6be-4d5b7e2282e3",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "These are optional, and they are genuinely useful if you want more real-world phrases and ideas.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 225,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Further reading"
+                ],
+                "normalized_text_sha256": "1b572b58d718c70759515fe134103ef617f3d4afd90cc820d99f51bbbfbb7e4e"
+            },
+            "text": "These are optional, and they are genuinely useful if you want more real-world phrases and ideas.",
+            "type": "paragraph"
+        },
+        {
+            "id": "c4c957d0-8f92-5009-bd6d-33f5a476f3cf",
+            "language": "en",
+            "links": [
+                {
+                    "target": "https://www.hospitalitynet.org/opinion/4125399/7-customer-service-phrases-to-use-in-your-hotel-5-you-should-avoid",
+                    "text": "Hospitality Net: customer service phrases to use in your hotel"
+                }
+            ],
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 226,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Further reading"
+                ],
+                "normalized_text_sha256": "76ff3f2d43bbe93d27702a8caa87c5c19fa538acc72e7361e7308cff007b4e61"
+            },
+            "type": "external_link"
+        },
+        {
+            "id": "170168ec-4758-5e87-a698-4ba4483928bd",
+            "language": "en",
+            "links": [
+                {
+                    "target": "https://www.siteminder.com/r/trends-advice/hotel-guest-experience/customer-satisfaction/",
+                    "text": "SiteMinder: ideas to improve the hotel guest experience"
+                }
+            ],
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 227,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Further reading"
+                ],
+                "normalized_text_sha256": "5c372602a541a154856d898e0ca5c738ece6d1da18f49dd5d97b3746773d7ed3"
+            },
+            "type": "external_link"
+        },
+        {
+            "id": "f1e380a5-8599-56df-b1fe-dd10e43a0f64",
+            "language": "en",
+            "links": [
+                {
+                    "target": "https://sqaeducation.org/blogs/hotel-english-conversation/",
+                    "text": "SQA Education: hotel English check-in phrases"
+                }
+            ],
+            "order": 4,
+            "provenance_kind": "source_verbatim",
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 228,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Further reading"
+                ],
+                "normalized_text_sha256": "290f1a7724edcecd702590b94ad0cd847775ddc3eabb63fca5fa5d08fda072b0"
+            },
+            "type": "external_link"
+        }
+    ],
+    "chapter_code": "HSP-C02",
+    "code": "HSP-C02-LS-13",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "fa468a24-95c8-50ae-90a8-b456003791f0",
+    "language": "en",
+    "order": 13,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 224,
+        "chapter": 2,
+        "heading_path": [
+            "Front Desk and Check-In",
+            "Further reading"
+        ],
+        "normalized_text_sha256": "4082f515b2f4929c139af2b1d23605e462c614bd888cf0dc12952d0d9cdeb1c7"
+    },
+    "status": "published",
+    "title": "Further reading"
+}

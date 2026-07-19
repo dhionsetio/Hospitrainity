@@ -1,0 +1,39 @@
+{
+  "accessibility": [
+    "text_alt",
+    "keyboard_path",
+    "non_color_cue",
+    "no_timing_dependency"
+  ],
+  "cefr_activity": "reception",
+  "channel": "telecommunications",
+  "code": "HSP-C04-ACT-QUIZ",
+  "content_version": "0.3.0-draft",
+  "entity_type": "activity",
+  "id": "01bfdb31-b629-5461-8b0d-91c7c49eefa2",
+  "lesson_code": "HSP-C04-LS-10",
+  "outcome_codes": [
+    "OUT-M04-01",
+    "OUT-M04-02",
+    "OUT-M04-03"
+  ],
+  "participation": "individual",
+  "pedagogical_function": "formative_check",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "scoring_mode": "objective_exact",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 466,
+    "chapter": 4,
+    "heading_path": [
+      "The Guest-Services Hotline",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "7d75f2f8d53709774863fa76170df3f1938d6f9af283ec6f7f8763c3ac408846"
+  },
+  "status": "published",
+  "timing": "asynchronous",
+  "title": "Step 7. Quiz"
+}

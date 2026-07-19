@@ -1,0 +1,26 @@
+{
+  "code": "HSP-C05-QZ-Q8-FB",
+  "content_version": "0.3.0-draft",
+  "entity_type": "feedback-model",
+  "id": "747566b2-9001-559f-a285-7df4b2b6f785",
+  "messages": [
+    {
+      "feedback_type": "model_reveal",
+      "text": "B. Short lines and small lists are easy to scan on a phone."
+    }
+  ],
+  "prompt_code": "HSP-C05-QZ-Q8",
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 638,
+    "chapter": 5,
+    "heading_path": [
+      "Customer Care Through Writing",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "cfe51178e86253ccb1e26236812250f02b6ab0915bc976be743a7d1c6bda309c"
+  },
+  "status": "published"
+}

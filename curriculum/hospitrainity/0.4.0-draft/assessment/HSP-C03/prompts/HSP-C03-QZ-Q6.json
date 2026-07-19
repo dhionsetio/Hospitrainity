@@ -1,0 +1,50 @@
+{
+    "activity_code": "HSP-C03-ACT-QUIZ",
+    "choices": [
+        {
+            "feedback": [
+                {
+                    "feedback_type": "model_reveal",
+                    "text": "A. You repeat the details out loud to confirm them."
+                }
+            ],
+            "id": "71245b40-0c79-5871-a0c3-98b057600239",
+            "label": "a",
+            "text": "to confirm them by repeating them"
+        },
+        {
+            "feedback": [],
+            "id": "d00b6979-ca50-5e6a-8d25-86ea045c3871",
+            "label": "b",
+            "text": "to read a book"
+        },
+        {
+            "feedback": [],
+            "id": "4f816110-c7ae-5915-a069-4b45e44dda39",
+            "label": "c",
+            "text": "to cancel the booking"
+        }
+    ],
+    "code": "HSP-C03-QZ-Q6",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "9896d73a-2064-51af-b977-e12dd1fe7da5",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 345,
+        "chapter": 3,
+        "heading_path": [
+            "Dealing with Customers on the Phone",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "10fe50b1929068a29287c378905be2b5df818f69bbad2747c96d91c51d179c35"
+    },
+    "status": "published",
+    "stem": "Q6. “To read back” the details means ... A) to confirm them by repeating them B) to read a book C) to cancel the booking"
+}

@@ -1,0 +1,50 @@
+{
+    "activity_code": "HSP-C05-ACT-QUIZ",
+    "choices": [
+        {
+            "feedback": [
+                {
+                    "feedback_type": "model_reveal",
+                    "text": "A. It gently invites any further questions."
+                }
+            ],
+            "id": "eaa358da-7a69-533e-b7df-7fc4d2520320",
+            "label": "a",
+            "text": "end warmly and offer more help"
+        },
+        {
+            "feedback": [],
+            "id": "03e819b6-8e48-565c-b5bb-eb1e35110013",
+            "label": "b",
+            "text": "refuse the guest"
+        },
+        {
+            "feedback": [],
+            "id": "2ba37098-8083-51f5-bdd3-0e9bc419bba6",
+            "label": "c",
+            "text": "rush the guest"
+        }
+    ],
+    "code": "HSP-C05-QZ-Q3",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "b3ce640a-6bd9-5157-a909-3b21eead6894",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 634,
+        "chapter": 5,
+        "heading_path": [
+            "Customer Care Through Writing",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "eda24bf61bf480b673a9bfbd3e80ffc824717a645206d1e568477e4d359336fd"
+    },
+    "status": "published",
+    "stem": "Q3. “Please do not hesitate to contact us” is used to ... A) end warmly and offer more help B) refuse the guest C) rush the guest"
+}

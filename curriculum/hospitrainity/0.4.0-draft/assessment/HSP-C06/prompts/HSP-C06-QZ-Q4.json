@@ -1,0 +1,50 @@
+{
+    "activity_code": "HSP-C06-ACT-QUIZ",
+    "choices": [
+        {
+            "feedback": [],
+            "id": "f99ed613-0a29-5fb0-a107-292a805b2193",
+            "label": "a",
+            "text": "to ignore it"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "model_reveal",
+                    "text": "B. Complex issues go to the right team."
+                }
+            ],
+            "id": "b8946def-9e7e-5918-9fc3-cc86e918b301",
+            "label": "b",
+            "text": "to pass it to a higher level, such as the front desk"
+        },
+        {
+            "feedback": [],
+            "id": "da5494f0-cb72-5d9c-8149-a8167b1baf7a",
+            "label": "c",
+            "text": "to close the chat"
+        }
+    ],
+    "code": "HSP-C06-QZ-Q4",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "81092e8b-a17a-550f-9198-dab2b80202cd",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 780,
+        "chapter": 6,
+        "heading_path": [
+            "Online and Social Media Customer Service",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "1d76c25fadaef52395c1f104d3a473d38f6cb405dcff16c552660195525db456"
+    },
+    "status": "published",
+    "stem": "Q4. “To escalate” a message means ... A) to ignore it B) to pass it to a higher level, such as the front desk C) to close the chat"
+}

@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C05",
+  "code": "HSP-C05-LS-07",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "847add7e-d29f-5966-8cda-8af5faf244f8",
+  "order": 7,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 569,
+    "chapter": 5,
+    "heading_path": [
+      "Customer Care Through Writing",
+      "Common mistakes to avoid"
+    ],
+    "normalized_text_sha256": "574efa4ba0a18306e88405a8ff7de9d1c1b6866933e9e8cf487ccd5daa85dd6d"
+  },
+  "status": "published",
+  "title": "Common mistakes to avoid"
+}

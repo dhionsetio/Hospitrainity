@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C05-ACT-ROLEPLAY",
+  "code": "HSP-C05-RP-G3",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "8fb96438-48fa-5dc3-958e-24bdab0c9e1d",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 604,
+    "chapter": 5,
+    "heading_path": [
+      "Customer Care Through Writing",
+      "Step 6. Role-play (drafting)"
+    ],
+    "normalized_text_sha256": "f2616e6b1dfa9ae1df5bd64f17b5198818ee3a18eb376917e547ceb69ee4b365"
+  },
+  "status": "published",
+  "stem": "A guest writes to ask for a late check-out."
+}

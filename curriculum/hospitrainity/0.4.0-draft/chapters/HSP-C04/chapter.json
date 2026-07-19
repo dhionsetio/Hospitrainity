@@ -1,0 +1,25 @@
+{
+    "code": "HSP-C04",
+    "content_version": "0.4.0-draft",
+    "entity_type": "chapter",
+    "id": "6966ffce-1d4e-52d5-8139-7fdf65f46de5",
+    "module": 4,
+    "outcome_codes": [
+        "OUT-M04-01",
+        "OUT-M04-02",
+        "OUT-M04-03"
+    ],
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 377,
+        "chapter": 4,
+        "heading_path": [
+            "The Guest-Services Hotline"
+        ],
+        "normalized_text_sha256": "622e41ae0bbeb84f1ac4ec036423de7655cdd7989da9b3c7bec34a68d8782598"
+    },
+    "status": "published",
+    "title": "The Guest-Services Hotline"
+}

@@ -1,0 +1,308 @@
+{
+    "blocks": [
+        {
+            "id": "24ec596e-29e5-53f7-b56f-c53a6bf77aad",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "A",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " stands for Agent, and ",
+                    "underline": false
+                },
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "C",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " stands for Caller.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 280,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 4. Model dialogue"
+                ],
+                "normalized_text_sha256": "4fff3ea8628d205f06329f7baac2b5e8e020e353e84435fd84f1014a12746b5d"
+            },
+            "text": "A stands for Agent, and C stands for Caller.",
+            "type": "paragraph"
+        },
+        {
+            "id": "0af6308c-173a-5688-807e-5e93483b634c",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "A:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Good morning, the Grand Serenata Hotel, Maya speaking. How may I help you?",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "\n",
+                    "underline": false
+                },
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "C:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Hi, I would like to book a room for next weekend.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "\n",
+                    "underline": false
+                },
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "A:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " I would be happy to help with that. May I have the dates, please?",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "\n",
+                    "underline": false
+                },
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "C:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Friday the fifth to Sunday the seventh.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "\n",
+                    "underline": false
+                },
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "A:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Let me check availability for those dates. Thank you for waiting. Yes, we have a Deluxe Room available at 80 dollars per night. Would you like me to book it for you?",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "\n",
+                    "underline": false
+                },
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "C:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Yes, please.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "\n",
+                    "underline": false
+                },
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "A:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Lovely. Could I take your name and a contact number?",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "\n",
+                    "underline": false
+                },
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "C:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " David Chen, and my number is 0812 3456 7890.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "\n",
+                    "underline": false
+                },
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "A:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Thank you. Let me read that back to be sure. David Chen, a Deluxe Room, two nights, arriving Friday the fifth. Is that correct?",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "\n",
+                    "underline": false
+                },
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "C:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " That is correct.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "\n",
+                    "underline": false
+                },
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "A:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Your booking reference is four, five, two. Thank you for calling, Mr. Chen. We look forward to welcoming you.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 281,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 4. Model dialogue"
+                ],
+                "normalized_text_sha256": "999ae2591f0d4fbb70232f97431fbb452d3cd313c8150ff26d285d7a8dc441e4"
+            },
+            "text": "A: Good morning, the Grand Serenata Hotel, Maya speaking. How may I help you?\nC: Hi, I would like to book a room for next weekend.\nA: I would be happy to help with that. May I have the dates, please?\nC: Friday the fifth to Sunday the seventh.\nA: Let me check availability for those dates. Thank you for waiting. Yes, we have a Deluxe Room available at 80 dollars per night. Would you like me to book it for you?\nC: Yes, please.\nA: Lovely. Could I take your name and a contact number?\nC: David Chen, and my number is 0812 3456 7890.\nA: Thank you. Let me read that back to be sure. David Chen, a Deluxe Room, two nights, arriving Friday the fifth. Is that correct?\nC: That is correct.\nA: Your booking reference is four, five, two. Thank you for calling, Mr. Chen. We look forward to welcoming you.",
+            "type": "paragraph"
+        },
+        {
+            "id": "2cc9e86e-b4f5-5045-b730-e239d5218100",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Notice the rhythm: listen, check, then confirm. The agent thanked the caller for waiting, read the details back in full, and gave the booking reference in single digits. That is exactly how you avoid errors over the phone.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 282,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 4. Model dialogue"
+                ],
+                "normalized_text_sha256": "da6b9153b2a1ea17f4e89668e3a23b0bd022808fa871c7ebe680415251549bcd"
+            },
+            "text": "Notice the rhythm: listen, check, then confirm. The agent thanked the caller for waiting, read the details back in full, and gave the booking reference in single digits. That is exactly how you avoid errors over the phone.",
+            "type": "paragraph"
+        }
+    ],
+    "chapter_code": "HSP-C03",
+    "code": "HSP-C03-LS-06",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "e82dc8de-7e20-5068-b30f-2a62b95ddb90",
+    "language": "en",
+    "order": 6,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 279,
+        "chapter": 3,
+        "heading_path": [
+            "Dealing with Customers on the Phone",
+            "Step 4. Model dialogue"
+        ],
+        "normalized_text_sha256": "3198c829a36e2d5ccebe722aa40eec10a403fbba3b92f13a0ecba2cbbf92d56d"
+    },
+    "status": "published",
+    "title": "Step 4. Model dialogue"
+}

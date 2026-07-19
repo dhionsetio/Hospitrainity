@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C07",
+  "code": "HSP-C07-LS-02",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "2fe3a414-04c2-520f-a8dd-b893c41af816",
+  "order": 2,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 806,
+    "chapter": 7,
+    "heading_path": [
+      "Dealing with Problems and Complaints",
+      "Why this matters"
+    ],
+    "normalized_text_sha256": "f43d83139f28ffed9e84dcf3b8a2c962775e795181a94eb3480a5369ca0ce86b"
+  },
+  "status": "published",
+  "title": "Why this matters"
+}

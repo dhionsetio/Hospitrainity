@@ -1,0 +1,39 @@
+{
+  "accessibility": [
+    "text_alt",
+    "keyboard_path",
+    "non_color_cue",
+    "no_timing_dependency"
+  ],
+  "cefr_activity": "interaction",
+  "channel": "telecommunications",
+  "code": "HSP-C04-ACT-CONFIDENCE",
+  "content_version": "0.3.0-draft",
+  "entity_type": "activity",
+  "id": "858356e1-a029-5c4f-90fa-5a9a13effc9d",
+  "lesson_code": "HSP-C04-LS-11",
+  "outcome_codes": [
+    "OUT-M04-01",
+    "OUT-M04-02",
+    "OUT-M04-03"
+  ],
+  "participation": "individual",
+  "pedagogical_function": "reflection",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "self_rating",
+  "scoring_mode": "self_report",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 492,
+    "chapter": 4,
+    "heading_path": [
+      "The Guest-Services Hotline",
+      "Step 8. Confidence check"
+    ],
+    "normalized_text_sha256": "6ef7afb19b0e9de25f82cf24f661c7dad40ec38d5badf27cdf624f4021cd6e76"
+  },
+  "status": "published",
+  "timing": "asynchronous",
+  "title": "Step 8. Confidence check"
+}

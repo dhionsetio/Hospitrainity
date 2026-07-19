@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C02",
+  "code": "HSP-C02-LS-07",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "054a7bc8-671c-5727-83a7-0371d4c49e5c",
+  "order": 7,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 133,
+    "chapter": 2,
+    "heading_path": [
+      "Front Desk and Check-In",
+      "Common mistakes to avoid"
+    ],
+    "normalized_text_sha256": "b610abac6a3b28a7caf5604e10973485a61eb4f95863c233fa332f477e41138f"
+  },
+  "status": "published",
+  "title": "Common mistakes to avoid"
+}

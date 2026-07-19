@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C05-ACT-QUIZ",
+  "code": "HSP-C05-QZ-Q6",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "1909bf42-74a5-5ed5-9688-721bf0f37fed",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 630,
+    "chapter": 5,
+    "heading_path": [
+      "Customer Care Through Writing",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "3c8e84ba6699a7b7ed3555f5d782c8fe92f132ebc4476a7d1d8b262bb902c2f7"
+  },
+  "status": "published",
+  "stem": "Q6. When replying to a complaint email, the tone should be ... A) apologetic and solution-focused B) defensive C) silent"
+}

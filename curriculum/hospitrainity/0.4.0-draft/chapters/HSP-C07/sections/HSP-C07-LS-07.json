@@ -1,0 +1,188 @@
+{
+    "blocks": [
+        {
+            "id": "1ff5c339-d6de-5950-aa2b-b9f67e7e85bd",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Open for five common mistakes",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 874,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Common mistakes to avoid"
+                ],
+                "normalized_text_sha256": "a433b254794ec760d8fec78cc3f476ae28f47f15bd12cd32be5e9d650aac6f83"
+            },
+            "text": "Open for five common mistakes",
+            "type": "paragraph"
+        },
+        {
+            "id": "7d6433dd-c6ba-526a-8f8a-40434487ae61",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Interrupting to defend the hotel. Let the guest finish first, always.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 875,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Common mistakes to avoid"
+                ],
+                "normalized_text_sha256": "f4567c1a377a8ff7b19d0d7cfd8f3453bb82c30b3b330962dd566383db56cdc2"
+            },
+            "text": "Interrupting to defend the hotel. Let the guest finish first, always.",
+            "type": "list_item"
+        },
+        {
+            "id": "8302ac3f-bfcb-5698-96c8-9ce1260c03f8",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Saying “that is not my fault.” Even when true, it sounds like you do not care.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 876,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Common mistakes to avoid"
+                ],
+                "normalized_text_sha256": "eec3a5eff612ce14636933aec78ade5c672e79fa5cbd83249c78a6704bda0b6e"
+            },
+            "text": "Saying “that is not my fault.” Even when true, it sounds like you do not care.",
+            "type": "list_item"
+        },
+        {
+            "id": "6b07125c-5f74-5c42-920f-38b442856a23",
+            "language": "en",
+            "order": 4,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Apologising",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " but doing nothing. An apology without action feels empty.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 877,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Common mistakes to avoid"
+                ],
+                "normalized_text_sha256": "d91de2221cfeafac9691fd6fbea296423f1383616961969c5ae619f43e8ca74c"
+            },
+            "text": "Apologising but doing nothing. An apology without action feels empty.",
+            "type": "list_item"
+        },
+        {
+            "id": "653a9b60-fbcf-5b39-8296-aed7355bbd58",
+            "language": "en",
+            "order": 5,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Over-promising to calm the moment. Only offer what you can truly deliver.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 878,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Common mistakes to avoid"
+                ],
+                "normalized_text_sha256": "abe633f548ab339a583980373fe00c5b12a0cac33e9760bcccd239145396f2ea"
+            },
+            "text": "Over-promising to calm the moment. Only offer what you can truly deliver.",
+            "type": "list_item"
+        },
+        {
+            "id": "c0672095-bbd3-52d3-8991-1fd7cfe74062",
+            "language": "en",
+            "order": 6,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Forgetting to follow up. The follow-up is what turns an apology into trust.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 879,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Common mistakes to avoid"
+                ],
+                "normalized_text_sha256": "a48055a32e6b5dd405c8397a8cbd3e597713eeb71234507263eaf12ddf23a780"
+            },
+            "text": "Forgetting to follow up. The follow-up is what turns an apology into trust.",
+            "type": "list_item"
+        }
+    ],
+    "chapter_code": "HSP-C07",
+    "code": "HSP-C07-LS-07",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "2104d5b2-ca91-563c-b1c4-c6399b9e02c1",
+    "language": "en",
+    "order": 7,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 873,
+        "chapter": 7,
+        "heading_path": [
+            "Dealing with Problems and Complaints",
+            "Common mistakes to avoid"
+        ],
+        "normalized_text_sha256": "09280c77c069d2c19c40ad919cf2f1fa07a028a886d911cc8f9318f19c0a51e0"
+    },
+    "status": "published",
+    "title": "Common mistakes to avoid"
+}

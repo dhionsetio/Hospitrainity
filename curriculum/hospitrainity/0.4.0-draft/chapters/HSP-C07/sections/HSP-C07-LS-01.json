@@ -1,0 +1,142 @@
+{
+    "blocks": [
+        {
+            "id": "3d9eb5f5-3da2-594a-a6c3-b8296226ef95",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Answer these quietly for yourself first. There are no right or wrong answers, just a gentle way to warm up.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 820,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Warm-Up"
+                ],
+                "normalized_text_sha256": "dc2b3712b572545e3ee93b53f0dda46eebf01fe5ccce877e4813773942162d9c"
+            },
+            "text": "Answer these quietly for yourself first. There are no right or wrong answers, just a gentle way to warm up.",
+            "type": "instruction"
+        },
+        {
+            "id": "c4057005-6c5c-5cd3-846e-123c501932e4",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "In one word, how do you feel when someone is upset with you?",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 821,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Warm-Up"
+                ],
+                "normalized_text_sha256": "394023919b4a4b6c09bab0fa496083a8d3620011857cf9a06debcec08a5f8158"
+            },
+            "text": "In one word, how do you feel when someone is upset with you?",
+            "type": "list_item"
+        },
+        {
+            "id": "6c9030b4-49c4-59d2-a821-9a302504fa58",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Think of a time you complained about a service. What did you most want to hear?",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 822,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Warm-Up"
+                ],
+                "normalized_text_sha256": "b01c22cf90a4c62a55598fe1ee32da526f07bffc65df8d686f0b92c3b0b9218b"
+            },
+            "text": "Think of a time you complained about a service. What did you most want to hear?",
+            "type": "list_item"
+        },
+        {
+            "id": "8e472f40-1775-5308-b441-f55892f78584",
+            "language": "en",
+            "order": 4,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "In your own language, how do you ",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "apologise",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " so that it sounds genuine?",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 823,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Warm-Up"
+                ],
+                "normalized_text_sha256": "57e9d513006d90e241cefa3b538586cbdbc6a716e72b93cc04f103ad746903c6"
+            },
+            "text": "In your own language, how do you apologise so that it sounds genuine?",
+            "type": "list_item"
+        }
+    ],
+    "chapter_code": "HSP-C07",
+    "code": "HSP-C07-LS-01",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "c26f12f8-3a4f-5064-b912-af34f2afa85e",
+    "language": "en",
+    "order": 1,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 819,
+        "chapter": 7,
+        "heading_path": [
+            "Dealing with Problems and Complaints",
+            "Warm-Up"
+        ],
+        "normalized_text_sha256": "0d96d7a94cccd70ae6e338c3b3a29d88a9ed37ce481071007cb60d1746da4a65"
+    },
+    "status": "published",
+    "title": "Warm-Up"
+}

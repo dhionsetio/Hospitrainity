@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C07",
+  "code": "HSP-C07-LS-13",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "62cf73c9-2edd-5101-a792-efdf60991c15",
+  "order": 13,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 941,
+    "chapter": 7,
+    "heading_path": [
+      "Dealing with Problems and Complaints",
+      "Further reading"
+    ],
+    "normalized_text_sha256": "0a1607c0a8081f0e8a38bc39f7951b17552b232d50d72a3ac5226caf3e9b8044"
+  },
+  "status": "published",
+  "title": "Further reading"
+}

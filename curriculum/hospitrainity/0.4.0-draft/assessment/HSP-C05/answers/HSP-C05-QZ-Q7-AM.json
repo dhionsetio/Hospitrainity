@@ -1,0 +1,28 @@
+{
+    "accepted": [
+        "B"
+    ],
+    "code": "HSP-C05-QZ-Q7-AM",
+    "content_version": "0.4.0-draft",
+    "correct_choice_ids": [
+        "7f4d758a-2dfa-5a97-9bc1-be940d9eae32"
+    ],
+    "entity_type": "answer-model",
+    "id": "ca8d9920-832e-5632-8527-c82a50659984",
+    "prompt_code": "HSP-C05-QZ-Q7",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 68,
+        "chapter": 5,
+        "heading_path": [
+            "Customer Care Through Writing",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "df7e70e5021544f4834bbee64a9e3789febc4be81470df629cad6ddb03320a5c"
+    },
+    "status": "published"
+}

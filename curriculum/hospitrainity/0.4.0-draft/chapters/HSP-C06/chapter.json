@@ -1,0 +1,25 @@
+{
+    "code": "HSP-C06",
+    "content_version": "0.4.0-draft",
+    "entity_type": "chapter",
+    "id": "3df67cda-c129-5852-bec0-05964ef33425",
+    "module": 6,
+    "outcome_codes": [
+        "OUT-M06-01",
+        "OUT-M06-02",
+        "OUT-M06-03"
+    ],
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 671,
+        "chapter": 6,
+        "heading_path": [
+            "Online and Social Media Customer Service"
+        ],
+        "normalized_text_sha256": "1dc49620fbb872204dae959f45c7d92205c328e59650124019aea0a4d2f28893"
+    },
+    "status": "published",
+    "title": "Online and Social Media Customer Service"
+}

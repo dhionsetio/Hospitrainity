@@ -1,0 +1,50 @@
+{
+    "activity_code": "HSP-C02-ACT-QUIZ",
+    "choices": [
+        {
+            "feedback": [
+                {
+                    "feedback_type": "model_reveal",
+                    "text": "A. “Is that correct?” confirms the details clearly and politely."
+                }
+            ],
+            "id": "d3d21d2d-936c-55b8-a824-c08b06bfd087",
+            "label": "a",
+            "text": "“Is that correct?”"
+        },
+        {
+            "feedback": [],
+            "id": "7cb92586-9b21-52e8-b87f-bf5c0e1e9fa4",
+            "label": "b",
+            "text": "“Who cares?”"
+        },
+        {
+            "feedback": [],
+            "id": "9b668fdb-7159-5ac1-8b51-e95d01a50d81",
+            "label": "c",
+            "text": "“Maybe.”"
+        }
+    ],
+    "code": "HSP-C02-QZ-Q3",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "cbe714d5-c0a0-593d-b9f5-7826ddea1312",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 189,
+        "chapter": 2,
+        "heading_path": [
+            "Front Desk and Check-In",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "a22527307e357c4e52e492974e5bc1c3120913fbc321d3b2893d12d49a2541d1"
+    },
+    "status": "published",
+    "stem": "Q3. Which phrase best confirms the booking details? A) “Is that correct?” B) “Who cares?” C) “Maybe.”"
+}

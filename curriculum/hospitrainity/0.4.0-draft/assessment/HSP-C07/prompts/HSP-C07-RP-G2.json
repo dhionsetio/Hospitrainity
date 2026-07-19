@@ -1,0 +1,60 @@
+{
+    "activity_code": "HSP-C07-ACT-ROLEPLAY",
+    "choices": [
+        {
+            "feedback": [
+                {
+                    "feedback_type": "error_specific",
+                    "text": "(a) “That is the system’s fault, not mine.” This blames something else and helps no one."
+                }
+            ],
+            "id": "e70d80b3-1021-59c9-b709-a6f368988db0",
+            "label": "a",
+            "text": "“That is the system’s fault, not mine.”"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "success",
+                    "text": "(b) “I am very sorry for the error. Let me check your bill and correct it right away, and you will see the refund shortly.” This is the ideal answer, an apology, action, and reassurance."
+                }
+            ],
+            "id": "419d2589-77ab-570a-9ecf-50a909764c4f",
+            "label": "b",
+            "text": "“I am very sorry for the error. Let me check your bill and correct it right away, and you will see the refund shortly.”"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "error_specific",
+                    "text": "(c) “You must have made a mistake.” This blames the guest, which is the fastest way to lose them."
+                }
+            ],
+            "id": "048a0c89-6ff5-5799-9939-8552cd164106",
+            "label": "c",
+            "text": "“You must have made a mistake.”"
+        }
+    ],
+    "code": "HSP-C07-RP-G2",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "fa048ac1-2736-526b-a30e-d21530836a8b",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 903,
+        "chapter": 7,
+        "heading_path": [
+            "Dealing with Problems and Complaints",
+            "Step 6. Role-play"
+        ],
+        "normalized_text_sha256": "863d89a683c03d6cc2176996a6fd11644f6ab9bebc897f6ecc8cc08f4757c46f"
+    },
+    "status": "published",
+    "stem": "Guest: “You charged me twice.”"
+}

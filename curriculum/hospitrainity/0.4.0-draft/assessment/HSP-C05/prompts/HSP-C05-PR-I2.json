@@ -1,0 +1,50 @@
+{
+    "activity_code": "HSP-C05-ACT-PRACTICE",
+    "choices": [
+        {
+            "feedback": [],
+            "id": "7f89501e-635d-509b-8538-1b6e8b22647f",
+            "label": "a",
+            "text": "“xoxo”"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "model_reveal",
+                    "text": "(b). “Kind regards,” is warm and professional. The others are far too casual for a guest."
+                }
+            ],
+            "id": "abf7a410-a921-5b76-a87e-adff55e758a4",
+            "label": "b",
+            "text": "“Kind regards,”"
+        },
+        {
+            "feedback": [],
+            "id": "e5dc7b7c-62e0-5ea7-85d5-6d0167e9405d",
+            "label": "c",
+            "text": "“later!”"
+        }
+    ],
+    "code": "HSP-C05-PR-I2",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "e58e8d10-4aa4-5322-bd13-3810c8b1e974",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 595,
+        "chapter": 5,
+        "heading_path": [
+            "Customer Care Through Writing",
+            "Step 5. Practice"
+        ],
+        "normalized_text_sha256": "6666ad7b2f628360cafbc91fd7f83df6a88bbffe17d65b07ff6f2834d7cc9d67"
+    },
+    "status": "published",
+    "stem": "2. Choose the right sign-off for a formal reply: (a) “xoxo” or (b) “Kind regards,” or (c) “later!”"
+}

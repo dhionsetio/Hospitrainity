@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C02",
+  "code": "HSP-C02-LS-05",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "17394b63-5cc3-5dbe-aca0-faf83cdc91c7",
+  "order": 5,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 99,
+    "chapter": 2,
+    "heading_path": [
+      "Front Desk and Check-In",
+      "Step 3. Useful phrases, grouped by what they do"
+    ],
+    "normalized_text_sha256": "79420a55cd1616bca4415eef90f6ad604a50a41134b6e0c147deb79cfc6bc902"
+  },
+  "status": "published",
+  "title": "Step 3. Useful phrases, grouped by what they do"
+}

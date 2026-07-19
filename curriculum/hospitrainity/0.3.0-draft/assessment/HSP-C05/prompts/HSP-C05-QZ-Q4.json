@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C05-ACT-QUIZ",
+  "code": "HSP-C05-QZ-Q4",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "dc6768ef-fc2e-5e31-804e-177a2b973a34",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 624,
+    "chapter": 5,
+    "heading_path": [
+      "Customer Care Through Writing",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "dbb22687305d8fac139318ee0e423d073b38c334faa20a146a8af9e6ab9ce8a7"
+  },
+  "status": "published",
+  "stem": "Q4. With a guest, you should generally use a ... A) formal and warm register B) very casual register C) no greeting at all"
+}

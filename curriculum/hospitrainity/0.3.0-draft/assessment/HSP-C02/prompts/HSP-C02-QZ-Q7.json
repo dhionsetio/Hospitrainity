@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C02-ACT-QUIZ",
+  "code": "HSP-C02-QZ-Q7",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "303524ab-f3ff-5132-a2d6-6faf85707dd8",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 197,
+    "chapter": 2,
+    "heading_path": [
+      "Front Desk and Check-In",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "135cbef870fdf6cf31e9cd14c153a497989c2dc8663fb49bb22e5fb913ef1d2e"
+  },
+  "status": "published",
+  "stem": "Q7. “Amenities” means ... A) complaints B) the extra services and facilities C) room numbers"
+}

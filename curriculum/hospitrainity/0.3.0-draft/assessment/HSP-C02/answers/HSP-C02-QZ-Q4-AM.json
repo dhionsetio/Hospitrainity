@@ -1,0 +1,24 @@
+{
+  "accepted": [
+    "B"
+  ],
+  "code": "HSP-C02-QZ-Q4-AM",
+  "content_version": "0.3.0-draft",
+  "entity_type": "answer-model",
+  "id": "1aecc151-f41f-59e9-b68b-c6060698a6f2",
+  "prompt_code": "HSP-C02-QZ-Q4",
+  "replaced_by": null,
+  "replaces": null,
+  "scoring_mode": "objective_exact",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 190,
+    "chapter": 2,
+    "heading_path": [
+      "Front Desk and Check-In",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "34b78b3d64f83962cd07f2ead675712fa5f869310fb69e7b824c2e397854bb0d"
+  },
+  "status": "published"
+}

@@ -1,0 +1,60 @@
+{
+    "activity_code": "HSP-C02-ACT-ROLEPLAY",
+    "code": "HSP-C02-RP-RUBRIC",
+    "content_version": "0.4.0-draft",
+    "criteria": [
+        {
+            "code": "HSP-C02-RP-RUBRIC-WARMTH",
+            "descriptor": "Warm, professional welcome and tone",
+            "levels": [
+                "Not yet",
+                "Developing",
+                "Strong"
+            ]
+        },
+        {
+            "code": "HSP-C02-RP-RUBRIC-SOLUTION",
+            "descriptor": "Offers help and moves toward a concrete solution",
+            "levels": [
+                "Not yet",
+                "Developing",
+                "Strong"
+            ]
+        },
+        {
+            "code": "HSP-C02-RP-RUBRIC-POLITENESS",
+            "descriptor": "Polite, softened language (e.g. \"Could I ... please\")",
+            "levels": [
+                "Not yet",
+                "Developing",
+                "Strong"
+            ]
+        },
+        {
+            "code": "HSP-C02-RP-RUBRIC-PROGRESSION",
+            "descriptor": "Calmly moves the interaction to the next step",
+            "levels": [
+                "Not yet",
+                "Developing",
+                "Strong"
+            ]
+        }
+    ],
+    "entity_type": "rubric",
+    "id": "92c61577-8407-5c02-8914-faa8f625b740",
+    "provenance_kind": "derived_review",
+    "replaced_by": null,
+    "replaces": null,
+    "review_status": "provisional",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "block_index": 156,
+        "chapter": 2,
+        "heading_path": [
+            "Front Desk and Check-In",
+            "Step 6. Role-play"
+        ],
+        "normalized_text_sha256": "1a71a4ebb9f047dc4050da169c522d5309b8aa05a69be057e0d17e4b6ca384c6"
+    },
+    "status": "published"
+}

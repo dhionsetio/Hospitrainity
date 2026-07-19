@@ -1,0 +1,27 @@
+{
+    "code": "HSP-C02-QZ-Q5-FB",
+    "content_version": "0.4.0-draft",
+    "entity_type": "feedback-model",
+    "id": "c3c7a5de-778d-5f3f-a4f6-53bb4d805e1a",
+    "messages": [
+        {
+            "feedback_type": "model_reveal",
+            "text": "B. The key and the practical details, such as floor, breakfast, and Wi-Fi, naturally go together near the end."
+        }
+    ],
+    "prompt_code": "HSP-C02-QZ-Q5",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 197,
+        "chapter": 2,
+        "heading_path": [
+            "Front Desk and Check-In",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "494c59344871101c128b426cf9e35ca7ffa0361774117bffdcd583f3fc2bc0ca"
+    },
+    "status": "published"
+}

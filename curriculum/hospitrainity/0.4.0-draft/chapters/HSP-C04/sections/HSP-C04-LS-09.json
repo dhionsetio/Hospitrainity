@@ -1,0 +1,591 @@
+{
+    "blocks": [
+        {
+            "id": "918401e6-a6af-561b-8955-1ec65164f0ea",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Guided mode (pick the best response, then check)",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 455,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "8b5c1e17e91dac6eca1351f72f3ad5c3f74412725d84779192885e8a7d4310a7"
+            },
+            "text": "Guided mode (pick the best response, then check)",
+            "type": "heading"
+        },
+        {
+            "id": "41f36151-7968-5ffd-8740-71b4590f58e5",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Guest:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " “Can you send someone to fix the air conditioning?”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 456,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "73fc14d81669cbb8ed897f4ac260a66cabbe9def3036817b47e2d892bf998d16"
+            },
+            "speaker": "Guest",
+            "text": "“Can you send someone to fix the air conditioning?”",
+            "type": "dialogue_turn"
+        },
+        {
+            "id": "9a3ed525-3081-50f1-8e50-7ba77ca678d2",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Reveal the options and feedback",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 457,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "6dc878d750298bcb4a4f27b0ad5920cbcec919db017ef2f3a46fa28770873d4e"
+            },
+            "text": "Reveal the options and feedback",
+            "type": "paragraph"
+        },
+        {
+            "id": "8ec03963-a7b7-5484-bcec-5ee479ab7b3a",
+            "language": "en",
+            "order": 4,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "(a) “That is not my department.” Unhelpful, and it leaves the guest stuck.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 458,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "76c78fc16e7710e5e3a956027a5298819704d402f754bb07c57dd5f53ea339d5"
+            },
+            "text": "(a) “That is not my department.” Unhelpful, and it leaves the guest stuck.",
+            "type": "paragraph"
+        },
+        {
+            "id": "215ecfa7-9b8a-5d71-af42-56db1e3e4f44",
+            "language": "en",
+            "order": 5,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "(b) “I am sorry to hear that. I will put you through to maintenance right away. One moment, please.” This is the ideal answer, empathy followed by action.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 459,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "8a4309a5e34079b3a82cbde863119c6c6942fa08610098fb224c64b404241635"
+            },
+            "text": "(b) “I am sorry to hear that. I will put you through to maintenance right away. One moment, please.” This is the ideal answer, empathy followed by action.",
+            "type": "paragraph"
+        },
+        {
+            "id": "5da3ad33-b193-5839-bd1e-92e713819278",
+            "language": "en",
+            "order": 6,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "(c) “Try turning it off and on.” This pushes the work back onto the guest.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 460,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "40d0aaf7dd2dec94e81b68912119f4904dbd9328f0f7c5ea6a2292050ac64d40"
+            },
+            "text": "(c) “Try turning it off and on.” This pushes the work back onto the guest.",
+            "type": "paragraph"
+        },
+        {
+            "id": "a5441693-1a38-5e82-95d8-16fd818cf69a",
+            "language": "en",
+            "order": 7,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Guest:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " “I would like two coffees and a sandwich, quickly please, I am in a hurry.”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 461,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "e90844e9ebe10096f1c6d5c486c82d7cb73830a7e0ac578a8fc153eec393027b"
+            },
+            "speaker": "Guest",
+            "text": "“I would like two coffees and a sandwich, quickly please, I am in a hurry.”",
+            "type": "dialogue_turn"
+        },
+        {
+            "id": "914f7de6-fac0-594c-8e92-09dee6d4cc00",
+            "language": "en",
+            "order": 8,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Reveal the options and feedback",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 462,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "6dc878d750298bcb4a4f27b0ad5920cbcec919db017ef2f3a46fa28770873d4e"
+            },
+            "text": "Reveal the options and feedback",
+            "type": "paragraph"
+        },
+        {
+            "id": "2b8c2163-d8f5-58f5-ba2c-55a21c07865e",
+            "language": "en",
+            "order": 9,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "(a) “Everyone is in a hurry.” Dismissive and cold.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 463,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "90094e98b40a69eb6180c451ec6682df424e893219d38e6e3f90b86cbc13a0df"
+            },
+            "text": "(a) “Everyone is in a hurry.” Dismissive and cold.",
+            "type": "paragraph"
+        },
+        {
+            "id": "0b5b6306-cd22-5599-8751-0d83ddb25e71",
+            "language": "en",
+            "order": 10,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "(b) “Of course. That is two coffees and one sandwich to your room. May I have your room number? It will be about fifteen minutes.” This is the ideal answer, fast, accurate, and warm.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 464,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "6e577b252452ddf6e3123df38a78ebee3c2c8f8195edf42f91a13cef0e7f4c69"
+            },
+            "text": "(b) “Of course. That is two coffees and one sandwich to your room. May I have your room number? It will be about fifteen minutes.” This is the ideal answer, fast, accurate, and warm.",
+            "type": "paragraph"
+        },
+        {
+            "id": "44b7e53f-c5a9-5204-9bbd-f9c33e70142c",
+            "language": "en",
+            "order": 11,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "(c) “We will see.” Vague and discouraging.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 465,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "8ec7cce7ee228f2c2fdc6eeb1ab1301499cd186f2f44bcfe61848d8f24f86a77"
+            },
+            "text": "(c) “We will see.” Vague and discouraging.",
+            "type": "paragraph"
+        },
+        {
+            "id": "91eb74bf-725d-5075-a55f-17d0f22964e2",
+            "language": "en",
+            "order": 12,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Guest:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " “Actually, can you connect me to the front desk about my bill?”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 466,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "8a5bf847a1d9c7d2f5dd61855af309d509deb9f27f1dc607a825cbbb01fb9714"
+            },
+            "speaker": "Guest",
+            "text": "“Actually, can you connect me to the front desk about my bill?”",
+            "type": "dialogue_turn"
+        },
+        {
+            "id": "83298f20-5c10-5273-a4b8-555b782e2068",
+            "language": "en",
+            "order": 13,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Reveal the options and feedback",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 467,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "6dc878d750298bcb4a4f27b0ad5920cbcec919db017ef2f3a46fa28770873d4e"
+            },
+            "text": "Reveal the options and feedback",
+            "type": "paragraph"
+        },
+        {
+            "id": "726333e8-937d-5f87-b06a-7e1db0520e4e",
+            "language": "en",
+            "order": 14,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "(a) “This is room service, not the front desk.” Technically true, but cold.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 468,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "00558d12eecb8ea04ccae673062053c19d1b4be96c9a8db12a0e22ead782c1f6"
+            },
+            "text": "(a) “This is room service, not the front desk.” Technically true, but cold.",
+            "type": "paragraph"
+        },
+        {
+            "id": "32759117-a641-5ead-b528-80cf3dc41860",
+            "language": "en",
+            "order": 15,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "(b) “Of course, I will connect you to the front desk now. One moment, please.” This is the ideal answer, because it transfers the guest warmly and clearly.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 469,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "60568eb2049a3a8b24261951ef567335f9dfd9c06d63000d1752684549d47a59"
+            },
+            "text": "(b) “Of course, I will connect you to the front desk now. One moment, please.” This is the ideal answer, because it transfers the guest warmly and clearly.",
+            "type": "paragraph"
+        },
+        {
+            "id": "c93bfcdb-e40f-5209-9178-088ef0fdadc1",
+            "language": "en",
+            "order": 16,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "(c) “Call them yourself.” Rude and unhelpful.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 470,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "c3b031d5ea44d0579ef306458a9e5541c137d78af91fa5ef9bd3040565a5b9d6"
+            },
+            "text": "(c) “Call them yourself.” Rude and unhelpful.",
+            "type": "paragraph"
+        },
+        {
+            "id": "79446813-15da-53be-bceb-e014cf351a12",
+            "language": "en",
+            "order": 17,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Free mode (your turn, speak or write your own answer)",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 471,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "6c342355148bccd8a90347b4d0badde4e3d86baba374a58aa359fd82c001d9bb"
+            },
+            "text": "Free mode (your turn, speak or write your own answer)",
+            "type": "heading"
+        },
+        {
+            "id": "62fa974f-db59-5abd-8a12-7568db8cb9e6",
+            "language": "en",
+            "order": 18,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Prompt:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " A guest calls to order breakfast to their room. Answer the hotline, take and confirm the order, and give an estimated time.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 472,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "a4e77dd8bb63641597c964ab0c30ca240d8583ae5ce6af06773b1adeb2e92ee8"
+            },
+            "text": "Prompt: A guest calls to order breakfast to their room. Answer the hotline, take and confirm the order, and give an estimated time.",
+            "type": "instruction"
+        },
+        {
+            "id": "fb7c2752-8b1d-5b83-a2f6-f31c3c1b251e",
+            "language": "en",
+            "order": 19,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "See a model answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 473,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "115cd5fb848ceef36134cf981997fcf0d145aca19ef299453b13791da2b2b176"
+            },
+            "text": "See a model answer",
+            "type": "paragraph"
+        },
+        {
+            "id": "be878143-2b6e-5a22-944a-474874e343a3",
+            "language": "en",
+            "order": 20,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "“Guest services, Grand Serenata Hotel. How may I help you? ... Certainly, may I have your room number? ... May I take your order? ... Let me read that back to you: two breakfast sets and one orange juice, to room 210. That will be about twenty-five minutes. Thank you for calling, and enjoy your morning.”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 474,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "492095c61e868053c09c1218104db2cf01222708df23363b564a0130e95f97c1"
+            },
+            "text": "“Guest services, Grand Serenata Hotel. How may I help you? ... Certainly, may I have your room number? ... May I take your order? ... Let me read that back to you: two breakfast sets and one orange juice, to room 210. That will be about twenty-five minutes. Thank you for calling, and enjoy your morning.”",
+            "type": "paragraph"
+        },
+        {
+            "activity_code": "HSP-C04-ACT-ROLEPLAY",
+            "id": "5009a03c-1439-54a1-b9ac-428c9fa7bb2a",
+            "language": "en",
+            "order": 21,
+            "provenance_kind": "derived_navigation",
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 454,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "2820d9182be9f0c2b25264c9853f2df9c8c0866110449f03bf85a3cd5e08c862"
+            },
+            "type": "activity_embed"
+        }
+    ],
+    "chapter_code": "HSP-C04",
+    "code": "HSP-C04-LS-09",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "1d051d9b-2554-5d10-9eb3-9eead7d782a9",
+    "language": "en",
+    "order": 9,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 454,
+        "chapter": 4,
+        "heading_path": [
+            "The Guest-Services Hotline",
+            "Step 6. Role-play"
+        ],
+        "normalized_text_sha256": "2820d9182be9f0c2b25264c9853f2df9c8c0866110449f03bf85a3cd5e08c862"
+    },
+    "status": "published",
+    "title": "Step 6. Role-play"
+}

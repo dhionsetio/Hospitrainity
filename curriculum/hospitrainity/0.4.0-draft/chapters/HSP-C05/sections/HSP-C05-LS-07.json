@@ -1,0 +1,182 @@
+{
+    "blocks": [
+        {
+            "id": "c3faccaa-4c75-5d4c-886c-9ccc9ec39007",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Open for five common mistakes",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 583,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Common mistakes to avoid"
+                ],
+                "normalized_text_sha256": "a433b254794ec760d8fec78cc3f476ae28f47f15bd12cd32be5e9d650aac6f83"
+            },
+            "text": "Open for five common mistakes",
+            "type": "paragraph"
+        },
+        {
+            "id": "23320a6b-9fa3-52dd-95ca-7ab2b8b640e9",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "No subject line, or a vague one. A clear subject helps the guest find and understand the email.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 584,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Common mistakes to avoid"
+                ],
+                "normalized_text_sha256": "3485a2185d39e3a30112edb630a700cef36659547e28a209b3cd24a5cb630a5e"
+            },
+            "text": "No subject line, or a vague one. A clear subject helps the guest find and understand the email.",
+            "type": "list_item"
+        },
+        {
+            "id": "f0d212d3-6a56-5e32-a61a-7dcac0c8407a",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Starting with no greeting. Always open with “Dear” and the guest’s name.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 585,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Common mistakes to avoid"
+                ],
+                "normalized_text_sha256": "0979306801bcc7f3f9a2f59718c7bb98f3419a29eb5dbab809599b0bd8a0f473"
+            },
+            "text": "Starting with no greeting. Always open with “Dear” and the guest’s name.",
+            "type": "list_item"
+        },
+        {
+            "id": "7b7ba46f-27e6-5645-956b-671591746b3a",
+            "language": "en",
+            "order": 4,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Writing one long block of text. Break the information into short lines or a small list.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 586,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Common mistakes to avoid"
+                ],
+                "normalized_text_sha256": "22de0548478fd63b86c02178bd5da67022af772a6648c1774dbca3953219d137"
+            },
+            "text": "Writing one long block of text. Break the information into short lines or a small list.",
+            "type": "list_item"
+        },
+        {
+            "id": "5a1f87c3-4fc3-56f0-ba5e-597f32abdf29",
+            "language": "en",
+            "order": 5,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Being too casual with a guest. “Hey” and “u” do not belong in a hotel reply.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 587,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Common mistakes to avoid"
+                ],
+                "normalized_text_sha256": "aaf6207a2fb95f4a487cb4a96bfd4f2749def2c2adf6ea3298178bb4f5e38544"
+            },
+            "text": "Being too casual with a guest. “Hey” and “u” do not belong in a hotel reply.",
+            "type": "list_item"
+        },
+        {
+            "id": "f60f1520-735b-5621-be0a-fc7cbf56be2e",
+            "language": "en",
+            "order": 6,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Ending abruptly with no sign-off. Close warmly and sign your name.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 588,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Common mistakes to avoid"
+                ],
+                "normalized_text_sha256": "4c4648b82ec3cf483565d3a270743c575887100c984bae780a73c594ad8c7e35"
+            },
+            "text": "Ending abruptly with no sign-off. Close warmly and sign your name.",
+            "type": "list_item"
+        }
+    ],
+    "chapter_code": "HSP-C05",
+    "code": "HSP-C05-LS-07",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "847add7e-d29f-5966-8cda-8af5faf244f8",
+    "language": "en",
+    "order": 7,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 582,
+        "chapter": 5,
+        "heading_path": [
+            "Customer Care Through Writing",
+            "Common mistakes to avoid"
+        ],
+        "normalized_text_sha256": "09280c77c069d2c19c40ad919cf2f1fa07a028a886d911cc8f9318f19c0a51e0"
+    },
+    "status": "published",
+    "title": "Common mistakes to avoid"
+}

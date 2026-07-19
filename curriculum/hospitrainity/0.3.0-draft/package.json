@@ -1,0 +1,12 @@
+{
+  "checksums": {
+    "framework/cefr-references.json": "afec485cb93d84214103e5acc571710d328c38ca236fee999c08b729b6153950",
+    "framework/competencies.json": "9f26e0ab3010a263f538d0fc92fd48b9e9ebc4b7314e59fd3fdd60710aa8b7a7",
+    "framework/outcome-alignments.json": "39cd64a3d76918490da3fbc3f5a4756e716a84949cb9fd433c7f79a35cf250dd"
+  },
+  "content_version": "0.3.0-draft",
+  "namespace": "cc9dd546-ebaf-51c7-b86f-307d16a22f42",
+  "package": "hospitrainity",
+  "schema_version": "1.0.0",
+  "status": "draft"
+}

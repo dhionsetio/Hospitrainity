@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C04-ACT-QUIZ",
+  "code": "HSP-C04-QZ-Q2",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "65f5a8aa-9834-54a5-9de0-aa4f6a631ff2",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 470,
+    "chapter": 4,
+    "heading_path": [
+      "The Guest-Services Hotline",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "e3fbde541741c6375fdb9ce2bf7c9df0367267fb17ee874f4fff5b50577ba0f3"
+  },
+  "status": "published",
+  "stem": "Q2. Why should you read an order back? A) to fill time B) to catch mistakes before the order is prepared C) it is optional and pointless"
+}

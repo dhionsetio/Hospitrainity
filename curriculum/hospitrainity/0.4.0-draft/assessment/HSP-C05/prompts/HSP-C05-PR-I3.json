@@ -1,0 +1,43 @@
+{
+    "activity_code": "HSP-C05-ACT-PRACTICE",
+    "code": "HSP-C05-PR-I3",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "524aac52-346b-58d3-91d5-4dc979dac3cc",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "ordering",
+    "scoring_mode": "objective_ordered",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 598,
+        "chapter": 5,
+        "heading_path": [
+            "Customer Care Through Writing",
+            "Step 5. Practice"
+        ],
+        "normalized_text_sha256": "9851fd3d98714c7e3b45322cfa6531165c66b979594e37582abb1112eb800875"
+    },
+    "status": "published",
+    "stem": "3. Put the email parts in order: sign-off, greeting, body with the information, opening thank-you.",
+    "tokens": [
+        {
+            "id": "3a17fbbf-e793-5d4d-8829-7bf9bb4803f8",
+            "text": "sign-off"
+        },
+        {
+            "id": "78c24017-a193-5bf8-9d5d-cfb668bb20fe",
+            "text": "greeting"
+        },
+        {
+            "id": "2dd55f09-9c19-5a2c-a925-e9373407fcd3",
+            "text": "body with the information"
+        },
+        {
+            "id": "f8ec93fc-03e2-5467-997b-5d96b08a16fb",
+            "text": "opening thank-you"
+        }
+    ]
+}

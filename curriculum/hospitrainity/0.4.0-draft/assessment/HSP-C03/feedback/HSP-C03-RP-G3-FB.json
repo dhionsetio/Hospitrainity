@@ -1,0 +1,35 @@
+{
+    "code": "HSP-C03-RP-G3-FB",
+    "content_version": "0.4.0-draft",
+    "entity_type": "feedback-model",
+    "id": "4c9b65a3-081c-54f1-a6f7-cd05e64e74a5",
+    "messages": [
+        {
+            "feedback_type": "error_specific",
+            "text": "(a) “Wrong number.” Cold and unhelpful."
+        },
+        {
+            "feedback_type": "success",
+            "text": "(b) “Of course, I will put you through to our restaurant now. One moment, please.” This is the ideal answer, because it transfers the caller warmly and clearly."
+        },
+        {
+            "feedback_type": "error_specific",
+            "text": "(c) “I cannot help with that.” This leaves the caller with nowhere to go."
+        }
+    ],
+    "prompt_code": "HSP-C03-RP-G3",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 321,
+        "chapter": 3,
+        "heading_path": [
+            "Dealing with Customers on the Phone",
+            "Step 6. Role-play"
+        ],
+        "normalized_text_sha256": "cfb177d50fd158ad6eb42981677943e7e6c6a9f1cb0411950951808871c6021b"
+    },
+    "status": "published"
+}

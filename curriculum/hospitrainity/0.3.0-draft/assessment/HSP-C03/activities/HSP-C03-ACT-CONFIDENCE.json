@@ -1,0 +1,39 @@
+{
+  "accessibility": [
+    "text_alt",
+    "keyboard_path",
+    "non_color_cue",
+    "no_timing_dependency"
+  ],
+  "cefr_activity": "interaction",
+  "channel": "telecommunications",
+  "code": "HSP-C03-ACT-CONFIDENCE",
+  "content_version": "0.3.0-draft",
+  "entity_type": "activity",
+  "id": "297b21cd-75a9-5136-a9e1-a8a59f6ab895",
+  "lesson_code": "HSP-C03-LS-11",
+  "outcome_codes": [
+    "OUT-M03-01",
+    "OUT-M03-02",
+    "OUT-M03-03"
+  ],
+  "participation": "individual",
+  "pedagogical_function": "reflection",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "self_rating",
+  "scoring_mode": "self_report",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 348,
+    "chapter": 3,
+    "heading_path": [
+      "Dealing with Customers on the Phone",
+      "Step 8. Confidence check"
+    ],
+    "normalized_text_sha256": "de3541b7e7f4f5aff977a439df59ffbf2a304ff6fc9152f1e6f7a6991667643c"
+  },
+  "status": "published",
+  "timing": "asynchronous",
+  "title": "Step 8. Confidence check"
+}

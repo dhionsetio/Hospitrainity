@@ -1,0 +1,50 @@
+{
+    "activity_code": "HSP-C04-ACT-QUIZ",
+    "choices": [
+        {
+            "feedback": [],
+            "id": "1eb12207-a656-5e9e-8a33-48424427b4bd",
+            "label": "a",
+            "text": "to fill time"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "model_reveal",
+                    "text": "B. Reading back is your safety net against wrong or missing items."
+                }
+            ],
+            "id": "5e2f29a9-6002-5138-b655-80f5a0c9f8ba",
+            "label": "b",
+            "text": "to catch mistakes before the order is prepared"
+        },
+        {
+            "feedback": [],
+            "id": "95665cfe-bfc3-55b3-abdf-2e51ae15f3b5",
+            "label": "c",
+            "text": "it is optional and pointless"
+        }
+    ],
+    "code": "HSP-C04-QZ-Q2",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "65f5a8aa-9834-54a5-9de0-aa4f6a631ff2",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 480,
+        "chapter": 4,
+        "heading_path": [
+            "The Guest-Services Hotline",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "e3fbde541741c6375fdb9ce2bf7c9df0367267fb17ee874f4fff5b50577ba0f3"
+    },
+    "status": "published",
+    "stem": "Q2. Why should you read an order back? A) to fill time B) to catch mistakes before the order is prepared C) it is optional and pointless"
+}

@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C07",
+  "code": "HSP-C07-LS-10",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "6a3b932d-20d4-596b-b111-f0f860b32bbb",
+  "order": 10,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 899,
+    "chapter": 7,
+    "heading_path": [
+      "Dealing with Problems and Complaints",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "179071a0ef712d9b477052843678ed72ca3acc03eb3193f30bf07b51cb197e52"
+  },
+  "status": "published",
+  "title": "Step 7. Quiz"
+}

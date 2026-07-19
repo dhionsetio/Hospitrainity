@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C07",
+  "code": "HSP-C07-LS-08",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "cfbb45e2-3bcf-5152-bba4-3387b65a08f0",
+  "order": 8,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 862,
+    "chapter": 7,
+    "heading_path": [
+      "Dealing with Problems and Complaints",
+      "Step 5. Practice"
+    ],
+    "normalized_text_sha256": "7c03be688d06b06ebcb074cf79ad7acb95f16ba0fda500990f671472e2e195d3"
+  },
+  "status": "published",
+  "title": "Step 5. Practice"
+}

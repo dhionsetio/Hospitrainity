@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C02",
+  "code": "HSP-C02-LS-01",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "bd7d10fa-9c23-5598-b81b-5c8fc305df86",
+  "order": 1,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 75,
+    "chapter": 2,
+    "heading_path": [
+      "Front Desk and Check-In",
+      "Warm-Up"
+    ],
+    "normalized_text_sha256": "a45d6d06c1dda0d4c0117bc8ff3f706832130f30a0e65a918bd4c08d6642679c"
+  },
+  "status": "published",
+  "title": "Warm-Up"
+}

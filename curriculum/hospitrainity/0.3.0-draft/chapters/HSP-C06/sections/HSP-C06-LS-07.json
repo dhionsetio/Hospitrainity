@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C06",
+  "code": "HSP-C06-LS-07",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "81e7a240-501b-506f-b814-6d536d9626ff",
+  "order": 7,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 709,
+    "chapter": 6,
+    "heading_path": [
+      "Online and Social Media Customer Service",
+      "Common mistakes to avoid"
+    ],
+    "normalized_text_sha256": "d61f5616fa77e7bae552bec9f1cb5caa473c87bb4a06879f9c255a8dfe9bef89"
+  },
+  "status": "published",
+  "title": "Common mistakes to avoid"
+}

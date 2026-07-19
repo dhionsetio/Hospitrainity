@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C06-ACT-QUIZ",
+  "code": "HSP-C06-QZ-Q7",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "3f2052a5-96f5-5a2b-a225-40bb9795b8c0",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 773,
+    "chapter": 6,
+    "heading_path": [
+      "Online and Social Media Customer Service",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "f8ca9584a6b3663aa0108176249c38d640ab5e4433171c257d1c4cfa35719f3b"
+  },
+  "status": "published",
+  "stem": "Q7. A guest shares a booking number in a public comment. You should ... A) reply publicly with their details B) invite them to DM so their details stay private C) ignore it"
+}

@@ -1,0 +1,270 @@
+{
+    "blocks": [
+        {
+            "id": "e6f5cf83-17c0-5450-8e10-47f3969593bf",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "You look after the Grand Serenata Hotel’s live chat, WhatsApp, and social media messages.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 683,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 1. The scenario"
+                ],
+                "normalized_text_sha256": "17d99f0e3b4cb57a0616f350882fd710cd6fe8ba97aa7ab0c543188251c9ec8a"
+            },
+            "text": "You look after the Grand Serenata Hotel’s live chat, WhatsApp, and social media messages.",
+            "type": "heading"
+        },
+        {
+            "id": "dce4cb04-7bf7-512f-a16b-5448fb7d0c67",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Guests expect replies that are fast, friendly, and short. You answer questions, handle small concerns, and know when to move a chat to a private channel or pass it to the front desk. The golden rule is to stay warm and professional even in public comments, because everyone can see them. Your job flows in a natural order:",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 684,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 1. The scenario"
+                ],
+                "normalized_text_sha256": "0f04d6192babbcbffda486ad9452cec97b8bdf93ea9509e6845a36f5c9fa4af1"
+            },
+            "text": "Guests expect replies that are fast, friendly, and short. You answer questions, handle small concerns, and know when to move a chat to a private channel or pass it to the front desk. The golden rule is to stay warm and professional even in public comments, because everyone can see them. Your job flows in a natural order:",
+            "type": "paragraph"
+        },
+        {
+            "id": "91cc12ac-99f2-5165-a7e6-66da9f2a9243",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Greet",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " quickly and warmly.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 685,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 1. The scenario"
+                ],
+                "normalized_text_sha256": "6b6fe6828ea4e4aa1ec8fd1d781017389a13303a95b5cf971aad13fda28b27ec"
+            },
+            "text": "Greet quickly and warmly.",
+            "type": "list_item"
+        },
+        {
+            "id": "2517aac2-7fb9-5998-aeb2-a4865c9f0c70",
+            "language": "en",
+            "order": 4,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Answer",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " clearly and briefly.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 686,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 1. The scenario"
+                ],
+                "normalized_text_sha256": "300ab5f221b5fc2701b7de8e50c21057bb391bd5c30bdecc7bcb0a5c233febf2"
+            },
+            "text": "Answer clearly and briefly.",
+            "type": "list_item"
+        },
+        {
+            "id": "e6764b0e-605f-5352-93d5-a13bfbb3f7cf",
+            "language": "en",
+            "order": 5,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Move to private",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " if the message involves personal or booking details.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 687,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 1. The scenario"
+                ],
+                "normalized_text_sha256": "84b0c380b5b49b54bec4db1b6bc9639e93b1ec115d84c47dec0c02c5aa394002"
+            },
+            "text": "Move to private if the message involves personal or booking details.",
+            "type": "list_item"
+        },
+        {
+            "id": "2b5d693c-9850-5e21-9cb6-71b5cc2d7c54",
+            "language": "en",
+            "order": 6,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Hand it to the front desk",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " for anything complex.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 688,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 1. The scenario"
+                ],
+                "normalized_text_sha256": "7b28bc12574dc8d0ae42d1456cdeeb6fb9b4ccca5f64c2f4dac223f938714e68"
+            },
+            "text": "Hand it to the front desk for anything complex.",
+            "type": "list_item"
+        },
+        {
+            "id": "de13a8b7-4761-5137-a1d4-e7752d015397",
+            "language": "en",
+            "order": 7,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Close",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " kindly.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 689,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 1. The scenario"
+                ],
+                "normalized_text_sha256": "6cf8a3e59010931fb69e40c8c15c38f56d542b0098642fffd7e33172456bbe49"
+            },
+            "text": "Close kindly.",
+            "type": "list_item"
+        },
+        {
+            "id": "18a141df-bc11-5503-9c8d-d683dd15d279",
+            "language": "en",
+            "order": 8,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Where an automated chatbot fits in.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " A chatbot can answer common questions instantly, day and night, such as the check-in time, the Wi-Fi password, and breakfast hours. That frees you to spend your time on the messages that really need a human touch. It sits naturally alongside a human team, handling the routine so people can handle the rest.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 690,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 1. The scenario"
+                ],
+                "normalized_text_sha256": "e2b618ed19b5e0d68d0a6e5aa5c59e1647629b21a5ff2ea384ed1f8d78b5bde6"
+            },
+            "text": "Where an automated chatbot fits in. A chatbot can answer common questions instantly, day and night, such as the check-in time, the Wi-Fi password, and breakfast hours. That frees you to spend your time on the messages that really need a human touch. It sits naturally alongside a human team, handling the routine so people can handle the rest.",
+            "type": "paragraph"
+        }
+    ],
+    "chapter_code": "HSP-C06",
+    "code": "HSP-C06-LS-03",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "acec0a4c-acca-5e6d-8381-ec8d4f461f30",
+    "language": "en",
+    "order": 3,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 682,
+        "chapter": 6,
+        "heading_path": [
+            "Online and Social Media Customer Service",
+            "Step 1. The scenario"
+        ],
+        "normalized_text_sha256": "fe02f71c74a8a1d450fbab7f3052d29fd5a7c6cce679fd0160234ed9cf9bdf53"
+    },
+    "status": "published",
+    "title": "Step 1. The scenario"
+}

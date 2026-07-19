@@ -1,0 +1,163 @@
+{
+    "blocks": [
+        {
+            "id": "d1e78bb6-c98e-5339-bc65-6c5130a5cf38",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Read each example out loud once. Saying it is the quickest way to remember it.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 838,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 2. Key vocabulary"
+                ],
+                "normalized_text_sha256": "76c076b1536696db6aa24f33d35148977e5cdfeb40d8235284f37957bc7e5f78"
+            },
+            "text": "Read each example out loud once. Saying it is the quickest way to remember it.",
+            "type": "instruction"
+        },
+        {
+            "caption": "Step 2. Key vocabulary: Word or phrase / What it means / How you might say it",
+            "header": [
+                "Word or phrase",
+                "What it means",
+                "How you might say it"
+            ],
+            "id": "a31720c1-67ff-5d55-911e-d9285011b908",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "rows": [
+                [
+                    "complaint",
+                    "an expression of dissatisfaction",
+                    "“I would like to make a complaint.”"
+                ],
+                [
+                    "to apologise",
+                    "to say sorry sincerely",
+                    "“I sincerely apologise for this.”"
+                ],
+                [
+                    "inconvenience",
+                    "trouble or difficulty caused",
+                    "“I am sorry for the inconvenience.”"
+                ],
+                [
+                    "to take ownership",
+                    "to accept responsibility yourself",
+                    "“Let me take care of this for you.”"
+                ],
+                [
+                    "to resolve",
+                    "to fix a problem",
+                    "“We will resolve this right away.”"
+                ],
+                [
+                    "refund",
+                    "money returned to the guest",
+                    "“We will arrange a full refund.”"
+                ],
+                [
+                    "goodwill gesture",
+                    "a kind extra to make up for a problem",
+                    "“As a goodwill gesture, breakfast is on us.”"
+                ],
+                [
+                    "to reassure",
+                    "to help someone feel confident again",
+                    "“Let me reassure you that this is now fixed.”"
+                ],
+                [
+                    "service recovery",
+                    "turning an unhappy guest back into a happy one",
+                    "“Good service recovery builds loyalty.”"
+                ],
+                [
+                    "to follow up",
+                    "to check back a little later",
+                    "“I will follow up with you this evening.”"
+                ],
+                [
+                    "to escalate",
+                    "to bring in a manager for help",
+                    "“I will escalate this to my manager.”"
+                ],
+                [
+                    "empathy",
+                    "showing you understand how they feel",
+                    "“That sounds really frustrating.”"
+                ]
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 839,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 2. Key vocabulary"
+                ],
+                "normalized_text_sha256": "ffad8e15f7af7c6befcfece5b28a870211f2ae5e78f656210fdf765dc557447a"
+            },
+            "type": "source_table"
+        },
+        {
+            "id": "e8642834-4940-59b4-81d4-c2766ea325ca",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "The most powerful words in this whole chapter are simple ones: “I understand,” “I am sorry,” and “let me fix this.” Said with genuine care, they calm almost any situation.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 840,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 2. Key vocabulary"
+                ],
+                "normalized_text_sha256": "a991d74b20b589aef46bfab554a5394877152d1741358206164c11705ffbc6df"
+            },
+            "text": "The most powerful words in this whole chapter are simple ones: “I understand,” “I am sorry,” and “let me fix this.” Said with genuine care, they calm almost any situation.",
+            "type": "paragraph"
+        }
+    ],
+    "chapter_code": "HSP-C07",
+    "code": "HSP-C07-LS-04",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "f1c158bc-3d92-598c-b4fd-189243af0be7",
+    "language": "en",
+    "order": 4,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 837,
+        "chapter": 7,
+        "heading_path": [
+            "Dealing with Problems and Complaints",
+            "Step 2. Key vocabulary"
+        ],
+        "normalized_text_sha256": "f46a1e0aec2c4e29b3ec8df91525031a99db987a4745d07d5a09266bade29874"
+    },
+    "status": "published",
+    "title": "Step 2. Key vocabulary"
+}

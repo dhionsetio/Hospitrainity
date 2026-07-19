@@ -1,0 +1,27 @@
+{
+    "code": "HSP-C05-QZ-Q1-FB",
+    "content_version": "0.4.0-draft",
+    "entity_type": "feedback-model",
+    "id": "feaaaa2e-64d4-5ae8-b943-86536f8e652e",
+    "messages": [
+        {
+            "feedback_type": "model_reveal",
+            "text": "B. “Dear” with a title and surname is the formal standard."
+        }
+    ],
+    "prompt_code": "HSP-C05-QZ-Q1",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 630,
+        "chapter": 5,
+        "heading_path": [
+            "Customer Care Through Writing",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "c4cebb71dc58598f8883a71f63459365b074c683162e33f78bd6aa3143b29e22"
+    },
+    "status": "published"
+}

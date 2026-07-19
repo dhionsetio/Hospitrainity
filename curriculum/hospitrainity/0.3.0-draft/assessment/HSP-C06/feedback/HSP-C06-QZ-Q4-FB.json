@@ -1,0 +1,26 @@
+{
+  "code": "HSP-C06-QZ-Q4-FB",
+  "content_version": "0.3.0-draft",
+  "entity_type": "feedback-model",
+  "id": "a06d9bfd-7ab1-5480-a23e-336e2de1b258",
+  "messages": [
+    {
+      "feedback_type": "model_reveal",
+      "text": "B. Complex issues go to the right team."
+    }
+  ],
+  "prompt_code": "HSP-C06-QZ-Q4",
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 766,
+    "chapter": 6,
+    "heading_path": [
+      "Online and Social Media Customer Service",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "242531905be5962132ce7e0844050b202c3850eadd0dc548fd0a99e0ba631c71"
+  },
+  "status": "published"
+}

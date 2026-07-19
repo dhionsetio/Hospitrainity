@@ -1,0 +1,27 @@
+{
+    "code": "HSP-C04-QZ-Q3-FB",
+    "content_version": "0.4.0-draft",
+    "entity_type": "feedback-model",
+    "id": "8453c013-ffb5-59cc-af0d-cf15eed6a981",
+    "messages": [
+        {
+            "feedback_type": "model_reveal",
+            "text": "B. Explain, then connect them, so they always feel looked after."
+        }
+    ],
+    "prompt_code": "HSP-C04-QZ-Q3",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 485,
+        "chapter": 4,
+        "heading_path": [
+            "The Guest-Services Hotline",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "268605f52a0f928360494ee07b73e3fae96faf6aff244640d2678bc5ea1f4229"
+    },
+    "status": "published"
+}

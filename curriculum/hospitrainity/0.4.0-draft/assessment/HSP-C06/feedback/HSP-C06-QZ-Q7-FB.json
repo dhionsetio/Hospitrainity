@@ -1,0 +1,27 @@
+{
+    "code": "HSP-C06-QZ-Q7-FB",
+    "content_version": "0.4.0-draft",
+    "entity_type": "feedback-model",
+    "id": "5c51fe91-7210-5c10-9e16-e6f847f9d395",
+    "messages": [
+        {
+            "feedback_type": "model_reveal",
+            "text": "B. Keep personal details out of public view."
+        }
+    ],
+    "prompt_code": "HSP-C06-QZ-Q7",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 791,
+        "chapter": 6,
+        "heading_path": [
+            "Online and Social Media Customer Service",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "38b41bb03b14e63332929413f974bfa810fb633d27fc05f4b068ad3ae1a7d050"
+    },
+    "status": "published"
+}

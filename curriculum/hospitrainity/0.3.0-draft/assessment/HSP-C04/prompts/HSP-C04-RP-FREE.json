@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C04-ACT-ROLEPLAY",
+  "code": "HSP-C04-RP-FREE",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "790df4a2-244f-5b2b-9807-e993134bbc3b",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "role_play",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 462,
+    "chapter": 4,
+    "heading_path": [
+      "The Guest-Services Hotline",
+      "Step 6. Role-play"
+    ],
+    "normalized_text_sha256": "a4e77dd8bb63641597c964ab0c30ca240d8583ae5ce6af06773b1adeb2e92ee8"
+  },
+  "status": "published",
+  "stem": "Prompt: A guest calls to order breakfast to their room. Answer the hotline, take and confirm the order, and give an estimated time."
+}

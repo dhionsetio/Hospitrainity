@@ -1,0 +1,26 @@
+{
+  "code": "HSP-C05-CC-SELF-FB",
+  "content_version": "0.3.0-draft",
+  "entity_type": "feedback-model",
+  "id": "e95ecbaa-0f6b-5caf-85ac-f1f2d977ef96",
+  "messages": [
+    {
+      "feedback_type": "next_step",
+      "text": "Rate yourself honestly, from 1 (not confident yet) to 5 (very confident). This is just for you, and it is a good way to see your progress."
+    }
+  ],
+  "prompt_code": "HSP-C05-CC-SELF",
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 640,
+    "chapter": 5,
+    "heading_path": [
+      "Customer Care Through Writing",
+      "Step 8. Confidence check"
+    ],
+    "normalized_text_sha256": "8ae726d271eb7a0bf90a65a1207e47b0e727c521ff95159d8c7f245ec46d05b7"
+  },
+  "status": "published"
+}

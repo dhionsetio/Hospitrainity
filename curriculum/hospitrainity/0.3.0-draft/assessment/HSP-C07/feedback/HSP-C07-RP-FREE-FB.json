@@ -1,0 +1,26 @@
+{
+  "code": "HSP-C07-RP-FREE-FB",
+  "content_version": "0.3.0-draft",
+  "entity_type": "feedback-model",
+  "id": "184f92eb-4ba3-5feb-bfc5-ee74c6ebb2ca",
+  "messages": [
+    {
+      "feedback_type": "model_reveal",
+      "text": "“I am very sorry to hear that, and I understand how frustrating it is to lose the Wi-Fi all day. This is the Listen and Apologise part. Let me send our technician to your room right away, and I will switch you to our backup network in the meantime. This is the Act part. As an apology, I would like to offer you a late check-out, and I will check back within the hour to make sure it is working. This is the Follow up part.”"
+    }
+  ],
+  "prompt_code": "HSP-C07-RP-FREE",
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 897,
+    "chapter": 7,
+    "heading_path": [
+      "Dealing with Problems and Complaints",
+      "Step 6. Role-play"
+    ],
+    "normalized_text_sha256": "c9e0d82d410a4ca305021672bb23e289ed53eb9a707e3f6b0e91ea0d5586e7bc"
+  },
+  "status": "published"
+}

@@ -1,0 +1,44 @@
+{
+    "activity_code": "HSP-C03-ACT-PRACTICE",
+    "choices": [
+        {
+            "feedback": [],
+            "id": "22071442-6557-5b4d-a103-b5bc291dc854",
+            "label": "a",
+            "text": "“Hello?”"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "model_reveal",
+                    "text": "(b). It names the hotel and you, then offers help. A clear opener sets a professional tone from the first second."
+                }
+            ],
+            "id": "2f2d7f15-d1da-58ba-a047-0a09689acfde",
+            "label": "b",
+            "text": "“Good morning, the Grand Serenata Hotel, Maya speaking. How may I help you?”"
+        }
+    ],
+    "code": "HSP-C03-PR-I2",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "663951b6-5742-5189-8baf-94c0cf8338e8",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 297,
+        "chapter": 3,
+        "heading_path": [
+            "Dealing with Customers on the Phone",
+            "Step 5. Practice"
+        ],
+        "normalized_text_sha256": "7382cee31cdd9e22fce540603d3a7b1d30b062c060634f7c777594a87722af05"
+    },
+    "status": "published",
+    "stem": "2. Choose the best phone opener: (a) “Hello?” or (b) “Good morning, the Grand Serenata Hotel, Maya speaking. How may I help you?”"
+}

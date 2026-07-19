@@ -1,0 +1,1010 @@
+{
+    "schema_version": "1.0.0",
+    "roadmap": {
+        "path": "docs/HOSPITRAINITY_NEXT_GENERATION_AUDIT_AND_UPDATE_ROADMAP.md",
+        "sha256": "465099eb07881dc5f32ee6b3f06fc7d0e080971313a1eab2b290316bc7e5c5a9"
+    },
+    "findings": [
+        {
+            "id": "NG-P0-001",
+            "batches": [
+                "B01",
+                "B03",
+                "B17"
+            ],
+            "requirement": "Robust security; safe production operation",
+            "decisions": [
+                "NG-B01-DECISIONS"
+            ],
+            "required_evidence": "Production seed fails before writes; no runtime literal credential; approved bootstrap/recovery runbook and tests",
+            "status": "open",
+            "evidence": {
+                "code": [],
+                "migrations": [],
+                "automated_tests": [],
+                "browser_device_checks": [],
+                "human_legal_reviews": [],
+                "production_evidence": [],
+                "checkpoints": []
+            }
+        },
+        {
+            "id": "NG-P0-002",
+            "batches": [
+                "B01",
+                "B06"
+            ],
+            "requirement": "Institution integrity; role/scope safety",
+            "decisions": [
+                "NG-B01-DECISIONS",
+                "NG-B06-DECISIONS"
+            ],
+            "required_evidence": "Non-enumerating registration; approved invitation/enrollment proof; migration mapping; cross-institution tests",
+            "status": "open",
+            "evidence": {
+                "code": [],
+                "migrations": [],
+                "automated_tests": [],
+                "browser_device_checks": [],
+                "human_legal_reviews": [],
+                "production_evidence": [],
+                "checkpoints": []
+            }
+        },
+        {
+            "id": "NG-P0-003",
+            "batches": [
+                "B01",
+                "B17"
+            ],
+            "requirement": "Thesis/source fidelity and truthful release",
+            "decisions": [
+                "NG-B01-DECISIONS",
+                "Applicable CF approval records"
+            ],
+            "required_evidence": "Human approval set; immutable non-draft active release; activation/rollback evidence",
+            "status": "open",
+            "evidence": {
+                "code": [],
+                "migrations": [],
+                "automated_tests": [],
+                "browser_device_checks": [],
+                "human_legal_reviews": [],
+                "production_evidence": [],
+                "checkpoints": []
+            }
+        },
+        {
+            "id": "NG-P0-004",
+            "batches": [
+                "B02"
+            ],
+            "requirement": "Question 18; public trust/privacy",
+            "decisions": [
+                "NG-B02-DECISIONS",
+                "Qualified legal approval"
+            ],
+            "required_evidence": "Field-retention matrix; rights request/export/delete/hold tests; pseudonymized retained audit; legal sign-off",
+            "status": "open",
+            "evidence": {
+                "code": [],
+                "migrations": [],
+                "automated_tests": [],
+                "browser_device_checks": [],
+                "human_legal_reviews": [],
+                "production_evidence": [],
+                "checkpoints": []
+            }
+        },
+        {
+            "id": "NG-P0-005",
+            "batches": [
+                "B00"
+            ],
+            "requirement": "Bad-code/change safety; AI-executable history",
+            "decisions": [
+                "docs/decisions/NG-B00-DECISIONS.md"
+            ],
+            "required_evidence": "Usable HEAD/authoritative history; clean checkout; baseline hash; secret/private-artifact exclusion; reviewable checkpoint diff",
+            "status": "in_progress",
+            "evidence": {
+                "code": [
+                    ".gitignore",
+                    "config/security/secret-scan-allowlist.json",
+                    "scripts/security/scan-tracked-secrets.mjs",
+                    "scripts/operations/inventory-sqlite.php"
+                ],
+                "migrations": [
+                    "None; B00 is behavior- and data-neutral."
+                ],
+                "automated_tests": [
+                    "tests/Node/secret-scan.test.mjs",
+                    "npm run governance:verify",
+                    "Clean-checkout and full gates pending the B00 checkpoint."
+                ],
+                "browser_device_checks": [],
+                "human_legal_reviews": [
+                    "Owner questionnaire accepted 2026-07-19."
+                ],
+                "production_evidence": [
+                    "GitHub Free private-repository enforcement limitation recorded; remote publication and signing key remain gated."
+                ],
+                "checkpoints": [
+                    "docs/checkpoints/NG-B00-CHECKPOINT.md (pending final evidence)"
+                ]
+            }
+        },
+        {
+            "id": "NG-P1-006",
+            "batches": [
+                "B09",
+                "B10"
+            ],
+            "requirement": "Question 13",
+            "decisions": [
+                "NG-B09-DECISIONS",
+                "NG-B10-DECISIONS"
+            ],
+            "required_evidence": "Preview/started/submitted taxonomy; deterministic historical mapping; counts and role views tested",
+            "status": "open",
+            "evidence": {
+                "code": [],
+                "migrations": [],
+                "automated_tests": [],
+                "browser_device_checks": [],
+                "human_legal_reviews": [],
+                "production_evidence": [],
+                "checkpoints": []
+            }
+        },
+        {
+            "id": "NG-P1-007",
+            "batches": [
+                "B09",
+                "B10"
+            ],
+            "requirement": "Questions 1, 12, and 13",
+            "decisions": [
+                "NG-B09-DECISIONS",
+                "NG-B10-DECISIONS"
+            ],
+            "required_evidence": "Participation/completion/pass/mastery definitions and versioned calculations; incorrect participation never shown as mastery",
+            "status": "open",
+            "evidence": {
+                "code": [],
+                "migrations": [],
+                "automated_tests": [],
+                "browser_device_checks": [],
+                "human_legal_reviews": [],
+                "production_evidence": [],
+                "checkpoints": []
+            }
+        },
+        {
+            "id": "NG-P1-008",
+            "batches": [
+                "B08",
+                "B09"
+            ],
+            "requirement": "Questions 11–12; thesis/source fidelity",
+            "decisions": [
+                "NG-B08-DECISIONS",
+                "NG-B09-DECISIONS",
+                "Qualified content review"
+            ],
+            "required_evidence": "Activity/reveal classification; protected-answer tests; exact-source coverage and reviewer approval",
+            "status": "open",
+            "evidence": {
+                "code": [],
+                "migrations": [],
+                "automated_tests": [],
+                "browser_device_checks": [],
+                "human_legal_reviews": [],
+                "production_evidence": [],
+                "checkpoints": []
+            }
+        },
+        {
+            "id": "NG-P1-009",
+            "batches": [
+                "B06"
+            ],
+            "requirement": "Questions 11 and 13–16",
+            "decisions": [
+                "NG-B06-DECISIONS"
+            ],
+            "required_evidence": "Normalized scoped domains; enrollment/teaching policy matrix; cross-class/direct-ID/history tests",
+            "status": "open",
+            "evidence": {
+                "code": [],
+                "migrations": [],
+                "automated_tests": [],
+                "browser_device_checks": [],
+                "human_legal_reviews": [],
+                "production_evidence": [],
+                "checkpoints": []
+            }
+        },
+        {
+            "id": "NG-P1-010",
+            "batches": [
+                "B07"
+            ],
+            "requirement": "Questions 14 and 16",
+            "decisions": [
+                "NG-B07-DECISIONS"
+            ],
+            "required_evidence": "Versioned assignment/rule states; directed-task journey; prerequisite/timezone/exception/concurrency tests",
+            "status": "open",
+            "evidence": {
+                "code": [],
+                "migrations": [],
+                "automated_tests": [],
+                "browser_device_checks": [],
+                "human_legal_reviews": [],
+                "production_evidence": [],
+                "checkpoints": []
+            }
+        },
+        {
+            "id": "NG-P1-011",
+            "batches": [
+                "B09"
+            ],
+            "requirement": "Question 12",
+            "decisions": [
+                "NG-B09-DECISIONS"
+            ],
+            "required_evidence": "Approved versioned grading semantics; deterministic calculation; manual/open queue; override/release/audit tests",
+            "status": "open",
+            "evidence": {
+                "code": [],
+                "migrations": [],
+                "automated_tests": [],
+                "browser_device_checks": [],
+                "human_legal_reviews": [],
+                "production_evidence": [],
+                "checkpoints": []
+            }
+        },
+        {
+            "id": "NG-P1-012",
+            "batches": [
+                "B10"
+            ],
+            "requirement": "Question 13",
+            "decisions": [
+                "NG-B10-DECISIONS"
+            ],
+            "required_evidence": "Metric dictionary; purpose/scoped policy; learner/lecturer parity; actionable status and truthful denominator tests",
+            "status": "open",
+            "evidence": {
+                "code": [],
+                "migrations": [],
+                "automated_tests": [],
+                "browser_device_checks": [],
+                "human_legal_reviews": [],
+                "production_evidence": [],
+                "checkpoints": []
+            }
+        },
+        {
+            "id": "NG-P1-013",
+            "batches": [
+                "B03"
+            ],
+            "requirement": "Question 5",
+            "decisions": [
+                "NG-B03-DECISIONS"
+            ],
+            "required_evidence": "Approved password/throttle/MFA/recovery controls; abuse, session, step-up, accessibility, and audit evidence",
+            "status": "open",
+            "evidence": {
+                "code": [],
+                "migrations": [],
+                "automated_tests": [],
+                "browser_device_checks": [],
+                "human_legal_reviews": [],
+                "production_evidence": [],
+                "checkpoints": []
+            }
+        },
+        {
+            "id": "NG-P1-014",
+            "batches": [
+                "B03",
+                "B17"
+            ],
+            "requirement": "Question 5",
+            "decisions": [
+                "NG-B03-DECISIONS",
+                "NG-B17-DECISIONS"
+            ],
+            "required_evidence": "ASVS traceability; event/alert exercises; secrets/least privilege; restore and independent assessment evidence",
+            "status": "open",
+            "evidence": {
+                "code": [],
+                "migrations": [],
+                "automated_tests": [],
+                "browser_device_checks": [],
+                "human_legal_reviews": [],
+                "production_evidence": [],
+                "checkpoints": []
+            }
+        },
+        {
+            "id": "NG-P1-015",
+            "batches": [
+                "B03"
+            ],
+            "requirement": "Questions 5, 11, and 15",
+            "decisions": [
+                "NG-B03-DECISIONS"
+            ],
+            "required_evidence": "Approved scanner/CDR policy; quarantine/promotion; unavailable/positive/negative/re-scan and disposal tests",
+            "status": "open",
+            "evidence": {
+                "code": [],
+                "migrations": [],
+                "automated_tests": [],
+                "browser_device_checks": [],
+                "human_legal_reviews": [],
+                "production_evidence": [],
+                "checkpoints": []
+            }
+        },
+        {
+            "id": "NG-P1-016",
+            "batches": [
+                "B04"
+            ],
+            "requirement": "Questions 2, 3, 6, 7, 10, and 11",
+            "decisions": [
+                "NG-B04-DECISIONS"
+            ],
+            "required_evidence": "Automated regression plus human keyboard, zoom/reflow, focus, target, error, screen-reader, and device evidence",
+            "status": "open",
+            "evidence": {
+                "code": [],
+                "migrations": [],
+                "automated_tests": [],
+                "browser_device_checks": [],
+                "human_legal_reviews": [],
+                "production_evidence": [],
+                "checkpoints": []
+            }
+        },
+        {
+            "id": "NG-P1-017",
+            "batches": [
+                "B15"
+            ],
+            "requirement": "Questions 1, 6, 8, and 11",
+            "decisions": [
+                "NG-B15-DECISIONS",
+                "Qualified content and accessibility review"
+            ],
+            "required_evidence": "Approved audio/accommodation contract; no answer leakage; consent/permission/storage tests; qualified reviews",
+            "status": "open",
+            "evidence": {
+                "code": [],
+                "migrations": [],
+                "automated_tests": [],
+                "browser_device_checks": [],
+                "human_legal_reviews": [],
+                "production_evidence": [],
+                "checkpoints": []
+            }
+        },
+        {
+            "id": "NG-P2-018",
+            "batches": [
+                "B05",
+                "B08"
+            ],
+            "requirement": "Questions 4, 7, 10, and 11",
+            "decisions": [
+                "NG-B05-DECISIONS",
+                "NG-B08-DECISIONS"
+            ],
+            "required_evidence": "Plain-language task-first UI; permission-aware evidence view; ordinary workflow usability evidence",
+            "status": "open",
+            "evidence": {
+                "code": [],
+                "migrations": [],
+                "automated_tests": [],
+                "browser_device_checks": [],
+                "human_legal_reviews": [],
+                "production_evidence": [],
+                "checkpoints": []
+            }
+        },
+        {
+            "id": "NG-P2-019",
+            "batches": [
+                "B05",
+                "B06"
+            ],
+            "requirement": "Questions 7, 10, and 11",
+            "decisions": [
+                "NG-B05-DECISIONS",
+                "NG-B06-DECISIONS"
+            ],
+            "required_evidence": "Accurate role/scope context on every admin surface; scope-switch and stale/unknown-context tests",
+            "status": "open",
+            "evidence": {
+                "code": [],
+                "migrations": [],
+                "automated_tests": [],
+                "browser_device_checks": [],
+                "human_legal_reviews": [],
+                "production_evidence": [],
+                "checkpoints": []
+            }
+        },
+        {
+            "id": "NG-P2-020",
+            "batches": [
+                "B04"
+            ],
+            "requirement": "Questions 2, 3, 6, 7, and 11",
+            "decisions": [
+                "NG-B04-DECISIONS"
+            ],
+            "required_evidence": "Approved responsive navigation/table alternative; narrow/physical-device, keyboard, focus, target, and no-overflow evidence",
+            "status": "open",
+            "evidence": {
+                "code": [],
+                "migrations": [],
+                "automated_tests": [],
+                "browser_device_checks": [],
+                "human_legal_reviews": [],
+                "production_evidence": [],
+                "checkpoints": []
+            }
+        },
+        {
+            "id": "NG-P2-021",
+            "batches": [
+                "B04",
+                "B05",
+                "B10"
+            ],
+            "requirement": "Questions 2, 3, 7, 10, and 13",
+            "decisions": [
+                "NG-B04-DECISIONS",
+                "NG-B05-DECISIONS",
+                "NG-B10-DECISIONS"
+            ],
+            "required_evidence": "Approved bounded summary/filter/navigation pattern; truthful totals; focus/history/query-count evidence",
+            "status": "open",
+            "evidence": {
+                "code": [],
+                "migrations": [],
+                "automated_tests": [],
+                "browser_device_checks": [],
+                "human_legal_reviews": [],
+                "production_evidence": [],
+                "checkpoints": []
+            }
+        },
+        {
+            "id": "NG-P2-022",
+            "batches": [
+                "B05",
+                "B17"
+            ],
+            "requirement": "Questions 7 and 10",
+            "decisions": [
+                "NG-B05-DECISIONS",
+                "NG-B17-DECISIONS"
+            ],
+            "required_evidence": "Approved onboarding/help/search journey; accessible recovery; observed first-use evidence with limitations",
+            "status": "open",
+            "evidence": {
+                "code": [],
+                "migrations": [],
+                "automated_tests": [],
+                "browser_device_checks": [],
+                "human_legal_reviews": [],
+                "production_evidence": [],
+                "checkpoints": []
+            }
+        },
+        {
+            "id": "NG-P2-023",
+            "batches": [
+                "B02",
+                "B05"
+            ],
+            "requirement": "Questions 4, 6, 7, 10, and 18",
+            "decisions": [
+                "NG-B02-DECISIONS",
+                "NG-B05-DECISIONS",
+                "Qualified legal approval"
+            ],
+            "required_evidence": "Versioned accessible trust/support destinations; registration linkage/version evidence; link/locale/keyboard tests",
+            "status": "open",
+            "evidence": {
+                "code": [],
+                "migrations": [],
+                "automated_tests": [],
+                "browser_device_checks": [],
+                "human_legal_reviews": [],
+                "production_evidence": [],
+                "checkpoints": []
+            }
+        },
+        {
+            "id": "NG-P2-024",
+            "batches": [
+                "B05"
+            ],
+            "requirement": "Questions 4, 7, and 10",
+            "decisions": [
+                "NG-B05-DECISIONS"
+            ],
+            "required_evidence": "Deterministic authorized next-action rules; empty/recovery states; no false/unavailable CTA",
+            "status": "open",
+            "evidence": {
+                "code": [],
+                "migrations": [],
+                "automated_tests": [],
+                "browser_device_checks": [],
+                "human_legal_reviews": [],
+                "production_evidence": [],
+                "checkpoints": []
+            }
+        },
+        {
+            "id": "NG-P2-025",
+            "batches": [
+                "B11"
+            ],
+            "requirement": "Question 15",
+            "decisions": [
+                "NG-B11-DECISIONS"
+            ],
+            "required_evidence": "Approved post/media/audience/moderation/delivery states; authorization, leakage, upload, idempotency, retention tests",
+            "status": "open",
+            "evidence": {
+                "code": [],
+                "migrations": [],
+                "automated_tests": [],
+                "browser_device_checks": [],
+                "human_legal_reviews": [],
+                "production_evidence": [],
+                "checkpoints": []
+            }
+        },
+        {
+            "id": "NG-P2-026",
+            "batches": [
+                "B06",
+                "B07",
+                "B11",
+                "B12",
+                "B13"
+            ],
+            "requirement": "Question 16",
+            "decisions": [
+                "NG-B06-DECISIONS",
+                "NG-B07-DECISIONS",
+                "NG-B11-DECISIONS",
+                "NG-B12-DECISIONS",
+                "NG-B13-DECISIONS"
+            ],
+            "required_evidence": "One shared Clock/TimeContext; approved timezone precedence; DST/skew/retry/reschedule/accommodation and cross-scope tests",
+            "status": "open",
+            "evidence": {
+                "code": [],
+                "migrations": [],
+                "automated_tests": [],
+                "browser_device_checks": [],
+                "human_legal_reviews": [],
+                "production_evidence": [],
+                "checkpoints": []
+            }
+        },
+        {
+            "id": "NG-P2-027",
+            "batches": [
+                "B13"
+            ],
+            "requirement": "Question 17",
+            "decisions": [
+                "NG-B13-DECISIONS",
+                "Qualified legal/accessibility approval if selected"
+            ],
+            "required_evidence": "Tier-accurate claims; timed/recovery/accommodation integrity tests; verified client/service evidence only if selected",
+            "status": "open",
+            "evidence": {
+                "code": [],
+                "migrations": [],
+                "automated_tests": [],
+                "browser_device_checks": [],
+                "human_legal_reviews": [],
+                "production_evidence": [],
+                "checkpoints": []
+            }
+        },
+        {
+            "id": "NG-P2-028",
+            "batches": [
+                "B14"
+            ],
+            "requirement": "Questions 8–9",
+            "decisions": [
+                "NG-B14-DECISIONS",
+                "Qualified learning/research review"
+            ],
+            "required_evidence": "Explainable review scheduler; opt-out/reset/accessibility tests; motivation distinct from grades; approved claims only",
+            "status": "open",
+            "evidence": {
+                "code": [],
+                "migrations": [],
+                "automated_tests": [],
+                "browser_device_checks": [],
+                "human_legal_reviews": [],
+                "production_evidence": [],
+                "checkpoints": []
+            }
+        },
+        {
+            "id": "NG-P2-029",
+            "batches": [
+                "B15"
+            ],
+            "requirement": "Questions 1, 8–9, 11, and 13",
+            "decisions": [
+                "NG-B15-DECISIONS",
+                "Qualified privacy/legal/content/moderation approvals"
+            ],
+            "required_evidence": "Selected-tier contracts; attribution; scoped access; provider/outage/unsafe-output/retention/moderation tests",
+            "status": "open",
+            "evidence": {
+                "code": [],
+                "migrations": [],
+                "automated_tests": [],
+                "browser_device_checks": [],
+                "human_legal_reviews": [],
+                "production_evidence": [],
+                "checkpoints": []
+            }
+        },
+        {
+            "id": "NG-P2-030",
+            "batches": [
+                "B16"
+            ],
+            "requirement": "Questions 2–3 and mobile readiness",
+            "decisions": [
+                "NG-B16-DECISIONS"
+            ],
+            "required_evidence": "Approved offline boundary; cache/update/conflict/logout/quota tests; idempotent sync; truthful availability CTA",
+            "status": "open",
+            "evidence": {
+                "code": [],
+                "migrations": [],
+                "automated_tests": [],
+                "browser_device_checks": [],
+                "human_legal_reviews": [],
+                "production_evidence": [],
+                "checkpoints": []
+            }
+        },
+        {
+            "id": "NG-P2-031",
+            "batches": [
+                "B04",
+                "B05",
+                "B08",
+                "B17"
+            ],
+            "requirement": "Questions 1, 6, 7, 10, and 11",
+            "decisions": [
+                "NG-B04-DECISIONS",
+                "NG-B05-DECISIONS",
+                "NG-B08-DECISIONS"
+            ],
+            "required_evidence": "Approved localization/pedagogy boundary; no raw ordinary-UI enum; fallback, bilingual layout, screen-reader, fidelity review",
+            "status": "open",
+            "evidence": {
+                "code": [],
+                "migrations": [],
+                "automated_tests": [],
+                "browser_device_checks": [],
+                "human_legal_reviews": [],
+                "production_evidence": [],
+                "checkpoints": []
+            }
+        },
+        {
+            "id": "NG-P2-032",
+            "batches": [
+                "B08",
+                "B09"
+            ],
+            "requirement": "Questions 1, 6, 11, and 12",
+            "decisions": [
+                "NG-B08-DECISIONS",
+                "NG-B09-DECISIONS",
+                "Qualified content review"
+            ],
+            "required_evidence": "Single interactive option presentation; accessible labels; deterministic compiler/source coverage; reviewer approval",
+            "status": "open",
+            "evidence": {
+                "code": [],
+                "migrations": [],
+                "automated_tests": [],
+                "browser_device_checks": [],
+                "human_legal_reviews": [],
+                "production_evidence": [],
+                "checkpoints": []
+            }
+        },
+        {
+            "id": "NG-P2-033",
+            "batches": [
+                "B04"
+            ],
+            "requirement": "Questions 2, 3, and 6",
+            "decisions": [
+                "NG-B04-DECISIONS"
+            ],
+            "required_evidence": "Non-shrinking semantic controls; target-size, narrow width, zoom, keyboard, screen-reader, contrast, touch evidence",
+            "status": "open",
+            "evidence": {
+                "code": [],
+                "migrations": [],
+                "automated_tests": [],
+                "browser_device_checks": [],
+                "human_legal_reviews": [],
+                "production_evidence": [],
+                "checkpoints": []
+            }
+        },
+        {
+            "id": "NG-P2-034",
+            "batches": [
+                "B05",
+                "B17"
+            ],
+            "requirement": "Questions 7–11 and 13",
+            "decisions": [
+                "NG-B05-DECISIONS",
+                "NG-B17-DECISIONS",
+                "Supervisor/ethics approval"
+            ],
+            "required_evidence": "Approved non-assumed sample/design; raw permitted evidence; reproducible analysis; limitations/adverse findings retained",
+            "status": "open",
+            "evidence": {
+                "code": [],
+                "migrations": [],
+                "automated_tests": [],
+                "browser_device_checks": [],
+                "human_legal_reviews": [],
+                "production_evidence": [],
+                "checkpoints": []
+            }
+        },
+        {
+            "id": "NG-P3-035",
+            "batches": [
+                "B08",
+                "B17"
+            ],
+            "requirement": "Bad-code audit; lecturer maintainability",
+            "decisions": [
+                "NG-B08-DECISIONS",
+                "NG-B17-DECISIONS"
+            ],
+            "required_evidence": "No database query in affected views; equivalent role/render behavior; bounded query-count tests",
+            "status": "open",
+            "evidence": {
+                "code": [],
+                "migrations": [],
+                "automated_tests": [],
+                "browser_device_checks": [],
+                "human_legal_reviews": [],
+                "production_evidence": [],
+                "checkpoints": []
+            }
+        },
+        {
+            "id": "NG-P3-036",
+            "batches": [
+                "B08",
+                "B17"
+            ],
+            "requirement": "Bad-code audit and room for improvement",
+            "decisions": [
+                "NG-B08-DECISIONS",
+                "NG-B17-DECISIONS"
+            ],
+            "required_evidence": "Before/after characterization; bounded responsibilities; stable contracts, hashes, policies, transactions, and failure behavior",
+            "status": "open",
+            "evidence": {
+                "code": [],
+                "migrations": [],
+                "automated_tests": [],
+                "browser_device_checks": [],
+                "human_legal_reviews": [],
+                "production_evidence": [],
+                "checkpoints": []
+            }
+        },
+        {
+            "id": "NG-P3-037",
+            "batches": [
+                "B08",
+                "B17"
+            ],
+            "requirement": "Source fidelity and bad-code audit",
+            "decisions": [
+                "NG-B08-DECISIONS",
+                "NG-B17-DECISIONS",
+                "Retention/provenance decision"
+            ],
+            "required_evidence": "Legacy read-only/isolation tests; accurate labeling; approved retirement/export criteria before deletion",
+            "status": "open",
+            "evidence": {
+                "code": [],
+                "migrations": [],
+                "automated_tests": [],
+                "browser_device_checks": [],
+                "human_legal_reviews": [],
+                "production_evidence": [],
+                "checkpoints": []
+            }
+        },
+        {
+            "id": "NG-P3-038",
+            "batches": [
+                "B08",
+                "B17"
+            ],
+            "requirement": "Security, source fidelity, and bad-code audit",
+            "decisions": [
+                "NG-B08-DECISIONS",
+                "NG-B17-DECISIONS"
+            ],
+            "required_evidence": "Typed safe-render boundary; malicious-input suite; unchanged faithful formatting/determinism; unauthorized raw path check",
+            "status": "open",
+            "evidence": {
+                "code": [],
+                "migrations": [],
+                "automated_tests": [],
+                "browser_device_checks": [],
+                "human_legal_reviews": [],
+                "production_evidence": [],
+                "checkpoints": []
+            }
+        },
+        {
+            "id": "NG-P3-039",
+            "batches": [
+                "B08",
+                "B17"
+            ],
+            "requirement": "Security and bad-code audit",
+            "decisions": [
+                "NG-B08-DECISIONS",
+                "NG-B17-DECISIONS"
+            ],
+            "required_evidence": "Typed image-validation failures; malformed/polyglot/oversize tests; no warning/path leakage; fail-closed promotion",
+            "status": "open",
+            "evidence": {
+                "code": [],
+                "migrations": [],
+                "automated_tests": [],
+                "browser_device_checks": [],
+                "human_legal_reviews": [],
+                "production_evidence": [],
+                "checkpoints": []
+            }
+        },
+        {
+            "id": "NG-P3-040",
+            "batches": [
+                "B17"
+            ],
+            "requirement": "Bad-code audit and robust security",
+            "decisions": [
+                "NG-B17-DECISIONS"
+            ],
+            "required_evidence": "Pinned static-analysis gate and ratchet; architecture rules; risk-critical branch/mutation evidence",
+            "status": "open",
+            "evidence": {
+                "code": [],
+                "migrations": [],
+                "automated_tests": [],
+                "browser_device_checks": [],
+                "human_legal_reviews": [],
+                "production_evidence": [],
+                "checkpoints": []
+            }
+        },
+        {
+            "id": "NG-P3-041",
+            "batches": [
+                "B17"
+            ],
+            "requirement": "Bad-code consistency audit",
+            "decisions": [
+                "NG-B17-DECISIONS"
+            ],
+            "required_evidence": "Ownership/intent recorded for all unnamed routes; approved application names; stable middleware/authorization/vendor behavior",
+            "status": "open",
+            "evidence": {
+                "code": [],
+                "migrations": [],
+                "automated_tests": [],
+                "browser_device_checks": [],
+                "human_legal_reviews": [],
+                "production_evidence": [],
+                "checkpoints": []
+            }
+        },
+        {
+            "id": "NG-P3-042",
+            "batches": [
+                "B00",
+                "B17"
+            ],
+            "requirement": "Source fidelity, robust security, and production readiness",
+            "decisions": [
+                "docs/decisions/NG-B00-DECISIONS.md",
+                "NG-B17-DECISIONS"
+            ],
+            "required_evidence": "Exact-hash protected authority release lane; target-database migration/query/lock/concurrency lane; no critical skip",
+            "status": "in_progress",
+            "evidence": {
+                "code": [
+                    "config/authority-sources.json",
+                    "scripts/release/verify-authorities.ps1",
+                    ".github/workflows/authority-release.yml"
+                ],
+                "migrations": [
+                    "Target-database migration/concurrency lane remains B17."
+                ],
+                "automated_tests": [
+                    "Exact-hash local authority verification pending final B00 gates."
+                ],
+                "browser_device_checks": [],
+                "human_legal_reviews": [
+                    "Protected-artifact mechanism approved by owner 2026-07-19."
+                ],
+                "production_evidence": [
+                    "Dormant workflow_dispatch lane requires an offline self-hosted Windows runner; runner activation is not authorized in B00."
+                ],
+                "checkpoints": [
+                    "docs/checkpoints/NG-B00-CHECKPOINT.md (pending final evidence)"
+                ]
+            }
+        },
+        {
+            "id": "NG-P3-043",
+            "batches": [
+                "B08",
+                "B17"
+            ],
+            "requirement": "Bad-code audit; lecturer/admin maintainability and accessibility",
+            "decisions": [
+                "NG-B08-DECISIONS",
+                "NG-B17-DECISIONS"
+            ],
+            "required_evidence": "Stable route snapshots; accessible component variants; unchanged server authorization; only proven-shared duplication removed",
+            "status": "open",
+            "evidence": {
+                "code": [],
+                "migrations": [],
+                "automated_tests": [],
+                "browser_device_checks": [],
+                "human_legal_reviews": [],
+                "production_evidence": [],
+                "checkpoints": []
+            }
+        }
+    ]
+}

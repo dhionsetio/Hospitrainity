@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C06",
+  "code": "HSP-C06-LS-10",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "75ab1622-ed6b-5191-94c1-0913fc918f41",
+  "order": 10,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 754,
+    "chapter": 6,
+    "heading_path": [
+      "Online and Social Media Customer Service",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "7adf701971dfee338cfcbb911ec5f3219a7f686dc1362dd03957ba4e6b18f75f"
+  },
+  "status": "published",
+  "title": "Step 7. Quiz"
+}

@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C05-ACT-ROLEPLAY",
+  "code": "HSP-C05-RP-G1",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "3b73cf75-1ff4-55ff-b410-8f75c0169b20",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 594,
+    "chapter": 5,
+    "heading_path": [
+      "Customer Care Through Writing",
+      "Step 6. Role-play (drafting)"
+    ],
+    "normalized_text_sha256": "629c7e7882161c3a2d8f30cee0769138c32943d367b2cf34bf515a78b240fcef"
+  },
+  "status": "published",
+  "stem": "A guest writes: “Do you have a room for two people this weekend, and is breakfast included?”"
+}

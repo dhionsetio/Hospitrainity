@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C06",
+  "code": "HSP-C06-LS-01",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "564cb9ec-d0a1-524c-97ac-e85a2c5d9331",
+  "order": 1,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 658,
+    "chapter": 6,
+    "heading_path": [
+      "Online and Social Media Customer Service",
+      "Warm-Up"
+    ],
+    "normalized_text_sha256": "4f98b58bf1141c8f0c2a7a09c9fbd70a68cbda62c55de10e1d3adfa4ec5adc7b"
+  },
+  "status": "published",
+  "title": "Warm-Up"
+}

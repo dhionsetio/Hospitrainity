@@ -1,0 +1,472 @@
+{
+    "blocks": [
+        {
+            "id": "0b51d354-1f5f-58a5-8c0e-34f2d73786ba",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Try each one first, then open the toggle to check yourself.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 882,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "457b0ccffe30e2688e9b4bddc363e158e25bcf32152f3bdb3c034c9407006a63"
+            },
+            "text": "Try each one first, then open the toggle to check yourself.",
+            "type": "instruction"
+        },
+        {
+            "id": "cc2ea2c0-72ed-58e6-b0b1-dd6d728c4271",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "1. Which framework step is this?",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " “I sincerely ",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "apologise",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " for the inconvenience.”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 883,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "909526d763df6de66959807ff3696ba72689eb750de12bc156e48be970619a3f"
+            },
+            "text": "1. Which framework step is this? “I sincerely apologise for the inconvenience.”",
+            "type": "list_item"
+        },
+        {
+            "id": "faeccb26-407d-5960-bace-211acfaec1a4",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Check answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 884,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "59b5b25c3f1225bbc759f0a5877604948e64e3484f2e56aafef146d98cd32a61"
+            },
+            "text": "Check answer",
+            "type": "paragraph"
+        },
+        {
+            "id": "95ca9537-40c7-59b3-aefa-b41a3deacb05",
+            "language": "en",
+            "order": 4,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "The ",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Apologise",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " and ",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "empathise",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " step, which is the second part of L-A-A-F.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 885,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "0356c5e4a8dcd1d2bb8267bc3ca488b741a0895e957a8f1228a6c5a802f9c309"
+            },
+            "text": "The Apologise and empathise step, which is the second part of L-A-A-F.",
+            "type": "paragraph"
+        },
+        {
+            "id": "e70aed3b-67fe-51ce-9a96-39c415319ed3",
+            "language": "en",
+            "order": 5,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "2. Choose the response that takes ownership:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " (a) “It is the other guest’s fault.” or (b) “Let me fix this for you right away.”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 886,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "ea39f3416a73722e91918859cead830038f4b605716f08417bca702960f8afdf"
+            },
+            "text": "2. Choose the response that takes ownership: (a) “It is the other guest’s fault.” or (b) “Let me fix this for you right away.”",
+            "type": "list_item"
+        },
+        {
+            "id": "5f7d00b0-4add-501f-aed8-00743c2b2216",
+            "language": "en",
+            "order": 6,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Check answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 887,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "59b5b25c3f1225bbc759f0a5877604948e64e3484f2e56aafef146d98cd32a61"
+            },
+            "text": "Check answer",
+            "type": "paragraph"
+        },
+        {
+            "id": "d0635275-f66b-5838-8194-1a9bbbc3aea4",
+            "language": "en",
+            "order": 7,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "(b).",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Taking ownership means acting, not blaming someone else.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 888,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "cec1abc9997b5c7688c38be4ee02ad05a930e48506a6b259a0029daea9d9ba45"
+            },
+            "text": "(b). Taking ownership means acting, not blaming someone else.",
+            "type": "paragraph"
+        },
+        {
+            "id": "fe3a27f0-494d-5785-8b11-154b7002db44",
+            "language": "en",
+            "order": 8,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "3. Put the framework steps in order:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Act, Listen, Follow up, ",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Apologise",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": ".",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 889,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "1f262f385ebe0acb882570bf974ea6691ee5c36c05f176290376e8252aa7a75d"
+            },
+            "text": "3. Put the framework steps in order: Act, Listen, Follow up, Apologise.",
+            "type": "list_item"
+        },
+        {
+            "id": "4461f2ef-aaf6-51dd-9681-93d91c146407",
+            "language": "en",
+            "order": 9,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Check answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 890,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "59b5b25c3f1225bbc759f0a5877604948e64e3484f2e56aafef146d98cd32a61"
+            },
+            "text": "Check answer",
+            "type": "paragraph"
+        },
+        {
+            "id": "ae4f5100-1a83-5654-8f3a-e133218abe5a",
+            "language": "en",
+            "order": 10,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Listen, then ",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Apologise",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": ", then Act, then Follow up.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 891,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "6bf31ff7532acecc0cd774a82125c4ecb83ce292dee3dce0fb0f8fad19427c73"
+            },
+            "text": "Listen, then Apologise, then Act, then Follow up.",
+            "type": "paragraph"
+        },
+        {
+            "id": "d3f70454-dad5-5f4a-bbe1-a00b40e2953c",
+            "language": "en",
+            "order": 11,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "4. Add empathy:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " a guest says “I have been waiting an hour for my food.” What is a warm first line?",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 892,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "6479195424b967b1cbb77498c17f4d426f963fd15b1ad700348fb1f74b92367e"
+            },
+            "text": "4. Add empathy: a guest says “I have been waiting an hour for my food.” What is a warm first line?",
+            "type": "list_item"
+        },
+        {
+            "id": "9b0afa61-cb81-511e-a5fb-4bfbff2e4598",
+            "language": "en",
+            "order": 12,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Check answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 893,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "59b5b25c3f1225bbc759f0a5877604948e64e3484f2e56aafef146d98cd32a61"
+            },
+            "text": "Check answer",
+            "type": "paragraph"
+        },
+        {
+            "id": "0d2e5c31-c66e-554a-ab14-8418f0f75622",
+            "language": "en",
+            "order": 13,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Something like “I am so sorry, an hour is far too long to wait, and I completely understand your frustration.” Lead with empathy before you explain or fix anything.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 894,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "7ed23892fe02ed452a3833e863b5c28c9e3c7f3f727c904d1cfbf9468e1513b5"
+            },
+            "text": "Something like “I am so sorry, an hour is far too long to wait, and I completely understand your frustration.” Lead with empathy before you explain or fix anything.",
+            "type": "paragraph"
+        },
+        {
+            "activity_code": "HSP-C07-ACT-PRACTICE",
+            "id": "911723bf-1967-55f4-b365-f953baab1e19",
+            "language": "en",
+            "order": 14,
+            "provenance_kind": "derived_navigation",
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 881,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "46863cdae3b9dc41e288c4101ee6d0956fc7857efb3a521dc5b0f48f713be9aa"
+            },
+            "type": "activity_embed"
+        }
+    ],
+    "chapter_code": "HSP-C07",
+    "code": "HSP-C07-LS-08",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "cfbb45e2-3bcf-5152-bba4-3387b65a08f0",
+    "language": "en",
+    "order": 8,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 881,
+        "chapter": 7,
+        "heading_path": [
+            "Dealing with Problems and Complaints",
+            "Step 5. Practice"
+        ],
+        "normalized_text_sha256": "46863cdae3b9dc41e288c4101ee6d0956fc7857efb3a521dc5b0f48f713be9aa"
+    },
+    "status": "published",
+    "title": "Step 5. Practice"
+}

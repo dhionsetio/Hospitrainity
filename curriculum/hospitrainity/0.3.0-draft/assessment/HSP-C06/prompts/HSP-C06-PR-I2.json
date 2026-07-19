@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C06-ACT-PRACTICE",
+  "code": "HSP-C06-PR-I2",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "605cb7b4-7e1b-531b-a334-72feeb26655d",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 722,
+    "chapter": 6,
+    "heading_path": [
+      "Online and Social Media Customer Service",
+      "Step 5. Practice"
+    ],
+    "normalized_text_sha256": "3fc3fc14b4474e4072296504d20f70882a67104e6fb39a70247de8a777cd1c2f"
+  },
+  "status": "published",
+  "stem": "2. Which emoji use is professional? (a) “Sure. 😊” or (b) “Sure!!! 🎉🔥💯😂”"
+}

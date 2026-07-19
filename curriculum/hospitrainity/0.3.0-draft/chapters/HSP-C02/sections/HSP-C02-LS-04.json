@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C02",
+  "code": "HSP-C02-LS-04",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "29f5fc35-ee50-5527-9912-fa197a9a23bf",
+  "order": 4,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 95,
+    "chapter": 2,
+    "heading_path": [
+      "Front Desk and Check-In",
+      "Step 2. Key vocabulary"
+    ],
+    "normalized_text_sha256": "8c8357cf4f2c596b0f0cd39a1bdca965b2fc8851a6eacbfbe34097849ec79e77"
+  },
+  "status": "published",
+  "title": "Step 2. Key vocabulary"
+}

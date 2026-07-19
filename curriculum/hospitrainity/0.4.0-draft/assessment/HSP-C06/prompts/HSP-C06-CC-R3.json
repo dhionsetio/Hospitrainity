@@ -1,0 +1,37 @@
+{
+    "activity_code": "HSP-C06-ACT-CONFIDENCE",
+    "code": "HSP-C06-CC-R3",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "fff9f325-e9a6-5d6a-b998-d7ee73815071",
+    "language": "en",
+    "order": 3,
+    "provenance_kind": "source_verbatim",
+    "rating_scale": {
+        "max": 5,
+        "min": 1,
+        "values": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ]
+    },
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "rating",
+    "scoring_mode": "unscored_self_report",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 798,
+        "chapter": 6,
+        "heading_path": [
+            "Online and Social Media Customer Service",
+            "Step 8. Confidence check"
+        ],
+        "normalized_text_sha256": "40952deeaf3acf4684d8c7b8446fd24e51d06c5047e7dcdc988afd2f60934061"
+    },
+    "status": "published",
+    "stem": "I can move a public complaint into a private channel."
+}

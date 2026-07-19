@@ -1,0 +1,47 @@
+{
+    "accessibility": [
+        "text_alt",
+        "keyboard_path",
+        "non_color_cue",
+        "no_timing_dependency"
+    ],
+    "cefr_activity": "reception",
+    "channel": "telecommunications",
+    "code": "HSP-C03-ACT-QUIZ",
+    "completion_rule": "all_required_items_attempted_and_checked",
+    "completion_rule_provenance_kind": "derived_workflow",
+    "content_version": "0.4.0-draft",
+    "entity_type": "activity",
+    "id": "6d5adb27-c8be-5a58-a459-f296c0376925",
+    "lesson_code": "HSP-C03-LS-10",
+    "outcome_codes": [
+        "OUT-M03-01",
+        "OUT-M03-02",
+        "OUT-M03-03"
+    ],
+    "participation": "individual",
+    "pedagogical_function": "formative_check",
+    "prompt_scoring_modes": [
+        "objective_choice"
+    ],
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "response_forms": [
+        "selection"
+    ],
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "block_index": 322,
+        "chapter": 3,
+        "heading_path": [
+            "Dealing with Customers on the Phone",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "9c5b48740d8895bfd79c67e523b811471e0f8d2e32fc6b1be003e11c4c91c008"
+    },
+    "status": "published",
+    "timing": "asynchronous",
+    "title": "Step 7. Quiz"
+}

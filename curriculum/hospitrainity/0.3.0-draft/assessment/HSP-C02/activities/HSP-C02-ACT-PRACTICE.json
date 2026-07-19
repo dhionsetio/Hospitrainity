@@ -1,0 +1,39 @@
+{
+  "accessibility": [
+    "text_alt",
+    "keyboard_path",
+    "non_color_cue",
+    "no_timing_dependency"
+  ],
+  "cefr_activity": "production",
+  "channel": "spoken_ftf",
+  "code": "HSP-C02-ACT-PRACTICE",
+  "content_version": "0.3.0-draft",
+  "entity_type": "activity",
+  "id": "4c5a55ea-1d90-5a25-8c44-6929939e81b4",
+  "lesson_code": "HSP-C02-LS-08",
+  "outcome_codes": [
+    "OUT-M02-01",
+    "OUT-M02-02",
+    "OUT-M02-03"
+  ],
+  "participation": "individual",
+  "pedagogical_function": "guided_practice",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "short_text",
+  "scoring_mode": "objective_normalized",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 141,
+    "chapter": 2,
+    "heading_path": [
+      "Front Desk and Check-In",
+      "Step 5. Practice"
+    ],
+    "normalized_text_sha256": "ada07234842f50fb3792fd5f7014ce417c4de003f32e7d95bc43eda3b65e540b"
+  },
+  "status": "published",
+  "timing": "asynchronous",
+  "title": "Step 5. Practice"
+}

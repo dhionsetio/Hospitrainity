@@ -1,0 +1,114 @@
+{
+    "blocks": [
+        {
+            "id": "65f287d8-1da1-5ce4-a36d-b3a21f65a576",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Here is a truth that surprises many people. A guest who complains is often giving you a gift, because they are telling you what is wrong instead of quietly leaving and posting a bad review. How you respond in that moment can either lose them for good or win them for years. Service professionals call this service recovery, and studies show that a complaint handled well can leave a guest more loyal than they were before the problem happened.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 825,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Why this matters"
+                ],
+                "normalized_text_sha256": "6540a366804deeffe1086d23eb743025b30175e5ad99c0a70b9cd52a11bdc2cc"
+            },
+            "text": "Here is a truth that surprises many people. A guest who complains is often giving you a gift, because they are telling you what is wrong instead of quietly leaving and posting a bad review. How you respond in that moment can either lose them for good or win them for years. Service professionals call this service recovery, and studies show that a complaint handled well can leave a guest more loyal than they were before the problem happened.",
+            "type": "paragraph"
+        },
+        {
+            "id": "9a3ea861-ee05-5342-a4e4-ec9ef8b53d8f",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Good to know: the framework in this chapter lines up with well-known industry models such as LAST, which stands for Listen, ",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Apologise",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": ", Solve, and Thank, and HEAT, which stands for Hear, ",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Empathise",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": ", ",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Apologise",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": ", and Take action. This is a real, professional approach. See the further reading at the end of this chapter.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 826,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Why this matters"
+                ],
+                "normalized_text_sha256": "6ac17ceb651f4b3ce2137139960807fde36b1b8d527e30282f7aaf1406d91311"
+            },
+            "text": "Good to know: the framework in this chapter lines up with well-known industry models such as LAST, which stands for Listen, Apologise, Solve, and Thank, and HEAT, which stands for Hear, Empathise, Apologise, and Take action. This is a real, professional approach. See the further reading at the end of this chapter.",
+            "type": "paragraph"
+        }
+    ],
+    "chapter_code": "HSP-C07",
+    "code": "HSP-C07-LS-02",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "2fe3a414-04c2-520f-a8dd-b893c41af816",
+    "language": "en",
+    "order": 2,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 824,
+        "chapter": 7,
+        "heading_path": [
+            "Dealing with Problems and Complaints",
+            "Why this matters"
+        ],
+        "normalized_text_sha256": "8893dff34c02db6a4e9bb13792e41320671581fe96a8c65721b2267627a48aec"
+    },
+    "status": "published",
+    "title": "Why this matters"
+}

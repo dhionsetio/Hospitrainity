@@ -1,0 +1,296 @@
+{
+    "blocks": [
+        {
+            "id": "44204ab7-1ef4-5107-8398-2a22a4ffc510",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "You are the front desk receptionist at the Grand Serenata Hotel, a friendly boutique hotel.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 88,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 1. The scenario"
+                ],
+                "normalized_text_sha256": "84616aa1997430ffb0bb928737d79f311f4a78ad7003bb3384d469c9d1ed593e"
+            },
+            "text": "You are the front desk receptionist at the Grand Serenata Hotel, a friendly boutique hotel.",
+            "type": "heading"
+        },
+        {
+            "id": "86b976a4-5dbd-58f1-a995-2c45c22bbf94",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "A guest walks up to reception to check in. Your job flows in a natural order:",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 89,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 1. The scenario"
+                ],
+                "normalized_text_sha256": "b847d9714c876a555c95a2e5ef2164f1422bc933170c6785e872e33e155789ce"
+            },
+            "text": "A guest walks up to reception to check in. Your job flows in a natural order:",
+            "type": "paragraph"
+        },
+        {
+            "id": "6e660b9d-d595-542e-9213-3f41982fac47",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Greet",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " the guest warmly, as if you are genuinely glad they arrived.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 90,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 1. The scenario"
+                ],
+                "normalized_text_sha256": "5414543792cf44358e1f1a9a107f35fe0b4525a1bfa3bb2957abc194f9cac221"
+            },
+            "text": "Greet the guest warmly, as if you are genuinely glad they arrived.",
+            "type": "list_item"
+        },
+        {
+            "id": "0bf1d215-70ad-560f-82e3-e5d3f82e83a1",
+            "language": "en",
+            "order": 4,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Confirm",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " their name and reservation.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 91,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 1. The scenario"
+                ],
+                "normalized_text_sha256": "609d770659076b363539617a0a4c3cbd6c67f6426d706711639b4e1e05a8b38a"
+            },
+            "text": "Confirm their name and reservation.",
+            "type": "list_item"
+        },
+        {
+            "id": "1b331985-876b-5bb0-834a-0dc52347f75f",
+            "language": "en",
+            "order": 5,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Ask",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " politely for their ID or passport.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 92,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 1. The scenario"
+                ],
+                "normalized_text_sha256": "dd5b9fedfb255cf2d591945708bb0f115fc36ad40f626569b16c2d59a9f14905"
+            },
+            "text": "Ask politely for their ID or passport.",
+            "type": "list_item"
+        },
+        {
+            "id": "a38d6d56-e74e-5717-bb53-b58c86807869",
+            "language": "en",
+            "order": 6,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Complete",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " the check-in by confirming the room type and the number of nights.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 93,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 1. The scenario"
+                ],
+                "normalized_text_sha256": "bdf91d0c07de06bafa1168fd9ebccdccfd3ed3ef6bc3a242fe0bd0fda29abd51"
+            },
+            "text": "Complete the check-in by confirming the room type and the number of nights.",
+            "type": "list_item"
+        },
+        {
+            "id": "937206e5-b681-528e-9d4b-f9585020458b",
+            "language": "en",
+            "order": 7,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Hand over",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " the key card and share the useful details, such as the floor, breakfast, and Wi-Fi.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 94,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 1. The scenario"
+                ],
+                "normalized_text_sha256": "5b8bc6b0f5accf6307979eb0086867b48e603d3546a9fec4f04d4a10f7e77359"
+            },
+            "text": "Hand over the key card and share the useful details, such as the floor, breakfast, and Wi-Fi.",
+            "type": "list_item"
+        },
+        {
+            "id": "14a5619f-c598-5ee0-84e1-8f1ef584e81a",
+            "language": "en",
+            "order": 8,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Offer",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " any extra help, then close on a warm note.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 95,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 1. The scenario"
+                ],
+                "normalized_text_sha256": "06e75a458e111b7ff2265c21355723a958349205cec64ff47a843c54da13a4a5"
+            },
+            "text": "Offer any extra help, then close on a warm note.",
+            "type": "list_item"
+        },
+        {
+            "id": "ec351ae6-f6ee-51a1-a608-b7397375d1f1",
+            "language": "en",
+            "order": 9,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Once the steps feel automatic, your mind is free to focus on the guest instead of on the procedure.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 96,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 1. The scenario"
+                ],
+                "normalized_text_sha256": "3e77ed29509b043e18c6850a03fb494c70a1630e219ba554f07cab8db4f91195"
+            },
+            "text": "Once the steps feel automatic, your mind is free to focus on the guest instead of on the procedure.",
+            "type": "paragraph"
+        }
+    ],
+    "chapter_code": "HSP-C02",
+    "code": "HSP-C02-LS-03",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "a2bb1de3-f990-5421-80da-aa204c632e42",
+    "language": "en",
+    "order": 3,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 87,
+        "chapter": 2,
+        "heading_path": [
+            "Front Desk and Check-In",
+            "Step 1. The scenario"
+        ],
+        "normalized_text_sha256": "fe02f71c74a8a1d450fbab7f3052d29fd5a7c6cce679fd0160234ed9cf9bdf53"
+    },
+    "status": "published",
+    "title": "Step 1. The scenario"
+}

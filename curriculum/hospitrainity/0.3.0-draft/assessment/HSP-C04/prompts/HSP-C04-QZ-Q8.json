@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C04-ACT-QUIZ",
+  "code": "HSP-C04-QZ-Q8",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "9f9f50d6-c85d-50ed-9d06-2cb4569e4a23",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 488,
+    "chapter": 4,
+    "heading_path": [
+      "The Guest-Services Hotline",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "4c8c0acb3090caf5d91e34f2423976d36228a9ef6db858ee18ee1db70f3e192c"
+  },
+  "status": "published",
+  "stem": "Q8. You feel rushed. What keeps the call warm? A) speaking faster and skipping the read-back B) a calm breath, a steady tone, and a quick read-back C) telling the guest to hurry"
+}

@@ -1,0 +1,24 @@
+{
+  "accepted": [
+    "B"
+  ],
+  "code": "HSP-C06-QZ-Q3-AM",
+  "content_version": "0.3.0-draft",
+  "entity_type": "answer-model",
+  "id": "8b113176-0c7f-53a3-85a3-4c4b52304ac4",
+  "prompt_code": "HSP-C06-QZ-Q3",
+  "replaced_by": null,
+  "replaces": null,
+  "scoring_mode": "objective_exact",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 763,
+    "chapter": 6,
+    "heading_path": [
+      "Online and Social Media Customer Service",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "adf042ce5419c7c5ddef12003f300e68a9045cfd32eb1d679ee047fc0c5dccb5"
+  },
+  "status": "published"
+}

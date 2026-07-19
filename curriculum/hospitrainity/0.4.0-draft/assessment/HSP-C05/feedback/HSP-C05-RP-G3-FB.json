@@ -1,0 +1,35 @@
+{
+    "code": "HSP-C05-RP-G3-FB",
+    "content_version": "0.4.0-draft",
+    "entity_type": "feedback-model",
+    "id": "32137b9f-f66b-5372-8437-1610b4a88d2b",
+    "messages": [
+        {
+            "feedback_type": "error_specific",
+            "text": "(a) “No.” Blunt and unfriendly."
+        },
+        {
+            "feedback_type": "success",
+            "text": "(b) “Dear Ms. Putri, thank you for your message. We would be happy to offer a late check-out until 2 in the afternoon at no extra charge. Please let us know if that suits you. Kind regards, Maya.” This is the ideal answer, warm, clear, and helpful."
+        },
+        {
+            "feedback_type": "error_specific",
+            "text": "(c) “That depends.” Vague, and it leaves the guest unsure."
+        }
+    ],
+    "prompt_code": "HSP-C05-RP-G3",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 619,
+        "chapter": 5,
+        "heading_path": [
+            "Customer Care Through Writing",
+            "Step 6. Role-play (drafting)"
+        ],
+        "normalized_text_sha256": "7ba7f696b0f0de85f45d34ee4642ac1594d9ca04000cdf73e17d0e47dd9c4902"
+    },
+    "status": "published"
+}

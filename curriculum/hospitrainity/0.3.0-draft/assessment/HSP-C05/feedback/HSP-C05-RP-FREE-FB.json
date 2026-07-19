@@ -1,0 +1,26 @@
+{
+  "code": "HSP-C05-RP-FREE-FB",
+  "content_version": "0.3.0-draft",
+  "entity_type": "feedback-model",
+  "id": "d60b598a-f06e-5f4d-8412-ebb35efe9620",
+  "messages": [
+    {
+      "feedback_type": "model_reveal",
+      "text": "“Dear Ms. Putri, thank you for your booking. We are pleased to confirm a Deluxe Room for one night, arriving next Friday, at 80 dollars per night, breakfast included. Your booking reference is four, six, one. We look forward to welcoming you. Kind regards, Maya, Grand Serenata Hotel.”"
+    }
+  ],
+  "prompt_code": "HSP-C05-RP-FREE",
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 612,
+    "chapter": 5,
+    "heading_path": [
+      "Customer Care Through Writing",
+      "Step 6. Role-play (drafting)"
+    ],
+    "normalized_text_sha256": "382251d29e226d009a1ab43f5455fb007b56ecfcb1fec45501f7fc51e80c357a"
+  },
+  "status": "published"
+}

@@ -1,0 +1,60 @@
+{
+    "activity_code": "HSP-C03-ACT-ROLEPLAY",
+    "choices": [
+        {
+            "feedback": [
+                {
+                    "feedback_type": "error_specific",
+                    "text": "(a) “I do not know.” Unhelpful, and it leaves the caller stuck."
+                }
+            ],
+            "id": "6d3eda24-35a3-5c1c-84df-984a137adeb3",
+            "label": "a",
+            "text": "“I do not know.”"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "success",
+                    "text": "(b) “Let me check availability for Saturday for you. One moment, please.” This is the ideal answer, calm and action-focused."
+                }
+            ],
+            "id": "1b82907f-3dfa-5bf2-966d-a30c99a6c4a3",
+            "label": "b",
+            "text": "“Let me check availability for Saturday for you. One moment, please.”"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "error_specific",
+                    "text": "(c) “Probably not.” Vague and discouraging."
+                }
+            ],
+            "id": "bc070e9d-4a95-536a-9ecb-9366eb58b2ad",
+            "label": "c",
+            "text": "“Probably not.”"
+        }
+    ],
+    "code": "HSP-C03-RP-G1",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "af5fb8b9-990c-5abb-a75f-3b4338a49ccd",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 309,
+        "chapter": 3,
+        "heading_path": [
+            "Dealing with Customers on the Phone",
+            "Step 6. Role-play"
+        ],
+        "normalized_text_sha256": "36bdc5853ecb61004a12c9492770739dbfb42281200b12c2f422f5e56b3ba693"
+    },
+    "status": "published",
+    "stem": "Caller: “Do you have any rooms for this Saturday?”"
+}

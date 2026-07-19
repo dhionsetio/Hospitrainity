@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C02-ACT-CONFIDENCE",
+  "code": "HSP-C02-CC-SELF",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "c87fec5f-1e49-5a22-9532-b4bb8a223511",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "self_rating",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 204,
+    "chapter": 2,
+    "heading_path": [
+      "Front Desk and Check-In",
+      "Step 8. Confidence check"
+    ],
+    "normalized_text_sha256": "72b19e5fb44aebac76700b9d13714de9572bd100d2e7554e4bebae0d535dff4f"
+  },
+  "status": "published",
+  "stem": "Rate yourself honestly, from 1 (not confident yet) to 5 (very confident). This is for you, and it is a good way to watch your progress across the book."
+}

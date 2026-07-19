@@ -1,0 +1,44 @@
+{
+    "activity_code": "HSP-C02-ACT-PRACTICE",
+    "choices": [
+        {
+            "feedback": [],
+            "id": "1dc737df-ed9b-55f2-8eaf-283036053f04",
+            "label": "a",
+            "text": "“What do you want?”"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "model_reveal",
+                    "text": "(b). It is warm, professional, and it offers help right away. Option (a) sounds cold, and tone is a real part of hospitality."
+                }
+            ],
+            "id": "8fcf8568-bcd4-5c97-86eb-4651b63b65f5",
+            "label": "b",
+            "text": "“Good afternoon, welcome to the Grand Serenata Hotel. How may I help you?”"
+        }
+    ],
+    "code": "HSP-C02-PR-I2",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "7376ce18-de54-572f-baea-7cbd81098016",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 150,
+        "chapter": 2,
+        "heading_path": [
+            "Front Desk and Check-In",
+            "Step 5. Practice"
+        ],
+        "normalized_text_sha256": "c7041280454556eee2a2949bf97a085e6df73c10e9c3e5e2e10c801e166cd3f0"
+    },
+    "status": "published",
+    "stem": "2. Choose the warmer greeting: (a) “What do you want?” or (b) “Good afternoon, welcome to the Grand Serenata Hotel. How may I help you?”"
+}

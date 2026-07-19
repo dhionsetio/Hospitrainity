@@ -1,0 +1,39 @@
+{
+  "accessibility": [
+    "text_alt",
+    "keyboard_path",
+    "non_color_cue",
+    "no_timing_dependency"
+  ],
+  "cefr_activity": "reception",
+  "channel": "spoken_ftf",
+  "code": "HSP-C02-ACT-QUIZ",
+  "content_version": "0.3.0-draft",
+  "entity_type": "activity",
+  "id": "eae86ee1-8726-561a-aea3-68c7b40c6731",
+  "lesson_code": "HSP-C02-LS-10",
+  "outcome_codes": [
+    "OUT-M02-01",
+    "OUT-M02-02",
+    "OUT-M02-03"
+  ],
+  "participation": "individual",
+  "pedagogical_function": "formative_check",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "scoring_mode": "objective_exact",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 178,
+    "chapter": 2,
+    "heading_path": [
+      "Front Desk and Check-In",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "ee767295f76a59d3d19436e72f0129b8700ff7edec9cea24b9a2bb1781e39638"
+  },
+  "status": "published",
+  "timing": "asynchronous",
+  "title": "Step 7. Quiz"
+}

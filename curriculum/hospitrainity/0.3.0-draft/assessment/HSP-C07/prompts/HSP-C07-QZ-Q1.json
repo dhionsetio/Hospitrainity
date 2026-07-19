@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C07-ACT-QUIZ",
+  "code": "HSP-C07-QZ-Q1",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "ade62564-7a79-5f10-84f9-f77ab3eb0a29",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 900,
+    "chapter": 7,
+    "heading_path": [
+      "Dealing with Problems and Complaints",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "5b325fcd3aada09934d2d8d07b7e0d393e8e58b8f1ae56610415df90b6adbcd6"
+  },
+  "status": "published",
+  "stem": "Q1. What is the first step when a guest complains? A) defend the hotel B) listen C) offer a discount straight away"
+}

@@ -1,0 +1,25 @@
+{
+  "checkpoint": "CP-04",
+  "phase": 4,
+  "generated_at": "2026-07-15T20:15:00+07:00",
+  "inputs": {
+    "source_zip_sha256": "ebae98079d8f8037cd0658e69410630005554cdc9479cc4d91877c82c45a3c82",
+    "standalone_sha256": "d2acf2a2a3c4e5e62723cb014db30e6819ac586caff85d2d2de758940400828b",
+    "docx_sha256": "7f8a2c62db6884498f7a1c2de56e79e39609262944a685fe7eb97f702444cbb4"
+  },
+  "outputs": {
+    "standalone_sha256": "70888f11870336539c0bab67d17f3efcfc46bf649ae9659e2cb891bc3995a704",
+    "chapters": 7,
+    "lesson_sections": 85,
+    "provenance_records": 7,
+    "migration_edges": 8,
+    "registry_entries_total": 151,
+    "registry_entries_added": 99,
+    "registry_version": "1.1.0",
+    "validator_checks_passed": "8/8",
+    "content_entities_validated": 107
+  },
+  "decisions": ["DEC-015", "DEC-016", "DEC-017"],
+  "runtime_changes": false,
+  "standalone_visible_changes": false
+}

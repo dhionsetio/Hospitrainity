@@ -1,0 +1,26 @@
+{
+  "code": "HSP-C03-PR-I1-FB",
+  "content_version": "0.3.0-draft",
+  "entity_type": "feedback-model",
+  "id": "b7e77ea8-32da-5960-92f4-07d2fc79113e",
+  "messages": [
+    {
+      "feedback_type": "model_reveal",
+      "text": "put. The fixed phrase is “to put someone on hold.” A warm follow-up is “Thank you for waiting.”"
+    }
+  ],
+  "prompt_code": "HSP-C03-PR-I1",
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 289,
+    "chapter": 3,
+    "heading_path": [
+      "Dealing with Customers on the Phone",
+      "Step 5. Practice"
+    ],
+    "normalized_text_sha256": "379125ce8a907bc4c1ae1868f1cc15bf955d5d6653427a416b0d4fd85f2ffdad"
+  },
+  "status": "published"
+}

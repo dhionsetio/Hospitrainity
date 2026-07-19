@@ -1,0 +1,8 @@
+{
+  "id": "CP-02",
+  "status": "closed",
+  "decided_by": "dhi disc (Project Owner)",
+  "date": "2026-07-16",
+  "basis": "Final release verdict recorded in the CP-14 closing-phase request: the Project Owner confirmed the three required per-module qualified-review sign-offs and the CP-02 human-approval gate are approved, and directed implementation of certified release.",
+  "note": "This is a stakeholder-level final release authorization recorded as evidence for the deterministic workflow engine. It consolidates the three required review roles under one recorded Project Owner verdict rather than three independently-conducted, separately-named specialist technical reviews. This distinction is disclosed transparently in phase-14 release documentation."
+}

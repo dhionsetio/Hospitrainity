@@ -1,0 +1,37 @@
+{
+    "activity_code": "HSP-C05-ACT-CONFIDENCE",
+    "code": "HSP-C05-CC-R4",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "655ceb52-feb7-57c3-90a9-86f45776109d",
+    "language": "en",
+    "order": 4,
+    "provenance_kind": "source_verbatim",
+    "rating_scale": {
+        "max": 5,
+        "min": 1,
+        "values": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ]
+    },
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "rating",
+    "scoring_mode": "unscored_self_report",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 655,
+        "chapter": 5,
+        "heading_path": [
+            "Customer Care Through Writing",
+            "Step 8. Confidence check"
+        ],
+        "normalized_text_sha256": "0fa88f7dbe2cc73268e4076d0de4b9ca60e74b9bfb9c97f60a57fe9ced2feee4"
+    },
+    "status": "published",
+    "stem": "I can reply to a written concern professionally."
+}

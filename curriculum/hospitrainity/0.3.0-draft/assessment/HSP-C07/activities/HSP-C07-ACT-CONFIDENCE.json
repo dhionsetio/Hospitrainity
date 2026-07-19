@@ -1,0 +1,39 @@
+{
+  "accessibility": [
+    "text_alt",
+    "keyboard_path",
+    "non_color_cue",
+    "no_timing_dependency"
+  ],
+  "cefr_activity": "interaction",
+  "channel": "spoken_ftf",
+  "code": "HSP-C07-ACT-CONFIDENCE",
+  "content_version": "0.3.0-draft",
+  "entity_type": "activity",
+  "id": "bc3753de-ebe6-57e6-a7e2-033566b40f97",
+  "lesson_code": "HSP-C07-LS-11",
+  "outcome_codes": [
+    "OUT-M07-01",
+    "OUT-M07-02",
+    "OUT-M07-03"
+  ],
+  "participation": "individual",
+  "pedagogical_function": "reflection",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "self_rating",
+  "scoring_mode": "self_report",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 925,
+    "chapter": 7,
+    "heading_path": [
+      "Dealing with Problems and Complaints",
+      "Step 8. Confidence check"
+    ],
+    "normalized_text_sha256": "de3541b7e7f4f5aff977a439df59ffbf2a304ff6fc9152f1e6f7a6991667643c"
+  },
+  "status": "published",
+  "timing": "asynchronous",
+  "title": "Step 8. Confidence check"
+}

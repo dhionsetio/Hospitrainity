@@ -1,0 +1,60 @@
+{
+    "activity_code": "HSP-C05-ACT-ROLEPLAY",
+    "choices": [
+        {
+            "feedback": [
+                {
+                    "feedback_type": "error_specific",
+                    "text": "(a) “No.” Blunt and unfriendly."
+                }
+            ],
+            "id": "4cbe3ab7-1cfe-5a14-931f-857a7662481e",
+            "label": "a",
+            "text": "“No.”"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "success",
+                    "text": "(b) “Dear Ms. Putri, thank you for your message. We would be happy to offer a late check-out until 2 in the afternoon at no extra charge. Please let us know if that suits you. Kind regards, Maya.” This is the ideal answer, warm, clear, and helpful."
+                }
+            ],
+            "id": "4eea6d2d-64b0-50d6-a296-810f2bb40e12",
+            "label": "b",
+            "text": "“Dear Ms. Putri, thank you for your message. We would be happy to offer a late check-out until 2 in the afternoon at no extra charge. Please let us know if that suits you. Kind regards, Maya.”"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "error_specific",
+                    "text": "(c) “That depends.” Vague, and it leaves the guest unsure."
+                }
+            ],
+            "id": "13efeb4a-94b2-5b3a-9837-c1d43fac5421",
+            "label": "c",
+            "text": "“That depends.”"
+        }
+    ],
+    "code": "HSP-C05-RP-G3",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "8fb96438-48fa-5dc3-958e-24bdab0c9e1d",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 617,
+        "chapter": 5,
+        "heading_path": [
+            "Customer Care Through Writing",
+            "Step 6. Role-play (drafting)"
+        ],
+        "normalized_text_sha256": "f2616e6b1dfa9ae1df5bd64f17b5198818ee3a18eb376917e547ceb69ee4b365"
+    },
+    "status": "published",
+    "stem": "A guest writes to ask for a late check-out."
+}

@@ -1,0 +1,37 @@
+{
+    "activity_code": "HSP-C03-ACT-CONFIDENCE",
+    "code": "HSP-C03-CC-R4",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "59122f33-bd62-5f61-a37f-cacff662ec7e",
+    "language": "en",
+    "order": 4,
+    "provenance_kind": "source_verbatim",
+    "rating_scale": {
+        "max": 5,
+        "min": 1,
+        "values": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ]
+    },
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "rating",
+    "scoring_mode": "unscored_self_report",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 357,
+        "chapter": 3,
+        "heading_path": [
+            "Dealing with Customers on the Phone",
+            "Step 8. Confidence check"
+        ],
+        "normalized_text_sha256": "0f21786c54575e3f1c087b030fc551233e5837a75d500e1b3cc12b0cdb894279"
+    },
+    "status": "published",
+    "stem": "I can put a caller on hold and close the call politely."
+}

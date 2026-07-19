@@ -1,0 +1,28 @@
+{
+  "checkpoint": "CP-01",
+  "phase": 1,
+  "generated_at": "2026-07-15T19:09:22+07:00",
+  "inputs": [
+    {
+      "name": "Hospitrainity.docx",
+      "sha256": "7f8a2c62db6884498f7a1c2de56e79e39609262944a685fe7eb97f702444cbb4",
+      "role": "sole_learning_material_source_of_truth"
+    },
+    {
+      "name": "StayReady-Source-CP8.zip",
+      "sha256": "5a53f352594f948c21986c3aec89039370711ff01c17a7fc042fa984e6a303e7",
+      "role": "legacy_source_baseline"
+    },
+    {
+      "name": "StayReady-Standalone.html",
+      "sha256": "d86cbebaa08ab1882e447c4f1702c2ef975e3181dec84d5e0ddaadc737b17c72",
+      "role": "legacy_standalone_baseline"
+    }
+  ],
+  "phase_1_changes": {
+    "application_code": false,
+    "curriculum_data": false,
+    "standalone_bytes_changed": false,
+    "documentation_added": true
+  }
+}

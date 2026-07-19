@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C07-ACT-PRACTICE",
+  "code": "HSP-C07-PR-I3",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "71794ed7-e89d-5782-9932-78a4013b18de",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "ordering",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 870,
+    "chapter": 7,
+    "heading_path": [
+      "Dealing with Problems and Complaints",
+      "Step 5. Practice"
+    ],
+    "normalized_text_sha256": "1f262f385ebe0acb882570bf974ea6691ee5c36c05f176290376e8252aa7a75d"
+  },
+  "status": "published",
+  "stem": "3. Put the framework steps in order: Act, Listen, Follow up, Apologise."
+}

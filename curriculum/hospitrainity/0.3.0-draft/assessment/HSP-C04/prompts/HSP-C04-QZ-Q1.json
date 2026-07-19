@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C04-ACT-QUIZ",
+  "code": "HSP-C04-QZ-Q1",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "586fd212-67b3-5228-a406-5c71e63c8b8a",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 467,
+    "chapter": 4,
+    "heading_path": [
+      "The Guest-Services Hotline",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "67eb267d745c9e87df6eafe987795762d8c26d4ac210843e0cc69f8db46b687f"
+  },
+  "status": "published",
+  "stem": "Q1. What is the best hotline opener? A) “Hello?” B) “Guest services, Grand Serenata Hotel. How may I help you?” C) “What?”"
+}

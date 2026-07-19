@@ -1,0 +1,130 @@
+{
+    "blocks": [
+        {
+            "id": "c7d927d0-0d14-58d2-bf2b-c7e9fb8b529a",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Rate yourself honestly, from 1 (not confident yet) to 5 (very confident). This is just for you, and it is a good way to see your progress.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 797,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 8. Confidence check"
+                ],
+                "normalized_text_sha256": "8ae726d271eb7a0bf90a65a1207e47b0e727c521ff95159d8c7f245ec46d05b7"
+            },
+            "text": "Rate yourself honestly, from 1 (not confident yet) to 5 (very confident). This is just for you, and it is a good way to see your progress.",
+            "type": "instruction"
+        },
+        {
+            "caption": "Step 8. Confidence check: Statement / 1 / 2 / 3 / 4 / 5",
+            "header": [
+                "Statement",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5"
+            ],
+            "id": "35ea9f37-9f74-57a2-b97e-aa3dfaaa40e7",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "rows": [
+                [
+                    "I can reply quickly and briefly in a friendly, professional tone.",
+                    "☐",
+                    "☐",
+                    "☐",
+                    "☐",
+                    "☐"
+                ],
+                [
+                    "I can use emojis in a way that feels warm, not unprofessional.",
+                    "☐",
+                    "☐",
+                    "☐",
+                    "☐",
+                    "☐"
+                ],
+                [
+                    "I can move a public complaint into a private channel.",
+                    "☐",
+                    "☐",
+                    "☐",
+                    "☐",
+                    "☐"
+                ],
+                [
+                    "I can decide when to hand a message to the front desk.",
+                    "☐",
+                    "☐",
+                    "☐",
+                    "☐",
+                    "☐"
+                ]
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 798,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 8. Confidence check"
+                ],
+                "normalized_text_sha256": "41dc1f35735c6bca6b5e97fee68326b3efe2929f01aa50b08bc34c451842ed67"
+            },
+            "type": "source_table"
+        },
+        {
+            "activity_code": "HSP-C06-ACT-CONFIDENCE",
+            "id": "b3baa734-1bb5-507e-a2a7-023093d01366",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "derived_navigation",
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 796,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 8. Confidence check"
+                ],
+                "normalized_text_sha256": "7831b9b1655261ee807dd6e8e3ddc00ca3104240995c2c77bdaa0c3831fbaad6"
+            },
+            "type": "activity_embed"
+        }
+    ],
+    "chapter_code": "HSP-C06",
+    "code": "HSP-C06-LS-11",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "1a8af21c-1572-56f2-a9bf-d84cbe67eac4",
+    "language": "en",
+    "order": 11,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 796,
+        "chapter": 6,
+        "heading_path": [
+            "Online and Social Media Customer Service",
+            "Step 8. Confidence check"
+        ],
+        "normalized_text_sha256": "7831b9b1655261ee807dd6e8e3ddc00ca3104240995c2c77bdaa0c3831fbaad6"
+    },
+    "status": "published",
+    "title": "Step 8. Confidence check"
+}

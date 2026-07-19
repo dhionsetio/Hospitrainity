@@ -1,0 +1,276 @@
+{
+    "blocks": [
+        {
+            "id": "05f35bf0-8d8c-5dea-ad43-3d8d56a414ba",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "You look after the email inbox at the Grand Serenata Hotel.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 535,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 1. The scenario"
+                ],
+                "normalized_text_sha256": "cb7a5bc383010ac697e6fd28b96a12c3e9b5e1b04ff0ff34a79f22bd7c793cf0"
+            },
+            "text": "You look after the email inbox at the Grand Serenata Hotel.",
+            "type": "heading"
+        },
+        {
+            "id": "dcb95082-3fe8-5b65-92b6-80f8ed58b70d",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Guests write in to ask questions, request bookings, and raise concerns. Every reply you send stands in for the hotel, so it needs to be clear, correct, warm, and tidy. A good reply has five simple parts:",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 536,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 1. The scenario"
+                ],
+                "normalized_text_sha256": "12525fcc17c21965cec4e59bc916fa4019e68d436be9a886987d2bcc0774c4ce"
+            },
+            "text": "Guests write in to ask questions, request bookings, and raise concerns. Every reply you send stands in for the hotel, so it needs to be clear, correct, warm, and tidy. A good reply has five simple parts:",
+            "type": "paragraph"
+        },
+        {
+            "id": "8109f972-c1b6-5926-ad31-25ea72d30f37",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Greeting",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": ", such as “Dear Mr. Chen,”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 537,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 1. The scenario"
+                ],
+                "normalized_text_sha256": "070a32241b399cfa749a8e1501cb6250cbcc7112995cfdcb1444fc3a14869a75"
+            },
+            "text": "Greeting, such as “Dear Mr. Chen,”",
+            "type": "list_item"
+        },
+        {
+            "id": "9fa42a24-f070-5be1-8f6a-a34215c4813f",
+            "language": "en",
+            "order": 4,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Opening",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": ", which is usually a short thank-you.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 538,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 1. The scenario"
+                ],
+                "normalized_text_sha256": "769c5e2986da4801fc5c7fe2c7d1a370b8a2eabee06c259bdd209424906e54e2"
+            },
+            "text": "Opening, which is usually a short thank-you.",
+            "type": "list_item"
+        },
+        {
+            "id": "0ca8bf1a-7427-5fa8-b212-71c6a85e1da7",
+            "language": "en",
+            "order": 5,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Body",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": ", where the information sits, clearly ",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "organised",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": ".",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 539,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 1. The scenario"
+                ],
+                "normalized_text_sha256": "9b7735357a75d1585d42d624f132a5b720809f4595b7b2c35a0e13f278793372"
+            },
+            "text": "Body, where the information sits, clearly organised.",
+            "type": "list_item"
+        },
+        {
+            "id": "8c7f9964-81f9-5185-9fa7-8b9e14a9b0bf",
+            "language": "en",
+            "order": 6,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Closing",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": ", which offers a little more help.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 540,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 1. The scenario"
+                ],
+                "normalized_text_sha256": "8a06149fae96e10571f467ea20c1ef08b750ff0c109c8e27158ca7dbc5b9a1b1"
+            },
+            "text": "Closing, which offers a little more help.",
+            "type": "list_item"
+        },
+        {
+            "id": "1bb20c8d-dcc0-580d-992f-5b225f11e5df",
+            "language": "en",
+            "order": 7,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Sign-off",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": ", such as “Kind regards,” followed by your name.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 541,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 1. The scenario"
+                ],
+                "normalized_text_sha256": "4359aa522c23847ef88504ae8ab84c81e1878229b0db751a4aea7771aed342c2"
+            },
+            "text": "Sign-off, such as “Kind regards,” followed by your name.",
+            "type": "list_item"
+        },
+        {
+            "id": "fc689c74-298b-58f2-a6bb-401eac22e5e4",
+            "language": "en",
+            "order": 8,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Once this shape feels natural, writing a reply becomes almost like filling in a friendly form.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 542,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 1. The scenario"
+                ],
+                "normalized_text_sha256": "88e10cd6c35d5aeaf40e5aa1315fa1ab637b2e766746edeb1fef88e4f5369289"
+            },
+            "text": "Once this shape feels natural, writing a reply becomes almost like filling in a friendly form.",
+            "type": "paragraph"
+        }
+    ],
+    "chapter_code": "HSP-C05",
+    "code": "HSP-C05-LS-03",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "9143daff-7a0f-589a-9951-5d2523d155de",
+    "language": "en",
+    "order": 3,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 534,
+        "chapter": 5,
+        "heading_path": [
+            "Customer Care Through Writing",
+            "Step 1. The scenario"
+        ],
+        "normalized_text_sha256": "fe02f71c74a8a1d450fbab7f3052d29fd5a7c6cce679fd0160234ed9cf9bdf53"
+    },
+    "status": "published",
+    "title": "Step 1. The scenario"
+}

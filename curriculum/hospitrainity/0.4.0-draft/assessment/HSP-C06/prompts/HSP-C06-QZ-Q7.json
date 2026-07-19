@@ -1,0 +1,50 @@
+{
+    "activity_code": "HSP-C06-ACT-QUIZ",
+    "choices": [
+        {
+            "feedback": [],
+            "id": "a36caa02-a397-543a-b5ad-8d7989bb2ba5",
+            "label": "a",
+            "text": "reply publicly with their details"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "model_reveal",
+                    "text": "B. Keep personal details out of public view."
+                }
+            ],
+            "id": "f5fcf3cc-f7b9-5832-88b7-2f4e1de2b284",
+            "label": "b",
+            "text": "invite them to DM so their details stay private"
+        },
+        {
+            "feedback": [],
+            "id": "f8f6ad4c-f94c-5512-b79a-32e93ba8b957",
+            "label": "c",
+            "text": "ignore it"
+        }
+    ],
+    "code": "HSP-C06-QZ-Q7",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "3f2052a5-96f5-5a2b-a225-40bb9795b8c0",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 789,
+        "chapter": 6,
+        "heading_path": [
+            "Online and Social Media Customer Service",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "f8ca9584a6b3663aa0108176249c38d640ab5e4433171c257d1c4cfa35719f3b"
+    },
+    "status": "published",
+    "stem": "Q7. A guest shares a booking number in a public comment. You should ... A) reply publicly with their details B) invite them to DM so their details stay private C) ignore it"
+}

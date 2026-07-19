@@ -1,0 +1,14 @@
+{
+    "checksums": {
+        "framework/cefr-references.json": "daa624741b322ba5653bbede27851feeec0578bffe190ddfcd15161f25c4daf9",
+        "framework/competencies.json": "b426c6fdcef420b28107f569ea9e8105d39c1502c4ab06585600e4e323723ee0",
+        "framework/outcome-alignments.json": "f8afb74b995d8069a7bc1c297a5efb9d02385ef8e24dc1fe7d8b8c2a23b551ee",
+        "provenance/source-inventory.json": "26cad4ab13174a7cc61b39001b432576ba7712607dae3b21a5a7fa57449a13e8",
+        "schemas/content-block.schema.json": "9ef716a96988dc4ca489cb463af7cb1e34d9d1c4e3d5b2fc8a0017369e979517"
+    },
+    "content_version": "0.4.0-draft",
+    "namespace": "cc9dd546-ebaf-51c7-b86f-307d16a22f42",
+    "package": "hospitrainity",
+    "schema_version": "2.0.0",
+    "status": "draft"
+}

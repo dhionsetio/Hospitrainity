@@ -1,0 +1,50 @@
+{
+    "activity_code": "HSP-C06-ACT-QUIZ",
+    "choices": [
+        {
+            "feedback": [],
+            "id": "238f758a-624f-5611-9d14-db118606df5c",
+            "label": "a",
+            "text": "complex complaints"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "model_reveal",
+                    "text": "B. Chatbots handle the routine questions, and humans handle the tricky cases."
+                }
+            ],
+            "id": "deec80b6-7090-5bf6-be72-e525ae802bbc",
+            "label": "b",
+            "text": "instant answers to common questions, such as check-in and Wi-Fi"
+        },
+        {
+            "feedback": [],
+            "id": "a5443ddf-0154-5169-9dcb-9bc2235270b5",
+            "label": "c",
+            "text": "replacing all staff"
+        }
+    ],
+    "code": "HSP-C06-QZ-Q6",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "3d7a1c7d-78d0-5cae-b431-ee08b6d877ca",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 786,
+        "chapter": 6,
+        "heading_path": [
+            "Online and Social Media Customer Service",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "2f5ae7478cb0597522a8a366c10658397ace731bc526b2d5b9f8213478675b93"
+    },
+    "status": "published",
+    "stem": "Q6. What is a chatbot best used for? A) complex complaints B) instant answers to common questions, such as check-in and Wi-Fi C) replacing all staff"
+}

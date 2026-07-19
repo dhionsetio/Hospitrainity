@@ -1,0 +1,318 @@
+{
+    "blocks": [
+        {
+            "id": "45c05c9e-b66d-5565-831c-9b8aed462a1e",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Subject:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Re: Room availability for 5 to 7 July",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 570,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 4. Model email"
+                ],
+                "normalized_text_sha256": "79a8acfd78b74132d6f18b0625f759d495488fe004962ae27cddfbdd665b61a2"
+            },
+            "text": "Subject: Re: Room availability for 5 to 7 July",
+            "type": "paragraph"
+        },
+        {
+            "id": "6f2551a2-83c1-5b58-b917-94a631959162",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Dear Mr. Chen,",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 571,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 4. Model email"
+                ],
+                "normalized_text_sha256": "a66790c14de0e4408c0044151561a6f93856f88ca21033b1478246225f073f06"
+            },
+            "text": "Dear Mr. Chen,",
+            "type": "heading"
+        },
+        {
+            "id": "2aa647e5-3f74-5779-8340-f90079933fb4",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Thank you for your email. We are pleased to confirm that we have a Deluxe Room available from the fifth to the seventh of July, at 80 dollars per night, breakfast included.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 572,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 4. Model email"
+                ],
+                "normalized_text_sha256": "796d726b739a7243358932549666057ac7293bc483e6865b45693f2c29b8da60"
+            },
+            "text": "Thank you for your email. We are pleased to confirm that we have a Deluxe Room available from the fifth to the seventh of July, at 80 dollars per night, breakfast included.",
+            "type": "paragraph"
+        },
+        {
+            "id": "512b4bfe-35ee-56d4-8d99-45c591be60e1",
+            "language": "en",
+            "order": 4,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Please find the details below:",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 573,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 4. Model email"
+                ],
+                "normalized_text_sha256": "a19a9b5f750f627e0ee2ba6a8bf69b7c67c2e3d9089e50a32ad6443dddf9abc1"
+            },
+            "text": "Please find the details below:",
+            "type": "paragraph"
+        },
+        {
+            "id": "785ad89c-df69-52dc-b9d4-57fba0ff4859",
+            "language": "en",
+            "order": 5,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Room type: Deluxe Room",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 574,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 4. Model email"
+                ],
+                "normalized_text_sha256": "60b17eeec921d76702c61021e62e967fe5e797de50eebc57aef651a22d728d2d"
+            },
+            "text": "Room type: Deluxe Room",
+            "type": "list_item"
+        },
+        {
+            "id": "ae746ab0-923d-595a-915d-6491a991b93f",
+            "language": "en",
+            "order": 6,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Dates: 5 to 7 July, which is two nights",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 575,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 4. Model email"
+                ],
+                "normalized_text_sha256": "68d7b6fd91d17df8880f73ae2191f8ad36d8908512ad73dfb231c11b3913cfa4"
+            },
+            "text": "Dates: 5 to 7 July, which is two nights",
+            "type": "list_item"
+        },
+        {
+            "id": "9e2bde44-2973-55a6-9f9b-25c356fb8754",
+            "language": "en",
+            "order": 7,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Rate: 80 dollars per night, breakfast included",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 576,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 4. Model email"
+                ],
+                "normalized_text_sha256": "1bee389430f5bfa49f4cf2bd3ec131f24f11afe91a148e789dc8ee25dd67ddc4"
+            },
+            "text": "Rate: 80 dollars per night, breakfast included",
+            "type": "list_item"
+        },
+        {
+            "id": "17e5f777-3398-5d73-8f2c-7d85042745c7",
+            "language": "en",
+            "order": 8,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "To confirm your booking, simply reply to this email. If you have any further questions, please do not hesitate to contact us.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 577,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 4. Model email"
+                ],
+                "normalized_text_sha256": "ef0183000263ad1c52dbff611871e3d50501bd55477ef75c35918f38d10b2fdb"
+            },
+            "text": "To confirm your booking, simply reply to this email. If you have any further questions, please do not hesitate to contact us.",
+            "type": "paragraph"
+        },
+        {
+            "id": "838ba1d9-e524-5128-b032-af8101f2bd62",
+            "language": "en",
+            "order": 9,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Kind regards,",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 578,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 4. Model email"
+                ],
+                "normalized_text_sha256": "06d55b43ca584e8e5dd6cfb5d9e0f4538f7c6a57910314a9b29dcb9094c84d8d"
+            },
+            "text": "Kind regards,",
+            "type": "paragraph"
+        },
+        {
+            "id": "39080700-3f49-5ec9-9ffe-f5928622b5ab",
+            "language": "en",
+            "order": 10,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Maya, Grand Serenata Hotel",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 579,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 4. Model email"
+                ],
+                "normalized_text_sha256": "47317b6f85d32e12fc2069266d94448617417a3278de75a5f8b951ac9ef73c21"
+            },
+            "text": "Maya, Grand Serenata Hotel",
+            "type": "paragraph"
+        },
+        {
+            "id": "dd0212d3-390e-5183-8a1b-ddbf8571ef6c",
+            "language": "en",
+            "order": 11,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Notice how the email works: a clear subject line, a warm greeting, a thank-you, the facts laid out in an easy-to-scan list, a clear next step, and a friendly sign-off. A guest can read it in ten seconds and know exactly what to do.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 580,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 4. Model email"
+                ],
+                "normalized_text_sha256": "a57c05b9b4cdef31c1c4e6abc7b4f1bd26f090b792997ea6aec9a7ca95a9856f"
+            },
+            "text": "Notice how the email works: a clear subject line, a warm greeting, a thank-you, the facts laid out in an easy-to-scan list, a clear next step, and a friendly sign-off. A guest can read it in ten seconds and know exactly what to do.",
+            "type": "paragraph"
+        }
+    ],
+    "chapter_code": "HSP-C05",
+    "code": "HSP-C05-LS-06",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "ee63b9ff-e01d-5aae-aaad-4a2d8bd7862f",
+    "language": "en",
+    "order": 6,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 569,
+        "chapter": 5,
+        "heading_path": [
+            "Customer Care Through Writing",
+            "Step 4. Model email"
+        ],
+        "normalized_text_sha256": "77fccdb622334dd24412e95bfac214a638c5cfacc140fd95ba3df6443044446e"
+    },
+    "status": "published",
+    "title": "Step 4. Model email"
+}

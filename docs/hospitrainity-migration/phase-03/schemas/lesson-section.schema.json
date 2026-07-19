@@ -1,0 +1,73 @@
+{
+  "$id": "https://hospitrainity.curriculum/schema/lesson-section.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "$ref": "https://hospitrainity.curriculum/schema/_meta.schema.json#/$defs/meta"
+    }
+  ],
+  "properties": {
+    "chapter_code": {
+      "$ref": "https://hospitrainity.curriculum/schema/_meta.schema.json#/$defs/editorial_code"
+    },
+    "code": {
+      "$ref": "https://hospitrainity.curriculum/schema/_meta.schema.json#/$defs/editorial_code"
+    },
+    "content_version": {
+      "$ref": "https://hospitrainity.curriculum/schema/_meta.schema.json#/$defs/semver"
+    },
+    "entity_type": {
+      "const": "lesson-section"
+    },
+    "id": {
+      "$ref": "https://hospitrainity.curriculum/schema/_meta.schema.json#/$defs/uuid"
+    },
+    "order": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "replaced_by": {
+      "oneOf": [
+        {
+          "$ref": "https://hospitrainity.curriculum/schema/_meta.schema.json#/$defs/uuid"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "replaces": {
+      "oneOf": [
+        {
+          "$ref": "https://hospitrainity.curriculum/schema/_meta.schema.json#/$defs/uuid"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "source_locator": {
+      "$ref": "https://hospitrainity.curriculum/schema/_meta.schema.json#/$defs/source_locator"
+    },
+    "status": {
+      "$ref": "https://hospitrainity.curriculum/schema/_meta.schema.json#/$defs/status"
+    },
+    "title": {
+      "minLength": 1,
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "code",
+    "content_version",
+    "status",
+    "entity_type",
+    "source_locator",
+    "chapter_code",
+    "title"
+  ],
+  "title": "Lesson section",
+  "type": "object"
+}

@@ -1,0 +1,320 @@
+{
+    "blocks": [
+        {
+            "id": "f7c46171-f44c-51bc-b4d3-b162592dc958",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Grab a friend or your phone. Have someone read you a name and a phone number fairly quickly, then ",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "practise",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " reading it back correctly and giving a booking reference in single digits. Do it three times. This short drill builds the exact confidence you need for real calls, where listening and confirming are everything.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 360,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Take it further"
+                ],
+                "normalized_text_sha256": "a5be93382fbf35da26b64aea10dad06b0b44d3029e5454d78ba874ed3ebdd48a"
+            },
+            "text": "Grab a friend or your phone. Have someone read you a name and a phone number fairly quickly, then practise reading it back correctly and giving a booking reference in single digits. Do it three times. This short drill builds the exact confidence you need for real calls, where listening and confirming are everything.",
+            "type": "paragraph"
+        },
+        {
+            "id": "cb1f4729-26af-54aa-8fbf-81662afedc8b",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Telephone manner",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 362,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Take it further"
+                ],
+                "normalized_text_sha256": "1bb4acc6acb384dd7acd11afef3d3751017ec51514fd3d2ee40b667564722d25"
+            },
+            "text": "Telephone manner",
+            "type": "heading"
+        },
+        {
+            "id": "8163e829-ba03-53f2-b81b-9f2f462c5ee9",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "On the phone, your voice has to carry all of the welcome, so a few habits instantly mark you out as a professional.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 363,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Take it further"
+                ],
+                "normalized_text_sha256": "6144d2c872f3b595f15656195a547bdcef5c4c2689cd5fe9385e1f7ad6e864d4"
+            },
+            "text": "On the phone, your voice has to carry all of the welcome, so a few habits instantly mark you out as a professional.",
+            "type": "paragraph"
+        },
+        {
+            "id": "ec0e53d7-8348-56b4-b8e6-007b8b302c5c",
+            "language": "en",
+            "order": 4,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Answer promptly, then give the hotel name, your name, and an offer of help.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 364,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Take it further"
+                ],
+                "normalized_text_sha256": "dddcb4e6a5b130770fc55f39229a0e54e1b8cfc74c7d0cd99d32df11cc3adb44"
+            },
+            "text": "Answer promptly, then give the hotel name, your name, and an offer of help.",
+            "type": "list_item"
+        },
+        {
+            "id": "be574eed-28cb-5ac4-bd6f-13da0c54e1fe",
+            "language": "en",
+            "order": 5,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Keep a smile in your voice, because callers really can hear it.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 365,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Take it further"
+                ],
+                "normalized_text_sha256": "fabc36f69dcc18c6358f6b1dc05b8e3d34323bd8fabaafa1ffc6bc3772825eb6"
+            },
+            "text": "Keep a smile in your voice, because callers really can hear it.",
+            "type": "list_item"
+        },
+        {
+            "id": "b33e90d7-ca1c-52a1-8528-5d34ec6ab423",
+            "language": "en",
+            "order": 6,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Take careful messages whenever someone is unavailable, and always read them back.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 366,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Take it further"
+                ],
+                "normalized_text_sha256": "37b657e64dec502ce8f1f9b717125544d86a56a11047c3b62252b5bd9ec76e88"
+            },
+            "text": "Take careful messages whenever someone is unavailable, and always read them back.",
+            "type": "list_item"
+        },
+        {
+            "id": "99e71942-0f0a-5852-9f90-f0fdf0723e8e",
+            "language": "en",
+            "order": 7,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "A simple checklist for taking a message is worth ",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "memorising",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": ": who called, when they called, their number, what they need, and what happens next. Reading that back before you hang up is the easiest way to avoid a mix-up.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 367,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Take it further"
+                ],
+                "normalized_text_sha256": "7d3c0a160ffbd35dc772d2e8724407800c1e64ce2df1ae3a8f97899413963c86"
+            },
+            "text": "A simple checklist for taking a message is worth memorising: who called, when they called, their number, what they need, and what happens next. Reading that back before you hang up is the easiest way to avoid a mix-up.",
+            "type": "paragraph"
+        },
+        {
+            "id": "25cb0f87-0932-52dc-89e1-2a7c79619003",
+            "language": "en",
+            "order": 8,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Positive language works on the phone too:",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 368,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Take it further"
+                ],
+                "normalized_text_sha256": "401326463bdf387cd02d0ac99103956958d1b94bdfe2fff155af5eef39a2a982"
+            },
+            "text": "Positive language works on the phone too:",
+            "type": "paragraph"
+        },
+        {
+            "caption": "Take it further: Instead of saying this / Try saying this",
+            "header": [
+                "Instead of saying this",
+                "Try saying this"
+            ],
+            "id": "499784ea-3c31-5cf8-a0ff-95149393fd47",
+            "language": "en",
+            "order": 9,
+            "provenance_kind": "source_verbatim",
+            "rows": [
+                [
+                    "I do not know.",
+                    "Let me find that out for you and call you right back."
+                ],
+                [
+                    "They are not here right now.",
+                    "They are away from their desk at the moment, but may I take a message?"
+                ],
+                [
+                    "Hold on.",
+                    "May I put you on hold for just a moment? Thank you for waiting."
+                ]
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 369,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Take it further"
+                ],
+                "normalized_text_sha256": "c3f4b6fe2fd003cb33d1a457e99726577639b1ecaf64a2fbdafc8b4051837a21"
+            },
+            "type": "source_table"
+        },
+        {
+            "id": "da8d9f82-a798-52af-aca4-1df0fa26f39b",
+            "language": "en",
+            "order": 10,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "On the phone, careful listening and a clear read-back are your two best friends. They turn a good call into a mistake-free one.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 370,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Take it further"
+                ],
+                "normalized_text_sha256": "dd1e1a02cf8385dfa510d728f5bdae106c88e9cbeb6be3eac1ad545090a7eebd"
+            },
+            "text": "On the phone, careful listening and a clear read-back are your two best friends. They turn a good call into a mistake-free one.",
+            "type": "paragraph"
+        }
+    ],
+    "chapter_code": "HSP-C03",
+    "code": "HSP-C03-LS-12",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "4a4fc01e-484a-5839-b999-38e5d5e1d695",
+    "language": "en",
+    "order": 12,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 359,
+        "chapter": 3,
+        "heading_path": [
+            "Dealing with Customers on the Phone",
+            "Take it further"
+        ],
+        "normalized_text_sha256": "b19a89522b9f73e505f3b0dd1e4759f15eb4c7fc7b935b00b917e9c2c9ae6dc7"
+    },
+    "status": "published",
+    "title": "Take it further"
+}

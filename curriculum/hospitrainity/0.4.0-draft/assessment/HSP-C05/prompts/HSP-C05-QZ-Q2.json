@@ -1,0 +1,50 @@
+{
+    "activity_code": "HSP-C05-ACT-QUIZ",
+    "choices": [
+        {
+            "feedback": [
+                {
+                    "feedback_type": "model_reveal",
+                    "text": "A. It is warm and professional."
+                }
+            ],
+            "id": "be79fe1c-4d23-5521-a7e2-3aa30a574680",
+            "label": "a",
+            "text": "“Kind regards,”"
+        },
+        {
+            "feedback": [],
+            "id": "4c2d503c-da97-5658-a511-f27541551f2c",
+            "label": "b",
+            "text": "“cya,”"
+        },
+        {
+            "feedback": [],
+            "id": "ce372ce3-af2a-59eb-b4fe-b519f5d0310d",
+            "label": "c",
+            "text": "“thx,”"
+        }
+    ],
+    "code": "HSP-C05-QZ-Q2",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "42b53ca4-877b-5f9f-bece-0adb7bc85a18",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 631,
+        "chapter": 5,
+        "heading_path": [
+            "Customer Care Through Writing",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "82a05168eef1ce9579d41b7198a530c40f457a16c11422902377fce223e1496d"
+    },
+    "status": "published",
+    "stem": "Q2. What is the best formal sign-off? A) “Kind regards,” B) “cya,” C) “thx,”"
+}

@@ -1,0 +1,24 @@
+{
+  "accepted": [
+    "B"
+  ],
+  "code": "HSP-C04-QZ-Q3-AM",
+  "content_version": "0.3.0-draft",
+  "entity_type": "answer-model",
+  "id": "58e0833e-ffe1-5a8b-9e34-6e8f9f1721f0",
+  "prompt_code": "HSP-C04-QZ-Q3",
+  "replaced_by": null,
+  "replaces": null,
+  "scoring_mode": "objective_exact",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 475,
+    "chapter": 4,
+    "heading_path": [
+      "The Guest-Services Hotline",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "268605f52a0f928360494ee07b73e3fae96faf6aff244640d2678bc5ea1f4229"
+  },
+  "status": "published"
+}

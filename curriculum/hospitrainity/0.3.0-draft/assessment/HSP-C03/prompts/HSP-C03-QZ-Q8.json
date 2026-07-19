@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C03-ACT-QUIZ",
+  "code": "HSP-C03-QZ-Q8",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "08fa5f6f-2d55-5d1e-a323-f63bea0fe8d9",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 344,
+    "chapter": 3,
+    "heading_path": [
+      "Dealing with Customers on the Phone",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "b77c0af33351665e7e1b9c2f95a90b54b2801dccc3f2a77ae3feb90d7681260c"
+  },
+  "status": "published",
+  "stem": "Q8. A caller needs the restaurant, not reservations. What is best? A) say “wrong number” B) transfer them warmly and tell them what you are doing C) hang up"
+}

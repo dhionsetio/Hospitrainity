@@ -1,0 +1,90 @@
+{
+    "blocks": [
+        {
+            "id": "f88e13cc-23f5-55a3-acdf-6354444076a9",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Guests may forget the exact words you used, but they will always remember how you made them feel. The check-in is often the very first face-to-face moment of the whole stay, so it sets the tone for everything that follows. A warm, confident welcome can turn a tired ",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "traveller",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " into a happy guest in under a minute.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 84,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Why this matters"
+                ],
+                "normalized_text_sha256": "404d44397b0545617b69e1d32fa49183e727585b41feceb67d49845a5f14e78b"
+            },
+            "text": "Guests may forget the exact words you used, but they will always remember how you made them feel. The check-in is often the very first face-to-face moment of the whole stay, so it sets the tone for everything that follows. A warm, confident welcome can turn a tired traveller into a happy guest in under a minute.",
+            "type": "paragraph"
+        },
+        {
+            "id": "89b5a5cb-b227-597d-9810-4291ed44a582",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Good to know: the guest experience should feel welcoming, personal, and genuine at every step, and the front desk is where that feeling begins. For more, see the further reading at the end of this chapter.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 85,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Why this matters"
+                ],
+                "normalized_text_sha256": "60b33f695c1755e32879e014c8001a994eb9414f7c616eb912ec40d5c95b4913"
+            },
+            "text": "Good to know: the guest experience should feel welcoming, personal, and genuine at every step, and the front desk is where that feeling begins. For more, see the further reading at the end of this chapter.",
+            "type": "paragraph"
+        }
+    ],
+    "chapter_code": "HSP-C02",
+    "code": "HSP-C02-LS-02",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "bfb1e954-a2a0-5fbd-8e86-fc3ca24bbd44",
+    "language": "en",
+    "order": 2,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 83,
+        "chapter": 2,
+        "heading_path": [
+            "Front Desk and Check-In",
+            "Why this matters"
+        ],
+        "normalized_text_sha256": "8893dff34c02db6a4e9bb13792e41320671581fe96a8c65721b2267627a48aec"
+    },
+    "status": "published",
+    "title": "Why this matters"
+}

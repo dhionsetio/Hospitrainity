@@ -1,0 +1,130 @@
+{
+    "blocks": [
+        {
+            "id": "ff85cbea-7098-5f02-bcc8-7e5b5e29dc54",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Rate yourself honestly, from 1 (not confident yet) to 5 (very confident). This is just for you, and it is a good way to see your progress.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 945,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 8. Confidence check"
+                ],
+                "normalized_text_sha256": "8ae726d271eb7a0bf90a65a1207e47b0e727c521ff95159d8c7f245ec46d05b7"
+            },
+            "text": "Rate yourself honestly, from 1 (not confident yet) to 5 (very confident). This is just for you, and it is a good way to see your progress.",
+            "type": "instruction"
+        },
+        {
+            "caption": "Step 8. Confidence check: Statement / 1 / 2 / 3 / 4 / 5",
+            "header": [
+                "Statement",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5"
+            ],
+            "id": "45ca526f-0cff-5397-a53a-a12d9fc8ea5b",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "rows": [
+                [
+                    "I can stay calm and listen when a guest is upset.",
+                    "☐",
+                    "☐",
+                    "☐",
+                    "☐",
+                    "☐"
+                ],
+                [
+                    "I can apologise sincerely and show empathy.",
+                    "☐",
+                    "☐",
+                    "☐",
+                    "☐",
+                    "☐"
+                ],
+                [
+                    "I can take ownership and offer a real solution.",
+                    "☐",
+                    "☐",
+                    "☐",
+                    "☐",
+                    "☐"
+                ],
+                [
+                    "I can write a professional letter of apology.",
+                    "☐",
+                    "☐",
+                    "☐",
+                    "☐",
+                    "☐"
+                ]
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 946,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 8. Confidence check"
+                ],
+                "normalized_text_sha256": "a67fdbc03f2611658952920fcbe0134cb88c9bbd09050964ea2f4057a9016c7d"
+            },
+            "type": "source_table"
+        },
+        {
+            "activity_code": "HSP-C07-ACT-CONFIDENCE",
+            "id": "f23877d4-dd41-5af2-88ff-911c53ed06bf",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "derived_navigation",
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 944,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 8. Confidence check"
+                ],
+                "normalized_text_sha256": "7831b9b1655261ee807dd6e8e3ddc00ca3104240995c2c77bdaa0c3831fbaad6"
+            },
+            "type": "activity_embed"
+        }
+    ],
+    "chapter_code": "HSP-C07",
+    "code": "HSP-C07-LS-11",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "dc43d99c-528f-5cbb-b7ca-a89757dae54b",
+    "language": "en",
+    "order": 11,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 944,
+        "chapter": 7,
+        "heading_path": [
+            "Dealing with Problems and Complaints",
+            "Step 8. Confidence check"
+        ],
+        "normalized_text_sha256": "7831b9b1655261ee807dd6e8e3ddc00ca3104240995c2c77bdaa0c3831fbaad6"
+    },
+    "status": "published",
+    "title": "Step 8. Confidence check"
+}

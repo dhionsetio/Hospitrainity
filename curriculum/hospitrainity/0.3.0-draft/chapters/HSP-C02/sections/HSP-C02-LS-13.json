@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C02",
+  "code": "HSP-C02-LS-13",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "fa468a24-95c8-50ae-90a8-b456003791f0",
+  "order": 13,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 218,
+    "chapter": 2,
+    "heading_path": [
+      "Front Desk and Check-In",
+      "Further reading"
+    ],
+    "normalized_text_sha256": "949f5950bfa760f35c3bdf9e20a1e8fc23dfcfce925293f39c5f85d41f722e76"
+  },
+  "status": "published",
+  "title": "Further reading"
+}

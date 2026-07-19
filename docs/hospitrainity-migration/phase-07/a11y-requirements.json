@@ -1,0 +1,646 @@
+{
+  "activities": [
+    {
+      "channel": "spoken_ftf",
+      "code": "HSP-C02-ACT-CONFIDENCE",
+      "media_asset_requirements": [],
+      "required_accessibility": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "response_form": "self_rating",
+      "udl_principles": [
+        "Action & Expression",
+        "Engagement",
+        "Representation"
+      ],
+      "wcag_success_criteria": [
+        "1.1.1 Non-text Content (A)",
+        "1.4.1 Use of Color (A)",
+        "2.1.1 Keyboard (A)",
+        "2.1.2 No Keyboard Trap (A)",
+        "2.2.1 Timing Adjustable (A)"
+      ]
+    },
+    {
+      "channel": "spoken_ftf",
+      "code": "HSP-C02-ACT-PRACTICE",
+      "media_asset_requirements": [],
+      "required_accessibility": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "response_form": "short_text",
+      "udl_principles": [
+        "Action & Expression",
+        "Engagement",
+        "Representation"
+      ],
+      "wcag_success_criteria": [
+        "1.1.1 Non-text Content (A)",
+        "1.4.1 Use of Color (A)",
+        "2.1.1 Keyboard (A)",
+        "2.1.2 No Keyboard Trap (A)",
+        "2.2.1 Timing Adjustable (A)"
+      ]
+    },
+    {
+      "channel": "spoken_ftf",
+      "code": "HSP-C02-ACT-QUIZ",
+      "media_asset_requirements": [],
+      "required_accessibility": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "response_form": "selection",
+      "udl_principles": [
+        "Action & Expression",
+        "Engagement",
+        "Representation"
+      ],
+      "wcag_success_criteria": [
+        "1.1.1 Non-text Content (A)",
+        "1.4.1 Use of Color (A)",
+        "2.1.1 Keyboard (A)",
+        "2.1.2 No Keyboard Trap (A)",
+        "2.2.1 Timing Adjustable (A)"
+      ]
+    },
+    {
+      "channel": "spoken_ftf",
+      "code": "HSP-C02-ACT-ROLEPLAY",
+      "media_asset_requirements": [
+        "audio (recorded model turn) => text transcript required (WCAG 1.2.1); player keyboard-operable with visible controls (WCAG 2.1.1); no autoplay >3s / user-controlled (WCAG 1.4.2)"
+      ],
+      "required_accessibility": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt",
+        "transcript"
+      ],
+      "response_form": "role_play",
+      "udl_principles": [
+        "Action & Expression",
+        "Engagement",
+        "Representation"
+      ],
+      "wcag_success_criteria": [
+        "1.1.1 Non-text Content (A)",
+        "1.2.1 Audio-only and Video-only (A)",
+        "1.2.2 Captions (A)",
+        "1.2.3 Audio Description or Media Alternative (A)",
+        "1.4.1 Use of Color (A)",
+        "2.1.1 Keyboard (A)",
+        "2.1.2 No Keyboard Trap (A)",
+        "2.2.1 Timing Adjustable (A)"
+      ]
+    },
+    {
+      "channel": "telecommunications",
+      "code": "HSP-C03-ACT-CONFIDENCE",
+      "media_asset_requirements": [],
+      "required_accessibility": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "response_form": "self_rating",
+      "udl_principles": [
+        "Action & Expression",
+        "Engagement",
+        "Representation"
+      ],
+      "wcag_success_criteria": [
+        "1.1.1 Non-text Content (A)",
+        "1.4.1 Use of Color (A)",
+        "2.1.1 Keyboard (A)",
+        "2.1.2 No Keyboard Trap (A)",
+        "2.2.1 Timing Adjustable (A)"
+      ]
+    },
+    {
+      "channel": "telecommunications",
+      "code": "HSP-C03-ACT-PRACTICE",
+      "media_asset_requirements": [],
+      "required_accessibility": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "response_form": "short_text",
+      "udl_principles": [
+        "Action & Expression",
+        "Engagement",
+        "Representation"
+      ],
+      "wcag_success_criteria": [
+        "1.1.1 Non-text Content (A)",
+        "1.4.1 Use of Color (A)",
+        "2.1.1 Keyboard (A)",
+        "2.1.2 No Keyboard Trap (A)",
+        "2.2.1 Timing Adjustable (A)"
+      ]
+    },
+    {
+      "channel": "telecommunications",
+      "code": "HSP-C03-ACT-QUIZ",
+      "media_asset_requirements": [],
+      "required_accessibility": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "response_form": "selection",
+      "udl_principles": [
+        "Action & Expression",
+        "Engagement",
+        "Representation"
+      ],
+      "wcag_success_criteria": [
+        "1.1.1 Non-text Content (A)",
+        "1.4.1 Use of Color (A)",
+        "2.1.1 Keyboard (A)",
+        "2.1.2 No Keyboard Trap (A)",
+        "2.2.1 Timing Adjustable (A)"
+      ]
+    },
+    {
+      "channel": "telecommunications",
+      "code": "HSP-C03-ACT-ROLEPLAY",
+      "media_asset_requirements": [
+        "audio (recorded model turn) => text transcript required (WCAG 1.2.1); player keyboard-operable with visible controls (WCAG 2.1.1); no autoplay >3s / user-controlled (WCAG 1.4.2)"
+      ],
+      "required_accessibility": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt",
+        "transcript"
+      ],
+      "response_form": "role_play",
+      "udl_principles": [
+        "Action & Expression",
+        "Engagement",
+        "Representation"
+      ],
+      "wcag_success_criteria": [
+        "1.1.1 Non-text Content (A)",
+        "1.2.1 Audio-only and Video-only (A)",
+        "1.2.2 Captions (A)",
+        "1.2.3 Audio Description or Media Alternative (A)",
+        "1.4.1 Use of Color (A)",
+        "2.1.1 Keyboard (A)",
+        "2.1.2 No Keyboard Trap (A)",
+        "2.2.1 Timing Adjustable (A)"
+      ]
+    },
+    {
+      "channel": "telecommunications",
+      "code": "HSP-C04-ACT-CONFIDENCE",
+      "media_asset_requirements": [],
+      "required_accessibility": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "response_form": "self_rating",
+      "udl_principles": [
+        "Action & Expression",
+        "Engagement",
+        "Representation"
+      ],
+      "wcag_success_criteria": [
+        "1.1.1 Non-text Content (A)",
+        "1.4.1 Use of Color (A)",
+        "2.1.1 Keyboard (A)",
+        "2.1.2 No Keyboard Trap (A)",
+        "2.2.1 Timing Adjustable (A)"
+      ]
+    },
+    {
+      "channel": "telecommunications",
+      "code": "HSP-C04-ACT-PRACTICE",
+      "media_asset_requirements": [],
+      "required_accessibility": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "response_form": "short_text",
+      "udl_principles": [
+        "Action & Expression",
+        "Engagement",
+        "Representation"
+      ],
+      "wcag_success_criteria": [
+        "1.1.1 Non-text Content (A)",
+        "1.4.1 Use of Color (A)",
+        "2.1.1 Keyboard (A)",
+        "2.1.2 No Keyboard Trap (A)",
+        "2.2.1 Timing Adjustable (A)"
+      ]
+    },
+    {
+      "channel": "telecommunications",
+      "code": "HSP-C04-ACT-QUIZ",
+      "media_asset_requirements": [],
+      "required_accessibility": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "response_form": "selection",
+      "udl_principles": [
+        "Action & Expression",
+        "Engagement",
+        "Representation"
+      ],
+      "wcag_success_criteria": [
+        "1.1.1 Non-text Content (A)",
+        "1.4.1 Use of Color (A)",
+        "2.1.1 Keyboard (A)",
+        "2.1.2 No Keyboard Trap (A)",
+        "2.2.1 Timing Adjustable (A)"
+      ]
+    },
+    {
+      "channel": "telecommunications",
+      "code": "HSP-C04-ACT-ROLEPLAY",
+      "media_asset_requirements": [
+        "audio (recorded model turn) => text transcript required (WCAG 1.2.1); player keyboard-operable with visible controls (WCAG 2.1.1); no autoplay >3s / user-controlled (WCAG 1.4.2)"
+      ],
+      "required_accessibility": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt",
+        "transcript"
+      ],
+      "response_form": "role_play",
+      "udl_principles": [
+        "Action & Expression",
+        "Engagement",
+        "Representation"
+      ],
+      "wcag_success_criteria": [
+        "1.1.1 Non-text Content (A)",
+        "1.2.1 Audio-only and Video-only (A)",
+        "1.2.2 Captions (A)",
+        "1.2.3 Audio Description or Media Alternative (A)",
+        "1.4.1 Use of Color (A)",
+        "2.1.1 Keyboard (A)",
+        "2.1.2 No Keyboard Trap (A)",
+        "2.2.1 Timing Adjustable (A)"
+      ]
+    },
+    {
+      "channel": "written_correspondence",
+      "code": "HSP-C05-ACT-CONFIDENCE",
+      "media_asset_requirements": [],
+      "required_accessibility": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "response_form": "self_rating",
+      "udl_principles": [
+        "Action & Expression",
+        "Engagement",
+        "Representation"
+      ],
+      "wcag_success_criteria": [
+        "1.1.1 Non-text Content (A)",
+        "1.4.1 Use of Color (A)",
+        "2.1.1 Keyboard (A)",
+        "2.1.2 No Keyboard Trap (A)",
+        "2.2.1 Timing Adjustable (A)"
+      ]
+    },
+    {
+      "channel": "written_correspondence",
+      "code": "HSP-C05-ACT-PRACTICE",
+      "media_asset_requirements": [],
+      "required_accessibility": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "response_form": "short_text",
+      "udl_principles": [
+        "Action & Expression",
+        "Engagement",
+        "Representation"
+      ],
+      "wcag_success_criteria": [
+        "1.1.1 Non-text Content (A)",
+        "1.4.1 Use of Color (A)",
+        "2.1.1 Keyboard (A)",
+        "2.1.2 No Keyboard Trap (A)",
+        "2.2.1 Timing Adjustable (A)"
+      ]
+    },
+    {
+      "channel": "written_correspondence",
+      "code": "HSP-C05-ACT-QUIZ",
+      "media_asset_requirements": [],
+      "required_accessibility": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "response_form": "selection",
+      "udl_principles": [
+        "Action & Expression",
+        "Engagement",
+        "Representation"
+      ],
+      "wcag_success_criteria": [
+        "1.1.1 Non-text Content (A)",
+        "1.4.1 Use of Color (A)",
+        "2.1.1 Keyboard (A)",
+        "2.1.2 No Keyboard Trap (A)",
+        "2.2.1 Timing Adjustable (A)"
+      ]
+    },
+    {
+      "channel": "written_correspondence",
+      "code": "HSP-C05-ACT-ROLEPLAY",
+      "media_asset_requirements": [],
+      "required_accessibility": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "response_form": "service_artifact",
+      "udl_principles": [
+        "Action & Expression",
+        "Engagement",
+        "Representation"
+      ],
+      "wcag_success_criteria": [
+        "1.1.1 Non-text Content (A)",
+        "1.4.1 Use of Color (A)",
+        "2.1.1 Keyboard (A)",
+        "2.1.2 No Keyboard Trap (A)",
+        "2.2.1 Timing Adjustable (A)"
+      ]
+    },
+    {
+      "channel": "social_public_reply",
+      "code": "HSP-C06-ACT-CONFIDENCE",
+      "media_asset_requirements": [
+        "image (screenshots of posts, if used) => alt_text required (WCAG 1.1.1); not sole carrier of meaning (WCAG 1.4.1)"
+      ],
+      "required_accessibility": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "response_form": "self_rating",
+      "udl_principles": [
+        "Action & Expression",
+        "Engagement",
+        "Representation"
+      ],
+      "wcag_success_criteria": [
+        "1.1.1 Non-text Content (A)",
+        "1.4.1 Use of Color (A)",
+        "2.1.1 Keyboard (A)",
+        "2.1.2 No Keyboard Trap (A)",
+        "2.2.1 Timing Adjustable (A)"
+      ]
+    },
+    {
+      "channel": "social_public_reply",
+      "code": "HSP-C06-ACT-PRACTICE",
+      "media_asset_requirements": [
+        "image (screenshots of posts, if used) => alt_text required (WCAG 1.1.1); not sole carrier of meaning (WCAG 1.4.1)"
+      ],
+      "required_accessibility": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "response_form": "short_text",
+      "udl_principles": [
+        "Action & Expression",
+        "Engagement",
+        "Representation"
+      ],
+      "wcag_success_criteria": [
+        "1.1.1 Non-text Content (A)",
+        "1.4.1 Use of Color (A)",
+        "2.1.1 Keyboard (A)",
+        "2.1.2 No Keyboard Trap (A)",
+        "2.2.1 Timing Adjustable (A)"
+      ]
+    },
+    {
+      "channel": "social_public_reply",
+      "code": "HSP-C06-ACT-QUIZ",
+      "media_asset_requirements": [
+        "image (screenshots of posts, if used) => alt_text required (WCAG 1.1.1); not sole carrier of meaning (WCAG 1.4.1)"
+      ],
+      "required_accessibility": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "response_form": "selection",
+      "udl_principles": [
+        "Action & Expression",
+        "Engagement",
+        "Representation"
+      ],
+      "wcag_success_criteria": [
+        "1.1.1 Non-text Content (A)",
+        "1.4.1 Use of Color (A)",
+        "2.1.1 Keyboard (A)",
+        "2.1.2 No Keyboard Trap (A)",
+        "2.2.1 Timing Adjustable (A)"
+      ]
+    },
+    {
+      "channel": "social_public_reply",
+      "code": "HSP-C06-ACT-ROLEPLAY",
+      "media_asset_requirements": [
+        "image (screenshots of posts, if used) => alt_text required (WCAG 1.1.1); not sole carrier of meaning (WCAG 1.4.1)"
+      ],
+      "required_accessibility": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "response_form": "service_artifact",
+      "udl_principles": [
+        "Action & Expression",
+        "Engagement",
+        "Representation"
+      ],
+      "wcag_success_criteria": [
+        "1.1.1 Non-text Content (A)",
+        "1.4.1 Use of Color (A)",
+        "2.1.1 Keyboard (A)",
+        "2.1.2 No Keyboard Trap (A)",
+        "2.2.1 Timing Adjustable (A)"
+      ]
+    },
+    {
+      "channel": "spoken_ftf",
+      "code": "HSP-C07-ACT-CONFIDENCE",
+      "media_asset_requirements": [],
+      "required_accessibility": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "response_form": "self_rating",
+      "udl_principles": [
+        "Action & Expression",
+        "Engagement",
+        "Representation"
+      ],
+      "wcag_success_criteria": [
+        "1.1.1 Non-text Content (A)",
+        "1.4.1 Use of Color (A)",
+        "2.1.1 Keyboard (A)",
+        "2.1.2 No Keyboard Trap (A)",
+        "2.2.1 Timing Adjustable (A)"
+      ]
+    },
+    {
+      "channel": "spoken_ftf",
+      "code": "HSP-C07-ACT-PRACTICE",
+      "media_asset_requirements": [],
+      "required_accessibility": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "response_form": "short_text",
+      "udl_principles": [
+        "Action & Expression",
+        "Engagement",
+        "Representation"
+      ],
+      "wcag_success_criteria": [
+        "1.1.1 Non-text Content (A)",
+        "1.4.1 Use of Color (A)",
+        "2.1.1 Keyboard (A)",
+        "2.1.2 No Keyboard Trap (A)",
+        "2.2.1 Timing Adjustable (A)"
+      ]
+    },
+    {
+      "channel": "spoken_ftf",
+      "code": "HSP-C07-ACT-QUIZ",
+      "media_asset_requirements": [],
+      "required_accessibility": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "response_form": "selection",
+      "udl_principles": [
+        "Action & Expression",
+        "Engagement",
+        "Representation"
+      ],
+      "wcag_success_criteria": [
+        "1.1.1 Non-text Content (A)",
+        "1.4.1 Use of Color (A)",
+        "2.1.1 Keyboard (A)",
+        "2.1.2 No Keyboard Trap (A)",
+        "2.2.1 Timing Adjustable (A)"
+      ]
+    },
+    {
+      "channel": "spoken_ftf",
+      "code": "HSP-C07-ACT-ROLEPLAY",
+      "media_asset_requirements": [
+        "audio (recorded model turn) => text transcript required (WCAG 1.2.1); player keyboard-operable with visible controls (WCAG 2.1.1); no autoplay >3s / user-controlled (WCAG 1.4.2)"
+      ],
+      "required_accessibility": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt",
+        "transcript"
+      ],
+      "response_form": "role_play",
+      "udl_principles": [
+        "Action & Expression",
+        "Engagement",
+        "Representation"
+      ],
+      "wcag_success_criteria": [
+        "1.1.1 Non-text Content (A)",
+        "1.2.1 Audio-only and Video-only (A)",
+        "1.2.2 Captions (A)",
+        "1.2.3 Audio Description or Media Alternative (A)",
+        "1.4.1 Use of Color (A)",
+        "2.1.1 Keyboard (A)",
+        "2.1.2 No Keyboard Trap (A)",
+        "2.2.1 Timing Adjustable (A)"
+      ]
+    }
+  ],
+  "baseline_accessibility": [
+    "text_alt",
+    "keyboard_path",
+    "non_color_cue",
+    "no_timing_dependency"
+  ],
+  "generated_by": "CP-07",
+  "media_rules": {
+    "audio": [
+      "text transcript required (WCAG 1.2.1)",
+      "player keyboard-operable with visible controls (WCAG 2.1.1)",
+      "no autoplay >3s / user-controlled (WCAG 1.4.2)"
+    ],
+    "document": [
+      "structured/tagged with headings + reading order (WCAG 1.3.1)",
+      "language identified (WCAG 3.1.1)"
+    ],
+    "image": [
+      "alt_text required (WCAG 1.1.1)",
+      "not sole carrier of meaning (WCAG 1.4.1)"
+    ],
+    "video": [
+      "captions required (WCAG 1.2.2)",
+      "audio description or full text alternative (WCAG 1.2.3/1.2.5)",
+      "keyboard-operable controls (WCAG 2.1.1)"
+    ]
+  },
+  "standards": {
+    "udl": "CAST UDL Guidelines 3.0 (2024)",
+    "wcag": "WCAG 2.2, Level AA (W3C Recommendation 2023-10-05)"
+  },
+  "target": "Requirements for the future Hospitrainity renderer/authoring platform (CP-08+). Requirements-only: no content changed.",
+  "tool": "hsp-a11y.mjs",
+  "transcript_rule": "transcript / time-based-media alternative required when channel in {spoken_ftf, telecommunications} and response_form in {role_play, spoken_rehearsal}"
+}

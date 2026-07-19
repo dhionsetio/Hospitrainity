@@ -1,0 +1,200 @@
+{
+    "blocks": [
+        {
+            "id": "e8a658d5-b6d9-5209-9265-afaadba57e28",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Customer care means making the guest feel welcome, understood, and helped. In a hotel, your English matters a great deal, and so does your attitude. Three things make service feel great:",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 48,
+                "chapter": 1,
+                "heading_path": [
+                    "Welcome and Introduction to Customer Care",
+                    "What customer care means"
+                ],
+                "normalized_text_sha256": "02987485df17034d3026df04dba6344029b6825acec4e116eb62e59a290cd73c"
+            },
+            "text": "Customer care means making the guest feel welcome, understood, and helped. In a hotel, your English matters a great deal, and so does your attitude. Three things make service feel great:",
+            "type": "paragraph"
+        },
+        {
+            "id": "55f3f935-7af3-5ba3-a54d-b28936ffd5d2",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Warmth",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": ", which is a genuine greeting and a friendly tone.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 49,
+                "chapter": 1,
+                "heading_path": [
+                    "Welcome and Introduction to Customer Care",
+                    "What customer care means"
+                ],
+                "normalized_text_sha256": "72d33f4adf4c59d3879c5570d985b96b6bb8766fbc46fb48e25992d882e92948"
+            },
+            "text": "Warmth, which is a genuine greeting and a friendly tone.",
+            "type": "list_item"
+        },
+        {
+            "id": "829b5c3d-bd45-5e76-9ea6-6ffeef399440",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Attentiveness",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": ", which is truly listening to what the guest needs.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 50,
+                "chapter": 1,
+                "heading_path": [
+                    "Welcome and Introduction to Customer Care",
+                    "What customer care means"
+                ],
+                "normalized_text_sha256": "53059172d13401acbccc1db6b62d902a24f4ad4030aa9bf98d839d365f9736e1"
+            },
+            "text": "Attentiveness, which is truly listening to what the guest needs.",
+            "type": "list_item"
+        },
+        {
+            "id": "027e3c9b-551a-5ddb-9fb2-edc342ff9108",
+            "language": "en",
+            "order": 4,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Problem-solving",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": ", which is calmly putting things right when they go wrong.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 51,
+                "chapter": 1,
+                "heading_path": [
+                    "Welcome and Introduction to Customer Care",
+                    "What customer care means"
+                ],
+                "normalized_text_sha256": "5caf2d66f896b10a042bc0f0d09f96f397c2c3db5dd33cc0502de3bd9b8e1864"
+            },
+            "text": "Problem-solving, which is calmly putting things right when they go wrong.",
+            "type": "list_item"
+        },
+        {
+            "id": "c5ab547b-a618-54a8-a62d-6f8068eea735",
+            "language": "en",
+            "order": 5,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Everything in this book grows from those three ideas. The words and phrases are the tools, and warmth, attentiveness, and problem-solving are the hands that use them.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 52,
+                "chapter": 1,
+                "heading_path": [
+                    "Welcome and Introduction to Customer Care",
+                    "What customer care means"
+                ],
+                "normalized_text_sha256": "f4def83678485d8d335cba0cb8f93c68405994bc0670b7955d4f32f6858760c3"
+            },
+            "text": "Everything in this book grows from those three ideas. The words and phrases are the tools, and warmth, attentiveness, and problem-solving are the hands that use them.",
+            "type": "paragraph"
+        },
+        {
+            "id": "3e49f0b0-76ef-5edc-bd4f-b3f7d5b11468",
+            "language": "en",
+            "order": 6,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Guests may forget the exact words you said, but they will always remember how you made them feel. Every chapter trains both sides of that, the right English and the right hospitality.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 53,
+                "chapter": 1,
+                "heading_path": [
+                    "Welcome and Introduction to Customer Care",
+                    "What customer care means"
+                ],
+                "normalized_text_sha256": "1ee6c9ba53b7ce2c7545a4cd3a4be2a5f419a1065d7ee88afdbea51fd74c5373"
+            },
+            "text": "Guests may forget the exact words you said, but they will always remember how you made them feel. Every chapter trains both sides of that, the right English and the right hospitality.",
+            "type": "paragraph"
+        }
+    ],
+    "chapter_code": "HSP-C01",
+    "code": "HSP-C01-LS-03",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "9ed9d026-ff4d-59b5-bc35-bc6a36edeee7",
+    "language": "en",
+    "order": 3,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 47,
+        "chapter": 1,
+        "heading_path": [
+            "Welcome and Introduction to Customer Care",
+            "What customer care means"
+        ],
+        "normalized_text_sha256": "3c1b3bea916afa1f3c2327a29a3f2777cf1f6edef14a97baff7c9e619aa45f9e"
+    },
+    "status": "published",
+    "title": "What customer care means"
+}

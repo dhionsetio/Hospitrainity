@@ -1,0 +1,24 @@
+{
+  "accepted": [
+    "b"
+  ],
+  "code": "HSP-C04-RP-G3-AM",
+  "content_version": "0.3.0-draft",
+  "entity_type": "answer-model",
+  "id": "eedae279-7aa4-5133-adcd-dbf39fcb2213",
+  "prompt_code": "HSP-C04-RP-G3",
+  "replaced_by": null,
+  "replaces": null,
+  "scoring_mode": "objective_exact",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 456,
+    "chapter": 4,
+    "heading_path": [
+      "The Guest-Services Hotline",
+      "Step 6. Role-play"
+    ],
+    "normalized_text_sha256": "15a46a32e0d0667892df3483a642fb23ebd34b62509337d44ff0335ad822e470"
+  },
+  "status": "published"
+}

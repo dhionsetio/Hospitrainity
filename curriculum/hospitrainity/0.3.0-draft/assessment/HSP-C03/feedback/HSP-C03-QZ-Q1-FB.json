@@ -1,0 +1,26 @@
+{
+  "code": "HSP-C03-QZ-Q1-FB",
+  "content_version": "0.3.0-draft",
+  "entity_type": "feedback-model",
+  "id": "67124794-8921-55fd-b9ad-d25230a165c3",
+  "messages": [
+    {
+      "feedback_type": "model_reveal",
+      "text": "B. Hotel name, your name, and an offer to help."
+    }
+  ],
+  "prompt_code": "HSP-C03-QZ-Q1",
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 325,
+    "chapter": 3,
+    "heading_path": [
+      "Dealing with Customers on the Phone",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "fb4698bcfdfed818a133a855cb2599993184882146806fecf2988bd49612e184"
+  },
+  "status": "published"
+}

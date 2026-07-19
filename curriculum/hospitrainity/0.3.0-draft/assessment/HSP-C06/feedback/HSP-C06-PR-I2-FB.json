@@ -1,0 +1,26 @@
+{
+  "code": "HSP-C06-PR-I2-FB",
+  "content_version": "0.3.0-draft",
+  "entity_type": "feedback-model",
+  "id": "694ecf11-bd8f-519d-88ba-902cf1dd7963",
+  "messages": [
+    {
+      "feedback_type": "model_reveal",
+      "text": "(a). One light emoji adds warmth. A pile of them looks unprofessional."
+    }
+  ],
+  "prompt_code": "HSP-C06-PR-I2",
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 724,
+    "chapter": 6,
+    "heading_path": [
+      "Online and Social Media Customer Service",
+      "Step 5. Practice"
+    ],
+    "normalized_text_sha256": "39cecf566936a8b28e5ef16a2c2110939b62297912cee4b484c5a1655a878619"
+  },
+  "status": "published"
+}

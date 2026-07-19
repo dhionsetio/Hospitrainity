@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C05-ACT-PRACTICE",
+  "code": "HSP-C05-PR-I2",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "e58e8d10-4aa4-5322-bd13-3810c8b1e974",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 582,
+    "chapter": 5,
+    "heading_path": [
+      "Customer Care Through Writing",
+      "Step 5. Practice"
+    ],
+    "normalized_text_sha256": "6666ad7b2f628360cafbc91fd7f83df6a88bbffe17d65b07ff6f2834d7cc9d67"
+  },
+  "status": "published",
+  "stem": "2. Choose the right sign-off for a formal reply: (a) “xoxo” or (b) “Kind regards,” or (c) “later!”"
+}

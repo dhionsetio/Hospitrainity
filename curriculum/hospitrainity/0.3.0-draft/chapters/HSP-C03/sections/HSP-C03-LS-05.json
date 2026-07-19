@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C03",
+  "code": "HSP-C03-LS-05",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "07e89803-8168-552a-b88b-be864bbf78b4",
+  "order": 5,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 249,
+    "chapter": 3,
+    "heading_path": [
+      "Dealing with Customers on the Phone",
+      "Step 3. Useful phrases, grouped by what they do"
+    ],
+    "normalized_text_sha256": "ff0d6a319e227aacfdab9290a218827057d5b509043b8bf5590acfe48099e98c"
+  },
+  "status": "published",
+  "title": "Step 3. Useful phrases, grouped by what they do"
+}

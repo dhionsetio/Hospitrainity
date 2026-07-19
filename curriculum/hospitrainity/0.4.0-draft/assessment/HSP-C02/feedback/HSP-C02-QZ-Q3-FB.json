@@ -1,0 +1,27 @@
+{
+    "code": "HSP-C02-QZ-Q3-FB",
+    "content_version": "0.4.0-draft",
+    "entity_type": "feedback-model",
+    "id": "622ccbe2-17bc-5d30-ad95-2a1d3db6a15e",
+    "messages": [
+        {
+            "feedback_type": "model_reveal",
+            "text": "A. “Is that correct?” confirms the details clearly and politely."
+        }
+    ],
+    "prompt_code": "HSP-C02-QZ-Q3",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 191,
+        "chapter": 2,
+        "heading_path": [
+            "Front Desk and Check-In",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "25409718891d1ba00d0a1714fe961debb98aa2615a01e354c0ea2625f82cb61e"
+    },
+    "status": "published"
+}

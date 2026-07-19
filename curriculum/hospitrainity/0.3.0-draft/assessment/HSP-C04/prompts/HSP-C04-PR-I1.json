@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C04-ACT-PRACTICE",
+  "code": "HSP-C04-PR-I1",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "9c260375-0f38-5678-9fbe-371c05f0beaa",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "short_text",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 431,
+    "chapter": 4,
+    "heading_path": [
+      "The Guest-Services Hotline",
+      "Step 5. Practice"
+    ],
+    "normalized_text_sha256": "7278180ef0988ecf15773de34332b4f3d9749c6be38b48d1b465c8498b1313f1"
+  },
+  "status": "published",
+  "stem": "1. Fill the blank: “Let me _____ that back to you: one club sandwich and a pot of tea.”"
+}

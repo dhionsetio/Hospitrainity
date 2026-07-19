@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C06-ACT-QUIZ",
+  "code": "HSP-C06-QZ-Q5",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "4c55adb8-3a02-5d8a-80f4-4f89212d08db",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 767,
+    "chapter": 6,
+    "heading_path": [
+      "Online and Social Media Customer Service",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "518d913dfbd9c421aab24efe057aca20d318b0f6af2241f9ea4151924425ddf8"
+  },
+  "status": "published",
+  "stem": "Q5. Why does a fast response time matter online? A) guests expect quick replies B) it does not matter C) slow feels more formal"
+}

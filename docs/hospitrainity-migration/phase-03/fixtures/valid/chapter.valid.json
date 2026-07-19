@@ -1,0 +1,26 @@
+{
+  "code": "HSP-C02",
+  "content_version": "0.1.0",
+  "entity_type": "chapter",
+  "id": "ae026504-70d2-54e9-aeea-c5464dfe2a66",
+  "module": 2,
+  "outcome_codes": [
+    "OUT-M02-01",
+    "OUT-M02-02"
+  ],
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 12,
+    "chapter": 2,
+    "heading_path": [
+      "Chapter 2",
+      "Front Desk",
+      "Check-in"
+    ],
+    "normalized_text_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  },
+  "status": "draft",
+  "title": "Front Desk"
+}

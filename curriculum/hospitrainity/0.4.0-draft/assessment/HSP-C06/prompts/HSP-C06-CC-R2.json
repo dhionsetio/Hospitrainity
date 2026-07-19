@@ -1,0 +1,37 @@
+{
+    "activity_code": "HSP-C06-ACT-CONFIDENCE",
+    "code": "HSP-C06-CC-R2",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "06db6c07-6517-556b-a4cb-6b38203cfca1",
+    "language": "en",
+    "order": 2,
+    "provenance_kind": "source_verbatim",
+    "rating_scale": {
+        "max": 5,
+        "min": 1,
+        "values": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ]
+    },
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "rating",
+    "scoring_mode": "unscored_self_report",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 798,
+        "chapter": 6,
+        "heading_path": [
+            "Online and Social Media Customer Service",
+            "Step 8. Confidence check"
+        ],
+        "normalized_text_sha256": "358293fd7ca8e7a48577e3d01e4de5165c851d3cce879dbaa4142aa0b9b3c8c3"
+    },
+    "status": "published",
+    "stem": "I can use emojis in a way that feels warm, not unprofessional."
+}

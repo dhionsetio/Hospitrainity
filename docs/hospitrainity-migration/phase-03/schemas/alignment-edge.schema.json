@@ -1,0 +1,31 @@
+{
+  "$id": "https://hospitrainity.curriculum/schema/alignment-edge.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "entity_type": {
+      "const": "alignment-edge"
+    },
+    "from_code": {
+      "$ref": "https://hospitrainity.curriculum/schema/_meta.schema.json#/$defs/editorial_code"
+    },
+    "relation": {
+      "enum": [
+        "aligns_to_competency",
+        "aligns_to_cefr",
+        "supports_outcome"
+      ]
+    },
+    "to_code": {
+      "$ref": "https://hospitrainity.curriculum/schema/_meta.schema.json#/$defs/editorial_code"
+    }
+  },
+  "required": [
+    "entity_type",
+    "from_code",
+    "to_code",
+    "relation"
+  ],
+  "title": "Alignment edge",
+  "type": "object"
+}

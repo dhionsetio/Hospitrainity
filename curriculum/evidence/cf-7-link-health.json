@@ -1,0 +1,296 @@
+{
+    "report_version": "1.0.0",
+    "status": "review_required",
+    "checked_at": "2026-07-17T19:10:04.084Z",
+    "source_package": "curriculum/hospitrainity/0.4.0-draft",
+    "policy": "Non-destructive availability probe only. A non-reachable source link is reported for content-owner review and is never silently replaced or removed.",
+    "request": {
+        "method": "GET",
+        "redirects": "follow",
+        "timeout_ms": 20000,
+        "concurrency": 4,
+        "attempts_for_transient_failure": 2,
+        "user_agent": "Hospitrainity-Curriculum-Link-Check/1.0 (+local source-fidelity QA)"
+    },
+    "relationship_count": 18,
+    "unique_target_count": 16,
+    "classification_counts": {
+        "reachable": 13,
+        "blocked_or_rate_limited": 2,
+        "broken": 1
+    },
+    "results": [
+        {
+            "target": "https://blog.hootsuite.com/social-media-customer-service/",
+            "final_url": "https://blog.hootsuite.com/social-media-customer-service/",
+            "http_status": 200,
+            "classification": "reachable",
+            "content_type": "text/html; charset=UTF-8",
+            "elapsed_ms": 1134,
+            "attempts": 1
+        },
+        {
+            "target": "https://goldstarrecruit.co.uk/tips-and-tricks/how-to-handle-customer-complaints-a-practical-guide-for-hospitality-staff/",
+            "final_url": "https://goldstarrecruit.co.uk/tips-and-tricks/how-to-handle-customer-complaints-a-practical-guide-for-hospitality-staff/",
+            "http_status": 403,
+            "classification": "blocked_or_rate_limited",
+            "content_type": "text/html",
+            "elapsed_ms": 1099,
+            "attempts": 1
+        },
+        {
+            "target": "https://greetnow.com/blog/customer-response-time-statistics",
+            "final_url": "https://greetnow.com/blog/customer-response-time-statistics",
+            "http_status": 200,
+            "classification": "reachable",
+            "content_type": "text/html; charset=utf-8",
+            "elapsed_ms": 568,
+            "attempts": 1
+        },
+        {
+            "target": "https://insights.ehl.edu/customer-service-recovery-program",
+            "final_url": "https://insights.ehl.edu/customer-service-recovery-program",
+            "http_status": 200,
+            "classification": "reachable",
+            "content_type": "text/html; charset=UTF-8",
+            "elapsed_ms": 989,
+            "attempts": 1
+        },
+        {
+            "target": "https://sqaeducation.org/blogs/hotel-english-conversation/",
+            "final_url": "https://sqaeducation.org/blogs/hotel-english-conversation/",
+            "http_status": 200,
+            "classification": "reachable",
+            "content_type": "text/html; charset=UTF-8",
+            "elapsed_ms": 179,
+            "attempts": 1
+        },
+        {
+            "target": "https://www.adobe.com/express/learn/blog/customer-service-in-social-media",
+            "final_url": "https://www.adobe.com/express/learn/blog/customer-service-in-social-media",
+            "http_status": 206,
+            "classification": "reachable",
+            "content_type": "text/html; charset=utf-8",
+            "elapsed_ms": 505,
+            "attempts": 1
+        },
+        {
+            "target": "https://www.diageobaracademy.com/en-us/home/customer-service/customer-complaints-and-service-recovery",
+            "final_url": "https://www.diageobaracademy.com/en-us/home/customer-service/customer-complaints-and-service-recovery",
+            "http_status": 410,
+            "classification": "broken",
+            "content_type": "text/html; charset=utf-8",
+            "elapsed_ms": 415,
+            "attempts": 1
+        },
+        {
+            "target": "https://www.grammarly.com/blog/emailing/how-to-write-a-professional-email/",
+            "final_url": "https://www.grammarly.com/blog/emailing/how-to-write-a-professional-email/",
+            "http_status": 200,
+            "classification": "reachable",
+            "content_type": "text/html; charset=utf-8",
+            "elapsed_ms": 851,
+            "attempts": 1
+        },
+        {
+            "target": "https://www.hospitalitynet.org/opinion/4125399/7-customer-service-phrases-to-use-in-your-hotel-5-you-should-avoid",
+            "final_url": "https://www.hospitalitynet.org/opinion/4125399/7-customer-service-phrases-to-use-in-your-hotel-5-you-should-avoid",
+            "http_status": 403,
+            "classification": "blocked_or_rate_limited",
+            "content_type": "text/html; charset=UTF-8",
+            "elapsed_ms": 174,
+            "attempts": 1
+        },
+        {
+            "target": "https://www.indeed.com/career-advice/career-development/how-to-write-a-professional-email",
+            "final_url": "https://www.indeed.com/career-advice/career-development/how-to-write-a-professional-email",
+            "http_status": 200,
+            "classification": "reachable",
+            "content_type": "text/html; charset=utf-8",
+            "elapsed_ms": 542,
+            "attempts": 1
+        },
+        {
+            "target": "https://www.nice.com/faq/contact-center-agents-faqs/how-can-i-improve-my-active-listening-skills",
+            "final_url": "https://www.nice.com/faq/contact-center-agents-faqs/how-can-i-improve-my-active-listening-skills",
+            "http_status": 200,
+            "classification": "reachable",
+            "content_type": "text/html; charset=utf-8",
+            "elapsed_ms": 3220,
+            "attempts": 1
+        },
+        {
+            "target": "https://www.revinate.com/blog/hotel-phone-reservation-bookings/",
+            "final_url": "https://www.revinate.com/blog/hotel-phone-reservation-bookings/",
+            "http_status": 200,
+            "classification": "reachable",
+            "content_type": "text/html; charset=UTF-8",
+            "elapsed_ms": 2191,
+            "attempts": 1
+        },
+        {
+            "target": "https://www.salesforce.com/service/customer-service-email/",
+            "final_url": "https://www.salesforce.com/service/customer-service-email/",
+            "http_status": 200,
+            "classification": "reachable",
+            "content_type": "text/html; charset=utf-8",
+            "elapsed_ms": 3368,
+            "attempts": 1
+        },
+        {
+            "target": "https://www.siteminder.com/r/trends-advice/hotel-guest-experience/customer-satisfaction/",
+            "final_url": "https://www.siteminder.com/r/trends-advice/hotel-guest-experience/customer-satisfaction/",
+            "http_status": 200,
+            "classification": "reachable",
+            "content_type": "text/html; charset=UTF-8",
+            "elapsed_ms": 175,
+            "attempts": 1
+        },
+        {
+            "target": "https://www.umkc.edu/hr/documents/telephone-etiquette.pdf",
+            "final_url": "https://www.umkc.edu/hr/documents/telephone-etiquette.pdf",
+            "http_status": 206,
+            "classification": "reachable",
+            "content_type": "application/pdf",
+            "elapsed_ms": 1020,
+            "attempts": 1
+        },
+        {
+            "target": "https://www.verint.com/blog/active-listening-is-key-to-great-customer-service/",
+            "final_url": "https://www.verint.com/blog/active-listening-is-key-to-great-customer-service/",
+            "http_status": 200,
+            "classification": "reachable",
+            "content_type": "text/html; charset=UTF-8",
+            "elapsed_ms": 1470,
+            "attempts": 1
+        }
+    ],
+    "occurrences": [
+        {
+            "section_code": "HSP-C06-LS-13",
+            "block_id": "8569a5f6-63ec-5c00-8598-6941bbe45a10",
+            "text": "Hootsuite: social media customer service guide",
+            "target": "https://blog.hootsuite.com/social-media-customer-service/",
+            "source_body_index": 815
+        },
+        {
+            "section_code": "HSP-C07-LS-13",
+            "block_id": "ffd31510-e578-5757-9a8a-f86f74a15fe5",
+            "text": "Goldstar: handling complaints with the LAST method",
+            "target": "https://goldstarrecruit.co.uk/tips-and-tricks/how-to-handle-customer-complaints-a-practical-guide-for-hospitality-staff/",
+            "source_body_index": 965
+        },
+        {
+            "section_code": "HSP-C06-LS-13",
+            "block_id": "4a34b638-7caf-5f01-b941-0f94389f0d34",
+            "text": "GreetNow: customer response time statistics",
+            "target": "https://greetnow.com/blog/customer-response-time-statistics",
+            "source_body_index": 814
+        },
+        {
+            "section_code": "HSP-C07-LS-13",
+            "block_id": "91242005-0ba1-5381-a859-acac145c1c0d",
+            "text": "EHL Insights: customer service recovery",
+            "target": "https://insights.ehl.edu/customer-service-recovery-program",
+            "source_body_index": 963
+        },
+        {
+            "section_code": "HSP-C02-LS-13",
+            "block_id": "f1e380a5-8599-56df-b1fe-dd10e43a0f64",
+            "text": "SQA Education: hotel English check-in phrases",
+            "target": "https://sqaeducation.org/blogs/hotel-english-conversation/",
+            "source_body_index": 228
+        },
+        {
+            "section_code": "HSP-C06-LS-13",
+            "block_id": "27cff36e-1b2d-5733-87e4-2b0c12fe5233",
+            "text": "Adobe: social media customer service best practices",
+            "target": "https://www.adobe.com/express/learn/blog/customer-service-in-social-media",
+            "source_body_index": 813
+        },
+        {
+            "section_code": "HSP-C07-LS-13",
+            "block_id": "edba26ed-a8cb-5e63-8566-6aad2d782dad",
+            "text": "Diageo Bar Academy: complaints and the HEAT method",
+            "target": "https://www.diageobaracademy.com/en-us/home/customer-service/customer-complaints-and-service-recovery",
+            "source_body_index": 964
+        },
+        {
+            "section_code": "HSP-C05-LS-13",
+            "block_id": "677b348c-1b89-579d-9ae5-05eab813743e",
+            "text": "Grammarly: how to write a professional email",
+            "target": "https://www.grammarly.com/blog/emailing/how-to-write-a-professional-email/",
+            "source_body_index": 667
+        },
+        {
+            "section_code": "HSP-C02-LS-13",
+            "block_id": "c4c957d0-8f92-5009-bd6d-33f5a476f3cf",
+            "text": "Hospitality Net: customer service phrases to use in your hotel",
+            "target": "https://www.hospitalitynet.org/opinion/4125399/7-customer-service-phrases-to-use-in-your-hotel-5-you-should-avoid",
+            "source_body_index": 226
+        },
+        {
+            "section_code": "HSP-C05-LS-13",
+            "block_id": "036fd7fd-ee0d-515c-a3a4-3ecd6d276b35",
+            "text": "Indeed: how to write a professional email",
+            "target": "https://www.indeed.com/career-advice/career-development/how-to-write-a-professional-email",
+            "source_body_index": 669
+        },
+        {
+            "section_code": "HSP-C04-LS-13",
+            "block_id": "acf93d1c-65eb-57fb-a38d-5457b79a8971",
+            "text": "NiCE: how to improve active listening in a contact centre",
+            "target": "https://www.nice.com/faq/contact-center-agents-faqs/how-can-i-improve-my-active-listening-skills",
+            "source_body_index": 519
+        },
+        {
+            "section_code": "HSP-C03-LS-13",
+            "block_id": "5de194ab-17bc-5529-90bb-7d6cf684a517",
+            "text": "Revinate: ways to grow hotel phone bookings",
+            "target": "https://www.revinate.com/blog/hotel-phone-reservation-bookings/",
+            "source_body_index": 373
+        },
+        {
+            "section_code": "HSP-C04-LS-13",
+            "block_id": "e9b02890-ee21-5619-a03d-ea946f9d4680",
+            "text": "Revinate: a checklist for hotel call agents",
+            "target": "https://www.revinate.com/blog/hotel-phone-reservation-bookings/",
+            "source_body_index": 521
+        },
+        {
+            "section_code": "HSP-C05-LS-13",
+            "block_id": "3916c341-dd40-5253-b2ac-e4c0d5e12b52",
+            "text": "Salesforce: customer service email tips and templates",
+            "target": "https://www.salesforce.com/service/customer-service-email/",
+            "source_body_index": 668
+        },
+        {
+            "section_code": "HSP-C02-LS-13",
+            "block_id": "170168ec-4758-5e87-a698-4ba4483928bd",
+            "text": "SiteMinder: ideas to improve the hotel guest experience",
+            "target": "https://www.siteminder.com/r/trends-advice/hotel-guest-experience/customer-satisfaction/",
+            "source_body_index": 227
+        },
+        {
+            "section_code": "HSP-C03-LS-13",
+            "block_id": "cb7bdab5-99be-5c3e-8a64-a5f5eeb248b1",
+            "text": "UMKC: telephone etiquette guide (PDF)",
+            "target": "https://www.umkc.edu/hr/documents/telephone-etiquette.pdf",
+            "source_body_index": 374
+        },
+        {
+            "section_code": "HSP-C03-LS-13",
+            "block_id": "4c629257-9bb4-5af2-8fcc-25203eea55d7",
+            "text": "Verint: why active listening is key to great service",
+            "target": "https://www.verint.com/blog/active-listening-is-key-to-great-customer-service/",
+            "source_body_index": 375
+        },
+        {
+            "section_code": "HSP-C04-LS-13",
+            "block_id": "7316301d-e0b5-5c6a-bb28-1a97c090c4e0",
+            "text": "Verint: why active listening is key to great service",
+            "target": "https://www.verint.com/blog/active-listening-is-key-to-great-customer-service/",
+            "source_body_index": 520
+        }
+    ]
+}

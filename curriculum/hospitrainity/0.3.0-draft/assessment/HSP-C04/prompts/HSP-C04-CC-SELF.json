@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C04-ACT-CONFIDENCE",
+  "code": "HSP-C04-CC-SELF",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "b1f0c6c7-2d94-5ec0-8ccb-909177b5e70f",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "self_rating",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 492,
+    "chapter": 4,
+    "heading_path": [
+      "The Guest-Services Hotline",
+      "Step 8. Confidence check"
+    ],
+    "normalized_text_sha256": "cd3074671db07959557a6493c99cdfca8103db85c6eb67d0ff485f6e9e15afec"
+  },
+  "status": "published",
+  "stem": "Rate yourself honestly, from 1 (not confident yet) to 5 (very confident). This is only for you, and it is a good way to see your progress."
+}

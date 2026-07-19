@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C02-ACT-ROLEPLAY",
+  "code": "HSP-C02-RP-FREE",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "fc780c95-b793-5f80-bacc-6c21cf16cce7",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "role_play",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 174,
+    "chapter": 2,
+    "heading_path": [
+      "Front Desk and Check-In",
+      "Step 6. Role-play"
+    ],
+    "normalized_text_sha256": "3b041f5d59121b7a6d3924b8763719469f384e1a309cb9d7399d81b0bf3b3477"
+  },
+  "status": "published",
+  "stem": "Prompt: A walk-in guest with no reservation asks, “Do you have any rooms available for tonight?” Greet them, respond, and guide them into starting a check-in."
+}

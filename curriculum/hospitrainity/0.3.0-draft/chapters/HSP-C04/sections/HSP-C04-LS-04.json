@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C04",
+  "code": "HSP-C04-LS-04",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "944da27d-27ad-504c-85d8-b48a0480644c",
+  "order": 4,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 389,
+    "chapter": 4,
+    "heading_path": [
+      "The Guest-Services Hotline",
+      "Step 2. Key vocabulary"
+    ],
+    "normalized_text_sha256": "ec76ec940fe949b5b61a81e608b3f01a8270d2ab0a4db356807b7575536518e3"
+  },
+  "status": "published",
+  "title": "Step 2. Key vocabulary"
+}

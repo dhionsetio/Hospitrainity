@@ -1,0 +1,34 @@
+{
+  "code": "HSP-C06-RP-G1-FB",
+  "content_version": "0.3.0-draft",
+  "entity_type": "feedback-model",
+  "id": "af6780ce-ccf1-54c1-aac8-3cb77fd92a91",
+  "messages": [
+    {
+      "feedback_type": "error_specific",
+      "text": "(a) “Check our website.” Unhelpful, and it makes the guest do the work."
+    },
+    {
+      "feedback_type": "success",
+      "text": "(b) “Hi there. 😊 Yes, breakfast is included in all of our room rates. Anything else I can help with?” This is the ideal answer, warm, clear, and it offers more help."
+    },
+    {
+      "feedback_type": "error_specific",
+      "text": "(c) “Yes.” Correct, but a little cold. A friendly word or two would lift it."
+    }
+  ],
+  "prompt_code": "HSP-C06-RP-G1",
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 734,
+    "chapter": 6,
+    "heading_path": [
+      "Online and Social Media Customer Service",
+      "Step 6. Role-play"
+    ],
+    "normalized_text_sha256": "facefb5ad96ac857ec7f2f6881e1f22890392944d601c45f4431c615ef27d929"
+  },
+  "status": "published"
+}

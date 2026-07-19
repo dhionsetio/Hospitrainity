@@ -1,0 +1,60 @@
+{
+    "activity_code": "HSP-C03-ACT-ROLEPLAY",
+    "choices": [
+        {
+            "feedback": [
+                {
+                    "feedback_type": "error_specific",
+                    "text": "(a) “I already said it.” Rude, and it makes the caller feel bad."
+                }
+            ],
+            "id": "7927cf52-b139-5ea3-81b4-c209a46e3e9a",
+            "label": "a",
+            "text": "“I already said it.”"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "success",
+                    "text": "(b) “Of course. Your booking reference is four, five, two. Shall I say it again slowly?” This is the ideal answer, patient and clear."
+                }
+            ],
+            "id": "261b42cb-f9c9-57c6-95ba-980937d2ae8e",
+            "label": "b",
+            "text": "“Of course. Your booking reference is four, five, two. Shall I say it again slowly?”"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "error_specific",
+                    "text": "(c) Hanging up. Never do this."
+                }
+            ],
+            "id": "4a0d0688-e612-5eaa-a881-2182a1945e4f",
+            "label": "c",
+            "text": "Hanging up."
+        }
+    ],
+    "code": "HSP-C03-RP-G2",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "bf043806-7bc1-55af-9b44-af86f490ec36",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 314,
+        "chapter": 3,
+        "heading_path": [
+            "Dealing with Customers on the Phone",
+            "Step 6. Role-play"
+        ],
+        "normalized_text_sha256": "66f4ffec07bddea1fe3bd25026ebf801a4bd3909a89993450db205ead93b2c56"
+    },
+    "status": "published",
+    "stem": "Caller: “Sorry, the line is a little unclear. Could you repeat that?”"
+}

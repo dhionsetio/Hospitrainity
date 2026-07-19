@@ -1,0 +1,764 @@
+{
+    "blocks": [
+        {
+            "id": "ddd7f7b9-b828-50dc-9811-81e17712cc1c",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Q1.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " What is the best hotline opener? A) “Hello?” B) “Guest services, Grand Serenata Hotel. How may I help you?” C) “What?”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 477,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "67eb267d745c9e87df6eafe987795762d8c26d4ac210843e0cc69f8db46b687f"
+            },
+            "text": "Q1. What is the best hotline opener? A) “Hello?” B) “Guest services, Grand Serenata Hotel. How may I help you?” C) “What?”",
+            "type": "paragraph"
+        },
+        {
+            "id": "c270d527-701b-5a23-8e37-7e8a1286c146",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 478,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "b2a3aa602762a782e47a4f8e93bb5ae1b8819d1b92b7e6ceb3ef46a3c7077eb0"
+            },
+            "text": "Answer",
+            "type": "instruction"
+        },
+        {
+            "id": "47f5e868-5926-5bc8-8b47-47af004bdeed",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "B.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Name the service and the hotel, then offer help.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 479,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "eea3bdbc65a4ae1ff81923e01621f0fe249733cb5613fc16bd12c2fe228b54ce"
+            },
+            "text": "B. Name the service and the hotel, then offer help.",
+            "type": "paragraph"
+        },
+        {
+            "id": "f4be76ef-317c-5f55-ad9d-305099facd36",
+            "language": "en",
+            "order": 4,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Q2.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Why should you read an order back? A) to fill time B) to catch mistakes before the order is prepared C) it is optional and pointless",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 480,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "e3fbde541741c6375fdb9ce2bf7c9df0367267fb17ee874f4fff5b50577ba0f3"
+            },
+            "text": "Q2. Why should you read an order back? A) to fill time B) to catch mistakes before the order is prepared C) it is optional and pointless",
+            "type": "paragraph"
+        },
+        {
+            "id": "d30ee659-78d4-52ea-b22c-d8c22ac51290",
+            "language": "en",
+            "order": 5,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 481,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "b2a3aa602762a782e47a4f8e93bb5ae1b8819d1b92b7e6ceb3ef46a3c7077eb0"
+            },
+            "text": "Answer",
+            "type": "instruction"
+        },
+        {
+            "id": "acf0615d-4e25-518e-a592-a33a0362e718",
+            "language": "en",
+            "order": 6,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "B.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Reading back is your safety net against wrong or missing items.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 482,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "88d7b248146c10582b451ce6136194e1991859d6097653a2d36de71aabaee0ae"
+            },
+            "text": "B. Reading back is your safety net against wrong or missing items.",
+            "type": "paragraph"
+        },
+        {
+            "id": "7a679355-24e5-52b6-85a7-fd787ec94338",
+            "language": "en",
+            "order": 7,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Q3.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " A guest needs something outside your area. You should ... A) say it is not your job B) transfer them warmly to the right department C) hang up",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 483,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "a96cca9d5cff24c7cf662f7afdc38b13121ecd6ada2014128c68962b4c6197a1"
+            },
+            "text": "Q3. A guest needs something outside your area. You should ... A) say it is not your job B) transfer them warmly to the right department C) hang up",
+            "type": "paragraph"
+        },
+        {
+            "id": "1c18839d-43be-5163-83c9-0e2dea43f42e",
+            "language": "en",
+            "order": 8,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 484,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "b2a3aa602762a782e47a4f8e93bb5ae1b8819d1b92b7e6ceb3ef46a3c7077eb0"
+            },
+            "text": "Answer",
+            "type": "instruction"
+        },
+        {
+            "id": "5bb0e534-873d-510c-8330-45e27d6c7637",
+            "language": "en",
+            "order": 9,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "B.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Explain, then connect them, so they always feel looked after.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 485,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "268605f52a0f928360494ee07b73e3fae96faf6aff244640d2678bc5ea1f4229"
+            },
+            "text": "B. Explain, then connect them, so they always feel looked after.",
+            "type": "paragraph"
+        },
+        {
+            "id": "cbd89578-0fde-5709-9dba-15e0b572550b",
+            "language": "en",
+            "order": 10,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Q4.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " “Customer-centered” means ... A) focused on the guest’s needs B) focused only on speed C) focused only on the rules",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 486,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "04fe5a6fceccd76f93df293e5bb2e24959a86f7643c33a2b3d2c451c6ff92a9f"
+            },
+            "text": "Q4. “Customer-centered” means ... A) focused on the guest’s needs B) focused only on speed C) focused only on the rules",
+            "type": "paragraph"
+        },
+        {
+            "id": "6c4db43f-70af-53f2-8aa5-57a81ea718f2",
+            "language": "en",
+            "order": 11,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 487,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "b2a3aa602762a782e47a4f8e93bb5ae1b8819d1b92b7e6ceb3ef46a3c7077eb0"
+            },
+            "text": "Answer",
+            "type": "instruction"
+        },
+        {
+            "id": "34d3b009-3cbf-5bf7-b7cf-cc8ef6edfdc6",
+            "language": "en",
+            "order": 12,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "A.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " The guest’s needs come first, even when you are busy.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 488,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "9a8360d0cec4564d2bce863c6bb52ba9b05bc14fe4b590ea227ebb207344fbde"
+            },
+            "text": "A. The guest’s needs come first, even when you are busy.",
+            "type": "paragraph"
+        },
+        {
+            "id": "5037d623-6ade-5313-b459-a3975e1a05ba",
+            "language": "en",
+            "order": 13,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Q5.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Giving an estimated time helps because ... A) it sets a clear expectation B) it wastes time C) it confuses the guest",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 489,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "6adcca327fa37645a1466467916e6b19501a34611cad51a64fadf6776fd1b9b3"
+            },
+            "text": "Q5. Giving an estimated time helps because ... A) it sets a clear expectation B) it wastes time C) it confuses the guest",
+            "type": "paragraph"
+        },
+        {
+            "id": "c4884155-1b42-5571-9562-61535bfe3e89",
+            "language": "en",
+            "order": 14,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 490,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "b2a3aa602762a782e47a4f8e93bb5ae1b8819d1b92b7e6ceb3ef46a3c7077eb0"
+            },
+            "text": "Answer",
+            "type": "instruction"
+        },
+        {
+            "id": "aad4995b-9de6-5aa6-a9d8-a90fa06bb18b",
+            "language": "en",
+            "order": 15,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "A.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Guests relax when they know how long to wait.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 491,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "ce145e7aeb9cfcf6c6c4d6a995e608a7af8b936aa7ff3b1201e711167cdc3c34"
+            },
+            "text": "A. Guests relax when they know how long to wait.",
+            "type": "paragraph"
+        },
+        {
+            "id": "ce67ef16-1d36-5fba-b66a-b5fe63c929eb",
+            "language": "en",
+            "order": 16,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Q6.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " The best moment to get the room number is ... A) at the very end B) right at the start, before the order C) never",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 492,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "26cda969d9d8e9e1a03212975c8884bc2f8f7caa3748ee8bec34829d9bb03224"
+            },
+            "text": "Q6. The best moment to get the room number is ... A) at the very end B) right at the start, before the order C) never",
+            "type": "paragraph"
+        },
+        {
+            "id": "d03c69ad-43ac-5fab-9336-0cf361ea9225",
+            "language": "en",
+            "order": 17,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 493,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "b2a3aa602762a782e47a4f8e93bb5ae1b8819d1b92b7e6ceb3ef46a3c7077eb0"
+            },
+            "text": "Answer",
+            "type": "instruction"
+        },
+        {
+            "id": "98600e1a-f05c-5a66-85f2-bc664cb4570f",
+            "language": "en",
+            "order": 18,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "B.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Get the room first, so nothing is lost if the call drops.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 494,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "54986b834b58bb3b9ced705ac4493f4812092d89a72d2a33b54201faf99509b3"
+            },
+            "text": "B. Get the room first, so nothing is lost if the call drops.",
+            "type": "paragraph"
+        },
+        {
+            "id": "3facb783-c8fc-5420-afa9-bb337a629148",
+            "language": "en",
+            "order": 19,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Q7.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " How should you say room 305 on the phone? A) “three hundred and five” quickly B) “three, oh, five” as single digits C) spell it as letters",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 495,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "f9d66d5eac15d4ac6886d996a5b02d9c471f75f8fe9f6da8f4f6b3e2bb46d042"
+            },
+            "text": "Q7. How should you say room 305 on the phone? A) “three hundred and five” quickly B) “three, oh, five” as single digits C) spell it as letters",
+            "type": "paragraph"
+        },
+        {
+            "id": "ad5db4d2-d4a4-5a11-a331-34ac9d20b5d7",
+            "language": "en",
+            "order": 20,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 496,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "b2a3aa602762a782e47a4f8e93bb5ae1b8819d1b92b7e6ceb3ef46a3c7077eb0"
+            },
+            "text": "Answer",
+            "type": "instruction"
+        },
+        {
+            "id": "39439dfe-89ba-50d6-bf29-1ef23763b7f7",
+            "language": "en",
+            "order": 21,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "B.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Single digits are the clearest and hardest to mishear.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 497,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "683c85208cea5b42427cf34169828128d060cccbba989114956b6881b8cba196"
+            },
+            "text": "B. Single digits are the clearest and hardest to mishear.",
+            "type": "paragraph"
+        },
+        {
+            "id": "9f28a8b8-0c38-53fc-93ef-012a4c686e3f",
+            "language": "en",
+            "order": 22,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Q8.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " You feel rushed. What keeps the call warm? A) speaking faster and skipping the read-back B) a calm breath, a steady tone, and a quick read-back C) telling the guest to hurry",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 498,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "4c8c0acb3090caf5d91e34f2423976d36228a9ef6db858ee18ee1db70f3e192c"
+            },
+            "text": "Q8. You feel rushed. What keeps the call warm? A) speaking faster and skipping the read-back B) a calm breath, a steady tone, and a quick read-back C) telling the guest to hurry",
+            "type": "paragraph"
+        },
+        {
+            "id": "2eb0182a-5c7f-5415-880a-9b7387055526",
+            "language": "en",
+            "order": 23,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 499,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "b2a3aa602762a782e47a4f8e93bb5ae1b8819d1b92b7e6ceb3ef46a3c7077eb0"
+            },
+            "text": "Answer",
+            "type": "instruction"
+        },
+        {
+            "id": "9470959a-db81-52b5-90dd-b0b434dd3d56",
+            "language": "en",
+            "order": 24,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "B.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Calm and accurate beats fast and flustered every time.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 500,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "c4bf4b17e2736556ddf0705060f3f0c7dec5ed3e884c45283827d0ef599736af"
+            },
+            "text": "B. Calm and accurate beats fast and flustered every time.",
+            "type": "paragraph"
+        },
+        {
+            "activity_code": "HSP-C04-ACT-QUIZ",
+            "id": "0c3a6147-e055-5e08-8f87-9d973fbd15fd",
+            "language": "en",
+            "order": 25,
+            "provenance_kind": "derived_navigation",
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 476,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "5afd42f19a54588d7aae41ef09f0b06aee1aa8c3e9a32e8e5aac6991901c2156"
+            },
+            "type": "activity_embed"
+        }
+    ],
+    "chapter_code": "HSP-C04",
+    "code": "HSP-C04-LS-10",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "643a3d62-02cc-5fd7-8b9a-1ab9f29a26be",
+    "language": "en",
+    "order": 10,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 476,
+        "chapter": 4,
+        "heading_path": [
+            "The Guest-Services Hotline",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "5afd42f19a54588d7aae41ef09f0b06aee1aa8c3e9a32e8e5aac6991901c2156"
+    },
+    "status": "published",
+    "title": "Step 7. Quiz"
+}

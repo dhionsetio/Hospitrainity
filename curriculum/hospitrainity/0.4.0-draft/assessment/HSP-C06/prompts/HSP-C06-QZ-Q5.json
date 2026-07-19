@@ -1,0 +1,50 @@
+{
+    "activity_code": "HSP-C06-ACT-QUIZ",
+    "choices": [
+        {
+            "feedback": [
+                {
+                    "feedback_type": "model_reveal",
+                    "text": "A. Speed is now a core part of online service."
+                }
+            ],
+            "id": "280a2bcb-4632-55bc-aed8-b6924fcf44a0",
+            "label": "a",
+            "text": "guests expect quick replies"
+        },
+        {
+            "feedback": [],
+            "id": "d438ca55-cf03-59e6-a3b5-ab288dc3597c",
+            "label": "b",
+            "text": "it does not matter"
+        },
+        {
+            "feedback": [],
+            "id": "b6835da4-1a36-58e0-aa83-0d0d6ebc1958",
+            "label": "c",
+            "text": "slow feels more formal"
+        }
+    ],
+    "code": "HSP-C06-QZ-Q5",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "4c55adb8-3a02-5d8a-80f4-4f89212d08db",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 783,
+        "chapter": 6,
+        "heading_path": [
+            "Online and Social Media Customer Service",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "518d913dfbd9c421aab24efe057aca20d318b0f6af2241f9ea4151924425ddf8"
+    },
+    "status": "published",
+    "stem": "Q5. Why does a fast response time matter online? A) guests expect quick replies B) it does not matter C) slow feels more formal"
+}

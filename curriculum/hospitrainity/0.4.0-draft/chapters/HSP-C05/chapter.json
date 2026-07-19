@@ -1,0 +1,25 @@
+{
+    "code": "HSP-C05",
+    "content_version": "0.4.0-draft",
+    "entity_type": "chapter",
+    "id": "bcba456e-f170-5e60-8144-3e5dabb69e3b",
+    "module": 5,
+    "outcome_codes": [
+        "OUT-M05-01",
+        "OUT-M05-02",
+        "OUT-M05-03"
+    ],
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 523,
+        "chapter": 5,
+        "heading_path": [
+            "Customer Care Through Writing"
+        ],
+        "normalized_text_sha256": "283e509766936eda497fdf0bcf7601de32505d3cc82d05056295aa3092df8aaf"
+    },
+    "status": "published",
+    "title": "Customer Care Through Writing"
+}

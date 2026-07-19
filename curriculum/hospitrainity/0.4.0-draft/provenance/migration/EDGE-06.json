@@ -1,0 +1,7 @@
+{
+    "canonical_code": null,
+    "disposition": "dropped",
+    "entity_type": "migration-edge",
+    "legacy_ref": "course.json#module:Check-Out Procedures",
+    "note": "Check-out/billing is outside the 7-chapter scope of Hospitrainity.docx. Not authored from the source of truth."
+}

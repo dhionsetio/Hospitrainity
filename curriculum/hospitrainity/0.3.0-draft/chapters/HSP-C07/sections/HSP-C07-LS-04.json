@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C07",
+  "code": "HSP-C07-LS-04",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "f1c158bc-3d92-598c-b4fd-189243af0be7",
+  "order": 4,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 819,
+    "chapter": 7,
+    "heading_path": [
+      "Dealing with Problems and Complaints",
+      "Step 2. Key vocabulary"
+    ],
+    "normalized_text_sha256": "6b032b8cb98892257caa3e5cae214b9619db28c14fb4d9e4ed5b8c8358cadb25"
+  },
+  "status": "published",
+  "title": "Step 2. Key vocabulary"
+}

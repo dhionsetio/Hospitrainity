@@ -1,0 +1,115 @@
+{
+  "artifacts": {
+    ".env.example": {
+      "bytes": 1090,
+      "sha256": "62d351889e6777a32fff3f3d7c6aa6840d00176756538e6cbf37603ee50d5de0"
+    },
+    "CHANGELOG.md": {
+      "bytes": 84683,
+      "sha256": "acf8a8979e908c7d1f818e4e0193f53c295ccadf00a9a6557195c328f8c5694a"
+    },
+    "database/seeders/UserSeeder.php": {
+      "bytes": 2049,
+      "sha256": "14347337cbd82b6bc9facba44c2e4e0d92234988f955243f822a0fe636abf97f"
+    },
+    "docs/hospitrainity-migration/CHECKPOINTS.md": {
+      "bytes": 1871,
+      "sha256": "f1391b6347a27e687a9fd76cf6a44be5a085e850fcfaf4ccce9895d47d65810c"
+    },
+    "docs/hospitrainity-migration/DECISIONS.md": {
+      "bytes": 12198,
+      "sha256": "f2371330576da71e32c0ca430745f1ad23b8a0775c5121f5ba15f782adb4191a"
+    },
+    "docs/hospitrainity-migration/phase-03/tools/hsp-editorial.mjs": {
+      "bytes": 8381,
+      "sha256": "e42f7107bc810a88405ee845ad96c40bedf68ea4e808966d43113b77299dd5f1"
+    },
+    "docs/hospitrainity-migration/phase-03/tools/hsp-qa.mjs": {
+      "bytes": 19977,
+      "sha256": "a916714114e64db5bf45e93511cd673775fd67075c424262b26c7513947182c2"
+    },
+    "docs/hospitrainity-migration/phase-03/tools/hsp-render.mjs": {
+      "bytes": 12434,
+      "sha256": "2180fd1906cdab1c85f003625956ea6d0309dafcd2d43ca0871ddd7677022ff4"
+    },
+    "docs/hospitrainity-migration/phase-03/tools/render-template.html": {
+      "bytes": 21859,
+      "sha256": "5754901039f4c39d377609a9ac812ec6665491842156984331b6172302da33ca"
+    },
+    "docs/hospitrainity-migration/phase-13/Hospitrainity-Standalone.html": {
+      "bytes": 93579,
+      "sha256": "fe380bde4995191bb610ca29ad04cf809531c009c49b1967cf95612ec47d01ba"
+    },
+    "docs/hospitrainity-migration/phase-13/README.md": {
+      "bytes": 4022,
+      "sha256": "b7541b53ba128098561f219ebd31c358efb44eb4b16c5505c3b7ee4e7e03ab66"
+    },
+    "docs/hospitrainity-migration/phase-13/checkpoint-report.md": {
+      "bytes": 5535,
+      "sha256": "bcf765cfeac0d42d6e40c8f2b187cd1079a3a5137d0551c979ac640de7eb79b4"
+    },
+    "docs/hospitrainity-migration/phase-13/legacy-removal-report.md": {
+      "bytes": 5156,
+      "sha256": "1017f676c931d8ef1201315b225282717c72afedc9649c5728a01e2426eccbdc"
+    },
+    "docs/hospitrainity-migration/phase-13/pilot-readiness.json": {
+      "bytes": 1920,
+      "sha256": "5099f1fdd4e65e9a7f8df793831c0ff5fae766342a5368c5777e40e616f335be"
+    },
+    "docs/hospitrainity-migration/phase-13/qa-report.json": {
+      "bytes": 3649,
+      "sha256": "ed976491228c751a11d46af348c68f55205557fb0c8ef3aa4816877c373401d9"
+    },
+    "docs/hospitrainity-migration/phase-13/rebrand-report.md": {
+      "bytes": 5489,
+      "sha256": "49b853cc1be9eae95310d471b8971cc5f82fd33186ad12ce4558e6520700c13a"
+    },
+    "docs/hospitrainity-migration/phase-13/render-report.json": {
+      "bytes": 821,
+      "sha256": "5245198498a01d93c54871eccf378c44f80e4486bf5846b605bf31c0c1a94d13"
+    },
+    "docs/hospitrainity-migration/phase-13/rollback-plan.md": {
+      "bytes": 4461,
+      "sha256": "19cfffdce01287ebf8e3985096d7ceb857b0f61dd68c4a3a665d3053b5ee61b3"
+    },
+    "docs/hospitrainity-migration/phase-13/view-model.json": {
+      "bytes": 115207,
+      "sha256": "921bad4ad87d5c7eaf54a5c927dcc6caf807a5699a87bb37e6777764ebcadbe0"
+    },
+    "lang/en.json": {
+      "bytes": 8557,
+      "sha256": "78251863cf656542e480de17424719b5e1ebd21a85126666cb81e6fe2867bad0"
+    },
+    "lang/id.json": {
+      "bytes": 8716,
+      "sha256": "dd2a9f094cc785741ef944655b83fbb9bf3a73522599fa7ff0f8e716a0ba84c5"
+    },
+    "resources/js/exercises/index.js": {
+      "bytes": 36832,
+      "sha256": "1819f1f066cda7aca9c60536bddc65cfa7025ede59084d2a87bd076a1713fa84"
+    },
+    "resources/views/layouts/app.blade.php": {
+      "bytes": 1266,
+      "sha256": "7481c69814004f9273e224b82f30c390b35d6b673686ac68e4f0f5398b6bc385"
+    },
+    "resources/views/layouts/guest.blade.php": {
+      "bytes": 918,
+      "sha256": "f4e9a5cea0343f46016422fda9648ec18f708b94a3d1191cbca1a06126c6d3ee"
+    },
+    "resources/views/welcome.blade.php": {
+      "bytes": 11078,
+      "sha256": "908679619f1770172fd9b1ad812e681cce49120c1d8d10b5d9864b21032eaa74"
+    },
+    "tests/Feature/RegistrationTest.php": {
+      "bytes": 2344,
+      "sha256": "e7dbc86a0f8f8e5df335e439910a2a79248eec859aca3c939dfe341bab7db53a"
+    },
+    "tests/Feature/WelcomePageTest.php": {
+      "bytes": 433,
+      "sha256": "64c5162d5a082752aaba9524c010e18b0f08e2dc50fdb8edc4c3c6826f5b46ad"
+    }
+  },
+  "checkpoint": "CP-13",
+  "generated": "2026-07-16",
+  "note": "SHA-256 of every artifact created or modified in CP-13 (rebrand edits, tooling bump, phase-13 documentation, and ledger updates). DOCX remains sole source of truth; no canonical curriculum content mutated. Legacy Laravel application inventoried but not decommissioned (see legacy-removal-report.md)."
+}

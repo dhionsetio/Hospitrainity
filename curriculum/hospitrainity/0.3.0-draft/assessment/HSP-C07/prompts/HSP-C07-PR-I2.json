@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C07-ACT-PRACTICE",
+  "code": "HSP-C07-PR-I2",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "a48b50e5-ece3-5169-ae49-3320286fdac7",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 867,
+    "chapter": 7,
+    "heading_path": [
+      "Dealing with Problems and Complaints",
+      "Step 5. Practice"
+    ],
+    "normalized_text_sha256": "ea39f3416a73722e91918859cead830038f4b605716f08417bca702960f8afdf"
+  },
+  "status": "published",
+  "stem": "2. Choose the response that takes ownership: (a) “It is the other guest’s fault.” or (b) “Let me fix this for you right away.”"
+}

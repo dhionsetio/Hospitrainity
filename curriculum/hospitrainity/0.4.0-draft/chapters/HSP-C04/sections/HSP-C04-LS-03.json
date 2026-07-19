@@ -1,0 +1,264 @@
+{
+    "blocks": [
+        {
+            "id": "5c2db2ab-daa1-5f9d-8b09-ff73af4b69ae",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "You work on the Grand Serenata Hotel guest-services hotline.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 389,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 1. The scenario"
+                ],
+                "normalized_text_sha256": "1a4a97aea124dc5ab83f0b9c3e34a90ad8a1f0a6acae66278bedc6cea675263a"
+            },
+            "text": "You work on the Grand Serenata Hotel guest-services hotline.",
+            "type": "heading"
+        },
+        {
+            "id": "c6e9e9cf-4f38-514f-a6bd-2bef0ef85ac4",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Guests call from their rooms and from outside for room service, small requests, and quick questions. Calls come in quickly, so you need to be efficient, accurate, and still genuinely warm. Your job flows in a natural order:",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 390,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 1. The scenario"
+                ],
+                "normalized_text_sha256": "102fdb9b673eb358a5ffa7dd41f751c89e27492283bb91393e41ca2245665f2f"
+            },
+            "text": "Guests call from their rooms and from outside for room service, small requests, and quick questions. Calls come in quickly, so you need to be efficient, accurate, and still genuinely warm. Your job flows in a natural order:",
+            "type": "paragraph"
+        },
+        {
+            "id": "de0cdf72-eed3-5dde-98ed-88e9a949e774",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Answer",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " and find out who is calling and from which room.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 391,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 1. The scenario"
+                ],
+                "normalized_text_sha256": "7244612e82fdca7d81f452b499f5ed2393e18a87adc1f7b47734cf30d9ec0be5"
+            },
+            "text": "Answer and find out who is calling and from which room.",
+            "type": "list_item"
+        },
+        {
+            "id": "143a500b-469a-52cc-8541-46dc050f35ff",
+            "language": "en",
+            "order": 4,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Take",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " the order or request carefully.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 392,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 1. The scenario"
+                ],
+                "normalized_text_sha256": "b6d618285eee8d2a4f150b4848ddf7392a0de83f3e0582c703529f8458e72a0a"
+            },
+            "text": "Take the order or request carefully.",
+            "type": "list_item"
+        },
+        {
+            "id": "baf02637-46c4-5d27-b014-01201290406e",
+            "language": "en",
+            "order": 5,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Read it back",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " so both of you are sure it is right.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 393,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 1. The scenario"
+                ],
+                "normalized_text_sha256": "47802fcdb91f8b0f702d10c5936f2ea6ae1f4114c6d7135454cb7e669e403354"
+            },
+            "text": "Read it back so both of you are sure it is right.",
+            "type": "list_item"
+        },
+        {
+            "id": "1138c9ba-263e-57b0-aa0b-7e2ccb3aac50",
+            "language": "en",
+            "order": 6,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Transfer",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " the call to the right department if it is needed.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 394,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 1. The scenario"
+                ],
+                "normalized_text_sha256": "cb8144ed34bc0345d5a8d4766055dd4ee4da0da7b68e687cc221d4eb4ccdb027"
+            },
+            "text": "Transfer the call to the right department if it is needed.",
+            "type": "list_item"
+        },
+        {
+            "id": "a43a009b-46c3-5ac9-8c6d-5b09e295cf7d",
+            "language": "en",
+            "order": 7,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Give",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " a clear time or next step, then close kindly.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 395,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 1. The scenario"
+                ],
+                "normalized_text_sha256": "561d2671ba1e15cbdad25802902936e71cebbdde49d903a8becdc3b62ba743bf"
+            },
+            "text": "Give a clear time or next step, then close kindly.",
+            "type": "list_item"
+        },
+        {
+            "id": "10af1003-dc0c-5f9a-b635-b3a3d617ef15",
+            "language": "en",
+            "order": 8,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "When you always listen, then read back, then confirm the time, speed takes care of itself.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 396,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 1. The scenario"
+                ],
+                "normalized_text_sha256": "14c35efb393530466b25eb9d7d919fcf1822113de401074e6cf6b7daad65f1e0"
+            },
+            "text": "When you always listen, then read back, then confirm the time, speed takes care of itself.",
+            "type": "paragraph"
+        }
+    ],
+    "chapter_code": "HSP-C04",
+    "code": "HSP-C04-LS-03",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "c493f644-4148-5ef8-8652-64fe396a31d9",
+    "language": "en",
+    "order": 3,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 388,
+        "chapter": 4,
+        "heading_path": [
+            "The Guest-Services Hotline",
+            "Step 1. The scenario"
+        ],
+        "normalized_text_sha256": "fe02f71c74a8a1d450fbab7f3052d29fd5a7c6cce679fd0160234ed9cf9bdf53"
+    },
+    "status": "published",
+    "title": "Step 1. The scenario"
+}

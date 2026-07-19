@@ -1,0 +1,24 @@
+{
+  "accepted": [
+    "(b). It is warm, professional, and it offers help right away. Option (a) sounds cold, and tone is a real part of hospitality."
+  ],
+  "code": "HSP-C02-PR-I2-AM",
+  "content_version": "0.3.0-draft",
+  "entity_type": "answer-model",
+  "id": "f201ed49-64cd-5a89-a68c-aba698b1714d",
+  "prompt_code": "HSP-C02-PR-I2",
+  "replaced_by": null,
+  "replaces": null,
+  "scoring_mode": "objective_normalized",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 148,
+    "chapter": 2,
+    "heading_path": [
+      "Front Desk and Check-In",
+      "Step 5. Practice"
+    ],
+    "normalized_text_sha256": "fb1835f2ae7bcb0f87fd824ff066cade8ccd6c67ce3f63ea76caee26613a5aa3"
+  },
+  "status": "published"
+}

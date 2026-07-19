@@ -1,0 +1,95 @@
+{
+    "blocks": [
+        {
+            "id": "91242005-0ba1-5381-a859-acac145c1c0d",
+            "language": "en",
+            "links": [
+                {
+                    "target": "https://insights.ehl.edu/customer-service-recovery-program",
+                    "text": "EHL Insights: customer service recovery"
+                }
+            ],
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 963,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Further reading"
+                ],
+                "normalized_text_sha256": "e917c7270dbff81d83de49ff156b46f7dd692d14086e3aad2d08bdd82fdd9d88"
+            },
+            "type": "external_link"
+        },
+        {
+            "id": "edba26ed-a8cb-5e63-8566-6aad2d782dad",
+            "language": "en",
+            "links": [
+                {
+                    "target": "https://www.diageobaracademy.com/en-us/home/customer-service/customer-complaints-and-service-recovery",
+                    "text": "Diageo Bar Academy: complaints and the HEAT method"
+                }
+            ],
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 964,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Further reading"
+                ],
+                "normalized_text_sha256": "d45552365a043e50e7a44befb1bf4f92c9ef40c6973e763325afafed290f123e"
+            },
+            "type": "external_link"
+        },
+        {
+            "id": "ffd31510-e578-5757-9a8a-f86f74a15fe5",
+            "language": "en",
+            "links": [
+                {
+                    "target": "https://goldstarrecruit.co.uk/tips-and-tricks/how-to-handle-customer-complaints-a-practical-guide-for-hospitality-staff/",
+                    "text": "Goldstar: handling complaints with the LAST method"
+                }
+            ],
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 965,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Further reading"
+                ],
+                "normalized_text_sha256": "a93f443939e02b887dcd4716fe5ae13315437de2c9ded909804ffe22671c36f0"
+            },
+            "type": "external_link"
+        }
+    ],
+    "chapter_code": "HSP-C07",
+    "code": "HSP-C07-LS-13",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "62cf73c9-2edd-5101-a792-efdf60991c15",
+    "language": "en",
+    "order": 13,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 962,
+        "chapter": 7,
+        "heading_path": [
+            "Dealing with Problems and Complaints",
+            "Further reading"
+        ],
+        "normalized_text_sha256": "4082f515b2f4929c139af2b1d23605e462c614bd888cf0dc12952d0d9cdeb1c7"
+    },
+    "status": "published",
+    "title": "Further reading"
+}

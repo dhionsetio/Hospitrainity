@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C07-ACT-QUIZ",
+  "code": "HSP-C07-QZ-Q7",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "335bd417-c50b-5f87-ac66-499a814a8044",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 918,
+    "chapter": 7,
+    "heading_path": [
+      "Dealing with Problems and Complaints",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "3183af6232c9f0798d742dcaeca69f6d59c2fd0bab0f71280d6ef217086b6b8a"
+  },
+  "status": "published",
+  "stem": "Q7. A guest is angry and it is not your fault. What should you apologise for? A) nothing, since it is not your fault B) their poor experience, because it is about their feelings C) only if a manager tells you to"
+}

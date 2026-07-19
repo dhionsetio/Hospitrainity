@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C06",
+  "code": "HSP-C06-LS-02",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "bae35652-f825-59c4-ac67-5ea412464a2d",
+  "order": 2,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 663,
+    "chapter": 6,
+    "heading_path": [
+      "Online and Social Media Customer Service",
+      "Why this matters"
+    ],
+    "normalized_text_sha256": "99361a5d247ae9e4b856986e1ffade521db46d8c067984cde210a6d848c98b34"
+  },
+  "status": "published",
+  "title": "Why this matters"
+}

@@ -1,0 +1,7 @@
+{
+    "canonical_code": "HSP-C02",
+    "disposition": "rewritten",
+    "entity_type": "migration-edge",
+    "legacy_ref": "course.json#module:Check-In Procedures",
+    "note": "Reservation verification, policies and requests map directly to Chapter 2. Rewritten from DOCX."
+}

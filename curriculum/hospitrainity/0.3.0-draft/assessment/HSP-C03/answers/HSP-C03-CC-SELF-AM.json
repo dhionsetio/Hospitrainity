@@ -1,0 +1,21 @@
+{
+  "code": "HSP-C03-CC-SELF-AM",
+  "content_version": "0.3.0-draft",
+  "entity_type": "answer-model",
+  "id": "8d429ce8-a1eb-51cb-8c67-5567e32ea231",
+  "prompt_code": "HSP-C03-CC-SELF",
+  "replaced_by": null,
+  "replaces": null,
+  "scoring_mode": "self_report",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 348,
+    "chapter": 3,
+    "heading_path": [
+      "Dealing with Customers on the Phone",
+      "Step 8. Confidence check"
+    ],
+    "normalized_text_sha256": "8ae726d271eb7a0bf90a65a1207e47b0e727c521ff95159d8c7f245ec46d05b7"
+  },
+  "status": "published"
+}

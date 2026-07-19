@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C02-ACT-QUIZ",
+  "code": "HSP-C02-QZ-Q4",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "637d89f5-ba3b-5e3c-9315-37c971e00971",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 188,
+    "chapter": 2,
+    "heading_path": [
+      "Front Desk and Check-In",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "6b6ba613f94a82adb4196c21ec92e44dcb645252c2607a4735804c4687424e4d"
+  },
+  "status": "published",
+  "stem": "Q4. What is a warm way to close the interaction? A) “Bye.” B) “Enjoy your stay.” C) “Next.”"
+}

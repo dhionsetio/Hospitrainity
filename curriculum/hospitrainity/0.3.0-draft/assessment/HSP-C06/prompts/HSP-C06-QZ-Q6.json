@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C06-ACT-QUIZ",
+  "code": "HSP-C06-QZ-Q6",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "3d7a1c7d-78d0-5cae-b431-ee08b6d877ca",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 770,
+    "chapter": 6,
+    "heading_path": [
+      "Online and Social Media Customer Service",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "2f5ae7478cb0597522a8a366c10658397ace731bc526b2d5b9f8213478675b93"
+  },
+  "status": "published",
+  "stem": "Q6. What is a chatbot best used for? A) complex complaints B) instant answers to common questions, such as check-in and Wi-Fi C) replacing all staff"
+}

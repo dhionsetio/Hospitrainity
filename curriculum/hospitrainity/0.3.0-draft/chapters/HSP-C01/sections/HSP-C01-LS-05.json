@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C01",
+  "code": "HSP-C01-LS-05",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "dde037b0-5f1c-5f1d-b736-118ed4cca1a8",
+  "order": 5,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 62,
+    "chapter": 1,
+    "heading_path": [
+      "Welcome and Introduction to Customer Care",
+      "The one skill that runs through everything: positive language"
+    ],
+    "normalized_text_sha256": "58daf69b339898351bc5aac78da697d00dd694c7a48d9952bc738fec57690c17"
+  },
+  "status": "published",
+  "title": "The one skill that runs through everything: positive language"
+}

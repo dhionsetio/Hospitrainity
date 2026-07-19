@@ -1,0 +1,26 @@
+{
+  "code": "HSP-C02-PR-I3-FB",
+  "content_version": "0.3.0-draft",
+  "entity_type": "feedback-model",
+  "id": "e7cafa26-853d-5aa9-928a-9668f6ca172b",
+  "messages": [
+    {
+      "feedback_type": "model_reveal",
+      "text": "Greet the guest, then confirm the reservation, then ask for the passport, then hand over the key. Following this order keeps everything smooth."
+    }
+  ],
+  "prompt_code": "HSP-C02-PR-I3",
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 151,
+    "chapter": 2,
+    "heading_path": [
+      "Front Desk and Check-In",
+      "Step 5. Practice"
+    ],
+    "normalized_text_sha256": "841fd5b5fb5f97418672f8ed0153ee831a15d30fc3313b1ebb59de2d085aecd7"
+  },
+  "status": "published"
+}

@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C06-ACT-QUIZ",
+  "code": "HSP-C06-QZ-Q1",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "1dd0a7dc-3f90-5fb2-a1ee-8f05378fb4ca",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 755,
+    "chapter": 6,
+    "heading_path": [
+      "Online and Social Media Customer Service",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "822c59d154195c284f9edc30bc5788e2f6d725f9e93b07247d4167ee5189f0a6"
+  },
+  "status": "published",
+  "stem": "Q1. What is the best chat style? A) long and formal B) short, warm, and clear C) one-word answers"
+}

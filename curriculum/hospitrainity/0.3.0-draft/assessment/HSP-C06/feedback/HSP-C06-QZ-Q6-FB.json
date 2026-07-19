@@ -1,0 +1,26 @@
+{
+  "code": "HSP-C06-QZ-Q6-FB",
+  "content_version": "0.3.0-draft",
+  "entity_type": "feedback-model",
+  "id": "7073e917-4d7a-5f9e-bff0-b5f4d8f79322",
+  "messages": [
+    {
+      "feedback_type": "model_reveal",
+      "text": "B. Chatbots handle the routine questions, and humans handle the tricky cases."
+    }
+  ],
+  "prompt_code": "HSP-C06-QZ-Q6",
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 772,
+    "chapter": 6,
+    "heading_path": [
+      "Online and Social Media Customer Service",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "80da738c633685ef03b8d538cae192676fcf3eb4d02b37ccf91b11964cc6a49f"
+  },
+  "status": "published"
+}

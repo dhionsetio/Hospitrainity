@@ -1,0 +1,130 @@
+{
+    "blocks": [
+        {
+            "id": "1a3c6c39-ea62-5358-9b3b-6fb38fa954ac",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Answer these quietly for yourself first. There are no right or wrong answers, just a gentle way to warm up.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 526,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Warm-Up"
+                ],
+                "normalized_text_sha256": "dc2b3712b572545e3ee93b53f0dda46eebf01fe5ccce877e4813773942162d9c"
+            },
+            "text": "Answer these quietly for yourself first. There are no right or wrong answers, just a gentle way to warm up.",
+            "type": "instruction"
+        },
+        {
+            "id": "4ff8c1bb-8037-560d-a28c-ad016cf12632",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "In one word, how confident do you feel writing emails in English?",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 527,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Warm-Up"
+                ],
+                "normalized_text_sha256": "5334cebef4af0a8032f93cb2bd96bc0248fc3b86ef19db4b78ff6f255d6aa1a1"
+            },
+            "text": "In one word, how confident do you feel writing emails in English?",
+            "type": "list_item"
+        },
+        {
+            "id": "7067e9ee-4589-5614-8339-ab015a527941",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "When did you last write an email? Was it formal or casual?",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 528,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Warm-Up"
+                ],
+                "normalized_text_sha256": "da1c9cec6def72b2bbeb4c95db3cc2a881548cd9e8177cf7f29e54a7d9cdc1f6"
+            },
+            "text": "When did you last write an email? Was it formal or casual?",
+            "type": "list_item"
+        },
+        {
+            "id": "61be343a-d0e1-555a-ae14-553e5d49860f",
+            "language": "en",
+            "order": 4,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "In your own language, how do you begin and end a polite work message?",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 529,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Warm-Up"
+                ],
+                "normalized_text_sha256": "16a2b65e8ac1a1297f1c436ae15d259b37e3b2090273bfa6dca7b041ee2d4369"
+            },
+            "text": "In your own language, how do you begin and end a polite work message?",
+            "type": "list_item"
+        }
+    ],
+    "chapter_code": "HSP-C05",
+    "code": "HSP-C05-LS-01",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "4a1d5371-d5d9-527c-84bb-271fd7b772bd",
+    "language": "en",
+    "order": 1,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 525,
+        "chapter": 5,
+        "heading_path": [
+            "Customer Care Through Writing",
+            "Warm-Up"
+        ],
+        "normalized_text_sha256": "0d96d7a94cccd70ae6e338c3b3a29d88a9ed37ce481071007cb60d1746da4a65"
+    },
+    "status": "published",
+    "title": "Warm-Up"
+}

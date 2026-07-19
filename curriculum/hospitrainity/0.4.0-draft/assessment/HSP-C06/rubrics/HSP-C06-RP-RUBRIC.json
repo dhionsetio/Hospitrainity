@@ -1,0 +1,60 @@
+{
+    "activity_code": "HSP-C06-ACT-ROLEPLAY",
+    "code": "HSP-C06-RP-RUBRIC",
+    "content_version": "0.4.0-draft",
+    "criteria": [
+        {
+            "code": "HSP-C06-RP-RUBRIC-WARMTH",
+            "descriptor": "Warm, professional welcome and tone",
+            "levels": [
+                "Not yet",
+                "Developing",
+                "Strong"
+            ]
+        },
+        {
+            "code": "HSP-C06-RP-RUBRIC-SOLUTION",
+            "descriptor": "Offers help and moves toward a concrete solution",
+            "levels": [
+                "Not yet",
+                "Developing",
+                "Strong"
+            ]
+        },
+        {
+            "code": "HSP-C06-RP-RUBRIC-POLITENESS",
+            "descriptor": "Polite, softened language (e.g. \"Could I ... please\")",
+            "levels": [
+                "Not yet",
+                "Developing",
+                "Strong"
+            ]
+        },
+        {
+            "code": "HSP-C06-RP-RUBRIC-PROGRESSION",
+            "descriptor": "Calmly moves the interaction to the next step",
+            "levels": [
+                "Not yet",
+                "Developing",
+                "Strong"
+            ]
+        }
+    ],
+    "entity_type": "rubric",
+    "id": "d44f2cda-59d6-5b12-89f6-b8abb8324baf",
+    "provenance_kind": "derived_review",
+    "replaced_by": null,
+    "replaces": null,
+    "review_status": "provisional",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "block_index": 732,
+        "chapter": 6,
+        "heading_path": [
+            "Online and Social Media Customer Service",
+            "Step 6. Role-play"
+        ],
+        "normalized_text_sha256": "9a68cbc9d18b066b8351da941416cd44bd9538c6a8ef0b2037aaf1cf9570f1de"
+    },
+    "status": "published"
+}

@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C05",
+  "code": "HSP-C05-LS-01",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "4a1d5371-d5d9-527c-84bb-271fd7b772bd",
+  "order": 1,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 513,
+    "chapter": 5,
+    "heading_path": [
+      "Customer Care Through Writing",
+      "Warm-Up"
+    ],
+    "normalized_text_sha256": "9383461cf0a5554b5c6d46adac20f89d0cb03100c609b38f522105ae92748b09"
+  },
+  "status": "published",
+  "title": "Warm-Up"
+}

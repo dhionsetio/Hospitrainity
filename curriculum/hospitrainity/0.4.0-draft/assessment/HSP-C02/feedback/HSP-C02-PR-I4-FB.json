@@ -1,0 +1,27 @@
+{
+    "code": "HSP-C02-PR-I4-FB",
+    "content_version": "0.4.0-draft",
+    "entity_type": "feedback-model",
+    "id": "c5552fbc-a321-5860-bc4b-87d8d3121bdd",
+    "messages": [
+        {
+            "feedback_type": "model_reveal",
+            "text": "Something like “Could I see your passport, please?” A single word can feel like an order, so add “Could I,” the person’s help, and “please.”"
+        }
+    ],
+    "prompt_code": "HSP-C02-PR-I4",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 158,
+        "chapter": 2,
+        "heading_path": [
+            "Front Desk and Check-In",
+            "Step 5. Practice"
+        ],
+        "normalized_text_sha256": "47eae4f50da7c24f052d0a851616ef00ffbe429639d675b2c4ef1a876fa6df62"
+    },
+    "status": "published"
+}

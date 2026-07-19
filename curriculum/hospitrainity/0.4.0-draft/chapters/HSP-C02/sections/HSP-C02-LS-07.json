@@ -1,0 +1,182 @@
+{
+    "blocks": [
+        {
+            "id": "706ababe-4115-5211-bafd-0c3df31a22ce",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Open for five common mistakes",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 138,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Common mistakes to avoid"
+                ],
+                "normalized_text_sha256": "a433b254794ec760d8fec78cc3f476ae28f47f15bd12cd32be5e9d650aac6f83"
+            },
+            "text": "Open for five common mistakes",
+            "type": "paragraph"
+        },
+        {
+            "id": "f1c46cb1-d885-5372-b444-dd1ba2e6bd8a",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Asking for a passport before saying hello. Always welcome the guest first, then handle documents.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 139,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Common mistakes to avoid"
+                ],
+                "normalized_text_sha256": "74b1d2b8229543f714310bb295c18c5890693ac8dc0df66b10c803d0f8226986"
+            },
+            "text": "Asking for a passport before saying hello. Always welcome the guest first, then handle documents.",
+            "type": "list_item"
+        },
+        {
+            "id": "69352457-07dd-5651-a606-50cb2df94311",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Saying “Give me your passport.” It sounds like an order. Say “Could I see your passport, please?” instead.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 140,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Common mistakes to avoid"
+                ],
+                "normalized_text_sha256": "27cfb380683847f4506bcc8d40b2143a8ce58cc22b5882fc20a338fbc96c47f9"
+            },
+            "text": "Saying “Give me your passport.” It sounds like an order. Say “Could I see your passport, please?” instead.",
+            "type": "list_item"
+        },
+        {
+            "id": "7cb607e9-0c4b-55f0-a635-2bce6d58f9a4",
+            "language": "en",
+            "order": 4,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Reading from the screen in a flat voice. Look up, make eye contact, and connect.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 141,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Common mistakes to avoid"
+                ],
+                "normalized_text_sha256": "42aff8befcecbb3b44ae427e227a8ff5a848c8d035e5aa956f662f7c5b3ffcbe"
+            },
+            "text": "Reading from the screen in a flat voice. Look up, make eye contact, and connect.",
+            "type": "list_item"
+        },
+        {
+            "id": "ecc8b041-fb4f-5f85-b2be-57a2481375d1",
+            "language": "en",
+            "order": 5,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Forgetting to mention the floor, breakfast, and Wi-Fi. Guests almost always want these three.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 142,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Common mistakes to avoid"
+                ],
+                "normalized_text_sha256": "edacb7c550f30622d54845ca4851433e644e4d5c21528401af4c8f544dd2ac40"
+            },
+            "text": "Forgetting to mention the floor, breakfast, and Wi-Fi. Guests almost always want these three.",
+            "type": "list_item"
+        },
+        {
+            "id": "92770130-b9ff-5e99-aab4-00e837747286",
+            "language": "en",
+            "order": 6,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Ending with a plain “Okay.” Close with warmth, such as “Enjoy your stay.”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 143,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Common mistakes to avoid"
+                ],
+                "normalized_text_sha256": "15d8e81f7265049455bd5a4d9c4761d2a09e6c9b5be38798ce179f7b65a65531"
+            },
+            "text": "Ending with a plain “Okay.” Close with warmth, such as “Enjoy your stay.”",
+            "type": "list_item"
+        }
+    ],
+    "chapter_code": "HSP-C02",
+    "code": "HSP-C02-LS-07",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "054a7bc8-671c-5727-83a7-0371d4c49e5c",
+    "language": "en",
+    "order": 7,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 137,
+        "chapter": 2,
+        "heading_path": [
+            "Front Desk and Check-In",
+            "Common mistakes to avoid"
+        ],
+        "normalized_text_sha256": "09280c77c069d2c19c40ad919cf2f1fa07a028a886d911cc8f9318f19c0a51e0"
+    },
+    "status": "published",
+    "title": "Common mistakes to avoid"
+}

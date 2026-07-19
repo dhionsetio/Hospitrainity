@@ -1,0 +1,27 @@
+{
+    "code": "HSP-C06-QZ-Q5-FB",
+    "content_version": "0.4.0-draft",
+    "entity_type": "feedback-model",
+    "id": "d8eb5759-6eee-5eb9-86d6-48c35de32a4a",
+    "messages": [
+        {
+            "feedback_type": "model_reveal",
+            "text": "A. Speed is now a core part of online service."
+        }
+    ],
+    "prompt_code": "HSP-C06-QZ-Q5",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 785,
+        "chapter": 6,
+        "heading_path": [
+            "Online and Social Media Customer Service",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "8629bc4c8a75f8887d8e3ed893ce43ea67dd7c9865f992f0762ec7fc70bb447e"
+    },
+    "status": "published"
+}

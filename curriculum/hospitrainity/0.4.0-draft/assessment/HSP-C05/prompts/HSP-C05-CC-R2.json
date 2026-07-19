@@ -1,0 +1,37 @@
+{
+    "activity_code": "HSP-C05-ACT-CONFIDENCE",
+    "code": "HSP-C05-CC-R2",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "619e3a84-bd49-52bc-a42d-05c60fc42a52",
+    "language": "en",
+    "order": 2,
+    "provenance_kind": "source_verbatim",
+    "rating_scale": {
+        "max": 5,
+        "min": 1,
+        "values": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ]
+    },
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "rating",
+    "scoring_mode": "unscored_self_report",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 655,
+        "chapter": 5,
+        "heading_path": [
+            "Customer Care Through Writing",
+            "Step 8. Confidence check"
+        ],
+        "normalized_text_sha256": "567d83062dd1d6c18dad8299a20a97993a1cfa33b034c1ad1becc51d3bb42d6e"
+    },
+    "status": "published",
+    "stem": "I can structure a clear, well-organised reply."
+}

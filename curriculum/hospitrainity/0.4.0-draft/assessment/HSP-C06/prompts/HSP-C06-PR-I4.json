@@ -1,0 +1,30 @@
+{
+    "activity_code": "HSP-C06-ACT-PRACTICE",
+    "code": "HSP-C06-PR-I4",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "8b539d2f-18cd-5e10-b222-407347c86f61",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_constraints": {
+        "maximum_characters": 4000,
+        "minimum_non_whitespace_characters": 1
+    },
+    "response_form": "short_text",
+    "scoring_mode": "model_self_check",
+    "self_check_required": true,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 744,
+        "chapter": 6,
+        "heading_path": [
+            "Online and Social Media Customer Service",
+            "Step 5. Practice"
+        ],
+        "normalized_text_sha256": "4d238da88309f599aa096b64dd1d8191abcdd70521edb7a76d4c471c7a3d5c51"
+    },
+    "status": "published",
+    "stem": "4. Speed check: you cannot answer fully right now. What do you send?"
+}

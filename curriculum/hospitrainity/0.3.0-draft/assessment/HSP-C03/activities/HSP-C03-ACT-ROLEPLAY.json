@@ -1,0 +1,40 @@
+{
+  "accessibility": [
+    "text_alt",
+    "keyboard_path",
+    "non_color_cue",
+    "no_timing_dependency",
+    "transcript"
+  ],
+  "cefr_activity": "interaction",
+  "channel": "telecommunications",
+  "code": "HSP-C03-ACT-ROLEPLAY",
+  "content_version": "0.3.0-draft",
+  "entity_type": "activity",
+  "id": "91b64b0a-2af5-574e-b2ff-1410faa8478f",
+  "lesson_code": "HSP-C03-LS-09",
+  "outcome_codes": [
+    "OUT-M03-01",
+    "OUT-M03-02",
+    "OUT-M03-03"
+  ],
+  "participation": "staff_guest",
+  "pedagogical_function": "freer_task",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "role_play",
+  "scoring_mode": "rubric",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 300,
+    "chapter": 3,
+    "heading_path": [
+      "Dealing with Customers on the Phone",
+      "Step 6. Role-play"
+    ],
+    "normalized_text_sha256": "90da32d1370242dcc0944bcfc3f59838711a978f0d7df1a346cb033632194e1e"
+  },
+  "status": "published",
+  "timing": "synchronous",
+  "title": "Step 6. Role-play"
+}

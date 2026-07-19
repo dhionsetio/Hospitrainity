@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C02-ACT-QUIZ",
+  "code": "HSP-C02-QZ-Q1",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "c1ca71dc-4045-552d-b291-972c806aefa4",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 179,
+    "chapter": 2,
+    "heading_path": [
+      "Front Desk and Check-In",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "89133015e998999f90311961e0d2575f113bc703e2b3c17bd300e1af0bcceaa8"
+  },
+  "status": "published",
+  "stem": "Q1. Which is the most polite way to ask for a document? A) “Give me your ID.” B) “Could I see your ID, please?” C) “ID.”"
+}

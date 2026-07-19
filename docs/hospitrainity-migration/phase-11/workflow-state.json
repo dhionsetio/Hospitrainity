@@ -1,0 +1,93 @@
+{
+  "authored_entity_count": 428,
+  "authored_state_totals": {
+    "review": 428
+  },
+  "cascade_entity_types": [
+    "activity",
+    "answer-model",
+    "chapter",
+    "feedback-model",
+    "lesson-section",
+    "prompt-item",
+    "rubric"
+  ],
+  "checkpoint": "CP-11",
+  "excluded_entity_types": [
+    "cefr-reference",
+    "competency",
+    "competency-framework",
+    "outcome",
+    "source-provenance"
+  ],
+  "human_approval_gate": {
+    "effect": "blocks approve/publish and any certified CEFR claim",
+    "id": "CP-02",
+    "status": "open"
+  },
+  "modules": [
+    {
+      "approval_gate": "BLOCKED",
+      "code": "HSP-C01",
+      "module": 1,
+      "state": "review"
+    },
+    {
+      "approval_gate": "BLOCKED",
+      "code": "HSP-C02",
+      "module": 2,
+      "state": "review"
+    },
+    {
+      "approval_gate": "BLOCKED",
+      "code": "HSP-C03",
+      "module": 3,
+      "state": "review"
+    },
+    {
+      "approval_gate": "BLOCKED",
+      "code": "HSP-C04",
+      "module": 4,
+      "state": "review"
+    },
+    {
+      "approval_gate": "BLOCKED",
+      "code": "HSP-C05",
+      "module": 5,
+      "state": "review"
+    },
+    {
+      "approval_gate": "BLOCKED",
+      "code": "HSP-C06",
+      "module": 6,
+      "state": "review"
+    },
+    {
+      "approval_gate": "BLOCKED",
+      "code": "HSP-C07",
+      "module": 7,
+      "state": "review"
+    }
+  ],
+  "state_machine": {
+    "approved": [
+      "published",
+      "review",
+      "retired"
+    ],
+    "draft": [
+      "review",
+      "retired"
+    ],
+    "published": [
+      "retired"
+    ],
+    "retired": [],
+    "review": [
+      "approved",
+      "draft",
+      "retired"
+    ]
+  },
+  "unit_of_approval": "module (DOCX chapter)"
+}

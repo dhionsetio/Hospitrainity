@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C01",
+  "code": "HSP-C01-LS-04",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "07c7b4a4-6804-5baf-b955-f8d80869a549",
+  "order": 4,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 55,
+    "chapter": 1,
+    "heading_path": [
+      "Welcome and Introduction to Customer Care",
+      "Three ideas behind great service"
+    ],
+    "normalized_text_sha256": "cb38f20506494dd3b8626534b2d797a8758fd7503cbd452afba7e6c9b4bcdedc"
+  },
+  "status": "published",
+  "title": "Three ideas behind great service"
+}

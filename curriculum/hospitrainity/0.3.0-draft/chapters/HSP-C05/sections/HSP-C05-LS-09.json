@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C05",
+  "code": "HSP-C05-LS-09",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "a6f0ed0e-36d2-52ef-bcdb-f983d26d898c",
+  "order": 9,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 592,
+    "chapter": 5,
+    "heading_path": [
+      "Customer Care Through Writing",
+      "Step 6. Role-play (drafting)"
+    ],
+    "normalized_text_sha256": "e3a036a87173d7758391c7e3e99c05dd466a86767209b985eb8c0ac87de3ed46"
+  },
+  "status": "published",
+  "title": "Step 6. Role-play (drafting)"
+}

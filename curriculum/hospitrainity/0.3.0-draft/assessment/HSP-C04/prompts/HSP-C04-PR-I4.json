@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C04-ACT-PRACTICE",
+  "code": "HSP-C04-PR-I4",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "bf88aa00-70b0-52b1-bb1e-38f2fc3b227e",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "short_text",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 440,
+    "chapter": 4,
+    "heading_path": [
+      "The Guest-Services Hotline",
+      "Step 5. Practice"
+    ],
+    "normalized_text_sha256": "61d99a05bfba994fbebc5fa30c2e2bb4df461581cb85e20cb96703302d5eddc0"
+  },
+  "status": "published",
+  "stem": "4. Say it clearly: how would you read room number 305 out loud on the phone?"
+}

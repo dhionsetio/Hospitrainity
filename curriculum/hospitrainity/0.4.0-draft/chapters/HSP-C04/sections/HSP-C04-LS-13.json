@@ -1,0 +1,95 @@
+{
+    "blocks": [
+        {
+            "id": "acf93d1c-65eb-57fb-a38d-5457b79a8971",
+            "language": "en",
+            "links": [
+                {
+                    "target": "https://www.nice.com/faq/contact-center-agents-faqs/how-can-i-improve-my-active-listening-skills",
+                    "text": "NiCE: how to improve active listening in a contact centre"
+                }
+            ],
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 519,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Further reading"
+                ],
+                "normalized_text_sha256": "86a266dd570e6514d494ec2f601e672ce54543d7eea5021c61600b928b72b2dc"
+            },
+            "type": "external_link"
+        },
+        {
+            "id": "7316301d-e0b5-5c6a-bb28-1a97c090c4e0",
+            "language": "en",
+            "links": [
+                {
+                    "target": "https://www.verint.com/blog/active-listening-is-key-to-great-customer-service/",
+                    "text": "Verint: why active listening is key to great service"
+                }
+            ],
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 520,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Further reading"
+                ],
+                "normalized_text_sha256": "d139a785b21cba02a8359557c6e4e2882dd56af0ef77800da811db16ab110479"
+            },
+            "type": "external_link"
+        },
+        {
+            "id": "e9b02890-ee21-5619-a03d-ea946f9d4680",
+            "language": "en",
+            "links": [
+                {
+                    "target": "https://www.revinate.com/blog/hotel-phone-reservation-bookings/",
+                    "text": "Revinate: a checklist for hotel call agents"
+                }
+            ],
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 521,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Further reading"
+                ],
+                "normalized_text_sha256": "6ddb2ac225a5f8d0ce18aa4165c02805daf56023ba459f4a2be358ff3244e975"
+            },
+            "type": "external_link"
+        }
+    ],
+    "chapter_code": "HSP-C04",
+    "code": "HSP-C04-LS-13",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "e964beeb-3d86-554a-ba75-20085930cc71",
+    "language": "en",
+    "order": 13,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 518,
+        "chapter": 4,
+        "heading_path": [
+            "The Guest-Services Hotline",
+            "Further reading"
+        ],
+        "normalized_text_sha256": "4082f515b2f4929c139af2b1d23605e462c614bd888cf0dc12952d0d9cdeb1c7"
+    },
+    "status": "published",
+    "title": "Further reading"
+}

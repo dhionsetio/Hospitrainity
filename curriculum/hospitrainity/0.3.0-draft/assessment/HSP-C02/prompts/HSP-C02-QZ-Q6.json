@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C02-ACT-QUIZ",
+  "code": "HSP-C02-QZ-Q6",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "db4a4b60-1216-5f2d-a9e8-0c62fe5c2133",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 194,
+    "chapter": 2,
+    "heading_path": [
+      "Front Desk and Check-In",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "69ea004bb976cd63c52e3412b9049d070fafbbc348874c4f9d7efb17439b125b"
+  },
+  "status": "published",
+  "stem": "Q6. A guest looks exhausted. Which reply shows the best hospitality? A) “Sign here.” B) “Welcome. You must have had a long trip, so let us get you checked in quickly so you can rest.” C) “Hurry up, please.”"
+}

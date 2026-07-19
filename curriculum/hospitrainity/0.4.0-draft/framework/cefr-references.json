@@ -1,0 +1,335 @@
+{
+    "authority": "Council of Europe",
+    "framework": "CEFR Companion Volume (2020)",
+    "notice": "Texts are transcribed for alignment work and must be checked by a qualified ESP/CEFR reviewer before approval or learner-facing claims.",
+    "provenance_kind": "derived_review",
+    "references": [
+        {
+            "id": "CEFR-A2-INFO-01",
+            "level": "A2",
+            "scale": "Information exchange",
+            "search_uri": "https://www.coe.int/en/web/common-european-framework-reference-languages/cefr-descriptors-search",
+            "source_location": {
+                "chapter": "3 — CEFR illustrative descriptor scales",
+                "level": "A2",
+                "scale": "Information exchange"
+            },
+            "source_uri": "https://rm.coe.int/common-european-framework-of-reference-for-languages-learning-teaching/16809ea0d4",
+            "verbatim_text": "Can understand enough to manage simple, routine exchanges without undue effort.",
+            "verification_status": "machine_checked_human_review_required"
+        },
+        {
+            "id": "CEFR-A2-INFO-02",
+            "level": "A2",
+            "scale": "Information exchange",
+            "search_uri": "https://www.coe.int/en/web/common-european-framework-reference-languages/cefr-descriptors-search",
+            "source_location": {
+                "chapter": "3 — CEFR illustrative descriptor scales",
+                "level": "A2",
+                "scale": "Information exchange"
+            },
+            "source_uri": "https://rm.coe.int/common-european-framework-of-reference-for-languages-learning-teaching/16809ea0d4",
+            "verbatim_text": "Can deal with practical everyday demands: finding out and passing on straightforward factual information.",
+            "verification_status": "machine_checked_human_review_required"
+        },
+        {
+            "id": "CEFR-B1-INFO-01",
+            "level": "B1",
+            "scale": "Information exchange",
+            "search_uri": "https://www.coe.int/en/web/common-european-framework-reference-languages/cefr-descriptors-search",
+            "source_location": {
+                "chapter": "3 — CEFR illustrative descriptor scales",
+                "level": "B1",
+                "scale": "Information exchange"
+            },
+            "source_uri": "https://rm.coe.int/common-european-framework-of-reference-for-languages-learning-teaching/16809ea0d4",
+            "verbatim_text": "Can exchange, check and confirm accumulated factual information on familiar routine and non-routine matters within his/her field with some confidence.",
+            "verification_status": "machine_checked_human_review_required"
+        },
+        {
+            "id": "CEFR-B1-INFO-02",
+            "level": "B1",
+            "scale": "Information exchange",
+            "search_uri": "https://www.coe.int/en/web/common-european-framework-reference-languages/cefr-descriptors-search",
+            "source_location": {
+                "chapter": "3 — CEFR illustrative descriptor scales",
+                "level": "B1",
+                "scale": "Information exchange"
+            },
+            "source_uri": "https://rm.coe.int/common-european-framework-of-reference-for-languages-learning-teaching/16809ea0d4",
+            "verbatim_text": "Can find out and pass on straightforward factual information.",
+            "verification_status": "machine_checked_human_review_required"
+        },
+        {
+            "id": "CEFR-A2-GOODS-01",
+            "level": "A2",
+            "scale": "Obtaining goods and services",
+            "search_uri": "https://www.coe.int/en/web/common-european-framework-reference-languages/cefr-descriptors-search",
+            "source_location": {
+                "chapter": "3 — CEFR illustrative descriptor scales",
+                "level": "A2",
+                "scale": "Obtaining goods and services"
+            },
+            "source_uri": "https://rm.coe.int/common-european-framework-of-reference-for-languages-learning-teaching/16809ea0d4",
+            "verbatim_text": "Can ask for and provide everyday goods and services.",
+            "verification_status": "machine_checked_human_review_required"
+        },
+        {
+            "id": "CEFR-A2-GOODS-02",
+            "level": "A2",
+            "scale": "Obtaining goods and services",
+            "search_uri": "https://www.coe.int/en/web/common-european-framework-reference-languages/cefr-descriptors-search",
+            "source_location": {
+                "chapter": "3 — CEFR illustrative descriptor scales",
+                "level": "A2",
+                "scale": "Obtaining goods and services"
+            },
+            "source_uri": "https://rm.coe.int/common-european-framework-of-reference-for-languages-learning-teaching/16809ea0d4",
+            "verbatim_text": "Can order a meal.",
+            "verification_status": "machine_checked_human_review_required"
+        },
+        {
+            "id": "CEFR-B1-GOODS-01",
+            "level": "B1",
+            "scale": "Obtaining goods and services",
+            "search_uri": "https://www.coe.int/en/web/common-european-framework-reference-languages/cefr-descriptors-search",
+            "source_location": {
+                "chapter": "3 — CEFR illustrative descriptor scales",
+                "level": "B1",
+                "scale": "Obtaining goods and services"
+            },
+            "source_uri": "https://rm.coe.int/common-european-framework-of-reference-for-languages-learning-teaching/16809ea0d4",
+            "verbatim_text": "Can make a complaint.",
+            "verification_status": "machine_checked_human_review_required"
+        },
+        {
+            "id": "CEFR-A2-GOAL-01",
+            "level": "A2",
+            "scale": "Goal-oriented co-operation",
+            "search_uri": "https://www.coe.int/en/web/common-european-framework-reference-languages/cefr-descriptors-search",
+            "source_location": {
+                "chapter": "3 — CEFR illustrative descriptor scales",
+                "level": "A2",
+                "scale": "Goal-oriented co-operation"
+            },
+            "source_uri": "https://rm.coe.int/common-european-framework-of-reference-for-languages-learning-teaching/16809ea0d4",
+            "verbatim_text": "Can communicate in simple and routine tasks using simple phrases to ask for and provide things, to get simple information and to discuss what to do next.",
+            "verification_status": "machine_checked_human_review_required"
+        },
+        {
+            "id": "CEFR-B1-GOAL-01",
+            "level": "B1",
+            "scale": "Goal-oriented co-operation",
+            "search_uri": "https://www.coe.int/en/web/common-european-framework-reference-languages/cefr-descriptors-search",
+            "source_location": {
+                "chapter": "3 — CEFR illustrative descriptor scales",
+                "level": "B1",
+                "scale": "Goal-oriented co-operation"
+            },
+            "source_uri": "https://rm.coe.int/common-european-framework-of-reference-for-languages-learning-teaching/16809ea0d4",
+            "verbatim_text": "Can explain why something is a problem, discuss what to do next, compare and contrast alternatives.",
+            "verification_status": "machine_checked_human_review_required"
+        },
+        {
+            "id": "CEFR-A2-MSG-01",
+            "level": "A2",
+            "scale": "Notes, messages and forms",
+            "search_uri": "https://www.coe.int/en/web/common-european-framework-reference-languages/cefr-descriptors-search",
+            "source_location": {
+                "chapter": "3 — CEFR illustrative descriptor scales",
+                "level": "A2",
+                "scale": "Notes, messages and forms"
+            },
+            "source_uri": "https://rm.coe.int/common-european-framework-of-reference-for-languages-learning-teaching/16809ea0d4",
+            "verbatim_text": "Can take a short, simple message provided he/she can ask for repetition and reformulation.",
+            "verification_status": "machine_checked_human_review_required"
+        },
+        {
+            "id": "CEFR-A2-MSG-02",
+            "level": "A2",
+            "scale": "Notes, messages and forms",
+            "search_uri": "https://www.coe.int/en/web/common-european-framework-reference-languages/cefr-descriptors-search",
+            "source_location": {
+                "chapter": "3 — CEFR illustrative descriptor scales",
+                "level": "A2",
+                "scale": "Notes, messages and forms"
+            },
+            "source_uri": "https://rm.coe.int/common-european-framework-of-reference-for-languages-learning-teaching/16809ea0d4",
+            "verbatim_text": "Can write short, simple notes and messages relating to matters in areas of immediate need.",
+            "verification_status": "machine_checked_human_review_required"
+        },
+        {
+            "id": "CEFR-B1-MSG-01",
+            "level": "B1",
+            "scale": "Notes, messages and forms",
+            "search_uri": "https://www.coe.int/en/web/common-european-framework-reference-languages/cefr-descriptors-search",
+            "source_location": {
+                "chapter": "3 — CEFR illustrative descriptor scales",
+                "level": "B1",
+                "scale": "Notes, messages and forms"
+            },
+            "source_uri": "https://rm.coe.int/common-european-framework-of-reference-for-languages-learning-teaching/16809ea0d4",
+            "verbatim_text": "Can take messages communicating enquiries, explaining problems.",
+            "verification_status": "machine_checked_human_review_required"
+        },
+        {
+            "id": "CEFR-A2-CLAR-01",
+            "level": "A2",
+            "scale": "Asking for clarification",
+            "search_uri": "https://www.coe.int/en/web/common-european-framework-reference-languages/cefr-descriptors-search",
+            "source_location": {
+                "chapter": "3 — CEFR illustrative descriptor scales",
+                "level": "A2",
+                "scale": "Asking for clarification"
+            },
+            "source_uri": "https://rm.coe.int/common-european-framework-of-reference-for-languages-learning-teaching/16809ea0d4",
+            "verbatim_text": "Can ask very simply for repetition when he/she does not understand.",
+            "verification_status": "machine_checked_human_review_required"
+        },
+        {
+            "id": "CEFR-B1-CLAR-01",
+            "level": "B1",
+            "scale": "Asking for clarification",
+            "search_uri": "https://www.coe.int/en/web/common-european-framework-reference-languages/cefr-descriptors-search",
+            "source_location": {
+                "chapter": "3 — CEFR illustrative descriptor scales",
+                "level": "B1",
+                "scale": "Asking for clarification"
+            },
+            "source_uri": "https://rm.coe.int/common-european-framework-of-reference-for-languages-learning-teaching/16809ea0d4",
+            "verbatim_text": "Can ask someone to clarify or elaborate what they have just said.",
+            "verification_status": "machine_checked_human_review_required"
+        },
+        {
+            "id": "CEFR-A2-CORR-01",
+            "level": "A2",
+            "scale": "Correspondence",
+            "search_uri": "https://www.coe.int/en/web/common-european-framework-reference-languages/cefr-descriptors-search",
+            "source_location": {
+                "chapter": "3 — CEFR illustrative descriptor scales",
+                "level": "A2",
+                "scale": "Correspondence"
+            },
+            "source_uri": "https://rm.coe.int/common-european-framework-of-reference-for-languages-learning-teaching/16809ea0d4",
+            "verbatim_text": "Can write very simple personal letters expressing thanks and apology.",
+            "verification_status": "machine_checked_human_review_required"
+        },
+        {
+            "id": "CEFR-A2-ONLINE-TX-01",
+            "level": "A2",
+            "scale": "Goal-oriented online transactions and collaboration",
+            "search_uri": "https://www.coe.int/en/web/common-european-framework-reference-languages/cefr-descriptors-search",
+            "source_location": {
+                "chapter": "3 — CEFR illustrative descriptor scales",
+                "level": "A2",
+                "scale": "Goal-oriented online transactions and collaboration"
+            },
+            "source_uri": "https://rm.coe.int/common-european-framework-of-reference-for-languages-learning-teaching/16809ea0d4",
+            "verbatim_text": "Can use formulaic language to respond to routine problems arising in online transactions (e.g. concerning availability of models and special offers, delivery dates, addresses, etc.).",
+            "verification_status": "machine_checked_human_review_required"
+        },
+        {
+            "id": "CEFR-B1-ONLINE-TX-01",
+            "level": "B1",
+            "scale": "Goal-oriented online transactions and collaboration",
+            "search_uri": "https://www.coe.int/en/web/common-european-framework-reference-languages/cefr-descriptors-search",
+            "source_location": {
+                "chapter": "3 — CEFR illustrative descriptor scales",
+                "level": "B1",
+                "scale": "Goal-oriented online transactions and collaboration"
+            },
+            "source_uri": "https://rm.coe.int/common-european-framework-of-reference-for-languages-learning-teaching/16809ea0d4",
+            "verbatim_text": "Can engage in online transactions that require an extended exchange of information, provided the interlocutor(s) avoid complex language and are willing to repeat and reformulate when necessary.",
+            "verification_status": "machine_checked_human_review_required"
+        },
+        {
+            "id": "CEFR-B1-ONLINE-TX-02",
+            "level": "B1",
+            "scale": "Goal-oriented online transactions and collaboration",
+            "search_uri": "https://www.coe.int/en/web/common-european-framework-reference-languages/cefr-descriptors-search",
+            "source_location": {
+                "chapter": "3 — CEFR illustrative descriptor scales",
+                "level": "B1",
+                "scale": "Goal-oriented online transactions and collaboration"
+            },
+            "source_uri": "https://rm.coe.int/common-european-framework-of-reference-for-languages-learning-teaching/16809ea0d4",
+            "verbatim_text": "Can interact online with a group that is working on a project, following straightforward instructions, seeking clarification and helping to accomplish the shared tasks.",
+            "verification_status": "machine_checked_human_review_required"
+        },
+        {
+            "id": "CEFR-A2-ONLINE-CONV-01",
+            "level": "A2",
+            "scale": "Online conversation and discussion",
+            "search_uri": "https://www.coe.int/en/web/common-european-framework-reference-languages/cefr-descriptors-search",
+            "source_location": {
+                "chapter": "3 — CEFR illustrative descriptor scales",
+                "level": "A2",
+                "scale": "Online conversation and discussion"
+            },
+            "source_uri": "https://rm.coe.int/common-european-framework-of-reference-for-languages-learning-teaching/16809ea0d4",
+            "verbatim_text": "Can engage in basic social communication online (e.g. writing a simple message on a virtual card for a special occasion, sharing news and making/confirming arrangements to meet).",
+            "verification_status": "machine_checked_human_review_required"
+        },
+        {
+            "id": "CEFR-B1-ONLINE-CONV-01",
+            "level": "B1",
+            "scale": "Online conversation and discussion",
+            "search_uri": "https://www.coe.int/en/web/common-european-framework-reference-languages/cefr-descriptors-search",
+            "source_location": {
+                "chapter": "3 — CEFR illustrative descriptor scales",
+                "level": "B1",
+                "scale": "Online conversation and discussion"
+            },
+            "source_uri": "https://rm.coe.int/common-european-framework-of-reference-for-languages-learning-teaching/16809ea0d4",
+            "verbatim_text": "Can engage in real-time online exchanges with more than one participant, recognising the communicative intentions of each contributor, but may not understand details or implications without further explanation.",
+            "verification_status": "machine_checked_human_review_required"
+        },
+        {
+            "id": "CEFR-A2-SOCIO-01",
+            "level": "A2",
+            "scale": "Sociolinguistic appropriateness",
+            "search_uri": "https://www.coe.int/en/web/common-european-framework-reference-languages/cefr-descriptors-search",
+            "source_location": {
+                "chapter": "3 — CEFR illustrative descriptor scales",
+                "level": "A2",
+                "scale": "Sociolinguistic appropriateness"
+            },
+            "source_uri": "https://rm.coe.int/common-european-framework-of-reference-for-languages-learning-teaching/16809ea0d4",
+            "verbatim_text": "Can perform and respond to basic language functions, such as information exchange and requests and express opinions and attitudes in a simple way.",
+            "verification_status": "machine_checked_human_review_required"
+        },
+        {
+            "id": "CEFR-A2-SOCIO-02",
+            "level": "A2",
+            "scale": "Sociolinguistic appropriateness",
+            "search_uri": "https://www.coe.int/en/web/common-european-framework-reference-languages/cefr-descriptors-search",
+            "source_location": {
+                "chapter": "3 — CEFR illustrative descriptor scales",
+                "level": "A2",
+                "scale": "Sociolinguistic appropriateness"
+            },
+            "source_uri": "https://rm.coe.int/common-european-framework-of-reference-for-languages-learning-teaching/16809ea0d4",
+            "verbatim_text": "Can socialise simply but effectively using the simplest common expressions and following basic routines.",
+            "verification_status": "machine_checked_human_review_required"
+        },
+        {
+            "id": "CEFR-B1-SOCIO-01",
+            "level": "B1",
+            "scale": "Sociolinguistic appropriateness",
+            "search_uri": "https://www.coe.int/en/web/common-european-framework-reference-languages/cefr-descriptors-search",
+            "source_location": {
+                "chapter": "3 — CEFR illustrative descriptor scales",
+                "level": "B1",
+                "scale": "Sociolinguistic appropriateness"
+            },
+            "source_uri": "https://rm.coe.int/common-european-framework-of-reference-for-languages-learning-teaching/16809ea0d4",
+            "verbatim_text": "Can perform and respond to a wide range of language functions, using their most common exponents in a neutral register.",
+            "verification_status": "machine_checked_human_review_required"
+        }
+    ],
+    "registry_version": "0.2.0-draft",
+    "review_status": "provisional",
+    "search_uri": "https://www.coe.int/en/web/common-european-framework-reference-languages/cefr-descriptors-search",
+    "source_uri": "https://rm.coe.int/common-european-framework-of-reference-for-languages-learning-teaching/16809ea0d4",
+    "status": "draft_pending_qualified_review"
+}

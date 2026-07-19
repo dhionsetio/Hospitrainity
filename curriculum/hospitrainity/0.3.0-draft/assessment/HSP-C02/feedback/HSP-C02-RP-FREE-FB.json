@@ -1,0 +1,26 @@
+{
+  "code": "HSP-C02-RP-FREE-FB",
+  "content_version": "0.3.0-draft",
+  "entity_type": "feedback-model",
+  "id": "93747995-0b13-5679-9ad9-f28aaf721ee7",
+  "messages": [
+    {
+      "feedback_type": "model_reveal",
+      "text": "“Good evening, welcome to the Grand Serenata Hotel. Yes, we do have a room available for tonight, a lovely Deluxe Room. Would you like to take it? Wonderful. I will just need your passport and a card for the deposit, and I will have you checked in right away.” This works because it greets warmly, offers a clear solution, and moves smoothly into the steps."
+    }
+  ],
+  "prompt_code": "HSP-C02-RP-FREE",
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 176,
+    "chapter": 2,
+    "heading_path": [
+      "Front Desk and Check-In",
+      "Step 6. Role-play"
+    ],
+    "normalized_text_sha256": "39f3f936ff4ae160b5027a894025a470b8133aa756f5f776b75f21b458ea164b"
+  },
+  "status": "published"
+}

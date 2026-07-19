@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C01",
+  "code": "HSP-C01-LS-03",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "9ed9d026-ff4d-59b5-bc35-bc6a36edeee7",
+  "order": 3,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 47,
+    "chapter": 1,
+    "heading_path": [
+      "Welcome and Introduction to Customer Care",
+      "What customer care means"
+    ],
+    "normalized_text_sha256": "20bb3758891bd902829443b111e49831bc57d13d4108aa4eefbcb8c9e3340b11"
+  },
+  "status": "published",
+  "title": "What customer care means"
+}

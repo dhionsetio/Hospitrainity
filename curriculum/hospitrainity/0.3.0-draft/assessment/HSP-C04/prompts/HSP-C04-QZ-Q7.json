@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C04-ACT-QUIZ",
+  "code": "HSP-C04-QZ-Q7",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "97381a92-effb-597c-8f57-d1acadcf2ec3",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 485,
+    "chapter": 4,
+    "heading_path": [
+      "The Guest-Services Hotline",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "f9d66d5eac15d4ac6886d996a5b02d9c471f75f8fe9f6da8f4f6b3e2bb46d042"
+  },
+  "status": "published",
+  "stem": "Q7. How should you say room 305 on the phone? A) “three hundred and five” quickly B) “three, oh, five” as single digits C) spell it as letters"
+}

@@ -1,0 +1,52 @@
+{
+  "findings": [
+    {
+      "entity_code": "HSP-C06-PR-I1",
+      "field": "stem",
+      "id": "ED-0003",
+      "message": "non-ASCII char U+1F60A \"😊\"",
+      "rule": "non-english-char",
+      "severity": "info"
+    },
+    {
+      "entity_code": "HSP-C06-PR-I2",
+      "field": "stem",
+      "id": "ED-0004",
+      "message": "non-ASCII char U+1F60A \"😊\"",
+      "rule": "non-english-char",
+      "severity": "info"
+    },
+    {
+      "entity_code": "HSP-C06-RP-FREE-FB",
+      "field": "messages[0].text",
+      "id": "ED-0001",
+      "message": "non-ASCII char U+1F60A \"😊\"",
+      "rule": "non-english-char",
+      "severity": "info"
+    },
+    {
+      "entity_code": "HSP-C06-RP-G1-FB",
+      "field": "messages[1].text",
+      "id": "ED-0002",
+      "message": "non-ASCII char U+1F60A \"😊\"",
+      "rule": "non-english-char",
+      "severity": "info"
+    }
+  ],
+  "generated_by": "CP-06",
+  "policy": {
+    "banned_tokens": [
+      "Youkata",
+      "StayReady",
+      "EngageEnglish"
+    ],
+    "notes": "DOCX is sole source of truth (DEC-001); findings are advisory, no content mutated."
+  },
+  "scope": "428 canonical content + assessment entities",
+  "summary": {
+    "error": 0,
+    "info": 4,
+    "warn": 0
+  },
+  "tool": "hsp-editorial.mjs"
+}

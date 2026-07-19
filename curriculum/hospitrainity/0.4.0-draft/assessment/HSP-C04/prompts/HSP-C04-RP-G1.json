@@ -1,0 +1,60 @@
+{
+    "activity_code": "HSP-C04-ACT-ROLEPLAY",
+    "choices": [
+        {
+            "feedback": [
+                {
+                    "feedback_type": "error_specific",
+                    "text": "(a) “That is not my department.” Unhelpful, and it leaves the guest stuck."
+                }
+            ],
+            "id": "d7f9bb1e-b3c6-5ce4-a8f2-a72172f00cc0",
+            "label": "a",
+            "text": "“That is not my department.”"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "success",
+                    "text": "(b) “I am sorry to hear that. I will put you through to maintenance right away. One moment, please.” This is the ideal answer, empathy followed by action."
+                }
+            ],
+            "id": "79292387-ae6b-561e-9bcb-d9eb52d6214b",
+            "label": "b",
+            "text": "“I am sorry to hear that. I will put you through to maintenance right away. One moment, please.”"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "error_specific",
+                    "text": "(c) “Try turning it off and on.” This pushes the work back onto the guest."
+                }
+            ],
+            "id": "3071d8b2-4655-5c19-8ef7-33bd238e723c",
+            "label": "c",
+            "text": "“Try turning it off and on.”"
+        }
+    ],
+    "code": "HSP-C04-RP-G1",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "b4d4b681-8dae-5e2b-b51d-69dd5701e5a4",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 456,
+        "chapter": 4,
+        "heading_path": [
+            "The Guest-Services Hotline",
+            "Step 6. Role-play"
+        ],
+        "normalized_text_sha256": "73fc14d81669cbb8ed897f4ac260a66cabbe9def3036817b47e2d892bf998d16"
+    },
+    "status": "published",
+    "stem": "Guest: “Can you send someone to fix the air conditioning?”"
+}

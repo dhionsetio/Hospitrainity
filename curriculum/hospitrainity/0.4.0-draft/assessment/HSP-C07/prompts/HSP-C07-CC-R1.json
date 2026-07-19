@@ -1,0 +1,37 @@
+{
+    "activity_code": "HSP-C07-ACT-CONFIDENCE",
+    "code": "HSP-C07-CC-R1",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "6ca70140-431d-5c46-85b3-2ba708bc890e",
+    "language": "en",
+    "order": 1,
+    "provenance_kind": "source_verbatim",
+    "rating_scale": {
+        "max": 5,
+        "min": 1,
+        "values": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ]
+    },
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "rating",
+    "scoring_mode": "unscored_self_report",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 946,
+        "chapter": 7,
+        "heading_path": [
+            "Dealing with Problems and Complaints",
+            "Step 8. Confidence check"
+        ],
+        "normalized_text_sha256": "269e77371603a0c0638323d84a46cf15e433b8a0049c7837003e55485142f02c"
+    },
+    "status": "published",
+    "stem": "I can stay calm and listen when a guest is upset."
+}

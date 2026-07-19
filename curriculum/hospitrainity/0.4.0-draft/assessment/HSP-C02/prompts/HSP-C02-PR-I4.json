@@ -1,0 +1,30 @@
+{
+    "activity_code": "HSP-C02-ACT-PRACTICE",
+    "code": "HSP-C02-PR-I4",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "ef1d1312-0385-5e0e-b7b4-6815b96a2dd3",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_constraints": {
+        "maximum_characters": 4000,
+        "minimum_non_whitespace_characters": 1
+    },
+    "response_form": "short_text",
+    "scoring_mode": "model_self_check",
+    "self_check_required": true,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 156,
+        "chapter": 2,
+        "heading_path": [
+            "Front Desk and Check-In",
+            "Step 5. Practice"
+        ],
+        "normalized_text_sha256": "5952c2a9a037af857f825dd9846c55fa59ea1c5ad318ec7f7d90473e081e2668"
+    },
+    "status": "published",
+    "stem": "4. Make this sound polite: a colleague says “Passport.” How would you soften it?"
+}

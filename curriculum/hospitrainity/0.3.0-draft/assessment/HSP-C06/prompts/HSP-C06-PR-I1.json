@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C06-ACT-PRACTICE",
+  "code": "HSP-C06-PR-I1",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "d97d11aa-85d4-52c5-96bf-dd783b1bba7b",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 719,
+    "chapter": 6,
+    "heading_path": [
+      "Online and Social Media Customer Service",
+      "Step 5. Practice"
+    ],
+    "normalized_text_sha256": "cd947df3db947f79511ba1f8c01c9b864abf622c2dabf0b22cbbf2a74719fdf1"
+  },
+  "status": "published",
+  "stem": "1. Choose the better chat reply to “What time is check-in?” (a) a long, formal paragraph or (b) “Hi there. 😊 Check-in is from 2 in the afternoon. Anything else I can help with?”"
+}

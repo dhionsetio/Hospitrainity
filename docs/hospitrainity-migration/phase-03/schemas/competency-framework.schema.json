@@ -1,0 +1,66 @@
+{
+  "$id": "https://hospitrainity.curriculum/schema/competency-framework.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "audience": {
+      "type": "string"
+    },
+    "competencies": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "definition": {
+            "type": "string"
+          },
+          "evidence": {
+            "items": {
+              "pattern": "^EV-[A-Z0-9-]+$",
+              "type": "string"
+            },
+            "minItems": 1,
+            "type": "array"
+          },
+          "id": {
+            "pattern": "^COMP-[A-Z-]+$",
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "definition",
+          "evidence"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "framework_id": {
+      "type": "string"
+    },
+    "source_of_truth": {
+      "const": "Hospitrainity.docx"
+    },
+    "status": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "framework_id",
+    "version",
+    "status",
+    "audience",
+    "source_of_truth",
+    "competencies"
+  ],
+  "title": "Competency framework (CP-02 compatible)",
+  "type": "object"
+}

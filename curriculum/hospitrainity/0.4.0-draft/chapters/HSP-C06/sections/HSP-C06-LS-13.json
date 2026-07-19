@@ -1,0 +1,95 @@
+{
+    "blocks": [
+        {
+            "id": "27cff36e-1b2d-5733-87e4-2b0c12fe5233",
+            "language": "en",
+            "links": [
+                {
+                    "target": "https://www.adobe.com/express/learn/blog/customer-service-in-social-media",
+                    "text": "Adobe: social media customer service best practices"
+                }
+            ],
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 813,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Further reading"
+                ],
+                "normalized_text_sha256": "baed10338015d65aee381c3c7865a2b53ebc1dd32f226ec5c357dd25316dcab3"
+            },
+            "type": "external_link"
+        },
+        {
+            "id": "4a34b638-7caf-5f01-b941-0f94389f0d34",
+            "language": "en",
+            "links": [
+                {
+                    "target": "https://greetnow.com/blog/customer-response-time-statistics",
+                    "text": "GreetNow: customer response time statistics"
+                }
+            ],
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 814,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Further reading"
+                ],
+                "normalized_text_sha256": "51eba613d6264f6763ce58e66cb1e62700ff452c909028f4b558d7ae3b11b1b6"
+            },
+            "type": "external_link"
+        },
+        {
+            "id": "8569a5f6-63ec-5c00-8598-6941bbe45a10",
+            "language": "en",
+            "links": [
+                {
+                    "target": "https://blog.hootsuite.com/social-media-customer-service/",
+                    "text": "Hootsuite: social media customer service guide"
+                }
+            ],
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 815,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Further reading"
+                ],
+                "normalized_text_sha256": "03aea8cc77c036e24f475a15c610e3737fdcd4de42e4d5f71d7e9ff1877c013f"
+            },
+            "type": "external_link"
+        }
+    ],
+    "chapter_code": "HSP-C06",
+    "code": "HSP-C06-LS-13",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "12d39817-1bf8-532b-897c-f47fbb66ff21",
+    "language": "en",
+    "order": 13,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 812,
+        "chapter": 6,
+        "heading_path": [
+            "Online and Social Media Customer Service",
+            "Further reading"
+        ],
+        "normalized_text_sha256": "4082f515b2f4929c139af2b1d23605e462c614bd888cf0dc12952d0d9cdeb1c7"
+    },
+    "status": "published",
+    "title": "Further reading"
+}

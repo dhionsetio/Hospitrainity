@@ -1,0 +1,36 @@
+{
+  "accessibility": [
+    "transcript",
+    "keyboard_path"
+  ],
+  "cefr_activity": "interaction",
+  "channel": "spoken_ftf",
+  "code": "HSP-C02-RP-001",
+  "content_version": "0.1.0",
+  "entity_type": "activity",
+  "id": "a3eeff96-dfc6-516c-8fb4-12c7e4ac9b1b",
+  "lesson_code": "HSP-C02-LS-001",
+  "outcome_codes": [
+    "OUT-M02-01"
+  ],
+  "participation": "staff_guest",
+  "pedagogical_function": "guided_practice",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "role_play",
+  "scoring_mode": "rubric",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 12,
+    "chapter": 2,
+    "heading_path": [
+      "Chapter 2",
+      "Front Desk",
+      "Check-in"
+    ],
+    "normalized_text_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  },
+  "status": "draft",
+  "timing": "synchronous",
+  "title": "Role-play: warm check-in"
+}

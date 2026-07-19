@@ -1,0 +1,182 @@
+{
+    "blocks": [
+        {
+            "id": "6282bafd-03e9-533c-a8f2-2386fb42c2ee",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Open for five common mistakes",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 285,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Common mistakes to avoid"
+                ],
+                "normalized_text_sha256": "a433b254794ec760d8fec78cc3f476ae28f47f15bd12cd32be5e9d650aac6f83"
+            },
+            "text": "Open for five common mistakes",
+            "type": "paragraph"
+        },
+        {
+            "id": "7f1e51e6-19be-5463-8062-aa2e6d975d92",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Answering with just “Hello.” Always give the hotel name, your name, and an offer to help.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 286,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Common mistakes to avoid"
+                ],
+                "normalized_text_sha256": "378f51d0b049a44a911e8179ef1b05d3bd4081448cdf4f6aba6f75300b50689a"
+            },
+            "text": "Answering with just “Hello.” Always give the hotel name, your name, and an offer to help.",
+            "type": "list_item"
+        },
+        {
+            "id": "3e59fb1e-525c-5cf0-8d93-cf5c1407cb4f",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Rushing through numbers. Slow down and say each digit on its own.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 287,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Common mistakes to avoid"
+                ],
+                "normalized_text_sha256": "541abc07664409f58404f4f6240b6f74358dc0192473f39bd1580d2a6676b71b"
+            },
+            "text": "Rushing through numbers. Slow down and say each digit on its own.",
+            "type": "list_item"
+        },
+        {
+            "id": "8cab924b-9138-5728-8adf-f048914f01bd",
+            "language": "en",
+            "order": 4,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Not confirming. Always read the booking back before you finish.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 288,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Common mistakes to avoid"
+                ],
+                "normalized_text_sha256": "0a0e1b562c794cab76179e37b0701eb655b4da04f6abf54e5cea532e208b5356"
+            },
+            "text": "Not confirming. Always read the booking back before you finish.",
+            "type": "list_item"
+        },
+        {
+            "id": "5cf42888-3dda-5faa-9b33-fe748e09ef40",
+            "language": "en",
+            "order": 5,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Putting someone on hold without asking. Ask first, and thank them when you return.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 289,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Common mistakes to avoid"
+                ],
+                "normalized_text_sha256": "ec0bafc2a64e5291f20ada5b1491fd194c782a96923a8016efe39ece107c702b"
+            },
+            "text": "Putting someone on hold without asking. Ask first, and thank them when you return.",
+            "type": "list_item"
+        },
+        {
+            "id": "786c2789-a6c2-5a42-b0af-794010d19a79",
+            "language": "en",
+            "order": 6,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Forgetting to give the booking reference. It reassures the caller that everything is set.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 290,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Common mistakes to avoid"
+                ],
+                "normalized_text_sha256": "3958249563c025917f03ebf468da6c6abd97f8fda1d3caa90f6da3cd6a5446d5"
+            },
+            "text": "Forgetting to give the booking reference. It reassures the caller that everything is set.",
+            "type": "list_item"
+        }
+    ],
+    "chapter_code": "HSP-C03",
+    "code": "HSP-C03-LS-07",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "d34276ee-0006-574c-95ed-66272c11e57d",
+    "language": "en",
+    "order": 7,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 284,
+        "chapter": 3,
+        "heading_path": [
+            "Dealing with Customers on the Phone",
+            "Common mistakes to avoid"
+        ],
+        "normalized_text_sha256": "09280c77c069d2c19c40ad919cf2f1fa07a028a886d911cc8f9318f19c0a51e0"
+    },
+    "status": "published",
+    "title": "Common mistakes to avoid"
+}

@@ -1,0 +1,451 @@
+{
+  "activities": [
+    {
+      "code": "HSP-C02-ACT-CONFIDENCE",
+      "declared": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "extra": [],
+      "missing": [],
+      "required": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "status": "conform"
+    },
+    {
+      "code": "HSP-C02-ACT-PRACTICE",
+      "declared": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "extra": [],
+      "missing": [],
+      "required": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "status": "conform"
+    },
+    {
+      "code": "HSP-C02-ACT-QUIZ",
+      "declared": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "extra": [],
+      "missing": [],
+      "required": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "status": "conform"
+    },
+    {
+      "code": "HSP-C02-ACT-ROLEPLAY",
+      "declared": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt",
+        "transcript"
+      ],
+      "extra": [],
+      "missing": [],
+      "required": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt",
+        "transcript"
+      ],
+      "status": "conform"
+    },
+    {
+      "code": "HSP-C03-ACT-CONFIDENCE",
+      "declared": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "extra": [],
+      "missing": [],
+      "required": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "status": "conform"
+    },
+    {
+      "code": "HSP-C03-ACT-PRACTICE",
+      "declared": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "extra": [],
+      "missing": [],
+      "required": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "status": "conform"
+    },
+    {
+      "code": "HSP-C03-ACT-QUIZ",
+      "declared": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "extra": [],
+      "missing": [],
+      "required": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "status": "conform"
+    },
+    {
+      "code": "HSP-C03-ACT-ROLEPLAY",
+      "declared": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt",
+        "transcript"
+      ],
+      "extra": [],
+      "missing": [],
+      "required": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt",
+        "transcript"
+      ],
+      "status": "conform"
+    },
+    {
+      "code": "HSP-C04-ACT-CONFIDENCE",
+      "declared": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "extra": [],
+      "missing": [],
+      "required": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "status": "conform"
+    },
+    {
+      "code": "HSP-C04-ACT-PRACTICE",
+      "declared": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "extra": [],
+      "missing": [],
+      "required": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "status": "conform"
+    },
+    {
+      "code": "HSP-C04-ACT-QUIZ",
+      "declared": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "extra": [],
+      "missing": [],
+      "required": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "status": "conform"
+    },
+    {
+      "code": "HSP-C04-ACT-ROLEPLAY",
+      "declared": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt",
+        "transcript"
+      ],
+      "extra": [],
+      "missing": [],
+      "required": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt",
+        "transcript"
+      ],
+      "status": "conform"
+    },
+    {
+      "code": "HSP-C05-ACT-CONFIDENCE",
+      "declared": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "extra": [],
+      "missing": [],
+      "required": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "status": "conform"
+    },
+    {
+      "code": "HSP-C05-ACT-PRACTICE",
+      "declared": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "extra": [],
+      "missing": [],
+      "required": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "status": "conform"
+    },
+    {
+      "code": "HSP-C05-ACT-QUIZ",
+      "declared": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "extra": [],
+      "missing": [],
+      "required": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "status": "conform"
+    },
+    {
+      "code": "HSP-C05-ACT-ROLEPLAY",
+      "declared": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "extra": [],
+      "missing": [],
+      "required": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "status": "conform"
+    },
+    {
+      "code": "HSP-C06-ACT-CONFIDENCE",
+      "declared": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "extra": [],
+      "missing": [],
+      "required": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "status": "conform"
+    },
+    {
+      "code": "HSP-C06-ACT-PRACTICE",
+      "declared": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "extra": [],
+      "missing": [],
+      "required": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "status": "conform"
+    },
+    {
+      "code": "HSP-C06-ACT-QUIZ",
+      "declared": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "extra": [],
+      "missing": [],
+      "required": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "status": "conform"
+    },
+    {
+      "code": "HSP-C06-ACT-ROLEPLAY",
+      "declared": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "extra": [],
+      "missing": [],
+      "required": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "status": "conform"
+    },
+    {
+      "code": "HSP-C07-ACT-CONFIDENCE",
+      "declared": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "extra": [],
+      "missing": [],
+      "required": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "status": "conform"
+    },
+    {
+      "code": "HSP-C07-ACT-PRACTICE",
+      "declared": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "extra": [],
+      "missing": [],
+      "required": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "status": "conform"
+    },
+    {
+      "code": "HSP-C07-ACT-QUIZ",
+      "declared": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "extra": [],
+      "missing": [],
+      "required": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt"
+      ],
+      "status": "conform"
+    },
+    {
+      "code": "HSP-C07-ACT-ROLEPLAY",
+      "declared": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt",
+        "transcript"
+      ],
+      "extra": [],
+      "missing": [],
+      "required": [
+        "keyboard_path",
+        "no_timing_dependency",
+        "non_color_cue",
+        "text_alt",
+        "transcript"
+      ],
+      "status": "conform"
+    }
+  ],
+  "generated_by": "CP-07",
+  "summary": {
+    "activities": 24,
+    "conform": 24,
+    "gaps": 0
+  },
+  "tool": "hsp-a11y.mjs"
+}

@@ -1,0 +1,50 @@
+{
+    "activity_code": "HSP-C07-ACT-QUIZ",
+    "choices": [
+        {
+            "feedback": [],
+            "id": "b8729b33-599b-53d5-a958-b5b7ce81a8e2",
+            "label": "a",
+            "text": "blaming the system"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "model_reveal",
+                    "text": "B. You own the fix, personally."
+                }
+            ],
+            "id": "4f1a4e0e-600f-5bea-b9b5-11c62d943c5c",
+            "label": "b",
+            "text": "accepting responsibility and acting"
+        },
+        {
+            "feedback": [],
+            "id": "e6a540b1-f978-5c28-9e8b-af26b8ba08d2",
+            "label": "c",
+            "text": "sending the guest away"
+        }
+    ],
+    "code": "HSP-C07-QZ-Q3",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "be97a5dc-5238-5564-ad2b-016983873e10",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 925,
+        "chapter": 7,
+        "heading_path": [
+            "Dealing with Problems and Complaints",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "9fd68178d24fea0497d7f5155935ae2e9540569e8cca11c36e95dda87eabc126"
+    },
+    "status": "published",
+    "stem": "Q3. “Taking ownership” means ... A) blaming the system B) accepting responsibility and acting C) sending the guest away"
+}

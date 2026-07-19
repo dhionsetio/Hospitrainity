@@ -1,0 +1,51 @@
+{
+  "artifacts": {
+    "phase-03/tools/hsp-qa.mjs": {
+      "bytes": 19937,
+      "sha256": "1130f667f777dbccee2d5f1789de0366bbe5d7985bb6c61ddcd8e171100ffe86"
+    },
+    "phase-03/tools/hsp-render.mjs": {
+      "bytes": 12231,
+      "sha256": "324817279be0fd754b6ece84b392bd77304e66ba55482099ad17c8f9cc2e0d13"
+    },
+    "phase-03/tools/render-template.html": {
+      "bytes": 21851,
+      "sha256": "8bb0329da3b36d6a776624bd2e935f581853d31a1c34bcf39a0546a5af019731"
+    },
+    "phase-12/Hospitrainity-Standalone.html": {
+      "bytes": 93543,
+      "sha256": "56eb11307bd33893676b2e1f53f9a3606d875424fa5cff4df6df9bc8214a5a9c"
+    },
+    "phase-12/README.md": {
+      "bytes": 1735,
+      "sha256": "1914503c983c48409758cd0945998866f7cf9dd4d6bf28189b4901764214579a"
+    },
+    "phase-12/checkpoint-report.md": {
+      "bytes": 3069,
+      "sha256": "37f066d8753fae978e4f9af8603bc84e9c33675f26c683c0989479acf86a72fb"
+    },
+    "phase-12/pilot-readiness.json": {
+      "bytes": 1920,
+      "sha256": "870ac82a062431735c6e585dac9934ebeb636fdaf8e1f911691a42240ed2e034"
+    },
+    "phase-12/qa-report.json": {
+      "bytes": 3649,
+      "sha256": "bd44f30ecb009ec3cdb4a8678104f7c417523b8146f3fc0b0dcf2f2b1495710d"
+    },
+    "phase-12/qa-spec.md": {
+      "bytes": 4622,
+      "sha256": "46fd95a1061d3b1b1f032fb8444ed141f03a8765f3d73a5ce7dcb9ff485169b2"
+    },
+    "phase-12/render-report.json": {
+      "bytes": 821,
+      "sha256": "a380d48de7f094d42772cfc9571f830c1ccb4d842786aa94632e8d9b7656d4d1"
+    },
+    "phase-12/view-model.json": {
+      "bytes": 115203,
+      "sha256": "fe46eb25291cc9fc379b242e9bdc969b7addf961e55a853a6986bafd00f37578"
+    }
+  },
+  "checkpoint": "CP-12",
+  "generated": "2026-07-15",
+  "note": "SHA-256 of artifacts created or modified in CP-12. DOCX remains sole source of truth; no canonical content mutated."
+}

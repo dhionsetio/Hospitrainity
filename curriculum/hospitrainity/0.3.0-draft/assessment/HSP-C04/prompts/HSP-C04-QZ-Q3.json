@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C04-ACT-QUIZ",
+  "code": "HSP-C04-QZ-Q3",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "13377da8-265a-5808-a7d8-a8cd0cb6fcee",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 473,
+    "chapter": 4,
+    "heading_path": [
+      "The Guest-Services Hotline",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "a96cca9d5cff24c7cf662f7afdc38b13121ecd6ada2014128c68962b4c6197a1"
+  },
+  "status": "published",
+  "stem": "Q3. A guest needs something outside your area. You should ... A) say it is not your job B) transfer them warmly to the right department C) hang up"
+}

@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C03",
+  "code": "HSP-C03-LS-07",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "d34276ee-0006-574c-95ed-66272c11e57d",
+  "order": 7,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 277,
+    "chapter": 3,
+    "heading_path": [
+      "Dealing with Customers on the Phone",
+      "Common mistakes to avoid"
+    ],
+    "normalized_text_sha256": "5411bc87e5f6c42e656d44b12cc1fff575e2ba0b9e4c40c0dcd69a46472b9da0"
+  },
+  "status": "published",
+  "title": "Common mistakes to avoid"
+}

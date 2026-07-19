@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C02-ACT-PRACTICE",
+  "code": "HSP-C02-PR-I1",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "08ae344d-5e18-5b9d-9872-15af0ad7ffdb",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "short_text",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 143,
+    "chapter": 2,
+    "heading_path": [
+      "Front Desk and Check-In",
+      "Step 5. Practice"
+    ],
+    "normalized_text_sha256": "ad9b27c913a9930c8a3ebab22781b4869623d1055bde5c45a8f878c8c7c52d4f"
+  },
+  "status": "published",
+  "stem": "1. Fill the blank with a polite verb: “Could I _____ your passport, please?”"
+}

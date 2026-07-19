@@ -1,0 +1,18 @@
+{
+  "checkpoint": "CP-02",
+  "phase": 2,
+  "generated_at": "2026-07-15T19:19:29+07:00",
+  "inputs": {
+    "source_zip_sha256": "9b921da24b39a8cc79171a3b3711c0a9a8e0bdf9edaeb141c996ef4b415a1b54",
+    "standalone_sha256": "d86cbebaa08ab1882e447c4f1702c2ef975e3181dec84d5e0ddaadc737b17c72",
+    "docx_sha256": "7f8a2c62db6884498f7a1c2de56e79e39609262944a685fe7eb97f702444cbb4"
+  },
+  "outputs": {
+    "standalone_sha256": "1637eab8dc7a9c19881b49b731c9dd2f52441d09335c5157bd18f2f8d414a70d",
+    "competencies": 7,
+    "cefr_references": 23,
+    "local_outcomes": 21
+  },
+  "runtime_changes": false,
+  "standalone_visible_changes": false
+}

@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C03",
+  "code": "HSP-C03-LS-03",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "7e18e2a5-d12f-54aa-8871-5a6eb36f34bc",
+  "order": 3,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 235,
+    "chapter": 3,
+    "heading_path": [
+      "Dealing with Customers on the Phone",
+      "Step 1. The scenario"
+    ],
+    "normalized_text_sha256": "44c52be04bb2b7c46d10a32bf8f397844bae003502b926a1cf1b36fe684ab7c2"
+  },
+  "status": "published",
+  "title": "Step 1. The scenario"
+}

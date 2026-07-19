@@ -1,0 +1,22 @@
+{
+  "checkpoint": "CP-03",
+  "phase": 3,
+  "generated_at": "2026-07-15T19:55:00+07:00",
+  "inputs": {
+    "source_zip_sha256": "53409c068c598f94447ae228ad6f5492431f2f05cef3b4316f0ac40350dd9d74",
+    "standalone_sha256": "1637eab8dc7a9c19881b49b731c9dd2f52441d09335c5157bd18f2f8d414a70d",
+    "docx_sha256": "7f8a2c62db6884498f7a1c2de56e79e39609262944a685fe7eb97f702444cbb4"
+  },
+  "outputs": {
+    "standalone_sha256": "d2acf2a2a3c4e5e62723cb014db30e6819ac586caff85d2d2de758940400828b",
+    "schemas": 17,
+    "registry_entries": 52,
+    "project_namespace_uuid": "cc9dd546-ebaf-51c7-b86f-307d16a22f42",
+    "schema_version": "1.0.0",
+    "content_version": "0.3.0-draft",
+    "validator_checks_passed": "8/8"
+  },
+  "decisions": ["DEC-011", "DEC-012", "DEC-013", "DEC-014"],
+  "runtime_changes": false,
+  "standalone_visible_changes": false
+}

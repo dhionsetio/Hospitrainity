@@ -1,0 +1,63 @@
+{
+  "$id": "https://hospitrainity.curriculum/schema/id-registry.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "entries": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "$ref": "https://hospitrainity.curriculum/schema/_meta.schema.json#/$defs/editorial_code"
+          },
+          "entity_type": {
+            "type": "string"
+          },
+          "origin": {
+            "enum": [
+              "CP-02",
+              "CP-03",
+              "CP-04+"
+            ]
+          },
+          "status": {
+            "$ref": "https://hospitrainity.curriculum/schema/_meta.schema.json#/$defs/status"
+          },
+          "uuid": {
+            "$ref": "https://hospitrainity.curriculum/schema/_meta.schema.json#/$defs/uuid"
+          }
+        },
+        "required": [
+          "code",
+          "uuid",
+          "entity_type",
+          "status",
+          "origin"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "namespace": {
+      "$ref": "https://hospitrainity.curriculum/schema/_meta.schema.json#/$defs/uuid"
+    },
+    "namespace_seed": {
+      "type": "string"
+    },
+    "registry_version": {
+      "$ref": "https://hospitrainity.curriculum/schema/_meta.schema.json#/$defs/semver"
+    },
+    "uuid_version": {
+      "const": 5
+    }
+  },
+  "required": [
+    "registry_version",
+    "namespace",
+    "namespace_seed",
+    "uuid_version",
+    "entries"
+  ],
+  "title": "Immutable identifier registry",
+  "type": "object"
+}

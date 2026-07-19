@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C05",
+  "code": "HSP-C05-LS-08",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "88519710-adba-58f2-8e17-5a94e276cd0a",
+  "order": 8,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 577,
+    "chapter": 5,
+    "heading_path": [
+      "Customer Care Through Writing",
+      "Step 5. Practice"
+    ],
+    "normalized_text_sha256": "0c7a7d4e5df5e952c9d675d83dd23e173c74cc18e285e13613a7bd6cb270d814"
+  },
+  "status": "published",
+  "title": "Step 5. Practice"
+}

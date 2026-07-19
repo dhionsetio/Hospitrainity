@@ -1,0 +1,130 @@
+{
+    "blocks": [
+        {
+            "id": "0211c0d7-b593-517e-9eaa-b59fda980ba7",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Rate yourself honestly, from 1 (not confident yet) to 5 (very confident). This is just for you, and it is a good way to see your progress.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 654,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 8. Confidence check"
+                ],
+                "normalized_text_sha256": "8ae726d271eb7a0bf90a65a1207e47b0e727c521ff95159d8c7f245ec46d05b7"
+            },
+            "text": "Rate yourself honestly, from 1 (not confident yet) to 5 (very confident). This is just for you, and it is a good way to see your progress.",
+            "type": "instruction"
+        },
+        {
+            "caption": "Step 8. Confidence check: Statement / 1 / 2 / 3 / 4 / 5",
+            "header": [
+                "Statement",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5"
+            ],
+            "id": "ecb6fca0-2ccd-5e17-bf04-ea3450951749",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "rows": [
+                [
+                    "I can start and end an email politely and formally.",
+                    "☐",
+                    "☐",
+                    "☐",
+                    "☐",
+                    "☐"
+                ],
+                [
+                    "I can structure a clear, well-organised reply.",
+                    "☐",
+                    "☐",
+                    "☐",
+                    "☐",
+                    "☐"
+                ],
+                [
+                    "I can confirm a booking in writing.",
+                    "☐",
+                    "☐",
+                    "☐",
+                    "☐",
+                    "☐"
+                ],
+                [
+                    "I can reply to a written concern professionally.",
+                    "☐",
+                    "☐",
+                    "☐",
+                    "☐",
+                    "☐"
+                ]
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 655,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 8. Confidence check"
+                ],
+                "normalized_text_sha256": "94803448c2ff749e5b15e9954144c4a02f0035df32657ac7a1e1720a11ea3bd5"
+            },
+            "type": "source_table"
+        },
+        {
+            "activity_code": "HSP-C05-ACT-CONFIDENCE",
+            "id": "d0ba1b18-47d4-5631-b3d0-9884519b0763",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "derived_navigation",
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 653,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 8. Confidence check"
+                ],
+                "normalized_text_sha256": "7831b9b1655261ee807dd6e8e3ddc00ca3104240995c2c77bdaa0c3831fbaad6"
+            },
+            "type": "activity_embed"
+        }
+    ],
+    "chapter_code": "HSP-C05",
+    "code": "HSP-C05-LS-11",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "7ccbe232-78d2-5350-a75b-944567f3df30",
+    "language": "en",
+    "order": 11,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 653,
+        "chapter": 5,
+        "heading_path": [
+            "Customer Care Through Writing",
+            "Step 8. Confidence check"
+        ],
+        "normalized_text_sha256": "7831b9b1655261ee807dd6e8e3ddc00ca3104240995c2c77bdaa0c3831fbaad6"
+    },
+    "status": "published",
+    "title": "Step 8. Confidence check"
+}

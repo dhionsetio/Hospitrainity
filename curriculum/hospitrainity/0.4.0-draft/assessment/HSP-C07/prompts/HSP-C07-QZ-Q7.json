@@ -1,0 +1,50 @@
+{
+    "activity_code": "HSP-C07-ACT-QUIZ",
+    "choices": [
+        {
+            "feedback": [],
+            "id": "7f4dd72a-7cb4-5d1f-b2b8-c4aeb0a8a947",
+            "label": "a",
+            "text": "nothing, since it is not your fault"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "model_reveal",
+                    "text": "B. You can be sorry for the experience without assigning blame."
+                }
+            ],
+            "id": "2159ecd2-6815-59bf-bf69-9896280c3678",
+            "label": "b",
+            "text": "their poor experience, because it is about their feelings"
+        },
+        {
+            "feedback": [],
+            "id": "90c10bdb-4df5-5431-b362-2b559d766210",
+            "label": "c",
+            "text": "only if a manager tells you to"
+        }
+    ],
+    "code": "HSP-C07-QZ-Q7",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "335bd417-c50b-5f87-ac66-499a814a8044",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 937,
+        "chapter": 7,
+        "heading_path": [
+            "Dealing with Problems and Complaints",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "3183af6232c9f0798d742dcaeca69f6d59c2fd0bab0f71280d6ef217086b6b8a"
+    },
+    "status": "published",
+    "stem": "Q7. A guest is angry and it is not your fault. What should you apologise for? A) nothing, since it is not your fault B) their poor experience, because it is about their feelings C) only if a manager tells you to"
+}

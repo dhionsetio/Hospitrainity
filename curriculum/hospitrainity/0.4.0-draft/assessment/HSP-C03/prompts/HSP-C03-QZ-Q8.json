@@ -1,0 +1,50 @@
+{
+    "activity_code": "HSP-C03-ACT-QUIZ",
+    "choices": [
+        {
+            "feedback": [],
+            "id": "03639ca8-22d3-55b0-b036-6fab4131848e",
+            "label": "a",
+            "text": "say “wrong number”"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "model_reveal",
+                    "text": "B. Explain, then transfer, so the caller always feels looked after."
+                }
+            ],
+            "id": "c75f48df-385e-581f-a60d-700b52ecc249",
+            "label": "b",
+            "text": "transfer them warmly and tell them what you are doing"
+        },
+        {
+            "feedback": [],
+            "id": "1cd55849-81ae-5ae7-bdb1-7f90aafae0c0",
+            "label": "c",
+            "text": "hang up"
+        }
+    ],
+    "code": "HSP-C03-QZ-Q8",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "08fa5f6f-2d55-5d1e-a323-f63bea0fe8d9",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 351,
+        "chapter": 3,
+        "heading_path": [
+            "Dealing with Customers on the Phone",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "b77c0af33351665e7e1b9c2f95a90b54b2801dccc3f2a77ae3feb90d7681260c"
+    },
+    "status": "published",
+    "stem": "Q8. A caller needs the restaurant, not reservations. What is best? A) say “wrong number” B) transfer them warmly and tell them what you are doing C) hang up"
+}

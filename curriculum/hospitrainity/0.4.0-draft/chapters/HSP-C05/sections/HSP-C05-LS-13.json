@@ -1,0 +1,95 @@
+{
+    "blocks": [
+        {
+            "id": "677b348c-1b89-579d-9ae5-05eab813743e",
+            "language": "en",
+            "links": [
+                {
+                    "target": "https://www.grammarly.com/blog/emailing/how-to-write-a-professional-email/",
+                    "text": "Grammarly: how to write a professional email"
+                }
+            ],
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 667,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Further reading"
+                ],
+                "normalized_text_sha256": "08d6e99b71f02fe46d49013e5a8acbcdc6008b0e98a69970d7171ffadf2e7ff2"
+            },
+            "type": "external_link"
+        },
+        {
+            "id": "3916c341-dd40-5253-b2ac-e4c0d5e12b52",
+            "language": "en",
+            "links": [
+                {
+                    "target": "https://www.salesforce.com/service/customer-service-email/",
+                    "text": "Salesforce: customer service email tips and templates"
+                }
+            ],
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 668,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Further reading"
+                ],
+                "normalized_text_sha256": "48d10a98fff4e10cb24a2db3c66048ca6fbcf68afed4ca0e30a1f61c60b0a1bf"
+            },
+            "type": "external_link"
+        },
+        {
+            "id": "036fd7fd-ee0d-515c-a3a4-3ecd6d276b35",
+            "language": "en",
+            "links": [
+                {
+                    "target": "https://www.indeed.com/career-advice/career-development/how-to-write-a-professional-email",
+                    "text": "Indeed: how to write a professional email"
+                }
+            ],
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 669,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Further reading"
+                ],
+                "normalized_text_sha256": "d84ad4d5bddc1bdcbdb3cc0cd82e7b764093e951b517840a6103e67df24d5f9c"
+            },
+            "type": "external_link"
+        }
+    ],
+    "chapter_code": "HSP-C05",
+    "code": "HSP-C05-LS-13",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "28941fc0-1ec7-5c5a-93d8-0f90256c2b56",
+    "language": "en",
+    "order": 13,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 666,
+        "chapter": 5,
+        "heading_path": [
+            "Customer Care Through Writing",
+            "Further reading"
+        ],
+        "normalized_text_sha256": "4082f515b2f4929c139af2b1d23605e462c614bd888cf0dc12952d0d9cdeb1c7"
+    },
+    "status": "published",
+    "title": "Further reading"
+}

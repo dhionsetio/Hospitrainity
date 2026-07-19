@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C07-ACT-QUIZ",
+  "code": "HSP-C07-QZ-Q6",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "07a9522c-575f-5ffc-a942-a157e1257428",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 915,
+    "chapter": 7,
+    "heading_path": [
+      "Dealing with Problems and Complaints",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "c6ae28b59cf0c3e3d621c33539f17b18813e9c65f5c6752187ca78d6efd1cf34"
+  },
+  "status": "published",
+  "stem": "Q6. What is the purpose of the follow-up step? A) to reassure the guest and confirm it is resolved B) to end the conversation quickly C) to charge the guest again"
+}

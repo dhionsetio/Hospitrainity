@@ -1,0 +1,34 @@
+{
+  "code": "HSP-C07-RP-G2-FB",
+  "content_version": "0.3.0-draft",
+  "entity_type": "feedback-model",
+  "id": "f3aa8ffa-f7a4-51b4-89e6-e01a7b92aeef",
+  "messages": [
+    {
+      "feedback_type": "error_specific",
+      "text": "(a) “That is the system’s fault, not mine.” This blames something else and helps no one."
+    },
+    {
+      "feedback_type": "success",
+      "text": "(b) “I am very sorry for the error. Let me check your bill and correct it right away, and you will see the refund shortly.” This is the ideal answer, an apology, action, and reassurance."
+    },
+    {
+      "feedback_type": "error_specific",
+      "text": "(c) “You must have made a mistake.” This blames the guest, which is the fastest way to lose them."
+    }
+  ],
+  "prompt_code": "HSP-C07-RP-G2",
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 884,
+    "chapter": 7,
+    "heading_path": [
+      "Dealing with Problems and Complaints",
+      "Step 6. Role-play"
+    ],
+    "normalized_text_sha256": "0292edf602104be44ba29b03f52bfe103c9a6310e1a5138d3c935e903801c72a"
+  },
+  "status": "published"
+}

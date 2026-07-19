@@ -1,0 +1,44 @@
+{
+    "activity_code": "HSP-C07-ACT-PRACTICE",
+    "choices": [
+        {
+            "feedback": [],
+            "id": "2e0196b1-1c16-53f0-9f33-46d4c8668755",
+            "label": "a",
+            "text": "“It is the other guest’s fault.”"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "model_reveal",
+                    "text": "(b). Taking ownership means acting, not blaming someone else."
+                }
+            ],
+            "id": "b6089124-169a-50ab-84c9-a1c94ff63c9b",
+            "label": "b",
+            "text": "“Let me fix this for you right away.”"
+        }
+    ],
+    "code": "HSP-C07-PR-I2",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "a48b50e5-ece3-5169-ae49-3320286fdac7",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 886,
+        "chapter": 7,
+        "heading_path": [
+            "Dealing with Problems and Complaints",
+            "Step 5. Practice"
+        ],
+        "normalized_text_sha256": "ea39f3416a73722e91918859cead830038f4b605716f08417bca702960f8afdf"
+    },
+    "status": "published",
+    "stem": "2. Choose the response that takes ownership: (a) “It is the other guest’s fault.” or (b) “Let me fix this for you right away.”"
+}

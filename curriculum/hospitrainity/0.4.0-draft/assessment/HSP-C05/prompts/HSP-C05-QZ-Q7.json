@@ -1,0 +1,50 @@
+{
+    "activity_code": "HSP-C05-ACT-QUIZ",
+    "choices": [
+        {
+            "feedback": [],
+            "id": "bd98298f-e86d-5f3e-a658-a7d0afede201",
+            "label": "a",
+            "text": "it does not"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "model_reveal",
+                    "text": "B. A clear subject line sets the topic before the guest even opens the message."
+                }
+            ],
+            "id": "7f4d758a-2dfa-5a97-9bc1-be940d9eae32",
+            "label": "b",
+            "text": "it helps the guest understand and find the email"
+        },
+        {
+            "feedback": [],
+            "id": "5001be47-7e7a-5d31-b04c-99ccfc05e03c",
+            "label": "c",
+            "text": "it replaces the greeting"
+        }
+    ],
+    "code": "HSP-C05-QZ-Q7",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "a9ed07ff-37bf-50b6-9d15-db3af1d276da",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 646,
+        "chapter": 5,
+        "heading_path": [
+            "Customer Care Through Writing",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "a2a2eda2d1efaec604bc347d3bf9346b6d0e6b14eb5d2dfbb2641e8813941a2b"
+    },
+    "status": "published",
+    "stem": "Q7. Why does a clear subject line matter? A) it does not B) it helps the guest understand and find the email C) it replaces the greeting"
+}

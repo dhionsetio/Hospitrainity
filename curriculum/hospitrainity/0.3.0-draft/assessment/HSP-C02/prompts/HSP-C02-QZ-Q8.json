@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C02-ACT-QUIZ",
+  "code": "HSP-C02-QZ-Q8",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "dc95e9e7-247a-5fc5-a08d-d6c3fa544817",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 200,
+    "chapter": 2,
+    "heading_path": [
+      "Front Desk and Check-In",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "96e7d9f7842292c595b3b85ef5a2fdecb1f921195190b8354b592a547a77c648"
+  },
+  "status": "published",
+  "stem": "Q8. The room is not ready yet. What is the best thing to do? A) tell the guest to come back later B) offer to store their luggage while they wait C) ignore the problem"
+}

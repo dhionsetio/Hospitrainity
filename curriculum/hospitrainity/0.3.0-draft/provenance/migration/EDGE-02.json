@@ -1,0 +1,7 @@
+{
+  "canonical_code": "HSP-C02",
+  "disposition": "rewritten",
+  "entity_type": "migration-edge",
+  "legacy_ref": "course.json#module:Greetings and Basic Interactions",
+  "note": "Greeting/welcome and politeness folded into Chapter 2 (Front Desk and Check-In); intro framing also in Chapter 1. Rewritten from DOCX, not ported verbatim (DEC-005)."
+}

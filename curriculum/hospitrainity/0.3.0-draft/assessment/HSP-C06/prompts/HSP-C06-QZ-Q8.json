@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C06-ACT-QUIZ",
+  "code": "HSP-C06-QZ-Q8",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "ea0c1559-b71d-57bd-bc28-7398a842de26",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 776,
+    "chapter": 6,
+    "heading_path": [
+      "Online and Social Media Customer Service",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "91d1bd4323964413537a5fe55370abc9aded560a146d3d1ef68aa3679972d797"
+  },
+  "status": "published",
+  "stem": "Q8. You cannot fully answer right now. The best move is ... A) stay silent until you can B) send a quick, warm holding reply C) send a long apology"
+}

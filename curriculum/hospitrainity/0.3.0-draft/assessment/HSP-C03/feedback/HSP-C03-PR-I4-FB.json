@@ -1,0 +1,26 @@
+{
+  "code": "HSP-C03-PR-I4-FB",
+  "content_version": "0.3.0-draft",
+  "entity_type": "feedback-model",
+  "id": "f3eb925b-7a2a-5c4e-8872-258c6a573483",
+  "messages": [
+    {
+      "feedback_type": "model_reveal",
+      "text": "“Four, five, two,” as single digits with small pauses. Saying “four hundred and fifty-two” is easy to mishear on a call."
+    }
+  ],
+  "prompt_code": "HSP-C03-PR-I4",
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 298,
+    "chapter": 3,
+    "heading_path": [
+      "Dealing with Customers on the Phone",
+      "Step 5. Practice"
+    ],
+    "normalized_text_sha256": "25dcaaa6a7ab7089326dea33c937a0dc3a04b222da1079ad58f78c06a60f2b02"
+  },
+  "status": "published"
+}

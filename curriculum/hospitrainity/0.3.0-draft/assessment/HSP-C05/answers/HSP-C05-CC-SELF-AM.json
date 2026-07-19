@@ -1,0 +1,21 @@
+{
+  "code": "HSP-C05-CC-SELF-AM",
+  "content_version": "0.3.0-draft",
+  "entity_type": "answer-model",
+  "id": "01594d1f-2e19-5803-beef-7009c0ad4b51",
+  "prompt_code": "HSP-C05-CC-SELF",
+  "replaced_by": null,
+  "replaces": null,
+  "scoring_mode": "self_report",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 640,
+    "chapter": 5,
+    "heading_path": [
+      "Customer Care Through Writing",
+      "Step 8. Confidence check"
+    ],
+    "normalized_text_sha256": "8ae726d271eb7a0bf90a65a1207e47b0e727c521ff95159d8c7f245ec46d05b7"
+  },
+  "status": "published"
+}

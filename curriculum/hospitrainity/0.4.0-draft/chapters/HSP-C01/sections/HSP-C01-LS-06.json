@@ -1,0 +1,130 @@
+{
+    "blocks": [
+        {
+            "id": "ef3686cb-ec64-5439-bc8c-ff4b031385d8",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Before you begin, take a moment to rate how confident you feel today. Be honest, because there are no wrong answers. This is simply your starting point, and you can rate yourself again after each chapter to see how far you have come.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 68,
+                "chapter": 1,
+                "heading_path": [
+                    "Welcome and Introduction to Customer Care",
+                    "Where you are starting from"
+                ],
+                "normalized_text_sha256": "3b2f24b7d41b4a594b835bde743298d9179af511bceca3cc08f20a074f5641fe"
+            },
+            "text": "Before you begin, take a moment to rate how confident you feel today. Be honest, because there are no wrong answers. This is simply your starting point, and you can rate yourself again after each chapter to see how far you have come.",
+            "type": "instruction"
+        },
+        {
+            "caption": "Where you are starting from: Statement / 1 / 2 / 3 / 4 / 5",
+            "header": [
+                "Statement",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5"
+            ],
+            "id": "d0907d66-74bb-5f52-a96d-d2397cf1ba92",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "rows": [
+                [
+                    "I feel confident using English with hotel guests.",
+                    "☐",
+                    "☐",
+                    "☐",
+                    "☐",
+                    "☐"
+                ],
+                [
+                    "I feel confident speaking English face to face and on the phone.",
+                    "☐",
+                    "☐",
+                    "☐",
+                    "☐",
+                    "☐"
+                ],
+                [
+                    "I feel confident writing emails and chat replies in English.",
+                    "☐",
+                    "☐",
+                    "☐",
+                    "☐",
+                    "☐"
+                ],
+                [
+                    "I feel confident handling a guest complaint in English.",
+                    "☐",
+                    "☐",
+                    "☐",
+                    "☐",
+                    "☐"
+                ]
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 69,
+                "chapter": 1,
+                "heading_path": [
+                    "Welcome and Introduction to Customer Care",
+                    "Where you are starting from"
+                ],
+                "normalized_text_sha256": "b276aeb59877bc3b8966d87ece98bd29b78875de0aba2a12a389f774c68b43ed"
+            },
+            "type": "source_table"
+        },
+        {
+            "activity_code": "HSP-C01-ACT-BASELINE",
+            "id": "ec3a1e74-1fe8-53f0-906d-618906610489",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "derived_navigation",
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 67,
+                "chapter": 1,
+                "heading_path": [
+                    "Welcome and Introduction to Customer Care",
+                    "Where you are starting from"
+                ],
+                "normalized_text_sha256": "5ed6c2a900ea43d2ab520907a56c44060829e899cda071bdfc2e807a545e99c6"
+            },
+            "type": "activity_embed"
+        }
+    ],
+    "chapter_code": "HSP-C01",
+    "code": "HSP-C01-LS-06",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "01a8469a-3f6c-56c6-acc5-c46337907518",
+    "language": "en",
+    "order": 6,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 67,
+        "chapter": 1,
+        "heading_path": [
+            "Welcome and Introduction to Customer Care",
+            "Where you are starting from"
+        ],
+        "normalized_text_sha256": "5ed6c2a900ea43d2ab520907a56c44060829e899cda071bdfc2e807a545e99c6"
+    },
+    "status": "published",
+    "title": "Where you are starting from"
+}

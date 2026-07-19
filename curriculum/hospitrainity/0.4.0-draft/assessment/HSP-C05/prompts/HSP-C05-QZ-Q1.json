@@ -1,0 +1,50 @@
+{
+    "activity_code": "HSP-C05-ACT-QUIZ",
+    "choices": [
+        {
+            "feedback": [],
+            "id": "a14829de-0cdc-52d5-a71f-7e47f91abe77",
+            "label": "a",
+            "text": "“Yo,”"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "model_reveal",
+                    "text": "B. “Dear” with a title and surname is the formal standard."
+                }
+            ],
+            "id": "85ef5132-4210-51ca-ac5d-31b789c20e36",
+            "label": "b",
+            "text": "“Dear Mr. Chen,”"
+        },
+        {
+            "feedback": [],
+            "id": "8afea83d-aabe-5c7d-b0bd-180f493f93b6",
+            "label": "c",
+            "text": "“Hey there,”"
+        }
+    ],
+    "code": "HSP-C05-QZ-Q1",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "16a41f79-0576-555c-afe3-4b74f97aebaf",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 628,
+        "chapter": 5,
+        "heading_path": [
+            "Customer Care Through Writing",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "ec73357af97f47f4fa74b9b213f49e02169a2d0743326b0e161bc9ee508c84b1"
+    },
+    "status": "published",
+    "stem": "Q1. What is the best formal greeting? A) “Yo,” B) “Dear Mr. Chen,” C) “Hey there,”"
+}

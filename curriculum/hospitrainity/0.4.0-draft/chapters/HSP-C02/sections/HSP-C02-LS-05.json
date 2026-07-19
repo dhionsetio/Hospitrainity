@@ -1,0 +1,702 @@
+{
+    "blocks": [
+        {
+            "id": "aa1d1b04-9e68-5676-92db-a54e5481161d",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Think of these as building blocks. Mix and match them, and they will carry you through almost any check-in.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 104,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "040d21d8694bcdedf2e5160c00a56a4caca6ba719877644abeb3036334ca5ac9"
+            },
+            "text": "Think of these as building blocks. Mix and match them, and they will carry you through almost any check-in.",
+            "type": "paragraph"
+        },
+        {
+            "id": "e3bcb3b9-75d4-5e16-bd5b-c931b1a78683",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Greeting and welcome",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 105,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "d346de463d448c95d23e01455b0251c13ccad9af43501cc098f612c544b72d2a"
+            },
+            "text": "Greeting and welcome",
+            "type": "heading"
+        },
+        {
+            "id": "1b3d36cd-fe5a-592a-9cb1-06ea59f43edf",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "“Good morning, welcome to the Grand Serenata Hotel. How may I help you?”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 106,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "669571573a41101ac11d16a4b0708bde991936049cc3d6d9b9e280b875d3877a"
+            },
+            "text": "“Good morning, welcome to the Grand Serenata Hotel. How may I help you?”",
+            "type": "list_item"
+        },
+        {
+            "id": "6995a1c8-90b8-5e00-9350-9d983e49c0f2",
+            "language": "en",
+            "order": 4,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Confirming the reservation",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 107,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "26d822cc9c90e756b2d7530bb4ca7a466f03158f23262ad7a44d321de753b88a"
+            },
+            "text": "Confirming the reservation",
+            "type": "heading"
+        },
+        {
+            "id": "a76e34f6-1e43-54d5-85ec-2f1fa813f34d",
+            "language": "en",
+            "order": 5,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "“May I have your name, please?”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 108,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "75ad80430f8461729b2906f3c6ee9e918560f5e96aafb34c879c86bdc506ff15"
+            },
+            "text": "“May I have your name, please?”",
+            "type": "list_item"
+        },
+        {
+            "id": "0719b6e4-beb3-5bf5-8231-75f6aaef62c6",
+            "language": "en",
+            "order": 6,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "“Do you have a reservation with us?”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 109,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "aee7aed8d063a1cccd7e8b24d8cde5434dd4d648daec859d16e2bb986a00ad60"
+            },
+            "text": "“Do you have a reservation with us?”",
+            "type": "list_item"
+        },
+        {
+            "id": "e8e6feea-ec5b-5c53-a639-62cd9eb301cc",
+            "language": "en",
+            "order": 7,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Requesting documents politely",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 110,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "fff95ad7d5777688ebac4561ee2edc4946e50a4a81c10b03f4f92e7262bdd950"
+            },
+            "text": "Requesting documents politely",
+            "type": "heading"
+        },
+        {
+            "id": "55b8931f-1317-5287-9a74-5cd2b2e5ef24",
+            "language": "en",
+            "order": 8,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "“Could I see your ID or passport, please?”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 111,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "a1126e0d23f36beeed0aef5701dce8375355983d1f7076336024e504fb66f5bd"
+            },
+            "text": "“Could I see your ID or passport, please?”",
+            "type": "list_item"
+        },
+        {
+            "id": "c24da457-27f0-5dcc-a892-18262fe3d28c",
+            "language": "en",
+            "order": 9,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Buying yourself a moment",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 112,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "9e36a19bd3bb7016e7e895c988dd2f1e5bee71c7a3e58d97f4d9033dd997c52a"
+            },
+            "text": "Buying yourself a moment",
+            "type": "heading"
+        },
+        {
+            "id": "5da5a01c-b3d2-5c74-b142-c7eafd3c2633",
+            "language": "en",
+            "order": 10,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "“Let me just check that for you. It will only take a second.”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 113,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "83e9f2674384e35212bcb1fef26a33be5f5c38e4610336eab6edcd7161042862"
+            },
+            "text": "“Let me just check that for you. It will only take a second.”",
+            "type": "list_item"
+        },
+        {
+            "id": "f13caa8c-c8b5-5b44-9e8a-f5234d2dbb54",
+            "language": "en",
+            "order": 11,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "During the check-in",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 114,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "a45bb15a2471afac426d3b44de9a3036ca89e4ed1bc5d63d8836409a1133d432"
+            },
+            "text": "During the check-in",
+            "type": "heading"
+        },
+        {
+            "id": "bbe0546a-ce5a-584a-b710-2df35143439e",
+            "language": "en",
+            "order": 12,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "“I have you in a Deluxe Room for two nights. Is that correct?”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 115,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "5de52e8f7cfc9961ad3619361f34c01d7a8e9f53e46a28ca130863da2bdcd8e8"
+            },
+            "text": "“I have you in a Deluxe Room for two nights. Is that correct?”",
+            "type": "list_item"
+        },
+        {
+            "id": "cdd7c35a-20b2-50c4-96b2-06691b7aaa4c",
+            "language": "en",
+            "order": 13,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Handing over the key and sharing information",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 116,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "a0e4127501510b18abb158b16c0c296b1c69a2ff0e336eb7a825c80b46220b9c"
+            },
+            "text": "Handing over the key and sharing information",
+            "type": "heading"
+        },
+        {
+            "id": "c79f1602-ac94-50a6-a5d4-3f8a546e4678",
+            "language": "en",
+            "order": 14,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "“Here is your key card. Your room is 305, on the third floor.”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 117,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "3c2301c33487713e654de0995c3b88b8f96a822eaf175cda044cea35a6939825"
+            },
+            "text": "“Here is your key card. Your room is 305, on the third floor.”",
+            "type": "list_item"
+        },
+        {
+            "id": "0eba4fab-f0c3-5da6-ac11-e620d138b63f",
+            "language": "en",
+            "order": 15,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "“Breakfast is served from 7 to 10 in the morning in the ground-floor restaurant.”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 118,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "958e95d5d2f86dd45f4728bc131408714e619af141248a6fcc1d13a162b3c11f"
+            },
+            "text": "“Breakfast is served from 7 to 10 in the morning in the ground-floor restaurant.”",
+            "type": "list_item"
+        },
+        {
+            "id": "7da8cfb2-2dac-52e3-aaf7-202548255214",
+            "language": "en",
+            "order": 16,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Offering a little extra",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 119,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "5b6ed5b4651742583a8fe4c486d7fd94a420ca127b59e665ff4e6aa6ac8b5bb2"
+            },
+            "text": "Offering a little extra",
+            "type": "heading"
+        },
+        {
+            "id": "be1b6663-7b13-5218-b6a0-df594a94ea94",
+            "language": "en",
+            "order": 17,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "“Would you like me to arrange a wake-up call or help with your luggage?”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 120,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "7e029d88ccee614567e6d5745232418387f0c0f7469498da7cf9dbb865cfe034"
+            },
+            "text": "“Would you like me to arrange a wake-up call or help with your luggage?”",
+            "type": "list_item"
+        },
+        {
+            "id": "76c0a24e-8483-56ea-b02c-b16ea1ea394e",
+            "language": "en",
+            "order": 18,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Offering help and closing warmly",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 121,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "984a748aff856701a3a772f41ec8e5df3a37a648de0fa259a9683b35d47a9927"
+            },
+            "text": "Offering help and closing warmly",
+            "type": "heading"
+        },
+        {
+            "id": "a09eee74-db63-50ce-a8ea-1c13ba62e799",
+            "language": "en",
+            "order": 19,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "“Is there anything else I can help you with?”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 122,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "367b5bca9f245a4bad03a4bb2f95d20d1dacaebc5bf615c3d6111d9694be1d70"
+            },
+            "text": "“Is there anything else I can help you with?”",
+            "type": "list_item"
+        },
+        {
+            "id": "4c1a33f7-7ac6-501e-8d9f-fbbd4e904b77",
+            "language": "en",
+            "order": 20,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "“Enjoy your stay with us.”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 123,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "887b7b5d747125ba42fd966e22b671030d40fe49ef8e9ea75befab9603710c10"
+            },
+            "text": "“Enjoy your stay with us.”",
+            "type": "list_item"
+        },
+        {
+            "id": "1a618abb-1644-5b5f-bda3-f070377cafd5",
+            "language": "en",
+            "order": 21,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Sounding warm, not robotic",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 125,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "67d9049ffd7dafc3c8a3859bff1ea0253c2e2c71c4fbeabd0e5321916e4952ef"
+            },
+            "text": "Sounding warm, not robotic",
+            "type": "heading"
+        },
+        {
+            "id": "7b9709d9-ea97-5006-923e-97c33b6a77e5",
+            "language": "en",
+            "order": 22,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "The words are only half the job. How you say them is the other half. Try these small habits:",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 126,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "7de8a89c05a37ce6aab71a093732d019386710801813f71817026a318461d116"
+            },
+            "text": "The words are only half the job. How you say them is the other half. Try these small habits:",
+            "type": "paragraph"
+        },
+        {
+            "id": "c3b4db4a-2eb5-53bb-8f32-83ff0f58e1e6",
+            "language": "en",
+            "order": 23,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Smile just before you speak. People really can hear a smile in your voice.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 127,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "29cb2be3e581a0b69b444cb56ce94d3da194954dc0f9d806e58ba302c895f218"
+            },
+            "text": "Smile just before you speak. People really can hear a smile in your voice.",
+            "type": "list_item"
+        },
+        {
+            "id": "8f2f0289-d90f-5932-b67a-c1d6f018875f",
+            "language": "en",
+            "order": 24,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Use the guest’s name once you know it. “Thank you, Mr. Chen” instantly feels personal.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 128,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "7166018ea06e6f963b63f66e62fc2f95d9e9ffc83b6eab5c11afc9527c717730"
+            },
+            "text": "Use the guest’s name once you know it. “Thank you, Mr. Chen” instantly feels personal.",
+            "type": "list_item"
+        },
+        {
+            "id": "9d0a5dd1-012e-5e95-92ee-3fb3ea897a80",
+            "language": "en",
+            "order": 25,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Slow down a little. Calm and clear is far more welcoming than fast.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 129,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "e11643700f7398d4549a1f2736e93d90c04bd8b0622e93b83b4dca1573d3122b"
+            },
+            "text": "Slow down a little. Calm and clear is far more welcoming than fast.",
+            "type": "list_item"
+        },
+        {
+            "id": "8bc07b65-4483-5f57-a665-bb887c02a2f0",
+            "language": "en",
+            "order": 26,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Soften your requests with “Could I,” “May I,” and “please.” These tiny words do a lot of polite work.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 130,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "4b5656d3784c0f27ed7e1971d1d2c1469734942f0782d8b402f2fa2f14b97d2c"
+            },
+            "text": "Soften your requests with “Could I,” “May I,” and “please.” These tiny words do a lot of polite work.",
+            "type": "list_item"
+        }
+    ],
+    "chapter_code": "HSP-C02",
+    "code": "HSP-C02-LS-05",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "17394b63-5cc3-5dbe-aca0-faf83cdc91c7",
+    "language": "en",
+    "order": 5,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 103,
+        "chapter": 2,
+        "heading_path": [
+            "Front Desk and Check-In",
+            "Step 3. Useful phrases, grouped by what they do"
+        ],
+        "normalized_text_sha256": "a243cc51c9162617601595ebed11b2491b70a601429f52ce4cbd192f271f326a"
+    },
+    "status": "published",
+    "title": "Step 3. Useful phrases, grouped by what they do"
+}

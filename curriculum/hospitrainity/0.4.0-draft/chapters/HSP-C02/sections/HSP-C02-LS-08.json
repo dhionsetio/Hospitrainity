@@ -1,0 +1,430 @@
+{
+    "blocks": [
+        {
+            "id": "44de9b59-30ee-5f4b-bce9-6bd650c43e02",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Try each one first, then open the toggle to check yourself. Guessing before you check is what makes it stick.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 146,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "c07577c05569a6e8f1e182cf52225d08cf103520bbd48760a23e04f6c5959b62"
+            },
+            "text": "Try each one first, then open the toggle to check yourself. Guessing before you check is what makes it stick.",
+            "type": "instruction"
+        },
+        {
+            "id": "5b613f1a-96ac-5112-aff9-ed3177580fd7",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "1. Fill the blank with a polite verb:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " “Could I ",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "_____",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " your passport, please?”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 147,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "ad9b27c913a9930c8a3ebab22781b4869623d1055bde5c45a8f878c8c7c52d4f"
+            },
+            "text": "1. Fill the blank with a polite verb: “Could I _____ your passport, please?”",
+            "type": "list_item"
+        },
+        {
+            "id": "7e32c69a-061b-5bd9-9628-e4a1b56d26a2",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Check answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 148,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "59b5b25c3f1225bbc759f0a5877604948e64e3484f2e56aafef146d98cd32a61"
+            },
+            "text": "Check answer",
+            "type": "paragraph"
+        },
+        {
+            "id": "8b9c3030-5c99-51eb-b015-4ed4ded07eb2",
+            "language": "en",
+            "order": 4,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "see.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " “Could I see your passport, please?” is the natural, polite version. “Check” or “look at” sound a little colder in this fixed phrase.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 149,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "c6f3085843849e32acaeae3c2898f546761f5989bb35bc831612cc9b6d2facad"
+            },
+            "text": "see. “Could I see your passport, please?” is the natural, polite version. “Check” or “look at” sound a little colder in this fixed phrase.",
+            "type": "paragraph"
+        },
+        {
+            "id": "ebb13f49-b635-5cfd-ad8f-ff07f2428639",
+            "language": "en",
+            "order": 5,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "2. Choose the warmer greeting:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " (a) “What do you want?” or (b) “Good afternoon, welcome to the Grand Serenata Hotel. How may I help you?”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 150,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "c7041280454556eee2a2949bf97a085e6df73c10e9c3e5e2e10c801e166cd3f0"
+            },
+            "text": "2. Choose the warmer greeting: (a) “What do you want?” or (b) “Good afternoon, welcome to the Grand Serenata Hotel. How may I help you?”",
+            "type": "list_item"
+        },
+        {
+            "id": "702cbb8d-8565-541b-ac55-dda363b7bfad",
+            "language": "en",
+            "order": 6,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Check answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 151,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "59b5b25c3f1225bbc759f0a5877604948e64e3484f2e56aafef146d98cd32a61"
+            },
+            "text": "Check answer",
+            "type": "paragraph"
+        },
+        {
+            "id": "0b36c373-4e32-5fc4-a2ea-bc5d2d6a1e2a",
+            "language": "en",
+            "order": 7,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "(b).",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " It is warm, professional, and it offers help right away. Option (a) sounds cold, and tone is a real part of hospitality.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 152,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "fb1835f2ae7bcb0f87fd824ff066cade8ccd6c67ce3f63ea76caee26613a5aa3"
+            },
+            "text": "(b). It is warm, professional, and it offers help right away. Option (a) sounds cold, and tone is a real part of hospitality.",
+            "type": "paragraph"
+        },
+        {
+            "id": "1ff399af-4ed1-59bb-acf7-f620068bbf8e",
+            "language": "en",
+            "order": 8,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "3. Put the check-in steps in the right order:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " hand over the key, greet the guest, ask for the passport, confirm the reservation.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 153,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "a6f831c655b12d6c298aeeb95a7fdf880667e86c8900c0bad0c864cd5655f291"
+            },
+            "text": "3. Put the check-in steps in the right order: hand over the key, greet the guest, ask for the passport, confirm the reservation.",
+            "type": "list_item"
+        },
+        {
+            "id": "1f9ff591-5f6d-5874-baef-3d39e91bb80d",
+            "language": "en",
+            "order": 9,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Check answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 154,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "59b5b25c3f1225bbc759f0a5877604948e64e3484f2e56aafef146d98cd32a61"
+            },
+            "text": "Check answer",
+            "type": "paragraph"
+        },
+        {
+            "id": "1254be5b-2b5b-524d-b92d-bdee1eba42d1",
+            "language": "en",
+            "order": 10,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Greet the guest, then confirm the reservation, then ask for the passport, then hand over the key. Following this order keeps everything smooth.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 155,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "841fd5b5fb5f97418672f8ed0153ee831a15d30fc3313b1ebb59de2d085aecd7"
+            },
+            "text": "Greet the guest, then confirm the reservation, then ask for the passport, then hand over the key. Following this order keeps everything smooth.",
+            "type": "paragraph"
+        },
+        {
+            "id": "42bf0225-edfb-59e1-93ea-8b5810b916f1",
+            "language": "en",
+            "order": 11,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "4. Make this sound polite:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " a colleague says “Passport.” How would you soften it?",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 156,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "5952c2a9a037af857f825dd9846c55fa59ea1c5ad318ec7f7d90473e081e2668"
+            },
+            "text": "4. Make this sound polite: a colleague says “Passport.” How would you soften it?",
+            "type": "list_item"
+        },
+        {
+            "id": "9acdf76e-1540-516d-b97f-3df4ce14f1ff",
+            "language": "en",
+            "order": 12,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Check answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 157,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "59b5b25c3f1225bbc759f0a5877604948e64e3484f2e56aafef146d98cd32a61"
+            },
+            "text": "Check answer",
+            "type": "paragraph"
+        },
+        {
+            "id": "770fddc3-fe6a-548a-b0e1-41fd99edd2ff",
+            "language": "en",
+            "order": 13,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Something like “Could I see your passport, please?” A single word can feel like an order, so add “Could I,” the person’s help, and “please.”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 158,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "47eae4f50da7c24f052d0a851616ef00ffbe429639d675b2c4ef1a876fa6df62"
+            },
+            "text": "Something like “Could I see your passport, please?” A single word can feel like an order, so add “Could I,” the person’s help, and “please.”",
+            "type": "paragraph"
+        },
+        {
+            "activity_code": "HSP-C02-ACT-PRACTICE",
+            "id": "50ca8b09-5ddd-5a5a-8ccc-721de7cc64e1",
+            "language": "en",
+            "order": 14,
+            "provenance_kind": "derived_navigation",
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 145,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 5. Practice"
+                ],
+                "normalized_text_sha256": "46863cdae3b9dc41e288c4101ee6d0956fc7857efb3a521dc5b0f48f713be9aa"
+            },
+            "type": "activity_embed"
+        }
+    ],
+    "chapter_code": "HSP-C02",
+    "code": "HSP-C02-LS-08",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "8800ced4-2423-510b-a011-b42fb4c852bd",
+    "language": "en",
+    "order": 8,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 145,
+        "chapter": 2,
+        "heading_path": [
+            "Front Desk and Check-In",
+            "Step 5. Practice"
+        ],
+        "normalized_text_sha256": "46863cdae3b9dc41e288c4101ee6d0956fc7857efb3a521dc5b0f48f713be9aa"
+    },
+    "status": "published",
+    "title": "Step 5. Practice"
+}

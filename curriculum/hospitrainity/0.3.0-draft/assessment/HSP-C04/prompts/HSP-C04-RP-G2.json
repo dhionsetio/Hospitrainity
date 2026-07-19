@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C04-ACT-ROLEPLAY",
+  "code": "HSP-C04-RP-G2",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "e69858b8-bbcb-53ac-80a1-128a37bc5438",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 451,
+    "chapter": 4,
+    "heading_path": [
+      "The Guest-Services Hotline",
+      "Step 6. Role-play"
+    ],
+    "normalized_text_sha256": "e90844e9ebe10096f1c6d5c486c82d7cb73830a7e0ac578a8fc153eec393027b"
+  },
+  "status": "published",
+  "stem": "Guest: “I would like two coffees and a sandwich, quickly please, I am in a hurry.”"
+}

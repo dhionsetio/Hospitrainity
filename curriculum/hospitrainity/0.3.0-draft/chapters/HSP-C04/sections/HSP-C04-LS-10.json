@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C04",
+  "code": "HSP-C04-LS-10",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "643a3d62-02cc-5fd7-8b9a-1ab9f29a26be",
+  "order": 10,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 466,
+    "chapter": 4,
+    "heading_path": [
+      "The Guest-Services Hotline",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "7d75f2f8d53709774863fa76170df3f1938d6f9af283ec6f7f8763c3ac408846"
+  },
+  "status": "published",
+  "title": "Step 7. Quiz"
+}

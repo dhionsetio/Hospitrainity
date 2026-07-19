@@ -1,0 +1,50 @@
+{
+    "accessibility": [
+        "text_alt",
+        "keyboard_path",
+        "non_color_cue",
+        "no_timing_dependency",
+        "transcript"
+    ],
+    "cefr_activity": "interaction",
+    "channel": "spoken_ftf",
+    "code": "HSP-C02-ACT-ROLEPLAY",
+    "completion_rule": "all_required_responses_and_self_checks_completed",
+    "completion_rule_provenance_kind": "derived_workflow",
+    "content_version": "0.4.0-draft",
+    "entity_type": "activity",
+    "id": "60098cb9-4e81-5613-aedf-6a96deb8a034",
+    "lesson_code": "HSP-C02-LS-09",
+    "outcome_codes": [
+        "OUT-M02-01",
+        "OUT-M02-02",
+        "OUT-M02-03"
+    ],
+    "participation": "staff_guest",
+    "pedagogical_function": "freer_task",
+    "prompt_scoring_modes": [
+        "model_self_check",
+        "objective_choice"
+    ],
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "mixed",
+    "response_forms": [
+        "role_play",
+        "selection"
+    ],
+    "scoring_mode": "mixed",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "block_index": 156,
+        "chapter": 2,
+        "heading_path": [
+            "Front Desk and Check-In",
+            "Step 6. Role-play"
+        ],
+        "normalized_text_sha256": "1a71a4ebb9f047dc4050da169c522d5309b8aa05a69be057e0d17e4b6ca384c6"
+    },
+    "status": "published",
+    "timing": "synchronous",
+    "title": "Step 6. Role-play"
+}

@@ -1,0 +1,800 @@
+{
+    "blocks": [
+        {
+            "id": "e767c5e5-5d13-5fdb-b364-357b9e409fff",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Q1.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " What is the best formal greeting? A) “",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Yo",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": ",” B) “Dear Mr. Chen,” C) “Hey there,”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 628,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "ec73357af97f47f4fa74b9b213f49e02169a2d0743326b0e161bc9ee508c84b1"
+            },
+            "text": "Q1. What is the best formal greeting? A) “Yo,” B) “Dear Mr. Chen,” C) “Hey there,”",
+            "type": "paragraph"
+        },
+        {
+            "id": "45d8030d-55f6-56c4-bba3-2b15dd96cd00",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 629,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "b2a3aa602762a782e47a4f8e93bb5ae1b8819d1b92b7e6ceb3ef46a3c7077eb0"
+            },
+            "text": "Answer",
+            "type": "instruction"
+        },
+        {
+            "id": "82d51bc5-463e-5b8d-b3eb-f8f2053df835",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "B.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " “Dear” with a title and surname is the formal standard.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 630,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "c4cebb71dc58598f8883a71f63459365b074c683162e33f78bd6aa3143b29e22"
+            },
+            "text": "B. “Dear” with a title and surname is the formal standard.",
+            "type": "paragraph"
+        },
+        {
+            "id": "d007da0c-9096-5bf3-bd48-e46e4df583f5",
+            "language": "en",
+            "order": 4,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Q2.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " What is the best formal sign-off? A) “Kind regards,” B) “",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "cya",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": ",” C) “thx,”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 631,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "82a05168eef1ce9579d41b7198a530c40f457a16c11422902377fce223e1496d"
+            },
+            "text": "Q2. What is the best formal sign-off? A) “Kind regards,” B) “cya,” C) “thx,”",
+            "type": "paragraph"
+        },
+        {
+            "id": "abc5ca58-36d9-5ace-89cd-eccce03ea0f0",
+            "language": "en",
+            "order": 5,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 632,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "b2a3aa602762a782e47a4f8e93bb5ae1b8819d1b92b7e6ceb3ef46a3c7077eb0"
+            },
+            "text": "Answer",
+            "type": "instruction"
+        },
+        {
+            "id": "7f728485-b00d-558f-b4c1-6e4d76bf27e8",
+            "language": "en",
+            "order": 6,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "A.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " It is warm and professional.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 633,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "5d536853759bd6b29fb334667545df5a1647303990de30b0f7efc2a997d34052"
+            },
+            "text": "A. It is warm and professional.",
+            "type": "paragraph"
+        },
+        {
+            "id": "5fbe66c0-7b99-54d0-909d-164436f0d732",
+            "language": "en",
+            "order": 7,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Q3.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " “Please do not hesitate to contact us” is used to ... A) end warmly and offer more help B) refuse the guest C) rush the guest",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 634,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "eda24bf61bf480b673a9bfbd3e80ffc824717a645206d1e568477e4d359336fd"
+            },
+            "text": "Q3. “Please do not hesitate to contact us” is used to ... A) end warmly and offer more help B) refuse the guest C) rush the guest",
+            "type": "paragraph"
+        },
+        {
+            "id": "15e3f4af-5c02-5ef3-b40f-0fd3c5767b75",
+            "language": "en",
+            "order": 8,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 635,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "b2a3aa602762a782e47a4f8e93bb5ae1b8819d1b92b7e6ceb3ef46a3c7077eb0"
+            },
+            "text": "Answer",
+            "type": "instruction"
+        },
+        {
+            "id": "7fb548b9-0fbb-5c9d-af1b-4e3a529d371f",
+            "language": "en",
+            "order": 9,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "A.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " It gently invites any further questions.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 636,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "3c89a06a34fde244d979cb20d841babd0e7a4de4dfdfe80e00e3f944864783f4"
+            },
+            "text": "A. It gently invites any further questions.",
+            "type": "paragraph"
+        },
+        {
+            "id": "da18cd4d-1166-5fec-88e4-bdd93acbcbe1",
+            "language": "en",
+            "order": 10,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Q4.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " With a guest, you should generally use a ... A) formal and warm register B) very casual register C) no greeting at all",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 637,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "dbb22687305d8fac139318ee0e423d073b38c334faa20a146a8af9e6ab9ce8a7"
+            },
+            "text": "Q4. With a guest, you should generally use a ... A) formal and warm register B) very casual register C) no greeting at all",
+            "type": "paragraph"
+        },
+        {
+            "id": "2986233c-5996-500d-bedb-570c9d701f9b",
+            "language": "en",
+            "order": 11,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 638,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "b2a3aa602762a782e47a4f8e93bb5ae1b8819d1b92b7e6ceb3ef46a3c7077eb0"
+            },
+            "text": "Answer",
+            "type": "instruction"
+        },
+        {
+            "id": "5c237f1b-94e9-5abb-a301-a3ffd8413e0c",
+            "language": "en",
+            "order": 12,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "A.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " A professional register represents the hotel well.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 639,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "1793273888aa8ef926c4931e9ea4748385079b65f7e3bac664afed3aa10bb661"
+            },
+            "text": "A. A professional register represents the hotel well.",
+            "type": "paragraph"
+        },
+        {
+            "id": "737a321f-2991-5658-a715-ecc86f3e4b12",
+            "language": "en",
+            "order": 13,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Q5.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " What is the correct order of an email? A) sign-off, then body, then greeting B) greeting, then opening, then body, then sign-off C) body, then greeting, then sign-off",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 640,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "4c1879645ce5ae2f875f7252dfaed2258904bb859fd7856c9414e2c24c7f8ca5"
+            },
+            "text": "Q5. What is the correct order of an email? A) sign-off, then body, then greeting B) greeting, then opening, then body, then sign-off C) body, then greeting, then sign-off",
+            "type": "paragraph"
+        },
+        {
+            "id": "03f3807e-c8f8-55ce-bc90-ccfaf66c242f",
+            "language": "en",
+            "order": 14,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 641,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "b2a3aa602762a782e47a4f8e93bb5ae1b8819d1b92b7e6ceb3ef46a3c7077eb0"
+            },
+            "text": "Answer",
+            "type": "instruction"
+        },
+        {
+            "id": "aa09d687-3a02-5b4e-acfd-3301be8770c6",
+            "language": "en",
+            "order": 15,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "B.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Greeting first, sign-off last.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 642,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "fd4acecf4077ea0c9cadcb7eec5b40b54865f0b3ece7863449e8f902cb5921cf"
+            },
+            "text": "B. Greeting first, sign-off last.",
+            "type": "paragraph"
+        },
+        {
+            "id": "16e679ba-e8aa-5dd2-8a30-48ebd985c451",
+            "language": "en",
+            "order": 16,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Q6.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " When replying to a complaint email, the tone should be ... A) apologetic and solution-focused B) defensive C) silent",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 643,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "3c8e84ba6699a7b7ed3555f5d782c8fe92f132ebc4476a7d1d8b262bb902c2f7"
+            },
+            "text": "Q6. When replying to a complaint email, the tone should be ... A) apologetic and solution-focused B) defensive C) silent",
+            "type": "paragraph"
+        },
+        {
+            "id": "a7f20368-e517-5db2-aed9-46e20380003b",
+            "language": "en",
+            "order": 17,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 644,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "b2a3aa602762a782e47a4f8e93bb5ae1b8819d1b92b7e6ceb3ef46a3c7077eb0"
+            },
+            "text": "Answer",
+            "type": "instruction"
+        },
+        {
+            "id": "1447c2c0-1623-52fb-9b64-0adf7348128c",
+            "language": "en",
+            "order": 18,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "A.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " ",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Apologise",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": ", take ownership, and offer a clear fix.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 645,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "9cc5daf23f313c2d9657d662402ca8c0d2420dbdcb9c08b11e58fedb3ebf3419"
+            },
+            "text": "A. Apologise, take ownership, and offer a clear fix.",
+            "type": "paragraph"
+        },
+        {
+            "id": "89c6bd32-5b95-54ba-8af8-0ba888216aa7",
+            "language": "en",
+            "order": 19,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Q7.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Why does a clear subject line matter? A) it does not B) it helps the guest understand and find the email C) it replaces the greeting",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 646,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "a2a2eda2d1efaec604bc347d3bf9346b6d0e6b14eb5d2dfbb2641e8813941a2b"
+            },
+            "text": "Q7. Why does a clear subject line matter? A) it does not B) it helps the guest understand and find the email C) it replaces the greeting",
+            "type": "paragraph"
+        },
+        {
+            "id": "9914bca0-7ec8-57ef-b4f7-5e1ffbc61e8a",
+            "language": "en",
+            "order": 20,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 647,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "b2a3aa602762a782e47a4f8e93bb5ae1b8819d1b92b7e6ceb3ef46a3c7077eb0"
+            },
+            "text": "Answer",
+            "type": "instruction"
+        },
+        {
+            "id": "d49a529a-e311-51a9-97e9-373e931c249b",
+            "language": "en",
+            "order": 21,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "B.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " A clear subject line sets the topic before the guest even opens the message.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 648,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "0c05f1858bc564e708b9587c4ee6ef08ddff3ff6f385a77c2b8413672cdb4310"
+            },
+            "text": "B. A clear subject line sets the topic before the guest even opens the message.",
+            "type": "paragraph"
+        },
+        {
+            "id": "31ac1a42-f8f6-5dc2-b5bb-cd0e7223308e",
+            "language": "en",
+            "order": 22,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Q8.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Which body is easiest for a guest to read quickly? A) one long paragraph B) short lines or a small bulleted list C) no spacing at all",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 649,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "2b7f595187540d392c2872cdbcef6c36dc4a43b20588a7b371b5d2de2e76817e"
+            },
+            "text": "Q8. Which body is easiest for a guest to read quickly? A) one long paragraph B) short lines or a small bulleted list C) no spacing at all",
+            "type": "paragraph"
+        },
+        {
+            "id": "6bb3c4ad-5926-5114-b4b7-e25eaeba4e15",
+            "language": "en",
+            "order": 23,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 650,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "b2a3aa602762a782e47a4f8e93bb5ae1b8819d1b92b7e6ceb3ef46a3c7077eb0"
+            },
+            "text": "Answer",
+            "type": "instruction"
+        },
+        {
+            "id": "6fc459aa-36ca-5871-985a-943e53bcda2d",
+            "language": "en",
+            "order": 24,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "B.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Short lines and small lists are easy to scan on a phone.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 651,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "cfe51178e86253ccb1e26236812250f02b6ab0915bc976be743a7d1c6bda309c"
+            },
+            "text": "B. Short lines and small lists are easy to scan on a phone.",
+            "type": "paragraph"
+        },
+        {
+            "activity_code": "HSP-C05-ACT-QUIZ",
+            "id": "743c8c61-28da-5497-9264-28a29a25aa69",
+            "language": "en",
+            "order": 25,
+            "provenance_kind": "derived_navigation",
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 627,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Step 7. Quiz"
+                ],
+                "normalized_text_sha256": "5afd42f19a54588d7aae41ef09f0b06aee1aa8c3e9a32e8e5aac6991901c2156"
+            },
+            "type": "activity_embed"
+        }
+    ],
+    "chapter_code": "HSP-C05",
+    "code": "HSP-C05-LS-10",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "ca8d97eb-9e15-5e0f-a942-d9ed4395de4c",
+    "language": "en",
+    "order": 10,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 627,
+        "chapter": 5,
+        "heading_path": [
+            "Customer Care Through Writing",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "5afd42f19a54588d7aae41ef09f0b06aee1aa8c3e9a32e8e5aac6991901c2156"
+    },
+    "status": "published",
+    "title": "Step 7. Quiz"
+}

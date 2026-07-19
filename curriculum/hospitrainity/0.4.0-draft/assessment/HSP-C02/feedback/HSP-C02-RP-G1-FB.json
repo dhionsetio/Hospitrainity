@@ -1,0 +1,35 @@
+{
+    "code": "HSP-C02-RP-G1-FB",
+    "content_version": "0.4.0-draft",
+    "entity_type": "feedback-model",
+    "id": "24165e6e-9fbf-56bd-bf92-385c184ac406",
+    "messages": [
+        {
+            "feedback_type": "error_specific",
+            "text": "(a) “I do not know. Check your email.” This is unhelpful and pushes the problem back to the guest."
+        },
+        {
+            "feedback_type": "success",
+            "text": "(b) “No problem at all, let me check that for you. May I have your name, please?” This is the ideal answer. It reassures the guest and moves calmly to the next step."
+        },
+        {
+            "feedback_type": "error_specific",
+            "text": "(c) “That is not my job.” This is rude and unprofessional."
+        }
+    ],
+    "prompt_code": "HSP-C02-RP-G1",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 164,
+        "chapter": 2,
+        "heading_path": [
+            "Front Desk and Check-In",
+            "Step 6. Role-play"
+        ],
+        "normalized_text_sha256": "4f59f7227de2b9b044cb848e77881f77e9c2754571e2df4ae512a61fca716a42"
+    },
+    "status": "published"
+}

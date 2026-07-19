@@ -1,0 +1,60 @@
+{
+    "activity_code": "HSP-C04-ACT-ROLEPLAY",
+    "code": "HSP-C04-RP-RUBRIC",
+    "content_version": "0.4.0-draft",
+    "criteria": [
+        {
+            "code": "HSP-C04-RP-RUBRIC-WARMTH",
+            "descriptor": "Warm, professional welcome and tone",
+            "levels": [
+                "Not yet",
+                "Developing",
+                "Strong"
+            ]
+        },
+        {
+            "code": "HSP-C04-RP-RUBRIC-SOLUTION",
+            "descriptor": "Offers help and moves toward a concrete solution",
+            "levels": [
+                "Not yet",
+                "Developing",
+                "Strong"
+            ]
+        },
+        {
+            "code": "HSP-C04-RP-RUBRIC-POLITENESS",
+            "descriptor": "Polite, softened language (e.g. \"Could I ... please\")",
+            "levels": [
+                "Not yet",
+                "Developing",
+                "Strong"
+            ]
+        },
+        {
+            "code": "HSP-C04-RP-RUBRIC-PROGRESSION",
+            "descriptor": "Calmly moves the interaction to the next step",
+            "levels": [
+                "Not yet",
+                "Developing",
+                "Strong"
+            ]
+        }
+    ],
+    "entity_type": "rubric",
+    "id": "f4c6423d-519f-53b8-9c19-9ac4c908b05c",
+    "provenance_kind": "derived_review",
+    "replaced_by": null,
+    "replaces": null,
+    "review_status": "provisional",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "block_index": 444,
+        "chapter": 4,
+        "heading_path": [
+            "The Guest-Services Hotline",
+            "Step 6. Role-play"
+        ],
+        "normalized_text_sha256": "72dd9d103d7d45bdcc15fc1b750023c97a5af19f9ec4315c20ef36ff3e6c4c61"
+    },
+    "status": "published"
+}

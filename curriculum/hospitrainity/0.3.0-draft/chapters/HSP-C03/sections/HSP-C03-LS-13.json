@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C03",
+  "code": "HSP-C03-LS-13",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "a67eea84-b7e1-596d-8a44-514c828385f4",
+  "order": 13,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 363,
+    "chapter": 3,
+    "heading_path": [
+      "Dealing with Customers on the Phone",
+      "Further reading"
+    ],
+    "normalized_text_sha256": "2b4b077f2509b7bfae7cf548e64d321534e24260bbf2f751fc98c3eb5ba77c71"
+  },
+  "status": "published",
+  "title": "Further reading"
+}

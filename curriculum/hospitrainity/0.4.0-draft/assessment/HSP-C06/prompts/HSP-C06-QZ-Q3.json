@@ -1,0 +1,50 @@
+{
+    "activity_code": "HSP-C06-ACT-QUIZ",
+    "choices": [
+        {
+            "feedback": [],
+            "id": "1d51bb66-7cd2-5296-bc20-6878426571c1",
+            "label": "a",
+            "text": "argued in public"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "model_reveal",
+                    "text": "B. Apologise in public, then resolve in private."
+                }
+            ],
+            "id": "67b9db0e-4b54-539b-a0a1-1211ddd0e53e",
+            "label": "b",
+            "text": "acknowledged publicly, then moved to a private DM"
+        },
+        {
+            "feedback": [],
+            "id": "cc27d49d-4d6c-54d5-8281-be11d07138f8",
+            "label": "c",
+            "text": "deleted"
+        }
+    ],
+    "code": "HSP-C06-QZ-Q3",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "40ca26e8-6fcd-584b-9af6-6db5886d7026",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 777,
+        "chapter": 6,
+        "heading_path": [
+            "Online and Social Media Customer Service",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "e34d6d20db8844830776c28d3689d88f32eda799b310f730dd2102feb171b743"
+    },
+    "status": "published",
+    "stem": "Q3. How should a public complaint be handled? A) argued in public B) acknowledged publicly, then moved to a private DM C) deleted"
+}

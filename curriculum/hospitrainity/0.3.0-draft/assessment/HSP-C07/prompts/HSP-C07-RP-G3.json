@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C07-ACT-ROLEPLAY",
+  "code": "HSP-C07-RP-G3",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "12871fb2-cdf3-5201-8cb6-170ea131ec59",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 889,
+    "chapter": 7,
+    "heading_path": [
+      "Dealing with Problems and Complaints",
+      "Step 6. Role-play"
+    ],
+    "normalized_text_sha256": "7f6de5bbaa2143571ef26a809e84350898c6e3639493956ffce54e8baf6947a2"
+  },
+  "status": "published",
+  "stem": "Guest: “This is the second time I have had a problem here.”"
+}

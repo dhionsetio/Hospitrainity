@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<!-- Hospitrainity CF-7 development projection: 7 modules / 85 sections / 25 activities / 124 prompts / 21 outcomes, generated from Hospitrainity.docx. Responses and progress exist only in page memory and are cleared on reload; nothing synchronizes to a server. The CF-7 release gate remains open pending recorded human decisions and reviews. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="hospitrainity-checkpoint" content="CF-7-technical">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hospitrainity — Hospitality English</title>
+<style>
+:root{
+  --bg:#F7F7F5; --surface:#FFFFFF; --surface-2:#FBFBFA;
+  --text:#2C2C2B; --text-soft:#4A4A47; --text-mute:#6C6C67;
+  --border:#E8E7E3; --border-strong:#D3D2CD;
+  --brand:#3F38C7; --brand-soft:#EEF0FF; --brand-strong:#312BA0;
+  --green:#1F7A4D; --green-soft:#E6F3EC; --amber:#8A5A00; --amber-soft:#FBF0D9;
+  --blue:#1F5FA8; --blue-soft:#E7F0FA;
+  --radius:14px; --radius-sm:9px; --shadow:0 1px 2px rgba(20,20,20,.05),0 6px 20px rgba(20,20,20,.05);
+  --font:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  --mono:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;font-size:inherit}
+a{color:var(--brand-strong);text-decoration:underline;text-underline-offset:2px}
+a:hover{color:var(--brand)}
+:focus-visible{outline:3px solid var(--brand);outline-offset:2px;border-radius:4px}
+.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+.skip{position:absolute;left:-999px;top:0;background:var(--brand);color:#fff;padding:10px 16px;border-radius:0 0 8px 0;z-index:100;text-decoration:none}
+.skip:focus{left:0}
+.app-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.header-inner{max-width:1080px;margin:0 auto;padding:13px 22px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:16px;letter-spacing:-.01em;text-decoration:none;color:var(--text)}
+.brand-logo{width:32px;height:32px;border-radius:9px;background:linear-gradient(135deg,var(--brand),#6D28D9);display:grid;place-items:center;color:#fff;font-weight:800;font-size:14px}
+.brand small{display:block;font-size:10.5px;font-weight:600;color:var(--text-mute);letter-spacing:.03em;text-transform:uppercase}
+.header-spacer{flex:1}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{font-size:13.5px;font-weight:600;color:var(--text-soft);padding:7px 12px;border-radius:999px;text-decoration:none}
+.nav-links a:hover{background:var(--surface-2);color:var(--text)}
+.nav-links a[aria-current="page"]{background:var(--brand-soft);color:var(--brand-strong)}
+.container{max-width:1080px;margin:0 auto;padding:30px 22px 90px}
+.crumb{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-mute);margin-bottom:18px;flex-wrap:wrap}
+.crumb .sep{opacity:.5}
+.hero{background:linear-gradient(135deg,#3F38C7 0%,#5B21B6 60%,#6D28D9 100%);border-radius:20px;padding:34px 36px;color:#fff;margin-bottom:30px;box-shadow:var(--shadow)}
+.hero h1{font-size:28px;font-weight:800;letter-spacing:-.02em;margin-bottom:8px}
+.hero p{font-size:15px;opacity:.94;max-width:640px}
+.hero-meta{display:flex;gap:28px;margin-top:24px;flex-wrap:wrap}
+.hero-meta .m b{display:block;font-size:22px;font-weight:800}
+.hero-meta .m span{font-size:12px;opacity:.85;text-transform:uppercase;letter-spacing:.05em}
+.notice{display:flex;gap:10px;align-items:flex-start;background:var(--amber-soft);border:1px solid #E9D8A6;color:var(--amber);padding:12px 15px;border-radius:var(--radius-sm);font-size:13.5px;margin-bottom:26px}
+.notice svg{flex:none;margin-top:1px}
+h2.section-title{font-size:19px;font-weight:800;letter-spacing:-.01em;margin:6px 0 16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.card{display:block;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;text-decoration:none;color:inherit;transition:.15s;box-shadow:var(--shadow)}
+.card:hover{border-color:var(--border-strong);transform:translateY(-2px)}
+.card .kicker{font-size:11.5px;font-weight:700;color:var(--brand);text-transform:uppercase;letter-spacing:.06em;margin-bottom:7px}
+.card h3{font-size:16.5px;font-weight:700;letter-spacing:-.01em;margin-bottom:10px;line-height:1.35}
+.card .stats{display:flex;gap:14px;font-size:12.5px;color:var(--text-mute);font-weight:600}
+.back-link{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:600;color:var(--text-soft);margin-bottom:18px;padding:7px 13px;border:1px solid var(--border);border-radius:999px;background:var(--surface);text-decoration:none}
+.back-link:hover{border-color:var(--border-strong);color:var(--text)}
+.page-head{margin-bottom:24px}
+.page-head .kicker{font-size:12px;font-weight:700;color:var(--brand);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
+.page-head h1{font-size:25px;font-weight:800;letter-spacing:-.02em}
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:22px;margin-bottom:18px;box-shadow:var(--shadow)}
+.panel h3{font-size:15px;font-weight:800;margin-bottom:12px}
+.badges{display:flex;flex-wrap:wrap;gap:7px;margin:2px 0}
+.badge{font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:999px;background:var(--surface-2);border:1px solid var(--border);color:var(--text-soft)}
+.badge.brand{background:var(--brand-soft);border-color:#D6D8FA;color:var(--brand-strong)}
+.badge.green{background:var(--green-soft);border-color:#BFE3CE;color:var(--green)}
+.badge.blue{background:var(--blue-soft);border-color:#C4DBF0;color:var(--blue)}
+.wf{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px}
+.wf th,.wf td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--border)}
+.wf th{font-weight:600;color:var(--text-soft)}
+.olist{list-style:none;display:flex;flex-direction:column;gap:9px}
+.olist li{display:flex;gap:11px;font-size:14px;color:var(--text-soft);padding:11px 13px;background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius-sm)}
+.olist li .oc{font-family:var(--mono);font-size:11.5px;font-weight:700;color:var(--brand);flex:none;padding-top:1px}
+.sec-list{list-style:none;display:flex;flex-direction:column;gap:8px}
+.sec-list li{display:flex;align-items:center;gap:12px;font-size:14.5px;padding:12px 15px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm)}
+.sec-list li .num{width:26px;height:26px;border-radius:7px;background:var(--brand-soft);color:var(--brand-strong);display:grid;place-items:center;font-size:12.5px;font-weight:800;flex:none}
+.act-list{display:flex;flex-direction:column;gap:14px}
+.act{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+.act .top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:6px}
+.act h3{font-size:16px;font-weight:700}
+.act .lesson{font-size:12px;color:var(--text-mute);font-family:var(--mono);font-weight:600}
+.act .act-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--brand-strong);text-decoration:none;margin-top:12px}
+.prompt{border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px;margin-bottom:12px;background:var(--surface-2)}
+.prompt .pc{font-family:var(--mono);font-size:11px;font-weight:700;color:var(--text-mute);margin-bottom:6px}
+.prompt .stem{font-size:14.5px;color:var(--text);font-weight:500}
+details.reveal{margin-top:12px;border-top:1px dashed var(--border-strong);padding-top:10px}
+details.reveal summary{font-size:13px;font-weight:700;color:var(--brand-strong);cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:6px}
+details.reveal summary::-webkit-details-marker{display:none}
+details.reveal summary::before{content:'▸';font-size:11px}
+details.reveal[open] summary::before{content:'▾'}
+details.reveal .body{margin-top:10px;font-size:13.5px;color:var(--text-soft)}
+.model-answer{background:var(--green-soft);border:1px solid #BFE3CE;border-radius:8px;padding:10px 13px;margin-bottom:8px;font-size:13.5px}
+.fb{background:var(--blue-soft);border:1px solid #C4DBF0;border-radius:8px;padding:10px 13px;font-size:13.5px}
+.fb .ft{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--blue);margin-bottom:3px}
+.rubric{margin-top:14px}
+.rubric table{width:100%;border-collapse:collapse;font-size:13px}
+.rubric th,.rubric td{text-align:left;padding:8px 10px;border:1px solid var(--border);vertical-align:top}
+.rubric th{background:var(--surface-2);font-weight:700}
+.session-note{margin:0 0 20px;padding:14px 16px;border:1px solid #C7D2FE;border-radius:var(--radius-sm);background:#EEF2FF;color:#312E81;font-size:13.5px}
+.session-note strong{display:block;margin-bottom:3px}
+.attempt-form{display:grid;gap:16px}
+.response-card{border:1px solid var(--border);border-radius:var(--radius);padding:18px;background:var(--surface)}
+.response-card fieldset{border:0;min-width:0}
+.response-card legend,.response-label{display:block;font-weight:700;line-height:1.45;color:var(--text);margin-bottom:10px}
+.response-help{font-size:13px;color:var(--text-soft);margin:-4px 0 10px}
+.choice-list{display:grid;gap:9px}
+.choice{display:flex;align-items:flex-start;gap:10px;min-height:44px;padding:10px 12px;border:1px solid var(--border-strong);border-radius:9px;cursor:pointer}
+.choice:has(input:checked){border-color:var(--brand);background:var(--brand-soft)}
+.choice input{width:20px;height:20px;flex:0 0 auto;margin-top:2px}
+.rating-list{display:flex;flex-wrap:wrap;gap:10px}
+.rating-list .choice{align-items:center;justify-content:center;min-width:48px}
+.text-control,.order-select{display:block;width:100%;min-height:44px;border:1px solid var(--border-strong);border-radius:9px;padding:10px 12px;background:#fff;color:var(--text);font:inherit}
+textarea.text-control{min-height:132px;resize:vertical}
+.self-check{margin-top:10px}
+.order-list{display:grid;gap:10px;list-style:none}
+.order-item{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;padding:12px;border:1px solid var(--border);border-radius:9px;background:var(--surface-2)}
+.order-item label{font-size:13px;font-weight:700}
+.order-buttons{display:flex;align-items:end;gap:8px}
+.control-button,.primary-button,.secondary-button{min-width:44px;min-height:44px;border:1px solid var(--brand);border-radius:9px;padding:9px 13px;font-weight:700}
+.control-button,.secondary-button{background:#fff;color:var(--brand-strong)}
+.primary-button{background:var(--brand);color:#fff}
+.control-button:disabled{cursor:not-allowed;opacity:.45}
+.attempt-actions{display:flex;flex-wrap:wrap;gap:10px;padding:16px;border:1px solid #C7D2FE;border-radius:var(--radius);background:#EEF2FF}
+.error-summary{border:2px solid #B91C1C;border-radius:var(--radius-sm);padding:14px 16px;background:#FEF2F2;color:#7F1D1D;margin-bottom:16px}
+.error-summary h2{font-size:17px;margin-bottom:6px}
+.error-summary ul{padding-left:20px}
+.attempt-result{border:2px solid #4338CA;border-radius:var(--radius);padding:16px;background:#EEF2FF;color:#312E81;margin-bottom:16px}
+.prompt-result{margin-top:14px;padding:14px;border:1px solid #C7D2FE;border-radius:9px;background:#EEF2FF}
+.prompt-result .verdict{font-weight:800;margin-bottom:8px}
+.prompt-result .correct{color:#166534}.prompt-result .incorrect{color:#991B1B}
+.feedback-message{margin-top:8px;padding:10px;border:1px solid var(--border);border-radius:7px;background:#fff;color:var(--text)}
+.feedback-type{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:var(--blue)}
+.session-progress{margin-top:10px;font-size:12px;font-weight:700;color:var(--brand-strong)}
+@media(max-width:620px){.order-item{grid-template-columns:1fr}.order-buttons{align-items:center}.control-button{flex:1}.attempt-actions>*{width:100%}}
+.prose p{margin-bottom:12px;color:var(--text-soft)}
+.prose h3{font-size:15px;font-weight:800;margin:18px 0 8px}
+.prose code{font-family:var(--mono);font-size:12.5px;background:var(--surface-2);padding:2px 6px;border-radius:5px;border:1px solid var(--border)}
+.app-footer{border-top:1px solid var(--border);margin-top:20px;padding:22px;text-align:center;font-size:12.5px;color:var(--text-mute)}
+.empty{font-size:13.5px;color:var(--text-mute);font-style:italic;padding:8px 0}
+</style>
+</head>
+<body>
+<a href="#main" class="skip">Skip to main content</a>
+<header class="app-header">
+  <div class="header-inner">
+    <a href="#/" class="brand"><span class="brand-logo" aria-hidden="true">HI</span><span>Hospitrainity<small>Hospitality English</small></span></a>
+    <div class="header-spacer"></div>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#/" data-nav="home">Modules</a>
+      <a href="#/outcomes" data-nav="outcomes">Outcomes</a>
+      <a href="#/confidence" data-nav="confidence">Confidence this session</a>
+      <a href="#/about" data-nav="about">About</a>
+    </nav>
+  </div>
+</header>
+<main id="main" class="container" tabindex="-1"></main>
+<footer class="app-footer"></footer>
+<script id="hsp-data" type="application/json">{{HOSPITRAINITY_DATA}}</script>
+<script>
+"use strict";
+var DATA=JSON.parse(document.getElementById('hsp-data').textContent);
+var app=document.getElementById('main');
+var foot=document.querySelector('.app-footer');
+var SESSION={attempts:{}};
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+function outcomeMap(){var m={};(DATA.outcomes||[]).forEach(function(o){m[o.id]=o;});return m;}
+var OM=outcomeMap();
+function chapterByCode(code){return (DATA.chapters||[]).filter(function(c){return c.code===code;})[0];}
+function activityByCode(code){var r=null;(DATA.chapters||[]).forEach(function(c){(c.activities||[]).forEach(function(a){if(a.code===code)r={a:a,c:c};});});return r;}
+function badge(txt,cls){return '<span class="badge '+(cls||'')+'">'+esc(txt)+'</span>';}
+function stateLabel(st){return ({draft:'Draft content',review:'In review',approved:'Reviewed content',published:'Included in draft',retired:'Retired'})[st]||esc(st||'draft');}
+function stateCls(st){return ({review:'blue',approved:'blue',published:'blue'})[st]||'';}
+function stateBadge(st){return badge(stateLabel(st),stateCls(st));}
+function sessionAttempt(code){return SESSION.attempts[code]||null;}
+function activityCompleted(code){var attempt=sessionAttempt(code);return Boolean(attempt&&attempt.state==='completed');}
+function chapterProgress(chapter){var activities=chapter.activities||[];return {completed:activities.filter(function(a){return activityCompleted(a.code);}).length,total:activities.length};}
+function crumb(parts){return '<nav class="crumb" aria-label="Breadcrumb">'+parts.map(function(p,i){var sep=i<parts.length-1?' <span class="sep" aria-hidden="true">/</span>':'';return (p.href?'<a href="'+p.href+'">'+esc(p.label)+'</a>':'<span>'+esc(p.label)+'</span>')+sep;}).join(' ')+'</nav>';}
+function viewHome(){
+  var s=DATA.stats||{};
+  var h='<section class="hero"><h1>'+esc(DATA.meta.title)+'</h1><p>'+esc(DATA.meta.subtitle)+'</p>'+
+    '<div class="hero-meta">'+
+    '<div class="m"><b>'+s.chapters+'</b><span>Modules</span></div>'+
+    '<div class="m"><b>'+s.sections+'</b><span>Lesson sections</span></div>'+
+    '<div class="m"><b>'+s.activities+'</b><span>Activities</span></div>'+
+    '<div class="m"><b>'+s.prompts+'</b><span>Prompts</span></div>'+
+    '</div></section>';
+  h+=noticeBlock();
+  h+='<h2 class="section-title">The seven modules</h2><div class="grid">';
+  (DATA.chapters||[]).forEach(function(c){
+    var progress=chapterProgress(c);
+    h+='<a class="card" href="#/chapter/'+encodeURIComponent(c.code)+'">'+
+      '<div class="kicker">Module '+c.module+'</div>'+
+      '<h3>'+esc(c.title)+'</h3>'+
+      '<div class="badges">'+stateBadge(c.status)+'</div>'+
+      '<div class="stats"><span>'+(c.sections||[]).length+' sections</span><span>'+(c.activities||[]).length+' activities</span></div>'+
+      '<div class="session-progress">This page session: '+progress.completed+' of '+progress.total+' completed</div>'+
+      '</a>';
+  });
+  h+='</div>';
+  return h;
+}
+function noticeBlock(){
+  return '<div class="notice" role="note"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1L1 14h14L8 1zm0 4v4M8 11.5v.5" stroke="currentColor" stroke-width="1.4" fill="none"/></svg><span>'+esc(DATA.meta.notice)+'</span></div>';
+}
+function viewChapter(code){
+  var c=chapterByCode(code);
+  if(!c)return notFound();
+  var h=crumb([{label:'Modules',href:'#/'},{label:'Module '+c.module}]);
+  h+='<div class="page-head"><div class="kicker">Module '+c.module+'</div><h1>'+esc(c.title)+'</h1><div class="badges">'+stateBadge(c.status)+badge('CF-7 release pending','blue')+'</div></div>';
+  var moduleNotice=({
+    draft:'This chapter is in early drafting and is included only for development review.',
+    review:'This chapter is under review and is included only for development verification.',
+    approved:'This chapter has a reviewed content state, but the current package is not approved for release.',
+    published:'This chapter is visible in the development build. Its package lifecycle flag controls local delivery; it does not constitute release approval.'
+  })[c.status]||'This chapter\u2019s package state is provisional.';
+  h+='<div class="notice" role="note" style="margin-bottom:20px"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1L1 14h14L8 1zm0 4v4M8 11.5v.5" stroke="currentColor" stroke-width="1.4" fill="none"/></svg><span>'+esc(moduleNotice)+'</span></div>';
+  h+='<div class="panel"><h3>Learning outcomes</h3><ul class="olist">';
+  (c.outcome_codes||[]).forEach(function(oc){var o=OM[oc];h+='<li><span class="oc">'+esc(oc)+'</span><span>'+(o?esc(o.statement):'')+(o&&o.provisional_band?' '+badge('band: '+o.provisional_band):'')+'</span></li>';});
+  h+='</ul></div>';
+  h+='<div class="panel"><h3>Lesson sections</h3><ol class="sec-list">';
+  (c.sections||[]).forEach(function(sec){h+='<li><span class="num" aria-hidden="true">'+sec.order+'</span><span>'+esc(sec.title)+'</span></li>';});
+  h+='</ol></div>';
+  if((c.activities||[]).length){
+    h+='<h2 class="section-title">Activities &amp; assessment</h2><div class="act-list">';
+    (c.activities||[]).forEach(function(a){
+      var attempt=sessionAttempt(a.code);
+      h+='<article class="act"><div class="top"><h3>'+esc(a.title)+'</h3><span class="lesson">'+esc(a.lesson_code)+'</span></div>'+
+        '<div class="badges">'+badge(a.cefr_activity,'brand')+badge(a.pedagogical_function.replace(/_/g,' '))+badge(a.response_form.replace(/_/g,' '))+badge(a.channel.replace(/_/g,' '))+(attempt?badge(attempt.state==='completed'?'Completed this session':'Model reviewed this session',attempt.state==='completed'?'green':'blue'):'')+'</div>'+
+        '<a class="act-link" href="#/activity/'+encodeURIComponent(a.code)+'">Open activity ('+(a.prompts||[]).length+' prompts) →</a></article>';
+    });
+    h+='</div>';
+  }else{
+    h+='<div class="panel"><p class="empty">This introductory module has no scored activities; it establishes the customer-care outcomes practiced across the following modules.</p></div>';
+  }
+  return h;
+}
+function selectedAttr(value,expected){return String(value)===String(expected)?' selected':'';}
+function checkedAttr(value,expected){return String(value)===String(expected)?' checked':'';}
+function responseName(code,arrayValue){return 'responses['+code+']'+(arrayValue?'[]':'');}
+function promptResult(p,result){
+  if(!result)return '';
+  var h='<div class="prompt-result" role="status" aria-live="polite">';
+  if(result.is_correct===true)h+='<p class="verdict correct">Correct</p>';
+  else if(result.is_correct===false)h+='<p class="verdict incorrect">Not yet correct; review the source feedback below.</p>';
+  else h+='<p class="verdict">Use the model and rubric for self-checking; this open response is not automatically graded.</p>';
+  (result.model_answers||[]).forEach(function(answer){h+='<div class="model-answer"><strong>Model:</strong> '+esc(answer)+'</div>';});
+  (result.feedback||[]).forEach(function(message){h+='<div class="feedback-message"><div class="feedback-type">'+esc(String(message.feedback_type||'feedback').replace(/_/g,' '))+'</div>'+esc(message.text)+'</div>';});
+  return h+'</div>';
+}
+function renderPrompt(p,attempt){
+  var response=attempt&&attempt.responses?attempt.responses[p.code]:null;
+  var selfChecked=Boolean(attempt&&attempt.self_checks&&attempt.self_checks[p.code]);
+  var result=attempt&&attempt.results?attempt.results[p.code]:null;
+  var h='<article class="response-card" id="prompt-'+esc(p.code)+'" data-prompt-code="'+esc(p.code)+'" data-response-form="'+esc(p.response_form)+'" tabindex="-1">';
+  h+='<div class="prompt"><div class="pc">'+esc(p.code)+' · '+esc(String(p.scoring_mode||'unscored').replace(/_/g,' '))+'</div></div>';
+  if(p.response_form==='selection'){
+    h+='<fieldset><legend>'+esc(p.stem)+'</legend><div class="choice-list">';
+    (p.choices||[]).forEach(function(choice){h+='<label class="choice"><input type="radio" name="'+responseName(p.code,false)+'" value="'+esc(choice.id)+'"'+checkedAttr(response,choice.id)+'><span><strong>'+esc(String(choice.label||'').toUpperCase())+'.</strong> '+esc(choice.text)+'</span></label>';});
+    h+='</div></fieldset>';
+  }else if(p.response_form==='rating'){
+    h+='<fieldset><legend>'+esc(p.stem)+'</legend><p class="response-help">1 = not confident yet; 5 = very confident. This is self-reflection, not a proficiency or CEFR score.</p><div class="rating-list">';
+    ((p.rating_scale&&p.rating_scale.values)||[]).forEach(function(value){h+='<label class="choice"><input type="radio" name="'+responseName(p.code,false)+'" value="'+esc(value)+'"'+checkedAttr(response,value)+'><span>'+esc(value)+'</span></label>';});
+    h+='</div></fieldset>';
+  }else if(p.response_form==='ordering'){
+    var current=Array.isArray(response)&&response.length?response:(p.tokens||[]).map(function(token){return token.id;});
+    h+='<fieldset><legend>'+esc(p.stem)+'</legend><p class="response-help">Choose one item for each position or use Move up and Move down. No dragging is required.</p><p class="sr-only" aria-live="polite" data-ordering-status></p><ol class="order-list" data-ordering-list>';
+    current.forEach(function(tokenId,index){h+='<li class="order-item" data-ordering-item><label><span data-ordering-position>Position '+(index+1)+'</span><select class="order-select" name="'+responseName(p.code,true)+'">';(p.tokens||[]).forEach(function(token){h+='<option value="'+esc(token.id)+'"'+selectedAttr(tokenId,token.id)+'>'+esc(token.text)+'</option>';});h+='</select></label><div class="order-buttons"><button class="control-button" type="button" data-order-up>Move up</button><button class="control-button" type="button" data-order-down>Move down</button></div></li>';});
+    h+='</ol></fieldset>';
+  }else{
+    var max=(p.response_constraints&&p.response_constraints.maximum_characters)||(p.scoring_mode==='objective_normalized_closed'?1000:6000);
+    h+='<label class="response-label" for="response-'+esc(p.code)+'">'+esc(p.stem)+'</label>';
+    if(p.response_form==='short_text'&&p.scoring_mode==='objective_normalized_closed')h+='<input class="text-control" type="text" id="response-'+esc(p.code)+'" name="'+responseName(p.code,false)+'" maxlength="'+esc(max)+'" autocomplete="off" value="'+esc(response||'')+'">';
+    else h+='<textarea class="text-control" id="response-'+esc(p.code)+'" name="'+responseName(p.code,false)+'" rows="6" maxlength="'+esc(max)+'" aria-describedby="privacy-'+esc(p.code)+'">'+esc(response||'')+'</textarea><p class="response-help" id="privacy-'+esc(p.code)+'">This text exists only in page memory. It is not saved to browser storage or sent to a server and is cleared on reload.</p>';
+    if(p.self_check_required)h+='<label class="choice self-check"><input type="checkbox" name="self_checks['+esc(p.code)+']" value="1"'+(selfChecked?' checked':'')+'><span>I completed or rehearsed this response and will compare it with the model/rubric.</span></label>';
+  }
+  return h+promptResult(p,result)+'</article>';
+}
+function viewActivity(code){
+  var r=activityByCode(code);
+  if(!r)return notFound();
+  var a=r.a,c=r.c,attempt=sessionAttempt(a.code);
+  var h=crumb([{label:'Modules',href:'#/'},{label:'Module '+c.module,href:'#/chapter/'+encodeURIComponent(c.code)},{label:a.title}]);
+  h+='<div class="page-head"><div class="kicker">'+esc(c.title)+' · '+esc(a.lesson_code)+'</div><h1>'+esc(a.title)+'</h1></div>';
+  h+='<div class="session-note" role="note"><strong>Session-only offline practice</strong>Responses, self-checks, and completion exist only in this open page and are cleared by reload or closing the file. Nothing is stored in localStorage/sessionStorage or synchronized to Hospitrainity.</div>';
+  if(attempt)h+='<section class="attempt-result" id="attempt-result" tabindex="-1"><h2>'+(attempt.state==='completed'?'Activity completed in this page session':'Models reviewed without completing the activity')+'</h2><p>'+esc(attempt.message)+'</p></section>';
+  h+='<div class="panel"><div class="badges">'+badge('CEFR activity: '+a.cefr_activity,'brand')+badge('function: '+a.pedagogical_function.replace(/_/g,' '))+badge('response: '+a.response_form.replace(/_/g,' '))+badge('channel: '+a.channel.replace(/_/g,' '))+badge('participation: '+a.participation)+badge('scoring: '+a.scoring_mode.replace(/_/g,' '))+badge('timing: '+a.timing)+'</div>';
+  if((a.accessibility||[]).length)h+='<div class="badges" style="margin-top:8px">'+a.accessibility.map(function(x){return badge(x.replace(/_/g,' '),'green');}).join('')+'</div>';
+  h+='</div><div id="attempt-errors"></div><form class="attempt-form" data-session-attempt-form data-activity-code="'+esc(a.code)+'" novalidate>';
+  (a.prompts||[]).forEach(function(p){h+=renderPrompt(p,attempt);});
+  if(a.rubric){
+    h+='<div class="panel rubric"><h2 class="section-title">Self-assessment rubric</h2><div role="region" aria-label="Self-assessment rubric" tabindex="0" style="overflow-x:auto"><table><thead><tr><th scope="col">Criterion</th><th scope="col">Levels</th></tr></thead><tbody>';
+    (a.rubric.criteria||[]).forEach(function(cr){h+='<tr><th scope="row">'+esc(cr.descriptor)+'</th><td>'+(cr.levels||[]).map(esc).join(' · ')+'</td></tr>';});
+    h+='</tbody></table></div></div>';
+  }
+  h+='<div class="attempt-actions"><button class="primary-button" type="submit" name="intent" value="check">Check responses</button><button class="secondary-button" type="submit" name="intent" value="show_model">Show model without answering</button>';
+  if(a.code==='HSP-C01-ACT-BASELINE')h+='<button class="secondary-button" type="submit" name="intent" value="skip_baseline">Explicitly skip this baseline</button>';
+  return h+'</div></form>';
+}
+function viewOutcomes(){
+  var h=crumb([{label:'Modules',href:'#/'},{label:'Learning outcomes'}]);
+  h+='<div class="page-head"><div class="kicker">Reference</div><h1>Learning outcomes</h1></div>';
+  h+=noticeBlock();
+  var byMod={};(DATA.outcomes||[]).forEach(function(o){(byMod[o.module]=byMod[o.module]||[]).push(o);});
+  Object.keys(byMod).sort(function(a,b){return a-b;}).forEach(function(m){
+    var ch=(DATA.chapters||[]).filter(function(c){return c.module==m;})[0];
+    h+='<div class="panel"><h3>Module '+m+(ch?' — '+esc(ch.title):'')+'</h3><ul class="olist">';
+    byMod[m].forEach(function(o){h+='<li><span class="oc">'+esc(o.id)+'</span><span>'+esc(o.statement)+' '+badge(o.type)+badge('band: '+o.provisional_band)+'</span></li>';});
+    h+='</ul></div>';
+  });
+  return h;
+}
+function collectActivityResponses(activity,form){
+  var responses={},selfChecks={};
+  (activity.prompts||[]).forEach(function(prompt){
+    var card=form.querySelector('[data-prompt-code="'+prompt.code+'"]');
+    if(!card)return;
+    if(prompt.response_form==='selection'||prompt.response_form==='rating'){
+      var checked=card.querySelector('input[type="radio"]:checked');
+      responses[prompt.code]=checked?checked.value:'';
+    }else if(prompt.response_form==='ordering'){
+      responses[prompt.code]=Array.prototype.map.call(card.querySelectorAll('select'),function(select){return select.value;});
+    }else{
+      var text=card.querySelector('input[type="text"],textarea');
+      responses[prompt.code]=text?text.value:'';
+    }
+    var selfCheck=card.querySelector('input[type="checkbox"]');
+    if(selfCheck)selfChecks[prompt.code]=selfCheck.checked;
+  });
+  return {responses:responses,self_checks:selfChecks};
+}
+function validateActivityResponses(activity,collected){
+  var errors=[];
+  (activity.prompts||[]).forEach(function(prompt){
+    var value=collected.responses[prompt.code];
+    if(prompt.response_form==='ordering'){
+      if(!Array.isArray(value)||value.length!==(prompt.tokens||[]).length||new Set(value).size!==value.length)errors.push({code:prompt.code,message:'Choose each ordering item exactly once.'});
+    }else if(String(value==null?'':value).trim()==='')errors.push({code:prompt.code,message:'Provide a response.'});
+    if(prompt.self_check_required&&!collected.self_checks[prompt.code])errors.push({code:prompt.code,message:'Confirm the self-check after completing or rehearsing this response.'});
+  });
+  return errors;
+}
+function normalizeClosed(value){return String(value||'').trim().toLocaleLowerCase().replace(/[^\p{L}\p{N}]+/gu,' ').replace(/\s+/g,' ').trim();}
+function promptScore(prompt,value){
+  if(prompt.scoring_mode==='objective_choice')return (prompt.correct_choice_ids||[]).indexOf(value)!==-1;
+  if(prompt.scoring_mode==='objective_ordered')return JSON.stringify(value)===JSON.stringify(prompt.correct_order||[]);
+  if(prompt.scoring_mode==='objective_normalized_closed')return (prompt.accepted_normalized||[]).indexOf(normalizeClosed(value))!==-1;
+  return null;
+}
+function promptMessages(prompt,value){
+  var messages=[];
+  if(prompt.response_form==='selection'){
+    var choice=(prompt.choices||[]).filter(function(item){return item.id===value;})[0];
+    if(choice)messages=messages.concat(choice.feedback||[]);
+  }
+  messages=messages.concat(prompt.feedback||[]);
+  var seen={};
+  return messages.filter(function(message){var key=String(message.feedback_type||'')+'\u0000'+String(message.text||'');if(seen[key])return false;seen[key]=true;return true;});
+}
+function buildPromptResults(activity,collected,scoreResponses){
+  var results={};
+  (activity.prompts||[]).forEach(function(prompt){
+    var value=collected.responses[prompt.code];
+    results[prompt.code]={is_correct:scoreResponses?promptScore(prompt,value):null,model_answers:prompt.answers||[],feedback:promptMessages(prompt,value)};
+  });
+  return results;
+}
+function showAttemptErrors(errors){
+  var target=document.getElementById('attempt-errors');
+  target.innerHTML='<section class="error-summary" tabindex="-1" role="alert" aria-labelledby="attempt-errors-heading"><h2 id="attempt-errors-heading">Check the highlighted responses</h2><ul>'+errors.map(function(error){return '<li><a href="#prompt-'+esc(error.code)+'" data-error-prompt="'+esc(error.code)+'">'+esc(error.code)+': '+esc(error.message)+'</a></li>';}).join('')+'</ul></section>';
+  target.querySelector('.error-summary').focus();
+}
+function submitSessionAttempt(form,submitter){
+  var record=activityByCode(form.getAttribute('data-activity-code'));
+  if(!record)return;
+  var activity=record.a,intent=submitter&&submitter.value?submitter.value:'check';
+  var collected=collectActivityResponses(activity,form);
+  if(intent==='check'){
+    var errors=validateActivityResponses(activity,collected);
+    if(errors.length){showAttemptErrors(errors);return;}
+  }
+  var state=intent==='show_model'?'reviewed':'completed';
+  var message=intent==='show_model'?'Models shown explicitly; this did not complete the activity.':(intent==='skip_baseline'?'Baseline explicitly skipped for this page session.':'Responses checked and participation requirements completed for this page session.');
+  SESSION.attempts[activity.code]={
+    activity_code:activity.code,
+    completed_at:new Date().toISOString(),
+    intent:intent,
+    message:message,
+    responses:collected.responses,
+    results:buildPromptResults(activity,collected,intent==='check'),
+    self_checks:collected.self_checks,
+    state:state
+  };
+  router();
+  var result=document.getElementById('attempt-result');
+  if(result)result.focus();
+}
+function refreshOrdering(list){
+  var items=Array.prototype.slice.call(list.querySelectorAll(':scope > [data-ordering-item]'));
+  items.forEach(function(item,index){
+    var position=item.querySelector('[data-ordering-position]'),up=item.querySelector('[data-order-up]'),down=item.querySelector('[data-order-down]');
+    if(position)position.textContent='Position '+(index+1);
+    if(up){up.disabled=index===0;up.setAttribute('aria-label','Move item at position '+(index+1)+' up');}
+    if(down){down.disabled=index===items.length-1;down.setAttribute('aria-label','Move item at position '+(index+1)+' down');}
+  });
+}
+function confidenceEntries(){
+  var entries=[];
+  Object.keys(SESSION.attempts).forEach(function(code){
+    var attempt=SESSION.attempts[code],record=activityByCode(code);
+    if(!record||attempt.state!=='completed')return;
+    var ratings=(record.a.prompts||[]).filter(function(prompt){return prompt.response_form==='rating';}).map(function(prompt){return {code:prompt.code,statement:prompt.stem,rating:Number(attempt.responses[prompt.code]||0)};});
+    if(ratings.length)entries.push({activity:record.a,attempt:attempt,ratings:ratings});
+  });
+  return entries.sort(function(left,right){return left.attempt.completed_at.localeCompare(right.attempt.completed_at);});
+}
+function viewConfidence(){
+  var entries=confidenceEntries();
+  var h=crumb([{label:'Modules',href:'#/'},{label:'Confidence this session'}]);
+  h+='<div class="page-head"><div class="kicker">Private page memory</div><h1>Confidence this session</h1></div><div class="session-note" role="note"><strong>Self-reflection only</strong>These ratings are not proficiency, test, or CEFR evidence. They are held only in page memory, are not synchronized, and disappear on reload or close.</div>';
+  if(!entries.length)return h+'<div class="panel"><p class="empty">No completed baseline or confidence check exists in this page session.</p></div>';
+  entries.forEach(function(entry){h+='<article class="panel"><h2 class="section-title">'+esc(entry.activity.title)+'</h2><p class="response-help">'+esc(entry.activity.code)+(entry.activity.code==='HSP-C01-ACT-BASELINE'?' · baseline':' · current chapter reflection')+'</p><ul class="olist">';entry.ratings.forEach(function(rating){h+='<li><span class="oc">'+esc(rating.code)+'</span><span>'+esc(rating.statement)+' '+badge('rating '+rating.rating+' of 5','blue')+'</span></li>';});h+='</ul></article>';});
+  return h;
+}
+function workflowTable(){
+  var w=DATA.workflow; if(!w||!w.modules)return '';
+  var rows=w.modules.map(function(m){return '<tr><td>Module '+m.module+'</td><td>'+stateBadge(m.state)+'</td><td>'+esc(w.gate.id)+' '+esc(w.gate.status)+'</td></tr>';}).join('');
+  return '<table class="wf"><thead><tr><th>Module</th><th>Package content state</th><th>Release gate</th></tr></thead><tbody>'+rows+'</tbody></table>'+
+    '<p style="font-size:13px;color:var(--text-soft)">Release gate <strong>'+esc(w.gate.id)+'</strong>: <strong>'+esc(w.gate.status)+'</strong>. Package content state controls development visibility and is not evidence of release approval.</p>';
+}
+function viewAbout(){
+  var m=DATA.meta;
+  var h=crumb([{label:'Modules',href:'#/'},{label:'About'}]);
+  h+='<div class="page-head"><div class="kicker">About this build</div><h1>Provenance &amp; status</h1></div>';
+  h+='<div class="panel prose">'+
+    '<p>This offline course is a <strong>generated projection</strong> of the validated Hospitrainity curriculum package. Every module, section, activity and prompt on this site is rendered from the canonical package; generated output is not hand-edited.</p>'+
+    '<h3>Source &amp; version</h3>'+
+    '<p>Source of truth: <code>'+esc(m.source_artifact)+'</code><br>Content version: <code>'+esc(m.content_version)+'</code><br>Lifecycle status: <code>'+esc(m.status)+'</code><br>Checkpoint: <code>'+esc(m.checkpoint)+'</code><br>Generated from: <code>'+esc(m.generated_from)+'</code></p>'+
+    '<h3>Content &amp; release status</h3>'+
+    '<p>Chapter lifecycle fields control inclusion in this development projection. They do not prove release approval or independent specialist review. The package remains a development draft until the separate CF-7 release gate is closed on recorded evidence.</p>'+
+    workflowTable()+
+    '<h3>Verification status</h3>'+
+    '<p>This development build has automated schema, reference, checksum, deterministic-build, application, JavaScript, and browser critical-path evidence. Those checks are not a substitute for the qualified content, accessibility, and release reviews required by CF-7.</p>'+
+    '<h3>Offline response privacy</h3><p>Interactive responses and completion are held in page memory only. Reloading or closing this file clears them. The standalone does not use browser storage, does not synchronize with the Laravel application, and is not suitable as a tamper-resistant examination because its answer models are necessarily packaged inside the offline file.</p>'+
+    '<p>Release policy: this build is for <strong>development verification only</strong>. Public release remains held while <code>'+esc((DATA.workflow&&DATA.workflow.gate&&DATA.workflow.gate.id)||'CF-7')+'</code> is <code>'+esc((DATA.workflow&&DATA.workflow.gate&&DATA.workflow.gate.status)||'open')+'</code>.</p>'+
+    '<h3>Important limitation</h3><p>'+esc(m.disclaimer)+'</p>'+
+    '</div>';
+  return h;
+}
+function notFound(){return '<div class="page-head"><h1>Not found</h1></div><p class="empty">That page does not exist. <a href="#/">Return to modules</a>.</p>';}
+function setNav(id){document.querySelectorAll('.nav-links a').forEach(function(a){if(a.getAttribute('data-nav')===id){a.setAttribute('aria-current','page');}else{a.removeAttribute('aria-current');}});}
+function router(){
+  var hash=location.hash.replace(/^#/,'')||'/';
+  var parts=hash.split('/').filter(Boolean);
+  var html,nav='';
+  if(parts.length===0){html=viewHome();nav='home';}
+  else if(parts[0]==='chapter'){html=viewChapter(decodeURIComponent(parts[1]||''));}
+  else if(parts[0]==='activity'){html=viewActivity(decodeURIComponent(parts[1]||''));}
+  else if(parts[0]==='outcomes'){html=viewOutcomes();nav='outcomes';}
+  else if(parts[0]==='confidence'){html=viewConfidence();nav='confidence';}
+  else if(parts[0]==='about'){html=viewAbout();nav='about';}
+  else{html=notFound();}
+  app.innerHTML=html;setNav(nav);
+  app.querySelectorAll('[data-ordering-list]').forEach(refreshOrdering);
+  app.focus();
+  if(!(parts[0]==='activity')){window.scrollTo(0,0);}
+}
+app.addEventListener('submit',function(event){var form=event.target.closest('[data-session-attempt-form]');if(!form)return;event.preventDefault();submitSessionAttempt(form,event.submitter);});
+app.addEventListener('click',function(event){
+  var errorLink=event.target.closest('[data-error-prompt]');
+  if(errorLink){event.preventDefault();var prompt=document.getElementById('prompt-'+errorLink.getAttribute('data-error-prompt'));if(prompt)prompt.focus();return;}
+  var button=event.target.closest('[data-order-up],[data-order-down]');
+  if(!button)return;
+  var item=button.closest('[data-ordering-item]'),list=button.closest('[data-ordering-list]');
+  if(!item||!list)return;
+  if(button.matches('[data-order-up]')&&item.previousElementSibling)list.insertBefore(item,item.previousElementSibling);
+  else if(button.matches('[data-order-down]')&&item.nextElementSibling)list.insertBefore(item.nextElementSibling,item);
+  refreshOrdering(list);
+  var position=Array.prototype.indexOf.call(list.children,item)+1,status=list.parentElement.querySelector('[data-ordering-status]');
+  if(status)status.textContent='Item moved to position '+position+'.';
+  var focusTarget=button.disabled?item.querySelector(button.matches('[data-order-up]')?'[data-order-down]':'[data-order-up]'):button;
+  if(focusTarget)focusTarget.focus();
+});
+foot.innerHTML='<div>'+esc(DATA.meta.product)+' · v'+esc(DATA.meta.content_version)+' · session data clears on reload · <a href="#/about">About &amp; sourcing</a></div>';
+window.addEventListener('hashchange',router);
+router();
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{
+    "code": "HSP-C04-QZ-Q5-FB",
+    "content_version": "0.4.0-draft",
+    "entity_type": "feedback-model",
+    "id": "274c4007-c573-5c30-8a13-342980fd53db",
+    "messages": [
+        {
+            "feedback_type": "model_reveal",
+            "text": "A. Guests relax when they know how long to wait."
+        }
+    ],
+    "prompt_code": "HSP-C04-QZ-Q5",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 491,
+        "chapter": 4,
+        "heading_path": [
+            "The Guest-Services Hotline",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "ce145e7aeb9cfcf6c6c4d6a995e608a7af8b936aa7ff3b1201e711167cdc3c34"
+    },
+    "status": "published"
+}

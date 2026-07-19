@@ -1,0 +1,270 @@
+{
+    "blocks": [
+        {
+            "id": "e5c42f21-0457-5e65-afbf-d449ed9b6150",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "A useful challenge: record yourself doing a full check-in out loud, from the first greeting to the final goodbye, in under ninety seconds. Play it back once and ask yourself two questions: did I sound warm, and did I use the guest’s name? Try it a second time and keep the better take. Speaking out loud is where real confidence is built.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 213,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Take it further"
+                ],
+                "normalized_text_sha256": "121c0072abff35afcec861c39c56b21327d35ed966cd47740efc22ba6413890d"
+            },
+            "text": "A useful challenge: record yourself doing a full check-in out loud, from the first greeting to the final goodbye, in under ninety seconds. Play it back once and ask yourself two questions: did I sound warm, and did I use the guest’s name? Try it a second time and keep the better take. Speaking out loud is where real confidence is built.",
+            "type": "paragraph"
+        },
+        {
+            "id": "a3e7f52c-ceec-5e2a-8cbb-fcf9b26ff7b9",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "First impressions and body language",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 215,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Take it further"
+                ],
+                "normalized_text_sha256": "4d63d1895af6fa480e2f5cbd114fef8490f0b5188bd43c0941245604fcfe1b70"
+            },
+            "text": "First impressions and body language",
+            "type": "heading"
+        },
+        {
+            "id": "161fc896-fa67-58b3-9c33-1217d83e5e11",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "When you meet a guest face to face, they read your body language and hear your tone before they fully take in your words, so a warm welcome is built from far more than sentences. Three things make a strong first impression, and they cost nothing:",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 216,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Take it further"
+                ],
+                "normalized_text_sha256": "aaefe05d97ddc066de5744527d0a51db7147edcb6d57fc93f8ee8046066c81df"
+            },
+            "text": "When you meet a guest face to face, they read your body language and hear your tone before they fully take in your words, so a warm welcome is built from far more than sentences. Three things make a strong first impression, and they cost nothing:",
+            "type": "paragraph"
+        },
+        {
+            "id": "1a5e2001-154c-5dd2-875a-9e077363e3e0",
+            "language": "en",
+            "order": 4,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "A genuine smile and friendly eye contact. They quietly say “you are welcome here” before you speak a word.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 217,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Take it further"
+                ],
+                "normalized_text_sha256": "6b1ba83de249bb3924a7ffe97f07886c19de504cbb752d4bf3262f63c59c42eb"
+            },
+            "text": "A genuine smile and friendly eye contact. They quietly say “you are welcome here” before you speak a word.",
+            "type": "list_item"
+        },
+        {
+            "id": "cba1b8bc-4e50-55bf-b2cc-4c8ef42d51c8",
+            "language": "en",
+            "order": 5,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Open, relaxed posture. Face the guest, keep your hands calm, and try not to hide behind the screen.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 218,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Take it further"
+                ],
+                "normalized_text_sha256": "b3072f288b8c92a444b3795adc0779153ce2a15f7d8863adb781f1f3c696b602"
+            },
+            "text": "Open, relaxed posture. Face the guest, keep your hands calm, and try not to hide behind the screen.",
+            "type": "list_item"
+        },
+        {
+            "id": "0ba332bb-2c9d-54ad-8b23-61f62d4a63fa",
+            "language": "en",
+            "order": 6,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "A warm, unhurried tone. The very same words feel completely different when they are said kindly.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 219,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Take it further"
+                ],
+                "normalized_text_sha256": "9e0954ec2afb37e7639d46afdc90861f40699975bb6f231e74240723597b1b6e"
+            },
+            "text": "A warm, unhurried tone. The very same words feel completely different when they are said kindly.",
+            "type": "list_item"
+        },
+        {
+            "id": "7fbc97b6-4f3c-5b28-8e37-6ec2704b2221",
+            "language": "en",
+            "order": 7,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Positive language matters here too. Lead with what you can do:",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 220,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Take it further"
+                ],
+                "normalized_text_sha256": "cb8acdef5b31755e28f3c59a8afa7cb39eea5ca739c8d889bb30b79a8def0564"
+            },
+            "text": "Positive language matters here too. Lead with what you can do:",
+            "type": "paragraph"
+        },
+        {
+            "caption": "Take it further: Instead of saying this / Try saying this",
+            "header": [
+                "Instead of saying this",
+                "Try saying this"
+            ],
+            "id": "caa5478a-6085-58ba-8b47-b03f645ad33f",
+            "language": "en",
+            "order": 8,
+            "provenance_kind": "source_verbatim",
+            "rows": [
+                [
+                    "Your room is not ready.",
+                    "Your room will be ready very shortly, and I would be glad to store your luggage in the meantime."
+                ],
+                [
+                    "You did not book breakfast.",
+                    "Breakfast is not part of your rate, but I can happily add it for you now."
+                ],
+                [
+                    "Wait a moment.",
+                    "Thank you for your patience, this will only take a moment."
+                ]
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 221,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Take it further"
+                ],
+                "normalized_text_sha256": "e59b61b04a0345ceac5e75a8cbcb15ee8cb1eb5dc5e5d8fd76258be2c6bcce4b"
+            },
+            "type": "source_table"
+        },
+        {
+            "id": "a6d15f38-adec-5e02-9c7a-14f9f17e9594",
+            "language": "en",
+            "order": 9,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Your first ten seconds set the mood for the whole stay. Warm face, warm voice, then warm words, in that order.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 222,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Take it further"
+                ],
+                "normalized_text_sha256": "e294981f045b86d66030bfe353edb4c32e6aa512107cff5ab54efe146585b10d"
+            },
+            "text": "Your first ten seconds set the mood for the whole stay. Warm face, warm voice, then warm words, in that order.",
+            "type": "paragraph"
+        }
+    ],
+    "chapter_code": "HSP-C02",
+    "code": "HSP-C02-LS-12",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "f8540365-aefa-5698-a3e1-9f175d261f6e",
+    "language": "en",
+    "order": 12,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 212,
+        "chapter": 2,
+        "heading_path": [
+            "Front Desk and Check-In",
+            "Take it further"
+        ],
+        "normalized_text_sha256": "b19a89522b9f73e505f3b0dd1e4759f15eb4c7fc7b935b00b917e9c2c9ae6dc7"
+    },
+    "status": "published",
+    "title": "Take it further"
+}

@@ -1,0 +1,50 @@
+{
+    "activity_code": "HSP-C02-ACT-QUIZ",
+    "choices": [
+        {
+            "feedback": [
+                {
+                    "feedback_type": "model_reveal",
+                    "text": "A. A guest with no reservation is a walk-in guest."
+                }
+            ],
+            "id": "26eb72fe-db87-5c6f-9169-a20abb21ee37",
+            "label": "a",
+            "text": "walk-in guest"
+        },
+        {
+            "feedback": [],
+            "id": "abc9078d-245d-5ebb-9480-78b0a74102a3",
+            "label": "b",
+            "text": "key card"
+        },
+        {
+            "feedback": [],
+            "id": "6a27c2b4-846e-5f6b-9275-e86b0183e8ff",
+            "label": "c",
+            "text": "voucher"
+        }
+    ],
+    "code": "HSP-C02-QZ-Q2",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "98f25136-6912-5905-88a8-1599ffb2783c",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 186,
+        "chapter": 2,
+        "heading_path": [
+            "Front Desk and Check-In",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "29051bbde8838ea7f79ae8f4de2f1871e435c178a0c0d0117e6466eeec86cb27"
+    },
+    "status": "published",
+    "stem": "Q2. A guest arrives with no booking. They are a ... A) walk-in guest B) key card C) voucher"
+}

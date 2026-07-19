@@ -1,0 +1,39 @@
+{
+  "accessibility": [
+    "text_alt",
+    "keyboard_path",
+    "non_color_cue",
+    "no_timing_dependency"
+  ],
+  "cefr_activity": "interaction",
+  "channel": "spoken_ftf",
+  "code": "HSP-C02-ACT-CONFIDENCE",
+  "content_version": "0.3.0-draft",
+  "entity_type": "activity",
+  "id": "66c6e675-f3cf-529b-ad74-6604db8eeeca",
+  "lesson_code": "HSP-C02-LS-11",
+  "outcome_codes": [
+    "OUT-M02-01",
+    "OUT-M02-02",
+    "OUT-M02-03"
+  ],
+  "participation": "individual",
+  "pedagogical_function": "reflection",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "self_rating",
+  "scoring_mode": "self_report",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 204,
+    "chapter": 2,
+    "heading_path": [
+      "Front Desk and Check-In",
+      "Step 8. Confidence check"
+    ],
+    "normalized_text_sha256": "5148e8bd280e8b2e88901b6ad0ea1853c136d1ebc3ae7ba26c2f3efd4c12eee0"
+  },
+  "status": "published",
+  "timing": "asynchronous",
+  "title": "Step 8. Confidence check"
+}

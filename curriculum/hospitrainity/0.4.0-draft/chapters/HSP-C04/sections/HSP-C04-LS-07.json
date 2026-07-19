@@ -1,0 +1,182 @@
+{
+    "blocks": [
+        {
+            "id": "378579f5-1924-54f7-840c-e23e66d2b186",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Open for five common mistakes",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 432,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Common mistakes to avoid"
+                ],
+                "normalized_text_sha256": "a433b254794ec760d8fec78cc3f476ae28f47f15bd12cd32be5e9d650aac6f83"
+            },
+            "text": "Open for five common mistakes",
+            "type": "paragraph"
+        },
+        {
+            "id": "cbba48d7-2e38-5815-8c2d-7a6068089b91",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Taking the order before getting the room number. Get the room first, so nothing is lost if the call drops.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 433,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Common mistakes to avoid"
+                ],
+                "normalized_text_sha256": "eb935c3b355726fba6147d80854d2ec268af7987ec02b0a07df3e43c4b35baf5"
+            },
+            "text": "Taking the order before getting the room number. Get the room first, so nothing is lost if the call drops.",
+            "type": "list_item"
+        },
+        {
+            "id": "6fb2f092-92cd-5922-a372-e01a46ef513c",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Skipping the read-back because you feel rushed. This is exactly when mistakes happen.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 434,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Common mistakes to avoid"
+                ],
+                "normalized_text_sha256": "9814ddc2d6a7b277261452da764eae60b58c5eb63ea8e5707170105fb982e6de"
+            },
+            "text": "Skipping the read-back because you feel rushed. This is exactly when mistakes happen.",
+            "type": "list_item"
+        },
+        {
+            "id": "8fd4f9da-f530-5909-b0fa-7ec417b45000",
+            "language": "en",
+            "order": 4,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Sounding impatient. A hurried tone tells the guest they are interrupting you.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 435,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Common mistakes to avoid"
+                ],
+                "normalized_text_sha256": "83c19de5e16b7b94c19b0487864879ebe8f92ac436a69145a8bde78f0f4499a9"
+            },
+            "text": "Sounding impatient. A hurried tone tells the guest they are interrupting you.",
+            "type": "list_item"
+        },
+        {
+            "id": "d09fd5c2-71e1-52f6-9fdf-3000cfa87b93",
+            "language": "en",
+            "order": 5,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Transferring silently. Always say who you are connecting them to and why.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 436,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Common mistakes to avoid"
+                ],
+                "normalized_text_sha256": "6d2fbbc26cadead2dc7cd89186fe02aba9112cadc23629b0ff7a04c894358590"
+            },
+            "text": "Transferring silently. Always say who you are connecting them to and why.",
+            "type": "list_item"
+        },
+        {
+            "id": "2501b910-674a-5acd-b5bd-8924de8b4d90",
+            "language": "en",
+            "order": 6,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Forgetting the estimated time. Guests relax when they know how long to wait.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 437,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Common mistakes to avoid"
+                ],
+                "normalized_text_sha256": "9373e137ac77462fb892bec14725e03b7c720d0d5b2196bf8d29a287ae56d724"
+            },
+            "text": "Forgetting the estimated time. Guests relax when they know how long to wait.",
+            "type": "list_item"
+        }
+    ],
+    "chapter_code": "HSP-C04",
+    "code": "HSP-C04-LS-07",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "fbbe6a67-0aa6-5ae0-8249-93fc41503a1f",
+    "language": "en",
+    "order": 7,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 431,
+        "chapter": 4,
+        "heading_path": [
+            "The Guest-Services Hotline",
+            "Common mistakes to avoid"
+        ],
+        "normalized_text_sha256": "09280c77c069d2c19c40ad919cf2f1fa07a028a886d911cc8f9318f19c0a51e0"
+    },
+    "status": "published",
+    "title": "Common mistakes to avoid"
+}

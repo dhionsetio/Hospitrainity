@@ -1,0 +1,546 @@
+{
+    "blocks": [
+        {
+            "id": "a5b14a86-beca-56cf-8b4c-e84ee779692b",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Answering the call",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 257,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "4f57cf981f3024dc3e11dfcf912cdefedf41428ec5d3987d77134adc8b94433f"
+            },
+            "text": "Answering the call",
+            "type": "heading"
+        },
+        {
+            "id": "f8b5b54c-224e-5aeb-b4d6-18cb48ca5b53",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "“Good morning, the Grand Serenata Hotel, Maya speaking. How may I help you?”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 258,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "eb48a4e0d0fa79fccf38b7ed42bab5774e18247ca7230b333d82aa45183a878d"
+            },
+            "text": "“Good morning, the Grand Serenata Hotel, Maya speaking. How may I help you?”",
+            "type": "list_item"
+        },
+        {
+            "id": "201eff43-c48b-5f60-bf32-ef2dd851732c",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Checking availability",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 259,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "93faa3c57234fc2c0abd6d2a0b516ea59af9de9f40dd3c2b7b0544ea424000ee"
+            },
+            "text": "Checking availability",
+            "type": "heading"
+        },
+        {
+            "id": "182477dc-bc6c-5c54-bfa1-a2e728381fbd",
+            "language": "en",
+            "order": 4,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "“Let me check availability for those dates for you.”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 260,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "b1bad1dbab89a2edc4a63ffc67c7a2cef452b8a1a883e2c315873a9aa723e84f"
+            },
+            "text": "“Let me check availability for those dates for you.”",
+            "type": "list_item"
+        },
+        {
+            "id": "a050adc1-639e-5ef8-839e-bb3e724e98e9",
+            "language": "en",
+            "order": 5,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Putting someone on hold kindly",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 261,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "9ec8f71812c16aa435059a3ba54fb8f5f6802caccff50454b3c420f85df3f909"
+            },
+            "text": "Putting someone on hold kindly",
+            "type": "heading"
+        },
+        {
+            "id": "bf3a211c-4ca9-5889-af0c-35371d9fdebd",
+            "language": "en",
+            "order": 6,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "“May I put you on hold for just a moment? Thank you for waiting.”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 262,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "c9bcd33ab14ddd274d1a899cad773d5d0f3136f8c0a53672f56755865889e26f"
+            },
+            "text": "“May I put you on hold for just a moment? Thank you for waiting.”",
+            "type": "list_item"
+        },
+        {
+            "id": "81fd9ce2-22ed-5121-8eb8-37840faa40d9",
+            "language": "en",
+            "order": 7,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Taking the details",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 263,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "e4410c0a83e0973cc4feb147091da77d30da594b3d10a6fd787c27563e1e1625"
+            },
+            "text": "Taking the details",
+            "type": "heading"
+        },
+        {
+            "id": "0ad5fe8e-4fc3-56a2-a754-b2ccd1428fe5",
+            "language": "en",
+            "order": 8,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "“Could I take your name and a contact number, please?”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 264,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "76f885293bfa7ccaed44793da113a815c18616fdfbb4691845d2421162d9addd"
+            },
+            "text": "“Could I take your name and a contact number, please?”",
+            "type": "list_item"
+        },
+        {
+            "id": "e2c35646-e323-5043-8c73-365fed04b341",
+            "language": "en",
+            "order": 9,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Confirming and spelling",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 265,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "5995b690609b2c2b328d517f760c45b86ca3f2b02c8beb6f0d0d8836ba54f648"
+            },
+            "text": "Confirming and spelling",
+            "type": "heading"
+        },
+        {
+            "id": "dc5cfb6d-6adb-58a7-8eb8-a42ed8a18c09",
+            "language": "en",
+            "order": 10,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "“Let me read that back to make sure I have it right. A Deluxe Room for two nights, arriving on the fifth. Could you spell your last name for me?”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 266,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "a6e297c6aeee92a9edad6903c293302096fa0407d8339bb91a9e2c33edc3ab68"
+            },
+            "text": "“Let me read that back to make sure I have it right. A Deluxe Room for two nights, arriving on the fifth. Could you spell your last name for me?”",
+            "type": "list_item"
+        },
+        {
+            "id": "3b280a42-6c63-50df-bfc5-2e37871a6c48",
+            "language": "en",
+            "order": 11,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Transferring politely",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 267,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "cc1a161d5c79dc6b8bba32c4c668ca4826e576fd0fb83a2e8a422e4580b24800"
+            },
+            "text": "Transferring politely",
+            "type": "heading"
+        },
+        {
+            "id": "9d0b3a99-fa59-5e8d-bfec-662231288613",
+            "language": "en",
+            "order": 12,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "“I will put you through to our restaurant now. One moment, please.”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 268,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "a8c15db2d90c78f2f9d7360b7564c4428e6c9366dd0c51adfdef4f8ba0d44232"
+            },
+            "text": "“I will put you through to our restaurant now. One moment, please.”",
+            "type": "list_item"
+        },
+        {
+            "id": "7e952e6b-2814-5792-8c4e-8a86f1897c82",
+            "language": "en",
+            "order": 13,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Closing warmly",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 269,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "13fafe65d59a7f40daee00f5591cb9c47d0434b5577aba2841178b9b1386a4a8"
+            },
+            "text": "Closing warmly",
+            "type": "heading"
+        },
+        {
+            "id": "e09e0ff7-ca0c-54da-a43f-84b4400d8858",
+            "language": "en",
+            "order": 14,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "“Your booking reference is four, five, two. Thank you for calling, and we look forward to welcoming you.”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 270,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "d4a5cfda6b0094c3695eac014de9bbf26ebd7c279f72e6abb6ef91005ebc3bda"
+            },
+            "text": "“Your booking reference is four, five, two. Thank you for calling, and we look forward to welcoming you.”",
+            "type": "list_item"
+        },
+        {
+            "id": "f4cecd0c-9950-5df3-a9a5-8990b8cc546e",
+            "language": "en",
+            "order": 15,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Sounding warm when they cannot see you",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 272,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "fa320516e669027b649e75694db4f734e4ea98042b856a324b27bc3488883264"
+            },
+            "text": "Sounding warm when they cannot see you",
+            "type": "heading"
+        },
+        {
+            "id": "b700ba5a-61db-5622-bf62-ebdabfb3f4b8",
+            "language": "en",
+            "order": 16,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Your voice is your only tool on the phone, so give it a little care:",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 273,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "4379056ea6fa35e466765ad556bfd2e538cd19c9b26a9e3aabf7efdee16d23d2"
+            },
+            "text": "Your voice is your only tool on the phone, so give it a little care:",
+            "type": "paragraph"
+        },
+        {
+            "id": "7935c877-1094-55bd-9594-9b0d3c95edd0",
+            "language": "en",
+            "order": 17,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Smile as you answer. It genuinely changes how your voice sounds.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 274,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "7c4f1840d9818b7ec6c88582a14c376deba45ee26b35bfa20d21a6567771eb90"
+            },
+            "text": "Smile as you answer. It genuinely changes how your voice sounds.",
+            "type": "list_item"
+        },
+        {
+            "id": "c0ca8d3e-0036-5a28-bfad-f6a6f0c4e908",
+            "language": "en",
+            "order": 18,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Slow down, especially with numbers and names. Clear is kind.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 275,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "af09ca7a5b2868ed473ada7f1ce164e672a3db0316586941dc598d448ae3d69f"
+            },
+            "text": "Slow down, especially with numbers and names. Clear is kind.",
+            "type": "list_item"
+        },
+        {
+            "id": "55137e50-c93e-5d48-ad96-2cba2b8d5736",
+            "language": "en",
+            "order": 19,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Use small listening sounds, such as “of course” and “right,” so the caller knows you are still there.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 276,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "ccaec922aef26df3bb7c1f3520dbd3a971f036dd304e07a71a37bd0940bd8374"
+            },
+            "text": "Use small listening sounds, such as “of course” and “right,” so the caller knows you are still there.",
+            "type": "list_item"
+        },
+        {
+            "id": "43e71e3c-d270-587c-a8eb-d2845f90c785",
+            "language": "en",
+            "order": 20,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Never interrupt. Let the caller finish, then confirm what you heard.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 277,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "3d014f3ee46fdbf131206c0b31422eb5ef5a4dbdb7aab9144a3e414d52feb231"
+            },
+            "text": "Never interrupt. Let the caller finish, then confirm what you heard.",
+            "type": "list_item"
+        }
+    ],
+    "chapter_code": "HSP-C03",
+    "code": "HSP-C03-LS-05",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "07e89803-8168-552a-b88b-be864bbf78b4",
+    "language": "en",
+    "order": 5,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 256,
+        "chapter": 3,
+        "heading_path": [
+            "Dealing with Customers on the Phone",
+            "Step 3. Useful phrases, grouped by what they do"
+        ],
+        "normalized_text_sha256": "a243cc51c9162617601595ebed11b2491b70a601429f52ce4cbd192f271f326a"
+    },
+    "status": "published",
+    "title": "Step 3. Useful phrases, grouped by what they do"
+}

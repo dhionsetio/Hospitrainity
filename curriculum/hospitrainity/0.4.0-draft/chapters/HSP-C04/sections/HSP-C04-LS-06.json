@@ -1,0 +1,272 @@
+{
+    "blocks": [
+        {
+            "id": "9661c7ce-173d-5b26-b567-4951a08ccaff",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "A",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " stands for Agent, and ",
+                    "underline": false
+                },
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "G",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " stands for Guest.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 427,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 4. Model dialogue"
+                ],
+                "normalized_text_sha256": "105dad194a3d80b8f04a173869296f37792436ffa714dd0ea09e7c89b9838afe"
+            },
+            "text": "A stands for Agent, and G stands for Guest.",
+            "type": "paragraph"
+        },
+        {
+            "id": "4567a59d-996d-5edc-b92a-bd0f8f69b69c",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "A:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Guest services, Grand Serenata Hotel. How may I help you?",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "\n",
+                    "underline": false
+                },
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "G:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Hi, I would like to order some food to my room.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "\n",
+                    "underline": false
+                },
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "A:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Of course. May I have your room number, please?",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "\n",
+                    "underline": false
+                },
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "G:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Room 305.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "\n",
+                    "underline": false
+                },
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "A:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Thank you. May I take your order?",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "\n",
+                    "underline": false
+                },
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "G:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " One club sandwich and a pot of tea, please.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "\n",
+                    "underline": false
+                },
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "A:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Certainly. Let me read that back to you: one club sandwich and one pot of tea, to room 305. Would you like anything else?",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "\n",
+                    "underline": false
+                },
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "G:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " No, that is all.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "\n",
+                    "underline": false
+                },
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "A:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Lovely. That will be about twenty minutes, and it is on its way shortly. Thank you for calling guest services, and enjoy your evening.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 428,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 4. Model dialogue"
+                ],
+                "normalized_text_sha256": "e5aea2c7052abf493bdda48d125046a07a130151cb5b460b1f0781b5f9b7f286"
+            },
+            "text": "A: Guest services, Grand Serenata Hotel. How may I help you?\nG: Hi, I would like to order some food to my room.\nA: Of course. May I have your room number, please?\nG: Room 305.\nA: Thank you. May I take your order?\nG: One club sandwich and a pot of tea, please.\nA: Certainly. Let me read that back to you: one club sandwich and one pot of tea, to room 305. Would you like anything else?\nG: No, that is all.\nA: Lovely. That will be about twenty minutes, and it is on its way shortly. Thank you for calling guest services, and enjoy your evening.",
+            "type": "paragraph"
+        },
+        {
+            "id": "8cb7cba4-112c-5859-8f7e-deefb77b99e1",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Notice the rhythm: find the room, take the order, read it back, then give a time. Four calm beats, and the call is done in under a minute with nothing left to chance.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 429,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 4. Model dialogue"
+                ],
+                "normalized_text_sha256": "87b54d04d32d44b8a959d445c6e4f13034efeebf01b59375bb3c0957dc23e7e7"
+            },
+            "text": "Notice the rhythm: find the room, take the order, read it back, then give a time. Four calm beats, and the call is done in under a minute with nothing left to chance.",
+            "type": "paragraph"
+        }
+    ],
+    "chapter_code": "HSP-C04",
+    "code": "HSP-C04-LS-06",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "bf60f3c3-8f4b-5e37-8e84-bf0f5abfc0d5",
+    "language": "en",
+    "order": 6,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 426,
+        "chapter": 4,
+        "heading_path": [
+            "The Guest-Services Hotline",
+            "Step 4. Model dialogue"
+        ],
+        "normalized_text_sha256": "3198c829a36e2d5ccebe722aa40eec10a403fbba3b92f13a0ecba2cbbf92d56d"
+    },
+    "status": "published",
+    "title": "Step 4. Model dialogue"
+}

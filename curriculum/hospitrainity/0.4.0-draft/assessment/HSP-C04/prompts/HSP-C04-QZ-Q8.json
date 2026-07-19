@@ -1,0 +1,50 @@
+{
+    "activity_code": "HSP-C04-ACT-QUIZ",
+    "choices": [
+        {
+            "feedback": [],
+            "id": "6d515bf5-60fe-5ef4-8d76-4441797748fd",
+            "label": "a",
+            "text": "speaking faster and skipping the read-back"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "model_reveal",
+                    "text": "B. Calm and accurate beats fast and flustered every time."
+                }
+            ],
+            "id": "4343cb60-3d75-53f4-ad15-dcfbc7ee4851",
+            "label": "b",
+            "text": "a calm breath, a steady tone, and a quick read-back"
+        },
+        {
+            "feedback": [],
+            "id": "ae490129-cdb1-574d-854a-d459172e3316",
+            "label": "c",
+            "text": "telling the guest to hurry"
+        }
+    ],
+    "code": "HSP-C04-QZ-Q8",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "9f9f50d6-c85d-50ed-9d06-2cb4569e4a23",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 498,
+        "chapter": 4,
+        "heading_path": [
+            "The Guest-Services Hotline",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "4c8c0acb3090caf5d91e34f2423976d36228a9ef6db858ee18ee1db70f3e192c"
+    },
+    "status": "published",
+    "stem": "Q8. You feel rushed. What keeps the call warm? A) speaking faster and skipping the read-back B) a calm breath, a steady tone, and a quick read-back C) telling the guest to hurry"
+}

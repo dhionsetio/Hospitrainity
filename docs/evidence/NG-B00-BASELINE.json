@@ -1,0 +1,219 @@
+{
+    "schema_version": "1.0.0",
+    "batch": "B00",
+    "captured_at": "2026-07-19T20:21:28+07:00",
+    "state": "in_progress_pending_clean_checkout",
+    "authority": {
+        "verifier": "scripts/release/verify-authorities.ps1",
+        "results": [
+            {
+                "id": "thesis",
+                "sha256": "c38ac625a2f7a34bb004e6b68183d748bc6c1d3c1c9896c3f791909072496d34",
+                "status": "verified"
+            },
+            {
+                "id": "learning-materials",
+                "sha256": "7f8a2c62db6884498f7a1c2de56e79e39609262944a685fe7eb97f702444cbb4",
+                "status": "verified"
+            }
+        ],
+        "copied": false,
+        "tracked": false,
+        "uploaded": false,
+        "paths_logged": false
+    },
+    "runtime": {
+        "os": "Microsoft Windows NT 10.0.26200.0",
+        "powershell": "5.1.26100.8875",
+        "git": "2.55.0.windows.2",
+        "php": "8.2.32",
+        "laravel": "12.64.0",
+        "composer": "2.10.2",
+        "node": "26.4.0",
+        "npm": "11.17.0",
+        "vite": "6.4.3",
+        "tailwindcss": "4.3.3",
+        "alpine_csp": "3.15.12",
+        "fontawesome": "7.3.1",
+        "playwright": "1.61.1",
+        "libreoffice": "26.2.4.2"
+    },
+    "source_control": {
+        "branch": "main",
+        "repository_authoritative_folder": true,
+        "remote_configured": false,
+        "target_remote_visibility": "private",
+        "target_github_owner": "dhionsetio",
+        "github_plan": "Free",
+        "private_branch_protection_available": false,
+        "signing_key_configured": false,
+        "bootstrap_integrity": "unsigned local annotated tag plus exact commit/tree hashes; SSH signing required before remote publication",
+        "candidate_file_count": 1478,
+        "candidate_bytes": 8102435
+    },
+    "hashes": {
+        "roadmap_sha256": "465099eb07881dc5f32ee6b3f06fc7d0e080971313a1eab2b290316bc7e5c5a9",
+        "composer_json_sha256": "d1e974315ef345cdda976b93a673f71e8264187c75853c9a5977618e16b4fb13",
+        "composer_lock_sha256": "c1811546344f538820ea3ab098e69ea8541b9ec3cd784c4cf01a27e9614b7d02",
+        "package_json_sha256": "4aa0b81c4de11e0008327e9e488bc3a01c8c3a29fc1b348964fb023e933038fc",
+        "package_lock_sha256": "5502bbdebf0c91f1f8591e61ee135829e7ac4512a49d982bb40660c30e551eac",
+        "route_tree_sha256": "ceb2015a93408ffa53570f1cce46f4c120aa6d51205943f267f6baf6f2ec2c44",
+        "migration_tree_sha256": "f0d089ec71482853477ca1c4aae2515036c257c60836df60efb6a50b46306b2e",
+        "authority_config_sha256": "ac670a38e9c5fe46422cf9b64afca7008bd199f8dc9461865f95aead47aded2f",
+        "secret_allowlist_sha256": "a0d435b0b95e7da324f0773fc79cfba4d10e525f47065f7be05b3ded06cb6542",
+        "quality_workflow_sha256": "3477ce27293b15675739dc4dc15bab9ed3955078b7838b55994d7b5bab988c86",
+        "authority_workflow_sha256": "555b68f98ddf0626e16d46d5920441551ceda4d1479f9f9e1895460f6c7ea4b1"
+    },
+    "routes": {
+        "total": 137,
+        "named": 133,
+        "unnamed": 4
+    },
+    "migrations": {
+        "files": 22,
+        "database_rows": 22,
+        "latest_batch": 9,
+        "mutation_in_b00": false
+    },
+    "canonical": {
+        "active_version": "0.4.0-draft",
+        "active_schema_version": "2.0.0",
+        "active_lifecycle": "draft",
+        "counts": {
+            "chapters": 7,
+            "sections": 85,
+            "activities": 25,
+            "prompts": 124,
+            "answer_models": 96,
+            "feedback_models": 96,
+            "rubrics": 6
+        },
+        "source_tree_sha256": "e864b4fcaa9d182b8379cf7d179279114baa7fef46624bcb261be41b8072dc9a",
+        "laravel_projection_sha256": "0967725acf53b46349ad8000a6b8e652e8855f37978912e796c3391cd9587f7f",
+        "standalone_sha256": "55d1418fc75e359f85c9f7bb8ad1d93ea36943859b48f3c18a1db65039bf36c4",
+        "compiler_deterministic_tree_sha256": "9d1511a24c84059a7c561603bb94b6c2c52a8076edfc2ba71def63ba2f2259ac",
+        "compiler_byte_identical_files": 469,
+        "compiler_negative_probes": 6
+    },
+    "main_database": {
+        "access_mode": "SQLITE3_OPEN_READONLY + PRAGMA query_only",
+        "sha256_before_and_after_gates": "1500795734fce828592d3ca613c9c555d4b8d3879ebc8be00c1c8f84f970054a",
+        "table_counts": {
+            "users": 3,
+            "curriculum_packages": 2,
+            "curriculum_activity_progress": 4,
+            "curriculum_attempts": 4,
+            "curriculum_responses": 4,
+            "curriculum_imports": 0,
+            "administration_audits": 0,
+            "curriculum_draft_events": 0
+        },
+        "packages": [
+            {
+                "id": 1,
+                "content_version": "0.3.0-draft",
+                "schema_version": "1.0.0",
+                "active": false,
+                "lifecycle": "draft",
+                "source_tree_sha256": "44bd6bfbdc4bf3d76b4c72279c064d890bdb6d109f846b0888f69d375f8feec3"
+            },
+            {
+                "id": 2,
+                "content_version": "0.4.0-draft",
+                "schema_version": "2.0.0",
+                "active": true,
+                "lifecycle": "draft",
+                "source_tree_sha256": "e864b4fcaa9d182b8379cf7d179279114baa7fef46624bcb261be41b8072dc9a"
+            }
+        ]
+    },
+    "verification": {
+        "authority_hashes": {
+            "status": "passed",
+            "checks": 2
+        },
+        "governance_traceability": {
+            "status": "passed",
+            "findings": 43
+        },
+        "tracked_secret_artifact_scan": {
+            "status": "passed",
+            "tracked_files": 1478,
+            "reviewed_allowlisted": 4,
+            "unallowlisted": 0
+        },
+        "javascript_lint": {
+            "status": "passed",
+            "warnings": 0
+        },
+        "node_tests": {
+            "status": "passed",
+            "tests": 50,
+            "failed": 0
+        },
+        "laravel_tests": {
+            "status": "passed",
+            "tests": 215,
+            "assertions": 3783,
+            "failed": 0
+        },
+        "composer_validate": {
+            "status": "passed"
+        },
+        "composer_audit": {
+            "status": "passed",
+            "advisories": 0,
+            "abandoned": 0
+        },
+        "npm_audit": {
+            "status": "passed",
+            "vulnerabilities_total": 0,
+            "dependencies": 246
+        },
+        "vite_build": {
+            "status": "passed",
+            "modules": 11
+        },
+        "blade_cache": {
+            "status": "passed"
+        },
+        "pint": {
+            "status": "passed"
+        },
+        "compiler": {
+            "status": "passed",
+            "byte_identical_files": 469,
+            "negative_probes": 6
+        },
+        "canonical_database_package": {
+            "status": "passed"
+        },
+        "brand_guard": {
+            "status": "passed",
+            "files_scanned": 751,
+            "active_violations": 0
+        },
+        "workflow_policy": {
+            "status": "passed",
+            "workflow_files": 2,
+            "authority_trigger": "workflow_dispatch",
+            "authority_uploads": false
+        },
+        "production_readiness": {
+            "status": "expected_local_failure",
+            "checks_passed": 7,
+            "checks_failed": 7
+        },
+        "chromium_e2e": {
+            "status": "passed",
+            "tests": 7,
+            "failed": 0,
+            "duration_seconds": 32.4,
+            "main_database_unchanged": true,
+            "test_ports_closed": true
+        },
+        "clean_checkout": {
+            "status": "pending_commit_and_owner_permission"
+        }
+    }
+}

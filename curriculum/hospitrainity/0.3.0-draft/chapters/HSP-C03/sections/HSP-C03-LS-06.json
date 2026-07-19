@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C03",
+  "code": "HSP-C03-LS-06",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "e82dc8de-7e20-5068-b30f-2a62b95ddb90",
+  "order": 6,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 272,
+    "chapter": 3,
+    "heading_path": [
+      "Dealing with Customers on the Phone",
+      "Step 4. Model dialogue"
+    ],
+    "normalized_text_sha256": "5d7c6f1c786fd85e38a164ec6b424de34af4da383725a6ad1e72ec175e2f255a"
+  },
+  "status": "published",
+  "title": "Step 4. Model dialogue"
+}

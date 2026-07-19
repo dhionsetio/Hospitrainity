@@ -1,0 +1,612 @@
+{
+    "blocks": [
+        {
+            "id": "50987c41-01e2-52ae-9608-c5ad67f17496",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Guided mode (pick the best response, then check)",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 749,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "8b5c1e17e91dac6eca1351f72f3ad5c3f74412725d84779192885e8a7d4310a7"
+            },
+            "text": "Guided mode (pick the best response, then check)",
+            "type": "heading"
+        },
+        {
+            "id": "0d0c450d-9dff-5f6e-94b1-3ac25d1c0143",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "DM:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " “Is breakfast included in the room price?”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 750,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "259427eae45a28a1f682b35a582a0c94ff97765ef232805b9b31eb05716ac817"
+            },
+            "text": "DM: “Is breakfast included in the room price?”",
+            "type": "paragraph"
+        },
+        {
+            "id": "c1310db7-fb6f-5065-b7d5-f78833824a49",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Reveal the options and feedback",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 751,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "6dc878d750298bcb4a4f27b0ad5920cbcec919db017ef2f3a46fa28770873d4e"
+            },
+            "text": "Reveal the options and feedback",
+            "type": "paragraph"
+        },
+        {
+            "id": "1c007c49-ea66-54e9-9afc-b2c3bfec427b",
+            "language": "en",
+            "order": 4,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "(a) “Check our website.” Unhelpful, and it makes the guest do the work.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 752,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "70996a54aa3061d3a062966e40d0b9f240fdde0c8a437a77dd30beeb54c8bca7"
+            },
+            "text": "(a) “Check our website.” Unhelpful, and it makes the guest do the work.",
+            "type": "paragraph"
+        },
+        {
+            "id": "4888bcf1-93b3-5783-935b-7e261f34b36d",
+            "language": "en",
+            "order": 5,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "(b) “Hi there. ",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "😊",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Yes, breakfast is included in all of our room rates. Anything else I can help with?” This is the ideal answer, warm, clear, and it offers more help.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 753,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "c1d73568febe5f5dd209e85eaac83f2161b9ca81710ed964b06e1ba20f42c5b7"
+            },
+            "text": "(b) “Hi there. 😊 Yes, breakfast is included in all of our room rates. Anything else I can help with?” This is the ideal answer, warm, clear, and it offers more help.",
+            "type": "paragraph"
+        },
+        {
+            "id": "ce556385-cb26-5000-8811-17325fbad000",
+            "language": "en",
+            "order": 6,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "(c) “Yes.” Correct, but a little cold. A friendly word or two would lift it.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 754,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "d2b0db1fb1c8385cacfae4cd172a12e5ae9ab0c48281af34445d7d1aa8a436d7"
+            },
+            "text": "(c) “Yes.” Correct, but a little cold. A friendly word or two would lift it.",
+            "type": "paragraph"
+        },
+        {
+            "id": "284cfe37-6e7b-51b1-8f91-ec33a630e1ab",
+            "language": "en",
+            "order": 7,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Public comment:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " “Worst hotel ever, my room was dirty.”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 755,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "5ecb356f756aa73ef191951de650386c3b085af512c1cfd5a9496828cbc294b1"
+            },
+            "text": "Public comment: “Worst hotel ever, my room was dirty.”",
+            "type": "paragraph"
+        },
+        {
+            "id": "5b3369c8-225c-5c45-97b9-cd27aa97b2a8",
+            "language": "en",
+            "order": 8,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Reveal the options and feedback",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 756,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "6dc878d750298bcb4a4f27b0ad5920cbcec919db017ef2f3a46fa28770873d4e"
+            },
+            "text": "Reveal the options and feedback",
+            "type": "paragraph"
+        },
+        {
+            "id": "869daa47-b415-5577-a1f2-51f4afee6eb3",
+            "language": "en",
+            "order": 9,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "(a) “That is not true.” Arguing in public damages the hotel’s reputation.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 757,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "d92973ccb5afafcd86ad8f6d54f9a87c7ccfa976ca2096fd10362549c645f257"
+            },
+            "text": "(a) “That is not true.” Arguing in public damages the hotel’s reputation.",
+            "type": "paragraph"
+        },
+        {
+            "id": "d4c115dc-0ae9-5d55-92cc-e1d91de54631",
+            "language": "en",
+            "order": 10,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "(b) “We are so sorry to hear this, and it is not the experience we want for you. Please send us a DM with your booking details so we can make it right.” This is the ideal answer, empathy in public and a move to private.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 758,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "dde5c0039010be03ef81298ddc3524cecaa30b9203235afee7212127d033a5be"
+            },
+            "text": "(b) “We are so sorry to hear this, and it is not the experience we want for you. Please send us a DM with your booking details so we can make it right.” This is the ideal answer, empathy in public and a move to private.",
+            "type": "paragraph"
+        },
+        {
+            "id": "c133395e-7471-52b2-91f2-9142a6b7e986",
+            "language": "en",
+            "order": 11,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "(c) Ignoring it. Silence looks careless to everyone else reading.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 759,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "c3d39c2c524d1b2ca14a0f1e453138022408a0ddfc0b3d803f416a2ee7d6a895"
+            },
+            "text": "(c) Ignoring it. Silence looks careless to everyone else reading.",
+            "type": "paragraph"
+        },
+        {
+            "id": "51fe7541-e116-5844-85cf-a601a016c7a8",
+            "language": "en",
+            "order": 12,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "DM:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " “Can I change my booking from Friday to Saturday?”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 760,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "abd7e1db52fa15383cec68c33b3ae574cfa97631b3a23c811fe0ccd4cd51c08e"
+            },
+            "text": "DM: “Can I change my booking from Friday to Saturday?”",
+            "type": "paragraph"
+        },
+        {
+            "id": "e9b37e9f-c102-5343-ac45-bdcd05ce3504",
+            "language": "en",
+            "order": 13,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Reveal the options and feedback",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 761,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "6dc878d750298bcb4a4f27b0ad5920cbcec919db017ef2f3a46fa28770873d4e"
+            },
+            "text": "Reveal the options and feedback",
+            "type": "paragraph"
+        },
+        {
+            "id": "02039b70-c90c-5d12-af2d-8ca0510cb5b5",
+            "language": "en",
+            "order": 14,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "(a) “Maybe.” Vague and unhelpful.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 762,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "0ef83d286d0c6578bce28c53314d3cb9a3ed097c4532b224931147f56cdae7be"
+            },
+            "text": "(a) “Maybe.” Vague and unhelpful.",
+            "type": "paragraph"
+        },
+        {
+            "id": "a074f94d-79d6-5166-bfca-a13245c46707",
+            "language": "en",
+            "order": 15,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "(b) “Of course, I would be happy to help with that. Could you send me your booking reference so I can check availability for Saturday?” This is the ideal answer, warm, and it gathers what is needed privately.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 763,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "9792f1effd4d3122aa50cacb3ca4e8606a58f2003f095374ab94a5977deed52d"
+            },
+            "text": "(b) “Of course, I would be happy to help with that. Could you send me your booking reference so I can check availability for Saturday?” This is the ideal answer, warm, and it gathers what is needed privately.",
+            "type": "paragraph"
+        },
+        {
+            "id": "58ae8e50-9bfd-53f0-843f-846109235081",
+            "language": "en",
+            "order": 16,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "(c) “We do not do changes.” Cold, and it shuts the guest down.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 764,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "78aa289485d2ffb708e8ef219af390d493df2fc1ed207854dc66380804618ee8"
+            },
+            "text": "(c) “We do not do changes.” Cold, and it shuts the guest down.",
+            "type": "paragraph"
+        },
+        {
+            "id": "09d33648-7e3f-53a7-8f3c-d8f29de6da4a",
+            "language": "en",
+            "order": 17,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Free mode (your turn, write your own reply)",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 765,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "e10f4c4e0f2167023e6e1fbaae99f99d907f3a8e01f85bfa0988f5d850a91737"
+            },
+            "text": "Free mode (your turn, write your own reply)",
+            "type": "heading"
+        },
+        {
+            "id": "89034d29-bc40-5fbe-a843-cfc8a0dfe5cb",
+            "language": "en",
+            "order": 18,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Prompt:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Reply to a WhatsApp message that asks about the check-in time and parking.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 766,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "1cabbbb0d0c31a123aee673fa50e9c7adc3cb7e277b097c3460808eec5763f5d"
+            },
+            "text": "Prompt: Reply to a WhatsApp message that asks about the check-in time and parking.",
+            "type": "instruction"
+        },
+        {
+            "id": "31727c87-68c4-596e-a745-da60b3e07a61",
+            "language": "en",
+            "order": 19,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "See a model answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 767,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "115cd5fb848ceef36134cf981997fcf0d145aca19ef299453b13791da2b2b176"
+            },
+            "text": "See a model answer",
+            "type": "paragraph"
+        },
+        {
+            "id": "fd38a818-658f-512b-9bd1-1cdaaab3f4d7",
+            "language": "en",
+            "order": 20,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "“Hi there, thanks for messaging Grand Serenata. ",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "😊",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Check-in is from 2 in the afternoon, and yes, we offer free parking for guests. Let me know if there is anything else I can help with.”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 768,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "6c5199cce70c58a1a21f8b4a9b472c699880aa8e23ed513d4759c97779ec4bdd"
+            },
+            "text": "“Hi there, thanks for messaging Grand Serenata. 😊 Check-in is from 2 in the afternoon, and yes, we offer free parking for guests. Let me know if there is anything else I can help with.”",
+            "type": "paragraph"
+        },
+        {
+            "activity_code": "HSP-C06-ACT-ROLEPLAY",
+            "id": "f9673b18-7c2d-5dd7-a362-380c111f94d9",
+            "language": "en",
+            "order": 21,
+            "provenance_kind": "derived_navigation",
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 748,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "2820d9182be9f0c2b25264c9853f2df9c8c0866110449f03bf85a3cd5e08c862"
+            },
+            "type": "activity_embed"
+        }
+    ],
+    "chapter_code": "HSP-C06",
+    "code": "HSP-C06-LS-09",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "5a8bfd16-1374-5e82-8630-dc551e5a7650",
+    "language": "en",
+    "order": 9,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 748,
+        "chapter": 6,
+        "heading_path": [
+            "Online and Social Media Customer Service",
+            "Step 6. Role-play"
+        ],
+        "normalized_text_sha256": "2820d9182be9f0c2b25264c9853f2df9c8c0866110449f03bf85a3cd5e08c862"
+    },
+    "status": "published",
+    "title": "Step 6. Role-play"
+}

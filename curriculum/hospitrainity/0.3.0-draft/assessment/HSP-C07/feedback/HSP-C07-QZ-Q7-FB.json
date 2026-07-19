@@ -1,0 +1,26 @@
+{
+  "code": "HSP-C07-QZ-Q7-FB",
+  "content_version": "0.3.0-draft",
+  "entity_type": "feedback-model",
+  "id": "62f4594c-0ded-5c64-9419-f1e1b8524c0b",
+  "messages": [
+    {
+      "feedback_type": "model_reveal",
+      "text": "B. You can be sorry for the experience without assigning blame."
+    }
+  ],
+  "prompt_code": "HSP-C07-QZ-Q7",
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 920,
+    "chapter": 7,
+    "heading_path": [
+      "Dealing with Problems and Complaints",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "895aaa91d40a65294739017e4561899965a9ec36573bb89bcf3e4916aa57cdcf"
+  },
+  "status": "published"
+}

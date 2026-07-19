@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C05",
+  "code": "HSP-C05-LS-02",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "a2793d2d-a0ab-5392-b263-0b622a1c1803",
+  "order": 2,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 518,
+    "chapter": 5,
+    "heading_path": [
+      "Customer Care Through Writing",
+      "Why this matters"
+    ],
+    "normalized_text_sha256": "21f2089026a78d1e44d72b98d326b975d2377384f75ed7421a1a7666da801004"
+  },
+  "status": "published",
+  "title": "Why this matters"
+}

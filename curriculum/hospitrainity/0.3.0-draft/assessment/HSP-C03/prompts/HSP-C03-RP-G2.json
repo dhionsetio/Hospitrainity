@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C03-ACT-ROLEPLAY",
+  "code": "HSP-C03-RP-G2",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "bf043806-7bc1-55af-9b44-af86f490ec36",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 307,
+    "chapter": 3,
+    "heading_path": [
+      "Dealing with Customers on the Phone",
+      "Step 6. Role-play"
+    ],
+    "normalized_text_sha256": "66f4ffec07bddea1fe3bd25026ebf801a4bd3909a89993450db205ead93b2c56"
+  },
+  "status": "published",
+  "stem": "Caller: “Sorry, the line is a little unclear. Could you repeat that?”"
+}

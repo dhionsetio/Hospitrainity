@@ -1,0 +1,57 @@
+{
+  "checkpoint": "CP-08",
+  "phase": "Platform and database design",
+  "date": "2026-07-15",
+  "source_of_truth": {
+    "artifact": "Hospitrainity.docx",
+    "sha256": "7f8a2c62db6884498f7a1c2de56e79e39609262944a685fe7eb97f702444cbb4"
+  },
+  "inputs": {
+    "source_zip": {
+      "name": "Hospitrainity-Source-Phase7.zip",
+      "sha256": "2bdd9bc125b6de2f762152d0cc1e4e8bc4fee0788c95e65546bc9b0ef91f9c7e"
+    },
+    "standalone_html": {
+      "name": "Hospitrainity-Standalone.html (CP-07)",
+      "sha256": "fbe311a1b25a040478c441becaddce868206fcf3fc93c1779e72b149cb79ad2d"
+    }
+  },
+  "outputs": {
+    "standalone_html": {
+      "name": "Hospitrainity-Standalone.html (CP-08)",
+      "sha256": "43e34b181ca0424c4d5790f6caaea37d9974fa72e826ebe33b5ff585c86cc6de"
+    },
+    "note": "Hospitrainity-Source-Phase8.zip checksum is reported in the checkpoint delivery message; a zip cannot embed its own hash."
+  },
+  "added_docs": [
+    "docs/hospitrainity-migration/phase-08/README.md",
+    "docs/hospitrainity-migration/phase-08/platform-architecture.md",
+    "docs/hospitrainity-migration/phase-08/database-design.md",
+    "docs/hospitrainity-migration/phase-08/import-contract.md",
+    "docs/hospitrainity-migration/phase-08/data-model.json",
+    "docs/hospitrainity-migration/phase-08/schema.sql",
+    "docs/hospitrainity-migration/phase-08/coverage.json",
+    "docs/hospitrainity-migration/phase-08/checkpoint-report.md",
+    "docs/hospitrainity-migration/phase-08/source-manifest.json",
+    "docs/hospitrainity-migration/phase-03/tools/hsp-datamodel.mjs"
+  ],
+  "data_model": {
+    "entity_tables": 9,
+    "framework_document_table": true,
+    "id_bearing_entities": 435,
+    "registry_ids": 487,
+    "fk_refs_checked": 525,
+    "fk_violations": 0
+  },
+  "chosen_technique": "document-relational hybrid on PostgreSQL 15+ (doc jsonb + extracted columns + code FKs + lifecycle CHECK); SQLite mirror for offline standalone",
+  "standards": ["JSON Schema 2020-12", "SemVer 2.0.0", "RFC 9562 UUIDv5"],
+  "validation": "node docs/hospitrainity-migration/phase-03/tools/hsp-validate.mjs all --strict => 8/8",
+  "invariants": [
+    "no content or assessment entity mutated (all CP-04/CP-05 provenance hashes still verify)",
+    "CP-02 framework/*.json byte-identical",
+    "provenance/docx-digest.json and provenance/assessment-digest.json unchanged",
+    "id-registry unchanged at 487 entries (registry_version 1.2.0)",
+    "assets/ directory unchanged",
+    "learner-facing standalone payload unchanged (provenance marker only)"
+  ]
+}

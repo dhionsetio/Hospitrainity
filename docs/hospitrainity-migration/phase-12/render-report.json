@@ -1,0 +1,34 @@
+{
+  "banned_terms": {
+    "youkata": 0
+  },
+  "checkpoint": "CP-12",
+  "counts": {
+    "activities": 24,
+    "chapters": 7,
+    "outcomes": 21,
+    "prompts": 102,
+    "sections": 85
+  },
+  "generated_from": "phase-09/curriculum.sql",
+  "integrity": {
+    "orphan_activities": 0,
+    "prompts_with_answer_model": 102,
+    "prompts_with_feedback": 102,
+    "prompts_with_model_answer_text": 90,
+    "rubrics": 6,
+    "unplaced_prompts": 0
+  },
+  "ok": true,
+  "standalone": {
+    "bytes": 93543,
+    "sha256": "56eb11307bd33893676b2e1f53f9a3606d875424fa5cff4df6df9bc8214a5a9c"
+  },
+  "template": "phase-03/tools/render-template.html",
+  "view_model_sha256": "fe46eb25291cc9fc379b242e9bdc969b7addf961e55a853a6986bafd00f37578",
+  "workflow": {
+    "gate": "open",
+    "modules_approved": 0,
+    "modules_in_review": 7
+  }
+}

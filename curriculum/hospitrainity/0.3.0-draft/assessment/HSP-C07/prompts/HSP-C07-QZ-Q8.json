@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C07-ACT-QUIZ",
+  "code": "HSP-C07-QZ-Q8",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "c2b89b5d-0e28-5717-aba4-0c40d8b1c763",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 921,
+    "chapter": 7,
+    "heading_path": [
+      "Dealing with Problems and Complaints",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "be222241c92a0e492eed4eb8b6bd3682b4863e7b0958f53a1742db3ddb7d47a0"
+  },
+  "status": "published",
+  "stem": "Q8. What is “service recovery”? A) turning an unhappy guest back into a happy one B) repairing broken equipment C) recovering a lost booking"
+}

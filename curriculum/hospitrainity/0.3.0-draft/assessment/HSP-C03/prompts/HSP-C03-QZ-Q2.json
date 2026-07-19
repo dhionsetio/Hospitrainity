@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C03-ACT-QUIZ",
+  "code": "HSP-C03-QZ-Q2",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "586f1b3f-257e-5ece-814c-ff4ee06ccd04",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 326,
+    "chapter": 3,
+    "heading_path": [
+      "Dealing with Customers on the Phone",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "a78988297a4163043b357d2045d05db42b41f407b3b52230e62c873fc3812c3d"
+  },
+  "status": "published",
+  "stem": "Q2. “To put someone on hold” means ... A) to end the call B) to pause the call politely C) to transfer the call"
+}

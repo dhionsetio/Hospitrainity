@@ -1,0 +1,28 @@
+{
+    "accepted": [
+        "b"
+    ],
+    "code": "HSP-C03-RP-G2-AM",
+    "content_version": "0.4.0-draft",
+    "correct_choice_ids": [
+        "261b42cb-f9c9-57c6-95ba-980937d2ae8e"
+    ],
+    "entity_type": "answer-model",
+    "id": "5d8e1218-955e-54fb-b46d-c7a2edde1eb4",
+    "prompt_code": "HSP-C03-RP-G2",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 1,
+        "chapter": 3,
+        "heading_path": [
+            "Dealing with Customers on the Phone",
+            "Step 6. Role-play"
+        ],
+        "normalized_text_sha256": "3e23e8160039594a33894f6564e1b1348bbd7a0088d42c4acb73eeaed59c009d"
+    },
+    "status": "published"
+}

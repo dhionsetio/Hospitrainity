@@ -1,0 +1,24 @@
+{
+  "accepted": [
+    "Listen, then Apologise, then Act, then Follow up."
+  ],
+  "code": "HSP-C07-PR-I3-AM",
+  "content_version": "0.3.0-draft",
+  "entity_type": "answer-model",
+  "id": "30c0e811-bd68-5604-8638-d1ea82ff6213",
+  "prompt_code": "HSP-C07-PR-I3",
+  "replaced_by": null,
+  "replaces": null,
+  "scoring_mode": "objective_normalized",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 872,
+    "chapter": 7,
+    "heading_path": [
+      "Dealing with Problems and Complaints",
+      "Step 5. Practice"
+    ],
+    "normalized_text_sha256": "6bf31ff7532acecc0cd774a82125c4ecb83ce292dee3dce0fb0f8fad19427c73"
+  },
+  "status": "published"
+}

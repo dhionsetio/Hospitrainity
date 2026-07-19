@@ -1,0 +1,50 @@
+{
+    "accessibility": [
+        "text_alt",
+        "keyboard_path",
+        "non_color_cue",
+        "no_timing_dependency"
+    ],
+    "cefr_activity": "interaction",
+    "channel": "social_public_reply",
+    "code": "HSP-C06-ACT-CONFIDENCE",
+    "completion_rule": "all_rated",
+    "completion_rule_provenance_kind": "derived_workflow",
+    "content_version": "0.4.0-draft",
+    "entity_type": "activity",
+    "guidance": "Rate yourself honestly, from 1 (not confident yet) to 5 (very confident). This is just for you, and it is a good way to see your progress.",
+    "guidance_provenance_kind": "source_verbatim",
+    "id": "839b9e23-c97d-50d7-97fa-333c3d89ca3d",
+    "lesson_code": "HSP-C06-LS-11",
+    "outcome_codes": [
+        "OUT-M06-01",
+        "OUT-M06-02",
+        "OUT-M06-03"
+    ],
+    "participation": "individual",
+    "pedagogical_function": "reflection",
+    "prompt_scoring_modes": [
+        "unscored_self_report"
+    ],
+    "rating_item_count": 4,
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "rating",
+    "response_forms": [
+        "rating"
+    ],
+    "scoring_mode": "unscored_self_report",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "block_index": 780,
+        "chapter": 6,
+        "heading_path": [
+            "Online and Social Media Customer Service",
+            "Step 8. Confidence check"
+        ],
+        "normalized_text_sha256": "de3541b7e7f4f5aff977a439df59ffbf2a304ff6fc9152f1e6f7a6991667643c"
+    },
+    "status": "published",
+    "timing": "asynchronous",
+    "title": "Step 8. Confidence check"
+}

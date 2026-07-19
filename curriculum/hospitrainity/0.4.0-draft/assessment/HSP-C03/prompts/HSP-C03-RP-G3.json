@@ -1,0 +1,60 @@
+{
+    "activity_code": "HSP-C03-ACT-ROLEPLAY",
+    "choices": [
+        {
+            "feedback": [
+                {
+                    "feedback_type": "error_specific",
+                    "text": "(a) “Wrong number.” Cold and unhelpful."
+                }
+            ],
+            "id": "948e5fde-32c3-5062-8ecd-231bd23a2363",
+            "label": "a",
+            "text": "“Wrong number.”"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "success",
+                    "text": "(b) “Of course, I will put you through to our restaurant now. One moment, please.” This is the ideal answer, because it transfers the caller warmly and clearly."
+                }
+            ],
+            "id": "fc43e907-0523-5417-8e0e-2407b57c9b5f",
+            "label": "b",
+            "text": "“Of course, I will put you through to our restaurant now. One moment, please.”"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "error_specific",
+                    "text": "(c) “I cannot help with that.” This leaves the caller with nowhere to go."
+                }
+            ],
+            "id": "ebe08b33-e69d-55fd-8fe9-c1f5a31c264c",
+            "label": "c",
+            "text": "“I cannot help with that.”"
+        }
+    ],
+    "code": "HSP-C03-RP-G3",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "0c1035a1-7769-5129-89b3-67e93e454f62",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 319,
+        "chapter": 3,
+        "heading_path": [
+            "Dealing with Customers on the Phone",
+            "Step 6. Role-play"
+        ],
+        "normalized_text_sha256": "e7d31570247c97357ef7d0975f7ce7c000cd78024ad0925f827fbf59d8259ddc"
+    },
+    "status": "published",
+    "stem": "Caller: “Actually, I need to speak to someone about a dinner booking.”"
+}

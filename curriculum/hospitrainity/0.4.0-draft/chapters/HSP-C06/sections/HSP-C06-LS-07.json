@@ -1,0 +1,182 @@
+{
+    "blocks": [
+        {
+            "id": "c638f6c7-1eea-5ac8-96c2-8210e48c2966",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Open for five common mistakes",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 726,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Common mistakes to avoid"
+                ],
+                "normalized_text_sha256": "a433b254794ec760d8fec78cc3f476ae28f47f15bd12cd32be5e9d650aac6f83"
+            },
+            "text": "Open for five common mistakes",
+            "type": "paragraph"
+        },
+        {
+            "id": "0c65e76e-23a3-5196-967b-0efbd6a032a9",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Replying too slowly. Online, a fast “let me check that for you” beats a perfect answer an hour late.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 727,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Common mistakes to avoid"
+                ],
+                "normalized_text_sha256": "bedf0bc1b842b9e4101908a8ee15661dc2baa3700335c769d6479e1026700438"
+            },
+            "text": "Replying too slowly. Online, a fast “let me check that for you” beats a perfect answer an hour late.",
+            "type": "list_item"
+        },
+        {
+            "id": "5149f6dd-7e11-5276-b869-3dfd943b4157",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Writing a long, formal paragraph. Chat should feel light and quick.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 728,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Common mistakes to avoid"
+                ],
+                "normalized_text_sha256": "0bcfe6b9f4c32704fd498888f437f2124046627ff97e05535a96b9d7226fecd2"
+            },
+            "text": "Writing a long, formal paragraph. Chat should feel light and quick.",
+            "type": "list_item"
+        },
+        {
+            "id": "ad78156c-a067-54cd-bd84-2d7d1c16f0e9",
+            "language": "en",
+            "order": 4,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Using too many emojis. One is warm, five looks unserious.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 729,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Common mistakes to avoid"
+                ],
+                "normalized_text_sha256": "6dc37cb8d4474254764096b1e4cf9488b618e83573f9d9e6f587c923457b554d"
+            },
+            "text": "Using too many emojis. One is warm, five looks unserious.",
+            "type": "list_item"
+        },
+        {
+            "id": "9bf0cf68-bf6a-5aa5-ad89-bfabf4c33263",
+            "language": "en",
+            "order": 5,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Arguing in a public comment. Acknowledge kindly, then move it private.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 730,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Common mistakes to avoid"
+                ],
+                "normalized_text_sha256": "a5dc01468fe63ab6fe210f5693c665e0a733f2ba1c4a0e3bd145921b678dca81"
+            },
+            "text": "Arguing in a public comment. Acknowledge kindly, then move it private.",
+            "type": "list_item"
+        },
+        {
+            "id": "892516f3-e20e-58e9-9530-4ba5aa635619",
+            "language": "en",
+            "order": 6,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Sharing booking or personal details in public. Always take those to a DM.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 731,
+                "chapter": 6,
+                "heading_path": [
+                    "Online and Social Media Customer Service",
+                    "Common mistakes to avoid"
+                ],
+                "normalized_text_sha256": "3ad1150705010ece7082edf2afb80ff62b9f24ebee3a75993bc5284fe92cdd30"
+            },
+            "text": "Sharing booking or personal details in public. Always take those to a DM.",
+            "type": "list_item"
+        }
+    ],
+    "chapter_code": "HSP-C06",
+    "code": "HSP-C06-LS-07",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "81e7a240-501b-506f-b814-6d536d9626ff",
+    "language": "en",
+    "order": 7,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 725,
+        "chapter": 6,
+        "heading_path": [
+            "Online and Social Media Customer Service",
+            "Common mistakes to avoid"
+        ],
+        "normalized_text_sha256": "09280c77c069d2c19c40ad919cf2f1fa07a028a886d911cc8f9318f19c0a51e0"
+    },
+    "status": "published",
+    "title": "Common mistakes to avoid"
+}

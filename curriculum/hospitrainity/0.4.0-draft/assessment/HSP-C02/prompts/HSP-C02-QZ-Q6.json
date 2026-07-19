@@ -1,0 +1,50 @@
+{
+    "activity_code": "HSP-C02-ACT-QUIZ",
+    "choices": [
+        {
+            "feedback": [],
+            "id": "420bba6b-b2a7-5cf7-a6cb-a071f56c8ef6",
+            "label": "a",
+            "text": "“Sign here.”"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "model_reveal",
+                    "text": "B. Warmth, empathy, and efficient action together make strong hospitality."
+                }
+            ],
+            "id": "0501d7da-e8ec-5537-a655-db787811a571",
+            "label": "b",
+            "text": "“Welcome. You must have had a long trip, so let us get you checked in quickly so you can rest.”"
+        },
+        {
+            "feedback": [],
+            "id": "99a10eda-1bc2-5e1c-9a9a-9aa72bc0031c",
+            "label": "c",
+            "text": "“Hurry up, please.”"
+        }
+    ],
+    "code": "HSP-C02-QZ-Q6",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "db4a4b60-1216-5f2d-a9e8-0c62fe5c2133",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 198,
+        "chapter": 2,
+        "heading_path": [
+            "Front Desk and Check-In",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "69ea004bb976cd63c52e3412b9049d070fafbbc348874c4f9d7efb17439b125b"
+    },
+    "status": "published",
+    "stem": "Q6. A guest looks exhausted. Which reply shows the best hospitality? A) “Sign here.” B) “Welcome. You must have had a long trip, so let us get you checked in quickly so you can rest.” C) “Hurry up, please.”"
+}

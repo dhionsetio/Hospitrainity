@@ -1,0 +1,546 @@
+{
+    "blocks": [
+        {
+            "id": "29aed95b-cc5b-57eb-b5db-2922a415cdc6",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Answering the hotline",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 404,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "d04f424adfe0f39a65f361617d144f32fedd265ca375fbe5ce93bd9870308851"
+            },
+            "text": "Answering the hotline",
+            "type": "heading"
+        },
+        {
+            "id": "aa6d34ff-8750-5215-b739-8fed9221cfe5",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "“Guest services, Grand Serenata Hotel. How may I help you?”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 405,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "8ff489153fb4b4e91e0ae2b5f617a45f9ae5b61711f87a43b58a7b4daab52801"
+            },
+            "text": "“Guest services, Grand Serenata Hotel. How may I help you?”",
+            "type": "list_item"
+        },
+        {
+            "id": "45f79655-24e1-5cd8-8a41-d7946e62713b",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Finding the room",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 406,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "2994fb46b0d7d59b540b60557e542c61df08627dcff0552d5d4cd539d4ab2e33"
+            },
+            "text": "Finding the room",
+            "type": "heading"
+        },
+        {
+            "id": "ea086f15-a262-55bf-92b8-feaeb8639c3e",
+            "language": "en",
+            "order": 4,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "“May I have your room number, please?”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 407,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "b0823261b936e82de8b943fe5fdaa4b459a452062e03a3aa33a6dc927f8ed196"
+            },
+            "text": "“May I have your room number, please?”",
+            "type": "list_item"
+        },
+        {
+            "id": "605b6c65-52b7-5b82-b41a-90b0d661beee",
+            "language": "en",
+            "order": 5,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Taking an order",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 408,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "d7e974d1f9ee7a7c4adc12ec29a6f747bcb7f3cd222e157603f2ac9aeed5586e"
+            },
+            "text": "Taking an order",
+            "type": "heading"
+        },
+        {
+            "id": "665f1465-71f1-5f5b-b076-3bff49ecbec5",
+            "language": "en",
+            "order": 6,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "“Of course, may I take your order? So that is one club sandwich and a pot of tea. Would you like anything else?”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 409,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "fa9499f3c7fae1f8a95c41d3fe5c630dafaf41bc81c6cd3c575ea86fe296273d"
+            },
+            "text": "“Of course, may I take your order? So that is one club sandwich and a pot of tea. Would you like anything else?”",
+            "type": "list_item"
+        },
+        {
+            "id": "1b84aa20-2b32-57f7-a7cb-8e41f9fad2a0",
+            "language": "en",
+            "order": 7,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Reading it back to confirm",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 410,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "14297b1a441ecf63e586c95eec1e1df88df35d6a3e0e23e822ae40f458dcb441"
+            },
+            "text": "Reading it back to confirm",
+            "type": "heading"
+        },
+        {
+            "id": "22b68733-9359-56ca-9bd6-33f6384e9d84",
+            "language": "en",
+            "order": 8,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "“Let me read that back to you: one club sandwich and one pot of tea, to room 305.”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 411,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "c6b6c582c0a94a1de1a462ec65619a0010411e3b1bb4e86493ac480bc7c22722"
+            },
+            "text": "“Let me read that back to you: one club sandwich and one pot of tea, to room 305.”",
+            "type": "list_item"
+        },
+        {
+            "id": "8b93a74e-e000-53eb-8fc9-29724199b385",
+            "language": "en",
+            "order": 9,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Giving a time",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 412,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "522ec92949ef5df86db6acc5b88038fb0fa225621ba85fd62a5879af574ecef8"
+            },
+            "text": "Giving a time",
+            "type": "heading"
+        },
+        {
+            "id": "b7489d1c-870b-530d-a425-ada11ae47dd8",
+            "language": "en",
+            "order": 10,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "“That will be about twenty minutes.”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 413,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "f0aa433d4c7584fd414ee185f2b097ae25e6adc95d93ea432fa33c3dc6455513"
+            },
+            "text": "“That will be about twenty minutes.”",
+            "type": "list_item"
+        },
+        {
+            "id": "bb893efa-c4ac-5ec3-b502-f1271db1a280",
+            "language": "en",
+            "order": 11,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Transferring warmly",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 414,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "3d55ac7baa90f20540404f51b6f66a119d6ee4cc58119055de53e6ab9e854bd2"
+            },
+            "text": "Transferring warmly",
+            "type": "heading"
+        },
+        {
+            "id": "95681766-8ce4-545b-992a-17ae806edea2",
+            "language": "en",
+            "order": 12,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "“I will put you through to housekeeping right away. One moment, please.”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 415,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "e88050707d2777dcfb89bf87fe726fec68ad93de0b72771437e8a296850f4b63"
+            },
+            "text": "“I will put you through to housekeeping right away. One moment, please.”",
+            "type": "list_item"
+        },
+        {
+            "id": "29e284ca-7eb2-5a27-a3d2-7e3b56723fe5",
+            "language": "en",
+            "order": 13,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Closing kindly",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 416,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "f7f94372b046f0d27f35de98c706560502e4b8a622aa182eef143a1b5556a426"
+            },
+            "text": "Closing kindly",
+            "type": "heading"
+        },
+        {
+            "id": "8001f807-4139-5b5b-8c42-4563a6717e41",
+            "language": "en",
+            "order": 14,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "“Thank you for calling guest services. Enjoy your evening.”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 417,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "3f28520155aeee82f342f73c5b818d1fff0b1da2b5832a96756e716e93747980"
+            },
+            "text": "“Thank you for calling guest services. Enjoy your evening.”",
+            "type": "list_item"
+        },
+        {
+            "id": "4c3fd81b-a331-5e61-b2b2-466a454d96bf",
+            "language": "en",
+            "order": 15,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Staying warm when the pace picks up",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 419,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "680d148ef1f503ea2a8dfe29b79d31b1c87b469f7f559e82204f5fe362c36554"
+            },
+            "text": "Staying warm when the pace picks up",
+            "type": "heading"
+        },
+        {
+            "id": "cf77b954-e709-5ae4-934e-8d31ff4119e2",
+            "language": "en",
+            "order": 16,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Busy does not have to sound busy. A few small habits keep you calm and kind:",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 420,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "b409b47b425c6d4ed95cbef5f9395baae3b76a17e35403741bd0dc007cf416d7"
+            },
+            "text": "Busy does not have to sound busy. A few small habits keep you calm and kind:",
+            "type": "paragraph"
+        },
+        {
+            "id": "bf04922b-9515-52f8-8ce5-f7976f3e2183",
+            "language": "en",
+            "order": 17,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Take a slow breath before you answer. Your voice follows your breath.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 421,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "46d3a04ce6a1791b304cda6760b9b2c2f95713791c2003eb637c602793b994ab"
+            },
+            "text": "Take a slow breath before you answer. Your voice follows your breath.",
+            "type": "list_item"
+        },
+        {
+            "id": "d8b32354-e6e2-5100-953e-08122626d50d",
+            "language": "en",
+            "order": 18,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Never let the guest hear that you are rushed. A hurried tone makes them feel like a bother.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 422,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "62f67e6c77916cce51c8ba6d6eb72a746cea5845798e5ce934612473d7ca5c83"
+            },
+            "text": "Never let the guest hear that you are rushed. A hurried tone makes them feel like a bother.",
+            "type": "list_item"
+        },
+        {
+            "id": "60648c31-5ca0-5875-9457-084ced849731",
+            "language": "en",
+            "order": 19,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Use warm little signals, such as “of course” and “right away,” so they feel looked after.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 423,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "92ffb20f3308da71c60312462d4d9f79398cd8e5ea55320aae190d3271a120bc"
+            },
+            "text": "Use warm little signals, such as “of course” and “right away,” so they feel looked after.",
+            "type": "list_item"
+        },
+        {
+            "id": "8f712686-f975-5b4c-a568-33231ee8e3c2",
+            "language": "en",
+            "order": 20,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Always read the order back, even when you are sure. It takes five seconds and saves five minutes.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 424,
+                "chapter": 4,
+                "heading_path": [
+                    "The Guest-Services Hotline",
+                    "Step 3. Useful phrases, grouped by what they do"
+                ],
+                "normalized_text_sha256": "ebf775f36c50a0c10361166e559cff5a86e6ab9e325668ac0ae3e05736d7dae8"
+            },
+            "text": "Always read the order back, even when you are sure. It takes five seconds and saves five minutes.",
+            "type": "list_item"
+        }
+    ],
+    "chapter_code": "HSP-C04",
+    "code": "HSP-C04-LS-05",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "06d8ad10-3b81-5e33-92ef-1c020f2af2b2",
+    "language": "en",
+    "order": 5,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 403,
+        "chapter": 4,
+        "heading_path": [
+            "The Guest-Services Hotline",
+            "Step 3. Useful phrases, grouped by what they do"
+        ],
+        "normalized_text_sha256": "a243cc51c9162617601595ebed11b2491b70a601429f52ce4cbd192f271f326a"
+    },
+    "status": "published",
+    "title": "Step 3. Useful phrases, grouped by what they do"
+}

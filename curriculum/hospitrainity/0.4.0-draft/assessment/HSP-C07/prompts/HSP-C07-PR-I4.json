@@ -1,0 +1,30 @@
+{
+    "activity_code": "HSP-C07-ACT-PRACTICE",
+    "code": "HSP-C07-PR-I4",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "8a022e02-3896-527d-9479-ef8f85153830",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_constraints": {
+        "maximum_characters": 4000,
+        "minimum_non_whitespace_characters": 1
+    },
+    "response_form": "short_text",
+    "scoring_mode": "model_self_check",
+    "self_check_required": true,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 892,
+        "chapter": 7,
+        "heading_path": [
+            "Dealing with Problems and Complaints",
+            "Step 5. Practice"
+        ],
+        "normalized_text_sha256": "6479195424b967b1cbb77498c17f4d426f963fd15b1ad700348fb1f74b92367e"
+    },
+    "status": "published",
+    "stem": "4. Add empathy: a guest says “I have been waiting an hour for my food.” What is a warm first line?"
+}

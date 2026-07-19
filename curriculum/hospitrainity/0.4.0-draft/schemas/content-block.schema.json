@@ -1,0 +1,131 @@
+{
+    "$id": "https://hospitrainity.local/schemas/content-block.schema.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": true,
+    "allOf": [
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "const": "source_table"
+                    }
+                }
+            },
+            "then": {
+                "required": [
+                    "header",
+                    "rows",
+                    "caption"
+                ]
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "const": "external_link"
+                    }
+                }
+            },
+            "then": {
+                "required": [
+                    "links"
+                ]
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "const": "activity_embed"
+                    }
+                }
+            },
+            "then": {
+                "required": [
+                    "activity_code"
+                ]
+            }
+        }
+    ],
+    "properties": {
+        "id": {
+            "format": "uuid",
+            "type": "string"
+        },
+        "language": {
+            "pattern": "^[a-z]{2}(?:-[A-Z]{2})?$",
+            "type": "string"
+        },
+        "order": {
+            "minimum": 1,
+            "type": "integer"
+        },
+        "provenance_kind": {
+            "enum": [
+                "source_verbatim",
+                "derived_navigation"
+            ]
+        },
+        "source_locator": {
+            "additionalProperties": false,
+            "properties": {
+                "artifact": {
+                    "const": "Hospitrainity.docx"
+                },
+                "body_index": {
+                    "minimum": 0,
+                    "type": "integer"
+                },
+                "chapter": {
+                    "maximum": 7,
+                    "minimum": 1,
+                    "type": "integer"
+                },
+                "heading_path": {
+                    "items": {
+                        "minLength": 1,
+                        "type": "string"
+                    },
+                    "minItems": 1,
+                    "type": "array"
+                },
+                "normalized_text_sha256": {
+                    "pattern": "^[0-9a-f]{64}$",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "artifact",
+                "body_index",
+                "chapter",
+                "heading_path",
+                "normalized_text_sha256"
+            ],
+            "type": "object"
+        },
+        "type": {
+            "enum": [
+                "paragraph",
+                "heading",
+                "callout",
+                "list_item",
+                "dialogue_turn",
+                "source_table",
+                "external_link",
+                "instruction",
+                "activity_embed"
+            ]
+        }
+    },
+    "required": [
+        "id",
+        "type",
+        "order",
+        "language",
+        "provenance_kind",
+        "source_locator"
+    ],
+    "title": "Hospitrainity canonical content block",
+    "type": "object"
+}

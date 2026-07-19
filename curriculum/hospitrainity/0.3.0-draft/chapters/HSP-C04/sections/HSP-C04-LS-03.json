@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C04",
+  "code": "HSP-C04-LS-03",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "c493f644-4148-5ef8-8652-64fe396a31d9",
+  "order": 3,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 379,
+    "chapter": 4,
+    "heading_path": [
+      "The Guest-Services Hotline",
+      "Step 1. The scenario"
+    ],
+    "normalized_text_sha256": "460d512093a890b248bdc3640a3ae135162db12b0835c6e506de387c041afcb5"
+  },
+  "status": "published",
+  "title": "Step 1. The scenario"
+}

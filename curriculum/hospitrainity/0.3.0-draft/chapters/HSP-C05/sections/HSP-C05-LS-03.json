@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C05",
+  "code": "HSP-C05-LS-03",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "9143daff-7a0f-589a-9951-5d2523d155de",
+  "order": 3,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 522,
+    "chapter": 5,
+    "heading_path": [
+      "Customer Care Through Writing",
+      "Step 1. The scenario"
+    ],
+    "normalized_text_sha256": "3ba43d72762f743d2a77d6205fd3a7966491a02210f8f52ac4d24071a7a9c016"
+  },
+  "status": "published",
+  "title": "Step 1. The scenario"
+}

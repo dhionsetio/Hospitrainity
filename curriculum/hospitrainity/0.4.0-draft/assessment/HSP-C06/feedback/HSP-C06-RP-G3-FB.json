@@ -1,0 +1,35 @@
+{
+    "code": "HSP-C06-RP-G3-FB",
+    "content_version": "0.4.0-draft",
+    "entity_type": "feedback-model",
+    "id": "3cee48a0-2c09-53ea-80ff-5b62ce562244",
+    "messages": [
+        {
+            "feedback_type": "error_specific",
+            "text": "(a) “Maybe.” Vague and unhelpful."
+        },
+        {
+            "feedback_type": "success",
+            "text": "(b) “Of course, I would be happy to help with that. Could you send me your booking reference so I can check availability for Saturday?” This is the ideal answer, warm, and it gathers what is needed privately."
+        },
+        {
+            "feedback_type": "error_specific",
+            "text": "(c) “We do not do changes.” Cold, and it shuts the guest down."
+        }
+    ],
+    "prompt_code": "HSP-C06-RP-G3",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 762,
+        "chapter": 6,
+        "heading_path": [
+            "Online and Social Media Customer Service",
+            "Step 6. Role-play"
+        ],
+        "normalized_text_sha256": "4681dfbe07597c812edf852f5599dc381f4c4c6abf8dce2436f6e1e0474ca722"
+    },
+    "status": "published"
+}

@@ -1,0 +1,186 @@
+{
+    "blocks": [
+        {
+            "id": "67bf2a82-8418-5351-8c45-fa1f7349e857",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "A few simple ideas sit underneath everything else in this book.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 56,
+                "chapter": 1,
+                "heading_path": [
+                    "Welcome and Introduction to Customer Care",
+                    "Three ideas behind great service"
+                ],
+                "normalized_text_sha256": "36c7140fc8697d508bd458b5d9be56548c0bab5b296bf60b27589a43642e1b67"
+            },
+            "text": "A few simple ideas sit underneath everything else in this book.",
+            "type": "paragraph"
+        },
+        {
+            "id": "28f37660-f945-5113-95f0-6cf6f9156e1f",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "1. Every guest gives you a moment of truth.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " A moment of truth is any small point of contact where a guest decides how they feel about you and the hotel. A greeting at the door, a phone answered on the second ring, a quick reply to a message. These moments are small, but they are exactly where trust is won or lost. Your English is the tool that helps you win them.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 57,
+                "chapter": 1,
+                "heading_path": [
+                    "Welcome and Introduction to Customer Care",
+                    "Three ideas behind great service"
+                ],
+                "normalized_text_sha256": "d2b2f87837de2f85d48b50876c54b188dd68fdc0f504e84f97fd1a29ab3de8ee"
+            },
+            "text": "1. Every guest gives you a moment of truth. A moment of truth is any small point of contact where a guest decides how they feel about you and the hotel. A greeting at the door, a phone answered on the second ring, a quick reply to a message. These moments are small, but they are exactly where trust is won or lost. Your English is the tool that helps you win them.",
+            "type": "list_item"
+        },
+        {
+            "id": "b3457da4-2273-5105-a108-9fb75419a30e",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "2. You have two kinds of customers.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " External customers are the guests who pay to stay. Internal customers are your own colleagues, such as housekeeping, the kitchen, or the manager you hand a request to. The warmth you show your colleagues usually flows straight through to the guest. Great service is a team habit before it is a guest habit.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 58,
+                "chapter": 1,
+                "heading_path": [
+                    "Welcome and Introduction to Customer Care",
+                    "Three ideas behind great service"
+                ],
+                "normalized_text_sha256": "736a8d366b4c99d2cbfba0a62ae06e67424edcf85e711f5e008ee753246b660c"
+            },
+            "text": "2. You have two kinds of customers. External customers are the guests who pay to stay. Internal customers are your own colleagues, such as housekeeping, the kitchen, or the manager you hand a request to. The warmth you show your colleagues usually flows straight through to the guest. Great service is a team habit before it is a guest habit.",
+            "type": "list_item"
+        },
+        {
+            "id": "f7b1f4ed-f9ea-5bed-86f8-e6310c84f1ac",
+            "language": "en",
+            "order": 4,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "3. Warm words and the right attitude build loyalty.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " When guests feel genuinely cared for, they come back and they tell other people. That is customer loyalty, and it is the real goal behind every phrase you are about to ",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "practise",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": ".",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 59,
+                "chapter": 1,
+                "heading_path": [
+                    "Welcome and Introduction to Customer Care",
+                    "Three ideas behind great service"
+                ],
+                "normalized_text_sha256": "6be505bdc10989c5ae48f1dd71e6f21c43ac3690fa2710a2a6328718c9f0481f"
+            },
+            "text": "3. Warm words and the right attitude build loyalty. When guests feel genuinely cared for, they come back and they tell other people. That is customer loyalty, and it is the real goal behind every phrase you are about to practise.",
+            "type": "list_item"
+        },
+        {
+            "id": "9da8dbb7-70a1-55c9-80dd-91562d720fa8",
+            "language": "en",
+            "order": 5,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Useful words worth learning early: satisfaction, priority, essential, efficient, convenient, reliable, assist, and recommend. Try using two of them in a sentence about your own ideal hotel.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 60,
+                "chapter": 1,
+                "heading_path": [
+                    "Welcome and Introduction to Customer Care",
+                    "Three ideas behind great service"
+                ],
+                "normalized_text_sha256": "816965e55262d6fef9ecd307890ef6c2ea465ec62e9b5a9b8157d1bc6670f7f1"
+            },
+            "text": "Useful words worth learning early: satisfaction, priority, essential, efficient, convenient, reliable, assist, and recommend. Try using two of them in a sentence about your own ideal hotel.",
+            "type": "paragraph"
+        }
+    ],
+    "chapter_code": "HSP-C01",
+    "code": "HSP-C01-LS-04",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "07c7b4a4-6804-5baf-b955-f8d80869a549",
+    "language": "en",
+    "order": 4,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 55,
+        "chapter": 1,
+        "heading_path": [
+            "Welcome and Introduction to Customer Care",
+            "Three ideas behind great service"
+        ],
+        "normalized_text_sha256": "a325a4d28ec4fb2a529e4f7fe09c32cd1125556b7a184404cef01bd117d14852"
+    },
+    "status": "published",
+    "title": "Three ideas behind great service"
+}

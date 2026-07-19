@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C07-ACT-QUIZ",
+  "code": "HSP-C07-QZ-Q4",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "a0126955-bae3-5c73-899d-1ae54767ca6e",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 909,
+    "chapter": 7,
+    "heading_path": [
+      "Dealing with Problems and Complaints",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "315a6aa9b0d8edd53d57178bb8c5beabe4ed641fe2e98ed33c480b12d16ba1e4"
+  },
+  "status": "published",
+  "stem": "Q4. A “goodwill gesture” is ... A) a kind extra to make up for the problem B) a punishment C) an official complaint form"
+}

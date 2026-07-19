@@ -1,0 +1,122 @@
+{
+    "blocks": [
+        {
+            "id": "e1dfde14-11aa-5c4f-b133-6ba979c6506f",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Positive language means telling the guest what you can do instead of what you cannot. It is the same message with a far warmer feeling, and you will use it in every chapter, so it is worth getting comfortable with now.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 63,
+                "chapter": 1,
+                "heading_path": [
+                    "Welcome and Introduction to Customer Care",
+                    "The one skill that runs through everything: positive language"
+                ],
+                "normalized_text_sha256": "b825a7753eb688af9b29b37b700772195323f9e355dd636ee47aefd166e2ab8d"
+            },
+            "text": "Positive language means telling the guest what you can do instead of what you cannot. It is the same message with a far warmer feeling, and you will use it in every chapter, so it is worth getting comfortable with now.",
+            "type": "paragraph"
+        },
+        {
+            "caption": "The one skill that runs through everything: positive language: Instead of saying this / Try saying this",
+            "header": [
+                "Instead of saying this",
+                "Try saying this"
+            ],
+            "id": "e6fed742-d408-5f6b-9f15-00be742293cd",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "rows": [
+                [
+                    "I do not know.",
+                    "That is a good question. Let me find out for you."
+                ],
+                [
+                    "You have to fill in this form.",
+                    "Could I ask you to fill in this short form, please?"
+                ],
+                [
+                    "Sorry, we are fully booked. No.",
+                    "We are full that night, but let me check the nearby dates for you."
+                ],
+                [
+                    "That is not my job.",
+                    "Let me connect you with the right person who can help."
+                ],
+                [
+                    "Please calm down.",
+                    "I understand, and I am going to help you sort this out."
+                ]
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 64,
+                "chapter": 1,
+                "heading_path": [
+                    "Welcome and Introduction to Customer Care",
+                    "The one skill that runs through everything: positive language"
+                ],
+                "normalized_text_sha256": "f183bd4a37f5057987d2e01b55bdab3f139b2ea4ee4b20213631c8ad66b4f639"
+            },
+            "type": "source_table"
+        },
+        {
+            "id": "b72c961d-6534-5c12-9386-5ddce798a554",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "The whole idea in one line: lead with what you can do, keep it warm, and always offer a next step.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 65,
+                "chapter": 1,
+                "heading_path": [
+                    "Welcome and Introduction to Customer Care",
+                    "The one skill that runs through everything: positive language"
+                ],
+                "normalized_text_sha256": "4aa29364d58604f492ef18c103247237c97807c5aeba0f54bba21d43b53fc39b"
+            },
+            "text": "The whole idea in one line: lead with what you can do, keep it warm, and always offer a next step.",
+            "type": "paragraph"
+        }
+    ],
+    "chapter_code": "HSP-C01",
+    "code": "HSP-C01-LS-05",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "dde037b0-5f1c-5f1d-b736-118ed4cca1a8",
+    "language": "en",
+    "order": 5,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 62,
+        "chapter": 1,
+        "heading_path": [
+            "Welcome and Introduction to Customer Care",
+            "The one skill that runs through everything: positive language"
+        ],
+        "normalized_text_sha256": "fb9220d629214e109ebfaa127f5669079d2d752d83ba2989cdeb455cc152d4ad"
+    },
+    "status": "published",
+    "title": "The one skill that runs through everything: positive language"
+}

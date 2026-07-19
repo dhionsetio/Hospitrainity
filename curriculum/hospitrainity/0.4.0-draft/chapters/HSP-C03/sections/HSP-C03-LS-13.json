@@ -1,0 +1,95 @@
+{
+    "blocks": [
+        {
+            "id": "5de194ab-17bc-5529-90bb-7d6cf684a517",
+            "language": "en",
+            "links": [
+                {
+                    "target": "https://www.revinate.com/blog/hotel-phone-reservation-bookings/",
+                    "text": "Revinate: ways to grow hotel phone bookings"
+                }
+            ],
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 373,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Further reading"
+                ],
+                "normalized_text_sha256": "071a3764325fc72b007ca1a0af63b2fa90eceefa9d2692f1a1e4d138bb51a6f0"
+            },
+            "type": "external_link"
+        },
+        {
+            "id": "cb7bdab5-99be-5c3e-8a64-a5f5eeb248b1",
+            "language": "en",
+            "links": [
+                {
+                    "target": "https://www.umkc.edu/hr/documents/telephone-etiquette.pdf",
+                    "text": "UMKC: telephone etiquette guide (PDF)"
+                }
+            ],
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 374,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Further reading"
+                ],
+                "normalized_text_sha256": "7d7f02da9f99e48512fecfd1289d7d19f659f36ef9473660340f0211c12ee893"
+            },
+            "type": "external_link"
+        },
+        {
+            "id": "4c629257-9bb4-5af2-8fcc-25203eea55d7",
+            "language": "en",
+            "links": [
+                {
+                    "target": "https://www.verint.com/blog/active-listening-is-key-to-great-customer-service/",
+                    "text": "Verint: why active listening is key to great service"
+                }
+            ],
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 375,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Further reading"
+                ],
+                "normalized_text_sha256": "d139a785b21cba02a8359557c6e4e2882dd56af0ef77800da811db16ab110479"
+            },
+            "type": "external_link"
+        }
+    ],
+    "chapter_code": "HSP-C03",
+    "code": "HSP-C03-LS-13",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "a67eea84-b7e1-596d-8a44-514c828385f4",
+    "language": "en",
+    "order": 13,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 372,
+        "chapter": 3,
+        "heading_path": [
+            "Dealing with Customers on the Phone",
+            "Further reading"
+        ],
+        "normalized_text_sha256": "4082f515b2f4929c139af2b1d23605e462c614bd888cf0dc12952d0d9cdeb1c7"
+    },
+    "status": "published",
+    "title": "Further reading"
+}

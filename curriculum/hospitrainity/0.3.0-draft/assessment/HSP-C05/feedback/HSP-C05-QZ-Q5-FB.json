@@ -1,0 +1,26 @@
+{
+  "code": "HSP-C05-QZ-Q5-FB",
+  "content_version": "0.3.0-draft",
+  "entity_type": "feedback-model",
+  "id": "88dee79e-cf66-51e4-b5fc-045979fc1429",
+  "messages": [
+    {
+      "feedback_type": "model_reveal",
+      "text": "B. Greeting first, sign-off last."
+    }
+  ],
+  "prompt_code": "HSP-C05-QZ-Q5",
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 629,
+    "chapter": 5,
+    "heading_path": [
+      "Customer Care Through Writing",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "fd4acecf4077ea0c9cadcb7eec5b40b54865f0b3ece7863449e8f902cb5921cf"
+  },
+  "status": "published"
+}

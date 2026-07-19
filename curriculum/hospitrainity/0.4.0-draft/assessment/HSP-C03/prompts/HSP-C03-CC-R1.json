@@ -1,0 +1,37 @@
+{
+    "activity_code": "HSP-C03-ACT-CONFIDENCE",
+    "code": "HSP-C03-CC-R1",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "11496e01-6980-534b-94a0-2c5a4dc4bece",
+    "language": "en",
+    "order": 1,
+    "provenance_kind": "source_verbatim",
+    "rating_scale": {
+        "max": 5,
+        "min": 1,
+        "values": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ]
+    },
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "rating",
+    "scoring_mode": "unscored_self_report",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 357,
+        "chapter": 3,
+        "heading_path": [
+            "Dealing with Customers on the Phone",
+            "Step 8. Confidence check"
+        ],
+        "normalized_text_sha256": "94ad5dc0278d884e9c9a6f39fd25f2715e3e8f3b50e8619f7771690731bf75c3"
+    },
+    "status": "published",
+    "stem": "I can answer the hotel phone professionally."
+}

@@ -1,0 +1,27 @@
+{
+    "code": "HSP-C07-QZ-Q4-FB",
+    "content_version": "0.4.0-draft",
+    "entity_type": "feedback-model",
+    "id": "e67756c2-39be-5fb8-b5ec-fe9d64143a3e",
+    "messages": [
+        {
+            "feedback_type": "model_reveal",
+            "text": "A. For example, a free breakfast or an upgrade."
+        }
+    ],
+    "prompt_code": "HSP-C07-QZ-Q4",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 930,
+        "chapter": 7,
+        "heading_path": [
+            "Dealing with Problems and Complaints",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "34f0e894a26f837f04403d0abca34c2e3dc70d4a2d06559f4c4a46919e1067ae"
+    },
+    "status": "published"
+}

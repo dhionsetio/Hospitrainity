@@ -1,0 +1,28 @@
+{
+    "accepted": [
+        "a"
+    ],
+    "code": "HSP-C02-RP-G2-AM",
+    "content_version": "0.4.0-draft",
+    "correct_choice_ids": [
+        "a74da304-d04d-5cd0-98a1-7d5b604d46a3"
+    ],
+    "entity_type": "answer-model",
+    "id": "7ea42572-7c7c-5a40-964d-4481f35aaa40",
+    "prompt_code": "HSP-C02-RP-G2",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 0,
+        "chapter": 2,
+        "heading_path": [
+            "Front Desk and Check-In",
+            "Step 6. Role-play"
+        ],
+        "normalized_text_sha256": "ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb"
+    },
+    "status": "published"
+}

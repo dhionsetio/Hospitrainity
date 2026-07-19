@@ -1,0 +1,39 @@
+{
+  "accessibility": [
+    "text_alt",
+    "keyboard_path",
+    "non_color_cue",
+    "no_timing_dependency"
+  ],
+  "cefr_activity": "production",
+  "channel": "social_public_reply",
+  "code": "HSP-C06-ACT-PRACTICE",
+  "content_version": "0.3.0-draft",
+  "entity_type": "activity",
+  "id": "e326f712-0889-5861-89f3-f4fade85f194",
+  "lesson_code": "HSP-C06-LS-08",
+  "outcome_codes": [
+    "OUT-M06-01",
+    "OUT-M06-02",
+    "OUT-M06-03"
+  ],
+  "participation": "individual",
+  "pedagogical_function": "guided_practice",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "short_text",
+  "scoring_mode": "objective_normalized",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 717,
+    "chapter": 6,
+    "heading_path": [
+      "Online and Social Media Customer Service",
+      "Step 5. Practice"
+    ],
+    "normalized_text_sha256": "426e21c1c2f4d45219b4dad04ee580611ec68d07a70035ec8e8d24ebb62ec6dc"
+  },
+  "status": "published",
+  "timing": "asynchronous",
+  "title": "Step 5. Practice"
+}

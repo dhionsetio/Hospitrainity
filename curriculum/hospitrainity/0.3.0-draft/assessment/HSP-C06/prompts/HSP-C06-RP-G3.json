@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C06-ACT-ROLEPLAY",
+  "code": "HSP-C06-RP-G3",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "bf76bcae-f4db-5168-9265-b106ea092012",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 744,
+    "chapter": 6,
+    "heading_path": [
+      "Online and Social Media Customer Service",
+      "Step 6. Role-play"
+    ],
+    "normalized_text_sha256": "abd7e1db52fa15383cec68c33b3ae574cfa97631b3a23c811fe0ccd4cd51c08e"
+  },
+  "status": "published",
+  "stem": "DM: “Can I change my booking from Friday to Saturday?”"
+}

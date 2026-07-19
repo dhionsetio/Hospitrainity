@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C02-ACT-PRACTICE",
+  "code": "HSP-C02-PR-I2",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "7376ce18-de54-572f-baea-7cbd81098016",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 146,
+    "chapter": 2,
+    "heading_path": [
+      "Front Desk and Check-In",
+      "Step 5. Practice"
+    ],
+    "normalized_text_sha256": "c7041280454556eee2a2949bf97a085e6df73c10e9c3e5e2e10c801e166cd3f0"
+  },
+  "status": "published",
+  "stem": "2. Choose the warmer greeting: (a) “What do you want?” or (b) “Good afternoon, welcome to the Grand Serenata Hotel. How may I help you?”"
+}

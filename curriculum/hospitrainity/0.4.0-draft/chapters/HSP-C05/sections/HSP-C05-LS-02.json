@@ -1,0 +1,90 @@
+{
+    "blocks": [
+        {
+            "id": "0677e69c-0390-5817-8c7c-1d345fc16189",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "When you speak, a smile and a kind tone can soften almost anything. In writing, all of that has to come through in the words alone, which is why structure and politeness matter so much. A clear, warm email tells the guest that the hotel is ",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "organised",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " and that it cares. A messy or cold one quietly says the opposite, even if every fact in it is correct.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 531,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Why this matters"
+                ],
+                "normalized_text_sha256": "367f7a1dfbf655009fef801b4a745909f060232732143de6c64b18d67f282d91"
+            },
+            "text": "When you speak, a smile and a kind tone can soften almost anything. In writing, all of that has to come through in the words alone, which is why structure and politeness matter so much. A clear, warm email tells the guest that the hotel is organised and that it cares. A messy or cold one quietly says the opposite, even if every fact in it is correct.",
+            "type": "paragraph"
+        },
+        {
+            "id": "69dc417a-54ed-505d-acb3-4c07d020b60b",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Good to know: the strongest professional emails share a few traits. They are prompt, clear, empathetic, and easy to act on. Keep those four words in mind and your replies will almost write themselves. See the further reading at the end of this chapter.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 532,
+                "chapter": 5,
+                "heading_path": [
+                    "Customer Care Through Writing",
+                    "Why this matters"
+                ],
+                "normalized_text_sha256": "2a68aaa36f7126b956c1392e38e9ddff0b24630f4ca99ec5af226f8e98e75df2"
+            },
+            "text": "Good to know: the strongest professional emails share a few traits. They are prompt, clear, empathetic, and easy to act on. Keep those four words in mind and your replies will almost write themselves. See the further reading at the end of this chapter.",
+            "type": "paragraph"
+        }
+    ],
+    "chapter_code": "HSP-C05",
+    "code": "HSP-C05-LS-02",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "a2793d2d-a0ab-5392-b263-0b622a1c1803",
+    "language": "en",
+    "order": 2,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 530,
+        "chapter": 5,
+        "heading_path": [
+            "Customer Care Through Writing",
+            "Why this matters"
+        ],
+        "normalized_text_sha256": "8893dff34c02db6a4e9bb13792e41320671581fe96a8c65721b2267627a48aec"
+    },
+    "status": "published",
+    "title": "Why this matters"
+}

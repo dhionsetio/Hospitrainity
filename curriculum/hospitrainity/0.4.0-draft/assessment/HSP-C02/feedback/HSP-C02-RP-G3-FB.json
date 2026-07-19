@@ -1,0 +1,35 @@
+{
+    "code": "HSP-C02-RP-G3-FB",
+    "content_version": "0.4.0-draft",
+    "entity_type": "feedback-model",
+    "id": "4452d35e-7514-5eeb-8c76-af9fe030a7ed",
+    "messages": [
+        {
+            "feedback_type": "error_specific",
+            "text": "(a) “No, check-in is at 2. Come back later.” This is cold and unhelpful."
+        },
+        {
+            "feedback_type": "success",
+            "text": "(b) “Let me check whether your room is ready. If it is not quite ready yet, I would be happy to store your luggage so you can relax in the meantime.” This is the ideal answer, warm and solution-focused."
+        },
+        {
+            "feedback_type": "error_specific",
+            "text": "(c) “That is against the rules.” This hides behind policy instead of helping."
+        }
+    ],
+    "prompt_code": "HSP-C02-RP-G3",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 174,
+        "chapter": 2,
+        "heading_path": [
+            "Front Desk and Check-In",
+            "Step 6. Role-play"
+        ],
+        "normalized_text_sha256": "668e51afa5a29312f201e5bb3eff3a4886b938ae117e5e4f6db6f4bf24cee1a8"
+    },
+    "status": "published"
+}

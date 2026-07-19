@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C01",
+  "code": "HSP-C01-LS-06",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "01a8469a-3f6c-56c6-acc5-c46337907518",
+  "order": 6,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 66,
+    "chapter": 1,
+    "heading_path": [
+      "Welcome and Introduction to Customer Care",
+      "Where you are starting from"
+    ],
+    "normalized_text_sha256": "0d496ac00a1a85f3a5bda26f44b119327903a5d6dd6f37df3afff3854288f226"
+  },
+  "status": "published",
+  "title": "Where you are starting from"
+}

@@ -1,0 +1,344 @@
+{
+    "blocks": [
+        {
+            "id": "5fa58dd2-d206-546c-ae49-1eb83fc6fb13",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "R",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " stands for Receptionist, and ",
+                    "underline": false
+                },
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "G",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " stands for Guest.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 133,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 4. Model dialogue"
+                ],
+                "normalized_text_sha256": "cfc3517fb473908e51fa64decf51b5f6403086e4a4252590158ba7a31ac99b1e"
+            },
+            "text": "R stands for Receptionist, and G stands for Guest.",
+            "type": "paragraph"
+        },
+        {
+            "id": "e0e94c4b-c1af-53a2-a698-3db82a46ccf9",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "R:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Good afternoon, welcome to the Grand Serenata Hotel. How may I help you?",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "\n",
+                    "underline": false
+                },
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "G:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Hi, I have a reservation under the name David Chen.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "\n",
+                    "underline": false
+                },
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "R:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Thank you, Mr. Chen. Let me just find that for you. May I see your passport, please?",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "\n",
+                    "underline": false
+                },
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "G:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Sure, here you go.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "\n",
+                    "underline": false
+                },
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "R:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Thank you. I have you in a Deluxe Room for two nights, checking out on Friday. Is that correct?",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "\n",
+                    "underline": false
+                },
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "G:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Yes, that is right.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "\n",
+                    "underline": false
+                },
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "R:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Wonderful. We also take a small deposit at check-in, which is fully refunded when you leave. Is that alright?",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "\n",
+                    "underline": false
+                },
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "G:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " No problem.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "\n",
+                    "underline": false
+                },
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "R:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Thank you. Here is your key card. Your room is 305, on the third floor. Breakfast is from 7 to 10 in the morning, and the Wi-Fi details are on this card.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "\n",
+                    "underline": false
+                },
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "G:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Perfect. Is there a lift?",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "\n",
+                    "underline": false
+                },
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "R:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Yes, it is just around the corner to your left. Is there anything else I can help you with?",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "\n",
+                    "underline": false
+                },
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "G:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " No, that is all. Thank you.",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "\n",
+                    "underline": false
+                },
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "R:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " Enjoy your stay, Mr. Chen. We are happy to have you.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 134,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 4. Model dialogue"
+                ],
+                "normalized_text_sha256": "de6fcf6e2f04834cef50fff8b90a4cfcf5ebe74f6930c75b84100b3cc2012f57"
+            },
+            "text": "R: Good afternoon, welcome to the Grand Serenata Hotel. How may I help you?\nG: Hi, I have a reservation under the name David Chen.\nR: Thank you, Mr. Chen. Let me just find that for you. May I see your passport, please?\nG: Sure, here you go.\nR: Thank you. I have you in a Deluxe Room for two nights, checking out on Friday. Is that correct?\nG: Yes, that is right.\nR: Wonderful. We also take a small deposit at check-in, which is fully refunded when you leave. Is that alright?\nG: No problem.\nR: Thank you. Here is your key card. Your room is 305, on the third floor. Breakfast is from 7 to 10 in the morning, and the Wi-Fi details are on this card.\nG: Perfect. Is there a lift?\nR: Yes, it is just around the corner to your left. Is there anything else I can help you with?\nG: No, that is all. Thank you.\nR: Enjoy your stay, Mr. Chen. We are happy to have you.",
+            "type": "paragraph"
+        },
+        {
+            "id": "37409c77-5d50-523f-8cb7-4e5f467933a9",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Notice what the receptionist did well: welcomed first, used the guest’s name, explained the deposit before taking it, and shared breakfast and Wi-Fi without being asked. That last part is the difference between good service and great service.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 135,
+                "chapter": 2,
+                "heading_path": [
+                    "Front Desk and Check-In",
+                    "Step 4. Model dialogue"
+                ],
+                "normalized_text_sha256": "f722da18d75363c45aacc9f1a92f2c2b1d88a3c9357c188aefb9cbd4b4fe4c62"
+            },
+            "text": "Notice what the receptionist did well: welcomed first, used the guest’s name, explained the deposit before taking it, and shared breakfast and Wi-Fi without being asked. That last part is the difference between good service and great service.",
+            "type": "paragraph"
+        }
+    ],
+    "chapter_code": "HSP-C02",
+    "code": "HSP-C02-LS-06",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "94a8b12e-73e7-5b3d-b38d-b41ce4a378c4",
+    "language": "en",
+    "order": 6,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 132,
+        "chapter": 2,
+        "heading_path": [
+            "Front Desk and Check-In",
+            "Step 4. Model dialogue"
+        ],
+        "normalized_text_sha256": "3198c829a36e2d5ccebe722aa40eec10a403fbba3b92f13a0ecba2cbbf92d56d"
+    },
+    "status": "published",
+    "title": "Step 4. Model dialogue"
+}

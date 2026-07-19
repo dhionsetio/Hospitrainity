@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C05-ACT-PRACTICE",
+  "code": "HSP-C05-PR-I4",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "87f4623b-ef62-5be8-95bc-35bf7b4beefd",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "short_text",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 588,
+    "chapter": 5,
+    "heading_path": [
+      "Customer Care Through Writing",
+      "Step 5. Practice"
+    ],
+    "normalized_text_sha256": "14b180d5db91a183c592e475e1cf46ea52811aa9dc8103ab42e5f17302268a8a"
+  },
+  "status": "published",
+  "stem": "4. Warm it up: turn the blunt line “We cannot do that.” into something kinder."
+}

@@ -1,0 +1,43 @@
+{
+    "activity_code": "HSP-C02-ACT-PRACTICE",
+    "code": "HSP-C02-PR-I3",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "dcfb3eb7-27d5-5977-a905-d6c424604cb5",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "ordering",
+    "scoring_mode": "objective_ordered",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 153,
+        "chapter": 2,
+        "heading_path": [
+            "Front Desk and Check-In",
+            "Step 5. Practice"
+        ],
+        "normalized_text_sha256": "a6f831c655b12d6c298aeeb95a7fdf880667e86c8900c0bad0c864cd5655f291"
+    },
+    "status": "published",
+    "stem": "3. Put the check-in steps in the right order: hand over the key, greet the guest, ask for the passport, confirm the reservation.",
+    "tokens": [
+        {
+            "id": "cbef05c4-cc6f-5c50-aef8-3150178bb2d1",
+            "text": "hand over the key"
+        },
+        {
+            "id": "16efba13-2144-5e97-aa81-fd792797ef61",
+            "text": "greet the guest"
+        },
+        {
+            "id": "06d375c9-b560-5d95-a582-8d695a169ae3",
+            "text": "ask for the passport"
+        },
+        {
+            "id": "4c389586-1374-5eb2-8705-58c386395831",
+            "text": "confirm the reservation"
+        }
+    ]
+}

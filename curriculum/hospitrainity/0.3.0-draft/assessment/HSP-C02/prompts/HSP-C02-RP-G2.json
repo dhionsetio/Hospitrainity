@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C02-ACT-ROLEPLAY",
+  "code": "HSP-C02-RP-G2",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "aa6658fa-78a2-5c6a-b7ed-b56041b4146d",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 163,
+    "chapter": 2,
+    "heading_path": [
+      "Front Desk and Check-In",
+      "Step 6. Role-play"
+    ],
+    "normalized_text_sha256": "19ec61b0ba70a955dd56302433b01306cce4cb45eba9fbbfacb55fded12faf32"
+  },
+  "status": "published",
+  "stem": "Guest: “Can I have a room on a high floor with a nice view?”"
+}

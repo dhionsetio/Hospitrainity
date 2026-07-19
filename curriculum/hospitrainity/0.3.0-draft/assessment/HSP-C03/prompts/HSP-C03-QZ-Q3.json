@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C03-ACT-QUIZ",
+  "code": "HSP-C03-QZ-Q3",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "26d61997-1045-565b-a66b-5de3586635dc",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 329,
+    "chapter": 3,
+    "heading_path": [
+      "Dealing with Customers on the Phone",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "51566dd367516e2218954cb8a99cb65510ea0e402b5999692fe154b9c63d69c7"
+  },
+  "status": "published",
+  "stem": "Q3. Why should you read a guest’s details back? A) to fill time B) to catch mistakes before they become booking errors C) it is polite but pointless"
+}

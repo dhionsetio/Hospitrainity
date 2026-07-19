@@ -1,0 +1,50 @@
+{
+    "activity_code": "HSP-C05-ACT-QUIZ",
+    "choices": [
+        {
+            "feedback": [
+                {
+                    "feedback_type": "model_reveal",
+                    "text": "A. A professional register represents the hotel well."
+                }
+            ],
+            "id": "aa45b339-6a2a-5077-80e5-349e0c5ca008",
+            "label": "a",
+            "text": "formal and warm register"
+        },
+        {
+            "feedback": [],
+            "id": "5b907b58-d13e-50d6-a65e-c72351a62455",
+            "label": "b",
+            "text": "very casual register"
+        },
+        {
+            "feedback": [],
+            "id": "02c4c5a0-e02e-516c-94a8-984293296f2e",
+            "label": "c",
+            "text": "no greeting at all"
+        }
+    ],
+    "code": "HSP-C05-QZ-Q4",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "dc6768ef-fc2e-5e31-804e-177a2b973a34",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 637,
+        "chapter": 5,
+        "heading_path": [
+            "Customer Care Through Writing",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "dbb22687305d8fac139318ee0e423d073b38c334faa20a146a8af9e6ab9ce8a7"
+    },
+    "status": "published",
+    "stem": "Q4. With a guest, you should generally use a ... A) formal and warm register B) very casual register C) no greeting at all"
+}

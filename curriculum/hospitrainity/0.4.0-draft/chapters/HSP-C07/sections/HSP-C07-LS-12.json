@@ -1,0 +1,340 @@
+{
+    "blocks": [
+        {
+            "id": "aae7404d-6223-5ebf-a034-539d453a81f9",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Here is a challenge that builds real composure. Think of the most difficult complaint you can imagine, then write out how you would handle it using all four L-A-A-F steps, and finish by writing a short letter of apology for it. If you can handle your hardest imagined case on paper, the real ones will feel far more manageable.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 949,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Take it further"
+                ],
+                "normalized_text_sha256": "dff3ecdbfe39743a5b1a8fb7ce94553b815554c7fa5391e25b397526cedb8452"
+            },
+            "text": "Here is a challenge that builds real composure. Think of the most difficult complaint you can imagine, then write out how you would handle it using all four L-A-A-F steps, and finish by writing a short letter of apology for it. If you can handle your hardest imagined case on paper, the real ones will feel far more manageable.",
+            "type": "paragraph"
+        },
+        {
+            "id": "c39d5b83-c937-5b13-ba52-5831ac3ab7b0",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "The letter of apology in detail",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 951,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Take it further"
+                ],
+                "normalized_text_sha256": "d316d8650ada7c5f6939aae5bffadfd78cff2db00cb0b1b22c12034a97c32dbe"
+            },
+            "text": "The letter of apology in detail",
+            "type": "heading"
+        },
+        {
+            "id": "2a9a1439-a477-5b95-b59a-86bca04e07cc",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Handling complaints well means hearing the guest out fully, ",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "apologising",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " sincerely, putting things right, and holding on to positive language even when the pressure is high. A letter of apology follows a clear structure, and the model letter above already uses it:",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 952,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Take it further"
+                ],
+                "normalized_text_sha256": "986d3968e85651083562aa64dfbb438d204567136108b750d5534f9c4fe850e7"
+            },
+            "text": "Handling complaints well means hearing the guest out fully, apologising sincerely, putting things right, and holding on to positive language even when the pressure is high. A letter of apology follows a clear structure, and the model letter above already uses it:",
+            "type": "paragraph"
+        },
+        {
+            "id": "61edf0a1-5b1d-5da7-9d47-fb8d5f4a147b",
+            "language": "en",
+            "order": 4,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Thank the guest for taking the time to write.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 953,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Take it further"
+                ],
+                "normalized_text_sha256": "1e1a8c2d57b3824e493be406eb87dc489c050dad009887d927cf63ce69f729af"
+            },
+            "text": "Thank the guest for taking the time to write.",
+            "type": "list_item"
+        },
+        {
+            "id": "a2bc5ec4-a826-5d67-9e45-c3069ce78899",
+            "language": "en",
+            "order": 5,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Apologise",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " sincerely, and show you understand the impact.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 954,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Take it further"
+                ],
+                "normalized_text_sha256": "393c33ea7c0b453e978558b2665566db90ca9f1bb02aac232bbb42de17e4f4aa"
+            },
+            "text": "Apologise sincerely, and show you understand the impact.",
+            "type": "list_item"
+        },
+        {
+            "id": "538f4020-da6e-5a6b-8d69-48de2b645756",
+            "language": "en",
+            "order": 6,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Explain what you are doing so it does not happen again.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 955,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Take it further"
+                ],
+                "normalized_text_sha256": "e79e270e401bf443c616edb8fec1ad89d52ff6cc3edc9d337dcebda07a0d985e"
+            },
+            "text": "Explain what you are doing so it does not happen again.",
+            "type": "list_item"
+        },
+        {
+            "id": "675e7010-13ae-5e55-a5d5-67b2d1110381",
+            "language": "en",
+            "order": 7,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Offer a goodwill gesture.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 956,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Take it further"
+                ],
+                "normalized_text_sha256": "72ced4f1f942961c64fef4872a0b3ed04b80774a0cf82b318eb77d6a48902faf"
+            },
+            "text": "Offer a goodwill gesture.",
+            "type": "list_item"
+        },
+        {
+            "id": "d898effe-9d15-5903-9e20-cb59ee956f31",
+            "language": "en",
+            "order": 8,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "End with warmth and an invitation to return.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 957,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Take it further"
+                ],
+                "normalized_text_sha256": "37d208bcf0240e1eaa1d78e0783a6c2a34e26c241dbc7f99a33ed993b392cf41"
+            },
+            "text": "End with warmth and an invitation to return.",
+            "type": "list_item"
+        },
+        {
+            "id": "ac8e7ada-c010-5c28-8989-2eaf41f650f2",
+            "language": "en",
+            "order": 9,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Positive language really shines under pressure, because the calmest words defuse the hottest moments:",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 958,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Take it further"
+                ],
+                "normalized_text_sha256": "8235c6cd26283efd16f35a6c28bf045c6a70d4c5416885ed1cefb2f330888d35"
+            },
+            "text": "Positive language really shines under pressure, because the calmest words defuse the hottest moments:",
+            "type": "paragraph"
+        },
+        {
+            "caption": "Take it further: Instead of saying this / Try saying this",
+            "header": [
+                "Instead of saying this",
+                "Try saying this"
+            ],
+            "id": "30971e5d-9ec7-5412-9ff8-65e9a337882a",
+            "language": "en",
+            "order": 10,
+            "provenance_kind": "source_verbatim",
+            "rows": [
+                [
+                    "There is nothing I can do.",
+                    "Here is what I can do for you right now."
+                ],
+                [
+                    "That is our policy.",
+                    "I understand, and let me find the best option I can offer you."
+                ],
+                [
+                    "You are wrong about that.",
+                    "Let me look into this properly so we get it right for you."
+                ]
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 959,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Take it further"
+                ],
+                "normalized_text_sha256": "c389179f582d4e2d92175ea928e040f1a6699ef423f4d12e4521c393105a5d57"
+            },
+            "type": "source_table"
+        },
+        {
+            "id": "e9ef64bd-98db-5df0-8911-169aeaeaaf4c",
+            "language": "en",
+            "order": 11,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "A complaint handled with genuine care can leave a guest more loyal than if nothing had gone wrong at all. Your words are the tool that makes that happen.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 960,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Take it further"
+                ],
+                "normalized_text_sha256": "89493617931f912386192a4d0d9d2adbe6865857860211532a0803303e7ea301"
+            },
+            "text": "A complaint handled with genuine care can leave a guest more loyal than if nothing had gone wrong at all. Your words are the tool that makes that happen.",
+            "type": "paragraph"
+        }
+    ],
+    "chapter_code": "HSP-C07",
+    "code": "HSP-C07-LS-12",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "b3961f00-0954-5719-93cd-3192f53a09ea",
+    "language": "en",
+    "order": 12,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 948,
+        "chapter": 7,
+        "heading_path": [
+            "Dealing with Problems and Complaints",
+            "Take it further"
+        ],
+        "normalized_text_sha256": "b19a89522b9f73e505f3b0dd1e4759f15eb4c7fc7b935b00b917e9c2c9ae6dc7"
+    },
+    "status": "published",
+    "title": "Take it further"
+}

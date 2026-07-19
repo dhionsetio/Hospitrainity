@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C05-ACT-QUIZ",
+  "code": "HSP-C05-QZ-Q3",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "b3ce640a-6bd9-5157-a909-3b21eead6894",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 621,
+    "chapter": 5,
+    "heading_path": [
+      "Customer Care Through Writing",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "eda24bf61bf480b673a9bfbd3e80ffc824717a645206d1e568477e4d359336fd"
+  },
+  "status": "published",
+  "stem": "Q3. “Please do not hesitate to contact us” is used to ... A) end warmly and offer more help B) refuse the guest C) rush the guest"
+}

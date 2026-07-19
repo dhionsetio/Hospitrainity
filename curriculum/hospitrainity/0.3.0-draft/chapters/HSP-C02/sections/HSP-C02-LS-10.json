@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C02",
+  "code": "HSP-C02-LS-10",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "959c6a1d-59d7-5be2-a07a-fefce607b8b1",
+  "order": 10,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 178,
+    "chapter": 2,
+    "heading_path": [
+      "Front Desk and Check-In",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "ee767295f76a59d3d19436e72f0129b8700ff7edec9cea24b9a2bb1781e39638"
+  },
+  "status": "published",
+  "title": "Step 7. Quiz"
+}

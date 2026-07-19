@@ -1,0 +1,30 @@
+{
+    "accepted": [
+        "The Apologise and empathise step, which is the second part of L-A-A-F."
+    ],
+    "accepted_normalized": [
+        "apologise and empathise",
+        "the apologise and empathise step"
+    ],
+    "accepted_normalized_provenance_kind": "derived_scoring",
+    "code": "HSP-C07-PR-I1-AM",
+    "content_version": "0.4.0-draft",
+    "entity_type": "answer-model",
+    "id": "288fc1c9-17c8-59c1-a013-ae3ff76fb304",
+    "prompt_code": "HSP-C07-PR-I1",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "scoring_mode": "objective_normalized_closed",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 885,
+        "chapter": 7,
+        "heading_path": [
+            "Dealing with Problems and Complaints",
+            "Step 5. Practice"
+        ],
+        "normalized_text_sha256": "0356c5e4a8dcd1d2bb8267bc3ca488b741a0895e957a8f1228a6c5a802f9c309"
+    },
+    "status": "published"
+}

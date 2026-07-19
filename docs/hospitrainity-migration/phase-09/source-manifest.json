@@ -1,0 +1,61 @@
+{
+  "checkpoint": "CP-09",
+  "phase": "Deterministic compiler/importer",
+  "date": "2026-07-15",
+  "source_of_truth": {
+    "artifact": "Hospitrainity.docx",
+    "sha256": "7f8a2c62db6884498f7a1c2de56e79e39609262944a685fe7eb97f702444cbb4"
+  },
+  "inputs": {
+    "source_zip": {
+      "name": "Hospitrainity-Source-Phase8.zip",
+      "sha256": "d9d3a91ce9bddba0baa30e2cd234e92aff693c429e417043aca7b6b4da8288be"
+    },
+    "standalone_html": {
+      "name": "Hospitrainity-Standalone.html (CP-08)",
+      "sha256": "43e34b181ca0424c4d5790f6caaea37d9974fa72e826ebe33b5ff585c86cc6de"
+    }
+  },
+  "outputs": {
+    "standalone_html": {
+      "name": "Hospitrainity-Standalone.html (CP-09)",
+      "sha256": "603b65ae67803ac03361e474b6e81f0ec5eb980c14cb378e4e240513ce018c6d"
+    },
+    "note": "Hospitrainity-Source-Phase9.zip checksum is reported in the checkpoint delivery message; a zip cannot embed its own hash."
+  },
+  "added_docs": [
+    "docs/hospitrainity-migration/phase-09/README.md",
+    "docs/hospitrainity-migration/phase-09/compiler-importer-spec.md",
+    "docs/hospitrainity-migration/phase-09/curriculum.sql",
+    "docs/hospitrainity-migration/phase-09/import-report.json",
+    "docs/hospitrainity-migration/phase-09/checkpoint-report.md",
+    "docs/hospitrainity-migration/phase-09/source-manifest.json",
+    "docs/hospitrainity-migration/phase-03/tools/hsp-import.mjs"
+  ],
+  "importer": {
+    "tool": "docs/hospitrainity-migration/phase-03/tools/hsp-import.mjs",
+    "engine": "node:sqlite (built-in, --experimental-sqlite)",
+    "framework_documents": 7,
+    "entity_rows": 443,
+    "id_integrity_checked": 435,
+    "projection_checks": 4016,
+    "referential_refs_checked": 525,
+    "referential_unresolved": 0,
+    "registry_id_bearing": 435,
+    "registry_missing": 0,
+    "idempotent": true,
+    "content_digest": "eb5c581a5e2b7ed105cd4c65e22661b9e4021cbf25057eb1902c74f44e6c3787",
+    "load_script_sha256": "b45a5e883ef4a13ddbd5d2c3a64ff55224435e8a897f7140fe356561695836e0"
+  },
+  "chosen_technique": "deterministic projection of the validated canonical package into the CP-08 SQLite mirror; schema driven by phase-08/data-model.json; dependency-ordered inserts with FK enforcement; idempotent + transactional; content-addressed build digest",
+  "standards": ["JSON Schema 2020-12", "SemVer 2.0.0", "RFC 9562 UUIDv5"],
+  "validation": "node docs/hospitrainity-migration/phase-03/tools/hsp-validate.mjs all --strict => 8/8",
+  "invariants": [
+    "no content or assessment entity mutated (all CP-04/CP-05 provenance hashes still verify)",
+    "CP-02 framework/*.json byte-identical",
+    "provenance/docx-digest.json and provenance/assessment-digest.json unchanged",
+    "id-registry unchanged at 487 entries (registry_version 1.2.0)",
+    "compiled .db is a disposable build artifact and is NOT shipped in the Source.zip",
+    "learner-facing standalone payload unchanged (provenance marker only)"
+  ]
+}

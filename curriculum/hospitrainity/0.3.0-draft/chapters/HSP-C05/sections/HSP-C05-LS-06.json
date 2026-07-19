@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C05",
+  "code": "HSP-C05-LS-06",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "ee63b9ff-e01d-5aae-aaad-4a2d8bd7862f",
+  "order": 6,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 556,
+    "chapter": 5,
+    "heading_path": [
+      "Customer Care Through Writing",
+      "Step 4. Model email"
+    ],
+    "normalized_text_sha256": "aacee737263585acb2d27a327678bf4ad49c1028b11c523ffc120725519cf6a2"
+  },
+  "status": "published",
+  "title": "Step 4. Model email"
+}

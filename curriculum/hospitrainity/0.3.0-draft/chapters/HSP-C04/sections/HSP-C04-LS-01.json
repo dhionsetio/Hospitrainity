@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C04",
+  "code": "HSP-C04-LS-01",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "195aeebf-f52b-51f9-b815-7f161a2b99a4",
+  "order": 1,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 370,
+    "chapter": 4,
+    "heading_path": [
+      "The Guest-Services Hotline",
+      "Warm-Up"
+    ],
+    "normalized_text_sha256": "c87cfd83ddd0f316742b875fabf353270adc2bdcd0361130fcef2656f7594d61"
+  },
+  "status": "published",
+  "title": "Warm-Up"
+}

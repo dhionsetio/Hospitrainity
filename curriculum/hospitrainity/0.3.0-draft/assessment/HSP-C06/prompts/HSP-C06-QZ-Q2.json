@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C06-ACT-QUIZ",
+  "code": "HSP-C06-QZ-Q2",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "477a47e9-a44f-59dc-97de-a392500a04ed",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 758,
+    "chapter": 6,
+    "heading_path": [
+      "Online and Social Media Customer Service",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "1e881522a43a248f8ae524f72a39d38c3c87d0484c8519274abb973c066b580d"
+  },
+  "status": "published",
+  "stem": "Q2. What is professional emoji use? A) many per message B) one light emoji for warmth C) never any at all"
+}

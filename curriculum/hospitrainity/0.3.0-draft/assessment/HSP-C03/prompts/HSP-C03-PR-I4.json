@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C03-ACT-PRACTICE",
+  "code": "HSP-C03-PR-I4",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "e39c22c3-d319-5f94-9f01-29555c9bac70",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "short_text",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 296,
+    "chapter": 3,
+    "heading_path": [
+      "Dealing with Customers on the Phone",
+      "Step 5. Practice"
+    ],
+    "normalized_text_sha256": "19f25ca5d436d5f9355277aa324f07ee4d4e11e94626ff36bc0dc09de356418b"
+  },
+  "status": "published",
+  "stem": "4. Say this number clearly for the phone: how would you say the reference 452 out loud?"
+}

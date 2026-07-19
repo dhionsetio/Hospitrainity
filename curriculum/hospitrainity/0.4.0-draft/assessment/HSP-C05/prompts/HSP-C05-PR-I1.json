@@ -1,0 +1,30 @@
+{
+    "activity_code": "HSP-C05-ACT-PRACTICE",
+    "code": "HSP-C05-PR-I1",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "643bbbb2-67a7-5462-917f-3eabfb25599a",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_constraints": {
+        "maximum_characters": 4000,
+        "minimum_non_whitespace_characters": 1
+    },
+    "response_form": "short_text",
+    "scoring_mode": "model_self_check",
+    "self_check_required": true,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 592,
+        "chapter": 5,
+        "heading_path": [
+            "Customer Care Through Writing",
+            "Step 5. Practice"
+        ],
+        "normalized_text_sha256": "7059891f00a933285daab834c9eb78f7e3c99b165b92f7c01b965e4615938bcc"
+    },
+    "status": "published",
+    "stem": "1. Make it formal: rewrite “hey, u got rooms this weekend??”"
+}

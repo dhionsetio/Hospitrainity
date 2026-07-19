@@ -1,0 +1,603 @@
+{
+    "blocks": [
+        {
+            "id": "73e8a600-b487-543f-ae07-33719fdd2f90",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Guided mode (pick the best response, then check)",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 897,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "8b5c1e17e91dac6eca1351f72f3ad5c3f74412725d84779192885e8a7d4310a7"
+            },
+            "text": "Guided mode (pick the best response, then check)",
+            "type": "heading"
+        },
+        {
+            "id": "1761ede8-30ce-5b60-b3ef-8f52cff78437",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Guest:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " “My room is dirty. This is unacceptable.”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 898,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "eb6ae068dfdc1b225faf4d8436f04e0c349c8683892c67fca28915727706234c"
+            },
+            "speaker": "Guest",
+            "text": "“My room is dirty. This is unacceptable.”",
+            "type": "dialogue_turn"
+        },
+        {
+            "id": "3a9bfaa4-f68f-5eca-939e-65f1c9997f43",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Reveal the options and feedback",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 899,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "6dc878d750298bcb4a4f27b0ad5920cbcec919db017ef2f3a46fa28770873d4e"
+            },
+            "text": "Reveal the options and feedback",
+            "type": "paragraph"
+        },
+        {
+            "id": "bb23d902-5f4c-5087-8460-0688306c44fd",
+            "language": "en",
+            "order": 4,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "(a) “Housekeeping usually does a good job.” This deflects instead of helping.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 900,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "cfb1def3346d97645be578e18325e961e0b81ae75c7d53f10410515af2c20e54"
+            },
+            "text": "(a) “Housekeeping usually does a good job.” This deflects instead of helping.",
+            "type": "paragraph"
+        },
+        {
+            "id": "f09e6084-a8ae-5104-917b-9ce3be955132",
+            "language": "en",
+            "order": 5,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "(b) “I am so sorry, that is not our standard at all. I will have it cleaned immediately, or I can move you to another room right now. Which would you prefer?” This is the ideal answer, an apology, ownership, and a choice of solution.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 901,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "5b4af9c30d88e6ed4037cf0a43b2a4bc17cee6d5bde2e601ec337f1998e43ff3"
+            },
+            "text": "(b) “I am so sorry, that is not our standard at all. I will have it cleaned immediately, or I can move you to another room right now. Which would you prefer?” This is the ideal answer, an apology, ownership, and a choice of solution.",
+            "type": "paragraph"
+        },
+        {
+            "id": "e7595192-0b1c-5925-a4b5-43a4b123a4fe",
+            "language": "en",
+            "order": 6,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "(c) “Are you sure it is dirty?” This dismisses the guest and will only make it worse.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 902,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "7b5a0cd63c146b9b5ebe5dc1f48569c07e652edfa819ef9829370420b620ea7a"
+            },
+            "text": "(c) “Are you sure it is dirty?” This dismisses the guest and will only make it worse.",
+            "type": "paragraph"
+        },
+        {
+            "id": "e83898ab-eef8-51b2-b67f-bf0508a4e82e",
+            "language": "en",
+            "order": 7,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Guest:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " “You charged me twice.”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 903,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "863d89a683c03d6cc2176996a6fd11644f6ab9bebc897f6ecc8cc08f4757c46f"
+            },
+            "speaker": "Guest",
+            "text": "“You charged me twice.”",
+            "type": "dialogue_turn"
+        },
+        {
+            "id": "a86f479b-ef79-5006-bc97-6580c1bd2cd7",
+            "language": "en",
+            "order": 8,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Reveal the options and feedback",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 904,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "6dc878d750298bcb4a4f27b0ad5920cbcec919db017ef2f3a46fa28770873d4e"
+            },
+            "text": "Reveal the options and feedback",
+            "type": "paragraph"
+        },
+        {
+            "id": "01d0491f-2f8e-5b8e-a007-301acd0ae752",
+            "language": "en",
+            "order": 9,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "(a) “That is the system’s fault, not mine.” This blames something else and helps no one.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 905,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "cd5a143df2b2bb205544013d35a17aae1dbb1fa6889abe5e301ddf1f8b60e1de"
+            },
+            "text": "(a) “That is the system’s fault, not mine.” This blames something else and helps no one.",
+            "type": "paragraph"
+        },
+        {
+            "id": "c7ec34fc-8f26-577e-847f-c3885acde1d3",
+            "language": "en",
+            "order": 10,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "(b) “I am very sorry for the error. Let me check your bill and correct it right away, and you will see the refund shortly.” This is the ideal answer, an apology, action, and reassurance.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 906,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "74c4fc52b38b2f5e5fd8f34d6967f2f3804f0f4c277fa31c36c902689372ee78"
+            },
+            "text": "(b) “I am very sorry for the error. Let me check your bill and correct it right away, and you will see the refund shortly.” This is the ideal answer, an apology, action, and reassurance.",
+            "type": "paragraph"
+        },
+        {
+            "id": "c225138a-a109-521b-9827-a98e763e3e85",
+            "language": "en",
+            "order": 11,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "(c) “You must have made a mistake.” This blames the guest, which is the fastest way to lose them.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 907,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "2b182196126c17bd81a3a6d2e94ceb5ece06c6b917d9bafce551582e6de842d9"
+            },
+            "text": "(c) “You must have made a mistake.” This blames the guest, which is the fastest way to lose them.",
+            "type": "paragraph"
+        },
+        {
+            "id": "be89c225-0cfa-5da5-8dbd-160f55eedb35",
+            "language": "en",
+            "order": 12,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Guest:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " “This is the second time I have had a problem here.”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 908,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "7f6de5bbaa2143571ef26a809e84350898c6e3639493956ffce54e8baf6947a2"
+            },
+            "speaker": "Guest",
+            "text": "“This is the second time I have had a problem here.”",
+            "type": "dialogue_turn"
+        },
+        {
+            "id": "8dac6662-1a09-5272-a101-acce7172c242",
+            "language": "en",
+            "order": 13,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Reveal the options and feedback",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 909,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "6dc878d750298bcb4a4f27b0ad5920cbcec919db017ef2f3a46fa28770873d4e"
+            },
+            "text": "Reveal the options and feedback",
+            "type": "paragraph"
+        },
+        {
+            "id": "d2834f32-6e9c-5cae-b7e1-79ad5e1bca7c",
+            "language": "en",
+            "order": 14,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "(a) “Well, nobody is perfect.” Dismissive and cold.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 910,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "53e0ab7a0380f68521110ec30fdf6a811f5bb1b69cf390414e0cab630e4b04ee"
+            },
+            "text": "(a) “Well, nobody is perfect.” Dismissive and cold.",
+            "type": "paragraph"
+        },
+        {
+            "id": "9ba14551-200a-53d2-b016-df4fb57c9af1",
+            "language": "en",
+            "order": 15,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "(b) “I am truly sorry, and I understand why you are frustrated after a second issue. Let me put this right now, and I will speak with my manager to make sure it does not happen again.” This is the ideal answer, empathy, action, and a follow-up promise.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 911,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "e17707be07577fee405fd86c5cfdd228285ecffabf45fd681ec9c4f965d4c778"
+            },
+            "text": "(b) “I am truly sorry, and I understand why you are frustrated after a second issue. Let me put this right now, and I will speak with my manager to make sure it does not happen again.” This is the ideal answer, empathy, action, and a follow-up promise.",
+            "type": "paragraph"
+        },
+        {
+            "id": "01c6315d-5bb4-5330-9434-943f1cf13336",
+            "language": "en",
+            "order": 16,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "(c) “There is nothing I can do.” This gives up on the guest entirely.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 912,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "8188fd25734ded3ec8d1e264be9f04402de5c79c82a61c68a75ac74ae3700c4a"
+            },
+            "text": "(c) “There is nothing I can do.” This gives up on the guest entirely.",
+            "type": "paragraph"
+        },
+        {
+            "id": "bb6055ff-e3a5-553d-b434-1f5ed0f39ee1",
+            "language": "en",
+            "order": 17,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Free mode (your turn, speak or write your own answer)",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 913,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "6c342355148bccd8a90347b4d0badde4e3d86baba374a58aa359fd82c001d9bb"
+            },
+            "text": "Free mode (your turn, speak or write your own answer)",
+            "type": "heading"
+        },
+        {
+            "id": "d24071d0-3bde-53ef-9be2-7590f1160426",
+            "language": "en",
+            "order": 18,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Prompt:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " A guest complains that the Wi-Fi has not worked all day. Handle it using the L-A-A-F framework.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 914,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "3576356757a4010a6cc671137d2a2d591575aef4f54d6d2df89c5867dc77016b"
+            },
+            "text": "Prompt: A guest complains that the Wi-Fi has not worked all day. Handle it using the L-A-A-F framework.",
+            "type": "instruction"
+        },
+        {
+            "id": "7ee460d0-0384-52d3-be86-a7eddac7ea4d",
+            "language": "en",
+            "order": 19,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "See a model answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 915,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "115cd5fb848ceef36134cf981997fcf0d145aca19ef299453b13791da2b2b176"
+            },
+            "text": "See a model answer",
+            "type": "paragraph"
+        },
+        {
+            "id": "fc4d8fdc-5457-5a05-92df-2acd57fe7a28",
+            "language": "en",
+            "order": 20,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "“I am very sorry to hear that, and I understand how frustrating it is to lose the Wi-Fi all day. This is the Listen and ",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Apologise",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " part. Let me send our technician to your room right away, and I will switch you to our backup network in the meantime. This is the Act part. As an apology, I would like to offer you a late check-out, and I will check back within the hour to make sure it is working. This is the Follow up part.”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 916,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "c9e0d82d410a4ca305021672bb23e289ed53eb9a707e3f6b0e91ea0d5586e7bc"
+            },
+            "text": "“I am very sorry to hear that, and I understand how frustrating it is to lose the Wi-Fi all day. This is the Listen and Apologise part. Let me send our technician to your room right away, and I will switch you to our backup network in the meantime. This is the Act part. As an apology, I would like to offer you a late check-out, and I will check back within the hour to make sure it is working. This is the Follow up part.”",
+            "type": "paragraph"
+        },
+        {
+            "activity_code": "HSP-C07-ACT-ROLEPLAY",
+            "id": "6ef0e985-ca9a-5baa-b97d-480e46142845",
+            "language": "en",
+            "order": 21,
+            "provenance_kind": "derived_navigation",
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 896,
+                "chapter": 7,
+                "heading_path": [
+                    "Dealing with Problems and Complaints",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "2820d9182be9f0c2b25264c9853f2df9c8c0866110449f03bf85a3cd5e08c862"
+            },
+            "type": "activity_embed"
+        }
+    ],
+    "chapter_code": "HSP-C07",
+    "code": "HSP-C07-LS-09",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "a9e7d2df-3578-51ef-9817-f1932377ca39",
+    "language": "en",
+    "order": 9,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 896,
+        "chapter": 7,
+        "heading_path": [
+            "Dealing with Problems and Complaints",
+            "Step 6. Role-play"
+        ],
+        "normalized_text_sha256": "2820d9182be9f0c2b25264c9853f2df9c8c0866110449f03bf85a3cd5e08c862"
+    },
+    "status": "published",
+    "title": "Step 6. Role-play"
+}

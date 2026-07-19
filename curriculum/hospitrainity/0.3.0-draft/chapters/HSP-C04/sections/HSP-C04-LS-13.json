@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C04",
+  "code": "HSP-C04-LS-13",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "e964beeb-3d86-554a-ba75-20085930cc71",
+  "order": 13,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 506,
+    "chapter": 4,
+    "heading_path": [
+      "The Guest-Services Hotline",
+      "Further reading"
+    ],
+    "normalized_text_sha256": "57286e02b4060658e01f25094fe8740a8718ac1d48fb3cbbe8441ffe426f7d8d"
+  },
+  "status": "published",
+  "title": "Further reading"
+}

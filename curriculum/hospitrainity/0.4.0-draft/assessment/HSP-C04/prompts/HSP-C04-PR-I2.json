@@ -1,0 +1,44 @@
+{
+    "activity_code": "HSP-C04-ACT-PRACTICE",
+    "choices": [
+        {
+            "feedback": [],
+            "id": "a0909198-573c-5add-b4fc-23f188a2182e",
+            "label": "a",
+            "text": "“We are busy, call later.”"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "model_reveal",
+                    "text": "(b). Even under pressure, a warm welcome costs nothing and means a lot."
+                }
+            ],
+            "id": "96d90562-0f1d-5d0b-a3cf-25242718ca5d",
+            "label": "b",
+            "text": "“Thank you for waiting. How may I help you?”"
+        }
+    ],
+    "code": "HSP-C04-PR-I2",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "abb2db2e-5226-5e37-9144-2b1363ef4723",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 444,
+        "chapter": 4,
+        "heading_path": [
+            "The Guest-Services Hotline",
+            "Step 5. Practice"
+        ],
+        "normalized_text_sha256": "f1efef18f2cee42ef87962cc4000cda258a7c7154ee65a199e3b723c837c489e"
+    },
+    "status": "published",
+    "stem": "2. Choose the customer-centered reply when you are busy: (a) “We are busy, call later.” or (b) “Thank you for waiting. How may I help you?”"
+}

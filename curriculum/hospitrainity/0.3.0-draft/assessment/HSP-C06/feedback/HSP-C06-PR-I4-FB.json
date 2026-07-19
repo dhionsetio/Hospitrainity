@@ -1,0 +1,26 @@
+{
+  "code": "HSP-C06-PR-I4-FB",
+  "content_version": "0.3.0-draft",
+  "entity_type": "feedback-model",
+  "id": "745ddcde-7b0a-5797-b5fb-9a4fed006808",
+  "messages": [
+    {
+      "feedback_type": "model_reveal",
+      "text": "Something like “Thanks for your message. Let me check that for you and I will be right back.” A quick holding reply reassures the guest that they were heard."
+    }
+  ],
+  "prompt_code": "HSP-C06-PR-I4",
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 730,
+    "chapter": 6,
+    "heading_path": [
+      "Online and Social Media Customer Service",
+      "Step 5. Practice"
+    ],
+    "normalized_text_sha256": "c78f9528588208c1d9154df1471e7445871da532e09c3f92da028e0ca9ec2e4a"
+  },
+  "status": "published"
+}

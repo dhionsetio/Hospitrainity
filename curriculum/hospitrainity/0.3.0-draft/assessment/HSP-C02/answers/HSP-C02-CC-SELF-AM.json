@@ -1,0 +1,21 @@
+{
+  "code": "HSP-C02-CC-SELF-AM",
+  "content_version": "0.3.0-draft",
+  "entity_type": "answer-model",
+  "id": "2c9ce859-447e-5828-aa35-c7135a9c2b8b",
+  "prompt_code": "HSP-C02-CC-SELF",
+  "replaced_by": null,
+  "replaces": null,
+  "scoring_mode": "self_report",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 204,
+    "chapter": 2,
+    "heading_path": [
+      "Front Desk and Check-In",
+      "Step 8. Confidence check"
+    ],
+    "normalized_text_sha256": "72b19e5fb44aebac76700b9d13714de9572bd100d2e7554e4bebae0d535dff4f"
+  },
+  "status": "published"
+}

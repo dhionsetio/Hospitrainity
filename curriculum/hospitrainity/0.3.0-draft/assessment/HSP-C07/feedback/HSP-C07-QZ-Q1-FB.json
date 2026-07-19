@@ -1,0 +1,26 @@
+{
+  "code": "HSP-C07-QZ-Q1-FB",
+  "content_version": "0.3.0-draft",
+  "entity_type": "feedback-model",
+  "id": "85428d12-571e-5ebc-bc5f-37a8ce6a2326",
+  "messages": [
+    {
+      "feedback_type": "model_reveal",
+      "text": "B. Listen first, so the guest feels heard."
+    }
+  ],
+  "prompt_code": "HSP-C07-QZ-Q1",
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 902,
+    "chapter": 7,
+    "heading_path": [
+      "Dealing with Problems and Complaints",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "39ab748d17c84985a9b27d961d50ee2f347c64061cf322b3e520003b2c28c042"
+  },
+  "status": "published"
+}

@@ -1,0 +1,163 @@
+{
+    "blocks": [
+        {
+            "id": "557df2fb-b008-5cf3-bfe6-0e895a5ab0eb",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Read each example out loud once. Hearing yourself say the word is the quickest way to make it yours.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 252,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 2. Key vocabulary"
+                ],
+                "normalized_text_sha256": "9062029490451d76c9546e11613be747dc0eeae4cca9da63498981b2682e73e4"
+            },
+            "text": "Read each example out loud once. Hearing yourself say the word is the quickest way to make it yours.",
+            "type": "instruction"
+        },
+        {
+            "caption": "Step 2. Key vocabulary: Word or phrase / What it means / How you might say it",
+            "header": [
+                "Word or phrase",
+                "What it means",
+                "How you might say it"
+            ],
+            "id": "7745a078-ab7f-5465-b092-c44aa435170b",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "rows": [
+                [
+                    "to put on hold",
+                    "to pause a call politely",
+                    "“May I put you on hold for a moment?”"
+                ],
+                [
+                    "availability",
+                    "whether rooms are free",
+                    "“Let me check availability for you.”"
+                ],
+                [
+                    "room rate",
+                    "the price for one night",
+                    "“The room rate is 80 dollars per night.”"
+                ],
+                [
+                    "to spell out",
+                    "to say a word letter by letter",
+                    "“Could you spell that out for me?”"
+                ],
+                [
+                    "to read back",
+                    "to repeat details to confirm them",
+                    "“Let me read that back to you.”"
+                ],
+                [
+                    "extension",
+                    "an internal phone number",
+                    "“You can reach me on extension 12.”"
+                ],
+                [
+                    "to take a message",
+                    "to note information for someone else",
+                    "“May I take a message?”"
+                ],
+                [
+                    "booking reference",
+                    "the code for a reservation",
+                    "“Your booking reference is 452.”"
+                ],
+                [
+                    "to transfer a call",
+                    "to pass a call to another person",
+                    "“I will transfer your call now.”"
+                ],
+                [
+                    "enquiry",
+                    "a question or request for information",
+                    "“Thank you for your enquiry.”"
+                ],
+                [
+                    "to hang up",
+                    "to end a call",
+                    "“Please do not hang up.”"
+                ],
+                [
+                    "caller",
+                    "the person who is phoning",
+                    "“The caller would like a quiet room.”"
+                ]
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 253,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 2. Key vocabulary"
+                ],
+                "normalized_text_sha256": "e535be7090d8cc7b79143e0d002a04e6c63d66a972a24cbaacf96cd75028a8d8"
+            },
+            "type": "source_table"
+        },
+        {
+            "id": "a31458ce-af91-5d63-a337-0776c0ed9b40",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Spelling tip: when a name is tricky, use the clear-word alphabet, such as “B for Bravo, C for Charlie.” It sounds professional and it prevents mix-ups. For numbers, say them in single digits, so 452 becomes “four, five, two.”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 254,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 2. Key vocabulary"
+                ],
+                "normalized_text_sha256": "27aa432dcf834fdd32658d40b6e02dc3a8d4be91e339400ac8bfc4e196bc96d9"
+            },
+            "text": "Spelling tip: when a name is tricky, use the clear-word alphabet, such as “B for Bravo, C for Charlie.” It sounds professional and it prevents mix-ups. For numbers, say them in single digits, so 452 becomes “four, five, two.”",
+            "type": "paragraph"
+        }
+    ],
+    "chapter_code": "HSP-C03",
+    "code": "HSP-C03-LS-04",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "9c0987e1-19f1-55e6-94a4-f7c214cf6c09",
+    "language": "en",
+    "order": 4,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 251,
+        "chapter": 3,
+        "heading_path": [
+            "Dealing with Customers on the Phone",
+            "Step 2. Key vocabulary"
+        ],
+        "normalized_text_sha256": "f46a1e0aec2c4e29b3ec8df91525031a99db987a4745d07d5a09266bade29874"
+    },
+    "status": "published",
+    "title": "Step 2. Key vocabulary"
+}

@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C04-ACT-PRACTICE",
+  "code": "HSP-C04-PR-I3",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "9b266e0d-a3b6-5239-bf0a-40d602717488",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "ordering",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 437,
+    "chapter": 4,
+    "heading_path": [
+      "The Guest-Services Hotline",
+      "Step 5. Practice"
+    ],
+    "normalized_text_sha256": "87f6e20fd175bda5b053640082e902f64399617d39dec378a82448e74ab6092e"
+  },
+  "status": "published",
+  "stem": "3. Put these steps in the right order: give the estimated time, answer and find the room, take the order, read it back to confirm."
+}

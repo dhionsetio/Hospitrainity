@@ -1,0 +1,39 @@
+{
+  "accessibility": [
+    "text_alt",
+    "keyboard_path",
+    "non_color_cue",
+    "no_timing_dependency"
+  ],
+  "cefr_activity": "production",
+  "channel": "written_correspondence",
+  "code": "HSP-C05-ACT-PRACTICE",
+  "content_version": "0.3.0-draft",
+  "entity_type": "activity",
+  "id": "fcd3f38c-fb33-5d44-a358-cf856ac7ba41",
+  "lesson_code": "HSP-C05-LS-08",
+  "outcome_codes": [
+    "OUT-M05-01",
+    "OUT-M05-02",
+    "OUT-M05-03"
+  ],
+  "participation": "individual",
+  "pedagogical_function": "guided_practice",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "short_text",
+  "scoring_mode": "objective_normalized",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 577,
+    "chapter": 5,
+    "heading_path": [
+      "Customer Care Through Writing",
+      "Step 5. Practice"
+    ],
+    "normalized_text_sha256": "0c7a7d4e5df5e952c9d675d83dd23e173c74cc18e285e13613a7bd6cb270d814"
+  },
+  "status": "published",
+  "timing": "asynchronous",
+  "title": "Step 5. Practice"
+}

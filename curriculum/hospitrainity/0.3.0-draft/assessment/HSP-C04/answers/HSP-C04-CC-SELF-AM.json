@@ -1,0 +1,21 @@
+{
+  "code": "HSP-C04-CC-SELF-AM",
+  "content_version": "0.3.0-draft",
+  "entity_type": "answer-model",
+  "id": "ef392e03-0c66-58c4-88c9-632154769f19",
+  "prompt_code": "HSP-C04-CC-SELF",
+  "replaced_by": null,
+  "replaces": null,
+  "scoring_mode": "self_report",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 492,
+    "chapter": 4,
+    "heading_path": [
+      "The Guest-Services Hotline",
+      "Step 8. Confidence check"
+    ],
+    "normalized_text_sha256": "cd3074671db07959557a6493c99cdfca8103db85c6eb67d0ff485f6e9e15afec"
+  },
+  "status": "published"
+}

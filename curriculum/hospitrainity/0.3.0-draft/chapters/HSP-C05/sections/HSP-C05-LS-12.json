@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C05",
+  "code": "HSP-C05-LS-12",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "330d4095-6a19-593b-b63d-5ba9f449a87f",
+  "order": 12,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 643,
+    "chapter": 5,
+    "heading_path": [
+      "Customer Care Through Writing",
+      "Take it further"
+    ],
+    "normalized_text_sha256": "706a7eff7083c1710d72ddfddce46865c672f8e93c3ffcf46304adcf4225c179"
+  },
+  "status": "published",
+  "title": "Take it further"
+}

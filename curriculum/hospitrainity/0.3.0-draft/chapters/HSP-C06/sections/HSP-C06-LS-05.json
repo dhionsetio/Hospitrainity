@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C06",
+  "code": "HSP-C06-LS-05",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "2a3b135b-9630-5107-8b67-60a07912a55b",
+  "order": 5,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 681,
+    "chapter": 6,
+    "heading_path": [
+      "Online and Social Media Customer Service",
+      "Step 3. Useful phrases, grouped by what they do"
+    ],
+    "normalized_text_sha256": "487e4c807c265af47745504d6986bcae128b633ff293d88209b0db2c5ffd673e"
+  },
+  "status": "published",
+  "title": "Step 3. Useful phrases, grouped by what they do"
+}

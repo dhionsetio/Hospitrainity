@@ -1,0 +1,50 @@
+{
+    "activity_code": "HSP-C07-ACT-QUIZ",
+    "choices": [
+        {
+            "feedback": [
+                {
+                    "feedback_type": "model_reveal",
+                    "text": "A. For example, a free breakfast or an upgrade."
+                }
+            ],
+            "id": "3747e778-9c19-5136-88a0-6099c65ddf4b",
+            "label": "a",
+            "text": "a kind extra to make up for the problem"
+        },
+        {
+            "feedback": [],
+            "id": "68d2b1eb-8ac9-55de-98dc-0475c362e787",
+            "label": "b",
+            "text": "a punishment"
+        },
+        {
+            "feedback": [],
+            "id": "96599272-1712-5aa4-89a2-c97fa350e46e",
+            "label": "c",
+            "text": "an official complaint form"
+        }
+    ],
+    "code": "HSP-C07-QZ-Q4",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "a0126955-bae3-5c73-899d-1ae54767ca6e",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 928,
+        "chapter": 7,
+        "heading_path": [
+            "Dealing with Problems and Complaints",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "315a6aa9b0d8edd53d57178bb8c5beabe4ed641fe2e98ed33c480b12d16ba1e4"
+    },
+    "status": "published",
+    "stem": "Q4. A “goodwill gesture” is ... A) a kind extra to make up for the problem B) a punishment C) an official complaint form"
+}

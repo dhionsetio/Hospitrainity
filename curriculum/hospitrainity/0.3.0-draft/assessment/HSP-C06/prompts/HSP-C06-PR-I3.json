@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C06-ACT-PRACTICE",
+  "code": "HSP-C06-PR-I3",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "beee8342-d941-5355-939a-1b5cb9c70797",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 725,
+    "chapter": 6,
+    "heading_path": [
+      "Online and Social Media Customer Service",
+      "Step 5. Practice"
+    ],
+    "normalized_text_sha256": "293c6870a4f77f0598f6d1537a0cb46582c890f59c6fed9cca77a89513669975"
+  },
+  "status": "published",
+  "stem": "3. A guest posts a complaint publicly on Instagram. What is the best move? (a) argue publicly, or (b) apologise briefly and invite them to DM, or (c) delete or ignore it"
+}

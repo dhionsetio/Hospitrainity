@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C03",
+  "code": "HSP-C03-LS-01",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "ea753495-4903-55b8-9c32-987ed623d8bb",
+  "order": 1,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 226,
+    "chapter": 3,
+    "heading_path": [
+      "Dealing with Customers on the Phone",
+      "Warm-Up"
+    ],
+    "normalized_text_sha256": "2a9fd4cbd281943895e9bbae825796fb817275d98d9fc42c753b0ded578e5b07"
+  },
+  "status": "published",
+  "title": "Warm-Up"
+}

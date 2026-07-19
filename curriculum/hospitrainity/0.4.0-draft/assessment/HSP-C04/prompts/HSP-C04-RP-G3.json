@@ -1,0 +1,60 @@
+{
+    "activity_code": "HSP-C04-ACT-ROLEPLAY",
+    "choices": [
+        {
+            "feedback": [
+                {
+                    "feedback_type": "error_specific",
+                    "text": "(a) “This is room service, not the front desk.” Technically true, but cold."
+                }
+            ],
+            "id": "8a5ef7de-7b06-5c86-8c9c-747101e992a5",
+            "label": "a",
+            "text": "“This is room service, not the front desk.”"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "success",
+                    "text": "(b) “Of course, I will connect you to the front desk now. One moment, please.” This is the ideal answer, because it transfers the guest warmly and clearly."
+                }
+            ],
+            "id": "45247238-5c37-592d-8d43-4b59c4117239",
+            "label": "b",
+            "text": "“Of course, I will connect you to the front desk now. One moment, please.”"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "error_specific",
+                    "text": "(c) “Call them yourself.” Rude and unhelpful."
+                }
+            ],
+            "id": "a111b6f8-d480-5394-a34b-c52f238afb78",
+            "label": "c",
+            "text": "“Call them yourself.”"
+        }
+    ],
+    "code": "HSP-C04-RP-G3",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "37e5e289-7623-50c9-816e-e4d3e98b3f22",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 466,
+        "chapter": 4,
+        "heading_path": [
+            "The Guest-Services Hotline",
+            "Step 6. Role-play"
+        ],
+        "normalized_text_sha256": "8a5bf847a1d9c7d2f5dd61855af309d509deb9f27f1dc607a825cbbb01fb9714"
+    },
+    "status": "published",
+    "stem": "Guest: “Actually, can you connect me to the front desk about my bill?”"
+}

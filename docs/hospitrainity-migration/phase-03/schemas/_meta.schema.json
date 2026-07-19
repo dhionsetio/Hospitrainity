@@ -1,0 +1,112 @@
+{
+  "$defs": {
+    "editorial_code": {
+      "maxLength": 64,
+      "minLength": 3,
+      "pattern": "^[A-Z][A-Z0-9]*(-[A-Z0-9]+)+$",
+      "type": "string"
+    },
+    "meta": {
+      "properties": {
+        "code": {
+          "$ref": "#/$defs/editorial_code"
+        },
+        "content_version": {
+          "$ref": "#/$defs/semver"
+        },
+        "id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "replaced_by": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/uuid"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "replaces": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/uuid"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "status": {
+          "$ref": "#/$defs/status"
+        }
+      },
+      "required": [
+        "id",
+        "code",
+        "content_version",
+        "status"
+      ],
+      "type": "object"
+    },
+    "semver": {
+      "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-[0-9A-Za-z.-]+)?(?:\\+[0-9A-Za-z.-]+)?$",
+      "type": "string"
+    },
+    "sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "source_locator": {
+      "additionalProperties": false,
+      "properties": {
+        "artifact": {
+          "const": "Hospitrainity.docx"
+        },
+        "block_index": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "chapter": {
+          "maximum": 7,
+          "minimum": 1,
+          "type": "integer"
+        },
+        "heading_path": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "normalized_text_sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      },
+      "required": [
+        "artifact",
+        "chapter",
+        "heading_path",
+        "block_index",
+        "normalized_text_sha256"
+      ],
+      "type": "object"
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "review",
+        "approved",
+        "published",
+        "retired"
+      ]
+    },
+    "uuid": {
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-5[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$",
+      "type": "string"
+    }
+  },
+  "$id": "https://hospitrainity.curriculum/schema/_meta.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Shared definitions"
+}

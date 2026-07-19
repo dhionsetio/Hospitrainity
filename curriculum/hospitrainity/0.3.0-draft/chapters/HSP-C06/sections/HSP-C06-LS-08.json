@@ -1,0 +1,22 @@
+{
+  "chapter_code": "HSP-C06",
+  "code": "HSP-C06-LS-08",
+  "content_version": "0.3.0-draft",
+  "entity_type": "lesson-section",
+  "id": "5d7193b1-2846-5453-bb9f-5ac5389e1cf2",
+  "order": 8,
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 717,
+    "chapter": 6,
+    "heading_path": [
+      "Online and Social Media Customer Service",
+      "Step 5. Practice"
+    ],
+    "normalized_text_sha256": "426e21c1c2f4d45219b4dad04ee580611ec68d07a70035ec8e8d24ebb62ec6dc"
+  },
+  "status": "published",
+  "title": "Step 5. Practice"
+}

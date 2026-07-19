@@ -1,0 +1,93 @@
+{
+  "entity_types": [
+    "activity",
+    "answer-model",
+    "chapter",
+    "feedback-model",
+    "lesson-section",
+    "migration-edge",
+    "prompt-item",
+    "rubric",
+    "source-provenance"
+  ],
+  "fk_checks": [
+    {
+      "checked": 85,
+      "column": "chapter_code",
+      "references": "chapter",
+      "table": "lesson_section",
+      "unresolved": 0
+    },
+    {
+      "checked": 24,
+      "column": "lesson_code",
+      "references": "lesson-section",
+      "table": "activity",
+      "unresolved": 0
+    },
+    {
+      "checked": 72,
+      "column": "outcome_codes",
+      "references": "outcome",
+      "table": "activity",
+      "unresolved": 0
+    },
+    {
+      "checked": 21,
+      "column": "outcome_codes",
+      "references": "outcome",
+      "table": "chapter",
+      "unresolved": 0
+    },
+    {
+      "checked": 102,
+      "column": "activity_code",
+      "references": "activity",
+      "table": "prompt_item",
+      "unresolved": 0
+    },
+    {
+      "checked": 102,
+      "column": "prompt_code",
+      "references": "prompt-item",
+      "table": "answer_model",
+      "unresolved": 0
+    },
+    {
+      "checked": 102,
+      "column": "prompt_code",
+      "references": "prompt-item",
+      "table": "feedback_model",
+      "unresolved": 0
+    },
+    {
+      "checked": 6,
+      "column": "activity_code",
+      "references": "activity",
+      "table": "rubric",
+      "unresolved": 0
+    },
+    {
+      "checked": 7,
+      "column": "target_code",
+      "references": "ANY_ENTITY",
+      "table": "source_provenance",
+      "unresolved": 0
+    },
+    {
+      "checked": 4,
+      "column": "canonical_code",
+      "references": "ANY_ENTITY",
+      "table": "migration_edge",
+      "unresolved": 0
+    }
+  ],
+  "fk_violations": 0,
+  "generated_by": "CP-08",
+  "ok": true,
+  "registry_entries": 487,
+  "registry_missing_ids": [],
+  "registry_non_entity_ids": 52,
+  "tool": "hsp-datamodel.mjs",
+  "total_id_bearing_entities": 435
+}

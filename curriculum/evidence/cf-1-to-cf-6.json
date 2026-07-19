@@ -1,0 +1,61 @@
+{
+    "evidence_version": "2.0.0",
+    "source_authority": {
+        "artifact": "Hospitrainity.docx",
+        "sha256": "7f8a2c62db6884498f7a1c2de56e79e39609262944a685fe7eb97f702444cbb4"
+    },
+    "package": {
+        "path": "curriculum/hospitrainity/0.4.0-draft",
+        "file_count": 469,
+        "byte_count": 1473828,
+        "json_file_count": 463,
+        "markdown_file_count": 6,
+        "tree_sha256": "e864b4fcaa9d182b8379cf7d179279114baa7fef46624bcb261be41b8072dc9a",
+        "tree_digest_definition": "SHA-256 over UTF-8 rows sorted by ordinal relative path: path + NUL + lowercase raw-file SHA-256 + NUL + byte length + LF"
+    },
+    "standalone": {
+        "path": "standalone/Hospitrainity-Standalone.html",
+        "byte_count": 685148,
+        "sha256": "5aa0002c350d1f86094c9ea867ec27a2819252d07685e3ac24cd10822f79a407"
+    },
+    "expected_counts": {
+        "chapters": 7,
+        "sections": 85,
+        "activities": 25,
+        "prompts": 124,
+        "answer_models": 96,
+        "feedback_models": 96,
+        "rubrics": 6,
+        "outcomes": 21,
+        "competencies": 7,
+        "cefr_references": 23,
+        "source_provenance": 7,
+        "migration_edges": 8
+    },
+    "coverage_counts": {
+        "content_blocks": 774,
+        "source_tables": 21,
+        "warm_up_questions": 21,
+        "exercise_prompts": 96,
+        "rating_items": 28,
+        "external_hyperlink_relationships": 18,
+        "non_empty_accepted_strings": 90,
+        "feedback_and_guidance_strings": 138
+    },
+    "projection_meta": {
+        "checkpoint": "CF-1-to-CF-6",
+        "content_version": "0.4.0-draft",
+        "disclaimer": "This development projection exposes all seven compiled chapters for local verification; chapter lifecycle status does not constitute release approval of 0.4.0-draft. CF-7 release review remains open. Earlier CP-14 evidence records a Project Owner verdict consolidated across the ESP/CEFR, hospitality-practitioner, and accessibility roles rather than three independently conducted specialist reviews; it must not be represented as independent specialist certification. Provisional CEFR bands remain working hypotheses and must not be presented as certified CEFR levels.",
+        "generated_from": "Hospitrainity.docx via the deterministic scripts/curriculum source compiler; framework metadata migrated from 0.3.0-draft.",
+        "notice": "Source-fidelity development package generated from the authoritative DOCX. Final publication remains gated by CF-7 release evidence.",
+        "product": "Hospitrainity",
+        "source_artifact": "Hospitrainity.docx",
+        "status": "development",
+        "subtitle": "Practical customer-care English for hotel and hospitality staff, organized into seven modules derived from the source manuscript.",
+        "title": "Hospitrainity — Hospitality English"
+    },
+    "workflow_gate": {
+        "id": "CF-7",
+        "status": "open"
+    }
+}

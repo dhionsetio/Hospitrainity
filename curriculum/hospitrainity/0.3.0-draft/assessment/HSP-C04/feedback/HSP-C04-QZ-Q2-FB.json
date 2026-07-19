@@ -1,0 +1,26 @@
+{
+  "code": "HSP-C04-QZ-Q2-FB",
+  "content_version": "0.3.0-draft",
+  "entity_type": "feedback-model",
+  "id": "588bf17b-3958-5610-a6d7-b269179eefba",
+  "messages": [
+    {
+      "feedback_type": "model_reveal",
+      "text": "B. Reading back is your safety net against wrong or missing items."
+    }
+  ],
+  "prompt_code": "HSP-C04-QZ-Q2",
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 472,
+    "chapter": 4,
+    "heading_path": [
+      "The Guest-Services Hotline",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "88d7b248146c10582b451ce6136194e1991859d6097653a2d36de71aabaee0ae"
+  },
+  "status": "published"
+}

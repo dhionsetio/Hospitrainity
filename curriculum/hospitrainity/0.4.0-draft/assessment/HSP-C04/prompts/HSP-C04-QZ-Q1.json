@@ -1,0 +1,50 @@
+{
+    "activity_code": "HSP-C04-ACT-QUIZ",
+    "choices": [
+        {
+            "feedback": [],
+            "id": "f0041990-70be-55ad-9ee5-0dfc20e45aee",
+            "label": "a",
+            "text": "“Hello?”"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "model_reveal",
+                    "text": "B. Name the service and the hotel, then offer help."
+                }
+            ],
+            "id": "b29dd034-27b5-5845-8b39-ad15d6827e26",
+            "label": "b",
+            "text": "“Guest services, Grand Serenata Hotel. How may I help you?”"
+        },
+        {
+            "feedback": [],
+            "id": "25919b9c-55ff-59b4-9168-2f7a70c1032c",
+            "label": "c",
+            "text": "“What?”"
+        }
+    ],
+    "code": "HSP-C04-QZ-Q1",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "586fd212-67b3-5228-a406-5c71e63c8b8a",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 477,
+        "chapter": 4,
+        "heading_path": [
+            "The Guest-Services Hotline",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "67eb267d745c9e87df6eafe987795762d8c26d4ac210843e0cc69f8db46b687f"
+    },
+    "status": "published",
+    "stem": "Q1. What is the best hotline opener? A) “Hello?” B) “Guest services, Grand Serenata Hotel. How may I help you?” C) “What?”"
+}

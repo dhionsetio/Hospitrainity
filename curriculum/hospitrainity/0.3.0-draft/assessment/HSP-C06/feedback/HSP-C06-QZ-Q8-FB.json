@@ -1,0 +1,26 @@
+{
+  "code": "HSP-C06-QZ-Q8-FB",
+  "content_version": "0.3.0-draft",
+  "entity_type": "feedback-model",
+  "id": "96193475-98df-5277-93d3-a4723fb106b2",
+  "messages": [
+    {
+      "feedback_type": "model_reveal",
+      "text": "B. A short “let me check and come right back” reassures the guest."
+    }
+  ],
+  "prompt_code": "HSP-C06-QZ-Q8",
+  "replaced_by": null,
+  "replaces": null,
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 778,
+    "chapter": 6,
+    "heading_path": [
+      "Online and Social Media Customer Service",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "f9bc14b617b738ec687a1dc4c80774ac81d973bfaca275dae504f84d9137e086"
+  },
+  "status": "published"
+}

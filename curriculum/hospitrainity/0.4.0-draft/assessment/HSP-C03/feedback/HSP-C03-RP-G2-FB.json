@@ -1,0 +1,35 @@
+{
+    "code": "HSP-C03-RP-G2-FB",
+    "content_version": "0.4.0-draft",
+    "entity_type": "feedback-model",
+    "id": "1603e2bc-2b0d-5675-9451-e7375eb63c47",
+    "messages": [
+        {
+            "feedback_type": "error_specific",
+            "text": "(a) “I already said it.” Rude, and it makes the caller feel bad."
+        },
+        {
+            "feedback_type": "success",
+            "text": "(b) “Of course. Your booking reference is four, five, two. Shall I say it again slowly?” This is the ideal answer, patient and clear."
+        },
+        {
+            "feedback_type": "error_specific",
+            "text": "(c) Hanging up. Never do this."
+        }
+    ],
+    "prompt_code": "HSP-C03-RP-G2",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 316,
+        "chapter": 3,
+        "heading_path": [
+            "Dealing with Customers on the Phone",
+            "Step 6. Role-play"
+        ],
+        "normalized_text_sha256": "7649e7be7d2d212e6701e21f10cb4e9117b1758d924aa983a0295e4260e5c251"
+    },
+    "status": "published"
+}

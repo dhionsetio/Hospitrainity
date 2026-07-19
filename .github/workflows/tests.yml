@@ -1,0 +1,104 @@
+name: quality
+
+on:
+  push:
+    branches: [main, master, develop]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: quality-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    name: Tests, audits, style, build, and browser E2E
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout code
+        # actions/checkout v6.0.2; full commit pins are immutable.
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10
+        with:
+          persist-credentials: false
+
+      - name: Setup PHP 8.2
+        # shivammathur/setup-php v2.
+        uses: shivammathur/setup-php@b604ade2a87db23f8871b7182e69ec5e75effb45
+        with:
+          php-version: '8.2'
+          extensions: mbstring, pdo, pdo_sqlite, sqlite3, bcmath, intl, fileinfo
+          coverage: none
+          tools: composer:v2
+
+      - name: Setup Node 24 LTS
+        # actions/setup-node v5.0.0.
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Configure test environment
+        run: cp .env.example .env
+
+      - name: Install PHP dependencies
+        run: composer install --no-interaction --prefer-dist --no-progress --optimize-autoloader
+
+      - name: Install JavaScript dependencies
+        run: npm ci
+
+      - name: Verify workflow syntax and authority-lane policy
+        run: php scripts/quality/verify-workflows.php
+
+      - name: Verify governance, traceability, and tracked-artifact safety
+        run: npm run governance:verify
+
+      - name: Generate application key
+        run: php artisan key:generate
+
+      - name: Install Chromium and system dependencies
+        run: npx playwright install --with-deps chromium
+
+      - name: Validate Composer metadata
+        run: composer validate --strict --no-check-publish
+
+      - name: Audit PHP dependencies
+        run: composer audit --locked --abandoned=fail
+
+      - name: Audit JavaScript dependencies
+        run: npm audit --audit-level=low
+
+      - name: Lint maintained JavaScript
+        run: npm run lint:js
+
+      - name: Run JavaScript unit tests
+        run: npm run test:js
+
+      - name: Build production assets
+        run: npm run build
+
+      - name: Run strict PHP test suite
+        run: composer test
+
+      - name: Compile Blade views
+        run: php artisan view:cache
+
+      - name: Enforce PHP style
+        run: ./vendor/bin/pint --test
+
+      - name: Run isolated browser E2E tests
+        run: npm run test:e2e
+
+      - name: Upload browser test report
+        if: ${{ !cancelled() }}
+        # actions/upload-artifact v5.0.0.
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4
+        with:
+          name: playwright-report
+          path: storage/framework/testing/e2e/playwright-report
+          if-no-files-found: warn
+          retention-days: 14

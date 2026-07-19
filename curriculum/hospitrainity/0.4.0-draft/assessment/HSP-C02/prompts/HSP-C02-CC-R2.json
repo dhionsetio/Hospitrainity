@@ -1,0 +1,37 @@
+{
+    "activity_code": "HSP-C02-ACT-CONFIDENCE",
+    "code": "HSP-C02-CC-R2",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "b5b8c899-ec10-539a-8ac7-3feab5262cc9",
+    "language": "en",
+    "order": 2,
+    "provenance_kind": "source_verbatim",
+    "rating_scale": {
+        "max": 5,
+        "min": 1,
+        "values": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ]
+    },
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "rating",
+    "scoring_mode": "unscored_self_report",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 210,
+        "chapter": 2,
+        "heading_path": [
+            "Front Desk and Check-In",
+            "Step 8. Confidence check"
+        ],
+        "normalized_text_sha256": "e3d1197d2186982881ea65946ebf7695eca191ecaa83f0bb3af7fe84b72b927c"
+    },
+    "status": "published",
+    "stem": "I can confirm a reservation and ask for a passport politely."
+}

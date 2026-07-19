@@ -1,0 +1,105 @@
+{
+  "$id": "https://hospitrainity.curriculum/schema/outcome-alignments.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "approval_requirements": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "module_count": {
+      "const": 7
+    },
+    "outcome_count": {
+      "minimum": 1,
+      "type": "integer"
+    },
+    "outcomes": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "cefr_reference_ids": {
+            "items": {
+              "pattern": "^CEFR-[A-Z0-9-]+$",
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "competency_ids": {
+            "items": {
+              "pattern": "^COMP-[A-Z-]+$",
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "evidence_conditions": {
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1,
+            "type": "array"
+          },
+          "id": {
+            "pattern": "^OUT-M[0-9]{2}-[0-9]{2}$",
+            "type": "string"
+          },
+          "module": {
+            "maximum": 7,
+            "minimum": 1,
+            "type": "integer"
+          },
+          "provisional_band": {
+            "pattern": "^(local|A2|B1|A2-B1)$",
+            "type": "string"
+          },
+          "statement": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "knowledge",
+              "performance",
+              "reflection"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "module",
+          "statement",
+          "type",
+          "competency_ids",
+          "cefr_reference_ids",
+          "evidence_conditions",
+          "provisional_band",
+          "status"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "status": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "version",
+    "status",
+    "module_count",
+    "outcome_count",
+    "outcomes",
+    "approval_requirements"
+  ],
+  "title": "Outcome alignments (CP-02 compatible)",
+  "type": "object"
+}

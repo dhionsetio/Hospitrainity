@@ -1,0 +1,60 @@
+{
+    "activity_code": "HSP-C06-ACT-ROLEPLAY",
+    "choices": [
+        {
+            "feedback": [
+                {
+                    "feedback_type": "error_specific",
+                    "text": "(a) “That is not true.” Arguing in public damages the hotel’s reputation."
+                }
+            ],
+            "id": "58dfc234-9aa1-5631-9895-b943db107513",
+            "label": "a",
+            "text": "“That is not true.”"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "success",
+                    "text": "(b) “We are so sorry to hear this, and it is not the experience we want for you. Please send us a DM with your booking details so we can make it right.” This is the ideal answer, empathy in public and a move to private."
+                }
+            ],
+            "id": "8ed37ce1-0298-5cac-ab6c-a1d9331c8d6d",
+            "label": "b",
+            "text": "“We are so sorry to hear this, and it is not the experience we want for you. Please send us a DM with your booking details so we can make it right.”"
+        },
+        {
+            "feedback": [
+                {
+                    "feedback_type": "error_specific",
+                    "text": "(c) Ignoring it. Silence looks careless to everyone else reading."
+                }
+            ],
+            "id": "3f19cabe-414e-5ed5-b5dc-0efd2ee4a2cc",
+            "label": "c",
+            "text": "Ignoring it."
+        }
+    ],
+    "code": "HSP-C06-RP-G2",
+    "content_version": "0.4.0-draft",
+    "entity_type": "prompt-item",
+    "id": "5762b88d-35dc-5ffa-b952-62ad3d50e222",
+    "language": "en",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "response_form": "selection",
+    "scoring_mode": "objective_choice",
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 755,
+        "chapter": 6,
+        "heading_path": [
+            "Online and Social Media Customer Service",
+            "Step 6. Role-play"
+        ],
+        "normalized_text_sha256": "5ecb356f756aa73ef191951de650386c3b085af512c1cfd5a9496828cbc294b1"
+    },
+    "status": "published",
+    "stem": "Public comment: “Worst hotel ever, my room was dirty.”"
+}

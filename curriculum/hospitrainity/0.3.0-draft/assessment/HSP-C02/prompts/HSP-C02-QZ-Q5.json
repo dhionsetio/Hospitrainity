@@ -1,0 +1,22 @@
+{
+  "activity_code": "HSP-C02-ACT-QUIZ",
+  "code": "HSP-C02-QZ-Q5",
+  "content_version": "0.3.0-draft",
+  "entity_type": "prompt-item",
+  "id": "f86c9499-b6ad-5c70-8179-6fc6140a8e3d",
+  "replaced_by": null,
+  "replaces": null,
+  "response_form": "selection",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 191,
+    "chapter": 2,
+    "heading_path": [
+      "Front Desk and Check-In",
+      "Step 7. Quiz"
+    ],
+    "normalized_text_sha256": "edfc559e86e9cec3022525c13af0a0ce36a5ab1f3ee6131130e1642ca348d266"
+  },
+  "status": "published",
+  "stem": "Q5. When do you usually share breakfast and Wi-Fi information? A) before greeting B) when you hand over the key C) never"
+}

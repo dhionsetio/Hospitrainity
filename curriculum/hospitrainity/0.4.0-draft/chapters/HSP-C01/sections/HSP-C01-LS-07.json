@@ -1,0 +1,100 @@
+{
+    "blocks": [
+        {
+            "id": "2cdff614-626f-5e81-909e-4f7e3ca098ae",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Six practical chapters follow this introduction. You can work through them in order, which is the smoothest path, or move to the skill you most want to build.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 72,
+                "chapter": 1,
+                "heading_path": [
+                    "Welcome and Introduction to Customer Care",
+                    "What is inside this book"
+                ],
+                "normalized_text_sha256": "8144ed0dfd2f33b2afd2e0808b93965a597f86307021748b79080d555bc65b67"
+            },
+            "text": "Six practical chapters follow this introduction. You can work through them in order, which is the smoothest path, or move to the skill you most want to build.",
+            "type": "paragraph"
+        },
+        {
+            "caption": "What is inside this book: Chapter / Focus skill",
+            "header": [
+                "Chapter",
+                "Focus skill"
+            ],
+            "id": "54040460-78a5-5d97-8a16-a5ef38016dca",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "rows": [
+                [
+                    "2. Front Desk and Check-In",
+                    "Speaking"
+                ],
+                [
+                    "3. Dealing with Customers on the Phone",
+                    "Speaking and listening"
+                ],
+                [
+                    "4. The Guest-Services Hotline",
+                    "Speaking and listening"
+                ],
+                [
+                    "5. Customer Care Through Writing",
+                    "Writing"
+                ],
+                [
+                    "6. Online and Social Media Customer Service",
+                    "Writing in real time"
+                ],
+                [
+                    "7. Dealing with Problems and Complaints",
+                    "Speaking and writing"
+                ]
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 73,
+                "chapter": 1,
+                "heading_path": [
+                    "Welcome and Introduction to Customer Care",
+                    "What is inside this book"
+                ],
+                "normalized_text_sha256": "d03b6a054bd5ed6952a8dbf6b0d84a1f0c125c4d11196b84d95edf630cb96308"
+            },
+            "type": "source_table"
+        }
+    ],
+    "chapter_code": "HSP-C01",
+    "code": "HSP-C01-LS-07",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "10f9d8f9-8a6f-5e9e-9e24-ef41a3784c14",
+    "language": "en",
+    "order": 7,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 71,
+        "chapter": 1,
+        "heading_path": [
+            "Welcome and Introduction to Customer Care",
+            "What is inside this book"
+        ],
+        "normalized_text_sha256": "d23e3f5c26a22e5fcddb8555da8ced9c046d720ba274d51d50dc1efe12b20bbd"
+    },
+    "status": "published",
+    "title": "What is inside this book"
+}

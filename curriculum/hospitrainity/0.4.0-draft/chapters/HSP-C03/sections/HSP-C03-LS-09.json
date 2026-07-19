@@ -1,0 +1,591 @@
+{
+    "blocks": [
+        {
+            "id": "44f2aaaf-287b-5236-b73d-c60be699069a",
+            "language": "en",
+            "order": 1,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Guided mode (pick the best response, then check)",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 308,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "8b5c1e17e91dac6eca1351f72f3ad5c3f74412725d84779192885e8a7d4310a7"
+            },
+            "text": "Guided mode (pick the best response, then check)",
+            "type": "heading"
+        },
+        {
+            "id": "e00ca261-5229-54f0-b2f2-76cbce0d2432",
+            "language": "en",
+            "order": 2,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Caller:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " “Do you have any rooms for this Saturday?”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 309,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "36bdc5853ecb61004a12c9492770739dbfb42281200b12c2f422f5e56b3ba693"
+            },
+            "speaker": "Caller",
+            "text": "“Do you have any rooms for this Saturday?”",
+            "type": "dialogue_turn"
+        },
+        {
+            "id": "697a3884-3b66-50cb-954c-c8296ace55c1",
+            "language": "en",
+            "order": 3,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Reveal the options and feedback",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 310,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "6dc878d750298bcb4a4f27b0ad5920cbcec919db017ef2f3a46fa28770873d4e"
+            },
+            "text": "Reveal the options and feedback",
+            "type": "paragraph"
+        },
+        {
+            "id": "25d5a062-f136-5a72-92fb-5297097802ab",
+            "language": "en",
+            "order": 4,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "(a) “I do not know.” Unhelpful, and it leaves the caller stuck.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 311,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "38f28f5b7dcf14410b25d7c32cc49d0fd2ee7c069576214c931e5e08f8ae9c92"
+            },
+            "text": "(a) “I do not know.” Unhelpful, and it leaves the caller stuck.",
+            "type": "paragraph"
+        },
+        {
+            "id": "5346f72f-b78b-50f3-ae68-70aa53b7f1d4",
+            "language": "en",
+            "order": 5,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "(b) “Let me check availability for Saturday for you. One moment, please.” This is the ideal answer, calm and action-focused.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 312,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "a7031fa4992e2e84b8a0189a1b2f442b0bd0c3744751e17a2bedb8b5ae1c4a16"
+            },
+            "text": "(b) “Let me check availability for Saturday for you. One moment, please.” This is the ideal answer, calm and action-focused.",
+            "type": "paragraph"
+        },
+        {
+            "id": "c64a8352-4cb2-59c3-b011-8d95532c045c",
+            "language": "en",
+            "order": 6,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "(c) “Probably not.” Vague and discouraging.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 313,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "db53eea4699b8405f4e9631d3e237a0d1e6871ada90b2bcc7f4df8bc27a7484f"
+            },
+            "text": "(c) “Probably not.” Vague and discouraging.",
+            "type": "paragraph"
+        },
+        {
+            "id": "f3bc39d4-921b-5bfb-acaa-a78b34af5d17",
+            "language": "en",
+            "order": 7,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Caller:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " “Sorry, the line is a little unclear. Could you repeat that?”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 314,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "66f4ffec07bddea1fe3bd25026ebf801a4bd3909a89993450db205ead93b2c56"
+            },
+            "speaker": "Caller",
+            "text": "“Sorry, the line is a little unclear. Could you repeat that?”",
+            "type": "dialogue_turn"
+        },
+        {
+            "id": "833021c1-b75d-5168-8f84-d1eb1a25b792",
+            "language": "en",
+            "order": 8,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Reveal the options and feedback",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 315,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "6dc878d750298bcb4a4f27b0ad5920cbcec919db017ef2f3a46fa28770873d4e"
+            },
+            "text": "Reveal the options and feedback",
+            "type": "paragraph"
+        },
+        {
+            "id": "6b4bdc8a-e4ba-5534-865a-ad279d56229c",
+            "language": "en",
+            "order": 9,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "(a) “I already said it.” Rude, and it makes the caller feel bad.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 316,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "8c340a66adeb7836d040f71edc4c2d1661e1814a0a2563ce0f08f8742f873d15"
+            },
+            "text": "(a) “I already said it.” Rude, and it makes the caller feel bad.",
+            "type": "paragraph"
+        },
+        {
+            "id": "af6c5f4a-63c3-5326-b704-4b793157b042",
+            "language": "en",
+            "order": 10,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "(b) “Of course. Your booking reference is four, five, two. Shall I say it again slowly?” This is the ideal answer, patient and clear.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 317,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "e26d0302efc4d5c64f9850c8a2c583fc0fd353cbde2a9bb7e3db2d4e751ce54a"
+            },
+            "text": "(b) “Of course. Your booking reference is four, five, two. Shall I say it again slowly?” This is the ideal answer, patient and clear.",
+            "type": "paragraph"
+        },
+        {
+            "id": "f3533391-8a0e-54d1-877f-0db1731a2a3e",
+            "language": "en",
+            "order": 11,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "(c) Hanging up. Never do this.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 318,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "064fd480131c3a3e33dea6fc017223e9e0ad28274fa1c9a89ad4a6beeca1c04c"
+            },
+            "text": "(c) Hanging up. Never do this.",
+            "type": "paragraph"
+        },
+        {
+            "id": "8c7e5721-4754-5c28-b77b-8007ceca78bd",
+            "language": "en",
+            "order": 12,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Caller:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " “Actually, I need to speak to someone about a dinner booking.”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 319,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "e7d31570247c97357ef7d0975f7ce7c000cd78024ad0925f827fbf59d8259ddc"
+            },
+            "speaker": "Caller",
+            "text": "“Actually, I need to speak to someone about a dinner booking.”",
+            "type": "dialogue_turn"
+        },
+        {
+            "id": "e2dc424a-419b-58bf-b9b2-bc6eaa8d6703",
+            "language": "en",
+            "order": 13,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "Reveal the options and feedback",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 320,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "6dc878d750298bcb4a4f27b0ad5920cbcec919db017ef2f3a46fa28770873d4e"
+            },
+            "text": "Reveal the options and feedback",
+            "type": "paragraph"
+        },
+        {
+            "id": "ce980905-0419-5c37-984d-87c18cd5974b",
+            "language": "en",
+            "order": 14,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "(a) “Wrong number.” Cold and unhelpful.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 321,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "52388528f7af9a2486c5abcd7e741eb83366252b81fb27e229907a4fc1f1bbf3"
+            },
+            "text": "(a) “Wrong number.” Cold and unhelpful.",
+            "type": "paragraph"
+        },
+        {
+            "id": "91a197c5-3760-512c-99b1-d5819c2f4ea5",
+            "language": "en",
+            "order": 15,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "(b) “Of course, I will put you through to our restaurant now. One moment, please.” This is the ideal answer, because it transfers the caller warmly and clearly.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 322,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "6c6a25e9ce465cd0c000af44eb230963c176c79961695e442e6b2caa6c698d45"
+            },
+            "text": "(b) “Of course, I will put you through to our restaurant now. One moment, please.” This is the ideal answer, because it transfers the caller warmly and clearly.",
+            "type": "paragraph"
+        },
+        {
+            "id": "ac69493f-fbe6-55c8-bc41-7bc919d2c46e",
+            "language": "en",
+            "order": 16,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "(c) “I cannot help with that.” This leaves the caller with nowhere to go.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 323,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "7bd3436322048cb7626994afe2f3d1d7b0b33fec5bfa9355691b4e3ca053f857"
+            },
+            "text": "(c) “I cannot help with that.” This leaves the caller with nowhere to go.",
+            "type": "paragraph"
+        },
+        {
+            "id": "12d353b6-3ff6-5400-85bc-064d7bc63a5a",
+            "language": "en",
+            "order": 17,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Free mode (your turn, speak or write your own answer)",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 324,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "6c342355148bccd8a90347b4d0badde4e3d86baba374a58aa359fd82c001d9bb"
+            },
+            "text": "Free mode (your turn, speak or write your own answer)",
+            "type": "heading"
+        },
+        {
+            "id": "b5b504fd-4a8d-58fb-a0c9-04b5c49d3ff8",
+            "language": "en",
+            "order": 18,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": true,
+                    "italic": false,
+                    "text": "Prompt:",
+                    "underline": false
+                },
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": " A caller wants to book two nights next week. Answer the phone, take the booking, confirm the details, and close the call.",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 325,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "818593879dd423781c6a22083508b39594d273dae74244b68eca54472b1cbb6d"
+            },
+            "text": "Prompt: A caller wants to book two nights next week. Answer the phone, take the booking, confirm the details, and close the call.",
+            "type": "instruction"
+        },
+        {
+            "id": "8848f0b9-9861-5e5c-872e-718dab5e65ce",
+            "language": "en",
+            "order": 19,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "See a model answer",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 326,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "115cd5fb848ceef36134cf981997fcf0d145aca19ef299453b13791da2b2b176"
+            },
+            "text": "See a model answer",
+            "type": "paragraph"
+        },
+        {
+            "id": "66713922-cbda-52d2-ae4b-f0df20dab3e3",
+            "language": "en",
+            "order": 20,
+            "provenance_kind": "source_verbatim",
+            "runs": [
+                {
+                    "bold": false,
+                    "italic": false,
+                    "text": "“Good afternoon, the Grand Serenata Hotel, Maya speaking. How may I help you? ... I would be happy to help. Let me check availability for those two nights. ... Yes, we have a room. Could I take your name and a contact number? ... Let me read that back to be sure. ... Your booking reference is four, five, three. Thank you for calling, and we look forward to welcoming you.”",
+                    "underline": false
+                }
+            ],
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 327,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "c6e07fbc84e4c228fd766c2143d51057440aa0d69bcda4a46efa3b5603c6fe0c"
+            },
+            "text": "“Good afternoon, the Grand Serenata Hotel, Maya speaking. How may I help you? ... I would be happy to help. Let me check availability for those two nights. ... Yes, we have a room. Could I take your name and a contact number? ... Let me read that back to be sure. ... Your booking reference is four, five, three. Thank you for calling, and we look forward to welcoming you.”",
+            "type": "paragraph"
+        },
+        {
+            "activity_code": "HSP-C03-ACT-ROLEPLAY",
+            "id": "14d59f13-6fb5-56d0-b326-6c2ffd67b8a7",
+            "language": "en",
+            "order": 21,
+            "provenance_kind": "derived_navigation",
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 307,
+                "chapter": 3,
+                "heading_path": [
+                    "Dealing with Customers on the Phone",
+                    "Step 6. Role-play"
+                ],
+                "normalized_text_sha256": "2820d9182be9f0c2b25264c9853f2df9c8c0866110449f03bf85a3cd5e08c862"
+            },
+            "type": "activity_embed"
+        }
+    ],
+    "chapter_code": "HSP-C03",
+    "code": "HSP-C03-LS-09",
+    "content_version": "0.4.0-draft",
+    "entity_type": "lesson-section",
+    "id": "49903f4a-186d-5bb4-b7df-5ff53cb1bfff",
+    "language": "en",
+    "order": 9,
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 307,
+        "chapter": 3,
+        "heading_path": [
+            "Dealing with Customers on the Phone",
+            "Step 6. Role-play"
+        ],
+        "normalized_text_sha256": "2820d9182be9f0c2b25264c9853f2df9c8c0866110449f03bf85a3cd5e08c862"
+    },
+    "status": "published",
+    "title": "Step 6. Role-play"
+}

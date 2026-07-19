@@ -1,0 +1,61 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://hospitrainity.local/schemas/ng-traceability.schema.json",
+    "title": "Hospitrainity next-generation finding traceability",
+    "type": "object",
+    "required": ["schema_version", "roadmap", "findings"],
+    "additionalProperties": false,
+    "properties": {
+        "schema_version": { "const": "1.0.0" },
+        "roadmap": {
+            "type": "object",
+            "required": ["path", "sha256"],
+            "additionalProperties": false,
+            "properties": {
+                "path": { "type": "string", "minLength": 1 },
+                "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+            }
+        },
+        "findings": {
+            "type": "array",
+            "minItems": 43,
+            "maxItems": 43,
+            "items": { "$ref": "#/$defs/finding" }
+        }
+    },
+    "$defs": {
+        "stringArray": {
+            "type": "array",
+            "items": { "type": "string", "minLength": 1 }
+        },
+        "finding": {
+            "type": "object",
+            "required": ["id", "batches", "requirement", "decisions", "required_evidence", "status", "evidence"],
+            "additionalProperties": false,
+            "properties": {
+                "id": { "type": "string", "pattern": "^NG-P[0-3]-[0-9]{3}$" },
+                "batches": { "$ref": "#/$defs/stringArray", "minItems": 1 },
+                "requirement": { "type": "string", "minLength": 1 },
+                "decisions": { "$ref": "#/$defs/stringArray", "minItems": 1 },
+                "required_evidence": { "type": "string", "minLength": 1 },
+                "status": {
+                    "enum": ["open", "in_progress", "human_review", "legal_review", "production_gate", "closed"]
+                },
+                "evidence": {
+                    "type": "object",
+                    "required": ["code", "migrations", "automated_tests", "browser_device_checks", "human_legal_reviews", "production_evidence", "checkpoints"],
+                    "additionalProperties": false,
+                    "properties": {
+                        "code": { "$ref": "#/$defs/stringArray" },
+                        "migrations": { "$ref": "#/$defs/stringArray" },
+                        "automated_tests": { "$ref": "#/$defs/stringArray" },
+                        "browser_device_checks": { "$ref": "#/$defs/stringArray" },
+                        "human_legal_reviews": { "$ref": "#/$defs/stringArray" },
+                        "production_evidence": { "$ref": "#/$defs/stringArray" },
+                        "checkpoints": { "$ref": "#/$defs/stringArray" }
+                    }
+                }
+            }
+        }
+    }
+}

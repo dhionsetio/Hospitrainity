@@ -1,0 +1,21 @@
+{
+  "code": "HSP-C06-RP-FREE-AM",
+  "content_version": "0.3.0-draft",
+  "entity_type": "answer-model",
+  "id": "dbe1f1b1-f628-5bf5-9278-daa7cf1c34a1",
+  "prompt_code": "HSP-C06-RP-FREE",
+  "replaced_by": null,
+  "replaces": null,
+  "scoring_mode": "rubric",
+  "source_locator": {
+    "artifact": "Hospitrainity.docx",
+    "block_index": 750,
+    "chapter": 6,
+    "heading_path": [
+      "Online and Social Media Customer Service",
+      "Step 6. Role-play"
+    ],
+    "normalized_text_sha256": "1cabbbb0d0c31a123aee673fa50e9c7adc3cb7e277b097c3460808eec5763f5d"
+  },
+  "status": "published"
+}

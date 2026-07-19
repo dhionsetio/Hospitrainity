@@ -1,0 +1,27 @@
+{
+    "code": "HSP-C07-QZ-Q2-FB",
+    "content_version": "0.4.0-draft",
+    "entity_type": "feedback-model",
+    "id": "b2baa702-6e46-5465-92bc-f5c4ab5f8123",
+    "messages": [
+        {
+            "feedback_type": "model_reveal",
+            "text": "B. It is sincere and specific."
+        }
+    ],
+    "prompt_code": "HSP-C07-QZ-Q2",
+    "provenance_kind": "source_verbatim",
+    "replaced_by": null,
+    "replaces": null,
+    "source_locator": {
+        "artifact": "Hospitrainity.docx",
+        "body_index": 924,
+        "chapter": 7,
+        "heading_path": [
+            "Dealing with Problems and Complaints",
+            "Step 7. Quiz"
+        ],
+        "normalized_text_sha256": "53414730c733988030dec11ca6f7e298d95d34332c9c4b06775de7e07930e60d"
+    },
+    "status": "published"
+}
