@@ -6,6 +6,18 @@ Standalone.html). See the companion roadmap for the full plan.
 
 ---
 
+## Next-generation B00 — authority freeze and trustworthy baseline (2026-07-19)
+
+- Initialized the authoritative folder as a local `main` Git repository and captured baseline commit `3f2a4964cd73ef77ca71b89deabb09c8c5ed4e68` / tree `7e7c904f9bd4746b310d5db61fd7630fef048736` without tracking the authority DOCX files, `.env`, databases, uploads, private storage, backups, or generated test/build artifacts.
+- Added exact-hash protected-authority verification, tracked-content secret/artifact scanning, a 43-finding machine-readable traceability registry, decision/release-evidence records, a read-only database inventory tool, and non-destructive GitHub Actions skeletons.
+- Proved the baseline from a fresh clone: exact lockfile installs, 11-module Vite build, 215 Laravel tests / 3,783 assertions, 50 Node tests, 7 Chromium journeys, ESLint, Pint, Blade, deterministic compiler and six negative probes, canonical verification, brand guard, and Composer/npm audits all pass.
+- The main database remained byte-identical at SHA-256 `1500795734fce828592d3ca613c9c555d4b8d3879ebc8be00c1c8f84f970054a`; B00 added no migration and changed no feature or canonical content.
+- Release limitations remain explicit: no remote/push, unsigned bootstrap, no private-repository branch enforcement on GitHub Free, dormant authority runner, expected local production-readiness failure, and no B17 target-database/broad-browser evidence.
+
+Full evidence and rollback: `docs/checkpoints/NG-B00-CHECKPOINT.md`.
+
+---
+
 ## Administration — ADM-4 canonical exercise-template authoring (2026-07-19)
 
 - Added registry version `1.0.0`, explicitly mapping all 14 retained exercise names to canonical response forms, scoring policies, cardinality, stable identities, accessibility requirements, and the shared learner renderer. Twelve templates are enabled; spelling/listening remain clearly unavailable pending an approved equivalent audio-only alternative.

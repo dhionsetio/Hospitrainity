@@ -2,7 +2,8 @@
     "schema_version": "1.0.0",
     "batch": "B00",
     "captured_at": "2026-07-19T20:21:28+07:00",
-    "state": "in_progress_pending_clean_checkout",
+    "state": "verified",
+    "verified_at": "2026-07-19T21:34:00+07:00",
     "authority": {
         "verifier": "scripts/release/verify-authorities.ps1",
         "results": [
@@ -48,6 +49,8 @@
         "private_branch_protection_available": false,
         "signing_key_configured": false,
         "bootstrap_integrity": "unsigned local annotated tag plus exact commit/tree hashes; SSH signing required before remote publication",
+        "baseline_commit": "3f2a4964cd73ef77ca71b89deabb09c8c5ed4e68",
+        "baseline_tree": "7e7c904f9bd4746b310d5db61fd7630fef048736",
         "candidate_file_count": 1478,
         "candidate_bytes": 8102435
     },
@@ -213,7 +216,24 @@
             "test_ports_closed": true
         },
         "clean_checkout": {
-            "status": "pending_commit_and_owner_permission"
+            "status": "passed",
+            "relative_path": "tmp/ng-b00-clean-3f2a496",
+            "source_commit": "3f2a4964cd73ef77ca71b89deabb09c8c5ed4e68",
+            "source_tree": "7e7c904f9bd4746b310d5db61fd7630fef048736",
+            "tracked_files": 1478,
+            "tracked_changes_after_gates": 0,
+            "composer_locked_packages_installed": 111,
+            "npm_locked_packages_installed": 176,
+            "vite_modules": 11,
+            "laravel_tests": 215,
+            "laravel_assertions": 3783,
+            "node_tests": 50,
+            "chromium_e2e_tests": 7,
+            "chromium_e2e_duration_seconds": 30.5,
+            "authority_hashes_verified": 2,
+            "compiler_negative_probes": 6,
+            "main_database_unchanged": true,
+            "test_ports_closed": true
         }
     }
 }

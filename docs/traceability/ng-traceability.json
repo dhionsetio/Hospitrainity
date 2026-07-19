@@ -106,7 +106,7 @@
                 "docs/decisions/NG-B00-DECISIONS.md"
             ],
             "required_evidence": "Usable HEAD/authoritative history; clean checkout; baseline hash; secret/private-artifact exclusion; reviewable checkpoint diff",
-            "status": "in_progress",
+            "status": "closed",
             "evidence": {
                 "code": [
                     ".gitignore",
@@ -119,10 +119,12 @@
                 ],
                 "automated_tests": [
                     "tests/Node/secret-scan.test.mjs",
-                    "npm run governance:verify",
-                    "Clean-checkout and full gates pending the B00 checkpoint."
+                    "npm run governance:verify: 43 findings mapped; 1,478 tracked files scanned; 4 reviewed fingerprint-only exceptions; 0 unallowlisted findings.",
+                    "Fresh clone of commit 3f2a4964cd73ef77ca71b89deabb09c8c5ed4e68 passed locked installs, Vite build, 215 Laravel tests, 50 Node tests, lint, Pint, Blade, audits, compiler verification, and canonical verification with 0 tracked changes."
                 ],
-                "browser_device_checks": [],
+                "browser_device_checks": [
+                    "Fresh-clone Playwright Chromium: 7/7 journeys passed in 30.5 seconds; isolated test ports closed afterward."
+                ],
                 "human_legal_reviews": [
                     "Owner questionnaire accepted 2026-07-19."
                 ],
@@ -130,7 +132,7 @@
                     "GitHub Free private-repository enforcement limitation recorded; remote publication and signing key remain gated."
                 ],
                 "checkpoints": [
-                    "docs/checkpoints/NG-B00-CHECKPOINT.md (pending final evidence)"
+                    "docs/checkpoints/NG-B00-CHECKPOINT.md"
                 ]
             }
         },
@@ -969,7 +971,7 @@
                     "Target-database migration/concurrency lane remains B17."
                 ],
                 "automated_tests": [
-                    "Exact-hash local authority verification pending final B00 gates."
+                    "Exact-hash verifier passed both protected authority inputs in the working folder and fresh baseline clone; the verifier logged IDs and hashes, not source paths."
                 ],
                 "browser_device_checks": [],
                 "human_legal_reviews": [
@@ -979,7 +981,7 @@
                     "Dormant workflow_dispatch lane requires an offline self-hosted Windows runner; runner activation is not authorized in B00."
                 ],
                 "checkpoints": [
-                    "docs/checkpoints/NG-B00-CHECKPOINT.md (pending final evidence)"
+                    "docs/checkpoints/NG-B00-CHECKPOINT.md"
                 ]
             }
         },
