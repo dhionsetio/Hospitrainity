@@ -63,6 +63,7 @@ return [
     ],
     'confirm_password_action' => 'Konfirmasi kata sandi',
     'password_confirmed' => [
+        'security' => 'Kata sandi dikonfirmasi. Perubahan keamanan dibuka sementara.',
         'audit' => 'Kata sandi terkonfirmasi. Anda sekarang dapat meninjau peristiwa audit administrasi.',
         'users' => 'Kata sandi terkonfirmasi. Anda sekarang dapat mengelola pengguna.',
         'institution_roles' => 'Kata sandi terkonfirmasi. Anda sekarang dapat mengelola peran staf institusi.',

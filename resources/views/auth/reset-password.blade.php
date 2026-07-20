@@ -33,7 +33,7 @@
                 <label for="password" class="block text-sm font-medium text-neutral-700 mb-1">{{ __('New password') }}</label>
                 <input id="password" name="password" type="password" required autocomplete="new-password"
                     class="appearance-none rounded-md block w-full px-3 py-3 border border-neutral-300 text-neutral-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                    placeholder="{{ __('At least 8 characters') }}" @error('password') aria-invalid="true" aria-describedby="password-reset-errors" @enderror>
+                    minlength="15" maxlength="128" placeholder="{{ __('15–128 characters') }}" @error('password') aria-invalid="true" aria-describedby="password-reset-errors" @enderror>
             </div>
             <div>
                 <label for="password_confirmation" class="block text-sm font-medium text-neutral-700 mb-1">{{ __('Confirm new password') }}</label>

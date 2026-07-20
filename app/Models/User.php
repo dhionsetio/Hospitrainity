@@ -20,12 +20,14 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Str;
+use Laravel\Passkeys\Contracts\PasskeyUser;
+use Laravel\Passkeys\PasskeyAuthenticatable;
 use Stringable;
 
-class User extends Authenticatable implements MustVerifyEmail
+class User extends Authenticatable implements MustVerifyEmail, PasskeyUser
 {
     /** @use HasFactory<UserFactory> */
-    use HasFactory, Notifiable;
+    use HasFactory, Notifiable, PasskeyAuthenticatable;
 
     /**
      * How long a computed overall-progress value stays cached.
@@ -54,6 +56,7 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $hidden = [
         'password',
         'remember_token',
+        'two_factor_secret',
     ];
 
     /**
@@ -66,6 +69,7 @@ class User extends Authenticatable implements MustVerifyEmail
         return [
             'email_verified_at' => 'datetime',
             'disabled_at' => 'immutable_datetime',
+            'two_factor_confirmed_at' => 'immutable_datetime',
             'disabled_reason_code' => AccountDisableReason::class,
             'password' => 'hashed',
             'role' => UserRole::class,
@@ -173,6 +177,39 @@ class User extends Authenticatable implements MustVerifyEmail
     public function pushSubscriptions(): HasMany
     {
         return $this->hasMany(PushSubscription::class);
+    }
+
+    public function mfaRecoveryCodes(): HasMany
+    {
+        return $this->hasMany(MfaRecoveryCode::class);
+    }
+
+    public function hasConfirmedTotp(): bool
+    {
+        return $this->two_factor_secret !== null && $this->two_factor_confirmed_at !== null;
+    }
+
+    public function hasStrongMfa(): bool
+    {
+        return $this->hasConfirmedTotp() || ($this->exists && $this->passkeys()->exists());
+    }
+
+    public function requiresMfa(): bool
+    {
+        if ($this->isSuperAdmin() || $this->isContentAdministrator() || $this->role !== UserRole::Learner) {
+            return true;
+        }
+
+        if (! $this->exists) {
+            return false;
+        }
+
+        return $this->institutionMemberships()
+            ->where('status', InstitutionMembershipStatus::Active->value)
+            ->whereHas('roleAssignments', fn ($query) => $query
+                ->whereIn('role', [InstitutionRole::Instructor->value, InstitutionRole::InstitutionAdmin->value])
+                ->whereNull('revoked_at'))
+            ->exists();
     }
 
     public function hasInstitutionRole(Institution $institution, InstitutionRole ...$roles): bool

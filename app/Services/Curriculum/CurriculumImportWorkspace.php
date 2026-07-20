@@ -11,6 +11,7 @@ use App\Models\CurriculumDraftEntity;
 use App\Models\CurriculumImport;
 use App\Models\CurriculumPackage;
 use App\Models\User;
+use App\Services\UploadSecurityService;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -23,11 +24,13 @@ final class CurriculumImportWorkspace
         private readonly CurriculumUploadInspector $inspector,
         private readonly CanonicalPackageReader $reader,
         private readonly CurriculumDraftLifecycle $lifecycle,
+        private readonly UploadSecurityService $uploadSecurity,
     ) {}
 
     public function queue(CurriculumDraft $draft, User $actor, int $expectedRevision, UploadedFile $source, string $purpose): CurriculumImport
     {
         $metadata = $this->inspector->docx($source);
+        $scan = $this->uploadSecurity->inspect($source, $actor, 'docx_import', $metadata);
         $disk = Storage::disk((string) config('curriculum.import.disk'));
         $publicId = (string) Str::uuid();
         $sourcePath = trim((string) config('curriculum.import.quarantine_prefix'), '/')."/{$publicId}.docx";
@@ -84,6 +87,7 @@ final class CurriculumImportWorkspace
         }
 
         CompileCurriculumImport::dispatch($import);
+        $this->uploadSecurity->markPromoted($scan);
 
         return $import;
     }

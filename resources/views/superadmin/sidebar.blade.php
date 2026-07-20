@@ -85,6 +85,9 @@
         </ul>
     </nav>
     <div class="mt-4 border-t border-neutral-200 pt-4 md:mt-auto">
+        <a href="{{ route('security.index') }}" class="mb-2 flex w-full items-center gap-3 rounded-lg px-4 py-2 hover:bg-neutral-100">
+            <i class="fas fa-shield-halved fa-fw" aria-hidden="true"></i><span>{{ __('Account security') }}</span>
+        </a>
         @if(app(\App\Services\WorkContext::class)->hasAlternativeRole(Auth::user()))
             <a href="{{ route('work-context.index') }}" class="mb-2 flex w-full items-center gap-3 rounded-lg px-4 py-2 hover:bg-neutral-100">
                 <i class="fas fa-repeat fa-fw" aria-hidden="true"></i>

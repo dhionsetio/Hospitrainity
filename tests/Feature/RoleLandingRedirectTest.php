@@ -3,10 +3,12 @@
 namespace Tests\Feature;
 
 use App\Models\User;
+use App\Services\MfaService;
 use Illuminate\Database\QueryException;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\URL;
+use PragmaRX\Google2FA\Google2FA;
 use Tests\TestCase;
 
 class RoleLandingRedirectTest extends TestCase
@@ -55,12 +57,28 @@ class RoleLandingRedirectTest extends TestCase
                     'role' => $role,
                 ]);
 
-                $this->withSession(['url.intended' => $intended])
+                $secret = null;
+                $recoveryCode = null;
+                if ($role !== 'user') {
+                    $mfa = app(MfaService::class);
+                    $secret = $mfa->beginTotp($user);
+                    $recoveryCode = $mfa->confirmTotp($user->fresh(), (new Google2FA)->getCurrentOtp($secret))[0];
+                }
+
+                $login = $this->withSession(['url.intended' => $intended])
                     ->post('/login', [
                         'email' => $user->email,
                         'password' => 'password',
-                    ])
-                    ->assertRedirect(route($routeName));
+                    ]);
+
+                if ($secret === null) {
+                    $login->assertRedirect(route($routeName));
+                } else {
+                    $login->assertRedirect(route('mfa.challenge'));
+                    $this->post(route('mfa.challenge.store'), [
+                        'recovery_code' => $recoveryCode,
+                    ])->assertRedirect(route($routeName));
+                }
 
                 $this->post(route('logout'));
             }

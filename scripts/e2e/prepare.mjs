@@ -24,7 +24,6 @@ const accounts = {
     superadmin: { email: 'superadmin@example.com', password: randomSecret() },
     supervisor: { email: 'supervisor@example.com', password: randomSecret() },
 };
-writeFileSync(credentialsPath, JSON.stringify(accounts), { encoding: 'utf8', mode: 0o600 });
 
 const seedEnv = {
     ...e2eEnv,
@@ -35,6 +34,7 @@ const seedEnv = {
 };
 
 for (const args of [
+    ['artisan', 'package:discover', '--ansi', '--no-interaction'],
     ['artisan', 'migrate', '--force', '--no-interaction'],
     ['artisan', 'db:seed', '--force', '--no-interaction'],
 ]) {
@@ -47,3 +47,19 @@ for (const args of [
     if (result.error) throw result.error;
     if (result.status !== 0) process.exit(result.status ?? 1);
 }
+
+const mfaResult = spawnSync(phpBinary, ['artisan', 'hospitrainity:e2e-prepare-mfa'], {
+    cwd: repoRoot,
+    env: seedEnv,
+    encoding: 'utf8',
+});
+if (mfaResult.error) throw mfaResult.error;
+if (mfaResult.status !== 0) {
+    process.stderr.write(mfaResult.stderr || mfaResult.stdout);
+    process.exit(mfaResult.status ?? 1);
+}
+const mfaLine = mfaResult.stdout.trim().split(/\r?\n/).at(-1);
+const mfa = JSON.parse(mfaLine);
+accounts.superadmin.recoveryCodes = mfa.superadmin.recoveryCodes;
+accounts.supervisor.recoveryCodes = mfa.supervisor.recoveryCodes;
+writeFileSync(credentialsPath, JSON.stringify(accounts), { encoding: 'utf8', mode: 0o600 });

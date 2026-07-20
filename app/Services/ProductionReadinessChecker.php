@@ -12,6 +12,7 @@ use Illuminate\Encryption\Encrypter;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 use JsonException;
+use Monolog\Formatter\JsonFormatter;
 use Throwable;
 
 class ProductionReadinessChecker
@@ -30,12 +31,16 @@ class ProductionReadinessChecker
     /** @var Closure(): bool */
     private Closure $identityMigrationFinalized;
 
+    /** @var Closure(): bool */
+    private Closure $uploadScannerHealthy;
+
     public function __construct(
         ?string $basePath = null,
         ?Closure $packageInstalled = null,
         ?Closure $demoIdentityExists = null,
         ?Closure $activeCurriculumIsReleaseReady = null,
         ?Closure $identityMigrationFinalized = null,
+        ?Closure $uploadScannerHealthy = null,
     ) {
         $this->basePath = $basePath ?? base_path();
         $this->packageInstalled = $packageInstalled
@@ -77,6 +82,8 @@ class ProductionReadinessChecker
                 return false;
             }
         };
+        $this->uploadScannerHealthy = $uploadScannerHealthy
+            ?? static fn (): bool => app(UploadSecurityService::class)->healthy();
     }
 
     /**
@@ -182,6 +189,49 @@ class ProductionReadinessChecker
                 'Approved Web Push requires enabled VAPID configuration with non-empty public/private keys and a valid subject.',
             ),
             $this->check(
+                'security_assurance_schema',
+                Schema::hasTable('passkeys')
+                    && Schema::hasTable('mfa_recovery_codes')
+                    && Schema::hasTable('security_events')
+                    && Schema::hasTable('upload_security_records')
+                    && Schema::hasColumn('users', 'two_factor_secret')
+                    && Schema::hasColumn('users', 'two_factor_confirmed_at'),
+                'Passkey, hashed recovery-code, security-event, and upload-security schema must be installed.',
+            ),
+            $this->check(
+                'argon2id_password_hashing',
+                config('hashing.driver') === 'argon2id',
+                'HASH_DRIVER must be argon2id; Laravel retains verification and opportunistic rehash compatibility for existing bcrypt credentials.',
+            ),
+            $this->check(
+                'privileged_mfa_enrolled',
+                $this->allPrivilegedAccountsHaveMfa(),
+                'Every enabled privileged account must have a passkey or confirmed TOTP before production.',
+            ),
+            $this->check(
+                'passkey_origin_bound',
+                str_starts_with(strtolower((string) config('app.url')), 'https://')
+                    && config('passkeys.relying_party_id') === parse_url(config('app.url'), PHP_URL_HOST)
+                    && in_array(config('app.url'), config('passkeys.allowed_origins', []), true),
+                'Passkeys must be bound to the exact reviewed HTTPS relying-party domain and origin.',
+            ),
+            $this->check(
+                'upload_scanner_required_and_healthy',
+                config('upload_security.required') === true && ($this->uploadScannerHealthy)(),
+                'Production upload promotion must require a healthy approved malware scanner.',
+            ),
+            $this->check(
+                'structured_security_log',
+                config('logging.channels.security.driver') === 'daily'
+                    && config('logging.channels.security.formatter') === JsonFormatter::class,
+                'Security events must use the bounded JSON security channel; a reviewed production destination remains an operational gate.',
+            ),
+            $this->check(
+                'asvs_traceability',
+                is_file($this->path('docs/security/OWASP-ASVS-5.0.md')),
+                'The OWASP ASVS 5.0 evidence and explicit-gap matrix must ship with the release.',
+            ),
+            $this->check(
                 'identity_session_migration_finalized',
                 ($this->identityMigrationFinalized)(),
                 'The explicitly confirmed normalized-identity session revocation must be complete.',
@@ -272,6 +322,21 @@ class ProductionReadinessChecker
         }
 
         return Encrypter::supported($key, (string) config('app.cipher'));
+    }
+
+    private function allPrivilegedAccountsHaveMfa(): bool
+    {
+        try {
+            if (! Schema::hasTable('users') || ! Schema::hasTable('passkeys')) {
+                return false;
+            }
+
+            return User::query()->whereNull('disabled_at')->get()->every(
+                static fn (User $user): bool => ! $user->requiresMfa() || $user->hasStrongMfa(),
+            );
+        } catch (Throwable) {
+            return false;
+        }
     }
 
     private function path(string $path): string

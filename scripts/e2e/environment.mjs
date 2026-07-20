@@ -3,7 +3,17 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 export const repoRoot = path.resolve(fileURLToPath(new URL('../../', import.meta.url)));
-export const artifactRoot = path.join(repoRoot, 'storage', 'framework', 'testing', 'e2e');
+const requestedRunId = process.env.HOSPITRAINITY_E2E_RUN_ID;
+if (requestedRunId && !/^[A-Za-z0-9][A-Za-z0-9_-]{0,63}$/.test(requestedRunId)) {
+    throw new Error('HOSPITRAINITY_E2E_RUN_ID must contain only letters, numbers, underscores, and hyphens.');
+}
+export const artifactRoot = path.join(
+    repoRoot,
+    'storage',
+    'framework',
+    'testing',
+    requestedRunId ? `e2e-${requestedRunId}` : 'e2e',
+);
 export const databasePath = path.join(artifactRoot, 'database.sqlite');
 export const credentialsPath = path.join(artifactRoot, 'credentials.json');
 export const baseURL = 'http://127.0.0.1:8010';

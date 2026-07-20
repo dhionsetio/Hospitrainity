@@ -48,6 +48,10 @@
                 <button type="submit" class="relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                     {{ __('Sign in') }}
                 </button>
+                <button type="button" data-passkey-login hidden class="relative w-full justify-center rounded-md border border-indigo-700 px-4 py-3 text-sm font-semibold text-indigo-800 hover:bg-indigo-50">
+                    {{ __('Sign in with a passkey') }}
+                </button>
+                <p data-passkey-status role="status" aria-live="polite" class="min-h-5 text-center text-sm text-neutral-700"></p>
                 <p class="text-center text-sm text-neutral-600">
                     {{ __('Need an account?') }}
                     <a href="{{ route('register') }}" class="font-medium text-indigo-600 hover:text-indigo-500">

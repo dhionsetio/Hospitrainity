@@ -39,6 +39,7 @@ class ProductionReadinessCheckerTest extends TestCase
             static fn (): bool => false,
             static fn (): bool => true,
             static fn (): bool => true,
+            static fn (): bool => true,
         ))->inspect();
         $failed = collect($checks)->where('passed', false)->pluck('name')->all();
 
@@ -64,6 +65,7 @@ class ProductionReadinessCheckerTest extends TestCase
             static fn (): bool => false,
             static fn (): bool => true,
             static fn (): bool => true,
+            static fn (): bool => true,
         ))->inspect();
         $failed = collect($checks)->where('passed', false)->pluck('name');
 
@@ -87,6 +89,7 @@ class ProductionReadinessCheckerTest extends TestCase
             static fn (): bool => false,
             static fn (): bool => true,
             static fn (): bool => true,
+            static fn (): bool => true,
         ))->inspect();
 
         $this->assertContains('app_key', collect($checks)->where('passed', false)->pluck('name')->all());
@@ -104,6 +107,7 @@ class ProductionReadinessCheckerTest extends TestCase
             static fn (string $package): bool => false,
             static fn (): bool => true,
             static fn (): bool => false,
+            static fn (): bool => true,
             static fn (): bool => true,
         ))->inspect();
         $failed = collect($checks)->where('passed', false)->pluck('name');
@@ -125,6 +129,7 @@ class ProductionReadinessCheckerTest extends TestCase
             static fn (): bool => false,
             static fn (): bool => true,
             static fn (): bool => false,
+            static fn (): bool => true,
         ))->inspect();
 
         $this->assertContains(
@@ -157,6 +162,7 @@ class ProductionReadinessCheckerTest extends TestCase
             packageInstalled: static fn (string $package): bool => false,
             activeCurriculumIsReleaseReady: static fn (): bool => true,
             identityMigrationFinalized: static fn (): bool => true,
+            uploadScannerHealthy: static fn (): bool => true,
         ))->inspect();
 
         $this->assertContains(
@@ -188,6 +194,10 @@ class ProductionReadinessCheckerTest extends TestCase
             'push.vapid.subject' => 'mailto:privacy@example.test',
             'push.vapid.public_key' => str_repeat('A', 87),
             'push.vapid.private_key' => str_repeat('B', 43),
+            'hashing.driver' => 'argon2id',
+            'passkeys.relying_party_id' => 'hospitrainity.example',
+            'passkeys.allowed_origins' => ['https://hospitrainity.example'],
+            'upload_security.required' => true,
         ]);
     }
 
@@ -195,6 +205,8 @@ class ProductionReadinessCheckerTest extends TestCase
     {
         File::ensureDirectoryExists($this->releasePath.'/public/build/assets');
         File::ensureDirectoryExists($this->releasePath.'/storage/app/public');
+        File::ensureDirectoryExists($this->releasePath.'/docs/security');
+        File::put($this->releasePath.'/docs/security/OWASP-ASVS-5.0.md', '# Test fixture');
         File::put($this->releasePath.'/public/build/assets/app.css', '/* test asset */');
         File::put($this->releasePath.'/public/build/assets/app.js', '/* test asset */');
         File::put($this->releasePath.'/public/build/manifest.json', json_encode([

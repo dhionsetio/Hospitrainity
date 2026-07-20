@@ -7,12 +7,14 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "laravel/fortify": "1.37.2",
         "laravel/framework": "^12.0",
         "laravel/tinker": "^2.10.1",
         "minishlink/web-push": "^10.1"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
+        "larastan/larastan": "3.10.0",
         "laravel/pail": "^1.2.2",
         "laravel/pint": "^1.13",
         "laravel/sail": "^1.41",
@@ -59,7 +61,8 @@
         "test": [
             "@php artisan config:clear --ansi",
             "@php artisan test --display-all-issues --fail-on-all-issues --disallow-test-output"
-        ]
+        ],
+        "analyse": "phpstan analyse --configuration=phpstan.neon.dist --memory-limit=1G"
     },
     "extra": {
         "laravel": {

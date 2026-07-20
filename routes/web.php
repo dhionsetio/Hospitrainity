@@ -4,12 +4,14 @@ use App\Http\Controllers\ActiveInstitutionController;
 use App\Http\Controllers\Admin\ProgressAggregateController;
 use App\Http\Controllers\Auth\EmailVerificationController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\MfaChallengeController;
 use App\Http\Controllers\Auth\PasswordConfirmationController;
 use App\Http\Controllers\Auth\PasswordResetController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\CanonicalAttemptController;
 use App\Http\Controllers\CanonicalCurriculumAssetController;
 use App\Http\Controllers\CanonicalCurriculumController;
+use App\Http\Controllers\CspReportController;
 use App\Http\Controllers\CurriculumAssetController;
 use App\Http\Controllers\CurriculumDraftController;
 use App\Http\Controllers\CurriculumDraftExerciseController;
@@ -32,6 +34,7 @@ use App\Http\Controllers\PrivacyRequestController;
 use App\Http\Controllers\ProgressController;
 use App\Http\Controllers\PublicPolicyController;
 use App\Http\Controllers\PushSubscriptionController;
+use App\Http\Controllers\SecuritySettingsController;
 use App\Http\Controllers\Superadmin\AdminDashboardController;
 use App\Http\Controllers\Superadmin\AdministrationAuditController;
 use App\Http\Controllers\Superadmin\LearnerProgressController as SuperadminLearnerProgressController;
@@ -43,6 +46,9 @@ use App\Http\Controllers\VocabularyController;
 use App\Http\Controllers\WorkContextController;
 use App\Http\Middleware\SetLocale;
 use Illuminate\Support\Facades\Route;
+use Laravel\Passkeys\Http\Controllers\PasskeyConfirmationController;
+use Laravel\Passkeys\Http\Controllers\PasskeyLoginController;
+use Laravel\Passkeys\Http\Controllers\PasskeyRegistrationController;
 
 $curriculumDraftRoutes = static function (bool $publicationAuthority): void {
     Route::get('/curriculum-drafts', [CurriculumDraftController::class, 'index'])->name('curriculum-drafts.index');
@@ -169,7 +175,18 @@ Route::middleware('guest')->group(function () {
     Route::post('/reset-password', [PasswordResetController::class, 'reset'])
         ->middleware('throttle:password-reset')
         ->name('password.update');
+
+    Route::get('/mfa-challenge', [MfaChallengeController::class, 'show'])->name('mfa.challenge');
+    Route::post('/mfa-challenge', [MfaChallengeController::class, 'store'])
+        ->middleware('throttle:mfa-challenge')->name('mfa.challenge.store');
+    Route::get('/passkeys/login/options', [PasskeyLoginController::class, 'index'])
+        ->middleware('throttle:passkeys')->name('passkey.login-options');
+    Route::post('/passkeys/login', [PasskeyLoginController::class, 'store'])
+        ->middleware('throttle:passkeys')->name('passkey.login');
 });
+
+Route::post('/security/csp-reports', CspReportController::class)
+    ->middleware('throttle:csp-report')->name('security.csp-report');
 
 Route::get('/join/unavailable', [InvitationAcceptanceController::class, 'unavailable'])
     ->name('invitations.unavailable');
@@ -231,6 +248,35 @@ Route::middleware('auth')->group(function () {
     Route::post('/email/verification-notification', [EmailVerificationController::class, 'resend'])
         ->middleware('throttle:6,1')
         ->name('verification.send');
+
+    Route::get('/security', [SecuritySettingsController::class, 'index'])->name('security.index');
+    Route::get('/security/confirm', fn () => redirect()->route('security.index'))
+        ->middleware('password.confirm')->name('security.confirm');
+    Route::post('/security/totp', [SecuritySettingsController::class, 'beginTotp'])
+        ->middleware(['password.confirm', 'throttle:security-settings'])->name('security.totp.begin');
+    Route::post('/security/totp/confirm', [SecuritySettingsController::class, 'confirmTotp'])
+        ->middleware('throttle:security-settings')->name('security.totp.confirm');
+    Route::delete('/security/totp', [SecuritySettingsController::class, 'disableTotp'])
+        ->middleware(['password.confirm', 'throttle:security-settings'])->name('security.totp.destroy');
+    Route::post('/security/recovery-codes', [SecuritySettingsController::class, 'regenerateRecoveryCodes'])
+        ->middleware(['password.confirm', 'throttle:security-settings'])->name('security.recovery-codes.regenerate');
+    Route::patch('/security/password', [SecuritySettingsController::class, 'updatePassword'])
+        ->middleware('throttle:security-settings')->name('security.password.update');
+    Route::delete('/security/sessions/{session}', [SecuritySettingsController::class, 'revokeSession'])
+        ->middleware('throttle:security-settings')->name('security.sessions.destroy');
+    Route::delete('/security/sessions', [SecuritySettingsController::class, 'revokeOtherSessions'])
+        ->middleware('throttle:security-settings')->name('security.sessions.destroy-others');
+
+    Route::get('/passkeys/confirm/options', [PasskeyConfirmationController::class, 'index'])
+        ->middleware('throttle:passkeys')->name('passkey.confirm-options');
+    Route::post('/passkeys/confirm', [PasskeyConfirmationController::class, 'store'])
+        ->middleware('throttle:passkeys')->name('passkey.confirm');
+    Route::get('/user/passkeys/options', [PasskeyRegistrationController::class, 'index'])
+        ->middleware(['password.confirm', 'throttle:passkeys'])->name('passkey.registration-options');
+    Route::post('/user/passkeys', [PasskeyRegistrationController::class, 'store'])
+        ->middleware(['password.confirm', 'throttle:passkeys'])->name('passkey.store');
+    Route::delete('/user/passkeys/{passkey}', [PasskeyRegistrationController::class, 'destroy'])
+        ->middleware(['password.confirm', 'throttle:passkeys'])->name('passkey.destroy');
 });
 
 /*

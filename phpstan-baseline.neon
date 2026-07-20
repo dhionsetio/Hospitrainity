@@ -1,0 +1,1867 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Parameter \#1 \$users of method App\\Console\\Commands\\IdentityMigrationPreflight\:\:normalizedReport\(\) expects Illuminate\\Support\\Collection\<int, object\>, Illuminate\\Support\\Collection\<int, stdClass\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Console/Commands/IdentityMigrationPreflight.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>revoked_session_count" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Console/Commands/IdentityMigrationPreflight.php
+
+		-
+			message: '#^Call to function is_string\(\) with null will always evaluate to false\.$#'
+			identifier: function.impossibleType
+			count: 1
+			path: app/Console/Commands/ManageCanonicalCurriculum.php
+
+		-
+			message: '#^Offset ''evidence_path'' on string\|null on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Console/Commands/ManageCanonicalCurriculum.php
+
+		-
+			message: '#^Result of && is always false\.$#'
+			identifier: booleanAnd.alwaysFalse
+			count: 2
+			path: app/Console/Commands/ManageCanonicalCurriculum.php
+
+		-
+			message: '#^Empty array passed to foreach\.$#'
+			identifier: foreach.emptyArray
+			count: 1
+			path: app/Http/Controllers/CanonicalCurriculumAssetController.php
+
+		-
+			message: '#^Offset ''asset'' on \*NEVER\* on left side of \?\? always exists and is not nullable\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Http/Controllers/CanonicalCurriculumAssetController.php
+
+		-
+			message: '#^Offset ''audio_asset'' on string on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Http/Controllers/CanonicalCurriculumAssetController.php
+
+		-
+			message: '#^Offset ''blocks'' on string on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Http/Controllers/CanonicalCurriculumAssetController.php
+
+		-
+			message: '#^Offset ''path'' on \*NEVER\* on left side of \?\? always exists and is not nullable\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Http/Controllers/CanonicalCurriculumAssetController.php
+
+		-
+			message: '#^Offset ''sha256'' on \*NEVER\* on left side of \?\? always exists and is not nullable\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Http/Controllers/CanonicalCurriculumAssetController.php
+
+		-
+			message: '#^Parameter \#1 \$array \(array\{\}\) to function array_values is empty, call has no effect\.$#'
+			identifier: arrayValues.empty
+			count: 2
+			path: app/Http/Controllers/CanonicalCurriculumAssetController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$detected_mime\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/CurriculumAssetController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$storage_path\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/CurriculumAssetController.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between string and App\\Enums\\CurriculumDraftStatus\:\:InReview will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 2
+			path: app/Http/Controllers/CurriculumDraftController.php
+
+		-
+			message: '#^Call to function abort_unless\(\) with false and 404 will always evaluate to false\.$#'
+			identifier: function.impossibleType
+			count: 1
+			path: app/Http/Controllers/CurriculumDraftExerciseController.php
+
+		-
+			message: '#^Call to function is_string\(\) with null will always evaluate to false\.$#'
+			identifier: function.impossibleType
+			count: 1
+			path: app/Http/Controllers/CurriculumDraftExerciseController.php
+
+		-
+			message: '#^Offset ''template_type'' on string on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 2
+			path: app/Http/Controllers/CurriculumDraftExerciseController.php
+
+		-
+			message: '#^Result of && is always false\.$#'
+			identifier: booleanAnd.alwaysFalse
+			count: 1
+			path: app/Http/Controllers/CurriculumDraftExerciseController.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:displayName\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Http/Controllers/InstitutionEnrollmentController.php
+
+		-
+			message: '#^Access to an undefined property App\\Models\\InstitutionInvitation\:\:\$masked_target\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/InstitutionInvitationController.php
+
+		-
+			message: '#^Cannot call method toDayDateTimeString\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Http/Controllers/InstitutionInvitationController.php
+
+		-
+			message: '#^Offset 0 on non\-empty\-list\<string\> on left side of \?\? always exists and is not nullable\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Http/Controllers/InstitutionInvitationController.php
+
+		-
+			message: '#^Offset 0 on non\-empty\-list\<string\> on left side of \?\? always exists and is not nullable\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Http/Controllers/InstitutionJoinCodeController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$items\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/LessonController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$audio_url\.$#'
+			identifier: property.notFound
+			count: 3
+			path: app/Http/Controllers/MaterialController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$order\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/MaterialController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$url\.$#'
+			identifier: property.notFound
+			count: 3
+			path: app/Http/Controllers/MaterialController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Support\\Collection\<\(int\|string\),array\<mixed, mixed\>\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Http/Controllers/MaterialController.php
+
+		-
+			message: '#^Parameter \#4 \$currentItems of method App\\Http\\Controllers\\MaterialController\:\:prepareItems\(\) expects array\<int, App\\Models\\MaterialItem\>, array\<Illuminate\\Database\\Eloquent\\Model\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/MaterialController.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>order" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 2
+			path: app/Http/Controllers/MaterialController.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>url" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Http/Controllers/MaterialController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$items\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/ModuleController.php
+
+		-
+			message: '#^Parameter \#1 \$lesson of method App\\Http\\Controllers\\ModuleController\:\:retireLessonMedia\(\) expects App\\Models\\Lesson, Illuminate\\Database\\Eloquent\\Model given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/ModuleController.php
+
+		-
+			message: '#^Cannot call method isFuture\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Http/Controllers/PrivacyRequestController.php
+
+		-
+			message: '#^Parameter \#1 \$request of method App\\Services\\DataSubjectRequestService\:\:event\(\) expects App\\Models\\DataSubjectRequest, Illuminate\\Database\\Eloquent\\Model\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/PrivacyRequestController.php
+
+		-
+			message: '#^Match expression does not handle remaining value\: string$#'
+			identifier: match.unhandled
+			count: 1
+			path: app/Http/Controllers/ProgressController.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Contracts\\Pagination\\LengthAwarePaginator\<int, array\<string, mixed\>\>\:\:count\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Http/Controllers/Superadmin/AdministrationAuditController.php
+
+		-
+			message: '#^Parameter \#1 \$status of method App\\Http\\Controllers\\Superadmin\\PrivacyRequestAdministrationController\:\:actionsFor\(\) expects App\\Enums\\DataSubjectRequestStatus, string given\.$#'
+			identifier: argument.type
+			count: 2
+			path: app/Http/Controllers/Superadmin/PrivacyRequestAdministrationController.php
+
+		-
+			message: '#^Access to an undefined property App\\Models\\User\:\:\$overall_progress\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Supervisor/SpvDashboardController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$media_url\.$#'
+			identifier: property.notFound
+			count: 4
+			path: app/Http/Controllers/VocabularyController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$order\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/VocabularyController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Support\\Collection\<\(int\|string\),array\<mixed, mixed\>\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Http/Controllers/VocabularyController.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>order" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 2
+			path: app/Http/Controllers/VocabularyController.php
+
+		-
+			message: '#^Offset ''template_type'' on string on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Http/Requests/CurriculumDraftExerciseRequest.php
+
+		-
+			message: '#^Parameter \#1 \$array \(list\<list\<string\>\>\) of array_values is already a list, call has no effect\.$#'
+			identifier: arrayValues.list
+			count: 1
+			path: app/Http/Requests/StoreCurriculumDraftBlockRequest.php
+
+		-
+			message: '#^Parameter \#1 \$array \(non\-empty\-list\<string\>\) of array_values is already a list, call has no effect\.$#'
+			identifier: arrayValues.list
+			count: 1
+			path: app/Http/Requests/StoreCurriculumDraftBlockRequest.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Relations\\HasMany\:\:available\(\)\.$#'
+			identifier: method.notFound
+			count: 2
+			path: app/Http/Requests/StoreCurriculumDraftPreviewAttemptRequest.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between string and App\\Enums\\UserRole will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 1
+			path: app/Http/Requests/Superadmin/UpdateUserRoleRequest.php
+
+		-
+			message: '#^Parameter \#3 \$actor of method App\\Services\\DataSubjectRequestService\:\:transition\(\) expects App\\Models\\User, Illuminate\\Database\\Eloquent\\Model given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Jobs/ExecuteAccountErasure.php
+
+		-
+			message: '#^Result of \|\| is always true\.$#'
+			identifier: booleanOr.alwaysTrue
+			count: 1
+			path: app/Jobs/ExecuteAccountErasure.php
+
+		-
+			message: '#^Strict comparison using \!\=\= between string and App\\Enums\\DataSubjectRequestStatus\:\:Executing will always evaluate to true\.$#'
+			identifier: notIdentical.alwaysTrue
+			count: 1
+			path: app/Jobs/ExecuteAccountErasure.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between string and App\\Enums\\DataSubjectRequestStatus\:\:Approved will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 1
+			path: app/Jobs/ExecuteAccountErasure.php
+
+		-
+			message: '#^Unreachable statement \- code above always terminates\.$#'
+			identifier: deadCode.unreachable
+			count: 1
+			path: app/Jobs/ExecuteAccountErasure.php
+
+		-
+			message: '#^Parameter \#3 \$actor of method App\\Services\\DataSubjectRequestService\:\:transition\(\) expects App\\Models\\User, Illuminate\\Database\\Eloquent\\Model given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Jobs/GenerateDataExport.php
+
+		-
+			message: '#^Strict comparison using \!\=\= between string and App\\Enums\\DataSubjectRequestStatus\:\:Executing will always evaluate to true\.$#'
+			identifier: notIdentical.alwaysTrue
+			count: 1
+			path: app/Jobs/GenerateDataExport.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between string and App\\Enums\\DataSubjectRequestStatus\:\:Approved will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 1
+			path: app/Jobs/GenerateDataExport.php
+
+		-
+			message: '#^Unreachable statement \- code above always terminates\.$#'
+			identifier: deadCode.unreachable
+			count: 1
+			path: app/Jobs/GenerateDataExport.php
+
+		-
+			message: '#^Parameter \#1 \$metadata of static method App\\Support\\AuditPayloadSanitizer\:\:metadata\(\) expects array\|null, string\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Models/AdministrationAudit.php
+
+		-
+			message: '#^Property App\\Models\\AdministrationAudit\:\:\$metadata \(string\|null\) does not accept array\|null\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Models/AdministrationAudit.php
+
+		-
+			message: '#^Parameter \#1 \$metadata of static method App\\Support\\AuditPayloadSanitizer\:\:metadata\(\) expects array\|null, string\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Models/CurriculumDraftEvent.php
+
+		-
+			message: '#^Property App\\Models\\CurriculumDraftEvent\:\:\$metadata \(string\|null\) does not accept array\|null\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Models/CurriculumDraftEvent.php
+
+		-
+			message: '#^Parameter \#1 \$metadata of static method App\\Support\\AuditPayloadSanitizer\:\:metadata\(\) expects array\|null, string\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Models/CurriculumReleaseEvent.php
+
+		-
+			message: '#^Property App\\Models\\CurriculumReleaseEvent\:\:\$metadata \(string\|null\) does not accept array\|null\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Models/CurriculumReleaseEvent.php
+
+		-
+			message: '#^Parameter \#1 \$metadata of static method App\\Support\\AuditPayloadSanitizer\:\:metadata\(\) expects array\|null, string\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Models/IdentityAudit.php
+
+		-
+			message: '#^Property App\\Models\\IdentityAudit\:\:\$metadata \(string\|null\) does not accept array\|null\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Models/IdentityAudit.php
+
+		-
+			message: '#^Cannot call method isFuture\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Models/InstitutionInvitation.php
+
+		-
+			message: '#^Cannot call method isFuture\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Models/InstitutionJoinCode.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$items\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Models/Lesson.php
+
+		-
+			message: '#^PHPDoc type array\<int, string\> of property App\\Models\\Module\:\:\$fillable is not covariant with PHPDoc type list\<string\> of overridden property Illuminate\\Database\\Eloquent\\Model\:\:\$fillable\.$#'
+			identifier: property.phpDocType
+			count: 1
+			path: app/Models/Module.php
+
+		-
+			message: '#^Parameter \#1 \$lessons of static method App\\Models\\Lesson\:\:averageProgressForUser\(\) expects iterable\<App\\Models\\Lesson\>, Illuminate\\Database\\Eloquent\\Collection\<int, Illuminate\\Database\\Eloquent\\Model\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Models/Module.php
+
+		-
+			message: '#^Parameter \#1 \$lessons of static method App\\Models\\Lesson\:\:mergeIdsByType\(\) expects iterable\<App\\Models\\Lesson\>, Illuminate\\Database\\Eloquent\\Collection\<int, Illuminate\\Database\\Eloquent\\Model\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Models/Module.php
+
+		-
+			message: '#^Result of \|\| is always true\.$#'
+			identifier: booleanOr.alwaysTrue
+			count: 1
+			path: app/Models/User.php
+
+		-
+			message: '#^Strict comparison using \!\=\= between string and App\\Enums\\UserRole\:\:Learner will always evaluate to true\.$#'
+			identifier: notIdentical.alwaysTrue
+			count: 1
+			path: app/Models/User.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between string and App\\Enums\\UserRole\:\:Admin will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 2
+			path: app/Models/User.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between string and App\\Enums\\UserRole\:\:Learner will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 1
+			path: app/Models/User.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between string and App\\Enums\\UserRole\:\:Superadmin will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 1
+			path: app/Models/User.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between string and App\\Enums\\UserRole\:\:Supervisor will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 1
+			path: app/Models/User.php
+
+		-
+			message: '#^Unreachable statement \- code above always terminates\.$#'
+			identifier: deadCode.unreachable
+			count: 1
+			path: app/Models/User.php
+
+		-
+			message: '#^Unsafe call to private method App\\Models\\User\:\:progressCacheGeneration\(\) through static\:\:\.$#'
+			identifier: staticClassAccess.privateMethod
+			count: 1
+			path: app/Models/User.php
+
+		-
+			message: '#^Call to function in_array\(\) with arguments string, array\{App\\Enums\\CurriculumDraftStatus\:\:InReview, App\\Enums\\CurriculumDraftStatus\:\:Approved\} and true will always evaluate to false\.$#'
+			identifier: function.impossibleType
+			count: 1
+			path: app/Policies/CurriculumDraftPolicy.php
+
+		-
+			message: '#^Result of && is always false\.$#'
+			identifier: booleanAnd.alwaysFalse
+			count: 8
+			path: app/Policies/CurriculumDraftPolicy.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between string and App\\Enums\\CurriculumDraftStatus\:\:Draft will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 2
+			path: app/Policies/CurriculumDraftPolicy.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between string and App\\Enums\\CurriculumDraftStatus\:\:InReview will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 1
+			path: app/Policies/CurriculumDraftPolicy.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between string and App\\Enums\\CurriculumDraftStatus\:\:Published will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 1
+			path: app/Policies/CurriculumDraftPolicy.php
+
+		-
+			message: '#^Parameter \#2 \$institution of method App\\Policies\\InstitutionInvitationPolicy\:\:create\(\) expects App\\Models\\Institution, Illuminate\\Database\\Eloquent\\Model\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Policies/InstitutionInvitationPolicy.php
+
+		-
+			message: '#^Property App\\Policies\\InstitutionInvitationPolicy\:\:\$access is never read, only written\.$#'
+			identifier: property.onlyWritten
+			count: 1
+			path: app/Policies/InstitutionInvitationPolicy.php
+
+		-
+			message: '#^Strict comparison using \!\=\= between string and App\\Enums\\InstitutionStatus\:\:Active will always evaluate to true\.$#'
+			identifier: notIdentical.alwaysTrue
+			count: 1
+			path: app/Policies/InstitutionInvitationPolicy.php
+
+		-
+			message: '#^Unreachable statement \- code above always terminates\.$#'
+			identifier: deadCode.unreachable
+			count: 1
+			path: app/Policies/InstitutionInvitationPolicy.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Contracts\\Auth\\Authenticatable\:\:\$email\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Providers/AppServiceProvider.php
+
+		-
+			message: '#^Parameter \#3 \$actor of method App\\Services\\SecurityEventRecorder\:\:record\(\) expects App\\Models\\User\|null, Illuminate\\Contracts\\Auth\\Authenticatable given\.$#'
+			identifier: argument.type
+			count: 2
+			path: app/Providers/AppServiceProvider.php
+
+		-
+			message: '#^Offset 0 on non\-empty\-list\<string\> on left side of \?\? always exists and is not nullable\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Rules/YouTubeUrl.php
+
+		-
+			message: '#^Constant App\\Services\\AccountErasureService\:\:STEPS is unused\.$#'
+			identifier: classConstant.unused
+			count: 1
+			path: app/Services/AccountErasureService.php
+
+		-
+			message: '#^Method App\\Services\\AccountErasureService\:\:close_memberships\(\) is unused\.$#'
+			identifier: method.unused
+			count: 1
+			path: app/Services/AccountErasureService.php
+
+		-
+			message: '#^Method App\\Services\\AccountErasureService\:\:pseudonymize_identity\(\) is unused\.$#'
+			identifier: method.unused
+			count: 1
+			path: app/Services/AccountErasureService.php
+
+		-
+			message: '#^Method App\\Services\\AccountErasureService\:\:remove_personal_learning\(\) is unused\.$#'
+			identifier: method.unused
+			count: 1
+			path: app/Services/AccountErasureService.php
+
+		-
+			message: '#^Method App\\Services\\AccountErasureService\:\:revoke_access\(\) is unused\.$#'
+			identifier: method.unused
+			count: 1
+			path: app/Services/AccountErasureService.php
+
+		-
+			message: '#^Method App\\Services\\AccountErasureService\:\:stop_notifications\(\) is unused\.$#'
+			identifier: method.unused
+			count: 1
+			path: app/Services/AccountErasureService.php
+
+		-
+			message: '#^Result of \|\| is always true\.$#'
+			identifier: booleanOr.alwaysTrue
+			count: 1
+			path: app/Services/AccountErasureService.php
+
+		-
+			message: '#^Strict comparison using \!\=\= between string and App\\Enums\\DataSubjectRequestStatus\:\:Executing will always evaluate to true\.$#'
+			identifier: notIdentical.alwaysTrue
+			count: 1
+			path: app/Services/AccountErasureService.php
+
+		-
+			message: '#^Unreachable statement \- code above always terminates\.$#'
+			identifier: deadCode.unreachable
+			count: 1
+			path: app/Services/AccountErasureService.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Contracts\\Pagination\\LengthAwarePaginator\<int, object\>\:\:getCollection\(\)\.$#'
+			identifier: method.notFound
+			count: 3
+			path: app/Services/AdministrationAuditReviewService.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Contracts\\Pagination\\LengthAwarePaginator\<int, object\>\:\:setCollection\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Services/AdministrationAuditReviewService.php
+
+		-
+			message: '#^Method App\\Services\\AdministrationAuditReviewService\:\:paginate\(\) should return Illuminate\\Contracts\\Pagination\\LengthAwarePaginator\<int, array\<string, mixed\>\> but returns Illuminate\\Contracts\\Pagination\\LengthAwarePaginator\<int, object\>\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Services/AdministrationAuditReviewService.php
+
+		-
+			message: '#^Anonymous function should never return but return statement found\.$#'
+			identifier: return.never
+			count: 1
+			path: app/Services/CanonicalCurriculumRepository.php
+
+		-
+			message: '#^Call to function is_array\(\) with null will always evaluate to false\.$#'
+			identifier: function.impossibleType
+			count: 1
+			path: app/Services/CanonicalCurriculumRepository.php
+
+		-
+			message: '#^Method App\\Services\\CanonicalCurriculumRepository\:\:dashboardChaptersFor\(\) should return Illuminate\\Support\\Collection\<int, array\<string, mixed\>\> but returns Illuminate\\Support\\Collection\<int, array\{code\: string\|null, title\: mixed, module\: int, status\: string\|null, sections_count\: int\<0, max\>, activities_count\: int\<0, max\>, progress\: int, completed_activities\: int\<0, max\>\}\>\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Services/CanonicalCurriculumRepository.php
+
+		-
+			message: '#^Offset ''audio_asset'' on string on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Services/CanonicalCurriculumRepository.php
+
+		-
+			message: '#^Offset ''blocks'' on string on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Services/CanonicalCurriculumRepository.php
+
+		-
+			message: '#^Offset ''choices'' on string on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Services/CanonicalCurriculumRepository.php
+
+		-
+			message: '#^Offset ''completion_rule'' on string on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Services/CanonicalCurriculumRepository.php
+
+		-
+			message: '#^Offset ''guidance'' on string on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Services/CanonicalCurriculumRepository.php
+
+		-
+			message: '#^Offset ''module'' does not exist on string\.$#'
+			identifier: offsetAccess.notFound
+			count: 6
+			path: app/Services/CanonicalCurriculumRepository.php
+
+		-
+			message: '#^Offset ''outcome_codes'' on string on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 4
+			path: app/Services/CanonicalCurriculumRepository.php
+
+		-
+			message: '#^Offset ''path'' on \*NEVER\* on left side of \?\? always exists and is not nullable\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Services/CanonicalCurriculumRepository.php
+
+		-
+			message: '#^Offset ''rating_scale'' on string on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Services/CanonicalCurriculumRepository.php
+
+		-
+			message: '#^Offset ''response_constraints'' on string on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Services/CanonicalCurriculumRepository.php
+
+		-
+			message: '#^Offset ''response_form'' does not exist on string\.$#'
+			identifier: offsetAccess.notFound
+			count: 3
+			path: app/Services/CanonicalCurriculumRepository.php
+
+		-
+			message: '#^Offset ''scoring_mode'' does not exist on string\.$#'
+			identifier: offsetAccess.notFound
+			count: 1
+			path: app/Services/CanonicalCurriculumRepository.php
+
+		-
+			message: '#^Offset ''scoring_mode'' on string on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Services/CanonicalCurriculumRepository.php
+
+		-
+			message: '#^Offset ''self_check_required'' on string on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Services/CanonicalCurriculumRepository.php
+
+		-
+			message: '#^Offset ''source_locator'' on string on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 3
+			path: app/Services/CanonicalCurriculumRepository.php
+
+		-
+			message: '#^Offset ''stem'' does not exist on string\.$#'
+			identifier: offsetAccess.notFound
+			count: 1
+			path: app/Services/CanonicalCurriculumRepository.php
+
+		-
+			message: '#^Offset ''title'' does not exist on string\.$#'
+			identifier: offsetAccess.notFound
+			count: 11
+			path: app/Services/CanonicalCurriculumRepository.php
+
+		-
+			message: '#^Offset ''tokens'' on string on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Services/CanonicalCurriculumRepository.php
+
+		-
+			message: '#^Parameter \#1 \$array \(array\{\}\) to function array_values is empty, call has no effect\.$#'
+			identifier: arrayValues.empty
+			count: 3
+			path: app/Services/CanonicalCurriculumRepository.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,App\\Models\\CurriculumEntity\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 3
+			path: app/Services/CanonicalCurriculumRepository.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Support\\Collection\<\(int\|string\),mixed\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 2
+			path: app/Services/CanonicalCurriculumRepository.php
+
+		-
+			message: '#^Parameter \#1 \$keys of method Illuminate\\Support\\Collection\<int,string\>\:\:only\(\) expects array\<0\>\|Illuminate\\Support\\Enumerable\<\(int\|string\), 0\>\|string\|null, array\{''accessibility'', ''cefr_activity'', ''channel'', ''participation'', ''pedagogical_function'', ''response_form'', ''scoring_mode'', ''timing'', \.\.\.\} given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Services/CanonicalCurriculumRepository.php
+
+		-
+			message: '#^Parameter \#1 \$value of function collect expects Illuminate\\Contracts\\Support\\Arrayable\<\(int\|string\), mixed\>\|iterable\<\(int\|string\), mixed\>\|null, string given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Services/CanonicalCurriculumRepository.php
+
+		-
+			message: '#^Parameter \#2 \.\.\.\$arrays of function array_merge expects array, string given\.$#'
+			identifier: argument.type
+			count: 2
+			path: app/Services/CanonicalCurriculumRepository.php
+
+		-
+			message: '#^Result of && is always false\.$#'
+			identifier: booleanAnd.alwaysFalse
+			count: 2
+			path: app/Services/CanonicalCurriculumRepository.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>counts" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Services/Curriculum/CanonicalCurriculumImporter.php
+
+		-
+			message: '#^Offset 0 on array\{list\<string\>\} on left side of \?\? always exists and is not nullable\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Services/Curriculum/CanonicalExerciseTemplateRegistry.php
+
+		-
+			message: '#^Parameter \#1 \$array \(array\{0\: ''keyboard_path'', 1\: ''non_color_cue'', 2\: ''no_timing_dependency'', 3\?\: ''text_alt''\}\) of array_values is already a list, call has no effect\.$#'
+			identifier: arrayValues.list
+			count: 1
+			path: app/Services/Curriculum/CanonicalExerciseTemplateRegistry.php
+
+		-
+			message: '#^If condition is always true\.$#'
+			identifier: if.alwaysTrue
+			count: 1
+			path: app/Services/Curriculum/CurriculumAssetWorkspace.php
+
+		-
+			message: '#^Strict comparison using \!\=\= between string and App\\Enums\\CurriculumDraftStatus\:\:Draft will always evaluate to true\.$#'
+			identifier: notIdentical.alwaysTrue
+			count: 1
+			path: app/Services/Curriculum/CurriculumAssetWorkspace.php
+
+		-
+			message: '#^Unreachable statement \- code above always terminates\.$#'
+			identifier: deadCode.unreachable
+			count: 1
+			path: app/Services/Curriculum/CurriculumAssetWorkspace.php
+
+		-
+			message: '#^Access to an undefined property App\\Models\\CurriculumEntity\:\:\$package_name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/Curriculum/CurriculumAttemptService.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Relations\\HasMany\:\:available\(\)\.$#'
+			identifier: method.notFound
+			count: 3
+			path: app/Services/Curriculum/CurriculumAttemptService.php
+
+		-
+			message: '#^Call to function in_array\(\) with arguments mixed, array\{\} and true will always evaluate to false\.$#'
+			identifier: function.impossibleType
+			count: 1
+			path: app/Services/Curriculum/CurriculumAttemptService.php
+
+		-
+			message: '#^Call to function in_array\(\) with arguments string, array\{\} and true will always evaluate to false\.$#'
+			identifier: function.impossibleType
+			count: 1
+			path: app/Services/Curriculum/CurriculumAttemptService.php
+
+		-
+			message: '#^Method App\\Services\\Curriculum\\CurriculumAttemptService\:\:confidenceHistory\(\) should return Illuminate\\Contracts\\Pagination\\LengthAwarePaginator\<int, array\<string, mixed\>\> but returns Illuminate\\Pagination\\LengthAwarePaginator\<int, array\{attempt_id\: string, activity_code\: string, content_version\: string, completed_at\: string\|null, baseline\: bool, ratings\: array\<int, array\{prompt_code\: string, statement\: string, rating\: int\}\>\}\>\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Services/Curriculum/CurriculumAttemptService.php
+
+		-
+			message: '#^Offset ''accepted_normalized'' on string\|null on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Services/Curriculum/CurriculumAttemptService.php
+
+		-
+			message: '#^Offset ''correct_choice_ids'' on string\|null on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Services/Curriculum/CurriculumAttemptService.php
+
+		-
+			message: '#^Offset ''correct_order'' on string\|null on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Services/Curriculum/CurriculumAttemptService.php
+
+		-
+			message: '#^Offset ''rating'' on string\|null on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Services/Curriculum/CurriculumAttemptService.php
+
+		-
+			message: '#^Offset ''scoring_mode'' does not exist on string\.$#'
+			identifier: offsetAccess.notFound
+			count: 1
+			path: app/Services/Curriculum/CurriculumAttemptService.php
+
+		-
+			message: '#^Offset ''stem'' on string\|null on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Services/Curriculum/CurriculumAttemptService.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,Illuminate\\Database\\Eloquent\\Model\>\:\:map\(\) expects callable\(Illuminate\\Database\\Eloquent\\Model, int\)\: array\{prompt_code\: string, statement\: string, rating\: 0\}, Closure\(App\\Models\\CurriculumResponse\)\: array\{prompt_code\: string, statement\: string, rating\: 0\} given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Services/Curriculum/CurriculumAttemptService.php
+
+		-
+			message: '#^Parameter \$responses of method App\\Services\\Curriculum\\CurriculumAttemptService\:\:assembleResult\(\) expects array\<string, array\{response\: array\<string, mixed\>\|null, is_correct\: bool\|null\}\>, array\<array\{response\: string\|null, is_correct\: bool\|null\}\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Services/Curriculum/CurriculumAttemptService.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$content_version\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftDiff.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$payload\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftDiff.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$detected_mime\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftExerciseWorkspace.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$extension\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftExerciseWorkspace.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$sha256\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Services/Curriculum/CurriculumDraftExerciseWorkspace.php
+
+		-
+			message: '#^Call to function in_array\(\) with arguments null, array\{''role_play'', ''service_artifact''\} and true will always evaluate to false\.$#'
+			identifier: function.impossibleType
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftExerciseWorkspace.php
+
+		-
+			message: '#^Call to function is_array\(\) with null will always evaluate to false\.$#'
+			identifier: function.impossibleType
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftExerciseWorkspace.php
+
+		-
+			message: '#^Cannot access property \$value on string\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftExerciseWorkspace.php
+
+		-
+			message: '#^Match arm comparison between null and ''selection'' is always false\.$#'
+			identifier: match.alwaysFalse
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftExerciseWorkspace.php
+
+		-
+			message: '#^Match arm comparison between null and ''short_text'' is always false\.$#'
+			identifier: match.alwaysFalse
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftExerciseWorkspace.php
+
+		-
+			message: '#^Offset ''audio_asset'' on string on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 2
+			path: app/Services/Curriculum/CurriculumDraftExerciseWorkspace.php
+
+		-
+			message: '#^Offset ''choices'' on string on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 3
+			path: app/Services/Curriculum/CurriculumDraftExerciseWorkspace.php
+
+		-
+			message: '#^Offset ''criteria'' on string\|null on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftExerciseWorkspace.php
+
+		-
+			message: '#^Offset ''guidance'' on string on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftExerciseWorkspace.php
+
+		-
+			message: '#^Offset ''id'' on array\{\}\|string on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 2
+			path: app/Services/Curriculum/CurriculumDraftExerciseWorkspace.php
+
+		-
+			message: '#^Offset ''id'' on string on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftExerciseWorkspace.php
+
+		-
+			message: '#^Offset ''module'' on string on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 2
+			path: app/Services/Curriculum/CurriculumDraftExerciseWorkspace.php
+
+		-
+			message: '#^Offset ''outcome_codes'' on string on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftExerciseWorkspace.php
+
+		-
+			message: '#^Offset ''provenance_note'' on string on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftExerciseWorkspace.php
+
+		-
+			message: '#^Offset ''replaced_by'' on array\{\}\|string on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 2
+			path: app/Services/Curriculum/CurriculumDraftExerciseWorkspace.php
+
+		-
+			message: '#^Offset ''replaced_by'' on string on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftExerciseWorkspace.php
+
+		-
+			message: '#^Offset ''replaces'' on array\{\}\|string on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 2
+			path: app/Services/Curriculum/CurriculumDraftExerciseWorkspace.php
+
+		-
+			message: '#^Offset ''replaces'' on string on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftExerciseWorkspace.php
+
+		-
+			message: '#^Offset ''response_form'' on string on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 2
+			path: app/Services/Curriculum/CurriculumDraftExerciseWorkspace.php
+
+		-
+			message: '#^Offset ''source_locator'' does not exist on string\.$#'
+			identifier: offsetAccess.notFound
+			count: 4
+			path: app/Services/Curriculum/CurriculumDraftExerciseWorkspace.php
+
+		-
+			message: '#^Offset ''stem'' on string on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftExerciseWorkspace.php
+
+		-
+			message: '#^Offset ''template_type'' on string on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 3
+			path: app/Services/Curriculum/CurriculumDraftExerciseWorkspace.php
+
+		-
+			message: '#^Offset ''title'' on string on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 3
+			path: app/Services/Curriculum/CurriculumDraftExerciseWorkspace.php
+
+		-
+			message: '#^Offset ''tokens'' on string on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 2
+			path: app/Services/Curriculum/CurriculumDraftExerciseWorkspace.php
+
+		-
+			message: '#^Parameter \#1 \$array \(array\{\}\) to function array_values is empty, call has no effect\.$#'
+			identifier: arrayValues.empty
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftExerciseWorkspace.php
+
+		-
+			message: '#^Parameter \#1 \$array \(list\<array\<string, mixed\>\>\) of array_values is already a list, call has no effect\.$#'
+			identifier: arrayValues.list
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftExerciseWorkspace.php
+
+		-
+			message: '#^Parameter \#1 \$array of function array_replace expects array, string given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftExerciseWorkspace.php
+
+		-
+			message: '#^Parameter \#4 \$existing of method App\\Services\\Curriculum\\CurriculumDraftExerciseWorkspace\:\:activityPayload\(\) expects array, string given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftExerciseWorkspace.php
+
+		-
+			message: '#^Strict comparison using \!\=\= between string and App\\Enums\\CurriculumDraftStatus\:\:Draft will always evaluate to true\.$#'
+			identifier: notIdentical.alwaysTrue
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftExerciseWorkspace.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between array\{\} and array\{\} will always evaluate to true\.$#'
+			identifier: identical.alwaysTrue
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftExerciseWorkspace.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between string and array will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftExerciseWorkspace.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between string and array\<string, mixed\> will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftExerciseWorkspace.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between string and non\-empty\-array\<mixed, mixed\> will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftExerciseWorkspace.php
+
+		-
+			message: '#^Unreachable statement \- code above always terminates\.$#'
+			identifier: deadCode.unreachable
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftExerciseWorkspace.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>payload" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 4
+			path: app/Services/Curriculum/CurriculumDraftExerciseWorkspace.php
+
+		-
+			message: '#^Cannot access property \$value on string\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftLifecycle.php
+
+		-
+			message: '#^Cannot call method canTransitionTo\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftLifecycle.php
+
+		-
+			message: '#^Parameter \#4 \$from of method App\\Services\\Curriculum\\CurriculumDraftLifecycle\:\:record\(\) expects App\\Enums\\CurriculumDraftStatus\|null, string given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftLifecycle.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$archived_at\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftPackageBuilder.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$asset\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftPackageBuilder.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$blob\.$#'
+			identifier: property.notFound
+			count: 3
+			path: app/Services/Curriculum/CurriculumDraftPackageBuilder.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$projection_meta\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftPackageBuilder.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$source_path\.$#'
+			identifier: property.notFound
+			count: 4
+			path: app/Services/Curriculum/CurriculumDraftPackageBuilder.php
+
+		-
+			message: '#^Method App\\Services\\Curriculum\\CurriculumDraftPackageBuilder\:\:build\(\) should return array\{package\: App\\Services\\Curriculum\\CanonicalPackage, root\: string, evidence_path\: string, evidence\: array\<string, mixed\>\} but returns array\{package\: App\\Services\\Curriculum\\CanonicalPackage, root\: non\-falsy\-string, evidencePath\: non\-falsy\-string, evidence\: non\-empty\-array\<string, mixed\>\}\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftPackageBuilder.php
+
+		-
+			message: '#^Parameter &\$materialized by\-ref type of method App\\Services\\Curriculum\\CurriculumDraftPackageBuilder\:\:materializeAsset\(\) expects array\<string, true\>, non\-empty\-array\<true\> given\.$#'
+			identifier: parameterByRef.type
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftPackageBuilder.php
+
+		-
+			message: '#^Method App\\Services\\Curriculum\\CurriculumDraftPreviewRepository\:\:chapters\(\) should return Illuminate\\Support\\Collection\<int, array\<string, mixed\>\> but returns Illuminate\\Support\\Collection\<int, array\{code\: mixed, title\: mixed, module\: int, status\: string, sections_count\: int, activities_count\: int, progress\: int, completed_activities\: int\}\>\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftPreviewRepository.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$asset\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftProjection.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$payload\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftProjection.php
+
+		-
+			message: '#^Cannot assign offset ''blocks'' to string\.$#'
+			identifier: offsetAssign.dimType
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftProjection.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,App\\Models\\CurriculumDraftEntity\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftProjection.php
+
+		-
+			message: '#^Offset ''evidencePath'' does not exist on array\{package\: App\\Services\\Curriculum\\CanonicalPackage, root\: string, evidence_path\: string, evidence\: array\<string, mixed\>\}\.$#'
+			identifier: offsetAccess.notFound
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftReview.php
+
+		-
+			message: '#^Offset ''status'' on string\|null on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftReview.php
+
+		-
+			message: '#^Property App\\Services\\Curriculum\\CurriculumDraftReview\:\:\$importer is never read, only written\.$#'
+			identifier: property.onlyWritten
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftReview.php
+
+		-
+			message: '#^Result of \|\| is always true\.$#'
+			identifier: booleanOr.alwaysTrue
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftReview.php
+
+		-
+			message: '#^Strict comparison using \!\=\= between null and ''valid'' will always evaluate to true\.$#'
+			identifier: notIdentical.alwaysTrue
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftReview.php
+
+		-
+			message: '#^Strict comparison using \!\=\= between string and App\\Enums\\CurriculumDraftStatus\:\:Approved will always evaluate to true\.$#'
+			identifier: notIdentical.alwaysTrue
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftReview.php
+
+		-
+			message: '#^Strict comparison using \!\=\= between string and App\\Enums\\CurriculumDraftStatus\:\:Published will always evaluate to true\.$#'
+			identifier: notIdentical.alwaysTrue
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftReview.php
+
+		-
+			message: '#^Unreachable statement \- code above always terminates\.$#'
+			identifier: deadCode.unreachable
+			count: 3
+			path: app/Services/Curriculum/CurriculumDraftReview.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$detected_mime\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftWorkspace.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$sha256\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftWorkspace.php
+
+		-
+			message: '#^Cannot access property \$value on string\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftWorkspace.php
+
+		-
+			message: '#^Cannot assign offset ''module'' to string\.$#'
+			identifier: offsetAssign.dimType
+			count: 2
+			path: app/Services/Curriculum/CurriculumDraftWorkspace.php
+
+		-
+			message: '#^Cannot assign offset ''order'' to string\.$#'
+			identifier: offsetAssign.dimType
+			count: 2
+			path: app/Services/Curriculum/CurriculumDraftWorkspace.php
+
+		-
+			message: '#^Cannot assign offset ''title'' to string\.$#'
+			identifier: offsetAssign.dimType
+			count: 2
+			path: app/Services/Curriculum/CurriculumDraftWorkspace.php
+
+		-
+			message: '#^Cannot unset offset ''blocks'' on string\.$#'
+			identifier: unset.offset
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftWorkspace.php
+
+		-
+			message: '#^Empty array passed to foreach\.$#'
+			identifier: foreach.emptyArray
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftWorkspace.php
+
+		-
+			message: '#^Offset ''blocks'' on string on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftWorkspace.php
+
+		-
+			message: '#^Parameter \#1 \$array \(array\{\}\) to function array_values is empty, call has no effect\.$#'
+			identifier: arrayValues.empty
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftWorkspace.php
+
+		-
+			message: '#^Strict comparison using \!\=\= between string and App\\Enums\\CurriculumDraftStatus\:\:Draft will always evaluate to true\.$#'
+			identifier: notIdentical.alwaysTrue
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftWorkspace.php
+
+		-
+			message: '#^Unreachable statement \- code above always terminates\.$#'
+			identifier: deadCode.unreachable
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftWorkspace.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>namespace_uuid" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftWorkspace.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>package_name" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Services/Curriculum/CurriculumDraftWorkspace.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$source_path\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/Curriculum/CurriculumImportCompiler.php
+
+		-
+			message: '#^Parameter \#1 \$draft of method App\\Services\\Curriculum\\CurriculumImportCompiler\:\:diff\(\) expects App\\Models\\CurriculumDraft, Illuminate\\Database\\Eloquent\\Model\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Services/Curriculum/CurriculumImportCompiler.php
+
+		-
+			message: '#^Strict comparison using \!\=\= between string and App\\Enums\\CurriculumImportStatus\:\:Processing will always evaluate to true\.$#'
+			identifier: notIdentical.alwaysTrue
+			count: 1
+			path: app/Services/Curriculum/CurriculumImportCompiler.php
+
+		-
+			message: '#^Strict comparison using \!\=\= between string and App\\Enums\\CurriculumImportStatus\:\:Queued will always evaluate to true\.$#'
+			identifier: notIdentical.alwaysTrue
+			count: 1
+			path: app/Services/Curriculum/CurriculumImportCompiler.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between string and App\\Enums\\CurriculumImportStatus\:\:Accepted will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 1
+			path: app/Services/Curriculum/CurriculumImportCompiler.php
+
+		-
+			message: '#^Unreachable statement \- code above always terminates\.$#'
+			identifier: deadCode.unreachable
+			count: 2
+			path: app/Services/Curriculum/CurriculumImportCompiler.php
+
+		-
+			message: '#^Property App\\Services\\Curriculum\\CurriculumImportWorkspace\:\:\$reader is never read, only written\.$#'
+			identifier: property.onlyWritten
+			count: 1
+			path: app/Services/Curriculum/CurriculumImportWorkspace.php
+
+		-
+			message: '#^Strict comparison using \!\=\= between string and App\\Enums\\CurriculumDraftStatus\:\:Draft will always evaluate to true\.$#'
+			identifier: notIdentical.alwaysTrue
+			count: 2
+			path: app/Services/Curriculum/CurriculumImportWorkspace.php
+
+		-
+			message: '#^Unreachable statement \- code above always terminates\.$#'
+			identifier: deadCode.unreachable
+			count: 2
+			path: app/Services/Curriculum/CurriculumImportWorkspace.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$approved_at\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/Curriculum/CurriculumReleaseGuard.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$evidence_sha256\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/Curriculum/CurriculumReleaseGuard.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$gate\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/Curriculum/CurriculumReleaseGuard.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$preview_only\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/Curriculum/CurriculumReleaseGuard.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$recorded_by_user_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/Curriculum/CurriculumReleaseGuard.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$reviewer_name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/Curriculum/CurriculumReleaseGuard.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$reviewer_qualification\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/Curriculum/CurriculumReleaseGuard.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$source_tree_sha256\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Services/Curriculum/CurriculumReleaseGuard.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$state\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/Curriculum/CurriculumReleaseGuard.php
+
+		-
+			message: '#^Offset ''actor_user_id'' on non\-empty\-array\<mixed\> on left side of \?\? always exists and is not nullable\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Services/Curriculum/CurriculumReleaseGuard.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,Illuminate\\Database\\Eloquent\\Model\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Services/Curriculum/CurriculumReleaseGuard.php
+
+		-
+			message: '#^Parameter \#1 \$release of method App\\Services\\Curriculum\\CurriculumReleaseGuard\:\:releaseHasActivationEvidence\(\) expects App\\Models\\CurriculumRelease, Illuminate\\Database\\Eloquent\\Model given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Services/Curriculum/CurriculumReleaseGuard.php
+
+		-
+			message: '#^Parameter \#1 \$release of method App\\Services\\Curriculum\\CurriculumReleaseGuard\:\:releaseHasCompleteApprovalEvidence\(\) expects App\\Models\\CurriculumRelease, Illuminate\\Database\\Eloquent\\Model given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Services/Curriculum/CurriculumReleaseGuard.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$lifecycle_status\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/Curriculum/CurriculumReleaseLifecycle.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$source_tree_sha256\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/Curriculum/CurriculumReleaseLifecycle.php
+
+		-
+			message: '#^Constant App\\Services\\Curriculum\\CurriculumReleaseLifecycle\:\:ALLOWED is unused\.$#'
+			identifier: classConstant.unused
+			count: 1
+			path: app/Services/Curriculum/CurriculumReleaseLifecycle.php
+
+		-
+			message: '#^Method App\\Services\\Curriculum\\CurriculumReleaseLifecycle\:\:activate\(\) is unused\.$#'
+			identifier: method.unused
+			count: 1
+			path: app/Services/Curriculum/CurriculumReleaseLifecycle.php
+
+		-
+			message: '#^Method App\\Services\\Curriculum\\CurriculumReleaseLifecycle\:\:assertAllApprovalGates\(\) is unused\.$#'
+			identifier: method.unused
+			count: 1
+			path: app/Services/Curriculum/CurriculumReleaseLifecycle.php
+
+		-
+			message: '#^Strict comparison using \!\=\= between string and App\\Enums\\CurriculumReleaseState will always evaluate to true\.$#'
+			identifier: notIdentical.alwaysTrue
+			count: 1
+			path: app/Services/Curriculum/CurriculumReleaseLifecycle.php
+
+		-
+			message: '#^Strict comparison using \!\=\= between string and App\\Enums\\CurriculumReleaseState\:\:InReview will always evaluate to true\.$#'
+			identifier: notIdentical.alwaysTrue
+			count: 1
+			path: app/Services/Curriculum/CurriculumReleaseLifecycle.php
+
+		-
+			message: '#^Unreachable statement \- code above always terminates\.$#'
+			identifier: deadCode.unreachable
+			count: 2
+			path: app/Services/Curriculum/CurriculumReleaseLifecycle.php
+
+		-
+			message: '#^Call to function is_string\(\) with string will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: app/Services/Curriculum/CurriculumUploadInspector.php
+
+		-
+			message: '#^Offset ''encryption_method'' on array\{name\: string, index\: int, crc\: int, size\: int, mtime\: int, comp_size\: int, comp_method\: int, encryption_method\: int\} on left side of \?\? always exists and is not nullable\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Services/Curriculum/CurriculumUploadInspector.php
+
+		-
+			message: '#^Offset ''mime'' on array\{0\: int\<0, max\>, 1\: int\<0, max\>, 2\: int, 3\: string, mime\: string, channels\?\: int, bits\?\: int\} on left side of \?\? always exists and is not nullable\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Services/Curriculum/CurriculumUploadInspector.php
+
+		-
+			message: '#^Offset ''name'' on array\{name\: string, index\: int, crc\: int, size\: int, mtime\: int, comp_size\: int, comp_method\: int, encryption_method\: int\} on left side of \?\? always exists and is not nullable\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Services/Curriculum/CurriculumUploadInspector.php
+
+		-
+			message: '#^Offset ''size'' on array\{name\: string, index\: int, crc\: int, size\: int, mtime\: int, comp_size\: int, comp_method\: int, encryption_method\: int\} on left side of \?\? always exists and is not nullable\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Services/Curriculum/CurriculumUploadInspector.php
+
+		-
+			message: '#^Access to an undefined property App\\Models\\Module\:\:\$progress\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/CurriculumProgressService.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,Illuminate\\Database\\Eloquent\\Model\>\:\:map\(\) expects callable\(Illuminate\\Database\\Eloquent\\Model, int\)\: int, Closure\(App\\Models\\Lesson\)\: int given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Services/CurriculumProgressService.php
+
+		-
+			message: '#^Cannot call method toIso8601String\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 2
+			path: app/Services/DataExportBuilder.php
+
+		-
+			message: '#^Cannot access property \$value on string\.$#'
+			identifier: property.nonObject
+			count: 3
+			path: app/Services/DataSubjectRequestService.php
+
+		-
+			message: '#^Result of && is always false\.$#'
+			identifier: booleanAnd.alwaysFalse
+			count: 5
+			path: app/Services/DataSubjectRequestService.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between string and App\\Enums\\DataSubjectRequestType\:\:AccessExport will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 1
+			path: app/Services/DataSubjectRequestService.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between string and App\\Enums\\DataSubjectRequestType\:\:Deletion will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 3
+			path: app/Services/DataSubjectRequestService.php
+
+		-
+			message: '#^Cannot access property \$value on string\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: app/Services/InstitutionAccessService.php
+
+		-
+			message: '#^Result of \|\| is always true\.$#'
+			identifier: booleanOr.alwaysTrue
+			count: 1
+			path: app/Services/InstitutionAccessService.php
+
+		-
+			message: '#^Strict comparison using \!\=\= between string and App\\Enums\\InstitutionStatus\:\:Active will always evaluate to true\.$#'
+			identifier: notIdentical.alwaysTrue
+			count: 1
+			path: app/Services/InstitutionAccessService.php
+
+		-
+			message: '#^Unreachable statement \- code above always terminates\.$#'
+			identifier: deadCode.unreachable
+			count: 1
+			path: app/Services/InstitutionAccessService.php
+
+		-
+			message: '#^Using nullsafe property access on non\-nullable type string\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Services/InstitutionAccessService.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$status\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/InstitutionInvitationService.php
+
+		-
+			message: '#^Method App\\Services\\InstitutionInvitationService\:\:authorizeInvitationActor\(\) is unused\.$#'
+			identifier: method.unused
+			count: 1
+			path: app/Services/InstitutionInvitationService.php
+
+		-
+			message: '#^Result of \|\| is always true\.$#'
+			identifier: booleanOr.alwaysTrue
+			count: 3
+			path: app/Services/InstitutionInvitationService.php
+
+		-
+			message: '#^Strict comparison using \!\=\= between string and App\\Enums\\InstitutionStatus\:\:Active will always evaluate to true\.$#'
+			identifier: notIdentical.alwaysTrue
+			count: 3
+			path: app/Services/InstitutionInvitationService.php
+
+		-
+			message: '#^Unreachable statement \- code above always terminates\.$#'
+			identifier: deadCode.unreachable
+			count: 3
+			path: app/Services/InstitutionInvitationService.php
+
+		-
+			message: '#^Result of \|\| is always true\.$#'
+			identifier: booleanOr.alwaysTrue
+			count: 8
+			path: app/Services/InstitutionJoinCodeService.php
+
+		-
+			message: '#^Strict comparison using \!\=\= between string and App\\Enums\\InstitutionJoinRequestStatus\:\:Pending will always evaluate to true\.$#'
+			identifier: notIdentical.alwaysTrue
+			count: 1
+			path: app/Services/InstitutionJoinCodeService.php
+
+		-
+			message: '#^Strict comparison using \!\=\= between string and App\\Enums\\InstitutionStatus\:\:Active will always evaluate to true\.$#'
+			identifier: notIdentical.alwaysTrue
+			count: 2
+			path: app/Services/InstitutionJoinCodeService.php
+
+		-
+			message: '#^Unreachable statement \- code above always terminates\.$#'
+			identifier: deadCode.unreachable
+			count: 3
+			path: app/Services/InstitutionJoinCodeService.php
+
+		-
+			message: '#^Property App\\Services\\InstitutionRoleManager\:\:\$access is never read, only written\.$#'
+			identifier: property.onlyWritten
+			count: 1
+			path: app/Services/InstitutionRoleManager.php
+
+		-
+			message: '#^Strict comparison using \!\=\= between string and App\\Enums\\InstitutionMembershipStatus\:\:Active will always evaluate to true\.$#'
+			identifier: notIdentical.alwaysTrue
+			count: 1
+			path: app/Services/InstitutionRoleManager.php
+
+		-
+			message: '#^Unreachable statement \- code above always terminates\.$#'
+			identifier: deadCode.unreachable
+			count: 1
+			path: app/Services/InstitutionRoleManager.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$is_active\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/ProgressAdministrationService.php
+
+		-
+			message: '#^Anonymous function should return Illuminate\\Support\\Collection\<int, array\{code\: string\|null, title\: string, lifecycle_status\: string\|null, activities\: Illuminate\\Support\\Collection\<int, array\>\}\> but returns Illuminate\\Support\\Collection\<int, array\{code\: string\|null, title\: string, lifecycle_status\: string\|null, activities\: Illuminate\\Support\\Collection\<int, array\>\}\>\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Services/ProgressAdministrationService.php
+
+		-
+			message: '#^Anonymous function should return array\{code\: string\|null, module\: 0, title\: string, lifecycle_status\: string\|null, sections\: Illuminate\\Support\\Collection\<int, array\{code\: string\|null, title\: string, lifecycle_status\: string\|null, activities\: Illuminate\\Support\\Collection\<int, array\>\}\>\} but returns array\{code\: string\|null, module\: 0, title\: string, lifecycle_status\: string\|null, sections\: Illuminate\\Support\\Collection\<int, array\{code\: string\|null, title\: string, lifecycle_status\: string\|null, activities\: Illuminate\\Support\\Collection\<int, array\<string, mixed\>\>\}\>\}\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Services/ProgressAdministrationService.php
+
+		-
+			message: '#^Anonymous function should return array\{code\: string\|null, title\: string, lifecycle_status\: string\|null, activities\: Illuminate\\Support\\Collection\<int, array\>\} but returns array\{code\: string\|null, title\: string, lifecycle_status\: string\|null, activities\: Illuminate\\Support\\Collection\<int, array\<string, mixed\>\>\}\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Services/ProgressAdministrationService.php
+
+		-
+			message: '#^Method App\\Services\\ProgressAdministrationService\:\:versionInventoryFor\(\) should return Illuminate\\Support\\Collection\<int, array\<string, mixed\>\> but returns Illuminate\\Support\\Collection\<int, non\-empty\-array\>\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Services/ProgressAdministrationService.php
+
+		-
+			message: '#^Offset ''module'' on string on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 3
+			path: app/Services/ProgressAdministrationService.php
+
+		-
+			message: '#^Offset ''title'' on string on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 4
+			path: app/Services/ProgressAdministrationService.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Support\\Collection\<\(int\|string\),mixed\>\:\:map\(\) expects callable\(mixed, int\|string\)\: array\{code\: string\|null, module\: 0, title\: string, lifecycle_status\: string\|null, sections\: Illuminate\\Support\\Collection\<int, array\{code\: string\|null, title\: string, lifecycle_status\: string\|null, activities\: Illuminate\\Support\\Collection\<int, array\>\}\>\}, Closure\(App\\Models\\CurriculumEntity\)\: array\{code\: string\|null, module\: 0, title\: string, lifecycle_status\: string\|null, sections\: Illuminate\\Support\\Collection\<int, array\{code\: string\|null, title\: string, lifecycle_status\: string\|null, activities\: Illuminate\\Support\\Collection\<int, array\>\}\>\} given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Services/ProgressAdministrationService.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Support\\Collection\<int,array\<string, Illuminate\\Support\\Collection\<int, array\<string, Illuminate\\Support\\Collection\<int, array\>\|string\|null\>\>\|int\|string\|null\>\>\:\:flatMap\(\) expects callable\(array\{code\: string\|null, module\: int, title\: string, lifecycle_status\: string\|null, sections\: Illuminate\\Support\\Collection\<int, array\{code\: string\|null, title\: string, lifecycle_status\: string\|null, activities\: Illuminate\\Support\\Collection\<int, array\>\}\>\}, int\)\: \(array\<int, array\{code\: string\|null, title\: string, lifecycle_status\: string\|null, activities\: Illuminate\\Support\\Collection\<int, array\>\}\>\|Illuminate\\Support\\Collection\<int, array\{code\: string\|null, title\: string, lifecycle_status\: string\|null, activities\: Illuminate\\Support\\Collection\<int, array\>\}\>\), static\-Closure\(array\)\: Illuminate\\Support\\Collection\<int, array\{code\: string\|null, title\: string, lifecycle_status\: string\|null, activities\: Illuminate\\Support\\Collection\<int, array\>\}\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Services/ProgressAdministrationService.php
+
+		-
+			message: '#^Parameter \#1 \$collection of method Illuminate\\Pagination\\AbstractPaginator\<int,App\\Models\\User\>\:\:setCollection\(\) expects Illuminate\\Support\\Collection\<int, App\\Models\\User\>, Illuminate\\Support\\Collection\<int, array\{learner\: App\\Models\\User, summary\: array\<string, mixed\>\}\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Services/ProgressAdministrationService.php
+
+		-
+			message: '#^Parameter \#1 \$array \(list\<array\<string, string\>\>\) of array_values is already a list, call has no effect\.$#'
+			identifier: arrayValues.list
+			count: 1
+			path: app/Services/Quality/ActiveBrandGuard.php
+
+		-
+			message: '#^Method App\\Services\\UserRoleManager\:\:synchronizeLegacyCompatibilityAssignments\(\) is unused\.$#'
+			identifier: method.unused
+			count: 1
+			path: app/Services/UserRoleManager.php
+
+		-
+			message: '#^Strict comparison using \!\=\= between string and App\\Enums\\UserRole will always evaluate to true\.$#'
+			identifier: notIdentical.alwaysTrue
+			count: 1
+			path: app/Services/UserRoleManager.php
+
+		-
+			message: '#^Unreachable statement \- code above always terminates\.$#'
+			identifier: deadCode.unreachable
+			count: 1
+			path: app/Services/UserRoleManager.php
+
+		-
+			message: '#^Match arm comparison between string and App\\Enums\\UserRole\:\:Admin is always false\.$#'
+			identifier: match.alwaysFalse
+			count: 1
+			path: app/Services/WorkContext.php
+
+		-
+			message: '#^Match arm comparison between string and App\\Enums\\UserRole\:\:Superadmin is always false\.$#'
+			identifier: match.alwaysFalse
+			count: 1
+			path: app/Services/WorkContext.php
+
+		-
+			message: '#^Match arm comparison between string and App\\Enums\\UserRole\:\:Supervisor is always false\.$#'
+			identifier: match.alwaysFalse
+			count: 1
+			path: app/Services/WorkContext.php
+
+		-
+			message: '#^Method App\\Services\\WorkContext\:\:available\(\) should return Illuminate\\Support\\Collection\<int, array\{role\: App\\Enums\\WorkContextRole, institution\: App\\Models\\Institution\|null, preview\: bool\}\> but returns Illuminate\\Support\\Collection\<int, array\{role\: App\\Enums\\WorkContextRole, institution\: null, preview\: bool\}\>\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Services/WorkContext.php
+
+		-
+			message: '#^Parameter \#1 \.\.\.\$values of method Illuminate\\Support\\Collection\<int,array\<string, App\\Enums\\WorkContextRole\|bool\|null\>\>\:\:push\(\) expects array\{role\: App\\Enums\\WorkContextRole, institution\: null, preview\: bool\}, array\{role\: App\\Enums\\WorkContextRole\:\:InstitutionAdmin, institution\: App\\Models\\Institution, preview\: false\} given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Services/WorkContext.php
+
+		-
+			message: '#^Parameter \#1 \.\.\.\$values of method Illuminate\\Support\\Collection\<int,array\<string, App\\Enums\\WorkContextRole\|bool\|null\>\>\:\:push\(\) expects array\{role\: App\\Enums\\WorkContextRole, institution\: null, preview\: bool\}, array\{role\: App\\Enums\\WorkContextRole\:\:InstitutionAdmin, institution\: App\\Models\\Institution, preview\: true\} given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Services/WorkContext.php
+
+		-
+			message: '#^Parameter \#1 \.\.\.\$values of method Illuminate\\Support\\Collection\<int,array\<string, App\\Enums\\WorkContextRole\|bool\|null\>\>\:\:push\(\) expects array\{role\: App\\Enums\\WorkContextRole, institution\: null, preview\: bool\}, array\{role\: App\\Enums\\WorkContextRole\:\:Instructor, institution\: App\\Models\\Institution, preview\: false\} given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Services/WorkContext.php
+
+		-
+			message: '#^Parameter \#1 \.\.\.\$values of method Illuminate\\Support\\Collection\<int,array\<string, App\\Enums\\WorkContextRole\|bool\|null\>\>\:\:push\(\) expects array\{role\: App\\Enums\\WorkContextRole, institution\: null, preview\: bool\}, array\{role\: App\\Enums\\WorkContextRole\:\:Instructor, institution\: App\\Models\\Institution, preview\: true\} given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Services/WorkContext.php
+
+		-
+			message: '#^Strict comparison using \!\=\= between string and App\\Enums\\UserRole\:\:Learner will always evaluate to true\.$#'
+			identifier: notIdentical.alwaysTrue
+			count: 1
+			path: app/Services/WorkContext.php
+
+		-
+			message: '#^Unreachable statement \- code above always terminates\.$#'
+			identifier: deadCode.unreachable
+			count: 1
+			path: app/Services/WorkContext.php

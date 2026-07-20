@@ -4,6 +4,7 @@ use App\Exceptions\CurriculumDraftConflictException;
 use App\Http\Middleware\CheckRole;
 use App\Http\Middleware\EnsureAccountIsActive;
 use App\Http\Middleware\EnsureLegacyCurriculumWritable;
+use App\Http\Middleware\EnsurePrivilegedMfa;
 use App\Http\Middleware\SecurityHeaders;
 use App\Http\Middleware\SetLocale;
 use App\Services\RoleLandingResolver;
@@ -34,6 +35,7 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->web(append: [
             SetLocale::class,
             EnsureAccountIsActive::class,
+            EnsurePrivilegedMfa::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {

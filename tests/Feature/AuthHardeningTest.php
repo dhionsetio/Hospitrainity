@@ -132,9 +132,17 @@ class AuthHardeningTest extends TestCase
         $login = $loginLimiter($request);
         $loginVariant = $loginLimiter($variant);
         $password = $passwordLimiter($request);
-        $keys = array_merge([$login->key], array_map(static fn ($limit): string => $limit->key, $password));
+        $loginLimits = is_array($login) ? $login : [$login];
+        $loginVariantLimits = is_array($loginVariant) ? $loginVariant : [$loginVariant];
+        $keys = array_merge(
+            array_map(static fn ($limit): string => $limit->key, $loginLimits),
+            array_map(static fn ($limit): string => $limit->key, $password),
+        );
 
-        $this->assertSame($login->key, $loginVariant->key);
+        $this->assertSame(
+            array_map(static fn ($limit): string => $limit->key, $loginLimits),
+            array_map(static fn ($limit): string => $limit->key, $loginVariantLimits),
+        );
         foreach ($keys as $key) {
             $this->assertStringNotContainsString('sensitive.account@example.com', strtolower($key));
         }

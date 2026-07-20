@@ -1,0 +1,15 @@
+includes:
+    - vendor/larastan/larastan/extension.neon
+    - vendor/nesbot/carbon/extension.neon
+    - phpstan-baseline.neon
+
+parameters:
+    paths:
+        - app
+    level: 5
+    tmpDir: storage/framework/cache/phpstan
+
+    # This B03 gate begins at level 5. Existing findings are inventoried in a
+    # generated baseline; new findings fail analysis and the level can rise in
+    # reviewed batches without hiding regressions.
+    reportUnmatchedIgnoredErrors: true

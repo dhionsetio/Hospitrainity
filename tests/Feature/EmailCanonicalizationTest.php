@@ -58,8 +58,8 @@ class EmailCanonicalizationTest extends TestCase
 
         $this->post(route('invitations.redeem', ['token' => $issued['token']]), [
             'name' => 'Duplicate Learner',
-            'password' => 'Password123!',
-            'password_confirmation' => 'Password123!',
+            'password' => 'A long invitation test passphrase 2026!',
+            'password_confirmation' => 'A long invitation test passphrase 2026!',
             'terms' => '1',
         ])->assertRedirect(route('invitations.unavailable'));
 
@@ -74,11 +74,11 @@ class EmailCanonicalizationTest extends TestCase
         $this->post('/reset-password', [
             'token' => $token,
             'email' => 'RESET@EXAMPLE.COM',
-            'password' => 'Replacement123!',
-            'password_confirmation' => 'Replacement123!',
+            'password' => 'A long replacement test passphrase 2026!',
+            'password_confirmation' => 'A long replacement test passphrase 2026!',
         ])->assertRedirect(route('login'));
 
-        $this->assertTrue(Hash::check('Replacement123!', $user->fresh()->password));
+        $this->assertTrue(Hash::check('A long replacement test passphrase 2026!', $user->fresh()->password));
     }
 
     public function test_migration_normalizes_users_and_reset_tokens_idempotently(): void

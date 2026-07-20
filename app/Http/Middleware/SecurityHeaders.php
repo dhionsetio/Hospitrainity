@@ -25,6 +25,9 @@ class SecurityHeaders
             'privacy-requests.*',
             'privacy-exports.*',
             'superadmin.privacy-requests.*',
+            'security.*',
+            'mfa.*',
+            'passkey.*',
         );
         $response->headers->set('Referrer-Policy', $sensitiveTokenRoute ? 'no-referrer' : 'strict-origin-when-cross-origin');
         if ($sensitiveTokenRoute) {
@@ -55,7 +58,7 @@ class SecurityHeaders
 
     private function contentSecurityPolicy(string $nonce): string
     {
-        return implode('; ', [
+        $directives = [
             "default-src 'self'",
             "base-uri 'self'",
             "form-action 'self'",
@@ -72,7 +75,13 @@ class SecurityHeaders
             'frame-src https://www.youtube.com',
             "manifest-src 'self'",
             "worker-src 'self' blob:",
-        ]).';';
+        ];
+        $reportUri = trim((string) config('security.csp.report_uri'));
+        if ($reportUri !== '' && str_starts_with($reportUri, '/')) {
+            $directives[] = 'report-uri '.$reportUri;
+        }
+
+        return implode('; ', $directives).';';
     }
 
     private function strictTransportSecurity(): string

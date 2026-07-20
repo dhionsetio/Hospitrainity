@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Enums\WorkContextRole;
 use App\Exceptions\InvitationUnavailableException;
 use App\Models\User;
+use App\Rules\SecurePassword;
 use App\Services\InstitutionContext;
 use App\Services\InstitutionInvitationService;
 use App\Services\LearningContext;
@@ -13,7 +14,6 @@ use App\Services\WorkContext;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Validation\Rules\Password;
 use Illuminate\View\View;
 
 class InvitationAcceptanceController extends Controller
@@ -56,7 +56,7 @@ class InvitationAcceptanceController extends Controller
         if ($request->user() === null) {
             $newUser = $request->validate([
                 'name' => ['required', 'string', 'max:255'],
-                'password' => ['required', 'confirmed', Password::defaults()],
+                'password' => ['required', 'confirmed', new SecurePassword([$request->input('name')])],
                 'terms' => ['accepted'],
             ]);
         }

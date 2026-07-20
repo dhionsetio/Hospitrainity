@@ -7,6 +7,7 @@ use App\Models\CurriculumAsset;
 use App\Models\CurriculumAssetBlob;
 use App\Models\CurriculumDraft;
 use App\Models\User;
+use App\Services\UploadSecurityService;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -18,12 +19,14 @@ final class CurriculumAssetWorkspace
     public function __construct(
         private readonly CurriculumUploadInspector $inspector,
         private readonly CurriculumDraftLifecycle $lifecycle,
+        private readonly UploadSecurityService $uploadSecurity,
     ) {}
 
     /** @param array<string, mixed> $data */
     public function store(CurriculumDraft $draft, User $actor, int $expectedRevision, UploadedFile $file, array $data): CurriculumAsset
     {
         $metadata = $this->inspector->asset($file);
+        $scan = $this->uploadSecurity->inspect($file, $actor, 'asset', $metadata);
         $disk = Storage::disk((string) config('curriculum.import.disk'));
         $uploadId = (string) Str::uuid();
         $quarantine = trim((string) config('curriculum.import.quarantine_prefix'), '/')."/assets/{$uploadId}.{$metadata['extension']}";
@@ -43,7 +46,7 @@ final class CurriculumAssetWorkspace
                 throw new RuntimeException('The validated asset could not be promoted from quarantine.');
             }
 
-            return DB::transaction(function () use ($draft, $actor, $expectedRevision, $metadata, $blobPath, $data): CurriculumAsset {
+            $asset = DB::transaction(function () use ($draft, $actor, $expectedRevision, $metadata, $blobPath, $data): CurriculumAsset {
                 $locked = CurriculumDraft::query()->lockForUpdate()->findOrFail($draft->id);
                 $this->lifecycle->assertRevision($locked, $expectedRevision);
                 if ($locked->status !== CurriculumDraftStatus::Draft) {
@@ -84,6 +87,9 @@ final class CurriculumAssetWorkspace
 
                 return $asset->load('blob');
             }, attempts: 3);
+            $this->uploadSecurity->markPromoted($scan);
+
+            return $asset;
         } catch (\Throwable $exception) {
             if ($disk->exists($quarantine)) {
                 $disk->delete($quarantine);

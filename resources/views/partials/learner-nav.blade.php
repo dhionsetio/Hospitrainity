@@ -42,6 +42,7 @@
                         @if(!isset($curriculumPreview) && app(\App\Services\WorkContext::class)->hasAlternativeRole(Auth::user()))
                             <a href="{{ route('work-context.index') }}" role="menuitem" tabindex="-1" class="block px-4 py-2 text-sm text-neutral-700 hover:bg-neutral-100">{{ __('Switch role') }}</a>
                         @endif
+                        <a href="{{ route('security.index') }}" role="menuitem" tabindex="-1" class="block px-4 py-2 text-sm text-neutral-700 hover:bg-neutral-100">{{ __('Account security') }}</a>
                         <div role="separator" class="border-t border-neutral-200 my-1"></div>
 
                         <!-- FORM LOGOUT DIMULAI DI SINI -->

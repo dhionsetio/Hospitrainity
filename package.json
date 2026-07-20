@@ -35,5 +35,8 @@
     "allowScripts": {
         "@tailwindcss/oxide@4.3.3": true,
         "esbuild@0.25.5": true
+    },
+    "dependencies": {
+        "@laravel/passkeys": "0.2.0"
     }
 }

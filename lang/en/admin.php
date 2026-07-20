@@ -63,6 +63,7 @@ return [
     ],
     'confirm_password_action' => 'Confirm password',
     'password_confirmed' => [
+        'security' => 'Password confirmed. Security changes are unlocked briefly.',
         'audit' => 'Password confirmed. You may now review administration audit events.',
         'users' => 'Password confirmed. You may now administer users.',
         'institution_roles' => 'Password confirmed. You may now manage institution staff roles.',

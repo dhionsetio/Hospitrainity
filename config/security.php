@@ -9,6 +9,7 @@ return [
             'SECURITY_CSP_REPORT_ONLY',
             env('APP_ENV', 'production') !== 'production',
         ),
+        'report_uri' => env('SECURITY_CSP_REPORT_URI', '/security/csp-reports'),
     ],
 
     'hsts' => [

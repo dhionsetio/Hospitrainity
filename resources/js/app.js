@@ -5,6 +5,7 @@ import { registerAdminComponents } from './admin-forms';
 import { initializeCanonicalActivity } from './canonical-activity';
 import { initializeExerciseAuthoring } from './canonical-exercise-authoring';
 import { initializePushNotifications } from './push-notifications';
+import { initializePasskeys } from './passkeys';
 
 registerAdminComponents(Alpine);
 window.Alpine = Alpine;
@@ -19,6 +20,7 @@ function initializePageInteractions() {
     initializeCanonicalActivity();
     initializeExerciseAuthoring();
     initializePushNotifications();
+    initializePasskeys();
 
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');

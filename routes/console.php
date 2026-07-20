@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\User;
+use App\Services\MfaService;
 use App\Services\PrivacyRetentionService;
 use App\Services\PublicMediaManager;
 use Illuminate\Foundation\Inspiring;
@@ -7,11 +9,45 @@ use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Schedule;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use PragmaRX\Google2FA\Google2FA;
 use Symfony\Component\Console\Command\Command;
 
 Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->purpose('Display an inspiring quote');
+
+Artisan::command('hospitrainity:e2e-prepare-mfa', function () {
+    $database = realpath((string) config('database.connections.sqlite.database'));
+    $testingRoot = realpath(storage_path('framework/testing'));
+    $normalizedDatabase = str_replace('\\', '/', (string) $database);
+    $normalizedRoot = rtrim(str_replace('\\', '/', (string) $testingRoot), '/').'/e2e';
+
+    if (! app()->environment('testing')
+        || $database === false
+        || $testingRoot === false
+        || ! str_starts_with(strtolower($normalizedDatabase), strtolower($normalizedRoot))
+        || basename($normalizedDatabase) !== 'database.sqlite') {
+        $this->error('Refusing to create an MFA fixture outside an isolated E2E testing database.');
+
+        return Command::FAILURE;
+    }
+
+    $fixtures = [];
+    foreach (['superadmin', 'supervisor'] as $account) {
+        $user = User::query()->where('email', $account.'@example.com')->firstOrFail();
+        $secret = app(MfaService::class)->beginTotp($user);
+        $fixtures[$account] = [
+            'recoveryCodes' => app(MfaService::class)->confirmTotp(
+                $user->fresh(),
+                (new Google2FA)->getCurrentOtp($secret),
+            ),
+        ];
+    }
+
+    $this->line(json_encode($fixtures, JSON_THROW_ON_ERROR));
+
+    return Command::SUCCESS;
+})->purpose('Create disposable privileged MFA fixtures in an isolated E2E database only');
 
 Artisan::command('hospitrainity:media-cleanup {--limit=100}', function () {
     $result = app(PublicMediaManager::class)->processPending((int) $this->option('limit'));

@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Models\IdentityAudit;
 use App\Models\PolicyAcknowledgement;
 use App\Models\User;
+use App\Rules\SecurePassword;
 use App\Services\PolicyDocumentRegistry;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
@@ -15,7 +16,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rule;
-use Illuminate\Validation\Rules\Password;
 use Illuminate\View\View;
 
 class RegisterController extends Controller
@@ -41,7 +41,7 @@ class RegisterController extends Controller
                 'max:255',
                 Rule::unique(User::class, 'email'),
             ],
-            'password' => ['required', 'confirmed', Password::defaults()],
+            'password' => ['required', 'confirmed', new SecurePassword([$request->input('name'), $request->input('email')])],
             'scope_acknowledgement' => ['accepted'],
             'policy_acknowledgement' => ['accepted'],
         ]);

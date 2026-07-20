@@ -2,13 +2,24 @@
 
 namespace App\Providers;
 
+use App\Http\Responses\SecurePasskeyConfirmationResponse;
+use App\Http\Responses\SecurePasskeyLoginResponse;
+use App\Models\Passkey;
 use App\Models\User;
+use App\Services\SecurityEventRecorder;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\Vite;
 use Illuminate\Support\ServiceProvider;
+use Laravel\Fortify\Fortify;
+use Laravel\Passkeys\Contracts\PasskeyConfirmationResponse;
+use Laravel\Passkeys\Contracts\PasskeyLoginResponse;
+use Laravel\Passkeys\Events\PasskeyDeleted;
+use Laravel\Passkeys\Events\PasskeyRegistered;
+use Laravel\Passkeys\Passkeys;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -17,7 +28,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        Fortify::ignoreRoutes();
+        $this->app->singleton(PasskeyLoginResponse::class, SecurePasskeyLoginResponse::class);
+        $this->app->singleton(PasskeyConfirmationResponse::class, SecurePasskeyConfirmationResponse::class);
     }
 
     /**
@@ -27,6 +40,19 @@ class AppServiceProvider extends ServiceProvider
     {
         Vite::useHotFile((string) config('vite.hot_file'));
         Model::preventLazyLoading(! $this->app->isProduction());
+        Passkeys::useUserModel(User::class);
+        Passkeys::usePasskeyModel(Passkey::class);
+        Passkeys::authorizeLoginUsing(fn (Request $request, $user): bool => $user instanceof User && ! $user->isDisabled());
+        Event::listen(PasskeyRegistered::class, function (PasskeyRegistered $event): void {
+            app(SecurityEventRecorder::class)->record('mfa.passkey_registered', 'allowed', $event->user, $event->user->email, request(), [
+                'passkey_id' => $event->passkey->getKey(),
+            ], 'notice');
+        });
+        Event::listen(PasskeyDeleted::class, function (PasskeyDeleted $event): void {
+            app(SecurityEventRecorder::class)->record('mfa.passkey_deleted', 'allowed', $event->user, $event->user->email, request(), [
+                'passkey_id' => $event->passkey->getKey(),
+            ], 'notice');
+        });
         $this->configureRateLimiters();
     }
 
@@ -45,7 +71,11 @@ class AppServiceProvider extends ServiceProvider
         RateLimiter::for('login', function (Request $request) {
             $identity = $this->rateLimitIdentity($request->input('email'));
 
-            return Limit::perMinute(5)->by('login-account:'.$identity.'|'.$request->ip());
+            return [
+                Limit::perMinute(5)->by('login-account:'.$identity.'|'.$request->ip()),
+                Limit::perMinute(30)->by('login-ip:'.$request->ip()),
+                Limit::perMinute(500)->by('login-global'),
+            ];
         });
 
         RateLimiter::for('invitation-view', fn (Request $request): array => [
@@ -169,6 +199,22 @@ class AppServiceProvider extends ServiceProvider
             ->by('push-subscription:'.($request->user()?->getAuthIdentifier() ?? $request->ip())));
         RateLimiter::for('push-test', fn (Request $request): Limit => Limit::perMinute(3)
             ->by('push-test:'.($request->user()?->getAuthIdentifier() ?? $request->ip())));
+        RateLimiter::for('mfa-challenge', fn (Request $request): array => [
+            Limit::perMinute(5)->by('mfa-session:'.$request->session()->getId()),
+            Limit::perMinute(20)->by('mfa-ip:'.$request->ip()),
+            Limit::perMinute(500)->by('mfa-global'),
+        ]);
+        RateLimiter::for('passkeys', fn (Request $request): array => [
+            Limit::perMinute(10)->by('passkey-actor:'.($request->user()?->getAuthIdentifier() ?? $request->ip())),
+            Limit::perMinute(30)->by('passkey-ip:'.$request->ip()),
+            Limit::perMinute(500)->by('passkey-global'),
+        ]);
+        RateLimiter::for('security-settings', fn (Request $request): Limit => Limit::perMinute(20)
+            ->by('security-settings:'.$request->user()->getAuthIdentifier()));
+        RateLimiter::for('csp-report', fn (Request $request): array => [
+            Limit::perMinute(30)->by('csp-ip:'.$request->ip()),
+            Limit::perMinute(1000)->by('csp-global'),
+        ]);
     }
 
     private function rateLimitIdentity(mixed $value): string

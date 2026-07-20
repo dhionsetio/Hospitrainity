@@ -436,15 +436,41 @@
                 "NG-B03-DECISIONS"
             ],
             "required_evidence": "Approved password/throttle/MFA/recovery controls; abuse, session, step-up, accessibility, and audit evidence",
-            "status": "open",
+            "status": "in_progress",
             "evidence": {
-                "code": [],
-                "migrations": [],
-                "automated_tests": [],
-                "browser_device_checks": [],
-                "human_legal_reviews": [],
-                "production_evidence": [],
-                "checkpoints": []
+                "code": [
+                    "app/Rules/SecurePassword.php",
+                    "app/Http/Controllers/Auth/LoginController.php",
+                    "app/Http/Controllers/Auth/MfaChallengeController.php",
+                    "app/Http/Controllers/SecuritySettingsController.php",
+                    "app/Http/Middleware/EnsurePrivilegedMfa.php",
+                    "app/Services/MfaService.php",
+                    "app/Models/Passkey.php",
+                    "resources/js/passkeys.js",
+                    "config/authentication.php",
+                    "config/hashing.php"
+                ],
+                "migrations": [
+                    "database/migrations/2026_07_20_000015_create_security_assurance_tables.php"
+                ],
+                "automated_tests": [
+                    "tests/Feature/SecurityAssuranceTest.php",
+                    "tests/Feature/AuthHardeningTest.php",
+                    "tests/Feature/RoleLandingRedirectTest.php",
+                    "tests/E2E/critical-path.spec.mjs"
+                ],
+                "browser_device_checks": [
+                    "B03 MFA-compatible critical paths passed 40/40 across patched desktop/mobile Chromium and WebKit; patched Firefox remained blocked before navigation by a reproducible host SWGL framebuffer startup failure."
+                ],
+                "human_legal_reviews": [
+                    "Owner approved the B03 security architecture and role requirements; independent penetration testing and real authenticator/device review remain required."
+                ],
+                "production_evidence": [
+                    "Argon2id and opportunistic bcrypt rehash, 15-128-character context/blocklist validation, layered generic authentication, privileged MFA enforcement, encrypted TOTP, hashed one-use recovery codes, passkey integration, recent-password management, and owner-scoped session revocation are installed locally. All three enabled demo accounts intentionally remain unenrolled and therefore keep the production readiness gate closed."
+                ],
+                "checkpoints": [
+                    "docs/checkpoints/NG-B03-CHECKPOINT.md"
+                ]
             }
         },
         {
@@ -459,15 +485,37 @@
                 "NG-B17-DECISIONS"
             ],
             "required_evidence": "ASVS traceability; event/alert exercises; secrets/least privilege; restore and independent assessment evidence",
-            "status": "open",
+            "status": "in_progress",
             "evidence": {
-                "code": [],
-                "migrations": [],
-                "automated_tests": [],
-                "browser_device_checks": [],
+                "code": [
+                    "app/Services/SecurityEventRecorder.php",
+                    "app/Http/Controllers/CspReportController.php",
+                    "app/Http/Middleware/SecurityHeaders.php",
+                    "app/Services/ProductionReadinessChecker.php",
+                    "config/logging.php",
+                    "config/security.php",
+                    "phpstan.neon.dist",
+                    "phpstan-baseline.neon"
+                ],
+                "migrations": [
+                    "database/migrations/2026_07_20_000015_create_security_assurance_tables.php"
+                ],
+                "automated_tests": [
+                    "tests/Feature/SecurityAssuranceTest.php",
+                    "tests/Feature/ProductionReadinessCheckerTest.php",
+                    "npm run governance:verify",
+                    "composer analyse"
+                ],
+                "browser_device_checks": [
+                    "Authentication, MFA recovery, privacy step-up, and privileged critical paths passed in the four viable Playwright profiles; Firefox host launch remained blocked before application navigation."
+                ],
                 "human_legal_reviews": [],
-                "production_evidence": [],
-                "checkpoints": []
+                "production_evidence": [
+                    "docs/security/OWASP-ASVS-5.0.md records implemented controls and explicit gaps. Encrypted append-only event evidence, bounded JSON logging, minimized CSP reporting, current dependency audits, and deployment gates are installed; central tamper-aware monitoring, a backup responder, restore rehearsal, SAST/DAST, and independent assessment remain open."
+                ],
+                "checkpoints": [
+                    "docs/checkpoints/NG-B03-CHECKPOINT.md"
+                ]
             }
         },
         {
@@ -480,15 +528,31 @@
                 "NG-B03-DECISIONS"
             ],
             "required_evidence": "Approved scanner/CDR policy; quarantine/promotion; unavailable/positive/negative/re-scan and disposal tests",
-            "status": "open",
+            "status": "in_progress",
             "evidence": {
-                "code": [],
-                "migrations": [],
-                "automated_tests": [],
+                "code": [
+                    "app/Services/UploadSecurityService.php",
+                    "app/Services/Curriculum/CurriculumAssetWorkspace.php",
+                    "app/Services/Curriculum/CurriculumImportWorkspace.php",
+                    "app/Models/UploadSecurityRecord.php",
+                    "config/upload_security.php"
+                ],
+                "migrations": [
+                    "database/migrations/2026_07_20_000015_create_security_assurance_tables.php"
+                ],
+                "automated_tests": [
+                    "tests/Feature/SecurityAssuranceTest.php",
+                    "tests/Feature/CurriculumImportAndAssetAuthoringTest.php",
+                    "tests/Feature/ProductionReadinessCheckerTest.php"
+                ],
                 "browser_device_checks": [],
                 "human_legal_reviews": [],
-                "production_evidence": [],
-                "checkpoints": []
+                "production_evidence": [
+                    "The provider-neutral ClamAV adapter records encrypted filenames and hashes, distinguishes clean/detected/unavailable results, scans before explicit promotion, and fails closed when production scanning is required. This development host has no ClamAV binary, and image re-encoding, media transcoding/CDR, retry/circuit behavior, real positive-fixture scanning, quarantine disposal, and production scanner health remain open."
+                ],
+                "checkpoints": [
+                    "docs/checkpoints/NG-B03-CHECKPOINT.md"
+                ]
             }
         },
         {

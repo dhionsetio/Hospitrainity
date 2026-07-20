@@ -15,12 +15,22 @@ function captureBrowserErrors(page) {
     return errors;
 }
 
-async function signIn(page, account) {
+async function signIn(page, account, testInfo = null) {
     await page.goto('/login');
     await page.getByLabel('Email address').fill(account.email);
     await page.getByLabel('Password').fill(account.password);
-    await page.getByRole('button', { name: 'Sign in' }).click();
+    await page.getByRole('button', { name: 'Sign in', exact: true }).click();
     await page.waitForURL((url) => url.pathname !== '/login');
+    if (new URL(page.url()).pathname === '/mfa-challenge') {
+        const projectOrder = ['chromium', 'webkit', 'mobile-chromium', 'mobile-webkit', 'firefox'];
+        const codeIndex = projectOrder.indexOf(testInfo?.project.name);
+        if (codeIndex < 0 || !account.recoveryCodes?.[codeIndex]) {
+            throw new Error(`No isolated MFA fixture is available for ${testInfo?.project.name ?? 'this project'}.`);
+        }
+        await page.getByLabel('Recovery code').fill(account.recoveryCodes[codeIndex]);
+        await page.getByRole('button', { name: 'Verify and continue' }).click();
+        await page.waitForURL((url) => url.pathname !== '/mfa-challenge');
+    }
 }
 
 async function openActivity(page, code) {
@@ -115,7 +125,7 @@ test('public trust pages are versioned and the sensitive request flow requires s
 test('supervisor can issue an institution-scoped learner invitation', async ({ page }, testInfo) => {
     const browserErrors = captureBrowserErrors(page);
     const targetEmail = `browser-${testInfo.project.name.replaceAll(/[^a-z0-9]/g, '-')}@example.com`;
-    await signIn(page, testAccounts.supervisor);
+    await signIn(page, testAccounts.supervisor, testInfo);
 
     await expect(page).toHaveURL(/\/supervisor\/dashboard$/);
     await page.getByRole('link', { name: 'Invitations' }).click();
@@ -273,9 +283,9 @@ test('generated standalone executes every response form in real Chromium', async
     expect(browserErrors).toEqual([]);
 });
 
-test('superadmin sees the canonical legacy manager as read-only', async ({ page }) => {
+test('superadmin sees the canonical legacy manager as read-only', async ({ page }, testInfo) => {
     const browserErrors = captureBrowserErrors(page);
-    await signIn(page, testAccounts.superadmin);
+    await signIn(page, testAccounts.superadmin, testInfo);
 
     await expect(page).toHaveURL(/\/superadmin\/dashboard$/);
     await page.goto('/superadmin/modules');

@@ -3,7 +3,7 @@
 - Decision date: 2026-07-20 (Asia/Jakarta)
 - Batch: B03
 - Accountable owner: Dhion Setio
-- Status: recommendations approved for staged implementation; production topology remains blocked
+- Status: local technical baseline implemented; production topology, assisted recovery, monitoring, restore, and independent assessment remain blocked
 
 ## Accepted direction
 
@@ -34,3 +34,9 @@
 - OWASP ASVS 5.0.0 and OWASP authorization, password-storage, logging, and file-upload guidance.
 - NIST SP 800-63B-4 authentication/password guidance.
 - W3C WebAuthn public-key credential specification.
+
+## 2026-07-20 implementation follow-up
+
+The local B03 baseline now uses Laravel's first-party Fortify/passkeys stack, explicit privileged MFA enforcement, encrypted TOTP fallback, hashed one-use recovery codes, recent-password authenticator management, owner-scoped session inventory/revocation, Argon2id with opportunistic bcrypt rehash, a 10,000-entry local common-password blocklist, layered login/MFA/passkey limits, bounded encrypted security events plus JSON logging, a minimized CSP report receiver, and a provider-neutral ClamAV upload-security record with production fail-closed readiness. Larastan 3.10/PHPStan level 5 now rejects new findings against an explicit 440-finding pre-B03 legacy baseline.
+
+This does not claim universal ASVS Level 2 because learners may remain password-only by owner decision, or production assurance: real passkey/device ceremonies, ClamAV, central monitoring/alerts, backup/restore, SAST/DAST, a second recovery controller, and independent penetration testing remain gates. Existing bcrypt credentials remain usable and rehash after a successful login; strict single-algorithm verification must not be enabled until inventory proves the migration complete.

@@ -43,7 +43,7 @@ class PasswordConfirmationController extends Controller
      * Resolve only the privileged destinations that deliberately share this
      * confirmation screen. Never trust a pre-authentication intended URL.
      *
-     * @return array{context: 'audit'|'users'|'institution_roles'|'privacy'|'privacy_admin', url: string}
+     * @return array{context: 'audit'|'users'|'institution_roles'|'privacy'|'privacy_admin'|'security', url: string}
      */
     private function destination(Request $request): array
     {
@@ -82,6 +82,11 @@ class PasswordConfirmationController extends Controller
         }
 
         $destinations = [
+            route('security.confirm', absolute: false) => [
+                'context' => 'security',
+                'filters' => [],
+                'destination' => route('security.index', absolute: false),
+            ],
             route('superadmin.audit.index', absolute: false) => [
                 'context' => 'audit',
                 'filters' => [
@@ -136,7 +141,7 @@ class PasswordConfirmationController extends Controller
 
         return [
             'context' => $target['context'],
-            'url' => $parts['path'].($query === [] ? '' : '?'.http_build_query($query)),
+            'url' => ($target['destination'] ?? $parts['path']).($query === [] ? '' : '?'.http_build_query($query)),
         ];
     }
 }
