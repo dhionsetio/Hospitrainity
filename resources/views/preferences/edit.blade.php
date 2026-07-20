@@ -41,7 +41,7 @@
                 @error($field)<p id="{{ $field }}-error" class="mt-2 font-semibold text-red-800">{{ $message }}</p>@enderror
                 <div class="mt-4 grid gap-3 sm:grid-cols-3">
                     @foreach($options as $value => $label)
-                        <label class="flex min-h-11 cursor-pointer items-center gap-3 rounded-lg border border-neutral-300 px-4 py-3 font-medium has-[:checked]:border-indigo-700 has-[:checked]:bg-indigo-50">
+                        <label class="flex min-h-11 cursor-pointer items-center gap-3 rounded-lg border border-neutral-300 px-4 py-3 font-medium text-neutral-900 transition-colors has-[:checked]:border-indigo-400 has-[:checked]:bg-indigo-50 has-[:checked]:text-indigo-950 has-[:checked]:shadow-sm">
                             <input id="{{ $field }}{{ $loop->first ? '' : '-'.$value }}" name="{{ $field }}" value="{{ $value }}" type="radio" class="h-5 w-5 shrink-0" @checked(old($field, $user->{$field}) === $value) @if($errors->has($field)) aria-invalid="true" @endif>
                             <span>{{ $label }}</span>
                         </label>

@@ -15,6 +15,23 @@ function captureBrowserErrors(page) {
     return errors;
 }
 
+function contrastRatio(foreground, background) {
+    const channelValues = (color) => color.match(/[\d.]+/g).slice(0, 3).map(Number);
+    const luminance = (color) => {
+        const linear = channelValues(color).map((channel) => {
+            const value = channel / 255;
+            return value <= 0.04045 ? value / 12.92 : ((value + 0.055) / 1.055) ** 2.4;
+        });
+
+        return (0.2126 * linear[0]) + (0.7152 * linear[1]) + (0.0722 * linear[2]);
+    };
+    const foregroundLuminance = luminance(foreground);
+    const backgroundLuminance = luminance(background);
+
+    return (Math.max(foregroundLuminance, backgroundLuminance) + 0.05)
+        / (Math.min(foregroundLuminance, backgroundLuminance) + 0.05);
+}
+
 async function signIn(page, account, testInfo = null, recoverySlot = 0) {
     await page.goto('/login');
     await page.getByLabel('Email address').fill(account.email);
@@ -78,6 +95,42 @@ test('public mobile navigation is keyboard operable', async ({ page }) => {
     await page.keyboard.press('Escape');
     await expect(menuButton).toHaveAttribute('aria-expanded', 'false');
     await expect(menuButton).toBeFocused();
+    expect(browserErrors).toEqual([]);
+});
+
+test('language switcher and gray dark theme render stable, readable states', async ({ page }) => {
+    const browserErrors = captureBrowserErrors(page);
+    await page.goto('/');
+
+    await expect(page.locator('[data-language-switcher] [data-flag="id"]')).toHaveCount(2);
+    await expect(page.locator('[data-language-switcher] [data-flag="gb"]')).toHaveCount(2);
+    await expect(page.locator('body')).not.toContainText('\u{1F1EE}\u{1F1E9}');
+    await expect(page.locator('body')).not.toContainText('\u{1F1EC}\u{1F1E7}');
+
+    await signIn(page, testAccounts.learner);
+    await page.goto('/preferences/display');
+    await page.getByRole('radio', { name: 'Dark' }).check();
+    await page.getByRole('button', { name: 'Save preferences' }).click();
+    await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
+    await expect(page.locator('label:has(input[name="ui_theme"][value="dark"]:checked)'))
+        .toHaveCSS('background-color', 'rgb(55, 59, 102)');
+
+    const renderedTheme = await page.evaluate(() => {
+        const selected = globalThis.document.querySelector('label:has(input[name="ui_theme"][value="dark"]:checked)');
+        const fieldset = selected.closest('fieldset');
+
+        return {
+            bodyBackground: globalThis.getComputedStyle(globalThis.document.body).backgroundColor,
+            selectedBackground: globalThis.getComputedStyle(selected).backgroundColor,
+            selectedColor: globalThis.getComputedStyle(selected).color,
+            surfaceBackground: globalThis.getComputedStyle(fieldset).backgroundColor,
+        };
+    });
+
+    expect(renderedTheme.bodyBackground).toBe('rgb(32, 36, 40)');
+    expect(renderedTheme.surfaceBackground).toBe('rgb(41, 46, 52)');
+    expect(renderedTheme.selectedBackground).toBe('rgb(55, 59, 102)');
+    expect(contrastRatio(renderedTheme.selectedColor, renderedTheme.selectedBackground)).toBeGreaterThanOrEqual(4.5);
     expect(browserErrors).toEqual([]);
 });
 

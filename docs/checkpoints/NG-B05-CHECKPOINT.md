@@ -74,6 +74,32 @@ Focused regression verification passed 47 tests / 1,230 assertions, followed by 
 
 The final follow-up matrix also passed Pint, PHPStan with no errors, ESLint with zero warnings, all 50 sequential Node tests, EN/ID JSON decoding and 618-key parity, traceability for all 43 findings, the tracked-content scan across 1,671 files with zero unallowlisted findings, Blade/config compilation, and the Vite 6.4.3 production build with 31 transformed modules. npm audit reported zero vulnerabilities across 248 dependencies; the successful lockfile-only Composer retry reported zero advisories and zero abandoned packages. The authoritative post-verification database still reported integrity `ok`, zero foreign-key violations, the same business-row counts recorded above, all three accounts enabled, and migration batch 17 installed. The verified backup retained its recorded 4,329,472-byte size and SHA-256.
 
+## 2026-07-20 language-selector and dark-theme follow-up
+
+The owner reported that the language selector rendered as duplicated `ID ID GB EN` text on Windows and that selected display-preference cards became unreadable in Dark mode. The confirmed language cause was the use of Unicode regional-indicator emoji: their presentation is platform/font dependent, and the Windows fallback displayed the country codes as letters. The selector now uses local inline SVG flag artwork with accessible language names, compact `ID`/`EN` labels where space is limited, full names in the account menu, and a visible current-language check. Flags remain decorative; language names carry the meaning.
+
+The prior dark treatment remapped only a subset of neutral Tailwind utilities. It therefore left selected Indigo cards and several semantic status palettes on light backgrounds after their text had changed to a dark-theme foreground. The replacement uses one semantic token system for explicit Dark and system-selected Dark modes. It provides layered charcoal-gray canvas, surface, muted, and control colors rather than a near-black monochrome surface; paired accent/success/danger/warning/info/purple states; native-control `color-scheme`; and explicit hover, focus, disabled, checked, and file-control mappings. The owner-approved gray direction is recorded in `docs/decisions/NG-B05-DECISIONS.md`.
+
+The implementation was checked against the official WCAG 2.2 4.5:1 text-contrast and 3:1 meaningful-control-boundary guidance, MDN's `color-scheme` behavior for user-agent controls, and Tailwind's current data-attribute/system-theme guidance. The automated theme test measures the declared pairs and inventories every numbered palette utility used by every Blade view; it fails if a view introduces an unmapped utility.
+
+Final regression evidence:
+
+- 339 Laravel tests / 5,384 assertions passed, including locale rendering, display preferences, and accessibility markup.
+- All 54 Node tests passed, including four theme palette/contrast/coverage tests; ESLint, Pint, and PHPStan passed with no reported errors.
+- Vite 6.4.3 built 31 modules successfully; EN and ID each decode with 621 matching keys.
+- A live in-app browser check confirmed the SVG language menu, stored Dark preference, gray computed canvas/surface colors, selected-state colors, status palettes, and ordinary authenticated navigation.
+- The fresh isolated run `storage/framework/testing/e2e-theme-final-20260720-2200` passed all 56 critical journeys across desktop Chromium, desktop WebKit, Pixel 7/mobile Chromium, and iPhone 15/mobile WebKit. The disposable server stopped afterward; port 8010 was closed.
+
+No application migration, authoritative-database write, production-data mutation, user-file deletion, or prior test-evidence deletion was needed. This automated evidence does not claim physical-device, screen-reader, branded-browser, or full WCAG conformance; those human/external gates remain open.
+
+Primary references:
+
+- [Unicode Technical Standard #51 — Unicode Emoji](https://www.unicode.org/reports/tr51/): flag emoji are regional-indicator sequences whose presentation/support can vary by implementation.
+- [W3C WCAG 2.2 — Contrast (Minimum)](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html)
+- [W3C WCAG 2.2 — Non-text Contrast](https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html)
+- [MDN — `color-scheme`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/color-scheme)
+- [Tailwind CSS — Dark mode](https://tailwindcss.com/docs/dark-mode)
+
 ## Evidence boundary and remaining gates
 
 The green automated/browser matrix proves the tested software contracts, not unaided human comprehension, branded-browser compatibility, physical-device behavior, WCAG conformance, engagement, learning effectiveness, legal approval, or production readiness. B17 must execute the approved study under the required supervisor/ethics process and retain raw permitted observations, assistance, adverse findings, environment details, analysis, and limitations. Branded Chrome, Safari, Edge, Firefox, and Opera on the target Windows, macOS, Android, and iOS matrix remain external validation work.

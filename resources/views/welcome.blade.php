@@ -13,11 +13,7 @@
                 <a href="{{ route('help.index') }}" class="text-neutral-600 transition duration-300 hover:text-indigo-600">{{ __('Help') }}</a>
             </div>
             <div class="hidden items-center space-x-4 md:flex">
-                <div class="flex items-center gap-1 text-sm text-neutral-500" aria-label="{{ __('Language') }}">
-                    <a href="{{ route('locale.switch', 'en') }}" class="inline-flex min-h-11 items-center gap-1 font-medium hover:text-indigo-600" lang="en" hreflang="en" aria-label="{{ __('English (EN)') }}"><span aria-hidden="true">🇬🇧</span> EN</a>
-                    <span aria-hidden="true">|</span>
-                    <a href="{{ route('locale.switch', 'id') }}" class="inline-flex min-h-11 items-center gap-1 font-medium hover:text-indigo-600" lang="id" hreflang="id" aria-label="{{ __('Bahasa Indonesia (ID)') }}"><span aria-hidden="true">🇮🇩</span> ID</a>
-                </div>
+                <x-language-switcher compact />
                 <a href="{{ route('login') }}" class="rounded-lg bg-indigo-600 px-4 py-2 font-medium text-white transition duration-300 hover:bg-indigo-700">{{ __('Sign in') }}</a>
             </div>
             <button class="rounded md:hidden" id="mobile-menu-button" type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="{{ __('Open navigation') }}" data-open-label="{{ __('Open navigation') }}" data-close-label="{{ __('Close navigation') }}">
@@ -28,11 +24,7 @@
             <a href="#how-learning-works" class="block px-4 py-2 text-sm hover:bg-neutral-100">{{ __('How learning works') }}</a>
             <a href="{{ route('about') }}" class="block px-4 py-2 text-sm hover:bg-neutral-100">{{ __('About') }}</a>
             <a href="{{ route('help.index') }}" class="block px-4 py-2 text-sm hover:bg-neutral-100">{{ __('Help') }}</a>
-            <div class="flex items-center gap-2 px-4 py-2 text-sm text-neutral-500" aria-label="{{ __('Language') }}">
-                <a href="{{ route('locale.switch', 'en') }}" class="inline-flex min-h-11 items-center gap-1 font-medium hover:text-indigo-600" lang="en" hreflang="en" aria-label="{{ __('English (EN)') }}"><span aria-hidden="true">🇬🇧</span> EN</a>
-                <span aria-hidden="true">|</span>
-                <a href="{{ route('locale.switch', 'id') }}" class="inline-flex min-h-11 items-center gap-1 font-medium hover:text-indigo-600" lang="id" hreflang="id" aria-label="{{ __('Bahasa Indonesia (ID)') }}"><span aria-hidden="true">🇮🇩</span> ID</a>
-            </div>
+            <x-language-switcher class="px-2 py-2" />
             <a href="{{ route('login') }}" class="block rounded-b-lg bg-indigo-600 px-4 py-3 text-center text-sm font-medium text-white hover:bg-indigo-700">{{ __('Sign in') }}</a>
         </div>
     </header>

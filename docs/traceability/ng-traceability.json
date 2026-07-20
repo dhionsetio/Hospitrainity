@@ -562,11 +562,13 @@
         {
             "id": "NG-P1-016",
             "batches": [
-                "B04"
+                "B04",
+                "B05"
             ],
             "requirement": "Questions 2, 3, 6, 7, 10, and 11",
             "decisions": [
-                "NG-B04-DECISIONS"
+                "NG-B04-DECISIONS",
+                "NG-B05-DECISIONS"
             ],
             "required_evidence": "Automated regression plus human keyboard, zoom/reflow, focus, target, error, screen-reader, and device evidence",
             "status": "in_progress",
@@ -593,20 +595,24 @@
             "migrations": [
                 "2026_07_20_000016_add_display_preferences_to_users (batch 15; additive display preferences; rollback/reapply verified)"
             ],
-            "automated_tests": [
-                "tests/Feature/AccessibilityMarkupTest.php and tests/Feature/DisplayPreferenceTest.php (focused B04 total 15 tests, 761 assertions; full Laravel suite 323 tests, 5,144 assertions on 2026-07-20)",
-                "tests/E2E/critical-path.spec.mjs (44/44 journeys across the four viable configured profiles in isolated run e2e-b04-20260720-1600)"
-            ],
+                "automated_tests": [
+                    "tests/Feature/AccessibilityMarkupTest.php and tests/Feature/DisplayPreferenceTest.php (focused B04 total 15 tests, 761 assertions; full Laravel suite 323 tests, 5,144 assertions on 2026-07-20)",
+                    "tests/E2E/critical-path.spec.mjs (44/44 journeys across the four viable configured profiles in isolated run e2e-b04-20260720-1600)",
+                    "tests/Node/theme-contrast.test.mjs measures dark semantic text/control contrast and rejects any numbered Blade palette utility without a semantic override",
+                    "Post-theme full regression passed 339 Laravel tests / 5,384 assertions and all 54 Node tests"
+                ],
             "browser_device_checks": [
                 "Read-only guest-page audit at 320/390/768/1280 CSS pixels found no root horizontal overflow on the audited pages",
                 "Playwright desktop Chromium, desktop WebKit, Pixel 7 emulation, and iPhone 15 emulation passed 44/44; the mobile shell check includes Escape/focus return and root no-overflow at 390 CSS pixels",
-                "Firefox application behavior remains unverified because firefox-1532 fails during host SWGL startup before navigation; branded-browser, physical-device, browser-zoom, screen-reader, and human evidence remains open"
+                "Firefox application behavior remains unverified because firefox-1532 fails during host SWGL startup before navigation; branded-browser, physical-device, browser-zoom, screen-reader, and human evidence remains open",
+                "The fresh isolated e2e-theme-final-20260720-2200 run passed 56/56 complete critical journeys across desktop/mobile Chromium and WebKit, including stable gray Dark-theme colors and readable selected controls"
             ],
                 "human_legal_reviews": [],
                 "production_evidence": [],
             "checkpoints": [
                 "docs/checkpoints/NG-B04-PARTIAL-CHECKPOINT.md",
-                "docs/checkpoints/NG-B04-CHECKPOINT.md"
+                "docs/checkpoints/NG-B04-CHECKPOINT.md",
+                "docs/checkpoints/NG-B05-CHECKPOINT.md"
             ]
             }
         },
@@ -763,17 +769,20 @@
         {
             "id": "NG-P2-020",
             "batches": [
-                "B04"
+                "B04",
+                "B05"
             ],
             "requirement": "Questions 2, 3, 6, 7, and 11",
             "decisions": [
-                "NG-B04-DECISIONS"
+                "NG-B04-DECISIONS",
+                "NG-B05-DECISIONS"
             ],
             "required_evidence": "Approved responsive navigation/table alternative; narrow/physical-device, keyboard, focus, target, and no-overflow evidence",
         "status": "in_progress",
         "evidence": {
             "code": [
                 "resources/views/partials/learner-nav.blade.php",
+                "resources/views/components/language-switcher.blade.php",
                 "resources/views/welcome.blade.php",
                 "lang/en.json",
                 "lang/id.json"
@@ -781,17 +790,23 @@
             "migrations": [],
             "automated_tests": [
                 "tests/Feature/LangParityTest.php passed as part of the focused 15-test B04 suite",
-                "tests/Feature/AccessibilityMarkupTest.php verifies visible ID/EN labels and accessible language names"
+                "tests/Feature/AccessibilityMarkupTest.php verifies visible ID/EN labels and accessible language names",
+                "tests/Feature/LocaleSwitchTest.php verifies stable SVG flags, explicit language names/current state, locale switching, and absence of regional-indicator emoji",
+                "tests/E2E/critical-path.spec.mjs verifies the language selector across all four supported desktop/mobile engine profiles"
             ],
             "browser_device_checks": [
-                "Bilingual controls and B05 bilingual-ready Help/onboarding passed the four-profile Playwright regression; screen-reader, pedagogy, B08 source-content, and B17 human evidence remain open"
+                "Bilingual controls and B05 bilingual-ready Help/onboarding passed the four-profile Playwright regression; screen-reader, pedagogy, B08 source-content, and B17 human evidence remain open",
+                "The fresh isolated e2e-theme-final-20260720-2200 run passed 56/56 journeys with local SVG flags, compact/full language labels, and an explicit current-language state on desktop/mobile Chromium and WebKit"
             ],
-            "human_legal_reviews": [],
+            "human_legal_reviews": [
+                "Owner retained engaging flags but selected stable local vector artwork after rejecting Windows regional-indicator letter fallback."
+            ],
             "production_evidence": [
                 "Flags are decorative only and paired with ID/EN text; canonical English learning content remains untranslated unless an authoritative translation exists"
             ],
             "checkpoints": [
-                "docs/checkpoints/NG-B04-CHECKPOINT.md"
+                "docs/checkpoints/NG-B04-CHECKPOINT.md",
+                "docs/checkpoints/NG-B05-CHECKPOINT.md"
             ]
             }
         },
@@ -1142,6 +1157,7 @@
                     "resources/views/help",
                     "resources/views/onboarding/show.blade.php",
                     "resources/views/partials/learner-nav.blade.php",
+                    "resources/views/components/language-switcher.blade.php",
                     "resources/views/curriculum/confidence-history.blade.php",
                     "lang/en.json",
                     "lang/id.json"
@@ -1154,13 +1170,17 @@
                     "tests/Feature/HelpContentTest.php",
                     "tests/Feature/OnboardingFlowTest.php",
                     "tests/Feature/CanonicalCurriculumDeliveryTest.php",
-                    "tests/Feature/DemoSeedGuardTest.php"
+                    "tests/Feature/DemoSeedGuardTest.php",
+                    "tests/Feature/LocaleSwitchTest.php",
+                    "tests/E2E/critical-path.spec.mjs"
                 ],
                 "browser_device_checks": [
-                    "Bilingual-ready Help/onboarding and human labels passed the clean desktop/mobile Chromium and WebKit matrix; screen-reader and human language/content fidelity review remains open."
+                    "Bilingual-ready Help/onboarding and human labels passed the clean desktop/mobile Chromium and WebKit matrix; screen-reader and human language/content fidelity review remains open.",
+                    "The fresh isolated e2e-theme-final-20260720-2200 run passed 56/56 journeys with stable vector flags, full accessible language names, compact labels, current-language state, and matching 621-key EN/ID catalogs."
                 ],
                 "human_legal_reviews": [
-                    "Owner approved Indonesian/English language selection, human-facing role labels, the boundary that authoritative English learning content is not silently translated, and English as the canonical application/source language with Indonesian retained as translation."
+                    "Owner approved Indonesian/English language selection, human-facing role labels, the boundary that authoritative English learning content is not silently translated, and English as the canonical application/source language with Indonesian retained as translation.",
+                    "Owner retained flag-based language cues but approved stable local SVG artwork after rejecting platform-dependent Windows letter fallback."
                 ],
                 "production_evidence": [
                     "B05 UI enum-like values are mapped to localized human labels; the known demo learner identity is normalized to an English canonical name while Indonesian stays in the translation layer. Historical evidence is retained unchanged. B08 authoring/source-content boundaries and B17 human closure remain open."
