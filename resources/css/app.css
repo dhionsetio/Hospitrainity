@@ -16,9 +16,183 @@
     display: none !important;
 }
 
+html {
+    scroll-padding-top: 5rem;
+}
+
+html[data-text-scale="large"] {
+    font-size: 112.5%;
+}
+
+html[data-text-scale="larger"] {
+    font-size: 125%;
+}
+
+body {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.hsp-skip-link {
+    position: fixed;
+    inset-block-start: 0.5rem;
+    inset-inline-start: 0.5rem;
+    z-index: 100;
+    min-height: 2.75rem;
+    transform: translateY(-150%);
+    border-radius: 0.5rem;
+    background: #fff;
+    color: #312e81;
+    padding: 0.75rem 1rem;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 0.25);
+}
+
+.hsp-skip-link:focus {
+    transform: translateY(0);
+}
+
+button,
+select,
+summary,
+input:not([type="hidden"]):not([type="radio"]):not([type="checkbox"]) {
+    min-block-size: 2.75rem;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    flex: none;
+}
+
+nav a,
+[role="menuitem"],
+.hsp-touch-target {
+    min-block-size: 2.75rem;
+}
+
+[id] {
+    scroll-margin-top: 5rem;
+}
+
 :where(a, button, input, select, textarea, [tabindex]):focus-visible {
-    outline: 3px solid #4f46e5;
-    outline-offset: 3px;
+    outline: 3px solid #fbbf24;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 5px #312e81;
+}
+
+dialog[data-shell-drawer] {
+    inset: 0 auto 0 0;
+    width: min(22rem, 92vw);
+    max-width: none;
+    height: 100dvh;
+    max-height: none;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    background: #fff;
+    color: #262626;
+}
+
+dialog[data-shell-drawer]::backdrop {
+    background: rgb(0 0 0 / 0.62);
+}
+
+html[data-motion="reduce"] *,
+html[data-motion="reduce"] *::before,
+html[data-motion="reduce"] *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html[data-motion="system"] *,
+    html[data-motion="system"] *::before,
+    html[data-motion="system"] *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+html[data-contrast="stronger"] :where(a:not([class*="text-white"]), summary) {
+    text-decoration-line: underline;
+    text-decoration-thickness: 0.125em;
+    text-underline-offset: 0.18em;
+}
+
+html[data-contrast="stronger"] :where(button, input, select, textarea, article, section, aside, table) {
+    border-color: currentColor;
+}
+
+html[data-contrast="stronger"] :where(.shadow, .shadow-sm, .shadow-md, .shadow-lg, .shadow-xl) {
+    box-shadow: 0 0 0 2px currentColor;
+}
+
+html[data-theme="dark"] {
+    color-scheme: dark;
+}
+
+html[data-theme="dark"] :where(body, .bg-white, .bg-neutral-50, .bg-neutral-100) {
+    background-color: #171717;
+}
+
+html[data-theme="dark"] :where(.bg-neutral-200, .bg-neutral-300) {
+    background-color: #404040;
+}
+
+html[data-theme="dark"] :where(.text-neutral-500, .text-neutral-600, .text-neutral-700, .text-neutral-800, .text-neutral-900, .text-neutral-950) {
+    color: #f5f5f5;
+}
+
+html[data-theme="dark"] :where(.border-neutral-100, .border-neutral-200, .border-neutral-300, .border-neutral-400) {
+    border-color: #737373;
+}
+
+html[data-theme="dark"] :where(input, select, textarea, dialog[data-shell-drawer]) {
+    background-color: #262626;
+    color: #fafafa;
+}
+
+@media (prefers-color-scheme: dark) {
+    html[data-theme="system"] {
+        color-scheme: dark;
+    }
+
+    html[data-theme="system"] :where(body, .bg-white, .bg-neutral-50, .bg-neutral-100) {
+        background-color: #171717;
+    }
+
+    html[data-theme="system"] :where(.bg-neutral-200, .bg-neutral-300) {
+        background-color: #404040;
+    }
+
+    html[data-theme="system"] :where(.text-neutral-500, .text-neutral-600, .text-neutral-700, .text-neutral-800, .text-neutral-900, .text-neutral-950) {
+        color: #f5f5f5;
+    }
+
+    html[data-theme="system"] :where(.border-neutral-100, .border-neutral-200, .border-neutral-300, .border-neutral-400) {
+        border-color: #737373;
+    }
+
+    html[data-theme="system"] :where(input, select, textarea, dialog[data-shell-drawer]) {
+        background-color: #262626;
+        color: #fafafa;
+    }
+}
+
+@media (forced-colors: active) {
+    :where(a, button, input, select, textarea, [tabindex]):focus-visible {
+        outline-color: Highlight;
+        box-shadow: none;
+    }
+
+    dialog[data-shell-drawer]::backdrop {
+        background: Canvas;
+        opacity: 0.75;
+    }
 }
 
 .side-nav-item.active {

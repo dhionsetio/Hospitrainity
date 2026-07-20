@@ -2,9 +2,24 @@
     $supervisorDashboardRouteActive = request()->routeIs('supervisor.dashboard') || request()->routeIs('supervisor.progress.*');
     $supervisorInvitationsRouteActive = request()->routeIs('supervisor.invitations.*');
     $supervisorJoinCodesRouteActive = request()->routeIs('supervisor.join-codes.*') || request()->routeIs('supervisor.join-requests.*');
+    $supervisorInstitution = app(\App\Services\InstitutionContext::class)->current(request(), Auth::user());
+    $mobileSupervisorItems = [
+        ['url' => route('supervisor.dashboard'), 'label' => __('admin.team_dashboard'), 'icon' => 'fa-chart-line', 'active' => $supervisorDashboardRouteActive],
+        ['url' => route('supervisor.invitations.index'), 'label' => __('Invitations'), 'icon' => 'fa-envelope-open-text', 'active' => $supervisorInvitationsRouteActive],
+        ['url' => route('supervisor.join-codes.index'), 'label' => __('Classroom codes'), 'icon' => 'fa-key', 'active' => $supervisorJoinCodesRouteActive],
+    ];
 @endphp
 
-<aside class="flex w-full flex-shrink-0 flex-col border-b border-neutral-200 bg-white p-4 text-neutral-600 md:w-64 md:border-b-0 md:border-r">
+@include('partials.mobile-role-navigation', [
+    'drawerId' => 'supervisor-navigation-drawer',
+    'roleLabel' => __('Instructor'),
+    'contextLabel' => $supervisorInstitution->displayName(app()->getLocale()),
+    'navigationLabel' => __('admin.supervisor_navigation'),
+    'navigationItems' => $mobileSupervisorItems,
+    'hasAlternativeRole' => app(\App\Services\WorkContext::class)->hasAlternativeRole(Auth::user()),
+])
+
+<aside class="hidden w-full flex-shrink-0 flex-col border-b border-neutral-200 bg-white p-4 text-neutral-600 md:flex md:w-64 md:border-b-0 md:border-r">
     <div class="mb-4 py-4 text-center">
         <a href="{{ route('supervisor.dashboard') }}" class="text-2xl font-bold text-neutral-900">
             Hospitrainity <span class="text-indigo-600">{{ __('admin.supervisor') }}</span>
@@ -33,6 +48,9 @@
         </ul>
     </nav>
     <div class="mt-4 border-t border-neutral-200 pt-4 md:mt-auto">
+        <a href="{{ route('preferences.edit') }}" class="mb-2 flex w-full items-center gap-3 rounded-lg px-4 py-2 hover:bg-neutral-100">
+            <i class="fas fa-universal-access fa-fw" aria-hidden="true"></i><span>{{ __('Display preferences') }}</span>
+        </a>
         <a href="{{ route('security.index') }}" class="mb-2 flex w-full items-center gap-3 rounded-lg px-4 py-2 hover:bg-neutral-100">
             <i class="fas fa-shield-halved fa-fw" aria-hidden="true"></i><span>{{ __('Account security') }}</span>
         </a>
@@ -42,6 +60,9 @@
                 <span>{{ __('Switch role') }}</span>
             </a>
         @endif
+        <a href="{{ route('policies.show', ['type' => 'support']) }}" class="mb-2 flex w-full items-center gap-3 rounded-lg px-4 py-2 hover:bg-neutral-100">
+            <i class="fas fa-circle-question fa-fw" aria-hidden="true"></i><span>{{ __('Help') }}</span>
+        </a>
         <form method="POST" action="{{ route('logout') }}">
             @csrf
             <button type="submit" class="flex w-full items-center gap-3 rounded-lg px-4 py-2 hover:bg-neutral-100">

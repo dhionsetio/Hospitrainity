@@ -22,6 +22,36 @@ function initializePageInteractions() {
     initializePushNotifications();
     initializePasskeys();
 
+    const priorityFocusTarget = document.querySelector('[data-focus-errors], [data-focus-status]');
+    if (priorityFocusTarget instanceof HTMLElement) {
+        window.requestAnimationFrame(() => priorityFocusTarget.focus());
+    }
+
+    document.querySelectorAll('[data-shell-drawer-open]').forEach((openButton) => {
+        if (!(openButton instanceof HTMLButtonElement)) return;
+        const drawer = document.getElementById(openButton.getAttribute('aria-controls') || '');
+        if (!(drawer instanceof HTMLDialogElement)) return;
+        const closeButton = drawer.querySelector('[data-shell-drawer-close]');
+        const closeDrawer = () => {
+            if (drawer.open) drawer.close();
+        };
+
+        openButton.addEventListener('click', () => {
+            drawer.showModal();
+            document.body.style.overflow = 'hidden';
+            if (closeButton instanceof HTMLElement) closeButton.focus();
+        });
+        closeButton?.addEventListener('click', closeDrawer);
+        drawer.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeDrawer));
+        drawer.addEventListener('click', (event) => {
+            if (event.target === drawer) closeDrawer();
+        });
+        drawer.addEventListener('close', () => {
+            document.body.style.removeProperty('overflow');
+            openButton.focus();
+        });
+    });
+
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
     const setMobileMenuOpen = (open, returnFocus = false) => {

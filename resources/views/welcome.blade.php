@@ -13,9 +13,9 @@
             </div>
             <div class="hidden items-center space-x-4 md:flex">
                 <div class="flex items-center gap-1 text-sm text-neutral-500" aria-label="{{ __('Language') }}">
-                    <a href="{{ route('locale.switch', 'en') }}" class="font-medium hover:text-indigo-600" lang="en" hreflang="en">EN</a>
+                    <a href="{{ route('locale.switch', 'en') }}" class="inline-flex min-h-11 items-center gap-1 font-medium hover:text-indigo-600" lang="en" hreflang="en" aria-label="{{ __('English (EN)') }}"><span aria-hidden="true">🇬🇧</span> EN</a>
                     <span aria-hidden="true">|</span>
-                    <a href="{{ route('locale.switch', 'id') }}" class="font-medium hover:text-indigo-600" lang="id" hreflang="id">ID</a>
+                    <a href="{{ route('locale.switch', 'id') }}" class="inline-flex min-h-11 items-center gap-1 font-medium hover:text-indigo-600" lang="id" hreflang="id" aria-label="{{ __('Bahasa Indonesia (ID)') }}"><span aria-hidden="true">🇮🇩</span> ID</a>
                 </div>
                 <a href="{{ route('login') }}" class="font-medium text-indigo-700 hover:text-indigo-900">{{ __('Login') }}</a>
                 <a href="{{ route('register') }}" class="rounded-lg bg-indigo-600 px-4 py-2 text-white transition duration-300 hover:bg-indigo-700">{{ __('Access by Invitation') }}</a>
@@ -28,9 +28,9 @@
             <a href="#features" class="block px-4 py-2 text-sm hover:bg-neutral-100">{{ __('Features') }}</a>
             <a href="#get-started" class="block px-4 py-2 text-sm hover:bg-neutral-100">{{ __('Get Started') }}</a>
             <div class="flex items-center gap-2 px-4 py-2 text-sm text-neutral-500" aria-label="{{ __('Language') }}">
-                <a href="{{ route('locale.switch', 'en') }}" class="font-medium hover:text-indigo-600" lang="en" hreflang="en">EN</a>
+                <a href="{{ route('locale.switch', 'en') }}" class="inline-flex min-h-11 items-center gap-1 font-medium hover:text-indigo-600" lang="en" hreflang="en" aria-label="{{ __('English (EN)') }}"><span aria-hidden="true">🇬🇧</span> EN</a>
                 <span aria-hidden="true">|</span>
-                <a href="{{ route('locale.switch', 'id') }}" class="font-medium hover:text-indigo-600" lang="id" hreflang="id">ID</a>
+                <a href="{{ route('locale.switch', 'id') }}" class="inline-flex min-h-11 items-center gap-1 font-medium hover:text-indigo-600" lang="id" hreflang="id" aria-label="{{ __('Bahasa Indonesia (ID)') }}"><span aria-hidden="true">🇮🇩</span> ID</a>
             </div>
             <a href="{{ route('login') }}" class="block px-4 py-2 text-center text-sm font-medium text-indigo-700 hover:bg-neutral-100">{{ __('Login') }}</a>
             <a href="{{ route('register') }}" class="block rounded-b-lg bg-indigo-600 px-4 py-2 text-center text-sm text-white hover:bg-indigo-700">{{ __('Access by Invitation') }}</a>

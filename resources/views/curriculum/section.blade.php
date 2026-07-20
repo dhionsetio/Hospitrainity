@@ -12,6 +12,20 @@
     @endisset
 
     <main class="container mx-auto max-w-4xl px-4 py-6 sm:px-6 sm:py-8">
+        @php
+            $lessonOutline = collect($curriculumSection['blocks'])
+                ->map(function (array $block, int $index): ?array {
+                    if (($block['type'] ?? null) !== 'heading') {
+                        return null;
+                    }
+
+                    $label = trim((string) ($block['text'] ?? collect($block['runs'] ?? [])->pluck('text')->implode('')));
+
+                    return $label === '' ? null : ['index' => $index, 'label' => $label];
+                })
+                ->filter();
+            $primaryActivity = collect($curriculumSection['blocks'])->firstWhere('type', 'activity_embed');
+        @endphp
         <nav aria-label="{{ __('Breadcrumb') }}">
             <a href="{{ isset($curriculumPreview) ? route((Auth::user()->isSuperAdmin() ? 'superadmin' : 'admin').'.curriculum-drafts.preview.chapters.show', [$curriculumPreview, $curriculumSection['chapter']['code']]) : route('curriculum.chapters.show', $curriculumSection['chapter']['code']) }}" class="text-sm font-semibold text-indigo-700 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-700">&larr; {{ __('Module :number', ['number' => $curriculumSection['chapter']['module']]) }}: {{ $curriculumSection['chapter']['title'] }}</a>
         </nav>
@@ -19,13 +33,33 @@
         <header class="mt-4 rounded-xl bg-white p-5 shadow sm:p-7">
             <p class="text-sm font-semibold text-indigo-700">{{ __('Section :number of :total', ['number' => $curriculumSection['navigation']['position'], 'total' => $curriculumSection['navigation']['total']]) }}</p>
             <h1 class="mt-2 break-words text-3xl font-bold text-neutral-950 sm:text-4xl">{{ $curriculumSection['title'] }}</h1>
+            <div class="mt-5 flex flex-wrap gap-3">
+                @if ($primaryActivity)
+                    <a href="#activity-{{ $primaryActivity['id'] }}" class="inline-flex min-h-11 items-center rounded-lg bg-indigo-700 px-5 py-2 font-semibold text-white hover:bg-indigo-800">{{ __('Continue to activity') }}</a>
+                @elseif ($curriculumSection['navigation']['next'])
+                    <a rel="next" href="{{ isset($curriculumPreview) ? route((Auth::user()->isSuperAdmin() ? 'superadmin' : 'admin').'.curriculum-drafts.preview.sections.show', [$curriculumPreview, $curriculumSection['navigation']['next']['code']]) : route('curriculum.sections.show', $curriculumSection['navigation']['next']['code']) }}" class="inline-flex min-h-11 items-center rounded-lg bg-indigo-700 px-5 py-2 font-semibold text-white hover:bg-indigo-800">{{ __('Continue to next section') }}</a>
+                @endif
+            </div>
         </header>
+
+        @if ($lessonOutline->isNotEmpty())
+            <details class="mt-6 rounded-xl border border-neutral-300 bg-white p-4 shadow-sm">
+                <summary class="cursor-pointer font-semibold text-neutral-900">{{ __('Lesson outline') }}</summary>
+                <nav class="mt-3" aria-label="{{ __('Lesson outline') }}">
+                    <ol class="space-y-2 pl-5">
+                        @foreach ($lessonOutline as $item)
+                            <li><a href="#lesson-part-{{ $item['index'] + 1 }}" class="font-medium text-indigo-700 underline underline-offset-2">{{ $item['label'] }}</a></li>
+                        @endforeach
+                    </ol>
+                </nav>
+            </details>
+        @endif
 
         <article class="mt-6 space-y-5 rounded-xl bg-white p-5 shadow sm:p-8" aria-label="{{ $curriculumSection['title'] }}">
             @foreach ($curriculumSection['blocks'] as $block)
                 @switch($block['type'])
                     @case('heading')
-                        <h2 class="pt-2 text-2xl font-bold text-neutral-950">
+                        <h2 id="lesson-part-{{ $loop->index + 1 }}" class="scroll-mt-24 pt-2 text-2xl font-bold text-neutral-950">
                             @include('curriculum.partials.rich-text', ['runs' => $block['runs'] ?? [], 'text' => $block['text'] ?? ''])
                         </h2>
                         @break

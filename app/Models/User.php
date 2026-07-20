@@ -74,6 +74,8 @@ class User extends Authenticatable implements MustVerifyEmail, PasskeyUser
             'password' => 'hashed',
             'role' => UserRole::class,
             'legacy_institution_state' => LegacyInstitutionState::class,
+            'ui_high_contrast' => 'boolean',
+            'ui_no_audio' => 'boolean',
         ];
     }
 

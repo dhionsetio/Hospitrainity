@@ -17,9 +17,32 @@
         || request()->routeIs($administrationRoutePrefix.'.vocabularies.*')
         || request()->routeIs($administrationRoutePrefix.'.materials.*')
         || request()->routeIs($administrationRoutePrefix.'.exercises.*');
+    $mobileAdministrationItems = [
+        ['url' => route($administrationRoutePrefix.'.dashboard'), 'label' => __('Dashboard'), 'icon' => 'fa-tachometer-alt', 'active' => $administrationDashboardRouteActive],
+        ['url' => route($administrationRoutePrefix.'.curriculum-drafts.index'), 'label' => __('admin.content'), 'icon' => 'fa-pen-ruler', 'active' => $canonicalContentRouteActive],
+        ['url' => route($administrationRoutePrefix.'.curriculum-exercises.index'), 'label' => __('admin.exercises'), 'icon' => 'fa-puzzle-piece', 'active' => $canonicalExerciseRouteActive],
+        ['url' => route($administrationRoutePrefix.'.progress.index'), 'label' => __('admin.progress'), 'icon' => 'fa-chart-line', 'active' => $administrationProgressRouteActive],
+    ];
+    if (Auth::user()->isSuperAdmin()) {
+        $mobileAdministrationItems[] = ['url' => route('superadmin.invitations.index'), 'label' => __('Invitations'), 'icon' => 'fa-envelope-open-text', 'active' => $administrationInvitationsRouteActive];
+        $mobileAdministrationItems[] = ['url' => route('superadmin.join-codes.index'), 'label' => __('Classroom codes'), 'icon' => 'fa-key', 'active' => $administrationJoinCodesRouteActive];
+        $mobileAdministrationItems[] = ['url' => route('superadmin.users.index'), 'label' => __('admin.users'), 'icon' => 'fa-users-cog', 'active' => $userAdministrationRouteActive];
+        $mobileAdministrationItems[] = ['url' => route('superadmin.audit.index'), 'label' => __('admin.audit'), 'icon' => 'fa-clipboard-list', 'active' => $auditRouteActive];
+    }
+    $mobileAdministrationItems[] = ['url' => route($administrationRoutePrefix.'.legacy-evidence.index'), 'label' => __('admin.legacy_evidence'), 'icon' => 'fa-box-archive', 'active' => $legacyEvidenceRouteActive, 'badge' => __('admin.read_only')];
+    $administrationRoleLabel = Auth::user()->isSuperAdmin() ? __('System Admin') : __('Content Admin');
 @endphp
 
-<aside class="flex w-full flex-shrink-0 flex-col border-b border-neutral-200 bg-white p-4 text-neutral-600 md:w-64 md:border-b-0 md:border-r">
+@include('partials.mobile-role-navigation', [
+    'drawerId' => 'administration-navigation-drawer',
+    'roleLabel' => $administrationRoleLabel,
+    'contextLabel' => Auth::user()->isSuperAdmin() ? __('System-wide') : __('Content workspace'),
+    'navigationLabel' => __('admin.administration_navigation'),
+    'navigationItems' => $mobileAdministrationItems,
+    'hasAlternativeRole' => app(\App\Services\WorkContext::class)->hasAlternativeRole(Auth::user()),
+])
+
+<aside class="hidden w-full flex-shrink-0 flex-col border-b border-neutral-200 bg-white p-4 text-neutral-600 md:flex md:w-64 md:border-b-0 md:border-r">
     <div class="mb-4 py-4 text-center">
         <a href="{{ route($administrationRoutePrefix.'.dashboard') }}" class="text-2xl font-bold text-neutral-900">Hospitrainity <span class="text-indigo-600">{{ __('admin.admin') }}</span></a>
     </div>
@@ -85,6 +108,9 @@
         </ul>
     </nav>
     <div class="mt-4 border-t border-neutral-200 pt-4 md:mt-auto">
+        <a href="{{ route('preferences.edit') }}" class="mb-2 flex w-full items-center gap-3 rounded-lg px-4 py-2 hover:bg-neutral-100">
+            <i class="fas fa-universal-access fa-fw" aria-hidden="true"></i><span>{{ __('Display preferences') }}</span>
+        </a>
         <a href="{{ route('security.index') }}" class="mb-2 flex w-full items-center gap-3 rounded-lg px-4 py-2 hover:bg-neutral-100">
             <i class="fas fa-shield-halved fa-fw" aria-hidden="true"></i><span>{{ __('Account security') }}</span>
         </a>
@@ -94,6 +120,9 @@
                 <span>{{ __('Switch role') }}</span>
             </a>
         @endif
+        <a href="{{ route('policies.show', ['type' => 'support']) }}" class="mb-2 flex w-full items-center gap-3 rounded-lg px-4 py-2 hover:bg-neutral-100">
+            <i class="fas fa-circle-question fa-fw" aria-hidden="true"></i><span>{{ __('Help') }}</span>
+        </a>
         <form method="POST" action="{{ route('logout') }}">
             @csrf
             <button type="submit" class="flex w-full items-center gap-3 rounded-lg px-4 py-2 hover:bg-neutral-100">

@@ -16,6 +16,7 @@ export const artifactRoot = path.join(
 );
 export const databasePath = path.join(artifactRoot, 'database.sqlite');
 export const credentialsPath = path.join(artifactRoot, 'credentials.json');
+const relativeCacheRoot = path.relative(repoRoot, path.join(artifactRoot, 'cache'));
 export const baseURL = 'http://127.0.0.1:8010';
 export const phpBinary = process.env.PHP_BINARY
     || (process.platform === 'win32' && existsSync('C:\\php\\php.exe') ? 'C:\\php\\php.exe' : 'php');
@@ -42,11 +43,11 @@ export const e2eEnv = {
     // Laravel treats cache-path environment values as base-path-relative unless
     // they start with / or \\. Relative paths also avoid Windows drive-prefix
     // duplication while keeping every artifact inside the disposable root.
-    APP_CONFIG_CACHE: path.join('storage', 'framework', 'testing', 'e2e', 'cache', 'config.php'),
-    APP_EVENTS_CACHE: path.join('storage', 'framework', 'testing', 'e2e', 'cache', 'events.php'),
-    APP_PACKAGES_CACHE: path.join('storage', 'framework', 'testing', 'e2e', 'cache', 'packages.php'),
-    APP_ROUTES_CACHE: path.join('storage', 'framework', 'testing', 'e2e', 'cache', 'routes.php'),
-    APP_SERVICES_CACHE: path.join('storage', 'framework', 'testing', 'e2e', 'cache', 'services.php'),
+    APP_CONFIG_CACHE: path.join(relativeCacheRoot, 'config.php'),
+    APP_EVENTS_CACHE: path.join(relativeCacheRoot, 'events.php'),
+    APP_PACKAGES_CACHE: path.join(relativeCacheRoot, 'packages.php'),
+    APP_ROUTES_CACHE: path.join(relativeCacheRoot, 'routes.php'),
+    APP_SERVICES_CACHE: path.join(relativeCacheRoot, 'services.php'),
     CURRICULUM_REPORT_DIRECTORY: path.join(artifactRoot, 'curriculum', 'reports'),
     CURRICULUM_ROLLBACK_DIRECTORY: path.join(artifactRoot, 'curriculum', 'rollbacks'),
     CURRICULUM_STANDALONE_OUTPUT: path.join(artifactRoot, 'curriculum', 'Hospitrainity-Standalone.html'),

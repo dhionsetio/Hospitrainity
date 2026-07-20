@@ -31,7 +31,7 @@ class EnsurePrivilegedMfa
     private function isSecurityRoute(Request $request): bool
     {
         return $request->routeIs([
-            'security.*', 'mfa.*', 'passkey.*', 'logout',
+            'security.*', 'preferences.*', 'mfa.*', 'passkey.*', 'logout',
             'verification.*', 'policies.*', 'locale.switch',
         ]);
     }

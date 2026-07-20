@@ -34,6 +34,7 @@ class AccessibilityMarkupTest extends TestCase
             'login' => $this->get(route('login')),
             'register' => $this->get(route('register')),
             'learner dashboard' => $this->actingAs($learner)->get(route('dashboard')),
+            'display preferences' => $this->actingAs($learner)->get(route('preferences.edit')),
             'supervisor dashboard' => $this->actingAs($supervisor)->get(route('supervisor.dashboard')),
             'superadmin learner progress' => $this->actingAs($admin)->get(route('superadmin.progress.index')),
             'superadmin audit' => $this->withSession(['auth.password_confirmed_at' => time()])->actingAs($admin)->get(route('superadmin.audit.index')),
@@ -148,7 +149,7 @@ class AccessibilityMarkupTest extends TestCase
         }
     }
 
-    public function test_role_navigation_identifies_exactly_one_current_destination(): void
+    public function test_each_desktop_and_mobile_role_navigation_identifies_one_current_destination(): void
     {
         $supervisor = User::factory()->create(['role' => 'supervisor']);
         $superadmin = User::factory()->create(['role' => 'superadmin']);
@@ -183,9 +184,9 @@ class AccessibilityMarkupTest extends TestCase
             $this->assertSame(200, $response->getStatusCode(), "{$name}: expected HTTP 200.");
             [, $xpath] = $this->parse($name, $response->getContent());
             $this->assertSame(
-                1,
+                2,
                 $xpath->query('//nav//a[@aria-current="page"]')->length,
-                "{$name}: expected exactly one current navigation destination.",
+                "{$name}: expected one current destination in each desktop and mobile role navigation.",
             );
         }
     }
@@ -227,6 +228,11 @@ class AccessibilityMarkupTest extends TestCase
         $this->assertSame(1, $xpath->query('//h1')->length, "{$page}: expected exactly one h1.");
         $this->assertSame(0, $xpath->query('//a[@href="#"]')->length, "{$page}: placeholder link found.");
         $this->assertSame(0, $xpath->query('//img[not(@alt)]')->length, "{$page}: image without alt found.");
+        $this->assertSame(1, $xpath->query('//a[contains(concat(" ", normalize-space(@class), " "), " hsp-skip-link ")][@href="#hsp-page-content"]')->length, "{$page}: expected one skip link.");
+        $this->assertInstanceOf(DOMElement::class, $document->getElementById('hsp-page-content'), "{$page}: skip-link target is missing.");
+        foreach (['data-theme', 'data-motion', 'data-text-scale', 'data-contrast', 'data-audio'] as $attribute) {
+            $this->assertNotSame('', $document->documentElement->getAttribute($attribute), "{$page}: {$attribute} is missing.");
+        }
 
         $ids = [];
         foreach ($xpath->query('//*[@id]') as $element) {
@@ -254,6 +260,13 @@ class AccessibilityMarkupTest extends TestCase
             $labelId = $dialog->getAttribute('aria-labelledby');
             $this->assertNotSame('', $labelId, "{$page}: dialog has no label reference.");
             $this->assertInstanceOf(DOMElement::class, $document->getElementById($labelId), "{$page}: dialog label target is missing.");
+        }
+
+        foreach ($xpath->query('//dialog') as $dialog) {
+            $labelId = $dialog->getAttribute('aria-labelledby');
+            $this->assertNotSame('', $labelId, "{$page}: native dialog has no label reference.");
+            $this->assertInstanceOf(DOMElement::class, $document->getElementById($labelId), "{$page}: native dialog label target is missing.");
+            $this->assertSame(1, $xpath->query('.//*[@data-shell-drawer-close]', $dialog)->length, "{$page}: navigation dialog needs one close control.");
         }
 
         foreach (['aria-describedby', 'aria-labelledby'] as $attribute) {

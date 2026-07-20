@@ -43,6 +43,12 @@
                             <a href="{{ route('work-context.index') }}" role="menuitem" tabindex="-1" class="block px-4 py-2 text-sm text-neutral-700 hover:bg-neutral-100">{{ __('Switch role') }}</a>
                         @endif
                         <a href="{{ route('security.index') }}" role="menuitem" tabindex="-1" class="block px-4 py-2 text-sm text-neutral-700 hover:bg-neutral-100">{{ __('Account security') }}</a>
+                        <a href="{{ route('preferences.edit') }}" role="menuitem" tabindex="-1" class="block px-4 py-2 text-sm text-neutral-700 hover:bg-neutral-100">{{ __('Display preferences') }}</a>
+                        <a href="{{ route('policies.show', ['type' => 'support']) }}" role="menuitem" tabindex="-1" class="block px-4 py-2 text-sm text-neutral-700 hover:bg-neutral-100">{{ __('Help') }}</a>
+                        <div class="flex min-h-11 items-center gap-3 px-4 py-2 text-sm" aria-label="{{ __('Language') }}">
+                            <a href="{{ route('locale.switch', 'id') }}" role="menuitem" tabindex="-1" lang="id" hreflang="id" aria-label="{{ __('Bahasa Indonesia (ID)') }}" class="inline-flex min-h-11 items-center gap-1 font-semibold text-indigo-800"><span aria-hidden="true">🇮🇩</span> ID</a>
+                            <a href="{{ route('locale.switch', 'en') }}" role="menuitem" tabindex="-1" lang="en" hreflang="en" aria-label="{{ __('English (EN)') }}" class="inline-flex min-h-11 items-center gap-1 font-semibold text-indigo-800"><span aria-hidden="true">🇬🇧</span> EN</a>
+                        </div>
                         <div role="separator" class="border-t border-neutral-200 my-1"></div>
 
                         <!-- FORM LOGOUT DIMULAI DI SINI -->

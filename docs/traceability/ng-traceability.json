@@ -577,23 +577,33 @@
                     "resources/views/superadmin/sidebar.blade.php",
                     "resources/views/superadmin/curriculum-drafts/index.blade.php",
                     "resources/views/superadmin/modules/index.blade.php",
-                    "resources/views/supervisor/sidebar.blade.php",
-                    "resources/views/curriculum/activity.blade.php"
-                ],
-                "migrations": [],
-                "automated_tests": [
-                    "tests/Feature/AccessibilityMarkupTest.php (6 tests, 409 assertions; full Laravel suite 271 tests, 4,332 assertions on 2026-07-20)",
-                    "tests/E2E/critical-path.spec.mjs (36/36 journeys across the four viable configured profiles on 2026-07-20)"
-                ],
-                "browser_device_checks": [
-                    "Read-only guest-page audit at 320/390/768/1280 CSS pixels found no root horizontal overflow on the audited pages",
-                    "Playwright desktop Chromium, desktop WebKit, Pixel 7 emulation, and iPhone 15 emulation passed 36/36; Firefox application behavior remains unverified because firefox-1532 fails during host SWGL startup before navigation"
-                ],
+                "resources/views/supervisor/sidebar.blade.php",
+                "resources/views/curriculum/activity.blade.php",
+                "resources/views/layouts/app.blade.php",
+                "resources/views/layouts/guest.blade.php",
+                "resources/views/partials/mobile-role-navigation.blade.php",
+                "resources/views/preferences/edit.blade.php",
+                "resources/css/app.css",
+                "resources/js/app.js"
+            ],
+            "migrations": [
+                "2026_07_20_000016_add_display_preferences_to_users (batch 15; additive display preferences; rollback/reapply verified)"
+            ],
+            "automated_tests": [
+                "tests/Feature/AccessibilityMarkupTest.php and tests/Feature/DisplayPreferenceTest.php (focused B04 total 15 tests, 761 assertions; full Laravel suite 323 tests, 5,144 assertions on 2026-07-20)",
+                "tests/E2E/critical-path.spec.mjs (44/44 journeys across the four viable configured profiles in isolated run e2e-b04-20260720-1600)"
+            ],
+            "browser_device_checks": [
+                "Read-only guest-page audit at 320/390/768/1280 CSS pixels found no root horizontal overflow on the audited pages",
+                "Playwright desktop Chromium, desktop WebKit, Pixel 7 emulation, and iPhone 15 emulation passed 44/44; the mobile shell check includes Escape/focus return and root no-overflow at 390 CSS pixels",
+                "Firefox application behavior remains unverified because firefox-1532 fails during host SWGL startup before navigation; branded-browser, physical-device, browser-zoom, screen-reader, and human evidence remains open"
+            ],
                 "human_legal_reviews": [],
                 "production_evidence": [],
-                "checkpoints": [
-                    "docs/checkpoints/NG-B04-PARTIAL-CHECKPOINT.md"
-                ]
+            "checkpoints": [
+                "docs/checkpoints/NG-B04-PARTIAL-CHECKPOINT.md",
+                "docs/checkpoints/NG-B04-CHECKPOINT.md"
+            ]
             }
         },
         {
@@ -607,15 +617,35 @@
                 "Qualified content and accessibility review"
             ],
             "required_evidence": "Approved audio/accommodation contract; no answer leakage; consent/permission/storage tests; qualified reviews",
-            "status": "open",
-            "evidence": {
-                "code": [],
-                "migrations": [],
-                "automated_tests": [],
-                "browser_device_checks": [],
-                "human_legal_reviews": [],
-                "production_evidence": [],
-                "checkpoints": []
+        "status": "in_progress",
+        "evidence": {
+            "code": [
+                "resources/views/partials/mobile-role-navigation.blade.php",
+                "resources/views/superadmin/sidebar.blade.php",
+                "resources/views/supervisor/sidebar.blade.php",
+                "resources/views/invitations/index.blade.php",
+                "resources/views/superadmin/users/index.blade.php",
+                "resources/views/superadmin/curriculum-drafts/index.blade.php",
+                "resources/views/superadmin/progress/index.blade.php",
+                "resources/views/supervisor/dashboard.blade.php",
+                "resources/css/app.css",
+                "resources/js/app.js"
+            ],
+            "migrations": [],
+            "automated_tests": [
+                "tests/Feature/AccessibilityMarkupTest.php verifies current navigation, modal labels, close controls, skip targets, and non-shrinking controls",
+                "tests/E2E/critical-path.spec.mjs verifies mobile drawer context, current page, Escape/focus return, root no-overflow, and responsive invitation flows in the 44/44 B04 run"
+            ],
+            "browser_device_checks": [
+                "Desktop Chromium/WebKit plus Pixel 7 and iPhone 15 emulation passed the complete 44-journey run; physical-device, branded-browser, touch-user, zoom, and screen-reader checks remain open"
+            ],
+            "human_legal_reviews": [],
+            "production_evidence": [
+                "Responsive navigation and record-card alternatives are installed; external human/device evidence is still required before closure"
+            ],
+            "checkpoints": [
+                "docs/checkpoints/NG-B04-CHECKPOINT.md"
+            ]
             }
         },
         {
@@ -630,15 +660,27 @@
                 "NG-B08-DECISIONS"
             ],
             "required_evidence": "Plain-language task-first UI; permission-aware evidence view; ordinary workflow usability evidence",
-            "status": "open",
-            "evidence": {
-                "code": [],
-                "migrations": [],
-                "automated_tests": [],
-                "browser_device_checks": [],
-                "human_legal_reviews": [],
-                "production_evidence": [],
-                "checkpoints": []
+        "status": "in_progress",
+        "evidence": {
+            "code": [
+                "resources/views/curriculum/section.blade.php",
+                "resources/views/superadmin/progress/index.blade.php",
+                "resources/views/supervisor/dashboard.blade.php"
+            ],
+            "migrations": [],
+            "automated_tests": [
+                "Full Laravel suite 323 tests / 5,144 assertions and Playwright 44/44 regression verify the installed B04 summary/filter/pagination and lesson outline/next-action patterns"
+            ],
+            "browser_device_checks": [
+                "Responsive patterns passed desktop Chromium/WebKit and Pixel 7/iPhone 15 emulation; focus/history/query-count and B05/B10 completion evidence remains open"
+            ],
+            "human_legal_reviews": [],
+            "production_evidence": [
+                "B04 supplies long-lesson and progress-page structure; this multi-batch finding remains open through B05 and B10"
+            ],
+            "checkpoints": [
+                "docs/checkpoints/NG-B04-CHECKPOINT.md"
+            ]
             }
         },
         {
@@ -697,15 +739,29 @@
                 "NG-B04-DECISIONS"
             ],
             "required_evidence": "Approved responsive navigation/table alternative; narrow/physical-device, keyboard, focus, target, and no-overflow evidence",
-            "status": "open",
-            "evidence": {
-                "code": [],
-                "migrations": [],
-                "automated_tests": [],
-                "browser_device_checks": [],
-                "human_legal_reviews": [],
-                "production_evidence": [],
-                "checkpoints": []
+        "status": "in_progress",
+        "evidence": {
+            "code": [
+                "resources/views/partials/learner-nav.blade.php",
+                "resources/views/welcome.blade.php",
+                "lang/en.json",
+                "lang/id.json"
+            ],
+            "migrations": [],
+            "automated_tests": [
+                "tests/Feature/LangParityTest.php passed as part of the focused 15-test B04 suite",
+                "tests/Feature/AccessibilityMarkupTest.php verifies visible ID/EN labels and accessible language names"
+            ],
+            "browser_device_checks": [
+                "Bilingual controls passed the four-profile Playwright regression; screen-reader, bilingual-layout, pedagogy, and B05/B08/B17 evidence remains open"
+            ],
+            "human_legal_reviews": [],
+            "production_evidence": [
+                "Flags are decorative only and paired with ID/EN text; canonical English learning content remains untranslated unless an authoritative translation exists"
+            ],
+            "checkpoints": [
+                "docs/checkpoints/NG-B04-CHECKPOINT.md"
+            ]
             }
         },
         {
@@ -1030,23 +1086,27 @@
                 "code": [
                     "resources/views/curriculum/activity.blade.php",
                     "resources/views/invitations/accept.blade.php",
-                    "resources/views/login.blade.php",
-                    "resources/views/superadmin/curriculum-drafts/index.blade.php",
-                    "resources/views/superadmin/modules/index.blade.php"
+                "resources/views/login.blade.php",
+                "resources/views/superadmin/curriculum-drafts/index.blade.php",
+                "resources/views/superadmin/modules/index.blade.php",
+                "resources/views/partials/mobile-role-navigation.blade.php",
+                "resources/views/preferences/edit.blade.php",
+                "resources/css/app.css"
                 ],
                 "migrations": [],
                 "automated_tests": [
                     "tests/Feature/AccessibilityMarkupTest.php::test_selection_controls_cannot_flex_shrink",
                     "tests/E2E/critical-path.spec.mjs::selection, ordering, and short-text forms meet validation, focus, target, and non-drag contracts"
                 ],
-                "browser_device_checks": [
-                    "Playwright narrow-width activity journey passed in desktop Chromium/WebKit plus Pixel 7 and iPhone 15 emulation; physical touch, zoom, screen-reader, and branded-browser evidence remains open"
+            "browser_device_checks": [
+                "Playwright 44/44 passed in desktop Chromium/WebKit plus Pixel 7 and iPhone 15 emulation, including 390 CSS pixel no-overflow; physical touch, zoom, screen-reader, contrast-tool, and branded-browser evidence remains open"
                 ],
                 "human_legal_reviews": [],
                 "production_evidence": [],
-                "checkpoints": [
-                    "docs/checkpoints/NG-B04-PARTIAL-CHECKPOINT.md"
-                ]
+            "checkpoints": [
+                "docs/checkpoints/NG-B04-PARTIAL-CHECKPOINT.md",
+                "docs/checkpoints/NG-B04-CHECKPOINT.md"
+            ]
             }
         },
         {

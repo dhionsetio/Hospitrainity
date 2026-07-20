@@ -48,8 +48,29 @@
                 </form>
             </section>
 
-            <section class="overflow-x-auto rounded-lg bg-white shadow" aria-labelledby="invitation-history-heading">
+            <section class="rounded-lg bg-white shadow" aria-labelledby="invitation-history-heading">
                 <h2 id="invitation-history-heading" class="p-6 text-xl font-bold text-neutral-900">{{ __('Invitation history') }}</h2>
+                <div class="space-y-3 px-4 pb-4 md:hidden">
+                    @forelse($invitations as $invitation)
+                        @php($mobileStatus = $invitation->accepted_at ? __('Accepted') : ($invitation->revoked_at ? __('Revoked') : ($invitation->expires_at->isPast() ? __('Expired') : __('Pending'))))
+                        <article class="rounded-lg border border-neutral-300 p-4" aria-label="{{ __('Invitation for :email', ['email' => $invitation->masked_target]) }}">
+                            <div class="flex flex-wrap items-start justify-between gap-3">
+                                <p class="font-semibold text-neutral-950">{{ $invitation->masked_target }}</p>
+                                <span class="rounded-full border border-neutral-400 px-2 py-1 text-sm font-semibold">{{ $mobileStatus }}</span>
+                            </div>
+                            <dl class="mt-3"><dt class="text-sm font-medium text-neutral-600">{{ __('Expires') }}</dt><dd class="text-neutral-900">{{ $invitation->expires_at->toDayDateTimeString() }}</dd></dl>
+                            @if(!$invitation->accepted_at && !$invitation->revoked_at && $invitation->expires_at->isFuture())
+                                <form method="POST" action="{{ route($routePrefix.'.invitations.destroy', $invitation) }}" class="mt-4">
+                                    @csrf @method('DELETE')
+                                    <button type="submit" class="rounded-lg border border-red-700 px-4 py-2 font-semibold text-red-800">{{ __('Revoke') }}</button>
+                                </form>
+                            @endif
+                        </article>
+                    @empty
+                        <p class="rounded-lg border border-dashed border-neutral-400 p-6 text-center text-neutral-600">{{ __('No invitations yet.') }}</p>
+                    @endforelse
+                </div>
+                <div class="hidden overflow-x-auto md:block">
                 <table class="w-full text-left text-sm text-neutral-700">
                     <thead class="border-y bg-neutral-50 text-xs uppercase text-neutral-500">
                         <tr><th class="px-6 py-3">{{ __('Email') }}</th><th class="px-6 py-3">{{ __('Status') }}</th><th class="px-6 py-3">{{ __('Expires') }}</th><th class="px-6 py-3">{{ __('Actions') }}</th></tr>
@@ -77,6 +98,7 @@
                         @endforelse
                     </tbody>
                 </table>
+                </div>
                 <div class="p-4">{{ $invitations->links() }}</div>
             </section>
         </main>

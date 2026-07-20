@@ -18,6 +18,7 @@ use App\Http\Controllers\CurriculumDraftExerciseController;
 use App\Http\Controllers\CurriculumDraftPreviewController;
 use App\Http\Controllers\CurriculumImportController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DisplayPreferenceController;
 use App\Http\Controllers\ExerciseController;
 use App\Http\Controllers\InstitutionEnrollmentController;
 use App\Http\Controllers\InstitutionInvitationController;
@@ -250,6 +251,9 @@ Route::middleware('auth')->group(function () {
         ->name('verification.send');
 
     Route::get('/security', [SecuritySettingsController::class, 'index'])->name('security.index');
+    Route::get('/preferences/display', [DisplayPreferenceController::class, 'edit'])->name('preferences.edit');
+    Route::patch('/preferences/display', [DisplayPreferenceController::class, 'update'])
+        ->middleware('throttle:60,1')->name('preferences.update');
     Route::get('/security/confirm', fn () => redirect()->route('security.index'))
         ->middleware('password.confirm')->name('security.confirm');
     Route::post('/security/totp', [SecuritySettingsController::class, 'beginTotp'])

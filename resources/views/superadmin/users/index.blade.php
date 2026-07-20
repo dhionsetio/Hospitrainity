@@ -75,7 +75,61 @@
                 </div>
             </form>
 
-            <div class="overflow-x-auto rounded-lg bg-white shadow">
+            <section class="space-y-4 md:hidden" aria-label="{{ __('admin.user_administration') }}">
+                @forelse($users as $managedUser)
+                    <article class="rounded-lg border border-neutral-300 bg-white p-4 shadow-sm">
+                        <div class="flex flex-wrap items-start justify-between gap-3">
+                            <div><h2 class="font-bold text-neutral-950">{{ $managedUser->name }}</h2><p class="mt-1 text-sm text-neutral-700">{{ $managedUser->email }}</p></div>
+                            <span class="rounded-full bg-indigo-100 px-2.5 py-1 text-xs font-semibold text-indigo-800">{{ __('admin.roles.'.$managedUser->role->value) }}</span>
+                        </div>
+                        <dl class="mt-4 grid grid-cols-2 gap-3 text-sm">
+                            <div><dt class="font-medium text-neutral-600">{{ __('admin.institution') }}</dt><dd class="mt-1 text-neutral-900">{{ $managedUser->instansi }}</dd></div>
+                            <div><dt class="font-medium text-neutral-600">{{ __('admin.verification') }}</dt><dd class="mt-1 text-neutral-900">{{ $managedUser->hasVerifiedEmail() ? __('admin.verified') : __('admin.unverified') }}</dd></div>
+                        </dl>
+                        @if(Auth::id() === $managedUser->id)
+                            <p class="mt-4 text-sm text-neutral-600">{{ __('admin.self_role_change_blocked') }}</p>
+                        @else
+                            <details class="mt-4 rounded-md border border-neutral-300 p-3">
+                                <summary class="cursor-pointer font-semibold text-indigo-800">{{ __('admin.change_role') }}</summary>
+                                <form method="POST" action="{{ route('superadmin.users.role.update', $managedUser) }}" class="mt-4 grid gap-3">
+                                    @csrf @method('PATCH')
+                                    <input type="hidden" name="expected_role" value="{{ $managedUser->role->value }}">
+                                    <label class="block text-sm font-semibold" for="mobile-role-{{ $managedUser->id }}">{{ __('admin.new_role') }}</label>
+                                    <select id="mobile-role-{{ $managedUser->id }}" name="role" required class="block w-full rounded-md border border-neutral-300 bg-white px-3 py-2">
+                                        @foreach($assignableRoles as $assignableRole)
+                                            <option value="{{ $assignableRole->value }}" @selected($managedUser->role === $assignableRole) @disabled($assignableRole->isElevated() && ! $managedUser->hasVerifiedEmail())>{{ __('admin.roles.'.$assignableRole->value) }}</option>
+                                        @endforeach
+                                    </select>
+                                    <label class="block text-sm font-semibold" for="mobile-reason-{{ $managedUser->id }}">{{ __('admin.reason') }}</label>
+                                    <textarea id="mobile-reason-{{ $managedUser->id }}" name="reason" minlength="10" maxlength="500" rows="3" required class="block w-full rounded-md border border-neutral-300 px-3 py-2"></textarea>
+                                    <button type="submit" class="rounded-md bg-indigo-700 px-4 py-3 font-semibold text-white">{{ __('admin.save_role_change') }}</button>
+                                </form>
+                            </details>
+                            @if(! $managedUser->isSuperAdmin() && $managedUser->hasVerifiedEmail())
+                                <details class="mt-3 rounded-md border border-red-300 bg-red-50 p-3">
+                                    <summary class="cursor-pointer font-semibold text-red-900">{{ __('admin.promote_to_superadmin') }}</summary>
+                                    <p class="mt-2 text-sm text-red-900">{{ __('admin.superadmin_promotion_warning') }}</p>
+                                    <form method="POST" action="{{ route('superadmin.users.promote-superadmin', $managedUser) }}" class="mt-4 grid gap-3">
+                                        @csrf @method('PATCH')
+                                        <input type="hidden" name="expected_role" value="{{ $managedUser->role->value }}">
+                                        <label class="text-sm font-semibold" for="mobile-confirmation-email-{{ $managedUser->id }}">{{ __('admin.type_target_email') }}</label>
+                                        <input id="mobile-confirmation-email-{{ $managedUser->id }}" name="confirmation_email" type="email" required autocomplete="off" class="w-full rounded-md border border-neutral-300 px-3 py-2">
+                                        <label class="text-sm font-semibold" for="mobile-confirmation-role-{{ $managedUser->id }}">{{ __('admin.type_superadmin') }}</label>
+                                        <input id="mobile-confirmation-role-{{ $managedUser->id }}" name="confirmation_role" type="text" required autocomplete="off" placeholder="superadmin" class="w-full rounded-md border border-neutral-300 px-3 py-2">
+                                        <label class="text-sm font-semibold" for="mobile-promotion-reason-{{ $managedUser->id }}">{{ __('admin.reason') }}</label>
+                                        <textarea id="mobile-promotion-reason-{{ $managedUser->id }}" name="reason" minlength="10" maxlength="500" rows="3" required class="w-full rounded-md border border-neutral-300 px-3 py-2"></textarea>
+                                        <button type="submit" class="rounded-md bg-red-800 px-4 py-3 font-semibold text-white">{{ __('admin.confirm_superadmin_promotion') }}</button>
+                                    </form>
+                                </details>
+                            @endif
+                        @endif
+                    </article>
+                @empty
+                    <p class="rounded-lg border border-dashed border-neutral-400 bg-white p-6 text-center text-neutral-600">{{ __('admin.no_users_match') }}</p>
+                @endforelse
+            </section>
+
+            <div class="hidden overflow-x-auto rounded-lg bg-white shadow md:block">
                 <table class="w-full min-w-[1050px] text-left text-sm text-neutral-700">
                     <thead class="bg-neutral-50 text-xs uppercase text-neutral-600">
                         <tr>

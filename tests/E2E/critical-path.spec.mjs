@@ -15,7 +15,7 @@ function captureBrowserErrors(page) {
     return errors;
 }
 
-async function signIn(page, account, testInfo = null) {
+async function signIn(page, account, testInfo = null, recoverySlot = 0) {
     await page.goto('/login');
     await page.getByLabel('Email address').fill(account.email);
     await page.getByLabel('Password').fill(account.password);
@@ -23,8 +23,9 @@ async function signIn(page, account, testInfo = null) {
     await page.waitForURL((url) => url.pathname !== '/login');
     if (new URL(page.url()).pathname === '/mfa-challenge') {
         const projectOrder = ['chromium', 'webkit', 'mobile-chromium', 'mobile-webkit', 'firefox'];
-        const codeIndex = projectOrder.indexOf(testInfo?.project.name);
-        if (codeIndex < 0 || !account.recoveryCodes?.[codeIndex]) {
+        const projectIndex = projectOrder.indexOf(testInfo?.project.name);
+        const codeIndex = projectIndex + (recoverySlot * projectOrder.length);
+        if (projectIndex < 0 || !account.recoveryCodes?.[codeIndex]) {
             throw new Error(`No isolated MFA fixture is available for ${testInfo?.project.name ?? 'this project'}.`);
         }
         await page.getByLabel('Recovery code').fill(account.recoveryCodes[codeIndex]);
@@ -128,13 +129,41 @@ test('supervisor can issue an institution-scoped learner invitation', async ({ p
     await signIn(page, testAccounts.supervisor, testInfo);
 
     await expect(page).toHaveURL(/\/supervisor\/dashboard$/);
-    await page.getByRole('link', { name: 'Invitations' }).click();
+    const mobileMenu = page.getByRole('button', { name: 'Menu' });
+    if (await mobileMenu.isVisible()) {
+        await mobileMenu.click();
+        await page.locator('dialog[open]').getByRole('link', { name: 'Invitations' }).click();
+    } else {
+        await page.locator('aside').getByRole('link', { name: 'Invitations' }).click();
+    }
     await expect(page.getByRole('heading', { name: 'Invitations' })).toBeVisible();
     await page.getByLabel('Email address').fill(targetEmail);
     await page.getByRole('button', { name: 'Send invitation' }).click();
     await expect(page.getByRole('status')).toContainText('If the address is eligible');
-    await expect(page.getByRole('cell', { name: 'b••••••••@example.com' }).first()).toBeVisible();
-    await expect(page.getByRole('cell', { name: 'Pending' }).first()).toBeVisible();
+    await expect(page.locator('p:visible, td:visible').filter({ hasText: /b.+@example\.com/ }).first()).toBeVisible();
+    await expect(page.locator('span:visible, td:visible').filter({ hasText: /^Pending$/ }).first()).toBeVisible();
+    expect(browserErrors).toEqual([]);
+});
+
+test('mobile supervisor navigation exposes context and returns focus after Escape', async ({ page }, testInfo) => {
+    const browserErrors = captureBrowserErrors(page);
+    await page.setViewportSize({ width: 390, height: 844 });
+    await signIn(page, testAccounts.supervisor, testInfo, 1);
+
+    const menuButton = page.getByRole('button', { name: 'Menu' });
+    await expect(menuButton).toBeVisible();
+    await menuButton.click();
+
+    const drawer = page.locator('dialog[data-shell-drawer]');
+    await expect(drawer).toHaveJSProperty('open', true);
+    await expect(drawer.getByRole('heading', { name: 'Navigation' })).toBeVisible();
+    await expect(drawer).toContainText('Instructor');
+    await expect(drawer.getByRole('link', { name: 'Team Dashboard' })).toHaveAttribute('aria-current', 'page');
+
+    await page.keyboard.press('Escape');
+    await expect(drawer).toHaveJSProperty('open', false);
+    await expect(menuButton).toBeFocused();
+    expect(await page.evaluate('document.documentElement.scrollWidth <= document.documentElement.clientWidth')).toBe(true);
     expect(browserErrors).toEqual([]);
 });
 

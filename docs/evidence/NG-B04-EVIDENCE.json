@@ -1,0 +1,61 @@
+{
+    "schema_version": "1.0.0",
+    "batch": "B04",
+    "date": "2026-07-20",
+    "branch": "codex/ng-b04-accessible-responsive-shell",
+    "parent_commit": "4e3f5da",
+    "migration": {
+        "name": "2026_07_20_000016_add_display_preferences_to_users",
+        "batch": 15,
+        "backup_path": "storage/app/backup-snapshots/b04-preferences-20260720-153321.sqlite",
+        "backup_sha256": "b9130da66562ce261e8274e5e2454f20722d13e569df84040e12b62329587281",
+        "sqlite_integrity": "ok",
+        "foreign_key_violations": 0,
+        "demo_accounts_present": 3,
+        "demo_accounts_enabled": 3,
+        "authoritative_rows_deleted": 0
+    },
+    "verification": {
+        "focused_laravel_tests": 15,
+        "focused_laravel_assertions": 761,
+        "laravel_tests": 323,
+        "laravel_assertions": 5144,
+        "phpstan_errors": 0,
+        "node_tests": 50,
+        "playwright_passed": 44,
+        "playwright_run": "storage/framework/testing/e2e-b04-20260720-1600",
+        "playwright_projects_passed": [
+            "chromium",
+            "webkit",
+            "mobile-chromium",
+            "mobile-webkit"
+        ],
+        "firefox_status": "blocked_before_navigation_by_host_swgl_framebuffer_startup_failure",
+        "traceability_findings": 43,
+        "tracked_files_scanned": 1635,
+        "unallowlisted_secret_findings": 0,
+        "vite_version": "6.4.3",
+        "build": "passed",
+        "lint": "passed",
+        "governance": "passed"
+    },
+    "implemented_preferences": {
+        "theme": ["system", "light", "dark"],
+        "motion": ["system", "reduce", "full"],
+        "text_scale": ["default", "large", "larger"],
+        "high_contrast": true,
+        "no_audio_preference": true
+    },
+    "retained_failed_runs": [
+        "storage/framework/testing/e2e-b04-20260720-1540",
+        "storage/framework/testing/e2e-b04-20260720-1550"
+    ],
+    "external_gates": [
+        "qualified human accessibility review",
+        "keyboard-only, 200 percent text resize, and 400 percent browser-zoom reflow evidence",
+        "NVDA, VoiceOver, and TalkBack evidence",
+        "branded Chrome, Safari, Edge, Firefox, and Opera coverage",
+        "physical Windows, macOS, Android, and iOS coverage",
+        "content-complete caption, transcript, and alternative review"
+    ]
+}

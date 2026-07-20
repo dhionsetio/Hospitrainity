@@ -13,6 +13,7 @@
             <header class="mb-8">
                 <h1 class="text-3xl font-bold text-neutral-800">{{ __('admin.welcome_name', ['name' => Auth::user()->name]) }}</h1>
                 <p class="text-neutral-500">{{ __('admin.platform_summary') }}</p>
+                <a href="{{ route((Auth::user()->isSuperAdmin() ? 'superadmin' : 'admin').'.curriculum-drafts.index') }}" class="mt-4 inline-flex min-h-11 items-center rounded-lg bg-indigo-700 px-5 py-3 font-semibold text-white">{{ __('admin.open_canonical_content') }}</a>
             </header>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
