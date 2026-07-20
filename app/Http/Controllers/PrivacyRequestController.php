@@ -7,6 +7,7 @@ use App\Models\DataExport;
 use App\Models\DataSubjectRequest;
 use App\Services\DataSubjectRequestService;
 use App\Services\PushNotificationService;
+use App\Services\RoleLandingResolver;
 use DomainException;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -18,7 +19,7 @@ use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class PrivacyRequestController extends Controller
 {
-    public function index(Request $request): View
+    public function index(Request $request, RoleLandingResolver $landing): View
     {
         return view('privacy-requests.index', [
             'requests' => DataSubjectRequest::query()
@@ -36,6 +37,7 @@ class PrivacyRequestController extends Controller
             'pushConfigured' => app(PushNotificationService::class)->configured(),
             'pushPublicKey' => (string) config('push.vapid.public_key'),
             'pushSubscription' => $request->user()->pushSubscriptions()->whereNull('revoked_at')->latest()->first(),
+            'returnUrl' => $landing->url($request->user()),
         ]);
     }
 

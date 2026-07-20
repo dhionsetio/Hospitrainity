@@ -4,7 +4,7 @@
 
 @section('content')
     <main id="main-content" class="mx-auto max-w-5xl space-y-6 px-4 py-8 sm:px-6">
-        <a href="{{ route('superadmin.privacy-requests.index') }}" class="font-semibold text-indigo-700 underline">&larr; {{ __('Privacy request queue') }}</a>
+        <x-back-control :href="route('superadmin.privacy-requests.index')" :label="__('Privacy request queue')" />
         <header>
             <h1 class="text-3xl font-bold">{{ __('Review privacy request') }}</h1>
             <p class="mt-2 font-mono text-sm">{{ $privacyRequest->getKey() }}</p>

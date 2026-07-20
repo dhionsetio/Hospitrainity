@@ -335,6 +335,9 @@ Route::middleware(['auth', 'verified', 'role:user'])->group(function () {
     Route::get('/curriculum/assets/{sha256}/{extension}', [CanonicalCurriculumAssetController::class, 'show'])
         ->where(['sha256' => '[0-9a-f]{64}', 'extension' => 'jpg|jpeg|png|webp|mp3|wav'])
         ->name('curriculum.assets.show');
+    Route::get('/curriculum/{chapter}/steps/{step}', [CanonicalCurriculumController::class, 'checkpoint'])
+        ->whereNumber('step')
+        ->name('curriculum.steps.show');
     Route::get('/curriculum/{chapter}', [CanonicalCurriculumController::class, 'chapter'])
         ->name('curriculum.chapters.show');
 

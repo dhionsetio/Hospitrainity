@@ -9,7 +9,7 @@
     <div class="flex min-h-screen flex-col bg-neutral-100 md:flex-row">
         @include('superadmin.sidebar')
         <main class="min-w-0 flex-1 p-6 md:p-10">
-            <a href="{{ route($routePrefix.'.curriculum-drafts.show', $draft) }}" class="font-semibold text-indigo-700 underline">&larr; {{ $draft->title }}</a>
+            <x-back-control :href="route($routePrefix.'.curriculum-drafts.show', $draft)" :label="$draft->title" />
             <header class="mt-4 rounded-xl bg-white p-6 shadow">
                 <p class="text-sm font-semibold uppercase tracking-wide text-indigo-700">{{ __('admin.registry_version') }} {{ \App\Services\Curriculum\CanonicalExerciseTemplateRegistry::VERSION }}</p>
                 <h1 class="mt-2 text-3xl font-bold text-neutral-950">{{ __('admin.exercise_builder') }}</h1>

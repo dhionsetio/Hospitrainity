@@ -25,19 +25,39 @@
                 })
                 ->filter();
             $primaryActivity = collect($curriculumSection['blocks'])->firstWhere('type', 'activity_embed');
+            $stepCheckpointUrl = isset($curriculumPreview)
+                ? null
+                : route('curriculum.steps.show', [$curriculumSection['chapter']['code'], $curriculumSection['step']['number']]);
+            $nextSectionUrl = $curriculumSection['navigation']['next']
+                ? (isset($curriculumPreview)
+                    ? route((Auth::user()->isSuperAdmin() ? 'superadmin' : 'admin').'.curriculum-drafts.preview.sections.show', [$curriculumPreview, $curriculumSection['navigation']['next']['code']])
+                    : route('curriculum.sections.show', $curriculumSection['navigation']['next']['code']))
+                : null;
         @endphp
-        <nav aria-label="{{ __('Breadcrumb') }}">
-            <a href="{{ isset($curriculumPreview) ? route((Auth::user()->isSuperAdmin() ? 'superadmin' : 'admin').'.curriculum-drafts.preview.chapters.show', [$curriculumPreview, $curriculumSection['chapter']['code']]) : route('curriculum.chapters.show', $curriculumSection['chapter']['code']) }}" class="text-sm font-semibold text-indigo-700 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-700">&larr; {{ __('Module :number', ['number' => $curriculumSection['chapter']['module']]) }}: {{ $curriculumSection['chapter']['title'] }}</a>
-        </nav>
+        <x-back-control
+            :href="isset($curriculumPreview) ? route((Auth::user()->isSuperAdmin() ? 'superadmin' : 'admin').'.curriculum-drafts.preview.chapters.show', [$curriculumPreview, $curriculumSection['chapter']['code']]) : route('curriculum.chapters.show', $curriculumSection['chapter']['code'])"
+            :label="__('Return to Module :number', ['number' => $curriculumSection['chapter']['module']])"
+        />
 
         <header class="mt-4 rounded-xl bg-white p-5 shadow sm:p-7">
-            <p class="text-sm font-semibold text-indigo-700">{{ __('Section :number of :total', ['number' => $curriculumSection['navigation']['position'], 'total' => $curriculumSection['navigation']['total']]) }}</p>
+            <p class="text-sm font-semibold text-indigo-700">{{ __('Learning step :number of :total', ['number' => $curriculumSection['step']['number'], 'total' => $curriculumSection['step']['total']]) }}</p>
+            <p class="mt-1 text-sm text-neutral-600">{{ __('Part :number of :total in this step', ['number' => $curriculumSection['step']['position'], 'total' => $curriculumSection['step']['count']]) }}</p>
+            <ol class="hsp-step-position mt-4" aria-label="{{ __('Current position in learning step') }}">
+                @for($part = 1; $part <= $curriculumSection['step']['count']; $part++)
+                    <li @class(['is-current' => $part === $curriculumSection['step']['position']])>
+                        <span aria-hidden="true">{{ $part }}</span>
+                        <span class="sr-only">{{ $part === $curriculumSection['step']['position'] ? __('Current part :number', ['number' => $part]) : __('Part :number', ['number' => $part]) }}</span>
+                    </li>
+                @endfor
+            </ol>
             <h1 class="mt-2 break-words text-3xl font-bold text-neutral-950 sm:text-4xl">{{ $curriculumSection['title'] }}</h1>
             <div class="mt-5 flex flex-wrap gap-3">
                 @if ($primaryActivity)
-                    <a href="#activity-{{ $primaryActivity['id'] }}" class="inline-flex min-h-11 items-center rounded-lg bg-indigo-700 px-5 py-2 font-semibold text-white hover:bg-indigo-800">{{ __('Continue to activity') }}</a>
+                    <a href="#activity-{{ $primaryActivity['id'] }}" class="hsp-action inline-flex min-h-11 items-center rounded-lg bg-indigo-700 px-5 py-2 font-semibold text-white hover:bg-indigo-800">{{ __('Continue to activity') }}</a>
+                @elseif (!isset($curriculumPreview) && $curriculumSection['step']['is_last_section'])
+                    <a rel="next" href="{{ $stepCheckpointUrl }}" class="hsp-action inline-flex min-h-11 items-center gap-2 rounded-lg bg-indigo-700 px-5 py-2 font-semibold text-white hover:bg-indigo-800">{{ __('Finish learning step :number', ['number' => $curriculumSection['step']['number']]) }} <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
                 @elseif ($curriculumSection['navigation']['next'])
-                    <a rel="next" href="{{ isset($curriculumPreview) ? route((Auth::user()->isSuperAdmin() ? 'superadmin' : 'admin').'.curriculum-drafts.preview.sections.show', [$curriculumPreview, $curriculumSection['navigation']['next']['code']]) : route('curriculum.sections.show', $curriculumSection['navigation']['next']['code']) }}" class="inline-flex min-h-11 items-center rounded-lg bg-indigo-700 px-5 py-2 font-semibold text-white hover:bg-indigo-800">{{ __('Continue to next section') }}</a>
+                    <a rel="next" href="{{ $nextSectionUrl }}" class="hsp-action inline-flex min-h-11 items-center rounded-lg bg-indigo-700 px-5 py-2 font-semibold text-white hover:bg-indigo-800">{{ __('Continue to next section') }}</a>
                 @endif
             </div>
         </header>
@@ -55,7 +75,7 @@
             </details>
         @endif
 
-        <article class="mt-6 space-y-5 rounded-xl bg-white p-5 shadow sm:p-8" aria-label="{{ $curriculumSection['title'] }}">
+        <article class="hsp-lesson-content mt-6 space-y-5" aria-label="{{ $curriculumSection['title'] }}">
             @foreach ($curriculumSection['blocks'] as $block)
                 @switch($block['type'])
                     @case('heading')
@@ -65,7 +85,7 @@
                         @break
 
                     @case('callout')
-                        <aside class="rounded-lg border-l-4 border-indigo-500 bg-indigo-50 p-4 leading-7 text-indigo-950">
+                        <aside class="rounded-lg border border-indigo-300 bg-indigo-50 p-4 leading-7 text-indigo-950">
                             @include('curriculum.partials.rich-text', ['runs' => $block['runs'] ?? [], 'text' => $block['text'] ?? ''])
                         </aside>
                         @break
@@ -85,34 +105,38 @@
                         @break
 
                     @case('dialogue_turn')
-                        <dl class="grid gap-1 rounded-lg border border-neutral-200 bg-neutral-50 p-4 sm:grid-cols-[9rem_1fr] sm:gap-4">
-                            <dt class="font-bold text-indigo-800">{{ $block['speaker'] }}</dt>
+                        <dl class="hsp-dialogue-turn">
+                            <dt><i class="fa-solid fa-comment" aria-hidden="true"></i> {{ $block['speaker'] }}</dt>
                             <dd class="leading-7 text-neutral-900">{{ $block['text'] }}</dd>
                         </dl>
                         @break
 
                     @case('source_table')
-                        <div class="max-w-full overflow-x-auto rounded-lg border border-neutral-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-700" role="region" aria-label="{{ $block['caption'] }}" tabindex="0">
-                            <table class="min-w-full border-collapse text-left text-sm text-neutral-900">
-                                <caption class="sr-only">{{ $block['caption'] }}</caption>
-                                <thead class="bg-indigo-50">
-                                    <tr>
-                                        @foreach ($block['header'] as $cell)
-                                            <th scope="col" class="whitespace-normal border-b border-neutral-300 px-4 py-3 font-bold">{{ $cell }}</th>
-                                        @endforeach
-                                    </tr>
-                                </thead>
-                                <tbody class="divide-y divide-neutral-200">
-                                    @foreach ($block['rows'] as $row)
-                                        <tr class="align-top odd:bg-white even:bg-neutral-50">
-                                            @foreach ($row as $cell)
-                                                <td class="min-w-28 whitespace-pre-line px-4 py-3 leading-6">{{ $cell }}</td>
+                        @if($showCurriculumEvidence)
+                            <div class="max-w-full overflow-x-auto rounded-lg border border-neutral-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-700" role="region" aria-label="{{ $block['caption'] }}" tabindex="0">
+                                <table class="min-w-full border-collapse text-left text-sm text-neutral-900">
+                                    <caption class="sr-only">{{ $block['caption'] }}</caption>
+                                    <thead class="bg-indigo-50">
+                                        <tr>
+                                            @foreach ($block['header'] as $cell)
+                                                <th scope="col" class="whitespace-normal border-b border-neutral-300 px-4 py-3 font-bold">{{ $cell }}</th>
                                             @endforeach
                                         </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                        </div>
+                                    </thead>
+                                    <tbody class="divide-y divide-neutral-200">
+                                        @foreach ($block['rows'] as $row)
+                                            <tr class="align-top odd:bg-white even:bg-neutral-50">
+                                                @foreach ($row as $cell)
+                                                    <td class="min-w-28 whitespace-pre-line px-4 py-3 leading-6">{{ $cell }}</td>
+                                                @endforeach
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        @else
+                            @include('curriculum.partials.learning-cards', ['tableBlock' => $block])
+                        @endif
                         @break
 
                     @case('external_link')
@@ -132,7 +156,7 @@
                         <section class="rounded-xl border-2 border-indigo-200 bg-indigo-50 p-5" aria-labelledby="activity-{{ $block['id'] }}">
                             <h2 id="activity-{{ $block['id'] }}" class="text-xl font-bold text-indigo-950">{{ $curriculumSection['activity']['title'] ?? __('Practice activity') }}</h2>
                             <p class="mt-2 text-sm text-indigo-900">{{ __('Your responses are saved only when you submit the activity form.') }}</p>
-                            <a href="{{ isset($curriculumPreview) ? route((Auth::user()->isSuperAdmin() ? 'superadmin' : 'admin').'.curriculum-drafts.preview.activities.show', [$curriculumPreview, $block['activity_code']]) : route('curriculum.activities.show', $block['activity_code']) }}" class="mt-4 inline-flex min-h-11 items-center rounded-lg bg-indigo-700 px-5 py-2 font-semibold text-white hover:bg-indigo-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-800">{{ __('Open activity') }}</a>
+                            <a href="{{ isset($curriculumPreview) ? route((Auth::user()->isSuperAdmin() ? 'superadmin' : 'admin').'.curriculum-drafts.preview.activities.show', [$curriculumPreview, $block['activity_code']]) : route('curriculum.activities.show', $block['activity_code']) }}" class="hsp-action mt-4 inline-flex min-h-11 items-center gap-2 rounded-lg bg-indigo-700 px-5 py-2 font-semibold text-white hover:bg-indigo-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-800">{{ __('Open activity') }} <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
                         </section>
                         @break
 
@@ -156,12 +180,23 @@
 
         <nav class="mt-6 grid gap-3 sm:grid-cols-2" aria-label="{{ __('Lesson section navigation') }}">
             @if ($curriculumSection['navigation']['previous'])
-                <a rel="prev" href="{{ isset($curriculumPreview) ? route((Auth::user()->isSuperAdmin() ? 'superadmin' : 'admin').'.curriculum-drafts.preview.sections.show', [$curriculumPreview, $curriculumSection['navigation']['previous']['code']]) : route('curriculum.sections.show', $curriculumSection['navigation']['previous']['code']) }}" class="min-h-14 rounded-lg border border-neutral-300 bg-white p-4 font-semibold text-indigo-800 shadow-sm hover:border-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-700">&larr; <span class="block text-xs font-normal text-neutral-600">{{ __('Previous') }}</span>{{ $curriculumSection['navigation']['previous']['title'] }}</a>
+                <a rel="prev" href="{{ isset($curriculumPreview) ? route((Auth::user()->isSuperAdmin() ? 'superadmin' : 'admin').'.curriculum-drafts.preview.sections.show', [$curriculumPreview, $curriculumSection['navigation']['previous']['code']]) : route('curriculum.sections.show', $curriculumSection['navigation']['previous']['code']) }}" class="hsp-section-nav hsp-section-nav--previous">
+                    <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                    <span><span>{{ __('Previous part') }}</span>{{ $curriculumSection['navigation']['previous']['title'] }}</span>
+                </a>
             @else
                 <span></span>
             @endif
-            @if ($curriculumSection['navigation']['next'])
-                <a rel="next" href="{{ isset($curriculumPreview) ? route((Auth::user()->isSuperAdmin() ? 'superadmin' : 'admin').'.curriculum-drafts.preview.sections.show', [$curriculumPreview, $curriculumSection['navigation']['next']['code']]) : route('curriculum.sections.show', $curriculumSection['navigation']['next']['code']) }}" class="min-h-14 rounded-lg border border-neutral-300 bg-white p-4 text-right font-semibold text-indigo-800 shadow-sm hover:border-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-700"><span class="block text-xs font-normal text-neutral-600">{{ __('Next') }}</span>{{ $curriculumSection['navigation']['next']['title'] }} &rarr;</a>
+            @if (!isset($curriculumPreview) && $curriculumSection['step']['is_last_section'])
+                <a rel="next" href="{{ $stepCheckpointUrl }}" class="hsp-section-nav hsp-section-nav--next">
+                    <span><span>{{ __('Step wrap-up') }}</span>{{ __('Finish learning step :number', ['number' => $curriculumSection['step']['number']]) }}</span>
+                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </a>
+            @elseif ($curriculumSection['navigation']['next'])
+                <a rel="next" href="{{ $nextSectionUrl }}" class="hsp-section-nav hsp-section-nav--next">
+                    <span><span>{{ __('Next part') }}</span>{{ $curriculumSection['navigation']['next']['title'] }}</span>
+                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </a>
             @endif
         </nav>
 

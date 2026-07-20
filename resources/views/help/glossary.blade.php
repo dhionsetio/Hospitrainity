@@ -4,7 +4,7 @@
 
 @section('content')
 <main class="mx-auto w-full max-w-5xl px-4 py-10 sm:px-6">
-    <a href="{{ route('help.index') }}" class="inline-flex min-h-11 items-center font-semibold text-indigo-800 underline">&larr; {{ __('Help') }}</a>
+    <x-back-control :href="route('help.index')" :label="__('Return to Help')" />
     <header class="mt-5">
         <h1 class="text-4xl font-bold text-neutral-950">{{ __('Glossary') }}</h1>
         <p class="mt-3 text-lg text-neutral-700">{{ __('Plain-language meanings for Hospitrainity roles, progress, content, and institution terms.') }}</p>

@@ -4,7 +4,7 @@
 
 @section('content')
     <main id="main-content" class="mx-auto max-w-2xl px-4 py-8 sm:px-6">
-        <a href="{{ route('privacy-requests.index') }}" class="font-semibold text-indigo-700 underline">&larr; {{ __('Privacy requests') }}</a>
+        <x-back-control :href="route('privacy-requests.index')" :label="__('Privacy requests')" />
         <h1 class="mt-4 text-3xl font-bold">{{ $requestType === \App\Enums\DataSubjectRequestType::Deletion ? __('Request account deletion') : __('Download my data') }}</h1>
         <div class="mt-6 rounded-lg border {{ $requestType === \App\Enums\DataSubjectRequestType::Deletion ? 'border-red-300 bg-red-50' : 'border-indigo-300 bg-indigo-50' }} p-5">
             @if($requestType === \App\Enums\DataSubjectRequestType::Deletion)

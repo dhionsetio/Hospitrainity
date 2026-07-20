@@ -97,6 +97,14 @@ class InstitutionJoinCodeEnrollmentTest extends TestCase
         ]);
 
         $this->actingAs($learner)
+            ->get(route('institution-enrollment.index'))
+            ->assertOk()
+            ->assertSee('hsp-context-current', escape: false)
+            ->assertSee('hsp-context-choice', escape: false)
+            ->assertSeeText('Current context')
+            ->assertDontSee('>Active<', escape: false);
+
+        $this->actingAs($learner)
             ->post(route('learning-context.select'), [
                 'scope' => 'institution',
                 'membership_id' => $membership->id,

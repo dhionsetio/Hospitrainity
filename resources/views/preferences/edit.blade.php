@@ -5,7 +5,7 @@
 
 @section('content')
 <main id="main-content" class="mx-auto w-full max-w-4xl px-4 py-8 sm:px-6">
-    <a href="{{ $returnUrl }}" class="inline-flex min-h-11 items-center font-semibold text-indigo-700 underline">&larr; {{ __('Return to dashboard') }}</a>
+    <x-back-control :href="$returnUrl" :label="__('Return to dashboard')" />
     <header class="mt-4">
         <p class="text-sm font-semibold uppercase tracking-wide text-indigo-700">{{ __('Your account') }}</p>
         <h1 class="mt-1 text-3xl font-bold text-neutral-950">{{ __('Display and accessibility preferences') }}</h1>

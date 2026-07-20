@@ -10,7 +10,7 @@
     <div class="flex min-h-screen flex-col bg-neutral-100 md:flex-row">
         @include('superadmin.sidebar')
         <main class="min-w-0 flex-1 p-6 md:p-10">
-            <a href="{{ route($routePrefix.'.curriculum-drafts.exercises.index', $draft) }}" class="font-semibold text-indigo-700 underline">&larr; {{ __('admin.exercise_builder') }}</a>
+            <x-back-control :href="route($routePrefix.'.curriculum-drafts.exercises.index', $draft)" :label="__('admin.exercise_builder')" />
             <header class="mt-4 rounded-xl bg-white p-6 shadow">
                 <div class="flex flex-wrap items-start justify-between gap-4">
                     <div><p class="text-sm font-semibold uppercase tracking-wide text-indigo-700">{{ __('admin.exercise_templates.'.$templateType) }}</p><h1 class="mt-2 text-3xl font-bold text-neutral-950">{{ $exercise ? __('admin.edit_exercise') : __('admin.create_exercise') }}</h1><p class="mt-2 max-w-4xl text-neutral-700">{{ __('admin.exercise_template_help.'.$templateType) }}</p></div>

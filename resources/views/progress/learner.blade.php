@@ -12,7 +12,7 @@
         @endif
 
         <main class="min-w-0 flex-1 p-6 md:p-10">
-            <a href="{{ route($backRouteName) }}" class="font-semibold text-indigo-700 hover:text-indigo-900">&larr; {{ __('admin.back_to_progress') }}</a>
+            <x-back-control :href="route($backRouteName)" :label="__('admin.back_to_progress')" />
             <header class="mt-5">
                 <h1 class="text-3xl font-bold text-neutral-900">{{ $detail['learner']->name }}</h1>
                 <p class="mt-2 text-neutral-600">{{ $detail['learner']->email }} <span aria-hidden="true">·</span> {{ isset($scopeInstitution) ? $scopeInstitution->displayName(app()->getLocale()) : $detail['learner']->instansi }}</p>

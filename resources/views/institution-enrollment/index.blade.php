@@ -40,22 +40,50 @@
             <h2 id="learning-context-heading" class="text-xl font-bold text-neutral-900">{{ __('Learning context') }}</h2>
             <p class="mt-1 text-sm text-neutral-600">{{ __('Choose where new progress is recorded. Contexts never combine institution permissions invisibly.') }}</p>
             <div class="mt-4 grid gap-3 sm:grid-cols-2">
-                <form method="POST" action="{{ route('learning-context.select') }}" class="rounded-md border p-4 {{ $currentContext['membership_id'] === null ? 'border-indigo-500 bg-indigo-50' : 'border-neutral-200' }}">
-                    @csrf
-                    <input type="hidden" name="scope" value="personal">
-                    <h3 class="font-bold text-neutral-900">{{ __('Personal self-study') }}</h3>
-                    <p class="mt-1 text-sm text-neutral-600">{{ __('Visible to you, not institution staff.') }}</p>
-                    <button type="submit" class="mt-3 rounded-md border border-indigo-600 px-3 py-2 text-sm font-semibold text-indigo-700">{{ $currentContext['membership_id'] === null ? __('Active') : __('Use this context') }}</button>
-                </form>
-                @foreach($memberships as $membership)
-                    <form method="POST" action="{{ route('learning-context.select') }}" class="rounded-md border p-4 {{ $currentContext['membership_id'] === $membership->id ? 'border-indigo-500 bg-indigo-50' : 'border-neutral-200' }}">
+                @if($currentContext['membership_id'] === null)
+                    <div class="hsp-context-current" aria-current="true">
+                        <div>
+                            <h3 class="font-bold text-neutral-900">{{ __('Personal self-study') }}</h3>
+                            <p class="mt-1 text-sm text-neutral-600">{{ __('Visible to you, not institution staff.') }}</p>
+                        </div>
+                        <span class="hsp-status-pill"><i class="fa-solid fa-check" aria-hidden="true"></i> {{ __('Current context') }}</span>
+                    </div>
+                @else
+                    <form method="POST" action="{{ route('learning-context.select') }}">
                         @csrf
-                        <input type="hidden" name="scope" value="institution">
-                        <input type="hidden" name="membership_id" value="{{ $membership->id }}">
-                        <h3 class="font-bold text-neutral-900">{{ $membership->institution->displayName(app()->getLocale()) }}</h3>
-                        <p class="mt-1 text-sm text-neutral-600">{{ __('New activity here is visible to authorized staff from this institution.') }}</p>
-                        <button type="submit" class="mt-3 rounded-md border border-indigo-600 px-3 py-2 text-sm font-semibold text-indigo-700">{{ $currentContext['membership_id'] === $membership->id ? __('Active') : __('Use this context') }}</button>
+                        <input type="hidden" name="scope" value="personal">
+                        <button type="submit" class="hsp-context-choice">
+                            <span>
+                                <span class="block font-bold text-neutral-900">{{ __('Personal self-study') }}</span>
+                                <span class="mt-1 block text-sm text-neutral-600">{{ __('Visible to you, not institution staff.') }}</span>
+                            </span>
+                            <span class="hsp-context-choice__action">{{ __('Use this context') }} <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+                        </button>
                     </form>
+                @endif
+                @foreach($memberships as $membership)
+                    @if($currentContext['membership_id'] === $membership->id)
+                        <div class="hsp-context-current" aria-current="true">
+                            <div>
+                                <h3 class="font-bold text-neutral-900">{{ $membership->institution->displayName(app()->getLocale()) }}</h3>
+                                <p class="mt-1 text-sm text-neutral-600">{{ __('New activity here is visible to authorized staff from this institution.') }}</p>
+                            </div>
+                            <span class="hsp-status-pill"><i class="fa-solid fa-check" aria-hidden="true"></i> {{ __('Current context') }}</span>
+                        </div>
+                    @else
+                        <form method="POST" action="{{ route('learning-context.select') }}">
+                            @csrf
+                            <input type="hidden" name="scope" value="institution">
+                            <input type="hidden" name="membership_id" value="{{ $membership->id }}">
+                            <button type="submit" class="hsp-context-choice">
+                                <span>
+                                    <span class="block font-bold text-neutral-900">{{ $membership->institution->displayName(app()->getLocale()) }}</span>
+                                    <span class="mt-1 block text-sm text-neutral-600">{{ __('New activity here is visible to authorized staff from this institution.') }}</span>
+                                </span>
+                                <span class="hsp-context-choice__action">{{ __('Use this context') }} <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+                            </button>
+                        </form>
+                    @endif
                 @endforeach
             </div>
         </section>

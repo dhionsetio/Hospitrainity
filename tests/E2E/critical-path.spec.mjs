@@ -133,19 +133,19 @@ test('language switcher and gray dark theme render stable, readable states', asy
     expect(contrastRatio(renderedTheme.selectedColor, renderedTheme.selectedBackground)).toBeGreaterThanOrEqual(4.5);
 
     await page.goto('/curriculum/sections/HSP-C01-LS-05');
-    const sourceTableTheme = await page.evaluate(() => [...globalThis.document.querySelectorAll('tbody tr')]
-        .map((row) => {
-            const cell = row.querySelector('td');
+    const learningCardTheme = await page.evaluate(() => [...globalThis.document.querySelectorAll('.hsp-learning-cards article')]
+        .map((card) => {
+            const lead = card.querySelector('.hsp-learning-cards__lead');
 
             return {
-                background: globalThis.getComputedStyle(row).backgroundColor,
-                color: globalThis.getComputedStyle(cell).color,
+                background: globalThis.getComputedStyle(card).backgroundColor,
+                color: globalThis.getComputedStyle(lead).color,
             };
         }));
-    expect(sourceTableTheme).not.toHaveLength(0);
-    for (const [index, row] of sourceTableTheme.entries()) {
-        expect(row.background).toBe(index % 2 === 0 ? 'rgb(41, 46, 52)' : 'rgb(37, 42, 47)');
-        expect(contrastRatio(row.color, row.background)).toBeGreaterThanOrEqual(4.5);
+    expect(learningCardTheme).not.toHaveLength(0);
+    for (const card of learningCardTheme) {
+        expect(card.background).toBe('rgb(41, 46, 52)');
+        expect(contrastRatio(card.color, card.background)).toBeGreaterThanOrEqual(4.5);
     }
 
     await page.goto('/search?q=guest');
@@ -162,7 +162,13 @@ test('public Help, glossary, and About expose bounded bilingual-ready guidance',
 
     await page.goto('/help');
     await expect(page.getByRole('heading', { name: 'Help', exact: true })).toBeVisible();
-    await expect(page.getByRole('link', { name: 'Invitations and classroom codes' })).toBeVisible();
+    const invitationsCard = page.getByRole('link', { name: /Invitations and classroom codes/ });
+    await expect(invitationsCard).toBeVisible();
+    await expect(invitationsCard).toHaveCSS('cursor', 'pointer');
+    await invitationsCard.click();
+    await expect(page.getByRole('heading', { level: 1, name: 'Invitations and classroom codes' })).toBeVisible();
+    await page.getByRole('link', { name: 'Return to Help' }).click();
+    await expect(page.getByRole('heading', { name: 'Help', exact: true })).toBeVisible();
     await expect(page.getByText(/Help version 2026-07-20/)).toBeVisible();
     await expect(page.getByText('dhionsetio@gmail.com')).toHaveCount(0);
 
@@ -281,8 +287,8 @@ test('verified learner can navigate, submit a canonical attempt, and use the acc
     const moduleCard = page.getByRole('article').filter({ hasText: 'Front Desk and Check-In' });
     await moduleCard.getByRole('link', { name: 'Open module' }).click();
     await expect(page.getByRole('heading', { level: 1, name: 'Front Desk and Check-In' })).toBeVisible();
-    const quizSection = page.getByRole('article').filter({ has: page.getByRole('heading', { name: 'Step 7. Quiz' }) });
-    await quizSection.getByRole('link', { name: 'Open section' }).click();
+    const quizSection = page.getByRole('link').filter({ hasText: 'Step 7. Quiz' });
+    await quizSection.click();
     await expect(page.getByRole('heading', { level: 1, name: 'Step 7. Quiz' })).toBeVisible();
     await page.getByRole('link', { name: 'Open activity' }).click();
 
@@ -298,7 +304,9 @@ test('verified learner can navigate, submit a canonical attempt, and use the acc
     await expect(page.locator('#attempt-result')).toContainText('Responses checked and activity completed');
     await expect(page).toHaveURL(/#attempt-result$/);
     await page.reload();
-    await expect(page.getByText(/Progress state: completed.*Attempts: \d+/)).toBeVisible();
+    await expect(page.getByText('Completed', { exact: true })).toBeVisible();
+    await expect(page.getByText(/\d+ attempts?/)).toBeVisible();
+    await expect(page.getByText(/Progress state:/)).toHaveCount(0);
     expect(browserErrors).toEqual([]);
 });
 

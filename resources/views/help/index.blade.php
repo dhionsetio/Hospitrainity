@@ -4,7 +4,9 @@
 
 @section('content')
 <main class="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6">
-    <header class="max-w-3xl">
+    <x-back-control :href="$backUrl" :label="$backLabel" />
+
+    <header class="mt-5 max-w-3xl">
         <p class="text-sm font-semibold uppercase tracking-wide text-indigo-700">Hospitrainity</p>
         <h1 class="mt-2 text-4xl font-bold text-neutral-950">{{ __('Help') }}</h1>
         <p class="mt-3 text-lg text-neutral-700">{{ __('Search current instructions, recovery guidance, institution workflows, and terminology.') }}</p>
@@ -15,7 +17,7 @@
             <label for="help-query" class="block font-semibold text-neutral-800">{{ __('Search Help and glossary') }}</label>
             <input id="help-query" name="q" type="search" maxlength="80" value="{{ $query }}" class="mt-2 w-full rounded-lg border border-neutral-400 px-4 py-3" autocomplete="off">
         </div>
-        <button type="submit" class="self-end rounded-lg bg-indigo-700 px-6 py-3 font-semibold text-white">{{ __('Search') }}</button>
+        <button type="submit" class="hsp-action self-end rounded-lg bg-indigo-700 px-6 py-3 font-semibold text-white">{{ __('Search') }}</button>
     </form>
 
     @if($query !== '')
@@ -24,16 +26,21 @@
 
     <section class="mt-10" aria-labelledby="help-topics-title">
         <h2 id="help-topics-title" class="text-2xl font-bold text-neutral-950">{{ __('Help topics') }}</h2>
-        <div class="mt-5 grid gap-5 md:grid-cols-2">
+        <ul class="mt-5 grid gap-5 md:grid-cols-2">
             @forelse($topics as $topic)
-                <article class="rounded-xl border border-neutral-300 bg-white p-5 shadow-sm">
-                    <h3 class="text-xl font-bold text-neutral-950"><a href="{{ route('help.show', $topic['slug']) }}" class="text-indigo-800 underline underline-offset-2">{{ $topic['title'] }}</a></h3>
-                    <p class="mt-2 text-neutral-700">{{ $topic['summary'] }}</p>
-                </article>
+                <li>
+                    <a href="{{ route('help.show', $topic['slug']) }}" class="hsp-card-link group">
+                        <span>
+                            <span class="block text-xl font-bold text-neutral-950 group-hover:text-indigo-800">{{ $topic['title'] }}</span>
+                            <span class="mt-2 block text-neutral-700">{{ $topic['summary'] }}</span>
+                        </span>
+                        <i class="fa-solid fa-arrow-right hsp-card-link__arrow" aria-hidden="true"></i>
+                    </a>
+                </li>
             @empty
-                <p class="rounded-lg border border-dashed border-neutral-400 p-5 text-neutral-700">{{ __('No Help topic matches this search. Try a shorter term or browse the full glossary.') }}</p>
+                <li class="rounded-lg border border-dashed border-neutral-400 p-5 text-neutral-700">{{ __('No Help topic matches this search. Try a shorter term or browse the full glossary.') }}</li>
             @endforelse
-        </div>
+        </ul>
     </section>
 
     @if($glossary->isNotEmpty())

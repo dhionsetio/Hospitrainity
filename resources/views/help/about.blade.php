@@ -4,7 +4,9 @@
 
 @section('content')
 <main class="mx-auto w-full max-w-4xl px-4 py-10 sm:px-6">
-    <header>
+    <x-back-control :href="route('help.index')" :label="__('Return to Help')" />
+
+    <header class="mt-5">
         <p class="text-sm font-semibold uppercase tracking-wide text-indigo-700">{{ __('Thesis prototype') }}</p>
         <h1 class="mt-2 text-4xl font-bold text-neutral-950">{{ $document['title'] }}</h1>
         <p class="mt-3 text-lg text-neutral-700">{{ $document['summary'] }}</p>
@@ -18,8 +20,8 @@
         @endforeach
     </div>
     <div class="mt-8 flex flex-wrap gap-3">
-        <a href="{{ route('help.index') }}" class="inline-flex min-h-11 items-center rounded-lg bg-indigo-700 px-5 py-3 font-semibold text-white">{{ __('Help') }}</a>
-        <a href="{{ route('policies.show', ['type' => 'accessibility']) }}" class="inline-flex min-h-11 items-center rounded-lg border border-indigo-700 px-5 py-3 font-semibold text-indigo-800">{{ __('Accessibility') }}</a>
+        <a href="{{ route('help.index') }}" class="hsp-action inline-flex min-h-11 items-center rounded-lg bg-indigo-700 px-5 py-3 font-semibold text-white">{{ __('Help') }}</a>
+        <a href="{{ route('policies.show', ['type' => 'accessibility']) }}" class="hsp-action inline-flex min-h-11 items-center rounded-lg border border-indigo-700 px-5 py-3 font-semibold text-indigo-800">{{ __('Accessibility') }}</a>
     </div>
 </main>
 @endsection

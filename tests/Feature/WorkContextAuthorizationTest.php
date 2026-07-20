@@ -49,7 +49,11 @@ class WorkContextAuthorizationTest extends TestCase
         $this->get(route('work-context.index'))
             ->assertOk()
             ->assertSee('Learner')
-            ->assertSee('Instructor');
+            ->assertSee('Instructor')
+            ->assertSee('aria-current="true"', false)
+            ->assertSee('Current context')
+            ->assertSee('hsp-context-choice', false)
+            ->assertDontSee('Continue in this context');
     }
 
     public function test_one_account_switches_between_content_instructor_and_learner_without_combining_authority(): void

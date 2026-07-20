@@ -150,6 +150,13 @@ function initializePageInteractions() {
         }
     });
 
+    document.addEventListener('submit', (event) => {
+        if (event.defaultPrevented || !(event.submitter instanceof HTMLButtonElement)) return;
+
+        event.submitter.dataset.submitting = 'true';
+        event.submitter.setAttribute('aria-busy', 'true');
+    });
+
     document.querySelectorAll('[data-progress-filter-form]').forEach((form) => {
         form.addEventListener('submit', () => {
             const button = form.querySelector('[data-progress-submit]');

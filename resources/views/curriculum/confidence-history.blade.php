@@ -7,7 +7,7 @@
     @include('partials.learner-nav')
 
     <main class="container mx-auto max-w-5xl px-4 py-6 sm:px-6 sm:py-8">
-        <a href="{{ route('dashboard') }}" class="font-semibold text-indigo-700 underline underline-offset-4">&larr; {{ __('Back to dashboard') }}</a>
+        <x-back-control :href="route('dashboard')" :label="__('Back to dashboard')" />
         <header class="mt-4 rounded-xl bg-white p-6 shadow">
             <h1 class="text-3xl font-bold text-neutral-950">{{ __('My confidence history') }}</h1>
             <p class="mt-3 leading-7 text-neutral-700">{{ __('These 1–5 self-ratings help you reflect on change from your Chapter 1 baseline. They are not test scores, proficiency measurements, or CEFR evidence, and administrative users do not receive the raw ratings by default.') }}</p>

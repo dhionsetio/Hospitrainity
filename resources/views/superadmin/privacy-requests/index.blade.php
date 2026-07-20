@@ -5,7 +5,7 @@
 @section('content')
     <main id="main-content" class="mx-auto max-w-6xl space-y-6 px-4 py-8 sm:px-6">
         <header>
-            <a href="{{ route('superadmin.dashboard') }}" class="font-semibold text-indigo-700 underline">&larr; {{ __('System Admin dashboard') }}</a>
+            <x-back-control :href="route('superadmin.dashboard')" :label="__('System Admin dashboard')" />
             <h1 class="mt-4 text-3xl font-bold">{{ __('Privacy request queue') }}</h1>
             <p class="mt-2 text-neutral-700">{{ __('Review identity, scope, retention, and retained evidence before making a decision. Opening this queue and every status change are privileged actions.') }}</p>
         </header>

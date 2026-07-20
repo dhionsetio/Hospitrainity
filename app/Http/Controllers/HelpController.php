@@ -3,13 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Services\HelpContentRegistry;
+use App\Services\RoleLandingResolver;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class HelpController extends Controller
 {
-    public function index(Request $request, HelpContentRegistry $content): View
-    {
+    public function index(
+        Request $request,
+        HelpContentRegistry $content,
+        RoleLandingResolver $landing,
+    ): View {
         $validated = $request->validate(['q' => ['nullable', 'string', 'max:80']]);
         $query = mb_strtolower(trim((string) ($validated['q'] ?? '')));
         $topics = $content->topics();
@@ -26,7 +30,10 @@ class HelpController extends Controller
             ))->values();
         }
 
-        return view('help.index', compact('topics', 'glossary', 'query'));
+        $backUrl = $request->user() === null ? url('/') : $landing->url($request->user());
+        $backLabel = $request->user() === null ? __('Return to Hospitrainity') : __('Return to dashboard');
+
+        return view('help.index', compact('topics', 'glossary', 'query', 'backUrl', 'backLabel'));
     }
 
     public function show(string $slug, HelpContentRegistry $content): View

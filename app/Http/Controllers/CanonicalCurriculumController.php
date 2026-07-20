@@ -49,4 +49,24 @@ class CanonicalCurriculumController extends Controller
 
         return view('curriculum.section', compact('curriculumSection', 'showCurriculumEvidence'));
     }
+
+    public function checkpoint(Request $request, string $chapter, int $step): View
+    {
+        $curriculumChapter = $this->curriculum->chapter($chapter);
+        abort_if($curriculumChapter === null, 404);
+
+        $steps = collect($curriculumChapter['steps']);
+        $curriculumStep = $steps->firstWhere('number', $step);
+        abort_if($curriculumStep === null, 404);
+
+        $nextStep = $steps->firstWhere('number', $step + 1);
+        $showCurriculumEvidence = $request->user()->isSuperAdmin();
+
+        return view('curriculum.checkpoint', compact(
+            'curriculumChapter',
+            'curriculumStep',
+            'nextStep',
+            'showCurriculumEvidence',
+        ));
+    }
 }

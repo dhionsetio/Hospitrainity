@@ -4,7 +4,7 @@
 
 @section('content')
 <main class="mx-auto w-full max-w-4xl px-4 py-10 sm:px-6">
-    <a href="{{ route('help.index') }}" class="inline-flex min-h-11 items-center font-semibold text-indigo-800 underline">&larr; {{ __('All Help topics') }}</a>
+    <x-back-control :href="route('help.index')" :label="__('Return to Help')" />
     <header class="mt-5">
         <h1 class="text-4xl font-bold text-neutral-950">{{ $topic['title'] }}</h1>
         <p class="mt-3 text-lg text-neutral-700">{{ $topic['summary'] }}</p>

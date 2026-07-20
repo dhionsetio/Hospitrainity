@@ -2,16 +2,22 @@
 
 namespace Tests\Feature;
 
+use App\Models\User;
 use App\Services\HelpContentRegistry;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 class HelpContentTest extends TestCase
 {
+    use RefreshDatabase;
+
     public function test_versioned_public_help_about_and_glossary_are_available_without_a_support_claim(): void
     {
         $this->get(route('help.index'))
             ->assertOk()
             ->assertSee('Getting started')
+            ->assertSee('hsp-card-link', escape: false)
+            ->assertSee('aria-label="Return to Hospitrainity"', escape: false)
             ->assertSee('Help version '.config('help.version'))
             ->assertDontSee('dhionsetio@gmail.com');
 
@@ -31,6 +37,17 @@ class HelpContentTest extends TestCase
             ->assertSee('thesis prototype')
             ->assertSee('not proof of proficiency or mastery')
             ->assertSee('does not claim guaranteed fluency');
+
+        $learner = User::factory()->create(['role' => 'user', 'email_verified_at' => now()]);
+        $this->actingAs($learner)
+            ->get(route('help.index'))
+            ->assertOk()
+            ->assertSee('aria-label="Return to dashboard"', escape: false)
+            ->assertSee('href="'.route('dashboard').'"', escape: false);
+
+        $this->get(route('help.show', 'getting-started'))
+            ->assertOk()
+            ->assertSee('aria-label="Return to Help"', escape: false);
     }
 
     public function test_help_is_bilingual_searchable_and_has_reproducible_content_evidence(): void

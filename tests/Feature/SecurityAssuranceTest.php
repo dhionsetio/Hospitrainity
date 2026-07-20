@@ -108,6 +108,8 @@ class SecurityAssuranceTest extends TestCase
         $this->get(route('security.index'))
             ->assertOk()
             ->assertSee('Account security')
+            ->assertSee('href="'.route('superadmin.dashboard').'"', false)
+            ->assertSee('Return to current dashboard')
             ->assertSee('Privileged tools are locked—not the whole website')
             ->assertSee('Continue as Learner');
     }

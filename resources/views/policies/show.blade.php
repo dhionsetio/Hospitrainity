@@ -5,7 +5,7 @@
 
 @section('content')
     <main id="main-content" class="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:py-12">
-        <a href="{{ url('/') }}" class="font-semibold text-indigo-700 underline">&larr; {{ __('Back to Hospitrainity') }}</a>
+        <x-back-control :href="$returnUrl" :label="$returnLabel" />
         <article class="mt-6 rounded-xl border border-neutral-200 bg-white p-6 shadow-sm sm:p-10">
             <header class="border-b border-neutral-200 pb-6">
                 <p class="text-sm font-semibold uppercase tracking-wide text-indigo-700">{{ __('Public trust document') }}</p>

@@ -110,6 +110,11 @@ class CanonicalCurriculumDeliveryTest extends TestCase
             ->assertOk()
             ->assertSeeText('Source and lifecycle evidence');
 
+        $this->get(route('curriculum.sections.show', 'HSP-C02-LS-04'))
+            ->assertOk()
+            ->assertSee('<table', escape: false)
+            ->assertSee('scope="col"', escape: false);
+
         $this->get(route('curriculum.activities.show', 'HSP-C02-ACT-QUIZ'))
             ->assertOk()
             ->assertSeeText('objective choice');
@@ -139,6 +144,17 @@ class CanonicalCurriculumDeliveryTest extends TestCase
         $this->assertSame('HSP-C07-LS-12', $last['navigation']['previous']['code']);
         $this->assertNull($last['navigation']['next']);
         $this->assertSame(85, $last['navigation']['total']);
+
+        $chapter = $repository->chapter('HSP-C02');
+        $this->assertCount(3, $chapter['steps']);
+        $this->assertTrue(collect($chapter['steps'])->every(
+            static fn (array $step): bool => $step['count'] >= 1 && $step['count'] <= 5,
+        ));
+        $this->assertSame(1, $repository->section('HSP-C02-LS-04')['step']['number']);
+        $this->assertSame(4, $repository->section('HSP-C02-LS-04')['step']['position']);
+        $this->assertTrue($repository->section('HSP-C02-LS-05')['step']['is_last_section']);
+        $this->assertSame(2, $repository->section('HSP-C02-LS-06')['step']['number']);
+        $this->assertSame(1, $repository->section('HSP-C02-LS-06')['step']['position']);
     }
 
     public function test_all_sections_render_source_content_semantics_and_navigation(): void
@@ -161,11 +177,21 @@ class CanonicalCurriculumDeliveryTest extends TestCase
             ->assertSee('Next');
         $this->get(route('curriculum.sections.show', 'HSP-C02-LS-04'))
             ->assertOk()
-            ->assertSee('<table', escape: false)
-            ->assertSee('scope="col"', escape: false)
+            ->assertDontSee('<table', escape: false)
+            ->assertSee('hsp-learning-cards', escape: false)
             ->assertSee('Word or phrase')
             ->assertSee('a-MEN-i-tees')
             ->assertDontSee('a-MEN- i -tees');
+        $this->get(route('curriculum.sections.show', 'HSP-C02-LS-05'))
+            ->assertOk()
+            ->assertSeeText('Learning step 1 of 3')
+            ->assertSeeText('Part 5 of 5 in this step')
+            ->assertSeeText('Finish learning step 1');
+        $this->get(route('curriculum.steps.show', ['HSP-C02', 1]))
+            ->assertOk()
+            ->assertSeeText('You reached the step wrap-up')
+            ->assertSeeText('Continue to learning step 2')
+            ->assertSeeText('Step 2. Key vocabulary');
         $this->get(route('curriculum.sections.show', 'HSP-C02-LS-13'))
             ->assertOk()
             ->assertSee('(external site, opens in a new tab)')
@@ -173,7 +199,8 @@ class CanonicalCurriculumDeliveryTest extends TestCase
         $this->get(route('curriculum.sections.show', 'HSP-C07-LS-13'))
             ->assertOk()
             ->assertSee('Previous')
-            ->assertDontSee('rel="next"', escape: false);
+            ->assertSee('rel="next"', escape: false)
+            ->assertSeeText('Finish learning step 3');
     }
 
     public function test_canonical_activity_completion_is_authorized_persisted_and_reflected_in_progress(): void
@@ -210,8 +237,12 @@ class CanonicalCurriculumDeliveryTest extends TestCase
         $this->get(route('dashboard'))->assertOk()->assertSee('25%');
         $this->get(route('curriculum.activities.show', $activityCode))
             ->assertOk()
-            ->assertSee('Progress state: completed')
-            ->assertSee('Attempts: 1');
+            ->assertSeeText('Completed')
+            ->assertSeeText('1 attempt')
+            ->assertSeeText('Your written practice stays private')
+            ->assertDontSeeText('raw server response')
+            ->assertDontSeeText('validation error may keep it temporarily')
+            ->assertDontSeeText('Progress state: completed');
     }
 
     public function test_retired_completion_endpoint_rejects_canonical_entities(): void
@@ -391,7 +422,7 @@ class CanonicalCurriculumDeliveryTest extends TestCase
             ->actingAs($this->learner)
             ->get(route('curriculum.chapters.show', 'HSP-C02'))
             ->assertOk()
-            ->assertSee('Capaian pembelajaran')
+            ->assertSee('Yang akan Anda latih')
             ->assertSee('Front Desk and Check-In');
 
         $this->get(route('dashboard'))

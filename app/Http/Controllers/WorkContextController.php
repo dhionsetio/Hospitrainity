@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Enums\WorkContextRole;
+use App\Services\InstitutionContext;
 use App\Services\RoleLandingResolver;
 use App\Services\WorkContext;
 use Illuminate\Http\RedirectResponse;
@@ -20,10 +21,13 @@ class WorkContextController extends Controller
             return $landing->redirect($request->user());
         }
 
+        $currentRole = $contexts->current($request, $request->user());
+
         return view('work-context.index', [
             'contexts' => $contexts->available($request, $request->user()),
-            'currentRole' => $contexts->current($request, $request->user()),
+            'currentRole' => $currentRole,
             'currentPreview' => $request->session()->get(WorkContext::SESSION_PREVIEW_KEY) === true,
+            'currentInstitutionId' => $request->session()->get(InstitutionContext::SESSION_KEY),
         ]);
     }
 

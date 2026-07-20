@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Rules\SecurePassword;
 use App\Services\MfaService;
+use App\Services\RoleLandingResolver;
 use App\Services\SecurityEventRecorder;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -17,8 +18,11 @@ use Laravel\Fortify\Contracts\TwoFactorAuthenticationProvider;
 
 class SecuritySettingsController extends Controller
 {
-    public function index(Request $request, TwoFactorAuthenticationProvider $totp): View
-    {
+    public function index(
+        Request $request,
+        TwoFactorAuthenticationProvider $totp,
+        RoleLandingResolver $landing,
+    ): View {
         $user = $request->user();
         $secret = $user->two_factor_secret === null ? null : Crypt::decryptString($user->two_factor_secret);
 
@@ -31,6 +35,7 @@ class SecuritySettingsController extends Controller
             'currentSessionId' => $request->session()->getId(),
             'recoveryCodes' => $request->session()->pull('new_mfa_recovery_codes', []),
             'passwordFresh' => time() - (int) $request->session()->get('auth.password_confirmed_at', 0) <= (int) config('auth.password_timeout', 900),
+            'returnUrl' => $landing->url($user),
         ]);
     }
 

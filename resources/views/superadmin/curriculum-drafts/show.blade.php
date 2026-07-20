@@ -10,7 +10,7 @@
         @include('superadmin.sidebar')
 
         <main class="min-w-0 flex-1 p-6 md:p-10">
-            <a href="{{ route($routePrefix.'.curriculum-drafts.index') }}" class="font-semibold text-indigo-700 underline">&larr; {{ __('admin.canonical_drafts') }}</a>
+            <x-back-control :href="route($routePrefix.'.curriculum-drafts.index')" :label="__('admin.canonical_drafts')" />
             <header class="mt-4 flex flex-wrap items-start justify-between gap-4 rounded-xl bg-white p-6 shadow">
                 <div>
                     <div class="flex flex-wrap gap-2"><span class="rounded-full bg-indigo-100 px-3 py-1 font-semibold text-indigo-800">{{ __('admin.'.$draft->status->value) }}</span><span class="rounded-full bg-neutral-100 px-3 py-1 font-mono text-neutral-700">{{ $draft->content_version }}</span></div>

@@ -5,7 +5,7 @@
 @section('content')
     <main id="main-content" class="mx-auto max-w-5xl space-y-8 px-4 py-8 sm:px-6">
         <header>
-            <a href="{{ url()->previous() }}" class="font-semibold text-indigo-700 underline">&larr; {{ __('Back') }}</a>
+            <x-back-control :href="$returnUrl" :label="__('Return to current dashboard')" />
             <h1 class="mt-4 text-3xl font-bold text-neutral-900">{{ __('Privacy and account requests') }}</h1>
             <p class="mt-2 max-w-3xl text-neutral-700">{{ __('Submit one tracked request at a time for each request type. Status and reasons remain visible here; sensitive exports and deletion require recent password confirmation.') }}</p>
         </header>

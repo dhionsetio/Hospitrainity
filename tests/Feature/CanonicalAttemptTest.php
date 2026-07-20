@@ -51,7 +51,8 @@ class CanonicalAttemptTest extends TestCase
         $this->actingAs($this->learner)
             ->get(route('curriculum.activities.show', 'HSP-C02-ACT-QUIZ'))
             ->assertOk()
-            ->assertSee('Progress state: viewed');
+            ->assertSeeText('Ready to practise')
+            ->assertDontSeeText('Progress state: viewed');
 
         $this->assertDatabaseHas('curriculum_activity_progress', [
             'user_id' => $this->learner->id,

@@ -5,7 +5,7 @@
 @section('content')
 <main id="main-content" class="mx-auto w-full max-w-5xl space-y-8 px-4 py-8 sm:px-6">
     <div>
-        <a href="{{ url('/') }}" class="text-sm font-semibold text-indigo-700">&larr; {{ __('Return to Hospitrainity') }}</a>
+        <x-back-control :href="$returnUrl" :label="__('Return to current dashboard')" />
         <h1 class="mt-3 text-3xl font-bold text-neutral-950">{{ __('Account security') }}</h1>
         <p class="mt-2 text-neutral-700">{{ __('Manage phishing-resistant passkeys, authenticator-app fallback, recovery codes, password, and signed-in sessions.') }}</p>
     </div>

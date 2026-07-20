@@ -15,7 +15,10 @@ use Illuminate\Support\Collection;
 
 class CanonicalCurriculumRepository
 {
-    public function __construct(private readonly LearningContext $learningContext) {}
+    public function __construct(
+        private readonly LearningContext $learningContext,
+        private readonly CurriculumStepPlanner $steps,
+    ) {}
 
     public function activePackage(): ?CurriculumPackage
     {
@@ -117,6 +120,24 @@ class CanonicalCurriculumRepository
             ->get()
             ->keyBy('code');
 
+        $sectionModels = $sections->map(static function (CurriculumEntity $section) use ($activities): array {
+            $activity = $activities[$section->code] ?? null;
+
+            return [
+                'code' => $section->code,
+                'title' => $section->payload['title'],
+                'order' => (int) $section->position,
+                'status' => $section->lifecycle_status,
+                'source_locator' => $section->payload['source_locator'] ?? null,
+                'activity' => $activity === null ? null : [
+                    'code' => $activity->code,
+                    'title' => $activity->payload['title'],
+                    'response_form' => $activity->payload['response_form'],
+                    'scoring_mode' => $activity->payload['scoring_mode'],
+                ],
+            ];
+        })->values();
+
         return [
             'code' => $chapter->code,
             'title' => $chapter->payload['title'],
@@ -128,23 +149,8 @@ class CanonicalCurriculumRepository
                     ? array_merge(['code' => $outcomeCode], $outcomes[$outcomeCode]->payload)
                     : null,
             )->filter()->values(),
-            'sections' => $sections->map(static function (CurriculumEntity $section) use ($activities): array {
-                $activity = $activities[$section->code] ?? null;
-
-                return [
-                    'code' => $section->code,
-                    'title' => $section->payload['title'],
-                    'order' => (int) $section->position,
-                    'status' => $section->lifecycle_status,
-                    'source_locator' => $section->payload['source_locator'] ?? null,
-                    'activity' => $activity === null ? null : [
-                        'code' => $activity->code,
-                        'title' => $activity->payload['title'],
-                        'response_form' => $activity->payload['response_form'],
-                        'scoring_mode' => $activity->payload['scoring_mode'],
-                    ],
-                ];
-            })->values(),
+            'sections' => $sectionModels,
+            'steps' => $this->steps->group($sectionModels),
             'package' => $package,
         ];
     }
@@ -206,6 +212,18 @@ class CanonicalCurriculumRepository
             'code' => $item->code,
             'title' => $item->payload['title'],
         ];
+        $chapterSections = $sequence
+            ->filter(static fn (CurriculumEntity $item): bool => $item->parent_code === $chapter->code)
+            ->values()
+            ->map(static fn (CurriculumEntity $item): array => [
+                'code' => $item->code,
+                'title' => $item->payload['title'],
+                'order' => (int) $item->position,
+            ]);
+        $step = $this->steps->context($chapterSections, $section->code);
+        if ($step === null) {
+            return null;
+        }
         $blocks = array_map(function (array $block): array {
             $path = $block['asset']['path'] ?? null;
             if (is_string($path) && preg_match('#^assets/([0-9a-f]{64})\.(jpg|jpeg|png|webp|mp3|wav)$#', $path, $matches) === 1) {
@@ -237,6 +255,7 @@ class CanonicalCurriculumRepository
                 'previous' => $navigationItem($current > 0 ? $sequence[$current - 1] : null),
                 'next' => $navigationItem($current + 1 < $sequence->count() ? $sequence[$current + 1] : null),
             ],
+            'step' => $step,
             'package' => $package,
         ];
     }

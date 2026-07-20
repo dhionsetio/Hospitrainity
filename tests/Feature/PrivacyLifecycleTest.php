@@ -35,6 +35,7 @@ class PrivacyLifecycleTest extends TestCase
             $this->get(route('policies.show', ['type' => $type]))
                 ->assertOk()
                 ->assertSee('2026-07-20-prototype.1')
+                ->assertSee('href="'.url('/').'"', false)
                 ->assertSee('qualified legal review not recorded', false);
         }
 
@@ -42,6 +43,13 @@ class PrivacyLifecycleTest extends TestCase
             ->assertOk()
             ->assertSee(route('policies.show', ['type' => 'privacy']), false)
             ->assertSee(route('policies.show', ['type' => 'terms']), false);
+
+        $learner = User::factory()->create();
+        $this->actingAs($learner)
+            ->get(route('policies.show', ['type' => 'privacy']))
+            ->assertOk()
+            ->assertSee('href="'.route('dashboard').'"', false)
+            ->assertSee('Return to current dashboard');
     }
 
     public function test_registration_records_separate_versioned_policy_acknowledgements(): void
@@ -70,7 +78,13 @@ class PrivacyLifecycleTest extends TestCase
     {
         $user = User::factory()->create();
 
-        $this->actingAs($user)->post(route('privacy-requests.store'), [
+        $this->actingAs($user)
+            ->get(route('privacy-requests.index'))
+            ->assertOk()
+            ->assertSee('href="'.route('dashboard').'"', false)
+            ->assertSee('Return to current dashboard');
+
+        $this->post(route('privacy-requests.store'), [
             'type' => DataSubjectRequestType::AccessExport->value,
             'confirm_effects' => '1',
         ])->assertRedirect(route('privacy-requests.sensitive', ['type' => 'access-export']));
