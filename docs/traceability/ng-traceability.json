@@ -190,15 +190,46 @@
                 "Qualified legal approval"
             ],
             "required_evidence": "Field-retention matrix; rights request/export/delete/hold tests; pseudonymized retained audit; legal sign-off",
-            "status": "open",
+            "status": "human_review",
             "evidence": {
-                "code": [],
-                "migrations": [],
-                "automated_tests": [],
-                "browser_device_checks": [],
-                "human_legal_reviews": [],
-                "production_evidence": [],
-                "checkpoints": []
+                "code": [
+                    "config/privacy.php",
+                    "config/push.php",
+                    "app/Services/PolicyDocumentRegistry.php",
+                    "app/Services/DataSubjectRequestService.php",
+                    "app/Services/DataExportBuilder.php",
+                    "app/Services/AccountErasureService.php",
+                    "app/Services/PrivacyRetentionService.php",
+                    "app/Services/PushNotificationService.php",
+                    "app/Http/Controllers/PrivacyRequestController.php",
+                    "app/Http/Controllers/Superadmin/PrivacyRequestAdministrationController.php",
+                    "resources/views/policies/show.blade.php",
+                    "resources/views/privacy-requests/index.blade.php",
+                    "resources/views/privacy-requests/sensitive.blade.php",
+                    "resources/views/partials/public-footer.blade.php",
+                    "public/push-service-worker.js"
+                ],
+                "migrations": [
+                    "database/migrations/2026_07_20_000014_create_privacy_lifecycle_tables.php"
+                ],
+                "automated_tests": [
+                    "tests/Feature/PrivacyLifecycleTest.php",
+                    "tests/Feature/RegistrationTest.php",
+                    "tests/Feature/ProductionReadinessCheckerTest.php",
+                    "tests/Feature/SecurityHeadersTest.php"
+                ],
+                "browser_device_checks": [
+                    "Versioned trust pages, registration linkage, recent-password step-up, request submission/status, and cancellation passed 8/8 targeted journeys in patched desktop/mobile Chromium and WebKit. This is not branded Safari, Firefox, Edge, Opera, physical-device, or assistive-technology evidence."
+                ],
+                "human_legal_reviews": [
+                    "Owner approved the recommended lightweight retention/deletion direction and supplied the prototype operator name/email. The published text explicitly says qualified legal review, a statutory DPO, and the production-controller determination are not recorded; those gates remain release-blocking."
+                ],
+                "production_evidence": [
+                    "Migration 000014 is installed on the authoritative SQLite database after a verified backup; integrity is ok and foreign-key violations are zero. The production checker passes the privacy schema and asynchronous queue but rejects an unestablished production controller and missing VAPID secrets. No production compliance claim is made."
+                ],
+                "checkpoints": [
+                    "docs/checkpoints/NG-B02-CHECKPOINT.md"
+                ]
             }
         },
         {
@@ -679,29 +710,36 @@
                 "code": [
                     "app/Http/Controllers/Auth/RegisterController.php",
                     "app/Http/Controllers/InstitutionEnrollmentController.php",
+                    "app/Http/Controllers/PublicPolicyController.php",
+                    "app/Services/PolicyDocumentRegistry.php",
                     "resources/views/register.blade.php",
-                    "resources/views/institution-enrollment/index.blade.php"
+                    "resources/views/institution-enrollment/index.blade.php",
+                    "resources/views/policies/show.blade.php",
+                    "resources/views/partials/public-footer.blade.php"
                 ],
                 "migrations": [
-                    "database/migrations/2026_07_20_000013_establish_tenant_roles_and_join_codes.php"
+                    "database/migrations/2026_07_20_000013_establish_tenant_roles_and_join_codes.php",
+                    "database/migrations/2026_07_20_000014_create_privacy_lifecycle_tables.php"
                 ],
                 "automated_tests": [
                     "tests/Feature/RegistrationTest.php",
                     "tests/Feature/InstitutionJoinCodeEnrollmentTest.php",
+                    "tests/Feature/PrivacyLifecycleTest.php",
                     "tests/Feature/AccessibilityMarkupTest.php",
                     "tests/Feature/LangParityTest.php"
                 ],
                 "browser_device_checks": [
-                    "Personal registration warning and non-enumeration journey passed in patched desktop/mobile Chromium and WebKit."
+                    "Personal registration warning, versioned public trust links, and sensitive privacy-request step-up passed in patched desktop/mobile Chromium and WebKit."
                 ],
                 "human_legal_reviews": [
-                    "Owner approved the personal/institution progress warning; qualified legal approval and final versioned trust copy remain open."
+                    "Owner approved the personal/institution progress warning and prototype trust direction; qualified legal approval and final production-controller determination remain open."
                 ],
                 "production_evidence": [
-                    "Registration records a versioned learning-scope acknowledgment, but final privacy/terms/help/support destinations and qualified legal interpretation remain release-blocking."
+                    "Registration now separately records hashed versioned privacy and terms acknowledgements. Privacy, terms, accessibility, acceptable-use, support, and authenticated request destinations exist; qualified legal interpretation and B05 final public IA/usability evidence remain release-blocking."
                 ],
                 "checkpoints": [
-                    "docs/checkpoints/NG-B02-B05-ARCHITECTURE-CHECKPOINT.md"
+                    "docs/checkpoints/NG-B02-B05-ARCHITECTURE-CHECKPOINT.md",
+                    "docs/checkpoints/NG-B02-CHECKPOINT.md"
                 ]
             }
         },

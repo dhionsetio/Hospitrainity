@@ -8,6 +8,7 @@ enum AccountDisableReason: string
     case OwnerRequest = 'owner_request';
     case SecurityHold = 'security_hold';
     case PrivacyRestriction = 'privacy_restriction';
+    case PrivacyRequest = 'privacy_request';
     case MembershipEnded = 'membership_ended';
     case Other = 'other';
 }

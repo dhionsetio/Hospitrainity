@@ -1,0 +1,39 @@
+{
+    "schema_version": "1.0.0",
+    "batch": "B02",
+    "date": "2026-07-20",
+    "branch": "codex/ng-b02-privacy-lifecycle",
+    "parent_commit": "cf35ff6",
+    "migration": {
+        "name": "2026_07_20_000014_create_privacy_lifecycle_tables",
+        "batch": 13,
+        "backup_path": "storage/app/backup-snapshots/b02-preprivacy-20260720-134756.sqlite",
+        "backup_sha256": "bcaa1f2fd34fe0b92f4afb54dd9b1259f12897a3b81cdcdc5d9ab719337fae91",
+        "sqlite_integrity": "ok",
+        "foreign_key_violations": 0,
+        "authoritative_rows_deleted": 0
+    },
+    "verification": {
+        "focused_laravel_tests": 10,
+        "focused_laravel_assertions": 85,
+        "laravel_tests": 309,
+        "laravel_assertions": 4716,
+        "node_tests": 50,
+        "targeted_playwright_tests": 8,
+        "playwright_projects": ["chromium", "webkit", "mobile-chromium", "mobile-webkit"],
+        "traceability_findings": 43,
+        "tracked_files_scanned": 1569,
+        "unallowlisted_secret_findings": 0,
+        "vite_version": "6.4.3",
+        "build": "passed",
+        "pint": "passed",
+        "git_diff_check": "passed"
+    },
+    "external_gates": [
+        "qualified legal/privacy review",
+        "production controller and processor determination",
+        "production topology and backup restore rehearsal",
+        "real VAPID key configuration and browser subscription delivery",
+        "branded browser, physical device, assistive technology, and human accessibility evidence"
+    ]
+}

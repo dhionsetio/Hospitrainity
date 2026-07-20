@@ -28,10 +28,14 @@ use App\Http\Controllers\LegacyEvidenceController;
 use App\Http\Controllers\LessonController;
 use App\Http\Controllers\MaterialController;
 use App\Http\Controllers\ModuleController;
+use App\Http\Controllers\PrivacyRequestController;
 use App\Http\Controllers\ProgressController;
+use App\Http\Controllers\PublicPolicyController;
+use App\Http\Controllers\PushSubscriptionController;
 use App\Http\Controllers\Superadmin\AdminDashboardController;
 use App\Http\Controllers\Superadmin\AdministrationAuditController;
 use App\Http\Controllers\Superadmin\LearnerProgressController as SuperadminLearnerProgressController;
+use App\Http\Controllers\Superadmin\PrivacyRequestAdministrationController;
 use App\Http\Controllers\Superadmin\UserAdministrationController;
 use App\Http\Controllers\Supervisor\LearnerProgressController as SupervisorLearnerProgressController;
 use App\Http\Controllers\Supervisor\SpvDashboardController;
@@ -125,6 +129,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/policies/{type}', [PublicPolicyController::class, 'show'])
+    ->whereIn('type', ['privacy', 'terms', 'accessibility', 'acceptable-use', 'support'])
+    ->name('policies.show');
+
 /*
 |--------------------------------------------------------------------------
 | Locale switching (session-driven; honoured by App\Http\Middleware\SetLocale)
@@ -184,6 +192,27 @@ Route::middleware(['auth', 'verified'])->group(function (): void {
     Route::get('/work-context', [WorkContextController::class, 'index'])->name('work-context.index');
     Route::post('/work-context', [WorkContextController::class, 'store'])
         ->middleware('throttle:institution-switch')->name('work-context.store');
+    Route::get('/privacy/requests', [PrivacyRequestController::class, 'index'])
+        ->name('privacy-requests.index');
+    Route::get('/privacy/requests/sensitive/{type}', [PrivacyRequestController::class, 'sensitive'])
+        ->whereIn('type', ['access-export', 'deletion'])
+        ->middleware('password.confirm')
+        ->name('privacy-requests.sensitive');
+    Route::post('/privacy/requests', [PrivacyRequestController::class, 'store'])
+        ->middleware('throttle:privacy-request')
+        ->name('privacy-requests.store');
+    Route::patch('/privacy/requests/{privacyRequest}/cancel', [PrivacyRequestController::class, 'cancel'])
+        ->middleware('throttle:privacy-request')
+        ->name('privacy-requests.cancel');
+    Route::get('/privacy/exports/{export}', [PrivacyRequestController::class, 'download'])
+        ->middleware(['signed', 'throttle:privacy-export-download'])
+        ->name('privacy-exports.download');
+    Route::post('/push-subscriptions', [PushSubscriptionController::class, 'store'])
+        ->middleware('throttle:push-subscription')->name('push-subscriptions.store');
+    Route::delete('/push-subscriptions/{pushSubscription}', [PushSubscriptionController::class, 'destroy'])
+        ->middleware('throttle:push-subscription')->name('push-subscriptions.destroy');
+    Route::post('/push-subscriptions/test', [PushSubscriptionController::class, 'test'])
+        ->middleware('throttle:push-test')->name('push-subscriptions.test');
 });
 
 /*
@@ -334,6 +363,15 @@ Route::middleware(['auth', 'verified', 'role:superadmin'])->prefix('superadmin')
         Route::patch('/users/{user}/promote-superadmin', [UserAdministrationController::class, 'promoteSuperadmin'])
             ->middleware('throttle:superadmin-promotion')
             ->name('users.promote-superadmin');
+        Route::get('/privacy-requests', [PrivacyRequestAdministrationController::class, 'index'])
+            ->middleware('throttle:privacy-admin')
+            ->name('privacy-requests.index');
+        Route::get('/privacy-requests/{privacyRequest}', [PrivacyRequestAdministrationController::class, 'show'])
+            ->middleware('throttle:privacy-admin')
+            ->name('privacy-requests.show');
+        Route::patch('/privacy-requests/{privacyRequest}', [PrivacyRequestAdministrationController::class, 'update'])
+            ->middleware('throttle:privacy-admin-action')
+            ->name('privacy-requests.update');
     });
 
     Route::middleware('legacy.curriculum.writable')->group(function () {

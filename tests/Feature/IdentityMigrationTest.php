@@ -7,6 +7,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Str;
 use Tests\TestCase;
 
 class IdentityMigrationTest extends TestCase
@@ -19,6 +20,7 @@ class IdentityMigrationTest extends TestCase
         $migration->down();
 
         $now = now();
+        $testPassword = Str::password(40);
         $ids = [];
         foreach ([
             ['hq@example.com', 'Hospitrainity HQ', 'superadmin'],
@@ -32,7 +34,7 @@ class IdentityMigrationTest extends TestCase
                 'email' => $email,
                 'email_verified_at' => $now,
                 'role' => $role,
-                'password' => Hash::make('test-double-password'),
+                'password' => Hash::make($testPassword),
                 'created_at' => $now,
                 'updated_at' => $now,
             ]);

@@ -160,6 +160,21 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany(InstitutionJoinRequest::class);
     }
 
+    public function privacyRequests(): HasMany
+    {
+        return $this->hasMany(DataSubjectRequest::class);
+    }
+
+    public function policyAcknowledgements(): HasMany
+    {
+        return $this->hasMany(PolicyAcknowledgement::class);
+    }
+
+    public function pushSubscriptions(): HasMany
+    {
+        return $this->hasMany(PushSubscription::class);
+    }
+
     public function hasInstitutionRole(Institution $institution, InstitutionRole ...$roles): bool
     {
         if ($roles === []) {

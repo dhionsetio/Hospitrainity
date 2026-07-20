@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Str;
 use Tests\TestCase;
 
 class IdentityMigrationPreflightCommandTest extends TestCase
@@ -25,6 +26,7 @@ class IdentityMigrationPreflightCommandTest extends TestCase
 
         try {
             $now = now();
+            $testPassword = Str::password(40);
             foreach ([
                 ['hq@example.com', 'Hospitrainity HQ'],
                 ['polinema@example.com', 'Politeknik Negeri Malang'],
@@ -36,7 +38,7 @@ class IdentityMigrationPreflightCommandTest extends TestCase
                     'email' => $email,
                     'email_verified_at' => $now,
                     'role' => 'user',
-                    'password' => Hash::make('test-double-password'),
+                    'password' => Hash::make($testPassword),
                     'created_at' => $now,
                     'updated_at' => $now,
                 ]);

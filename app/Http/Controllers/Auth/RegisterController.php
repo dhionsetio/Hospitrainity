@@ -6,7 +6,9 @@ use App\Enums\LegacyInstitutionState;
 use App\Enums\UserRole;
 use App\Http\Controllers\Controller;
 use App\Models\IdentityAudit;
+use App\Models\PolicyAcknowledgement;
 use App\Models\User;
+use App\Services\PolicyDocumentRegistry;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -18,9 +20,12 @@ use Illuminate\View\View;
 
 class RegisterController extends Controller
 {
-    public function showRegistrationForm(): View
+    public function showRegistrationForm(PolicyDocumentRegistry $policies): View
     {
-        return view('register');
+        return view('register', [
+            'privacyPolicy' => $policies->document('privacy'),
+            'termsPolicy' => $policies->document('terms'),
+        ]);
     }
 
     public function store(Request $request): RedirectResponse
@@ -38,9 +43,11 @@ class RegisterController extends Controller
             ],
             'password' => ['required', 'confirmed', Password::defaults()],
             'scope_acknowledgement' => ['accepted'],
+            'policy_acknowledgement' => ['accepted'],
         ]);
 
         $user = DB::transaction(function () use ($validated): User {
+            $policies = app(PolicyDocumentRegistry::class);
             $user = User::query()->create([
                 'name' => $validated['name'],
                 'instansi' => '',
@@ -57,6 +64,19 @@ class RegisterController extends Controller
                 'metadata' => ['notice_version' => 'personal-institution-boundary-v1'],
                 'created_at' => now(),
             ]);
+
+            foreach (['privacy', 'terms'] as $type) {
+                $document = $policies->document($type);
+                PolicyAcknowledgement::query()->create([
+                    'user_id' => $user->getKey(),
+                    'policy_type' => $type,
+                    'locale' => $document['locale'],
+                    'version' => $document['version'],
+                    'content_sha256' => $document['content_sha256'],
+                    'acknowledged_at' => now(),
+                    'source' => 'registration',
+                ]);
+            }
 
             return $user;
         }, attempts: 3);

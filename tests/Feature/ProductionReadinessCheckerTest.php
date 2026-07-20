@@ -181,6 +181,13 @@ class ProductionReadinessCheckerTest extends TestCase
             'security.csp.report_only' => false,
             'security.hsts.enabled' => true,
             'mail.default' => 'smtp',
+            'queue.default' => 'database',
+            'privacy.operator.production_controller_established' => true,
+            'privacy.operator.email' => 'privacy@example.test',
+            'push.enabled' => true,
+            'push.vapid.subject' => 'mailto:privacy@example.test',
+            'push.vapid.public_key' => str_repeat('A', 87),
+            'push.vapid.private_key' => str_repeat('B', 43),
         ]);
     }
 

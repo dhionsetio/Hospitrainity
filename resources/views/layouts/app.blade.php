@@ -22,6 +22,8 @@
     @endif
     @yield('content')
 
+    @include('partials.public-footer')
+
     @stack('scripts')
 </body>
 

@@ -13,8 +13,10 @@
     @stack('styles')
 </head>
 
-<body class="@yield('bodyClass', 'bg-neutral-50')">
+<body class="@yield('bodyClass', 'bg-neutral-50') flex-col">
     @yield('content')
+
+    @include('partials.public-footer')
 
     @stack('scripts')
 </body>

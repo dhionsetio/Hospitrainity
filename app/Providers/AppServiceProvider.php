@@ -153,6 +153,22 @@ class AppServiceProvider extends ServiceProvider
 
         RateLimiter::for('curriculum-publication', fn (Request $request): Limit => Limit::perHour(5)
             ->by('curriculum-publication:'.($request->user()?->getAuthIdentifier() ?? $request->ip())));
+
+        RateLimiter::for('privacy-request', fn (Request $request): array => [
+            Limit::perMinute(3)->by('privacy-request-user:'.($request->user()?->getAuthIdentifier() ?? $request->ip())),
+            Limit::perHour(20)->by('privacy-request-ip:'.$request->ip()),
+            Limit::perHour(500)->by('privacy-request-global'),
+        ]);
+        RateLimiter::for('privacy-export-download', fn (Request $request): Limit => Limit::perMinute(5)
+            ->by('privacy-export-user:'.($request->user()?->getAuthIdentifier() ?? $request->ip())));
+        RateLimiter::for('privacy-admin', fn (Request $request): Limit => Limit::perMinute(60)
+            ->by('privacy-admin:'.($request->user()?->getAuthIdentifier() ?? $request->ip())));
+        RateLimiter::for('privacy-admin-action', fn (Request $request): Limit => Limit::perMinute(10)
+            ->by('privacy-admin-action:'.($request->user()?->getAuthIdentifier() ?? $request->ip())));
+        RateLimiter::for('push-subscription', fn (Request $request): Limit => Limit::perMinute(10)
+            ->by('push-subscription:'.($request->user()?->getAuthIdentifier() ?? $request->ip())));
+        RateLimiter::for('push-test', fn (Request $request): Limit => Limit::perMinute(3)
+            ->by('push-test:'.($request->user()?->getAuthIdentifier() ?? $request->ip())));
     }
 
     private function rateLimitIdentity(mixed $value): string

@@ -43,7 +43,7 @@ class PasswordConfirmationController extends Controller
      * Resolve only the privileged destinations that deliberately share this
      * confirmation screen. Never trust a pre-authentication intended URL.
      *
-     * @return array{context: 'audit'|'users'|'institution_roles', url: string}
+     * @return array{context: 'audit'|'users'|'institution_roles'|'privacy'|'privacy_admin', url: string}
      */
     private function destination(Request $request): array
     {
@@ -111,6 +111,13 @@ class PasswordConfirmationController extends Controller
             ],
         ];
         $target = $destinations[$parts['path']] ?? null;
+
+        if (preg_match('#\A/privacy/requests/sensitive/(access-export|deletion)\z#', $parts['path']) === 1) {
+            $target = ['context' => 'privacy', 'filters' => []];
+        }
+        if (preg_match('#\A/superadmin/privacy-requests(?:/[0-9a-fA-F-]{36})?\z#', $parts['path']) === 1) {
+            $target = ['context' => 'privacy_admin', 'filters' => ['status' => 30]];
+        }
 
         if ($target === null) {
             return $fallback;

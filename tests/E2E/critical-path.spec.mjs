@@ -76,12 +76,39 @@ test('public registration creates a personal account without institution enumera
 
     await expect(page.getByRole('heading', { name: 'Create a personal learning account' })).toBeVisible();
     await expect(page.getByText('Earlier personal progress is not copied or shown to institution staff.')).toBeVisible();
-    await expect(page.getByRole('checkbox')).toHaveCount(1);
+    await expect(page.getByRole('checkbox')).toHaveCount(2);
+    await expect(page.getByRole('link', { name: 'privacy notice' })).toHaveAttribute('href', /\/policies\/privacy$/);
+    await expect(page.getByRole('link', { name: 'terms', exact: true })).toHaveAttribute('href', /\/policies\/terms$/);
     await expect(page.getByRole('combobox')).toHaveCount(0);
     await expect(page.getByText('Hotel A')).toHaveCount(0);
     await expect(page.getByText('Hotel B')).toHaveCount(0);
     await expect(page.getByText('Hospitrainity HQ')).toHaveCount(0);
     await expect(page.getByText('State Polytechnic of Malang')).toHaveCount(0);
+    expect(browserErrors).toEqual([]);
+});
+
+test('public trust pages are versioned and the sensitive request flow requires step-up', async ({ page }) => {
+    const browserErrors = captureBrowserErrors(page);
+    await page.goto('/policies/privacy');
+    await expect(page.getByRole('heading', { name: 'Privacy notice' })).toBeVisible();
+    await expect(page.getByText('2026-07-20-prototype.1')).toBeVisible();
+    await expect(page.getByText(/not a claim of legal compliance/i)).toBeVisible();
+    await expect(page.getByRole('link', { name: 'Accessibility' })).toBeVisible();
+
+    await signIn(page, testAccounts.learner);
+    await page.goto('/privacy/requests');
+    await expect(page.getByRole('heading', { name: 'Privacy and account requests' })).toBeVisible();
+    await page.getByRole('link', { name: /Download my data/ }).click();
+    await expect(page).toHaveURL(/\/confirm-password$/);
+    await page.getByLabel('Password').fill(testAccounts.learner.password);
+    await page.getByRole('button', { name: 'Confirm password' }).click();
+    await expect(page).toHaveURL(/\/privacy\/requests\/sensitive\/access-export$/);
+    await page.getByRole('checkbox').check();
+    await page.getByRole('button', { name: 'Submit sensitive request' }).click();
+    await expect(page.getByRole('status')).toContainText('Your request was recorded');
+    await expect(page.getByText('Access export').first()).toBeVisible();
+    await page.getByRole('button', { name: 'Cancel request' }).click();
+    await expect(page.getByRole('status')).toContainText('cancelled');
     expect(browserErrors).toEqual([]);
 });
 

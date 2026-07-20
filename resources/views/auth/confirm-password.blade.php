@@ -6,7 +6,7 @@
 @section('content')
     <main class="w-full max-w-md p-8 space-y-6 bg-white rounded-lg shadow-md">
         <div class="text-center">
-            <a href="{{ route('superadmin.dashboard') }}" class="text-3xl font-bold text-indigo-600">Hospitrainity</a>
+            <a href="{{ url('/') }}" class="text-3xl font-bold text-indigo-600">Hospitrainity</a>
             <h1 class="mt-4 text-2xl font-bold text-neutral-900">{{ __('admin.confirm_password_heading') }}</h1>
         </div>
 
@@ -25,7 +25,7 @@
             </div>
 
             <div class="flex items-center justify-between gap-4">
-                <a href="{{ route('superadmin.dashboard') }}" class="text-sm font-medium text-neutral-600 hover:text-neutral-900">{{ __('admin.cancel') }}</a>
+                <a href="{{ url('/') }}" class="text-sm font-medium text-neutral-600 hover:text-neutral-900">{{ __('admin.cancel') }}</a>
                 <button type="submit" class="rounded-md bg-indigo-600 px-5 py-3 text-sm font-semibold text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
                     {{ __('admin.confirm_password_action') }}
                 </button>

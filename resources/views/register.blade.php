@@ -53,6 +53,20 @@
                 </label>
                 @error('scope_acknowledgement')<p id="registration-scope-error" class="mt-1 text-sm text-red-700">{{ $message }}</p>@enderror
             </div>
+            <div>
+                <label class="flex items-start gap-3 text-sm text-neutral-700">
+                    <input type="checkbox" name="policy_acknowledgement" value="1" required @checked(old('policy_acknowledgement')) class="mt-1 shrink-0 rounded border-neutral-300 text-indigo-600 focus:ring-indigo-500"
+                        @error('policy_acknowledgement') aria-invalid="true" aria-describedby="registration-policy-error" @enderror>
+                    <span>
+                        {{ __('I have read the prototype') }}
+                        <a href="{{ route('policies.show', ['type' => 'privacy']) }}" class="font-semibold text-indigo-700 underline">{{ __('privacy notice') }}</a>
+                        {{ __('and') }}
+                        <a href="{{ route('policies.show', ['type' => 'terms']) }}" class="font-semibold text-indigo-700 underline">{{ __('terms') }}</a>
+                        ({{ $privacyPolicy['version'] }}). {{ __('This acknowledgment is separate from optional consent.') }}
+                    </span>
+                </label>
+                @error('policy_acknowledgement')<p id="registration-policy-error" class="mt-1 text-sm text-red-700">{{ $message }}</p>@enderror
+            </div>
             <button type="submit" class="w-full rounded-md bg-indigo-600 px-5 py-3 font-semibold text-white hover:bg-indigo-700">{{ __('Create account') }}</button>
         </form>
 

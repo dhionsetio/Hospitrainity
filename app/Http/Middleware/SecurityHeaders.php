@@ -19,7 +19,13 @@ class SecurityHeaders
         }
 
         $response->headers->set('X-Content-Type-Options', 'nosniff');
-        $sensitiveTokenRoute = $request->routeIs('invitations.accept', 'invitations.redeem');
+        $sensitiveTokenRoute = $request->routeIs(
+            'invitations.accept',
+            'invitations.redeem',
+            'privacy-requests.*',
+            'privacy-exports.*',
+            'superadmin.privacy-requests.*',
+        );
         $response->headers->set('Referrer-Policy', $sensitiveTokenRoute ? 'no-referrer' : 'strict-origin-when-cross-origin');
         if ($sensitiveTokenRoute) {
             $response->headers->set('Cache-Control', 'no-store, private');

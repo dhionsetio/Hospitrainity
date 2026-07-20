@@ -3,7 +3,7 @@
 - Decision date: 2026-07-20 (Asia/Jakarta)
 - Batch: B02
 - Accountable owner: Dhion Setio
-- Status: enrollment architecture implemented expand-first; privacy/legal and production gates remain
+- Status: enrollment and technical privacy lifecycle implemented expand-first; qualified legal/controller/topology and production gates remain
 - Supersedes: the B02 portion of the blanket-pending decision-register row
 
 ## Accepted direction
@@ -53,6 +53,12 @@ The approved personal-registration, pending adjustable-duration classroom-code r
 2026-07-20 follow-up: the owner superseded the fixed one-hour expiry. Authorized issuers now select days, hours, minutes, and seconds, with a validated total of 1 second to 30 days inclusive. Existing codes retain their stored expiry.
 
 All three known demo accounts remain enabled by explicit owner instruction. No authoritative user, progress row, session, institution, or membership was deleted during this implementation. Evidence is recorded in `docs/checkpoints/NG-B02-B05-ARCHITECTURE-CHECKPOINT.md`.
+
+## 2026-07-20 privacy-lifecycle completion follow-up
+
+The technical B02 scope is now implemented and migration `000014` is installed: versioned bilingual public trust documents; separate registration acknowledgements; authenticated rights requests and recent-password staff queue; encrypted asynchronous JSON/accessible-HTML/sanitized-CSV export; signed expiring owner download; idempotent pseudonymization/deletion with retained institution/audit evidence; retention dry-run/execution/schedule; explicit encrypted browser push subscriptions and standards-based VAPID delivery; and deployment checks for schema, async queue, controller/contact, and VAPID.
+
+The confirmed name/email are used only as configurable prototype operator/contact. The public copy explicitly says a statutory DPO, production controller relationship, qualified legal review, processors/transfers, and compliance conclusion are not established. VAPID secrets are intentionally absent locally, so push subscription prompts are disabled until a real deployment key pair exists. These external gates remain release-blocking; they are not stale technical to-dos and are not represented as completed evidence. See `docs/checkpoints/NG-B02-CHECKPOINT.md` and `docs/PRIVACY_DATA_LIFECYCLE.md`.
 
 ## Evidence basis
 

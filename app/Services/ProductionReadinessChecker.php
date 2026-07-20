@@ -156,6 +156,32 @@ class ProductionReadinessChecker
                 'Normalized tenant roles, classroom-code requests, and separated learning-scope schema must be installed.',
             ),
             $this->check(
+                'privacy_lifecycle_schema',
+                Schema::hasTable('policy_acknowledgements')
+                    && Schema::hasTable('data_subject_requests')
+                    && Schema::hasTable('data_subject_request_events')
+                    && Schema::hasTable('data_exports')
+                    && Schema::hasTable('account_erasure_steps')
+                    && Schema::hasTable('push_subscriptions'),
+                'The versioned policy, rights-request, export, erasure, and push-subscription schema must be installed.',
+            ),
+            $this->check(
+                'privacy_controller_established',
+                config('privacy.operator.production_controller_established') === true
+                    && filter_var(config('privacy.operator.email'), FILTER_VALIDATE_EMAIL) !== false,
+                'A reviewed production controller/operator and privacy contact must be explicitly configured.',
+            ),
+            $this->check(
+                'privacy_async_queue',
+                ! in_array(strtolower((string) config('queue.default')), ['', 'sync'], true),
+                'Privacy exports, erasure, and push delivery require an asynchronous production queue.',
+            ),
+            $this->check(
+                'push_notifications_configured',
+                app(PushNotificationService::class)->configured(),
+                'Approved Web Push requires enabled VAPID configuration with non-empty public/private keys and a valid subject.',
+            ),
+            $this->check(
                 'identity_session_migration_finalized',
                 ($this->identityMigrationFinalized)(),
                 'The explicitly confirmed normalized-identity session revocation must be complete.',

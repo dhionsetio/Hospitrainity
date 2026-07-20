@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Str;
 use Tests\TestCase;
 
 class DisabledAccountLifecycleTest extends TestCase
@@ -58,17 +59,18 @@ class DisabledAccountLifecycleTest extends TestCase
     public function test_disabled_account_cannot_login_or_receive_or_use_a_reset_link(): void
     {
         Notification::fake();
+        $plainPassword = Str::password(40);
         $actor = User::factory()->create(['role' => UserRole::Superadmin]);
         $target = User::factory()->create([
             'email' => 'disabled@example.com',
-            'password' => Hash::make('correct-password'),
+            'password' => Hash::make($plainPassword),
         ]);
         app(AccountLifecycleService::class)
             ->disable($target, $actor, AccountDisableReason::OwnerRequest);
 
         $this->post(route('login'), [
             'email' => 'disabled@example.com',
-            'password' => 'correct-password',
+            'password' => $plainPassword,
         ])->assertSessionHasErrors('email');
         $this->assertGuest();
 
@@ -79,10 +81,11 @@ class DisabledAccountLifecycleTest extends TestCase
 
     public function test_a_reset_token_issued_before_disabling_cannot_reset_the_account(): void
     {
+        $plainPassword = Str::password(40);
         $actor = User::factory()->create(['role' => UserRole::Superadmin]);
         $target = User::factory()->create([
             'email' => 'disabled-token@example.com',
-            'password' => Hash::make('original-password'),
+            'password' => Hash::make($plainPassword),
         ]);
         $token = Password::createToken($target);
         app(AccountLifecycleService::class)
@@ -95,7 +98,7 @@ class DisabledAccountLifecycleTest extends TestCase
             'password_confirmation' => 'replacement-password',
         ])->assertSessionHasErrors('email');
 
-        $this->assertTrue(Hash::check('original-password', $target->fresh()->password));
+        $this->assertTrue(Hash::check($plainPassword, $target->fresh()->password));
     }
 
     public function test_an_authenticated_disabled_account_is_logged_out_on_its_next_request(): void
@@ -114,10 +117,11 @@ class DisabledAccountLifecycleTest extends TestCase
 
     public function test_reenabling_is_audited_and_restores_authentication_eligibility(): void
     {
+        $plainPassword = Str::password(40);
         $actor = User::factory()->create(['role' => UserRole::Superadmin]);
         $target = User::factory()->create([
             'email' => 'reenabled@example.com',
-            'password' => Hash::make('correct-password'),
+            'password' => Hash::make($plainPassword),
         ]);
         $lifecycle = app(AccountLifecycleService::class);
         $lifecycle->disable($target, $actor, AccountDisableReason::TestFixture);
@@ -133,7 +137,7 @@ class DisabledAccountLifecycleTest extends TestCase
         ]);
         $this->post(route('login'), [
             'email' => 'reenabled@example.com',
-            'password' => 'correct-password',
+            'password' => $plainPassword,
         ])->assertRedirect();
         $this->assertAuthenticatedAs($target);
     }

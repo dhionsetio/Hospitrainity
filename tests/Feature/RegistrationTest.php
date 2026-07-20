@@ -43,6 +43,7 @@ class RegistrationTest extends TestCase
             'password' => 'A-reliable-test-password-2026!',
             'password_confirmation' => 'A-reliable-test-password-2026!',
             'scope_acknowledgement' => '1',
+            'policy_acknowledgement' => '1',
             'role' => UserRole::Superadmin->value,
             'institution_id' => Institution::query()->where('key', 'hospitrainity-hq')->value('id'),
         ])->assertRedirect(route('verification.notice'));
@@ -70,6 +71,7 @@ class RegistrationTest extends TestCase
             'password' => 'A-reliable-test-password-2026!',
             'password_confirmation' => 'A-reliable-test-password-2026!',
             'scope_acknowledgement' => '1',
+            'policy_acknowledgement' => '1',
         ])->assertSessionHasErrors('email');
 
         $this->assertDatabaseCount('users', 1);

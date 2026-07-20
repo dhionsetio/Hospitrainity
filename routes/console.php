@@ -1,8 +1,10 @@
 <?php
 
+use App\Services\PrivacyRetentionService;
 use App\Services\PublicMediaManager;
 use Illuminate\Foundation\Inspiring;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Schedule;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Symfony\Component\Console\Command\Command;
@@ -67,3 +69,15 @@ Artisan::command('hospitrainity:storage-health', function () {
         }
     }
 })->purpose('Verify the public storage link and a write/read/delete media probe');
+
+Artisan::command('hospitrainity:privacy-retention {--execute}', function () {
+    $result = app(PrivacyRetentionService::class)->run((bool) $this->option('execute'));
+    $mode = $result['execute'] ? 'executed' : 'dry-run';
+    $this->info("Privacy retention {$mode}: {$result['expired_exports']} expired export(s), {$result['minimized_requests']} request(s) ready for minimization, {$result['removed_subscriptions']} revoked subscription(s).");
+
+    return Command::SUCCESS;
+})->purpose('Preview or execute approved privacy retention and artifact expiry');
+
+Schedule::command('hospitrainity:privacy-retention --execute')
+    ->dailyAt('02:30')
+    ->withoutOverlapping();

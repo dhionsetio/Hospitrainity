@@ -4,6 +4,7 @@ import { createMediaController, isPlaybackCancellation } from './media-playback'
 import { registerAdminComponents } from './admin-forms';
 import { initializeCanonicalActivity } from './canonical-activity';
 import { initializeExerciseAuthoring } from './canonical-exercise-authoring';
+import { initializePushNotifications } from './push-notifications';
 
 registerAdminComponents(Alpine);
 window.Alpine = Alpine;
@@ -17,6 +18,7 @@ window.HospitrainityMedia = Object.freeze({ createMediaController, isPlaybackCan
 function initializePageInteractions() {
     initializeCanonicalActivity();
     initializeExerciseAuthoring();
+    initializePushNotifications();
 
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
