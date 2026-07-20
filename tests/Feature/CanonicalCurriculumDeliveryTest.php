@@ -59,15 +59,23 @@ class CanonicalCurriculumDeliveryTest extends TestCase
         $this->actingAs($this->learner)
             ->get(route('dashboard'))
             ->assertOk()
-            ->assertSee('0.4.0-draft')
+            ->assertDontSeeText('0.4.0-draft')
+            ->assertDontSeeText('Source and lifecycle evidence')
+            ->assertDontSeeText('Technical evidence')
             ->assertSee('Welcome and Introduction to Customer Care')
             ->assertSee('Dealing with Problems and Complaints');
 
         $this->get(route('curriculum.chapters.show', 'HSP-C02'))
             ->assertOk()
             ->assertSee('Front Desk and Check-In')
-            ->assertSee('HSP-C02-LS-13')
+            ->assertDontSeeText('HSP-C02-LS-13')
+            ->assertDontSeeText('Outcome evidence')
+            ->assertDontSeeText('Section evidence')
             ->assertSee('Open section');
+
+        $this->get(route('curriculum.sections.show', 'HSP-C02-LS-01'))
+            ->assertOk()
+            ->assertDontSeeText('Source and lifecycle evidence');
 
         $this->get(route('curriculum.activities.show', 'HSP-C02-ACT-QUIZ'))
             ->assertOk()
@@ -75,7 +83,36 @@ class CanonicalCurriculumDeliveryTest extends TestCase
             ->assertSee('Could I see your ID, please?')
             ->assertDontSee('Could I ... please?')
             ->assertSee('<fieldset', escape: false)
-            ->assertSee('objective choice');
+            ->assertDontSeeText('objective choice');
+    }
+
+    public function test_curriculum_evidence_is_reserved_for_system_admin_learner_context(): void
+    {
+        $systemAdmin = User::factory()->create(['role' => 'superadmin', 'email_verified_at' => now()]);
+        $this->actingAs($systemAdmin)
+            ->post(route('work-context.store'), ['role' => 'learner'])
+            ->assertRedirect(route('dashboard'));
+
+        $this->get(route('dashboard'))
+            ->assertOk()
+            ->assertSeeText('Non-production draft preview')
+            ->assertSeeText('0.4.0-draft')
+            ->assertSeeText('Source and lifecycle evidence')
+            ->assertSeeText('Technical evidence');
+
+        $this->get(route('curriculum.chapters.show', 'HSP-C02'))
+            ->assertOk()
+            ->assertSeeText('Outcome evidence')
+            ->assertSeeText('Section evidence')
+            ->assertSeeText('Source and lifecycle evidence');
+
+        $this->get(route('curriculum.sections.show', 'HSP-C02-LS-01'))
+            ->assertOk()
+            ->assertSeeText('Source and lifecycle evidence');
+
+        $this->get(route('curriculum.activities.show', 'HSP-C02-ACT-QUIZ'))
+            ->assertOk()
+            ->assertSeeText('objective choice');
     }
 
     public function test_section_view_model_preserves_ordered_blocks_tables_links_and_sequence_navigation(): void
@@ -357,6 +394,14 @@ class CanonicalCurriculumDeliveryTest extends TestCase
             ->assertSee('Capaian pembelajaran')
             ->assertSee('Front Desk and Check-In');
 
+        $this->get(route('dashboard'))
+            ->assertOk()
+            ->assertDontSeeText('tanpa terjemahan buatan');
+
+        $systemAdmin = User::factory()->create(['role' => 'superadmin', 'email_verified_at' => now()]);
+        $this->actingAs($systemAdmin)
+            ->post(route('work-context.store'), ['role' => 'learner'])
+            ->assertRedirect(route('dashboard'));
         $this->get(route('dashboard'))
             ->assertOk()
             ->assertSee('tanpa terjemahan buatan', escape: false);

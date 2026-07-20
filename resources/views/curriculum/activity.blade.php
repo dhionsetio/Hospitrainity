@@ -8,7 +8,7 @@
     @isset($curriculumPreview)
         @include('curriculum.partials.preview-banner')
     @else
-        @include('curriculum.partials.active-draft-banner', ['activePackage' => $curriculumActivity['package']])
+        @include('curriculum.partials.active-draft-banner', ['activePackage' => $curriculumActivity['package'], 'showCurriculumEvidence' => $showCurriculumEvidence])
     @endisset
 
     @php
@@ -40,14 +40,16 @@
         <a href="{{ isset($curriculumPreview) ? route((Auth::user()->isSuperAdmin() ? 'superadmin' : 'admin').'.curriculum-drafts.preview.sections.show', [$curriculumPreview, $curriculumActivity['section']['code']]) : route('curriculum.sections.show', $curriculumActivity['section']['code']) }}" class="text-sm font-semibold text-indigo-700 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-700">&larr; {{ __('Back to section:') }} {{ $curriculumActivity['section']['title'] }}</a>
 
         <header class="mt-4 rounded-xl bg-white p-5 shadow sm:p-7">
-            <p class="text-sm font-semibold text-indigo-700">{{ $curriculumActivity['section']['title'] }} · {{ $curriculumActivity['section']['code'] }}</p>
+            <p class="text-sm font-semibold text-indigo-700">{{ $curriculumActivity['section']['title'] }}@if($showCurriculumEvidence) · {{ $curriculumActivity['section']['code'] }}@endif</p>
             <h1 class="mt-2 text-3xl font-bold text-neutral-950">{{ $curriculumActivity['title'] }}</h1>
             <p class="mt-2 text-sm text-neutral-600">{{ __('Progress state: :state · Attempts: :count', ['state' => str_replace('_', ' ', $curriculumActivity['progress']['state']), 'count' => $curriculumActivity['progress']['attempt_count']]) }}</p>
-            <div class="mt-4 flex flex-wrap gap-2">
-                @foreach (['cefr_activity', 'pedagogical_function', 'response_form', 'channel', 'participation', 'scoring_mode', 'timing'] as $field)
-                    <span class="rounded-full border border-neutral-300 bg-neutral-50 px-3 py-1 text-xs font-semibold text-neutral-700">{{ str_replace('_', ' ', $curriculumActivity['metadata'][$field]) }}</span>
-                @endforeach
-            </div>
+            @if($showCurriculumEvidence)
+                <div class="mt-4 flex flex-wrap gap-2">
+                    @foreach (['cefr_activity', 'pedagogical_function', 'response_form', 'channel', 'participation', 'scoring_mode', 'timing'] as $field)
+                        <span class="rounded-full border border-neutral-300 bg-neutral-50 px-3 py-1 text-xs font-semibold text-neutral-700">{{ str_replace('_', ' ', $curriculumActivity['metadata'][$field]) }}</span>
+                    @endforeach
+                </div>
+            @endif
         </header>
 
         @if ($curriculumActivity['guidance'])
@@ -109,7 +111,9 @@
                     @php($responseInvalid = $hasResponseError($prompt['code']))
                     @php($selfCheckInvalid = $hasSelfCheckError($prompt['code']))
                     <article class="rounded-xl bg-white p-5 shadow sm:p-6" id="prompt-{{ $prompt['code'] }}" tabindex="-1">
-                        <p class="text-xs font-semibold uppercase tracking-wide text-indigo-700">{{ $prompt['code'] }} · {{ str_replace('_', ' ', $prompt['scoring_mode']) }}</p>
+                        @if($showCurriculumEvidence)
+                            <p class="text-xs font-semibold uppercase tracking-wide text-indigo-700">{{ $prompt['code'] }} · {{ str_replace('_', ' ', $prompt['scoring_mode']) }}</p>
+                        @endif
 
                         @if ($promptErrors !== [])
                             <div id="prompt-error-{{ $prompt['code'] }}" class="mt-3 rounded-lg border border-red-400 bg-red-50 p-3 font-semibold text-red-950" role="alert">

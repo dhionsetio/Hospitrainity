@@ -38,7 +38,7 @@ class CurriculumReleaseGuardTest extends TestCase
         $this->assertDatabaseCount('curriculum_import_runs', 0);
     }
 
-    public function test_imported_draft_is_preview_only_and_visibly_labeled_outside_production(): void
+    public function test_imported_draft_is_preview_only_and_labeled_only_for_system_admin_learner_review(): void
     {
         $source = app(CanonicalPackageReader::class)->read();
         app(CanonicalCurriculumImporter::class)->import($source);
@@ -52,6 +52,15 @@ class CurriculumReleaseGuardTest extends TestCase
         $learner = User::factory()->create(['role' => UserRole::Learner]);
         $this->actingAs($learner)
             ->get(route('dashboard'))
+            ->assertOk()
+            ->assertDontSeeText('Non-production draft preview')
+            ->assertDontSeeText('must not be treated as a production release');
+
+        $systemAdmin = User::factory()->create(['role' => UserRole::Superadmin]);
+        $this->actingAs($systemAdmin)
+            ->post(route('work-context.store'), ['role' => 'learner'])
+            ->assertRedirect(route('dashboard'));
+        $this->get(route('dashboard'))
             ->assertOk()
             ->assertSeeText('Non-production draft preview')
             ->assertSeeText('must not be treated as a production release');
@@ -101,7 +110,7 @@ class CurriculumReleaseGuardTest extends TestCase
         $this->assertDatabaseCount('curriculum_import_runs', 1);
     }
 
-    public function test_non_draft_package_with_preview_only_release_keeps_the_visible_warning(): void
+    public function test_non_draft_package_with_preview_only_release_keeps_the_reviewer_warning(): void
     {
         $source = app(CanonicalPackageReader::class)->read();
         app(CanonicalCurriculumImporter::class)->import($source);
@@ -110,6 +119,14 @@ class CurriculumReleaseGuardTest extends TestCase
         $learner = User::factory()->create(['role' => UserRole::Learner]);
         $this->actingAs($learner)
             ->get(route('dashboard'))
+            ->assertOk()
+            ->assertDontSeeText('Non-production draft preview');
+
+        $systemAdmin = User::factory()->create(['role' => UserRole::Superadmin]);
+        $this->actingAs($systemAdmin)
+            ->post(route('work-context.store'), ['role' => 'learner'])
+            ->assertRedirect(route('dashboard'));
+        $this->get(route('dashboard'))
             ->assertOk()
             ->assertSeeText('Non-production draft preview')
             ->assertSeeText('must not be treated as a production release');

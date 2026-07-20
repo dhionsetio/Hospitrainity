@@ -8,7 +8,7 @@
     @isset($curriculumPreview)
         @include('curriculum.partials.preview-banner')
     @else
-        @include('curriculum.partials.active-draft-banner', ['activePackage' => $curriculumSection['package']])
+        @include('curriculum.partials.active-draft-banner', ['activePackage' => $curriculumSection['package'], 'showCurriculumEvidence' => $showCurriculumEvidence])
     @endisset
 
     <main class="container mx-auto max-w-4xl px-4 py-6 sm:px-6 sm:py-8">
@@ -165,15 +165,17 @@
             @endif
         </nav>
 
-        <details class="mt-6 rounded-lg border border-neutral-300 bg-white p-4 text-sm text-neutral-700">
-            <summary class="cursor-pointer font-semibold">{{ __('Source and lifecycle evidence') }}</summary>
-            <dl class="mt-3 grid gap-2 sm:grid-cols-2">
-                <div><dt class="font-semibold">{{ __('Package version') }}</dt><dd>{{ $curriculumSection['package']->content_version }}</dd></div>
-                <div><dt class="font-semibold">{{ __('Content code') }}</dt><dd class="font-mono">{{ $curriculumSection['code'] }}</dd></div>
-                <div><dt class="font-semibold">{{ __('Source artifact') }}</dt><dd>Hospitrainity.docx</dd></div>
-                <div><dt class="font-semibold">{{ __('Ordered blocks') }}</dt><dd>{{ count($curriculumSection['blocks']) }}</dd></div>
-                <div><dt class="font-semibold">{{ __('Lifecycle') }}</dt><dd>{{ $curriculumSection['status'] }}</dd></div>
-            </dl>
-        </details>
+        @if($showCurriculumEvidence)
+            <details class="mt-6 rounded-lg border border-neutral-300 bg-white p-4 text-sm text-neutral-700">
+                <summary class="cursor-pointer font-semibold">{{ __('Source and lifecycle evidence') }}</summary>
+                <dl class="mt-3 grid gap-2 sm:grid-cols-2">
+                    <div><dt class="font-semibold">{{ __('Package version') }}</dt><dd>{{ $curriculumSection['package']->content_version }}</dd></div>
+                    <div><dt class="font-semibold">{{ __('Content code') }}</dt><dd class="font-mono">{{ $curriculumSection['code'] }}</dd></div>
+                    <div><dt class="font-semibold">{{ __('Source artifact') }}</dt><dd>Hospitrainity.docx</dd></div>
+                    <div><dt class="font-semibold">{{ __('Ordered blocks') }}</dt><dd>{{ count($curriculumSection['blocks']) }}</dd></div>
+                    <div><dt class="font-semibold">{{ __('Lifecycle') }}</dt><dd>{{ $curriculumSection['status'] }}</dd></div>
+                </dl>
+            </details>
+        @endif
     </main>
 @endsection

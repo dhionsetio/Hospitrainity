@@ -22,14 +22,14 @@ class ModuleController extends Controller
     ) {}
 
     /**
-     * Menampilkan detail sebuah modul beserta pelajarannya.
+     * Display a module and its lessons.
      */
     public function show(Module $module): View
     {
         abort_if($this->canonicalCurriculum->isActive(), 410, __('This legacy curriculum route was retired when the canonical package was activated.'));
         $this->authorize('view', $module);
-        // Mengambil data modul beserta relasi pelajarannya (lessons).
-        // Ini akan membuat query lebih efisien.
+        // Load the module together with its lesson relationship.
+        // Eager loading avoids a separate lesson query during rendering.
         $module->load('lessons');
 
         return view('module', compact('module'));

@@ -264,7 +264,10 @@ class CanonicalAttemptTest extends TestCase
         $this->get(route('curriculum.confidence-history'))
             ->assertOk()
             ->assertSee('My confidence history')
-            ->assertSee('not test scores');
+            ->assertSee('not test scores')
+            ->assertSeeText('Module 2 confidence check')
+            ->assertDontSeeText('0.4.0-draft')
+            ->assertDontSeeText('HSP-C02-CC-R1');
 
         $baselineCode = 'HSP-C01-ACT-BASELINE';
         $this->post(route('curriculum.activities.attempts.store', $baselineCode), [

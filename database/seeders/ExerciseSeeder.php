@@ -25,7 +25,7 @@ class ExerciseSeeder extends Seeder
     {
         $this->lessonIds = Lesson::orderBy('id')->pluck('id')->all();
 
-        // Contoh untuk Lesson 1
+        // Example for lesson 1.
         $this->store([
             'lesson_id' => 1,
             'title' => 'Matching Game: Sounds',
@@ -361,7 +361,7 @@ class ExerciseSeeder extends Seeder
         ]);
 
         // Module 1 -> Lesson 1
-        $lessonId = 9; // Ganti dengan ID "Greetings and Welcoming Guests" yang benar
+        $lessonId = 9; // Resolve to the canonical "Greetings and Welcoming Guests" lesson below.
         $this->store(['lesson_id' => $lessonId, 'title' => 'Matching Game: Greetings', 'type' => 'matching_game', 'content' => ['pairs' => [['question' => 'Welcome back!', 'answer' => 'Returning guest.']]]]);
         $this->store(['lesson_id' => $lessonId, 'title' => 'Fill-in-the-Blank', 'type' => 'fill_in_the_blank', 'content' => ['sentence_parts' => ['', ' to Youkata Stay Hotel!'], 'correct_answer' => 'Welcome']]);
         $this->store(['lesson_id' => $lessonId, 'title' => 'Listening Task', 'type' => 'listening_task', 'content' => [
@@ -371,7 +371,7 @@ class ExerciseSeeder extends Seeder
         ]]);
 
         // Module 2 -> Lesson 1
-        $lessonId = 11; // Ganti dengan ID "Verifying Reservations..." yang benar
+        $lessonId = 11; // Resolve to the canonical "Verifying Reservations..." lesson below.
         $this->store(['lesson_id' => $lessonId, 'title' => 'Fill-in-the-Blank', 'type' => 'fill_in_the_blank', 'content' => ['sentence_parts' => ['Could you please', 'me your passport?'], 'correct_answer' => 'show']]);
         $this->store(['lesson_id' => $lessonId, 'title' => 'Sequencing', 'type' => 'sequencing', 'content' => ['steps' => ['Greet', 'Verify Reservation', 'Collect ID', 'Confirm Booking']]]);
     }

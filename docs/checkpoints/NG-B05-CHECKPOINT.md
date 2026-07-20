@@ -56,6 +56,24 @@ The postflight database remained 4,329,472 bytes with SHA-256 `56e0cbf3875a699f4
 - Firefox: the retained run at `storage/framework/testing/e2e-b05-20260720-1735` failed before the first application navigation because the host Firefox process reported `RenderCompositorSWGL failed mapping default framebuffer` and the launch timed out after 180 seconds. Disabling the documented WebRender software/fallback preferences reproduced the same startup failure and was reverted. This is a host browser-startup gap, not Firefox application evidence.
 - Governance: all 43 roadmap findings remain mapped; NG-P2-024 is technically complete. Human validation keeps NG-P2-018, 019, 021, 022, 023, 031, and 034 appropriately open/in progress rather than overstated.
 
+## 2026-07-20 learner-evidence and canonical-name follow-up
+
+The owner clarified the accepted plain-language boundary after inspecting the Learner interface. Ordinary Learner responses now omit the non-production draft-review banner, canonical-language implementation note, package/version/lifecycle disclosures, chapter/outcome/section/source identifiers, activity pedagogy/scoring/timing metadata, and confidence-history content/prompt identifiers. This is conditional server-side rendering, not CSS concealment. A System Admin account that deliberately activates Learner work context retains the review evidence needed for testing, while explicit authorized authoring-preview routes remain evidence surfaces.
+
+The exact known demo identity `user@example.com` was normalized from its earlier Indonesian display name to the configured English canonical name `Hospitrainity Test Learner`. Migration `2026_07_20_000018_normalize_demo_learner_name.php` ran as batch 17. It is deliberately scoped to that exact email and is forward-only: rollback does not reintroduce a retired non-English canonical label. No account, curriculum, progress, institution, membership, session, or historical evidence row was deleted.
+
+Before that data correction, the authoritative database was copied to:
+
+- `storage/app/backup-snapshots/b05-pre-learner-visibility-20260720-192153.sqlite`
+- Size: 4,329,472 bytes
+- SHA-256: `b3c941300322a29e2627fe6cc43a098af2ed500a495f227854fc1972ca886b18`
+
+The copied file matched the source byte-for-byte by size and SHA-256. Postflight reported SQLite integrity `ok`, zero foreign-key violations, all three demo accounts still present and enabled, and unchanged counts of three users, two institutions, one membership, four canonical attempts, four canonical activity-progress rows, and one session. The post-migration database SHA-256 at the recorded postflight was `d4c968b3db267877c08da2bcc27978b08753cf4569774d3cba7510664ed09257`.
+
+Focused regression verification passed 47 tests / 1,230 assertions, followed by the complete Laravel suite at 338 tests / 5,365 assertions in 288.11 seconds. A fresh disposable browser database then proved both sides of the policy: the ordinary Learner dashboard and module view contained no technical evidence, while the System Admin account switched into Learner context displayed the draft/evidence disclosures. The disposable server was stopped after the interrupted task was recovered. Historical `NG-B01-EVIDENCE.json` remains unchanged because it truthfully records the earlier database state.
+
+The final follow-up matrix also passed Pint, PHPStan with no errors, ESLint with zero warnings, all 50 sequential Node tests, EN/ID JSON decoding and 618-key parity, traceability for all 43 findings, the tracked-content scan across 1,671 files with zero unallowlisted findings, Blade/config compilation, and the Vite 6.4.3 production build with 31 transformed modules. npm audit reported zero vulnerabilities across 248 dependencies; the successful lockfile-only Composer retry reported zero advisories and zero abandoned packages. The authoritative post-verification database still reported integrity `ok`, zero foreign-key violations, the same business-row counts recorded above, all three accounts enabled, and migration batch 17 installed. The verified backup retained its recorded 4,329,472-byte size and SHA-256.
+
 ## Evidence boundary and remaining gates
 
 The green automated/browser matrix proves the tested software contracts, not unaided human comprehension, branded-browser compatibility, physical-device behavior, WCAG conformance, engagement, learning effectiveness, legal approval, or production readiness. B17 must execute the approved study under the required supervisor/ethics process and retain raw permitted observations, assistance, adverse findings, environment details, analysis, and limitations. Branded Chrome, Safari, Edge, Firefox, and Opera on the target Windows, macOS, Android, and iOS matrix remain external validation work.

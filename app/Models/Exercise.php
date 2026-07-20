@@ -22,10 +22,8 @@ class Exercise extends Model
     ];
 
     /**
-     * Ini adalah bagian yang paling penting.
-     * Baris ini memberitahu Laravel untuk otomatis mengubah
-     * kolom 'content' dari array menjadi JSON saat menyimpan,
-     * dan sebaliknya saat mengambil.
+     * Cast exercise content between its PHP array representation and the
+     * JSON value stored by the database.
      */
     protected $casts = [
         'content' => 'array',

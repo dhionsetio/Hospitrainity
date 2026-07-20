@@ -18,7 +18,7 @@ class DashboardController extends Controller
     ) {}
 
     /**
-     * Menampilkan halaman dasbor dengan daftar modul.
+     * Display the learning dashboard with its available modules.
      *
      * Canonical progress is version-bound and comes from curriculum activity
      * progress. The legacy fallback uses eager-loaded relations plus one
@@ -33,8 +33,9 @@ class DashboardController extends Controller
             $chapters = $this->canonicalCurriculum->dashboardChaptersFor($user);
             $package = $this->canonicalCurriculum->activePackage();
             $nextAction = $this->nextActions->learner($request, $user, $chapters);
+            $showCurriculumEvidence = $user->isSuperAdmin();
 
-            return view('curriculum.dashboard', compact('chapters', 'package', 'nextAction'));
+            return view('curriculum.dashboard', compact('chapters', 'package', 'nextAction', 'showCurriculumEvidence'));
         }
 
         $modules = $this->progress->dashboardModulesFor($user);

@@ -667,26 +667,39 @@
         "status": "in_progress",
         "evidence": {
             "code": [
+                "app/Http/Controllers/DashboardController.php",
+                "app/Http/Controllers/CanonicalCurriculumController.php",
+                "app/Http/Controllers/CurriculumDraftPreviewController.php",
                 "resources/views/curriculum/section.blade.php",
                 "resources/views/curriculum/chapter.blade.php",
                 "resources/views/curriculum/dashboard.blade.php",
+                "resources/views/curriculum/activity.blade.php",
+                "resources/views/curriculum/confidence-history.blade.php",
+                "resources/views/curriculum/partials/active-draft-banner.blade.php",
                 "resources/views/dashboard.blade.php",
                 "resources/views/partials/next-action.blade.php",
                 "resources/views/superadmin/dashboard.blade.php",
                 "resources/views/superadmin/progress/index.blade.php",
                 "resources/views/supervisor/dashboard.blade.php"
             ],
-            "migrations": [],
+            "migrations": [
+                "database/migrations/2026_07_20_000018_normalize_demo_learner_name.php"
+            ],
             "automated_tests": [
                 "tests/Feature/NextActionResolverTest.php",
+                "tests/Feature/CanonicalCurriculumDeliveryTest.php",
+                "tests/Feature/CurriculumReleaseGuardTest.php",
+                "tests/Feature/CanonicalAttemptTest.php",
+                "tests/Feature/DemoSeedGuardTest.php",
+                "Post-follow-up complete Laravel suite passed 338 tests / 5,365 assertions",
                 "Full B05 Laravel suite passed 335 tests / 5,307 assertions; the clean supported-engine Playwright run passed 52/52 journeys"
             ],
             "browser_device_checks": [
-                "Task-first and evidence-disclosure patterns passed desktop Chromium/WebKit and Pixel 7/iPhone 15 emulation; ordinary-workflow human evidence and B08 authoring/B10 data-view closure remain open"
+                "Task-first patterns passed desktop Chromium/WebKit and Pixel 7/iPhone 15 emulation; a fresh two-account browser check additionally proved that technical evidence is absent for an ordinary Learner and present for a System Admin deliberately switched into Learner context. Ordinary-workflow human evidence and B08 authoring/B10 data-view closure remain open."
             ],
             "human_legal_reviews": [],
             "production_evidence": [
-                "B04 supplies long-lesson and progress-page structure; B05 installs deterministic task-first dashboard actions and moves exact technical evidence behind named disclosures. B08 authoring and observed ordinary-workflow usability remain open."
+                "B04 supplies long-lesson and progress-page structure; B05 installs deterministic task-first dashboard actions and omits exact technical evidence from ordinary Learner rendering while retaining it for System Admin Learner review and authorized authoring previews. B08 authoring and observed ordinary-workflow usability remain open."
             ],
             "checkpoints": [
                 "docs/checkpoints/NG-B04-CHECKPOINT.md",
@@ -1124,25 +1137,33 @@
                 "code": [
                     "app/Services/HelpContentRegistry.php",
                     "app/Services/OnboardingService.php",
+                    "app/Http/Controllers/DashboardController.php",
+                    "app/Http/Controllers/ModuleController.php",
                     "resources/views/help",
                     "resources/views/onboarding/show.blade.php",
+                    "resources/views/partials/learner-nav.blade.php",
+                    "resources/views/curriculum/confidence-history.blade.php",
                     "lang/en.json",
                     "lang/id.json"
                 ],
-                "migrations": [],
+                "migrations": [
+                    "database/migrations/2026_07_20_000018_normalize_demo_learner_name.php"
+                ],
                 "automated_tests": [
                     "tests/Feature/LangParityTest.php",
                     "tests/Feature/HelpContentTest.php",
-                    "tests/Feature/OnboardingFlowTest.php"
+                    "tests/Feature/OnboardingFlowTest.php",
+                    "tests/Feature/CanonicalCurriculumDeliveryTest.php",
+                    "tests/Feature/DemoSeedGuardTest.php"
                 ],
                 "browser_device_checks": [
                     "Bilingual-ready Help/onboarding and human labels passed the clean desktop/mobile Chromium and WebKit matrix; screen-reader and human language/content fidelity review remains open."
                 ],
                 "human_legal_reviews": [
-                    "Owner approved Indonesian/English language selection, human-facing role labels, and the boundary that authoritative English learning content is not silently translated."
+                    "Owner approved Indonesian/English language selection, human-facing role labels, the boundary that authoritative English learning content is not silently translated, and English as the canonical application/source language with Indonesian retained as translation."
                 ],
                 "production_evidence": [
-                    "B05 UI enum-like values are mapped to localized human labels; B08 authoring/source-content boundaries and B17 human closure remain open."
+                    "B05 UI enum-like values are mapped to localized human labels; the known demo learner identity is normalized to an English canonical name while Indonesian stays in the translation layer. Historical evidence is retained unchanged. B08 authoring/source-content boundaries and B17 human closure remain open."
                 ],
                 "checkpoints": [
                     "docs/checkpoints/NG-B04-CHECKPOINT.md",

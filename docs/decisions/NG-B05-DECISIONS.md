@@ -41,6 +41,8 @@ The normalized assignment tables, explicit work/tenant/learning context, audited
 
 2026-07-20 follow-up: the owner confirmed that a learner-only account must not receive a redundant work-role switcher. The control appears only when the account has another authorized work role; a direct single-role visit returns to the current dashboard. Personal/institution learning selection remains a separate Learner control.
 
+2026-07-20 learner-evidence follow-up: the owner confirmed that an ordinary Learner must not see package codes, hashes, lifecycle/provenance records, source-block identifiers, scoring metadata, or draft-review warnings. Live Learner rendering now omits those elements server-side. A System Admin who deliberately switches into Learner work context may still see them for testing, and the explicitly authorized Content/System Admin authoring-preview routes remain evidence surfaces. The canonical demo learner name is English (`Hospitrainity Test Learner`); Indonesian is a selected interface translation, not canonical account/source data. Historical evidence that accurately records an earlier label remains unchanged.
+
 ## Evidence basis
 
 - OWASP authorization guidance: least privilege, deny by default, validate every request, and relationship/attribute-aware authorization for multi-tenancy.

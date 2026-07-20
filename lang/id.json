@@ -617,5 +617,7 @@
     "Privileged tools are locked—not the whole website": "Fitur berwenang dikunci—bukan seluruh situs web",
     "You can continue in Learner mode without administrative access. To use instructor, content, or system administration tools, finish MFA setup first.": "Anda dapat melanjutkan dalam mode Pelajar tanpa akses administratif. Untuk menggunakan fitur instruktur, konten, atau administrasi sistem, selesaikan pengaturan MFA terlebih dahulu.",
     "Continue as Learner": "Lanjutkan sebagai Pelajar",
-    "Visit public home": "Kunjungi beranda publik"
+    "Visit public home": "Kunjungi beranda publik",
+    "Confidence check": "Pemeriksaan keyakinan",
+    "Module :number confidence check": "Pemeriksaan keyakinan Modul :number"
 }

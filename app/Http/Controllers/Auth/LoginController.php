@@ -16,24 +16,24 @@ class LoginController extends Controller
 {
     public function __construct(private readonly RoleLandingResolver $landingResolver) {}
 
-    /** Menampilkan halaman formulir login. */
+    /** Display the login form. */
     public function showLoginForm(): View
     {
         return view('login');
     }
 
-    /** Menangani permintaan login. */
+    /** Handle a login request. */
     public function login(Request $request, SecurityEventRecorder $events): RedirectResponse
     {
         $request->merge(['email' => User::canonicalEmail($request->input('email'))]);
 
-        // 1. Validasi data input dari form
+        // 1. Validate the submitted credentials.
         $credentials = $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
 
-        // 2. Coba untuk mengotentikasi pengguna
+        // 2. Attempt to authenticate the user.
         $provider = Auth::getProvider();
         $user = $provider->retrieveByCredentials($credentials);
         if ($user instanceof User && ! $user->isDisabled() && $provider->validateCredentials($user, $credentials)) {
@@ -52,7 +52,7 @@ class LoginController extends Controller
             }
 
             Auth::login($user, $request->boolean('remember'));
-            // Jika berhasil, regenerate session untuk keamanan
+            // Rotate the session identifier after successful authentication.
             $request->session()->regenerate();
             if (! $user->requiresMfa()) {
                 $request->session()->put(['auth.mfa_verified_at' => time(), 'auth.mfa_method' => 'not_required']);
@@ -72,14 +72,13 @@ class LoginController extends Controller
 
         $events->record('authentication.password_failed', 'denied', null, $request->input('email'), $request, severity: 'warning');
 
-        // 4. Jika otentikasi gagal
-        // Kembalikan ke halaman login dengan pesan error
+        // Return to the login form with a generic authentication error.
         return back()->withErrors([
             'email' => __('The email or password is incorrect.'),
         ])->onlyInput('email');
     }
 
-    /** Menangani permintaan logout. */
+    /** Handle a logout request. */
     public function logout(Request $request): RedirectResponse
     {
         Auth::logout();

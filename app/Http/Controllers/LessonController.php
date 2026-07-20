@@ -35,14 +35,12 @@ class LessonController extends Controller
         return view('lesson', compact('lesson'));
     }
 
-    /**
-     * MENAMPILKAN HALAMAN LATIHAN: Tampilan seperti Duolingo.
-     */
+    /** Display the interactive vocabulary practice page. */
     public function practice(Lesson $lesson, Vocabulary $vocabulary): View
     {
         $this->abortIfCanonicalCurriculumIsActive();
         $this->authorize('view', $vocabulary);
-        // Di sini, kita memuat 'items' dari KATEGORI TERTENTU yang dipilih.
+        // Load only the items belonging to the selected vocabulary category.
         $vocabulary->load('items');
 
         return view('practice', compact('lesson', 'vocabulary'));
@@ -52,7 +50,7 @@ class LessonController extends Controller
     {
         $this->abortIfCanonicalCurriculumIsActive();
         $this->authorize('view', $material);
-        // Di sini, kita memuat 'items' dari KATEGORI TERTENTU yang dipilih.
+        // Load only the items belonging to the selected material category.
         $material->load('items');
 
         return view('material', compact('lesson', 'material'));
@@ -74,7 +72,7 @@ class LessonController extends Controller
             ->orderBy('module_id')
             ->curriculumOrder()
             ->paginate(10);
-        $modules = Module::orderBy('title')->get(); // Ambil modules untuk dropdown di modal
+        $modules = Module::orderBy('title')->get(); // Supply the modal's module options.
 
         return view('superadmin.lessons.index', compact('lessons', 'modules'));
     }

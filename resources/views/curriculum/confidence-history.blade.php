@@ -18,12 +18,13 @@
         @else
             <div class="mt-6 space-y-5">
                 @foreach ($confidenceHistory as $entry)
+                    @php($moduleNumber = preg_match('/HSP-C(\d{2})-/', $entry['activity_code'], $moduleMatch) === 1 ? (int) $moduleMatch[1] : null)
                     <section class="rounded-xl bg-white p-6 shadow" aria-labelledby="history-{{ $entry['attempt_id'] }}">
-                        <h2 id="history-{{ $entry['attempt_id'] }}" class="text-xl font-bold text-neutral-950">{{ $entry['baseline'] ? __('Chapter 1 baseline') : str_replace(['HSP-', '-ACT-CONFIDENCE'], ['', ' confidence check'], $entry['activity_code']) }}</h2>
-                        <p class="mt-1 text-sm text-neutral-600">{{ $entry['content_version'] }} · {{ $entry['completed_at']?->format('Y-m-d H:i') }}</p>
+                        <h2 id="history-{{ $entry['attempt_id'] }}" class="text-xl font-bold text-neutral-950">{{ $entry['baseline'] ? __('Chapter 1 baseline') : ($moduleNumber === null ? __('Confidence check') : __('Module :number confidence check', ['number' => $moduleNumber])) }}</h2>
+                        <p class="mt-1 text-sm text-neutral-600">@if($showCurriculumEvidence){{ $entry['content_version'] }} · @endif{{ $entry['completed_at']?->format('Y-m-d H:i') }}</p>
                         <dl class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
                             @foreach ($entry['ratings'] as $rating)
-                                <div class="rounded-lg border border-neutral-300 p-3"><dt class="text-sm font-semibold leading-5 text-neutral-700">{{ $rating['statement'] }}</dt><dd class="mt-2 text-2xl font-bold text-indigo-800">{{ $rating['rating'] }}<span class="text-sm font-normal text-neutral-600">/5</span></dd><dd class="mt-1 text-xs text-neutral-500">{{ $rating['prompt_code'] }}</dd></div>
+                                <div class="rounded-lg border border-neutral-300 p-3"><dt class="text-sm font-semibold leading-5 text-neutral-700">{{ $rating['statement'] }}</dt><dd class="mt-2 text-2xl font-bold text-indigo-800">{{ $rating['rating'] }}<span class="text-sm font-normal text-neutral-600">/5</span></dd>@if($showCurriculumEvidence)<dd class="mt-1 text-xs text-neutral-500">{{ $rating['prompt_code'] }}</dd>@endif</div>
                             @endforeach
                         </dl>
                     </section>

@@ -15,16 +15,15 @@ return new class extends Migration
             $table->id();
             $table->foreignId('lesson_id')->constrained()->onDelete('cascade');
 
-            // Judul atau instruksi umum untuk latihan.
-            // Cth: "Matching Game", "Pronunciation Drill"
+            // Exercise title or general instruction.
+            // Examples: "Matching Game", "Pronunciation Drill"
             $table->string('title');
 
-            // Tipe latihan untuk membedakan logika di frontend.
-            // Cth: 'matching', 'spelling', 'pronunciation'
+            // Exercise type used to select the appropriate frontend behavior.
+            // Examples: 'matching', 'spelling', 'pronunciation'
             $table->string('type');
 
-            // Kolom JSON untuk menyimpan data spesifik latihan.
-            // Jika versi MySQL Anda lama, ganti json() dengan text().
+            // JSON payload containing exercise-type-specific data.
             $table->json('content');
 
             $table->integer('order')->default(0);

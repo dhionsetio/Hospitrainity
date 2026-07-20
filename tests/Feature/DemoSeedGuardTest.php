@@ -83,9 +83,29 @@ class DemoSeedGuardTest extends TestCase
         $this->assertDatabaseHas('institutions', ['key' => 'demo-hotel-b', 'verification_method' => 'disposable_demo_fixture']);
         foreach (config('identity.demo_seed.accounts') as $index => $account) {
             $user = User::query()->where('email', $account['email'])->firstOrFail();
+            $this->assertSame($account['name'], $user->name);
             $this->assertTrue(Hash::check($secrets[$index], $user->password));
             $this->assertNotSame($secrets[$index], $user->password);
         }
+    }
+
+    public function test_demo_learner_name_normalization_is_english_and_forward_only(): void
+    {
+        $demoLearner = User::factory()->create([
+            'name' => 'Legacy Localized Learner',
+            'email' => 'user@example.com',
+        ]);
+        $unrelated = User::factory()->create(['name' => 'Unrelated Learner']);
+        $migration = require database_path('migrations/2026_07_20_000018_normalize_demo_learner_name.php');
+
+        $migration->up();
+
+        $this->assertSame('Hospitrainity Test Learner', $demoLearner->fresh()->name);
+        $this->assertSame('Unrelated Learner', $unrelated->fresh()->name);
+
+        $migration->down();
+
+        $this->assertSame('Hospitrainity Test Learner', $demoLearner->fresh()->name);
     }
 
     public function test_authorized_user_seeder_rolls_back_every_demo_identity_on_a_mid_seed_failure(): void

@@ -25,7 +25,7 @@
                 @endif
                 <p class="sr-only text-neutral-700 sm:not-sr-only">{{ Auth::user()->name }}</p>
 
-                <!-- Wadah Relative untuk Dropdown -->
+                <!-- Relative dropdown container -->
                 <div class="relative">
                     <button id="profile-button" type="button" class="flex items-center rounded" aria-controls="dropdown-menu" aria-expanded="false" aria-haspopup="menu" aria-label="{{ __('Open user menu') }}">
                         <span aria-hidden="true" class="w-10 h-10 rounded-full bg-indigo-100 text-indigo-700 flex items-center justify-center font-bold">
@@ -55,7 +55,7 @@
                         </div>
                         <div role="separator" class="border-t border-neutral-200 my-1"></div>
 
-                        <!-- FORM LOGOUT DIMULAI DI SINI -->
+                        <!-- Logout action -->
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
                             <button type="submit" role="menuitem" tabindex="-1"

@@ -617,5 +617,7 @@
     "Privileged tools are locked—not the whole website": "Privileged tools are locked—not the whole website",
     "You can continue in Learner mode without administrative access. To use instructor, content, or system administration tools, finish MFA setup first.": "You can continue in Learner mode without administrative access. To use instructor, content, or system administration tools, finish MFA setup first.",
     "Continue as Learner": "Continue as Learner",
-    "Visit public home": "Visit public home"
+    "Visit public home": "Visit public home",
+    "Confidence check": "Confidence check",
+    "Module :number confidence check": "Module :number confidence check"
 }

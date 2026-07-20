@@ -9,7 +9,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('material_items', function (Blueprint $table) {
-            // Kolom baru KHUSUS untuk file audio opsional
+            // Optional path dedicated to the material item's audio file.
             $table->string('audio_url')->nullable()->after('url');
         });
     }

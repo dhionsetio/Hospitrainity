@@ -1,5 +1,5 @@
 @php($activeRelease = $activePackage->release)
-@if(!app()->isProduction() && (
+@if(($showCurriculumEvidence ?? false) && !app()->isProduction() && (
     strtolower(trim((string) $activePackage->lifecycle_status)) === 'draft'
     || $activeRelease === null
     || $activeRelease->state !== \App\Enums\CurriculumReleaseState::Active
