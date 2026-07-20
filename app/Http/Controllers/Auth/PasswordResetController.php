@@ -30,7 +30,10 @@ class PasswordResetController extends Controller
         $request->merge(['email' => User::canonicalEmail($request->input('email'))]);
         $request->validate(['email' => ['required', 'email']]);
 
-        Password::sendResetLink($request->only('email'));
+        Password::sendResetLink([
+            ...$request->only('email'),
+            'disabled_at' => null,
+        ]);
 
         // Do not reveal account existence, broker throttling, or mail outcomes.
         // The route limiter independently returns HTTP 429 when it is exceeded.
@@ -58,7 +61,10 @@ class PasswordResetController extends Controller
         ]);
 
         $status = Password::reset(
-            $request->only('email', 'password', 'password_confirmation', 'token'),
+            [
+                ...$request->only('email', 'password', 'password_confirmation', 'token'),
+                'disabled_at' => null,
+            ],
             function (User $user, string $password) {
                 $user->forceFill([
                     'password' => Hash::make($password),

@@ -2,18 +2,22 @@
 
 namespace Tests\Feature;
 
+use App\Enums\CurriculumApprovalGate;
+use App\Enums\CurriculumReleaseState;
 use App\Models\Completion;
 use App\Models\CurriculumActivityProgress;
 use App\Models\CurriculumAttempt;
 use App\Models\CurriculumEntity;
 use App\Models\CurriculumImportRun;
 use App\Models\CurriculumPackage;
+use App\Models\CurriculumRelease;
 use App\Models\User;
 use App\Services\CanonicalCurriculumRepository;
 use App\Services\Curriculum\CanonicalCurriculumImporter;
 use App\Services\Curriculum\CanonicalPackage;
 use App\Services\Curriculum\CanonicalPackageReader;
 use App\Services\Curriculum\CurriculumAttemptService;
+use App\Services\Curriculum\CurriculumReleaseLifecycle;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
@@ -111,6 +115,29 @@ class CanonicalCurriculumImportTest extends TestCase
         $this->assertDatabaseCount('curriculum_import_runs', 2);
     }
 
+    public function test_production_rollback_refuses_an_undeliverable_snapshot_before_mutation(): void
+    {
+        $source = app(CanonicalPackageReader::class)->read();
+        $importer = app(CanonicalCurriculumImporter::class);
+        $import = $importer->import($source);
+        $activeId = CurriculumPackage::query()->where('is_active', true)->value('id');
+        $entityCount = CurriculumEntity::query()->count();
+        $this->app['env'] = 'production';
+
+        $failure = null;
+        try {
+            $importer->rollback($import['rollback']['path']);
+        } catch (\RuntimeException $exception) {
+            $failure = $exception;
+        }
+
+        $this->assertInstanceOf(\RuntimeException::class, $failure);
+        $this->assertStringContainsString('Production rollback refused', $failure->getMessage());
+        $this->assertSame($activeId, CurriculumPackage::query()->where('is_active', true)->value('id'));
+        $this->assertSame($entityCount, CurriculumEntity::query()->count());
+        $this->assertDatabaseCount('curriculum_import_runs', 1);
+    }
+
     public function test_failed_import_restores_every_database_table(): void
     {
         $source = app(CanonicalPackageReader::class)->read();
@@ -200,6 +227,7 @@ class CanonicalCurriculumImportTest extends TestCase
             ]);
         }
 
+        config()->set('curriculum.release.allow_unapproved_replacement_for_tests', true);
         app(CanonicalCurriculumImporter::class)->import($source);
 
         $mapped = CurriculumActivityProgress::query()->where('user_id', $learner->id)->get();
@@ -225,6 +253,24 @@ class CanonicalCurriculumImportTest extends TestCase
         $source = app(CanonicalPackageReader::class)->read();
         $importer = app(CanonicalCurriculumImporter::class);
         $importer->import($source);
+        $reviewer = User::factory()->create(['role' => 'superadmin']);
+        $release = CurriculumRelease::query()->sole();
+        $release = app(CurriculumReleaseLifecycle::class)->transition(
+            $release,
+            CurriculumReleaseState::Draft,
+            CurriculumReleaseState::InReview,
+            $reviewer,
+            'Preserve formal review evidence across projection repair and rollback.',
+        );
+        app(CurriculumReleaseLifecycle::class)->approveGate(
+            $release,
+            CurriculumApprovalGate::Content,
+            $reviewer,
+            'Content Evidence Reviewer',
+            'Test qualification for rollback preservation',
+            hash('sha256', 'rollback-preservation-evidence'),
+        );
+        $releaseId = $release->id;
         $learner = User::factory()->create(['role' => 'user', 'email_verified_at' => now()]);
         $activity = CurriculumEntity::query()->where('code', 'HSP-C02-ACT-QUIZ')->sole();
         $originalActivityId = $activity->id;
@@ -277,5 +323,8 @@ class CanonicalCurriculumImportTest extends TestCase
         $this->assertDatabaseCount('curriculum_responses', 8);
         $this->assertDatabaseCount('curriculum_attempt_events', 3);
         $this->assertNotNull(CurriculumActivityProgress::query()->where('activity_code', $activity->code)->sole()->completed_at);
+        $this->assertDatabaseHas('curriculum_releases', ['id' => $releaseId, 'state' => CurriculumReleaseState::InReview->value]);
+        $this->assertDatabaseHas('curriculum_release_approvals', ['curriculum_release_id' => $releaseId, 'gate' => CurriculumApprovalGate::Content->value]);
+        $this->assertDatabaseCount('curriculum_release_events', 2);
     }
 }

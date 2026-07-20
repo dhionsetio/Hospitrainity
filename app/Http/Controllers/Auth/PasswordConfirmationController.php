@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Enums\WorkContextRole;
 use App\Http\Controllers\Controller;
+use App\Services\WorkContext;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -41,14 +43,22 @@ class PasswordConfirmationController extends Controller
      * Resolve only the privileged destinations that deliberately share this
      * confirmation screen. Never trust a pre-authentication intended URL.
      *
-     * @return array{context: 'audit'|'users', url: string}
+     * @return array{context: 'audit'|'users'|'institution_roles', url: string}
      */
     private function destination(Request $request): array
     {
-        $fallback = [
-            'context' => 'users',
-            'url' => route('superadmin.users.index', absolute: false),
-        ];
+        $workRole = app(WorkContext::class)->current($request, $request->user());
+        $fallback = $workRole === WorkContextRole::InstitutionAdmin
+            ? [
+                'context' => 'institution_roles',
+                'url' => route('supervisor.institution-roles.index', absolute: false),
+            ]
+            : [
+                'context' => 'users',
+                'url' => $workRole === WorkContextRole::SystemAdmin
+                    ? route('superadmin.users.index', absolute: false)
+                    : route($workRole->landingRoute(), absolute: false),
+            ];
         $intended = $request->session()->get('url.intended');
 
         if (! is_string($intended) || $intended === '' || strlen($intended) > 2048) {
@@ -90,6 +100,14 @@ class PasswordConfirmationController extends Controller
                     'institution' => 255,
                     'verification' => 20,
                 ],
+            ],
+            route('supervisor.institution-roles.index', absolute: false) => [
+                'context' => 'institution_roles',
+                'filters' => [],
+            ],
+            route('superadmin.institution-roles.index', absolute: false) => [
+                'context' => 'institution_roles',
+                'filters' => [],
             ],
         ];
         $target = $destinations[$parts['path']] ?? null;

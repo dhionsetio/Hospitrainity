@@ -57,11 +57,13 @@ return [
     'confirm_password_description' => [
         'audit' => 'Peninjauan audit administrasi bersifat sensitif. Masukkan kembali kata sandi untuk melanjutkan selama 15 menit ke depan.',
         'users' => 'Administrasi pengguna bersifat sensitif. Masukkan kembali kata sandi untuk melanjutkan selama 15 menit ke depan.',
+        'institution_roles' => 'Peran staf institusi bersifat sensitif. Masukkan kembali kata sandi untuk melanjutkan selama 15 menit ke depan.',
     ],
     'confirm_password_action' => 'Konfirmasi kata sandi',
     'password_confirmed' => [
         'audit' => 'Kata sandi terkonfirmasi. Anda sekarang dapat meninjau peristiwa audit administrasi.',
         'users' => 'Kata sandi terkonfirmasi. Anda sekarang dapat mengelola pengguna.',
+        'institution_roles' => 'Kata sandi terkonfirmasi. Anda sekarang dapat mengelola peran staf institusi.',
     ],
     'content_management' => 'Manajemen konten',
     'legacy_evidence' => 'Bukti sistem lama',

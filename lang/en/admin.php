@@ -57,11 +57,13 @@ return [
     'confirm_password_description' => [
         'audit' => 'Administration audit review is security-sensitive. Re-enter your password to continue for the next 15 minutes.',
         'users' => 'User administration is security-sensitive. Re-enter your password to continue for the next 15 minutes.',
+        'institution_roles' => 'Institution staff roles are security-sensitive. Re-enter your password to continue for the next 15 minutes.',
     ],
     'confirm_password_action' => 'Confirm password',
     'password_confirmed' => [
         'audit' => 'Password confirmed. You may now review administration audit events.',
         'users' => 'Password confirmed. You may now administer users.',
+        'institution_roles' => 'Password confirmed. You may now manage institution staff roles.',
     ],
     'content_management' => 'Content management',
     'legacy_evidence' => 'Legacy evidence',

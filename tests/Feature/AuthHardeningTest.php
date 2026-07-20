@@ -4,8 +4,10 @@ namespace Tests\Feature;
 
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Notification;
+use Illuminate\Support\Facades\RateLimiter;
 use Tests\TestCase;
 
 class AuthHardeningTest extends TestCase
@@ -72,13 +74,14 @@ class AuthHardeningTest extends TestCase
             ->assertSessionHasNoErrors();
     }
 
-    public function test_registration_is_throttled_after_five_attempts_per_ip(): void
+    public function test_invalid_invitation_probes_are_throttled_per_ip(): void
     {
-        for ($attempt = 1; $attempt <= 5; $attempt++) {
-            $this->post(route('register'), [])->assertRedirect();
+        $token = str_repeat('A', 43);
+        for ($attempt = 1; $attempt <= 10; $attempt++) {
+            $this->get(route('invitations.accept', ['token' => $token]))->assertNotFound();
         }
 
-        $this->post(route('register'), [])->assertTooManyRequests();
+        $this->get(route('invitations.accept', ['token' => $token]))->assertTooManyRequests();
     }
 
     public function test_password_reset_link_requests_use_one_canonical_email_bucket(): void
@@ -113,5 +116,27 @@ class AuthHardeningTest extends TestCase
         }
 
         $this->post(route('password.update'), $payload)->assertTooManyRequests();
+    }
+
+    public function test_account_rate_limit_keys_are_canonical_but_do_not_store_plaintext_email(): void
+    {
+        $request = Request::create('/login', 'POST', [
+            'email' => ' Sensitive.Account@Example.com ',
+        ], server: ['REMOTE_ADDR' => '203.0.113.25']);
+        $variant = Request::create('/login', 'POST', [
+            'email' => 'sensitive.account@example.COM',
+        ], server: ['REMOTE_ADDR' => '203.0.113.25']);
+
+        $loginLimiter = RateLimiter::limiter('login');
+        $passwordLimiter = RateLimiter::limiter('password-email');
+        $login = $loginLimiter($request);
+        $loginVariant = $loginLimiter($variant);
+        $password = $passwordLimiter($request);
+        $keys = array_merge([$login->key], array_map(static fn ($limit): string => $limit->key, $password));
+
+        $this->assertSame($login->key, $loginVariant->key);
+        foreach ($keys as $key) {
+            $this->assertStringNotContainsString('sensitive.account@example.com', strtolower($key));
+        }
     }
 }

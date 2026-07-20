@@ -2,12 +2,19 @@
 
 namespace Tests\Feature;
 
+use App\Enums\InstitutionMembershipStatus;
+use App\Enums\InstitutionRole;
+use App\Enums\InstitutionStatus;
+use App\Enums\LegacyInstitutionState;
 use App\Enums\UserRole;
 use App\Models\CurriculumActivityProgress;
 use App\Models\CurriculumAttempt;
 use App\Models\CurriculumEntity;
 use App\Models\CurriculumPackage;
 use App\Models\CurriculumResponse;
+use App\Models\Institution;
+use App\Models\InstitutionMembership;
+use App\Models\InstitutionRoleAssignment;
 use App\Models\User;
 use App\Services\CurriculumProgressService;
 use App\Services\ProgressAdministrationService;
@@ -25,9 +32,12 @@ class ProgressAdministrationTest extends TestCase
         $this->canonicalPackage();
         $learner = $this->learner('Scoped Learner', 'Hotel A');
         $otherLearner = $this->learner('Other Learner', 'Hotel B');
+        $multiInstitutionLearner = $this->learner('Multi-institution Learner', 'Hotel B');
         $superadmin = User::factory()->create(['role' => UserRole::Superadmin]);
         $admin = User::factory()->create(['role' => UserRole::Admin]);
         $supervisor = User::factory()->create(['role' => UserRole::Supervisor, 'instansi' => 'Hotel A']);
+        $this->addMembership($supervisor, $this->institution('Hotel A'));
+        $this->addMembership($multiInstitutionLearner, $this->institution('Hotel A'));
         $blankSupervisor = User::factory()->create(['role' => UserRole::Supervisor, 'instansi' => '']);
         $unverified = User::factory()->unverified()->create(['role' => UserRole::Superadmin]);
 
@@ -49,12 +59,21 @@ class ProgressAdministrationTest extends TestCase
         $this->actingAs($supervisor)
             ->get(route('supervisor.progress.learners.show', $otherLearner))
             ->assertNotFound();
+        $this->actingAs($supervisor)
+            ->get(route('supervisor.progress.learners.show', $multiInstitutionLearner))
+            ->assertOk()
+            ->assertSee('Hotel A')
+            ->assertDontSee('Hotel B');
         $this->actingAs($blankSupervisor)
             ->get(route('supervisor.progress.learners.show', $learner))
             ->assertNotFound();
         $this->actingAs($superadmin)
             ->get(route('superadmin.progress.learners.show', $otherLearner))
             ->assertOk();
+        $this->actingAs($superadmin)
+            ->get(route('superadmin.progress.learners.show', $multiInstitutionLearner))
+            ->assertOk()
+            ->assertSee('Hotel B');
         $this->actingAs($superadmin)
             ->get(route('superadmin.progress.learners.show', $admin))
             ->assertNotFound();
@@ -327,10 +346,50 @@ class ProgressAdministrationTest extends TestCase
 
     private function learner(string $name, string $institution): User
     {
-        return User::factory()->create([
+        $user = User::factory()->create([
             'name' => $name,
             'instansi' => $institution,
             'role' => UserRole::Learner,
+            'legacy_institution_state' => LegacyInstitutionState::Mapped,
+        ]);
+        $this->addMembership($user, $this->institution($institution));
+
+        return $user;
+    }
+
+    private function institution(string $name): Institution
+    {
+        return Institution::query()->firstOrCreate(
+            ['key' => Str::slug($name).'-test-fixture'],
+            [
+                'name_id' => $name,
+                'name_en' => $name,
+                'status' => InstitutionStatus::Active,
+                'verified_at' => now(),
+                'verification_method' => 'test_fixture',
+            ],
+        );
+    }
+
+    private function addMembership(User $user, Institution $institution): void
+    {
+        $membership = InstitutionMembership::query()->firstOrCreate(
+            ['institution_id' => $institution->id, 'user_id' => $user->id],
+            [
+                'status' => InstitutionMembershipStatus::Active,
+                'is_default' => true,
+                'provenance' => 'test_fixture',
+                'joined_at' => now(),
+            ],
+        );
+        InstitutionRoleAssignment::query()->firstOrCreate([
+            'institution_membership_id' => $membership->id,
+            'role' => $user->role === UserRole::Learner
+                ? InstitutionRole::Learner->value
+                : InstitutionRole::Instructor->value,
+        ], [
+            'assigned_by_user_id' => null,
+            'assigned_at' => now(),
         ]);
     }
 

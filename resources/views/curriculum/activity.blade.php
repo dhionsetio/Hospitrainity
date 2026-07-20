@@ -7,6 +7,8 @@
     @include('partials.learner-nav')
     @isset($curriculumPreview)
         @include('curriculum.partials.preview-banner')
+    @else
+        @include('curriculum.partials.active-draft-banner', ['activePackage' => $curriculumActivity['package']])
     @endisset
 
     @php
@@ -136,7 +138,7 @@
                                 <div class="mt-4 space-y-3">
                                     @foreach ($prompt['choices'] as $choice)
                                         <label class="flex min-h-11 cursor-pointer items-start gap-3 rounded-lg border border-neutral-300 p-3 hover:border-indigo-500 has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50">
-                                            <input type="radio" name="responses[{{ $prompt['code'] }}]" value="{{ $choice['id'] }}" class="mt-1 h-5 w-5" @checked(old('responses.'.$prompt['code']) === $choice['id']) @if($responseInvalid) aria-invalid="true" aria-describedby="prompt-error-{{ $prompt['code'] }}" @endif>
+                                            <input type="radio" name="responses[{{ $prompt['code'] }}]" value="{{ $choice['id'] }}" class="mt-1 h-5 w-5 shrink-0" @checked(old('responses.'.$prompt['code']) === $choice['id']) @if($responseInvalid) aria-invalid="true" aria-describedby="prompt-error-{{ $prompt['code'] }}" @endif>
                                             <span><span class="font-bold uppercase">{{ $choice['label'] }}.</span> {{ $choice['text'] }}</span>
                                         </label>
                                     @endforeach
@@ -149,7 +151,7 @@
                                 <div class="mt-3 flex flex-wrap gap-3">
                                     @foreach ($prompt['rating_scale']['values'] as $value)
                                         <label class="flex min-h-11 min-w-11 cursor-pointer items-center justify-center rounded-lg border border-neutral-300 px-3 has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50">
-                                            <input type="radio" name="responses[{{ $prompt['code'] }}]" value="{{ $value }}" class="mr-2 h-5 w-5" @checked((string) old('responses.'.$prompt['code']) === (string) $value) @if($responseInvalid) aria-invalid="true" aria-describedby="prompt-error-{{ $prompt['code'] }}" @endif>
+                                            <input type="radio" name="responses[{{ $prompt['code'] }}]" value="{{ $value }}" class="mr-2 h-5 w-5 shrink-0" @checked((string) old('responses.'.$prompt['code']) === (string) $value) @if($responseInvalid) aria-invalid="true" aria-describedby="prompt-error-{{ $prompt['code'] }}" @endif>
                                             <span>{{ $value }}</span>
                                         </label>
                                     @endforeach
@@ -188,7 +190,7 @@
                                 <p id="privacy-{{ $prompt['code'] }}" class="mt-2 text-sm text-neutral-600">{{ __('This text stays in the current form/session and is not persisted as a raw server response.') }}</p>
                                 @if ($prompt['self_check_required'])
                                     <label class="mt-3 flex min-h-11 items-center gap-3 rounded-lg border border-neutral-300 p-3">
-                                        <input type="checkbox" name="self_checks[{{ $prompt['code'] }}]" value="1" class="h-5 w-5" @checked(old('self_checks.'.$prompt['code'])) @if($selfCheckInvalid) aria-invalid="true" aria-describedby="prompt-error-{{ $prompt['code'] }}" @endif>
+                                        <input type="checkbox" name="self_checks[{{ $prompt['code'] }}]" value="1" class="h-5 w-5 shrink-0" @checked(old('self_checks.'.$prompt['code'])) @if($selfCheckInvalid) aria-invalid="true" aria-describedby="prompt-error-{{ $prompt['code'] }}" @endif>
                                         <span>{{ __('I completed or rehearsed this response and will compare it with the model/rubric.') }}</span>
                                     </label>
                                 @endif

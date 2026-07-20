@@ -32,7 +32,7 @@ class LoginController extends Controller
         ]);
 
         // 2. Coba untuk mengotentikasi pengguna
-        if (Auth::attempt($credentials, $request->boolean('remember'))) {
+        if (Auth::attempt([...$credentials, 'disabled_at' => null], $request->boolean('remember'))) {
             // Jika berhasil, regenerate session untuk keamanan
             $request->session()->regenerate();
 

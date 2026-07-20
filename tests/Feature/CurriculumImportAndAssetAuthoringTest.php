@@ -262,9 +262,38 @@ class CurriculumImportAndAssetAuthoringTest extends TestCase
 
     private function authorityDocx(): ?string
     {
-        $path = 'C:/Users/dhion/Desktop/Documents/000 - Thesis Dhion Setio/Revisi 30 Juni 2026/Learning Materials - Fixed/Hospitrainity.docx';
+        $configuration = json_decode(
+            (string) file_get_contents(config_path('authority-sources.json')),
+            true,
+            512,
+            JSON_THROW_ON_ERROR,
+        );
+        $source = collect($configuration['sources'] ?? [])->firstWhere('id', 'learning-materials');
+        if (! is_array($source)
+            || ! is_string($source['runner_environment_variable'] ?? null)
+            || ! is_string($source['expected_sha256'] ?? null)) {
+            throw new RuntimeException('The learning-material authority configuration is invalid.');
+        }
 
-        return is_file($path) ? $path : null;
+        $configuredPath = getenv($source['runner_environment_variable']);
+        if (is_string($configuredPath) && trim($configuredPath) !== '') {
+            $path = $configuredPath;
+            if (! is_file($path)) {
+                throw new RuntimeException('The configured learning-material authority is unavailable.');
+            }
+        } else {
+            $path = 'C:/Users/dhion/Desktop/Documents/000 - Thesis Dhion Setio/Revisi 30 Juni 2026/Learning Materials - Fixed/Hospitrainity.docx';
+            if (! is_file($path)) {
+                return null;
+            }
+        }
+
+        $actualHash = hash_file('sha256', $path);
+        if (! is_string($actualHash) || ! hash_equals(strtolower($source['expected_sha256']), strtolower($actualHash))) {
+            throw new RuntimeException('The learning-material authority does not match the approved SHA-256.');
+        }
+
+        return $path;
     }
 
     /** @param array<string, string> $extraEntries */

@@ -2,9 +2,17 @@
 
 namespace App\Services;
 
+use App\Models\CurriculumPackage;
+use App\Models\Institution;
+use App\Models\InstitutionMembership;
+use App\Models\User;
 use Closure;
 use Composer\InstalledVersions;
+use Illuminate\Encryption\Encrypter;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 use JsonException;
+use Throwable;
 
 class ProductionReadinessChecker
 {
@@ -13,11 +21,62 @@ class ProductionReadinessChecker
     /** @var Closure(string): bool */
     private Closure $packageInstalled;
 
-    public function __construct(?string $basePath = null, ?Closure $packageInstalled = null)
-    {
+    /** @var Closure(): bool */
+    private Closure $demoIdentityExists;
+
+    /** @var Closure(): bool */
+    private Closure $activeCurriculumIsReleaseReady;
+
+    /** @var Closure(): bool */
+    private Closure $identityMigrationFinalized;
+
+    public function __construct(
+        ?string $basePath = null,
+        ?Closure $packageInstalled = null,
+        ?Closure $demoIdentityExists = null,
+        ?Closure $activeCurriculumIsReleaseReady = null,
+        ?Closure $identityMigrationFinalized = null,
+    ) {
         $this->basePath = $basePath ?? base_path();
         $this->packageInstalled = $packageInstalled
             ?? static fn (string $package): bool => InstalledVersions::isInstalled($package);
+        $this->demoIdentityExists = $demoIdentityExists ?? static function (): bool {
+            try {
+                return ! Schema::hasTable('users')
+                    || ! Schema::hasTable('institutions')
+                    || ! Schema::hasTable('institution_memberships')
+                    || User::query()->whereIn('email', config('identity.known_demo_emails', []))->exists()
+                    || Institution::query()->whereIn('key', config('identity.known_demo_institution_keys', []))->exists()
+                    || Institution::query()->where('verification_method', 'disposable_demo_fixture')->exists()
+                    || InstitutionMembership::query()->where('provenance', 'disposable_demo_fixture')->exists();
+            } catch (Throwable) {
+                return true;
+            }
+        };
+        $this->activeCurriculumIsReleaseReady = $activeCurriculumIsReleaseReady ?? static function (): bool {
+            try {
+                if (! Schema::hasTable('curriculum_packages')) {
+                    return false;
+                }
+
+                $active = CurriculumPackage::active();
+
+                return $active !== null && strtolower(trim((string) $active->lifecycle_status)) !== 'draft';
+            } catch (Throwable) {
+                return false;
+            }
+        };
+        $this->identityMigrationFinalized = $identityMigrationFinalized ?? static function (): bool {
+            try {
+                return Schema::hasTable('identity_migration_states')
+                    && DB::table('identity_migration_states')
+                        ->where('name', 'normalized-institutions-session-revocation-v1')
+                        ->whereNotNull('completed_at')
+                        ->exists();
+            } catch (Throwable) {
+                return false;
+            }
+        };
     }
 
     /**
@@ -36,8 +95,9 @@ class ProductionReadinessChecker
             $this->check('environment', app()->environment('production'), 'APP_ENV must be production.'),
             $this->check('debug', config('app.debug') === false, 'APP_DEBUG must be false.'),
             $this->check('app_url', str_starts_with(strtolower((string) config('app.url')), 'https://'), 'APP_URL must use HTTPS.'),
-            $this->check('app_key', trim((string) config('app.key')) !== '', 'APP_KEY must be generated.'),
+            $this->check('app_key', $this->appKeyIsValid(), 'APP_KEY must be a valid generated key for APP_CIPHER.'),
             $this->check('secure_session_cookie', config('session.secure') === true, 'SESSION_SECURE_COOKIE must be true.'),
+            $this->check('revocable_session_store', config('session.driver') === 'database', 'SESSION_DRIVER must be database so account and membership changes can revoke sessions.'),
             $this->check('http_only_session_cookie', config('session.http_only') === true, 'SESSION_HTTP_ONLY must be true.'),
             $this->check('same_site_session_cookie', in_array($sameSite, ['lax', 'strict'], true), 'SESSION_SAME_SITE must be lax or strict.'),
             $this->check('security_headers', config('security.headers_enabled') === true, 'Security headers must be enabled.'),
@@ -59,6 +119,52 @@ class ProductionReadinessChecker
                 'public/storage must resolve to storage/app/public.',
             ),
             $this->check('dev_dependencies', ! $this->hasDevDependencies(), 'Composer development packages must not be installed.'),
+            $this->check('node_dependencies_absent', ! is_dir($this->path('node_modules')), 'node_modules must not be present in the PHP production release.'),
+            $this->check(
+                'production_mail_transport',
+                ! in_array(strtolower((string) config('mail.default')), ['', 'array', 'log'], true),
+                'MAIL_MAILER must use a real production transport, not log or array.',
+            ),
+            $this->check(
+                'demo_seed_disabled',
+                config('identity.demo_seed.enabled') === false,
+                'HOSPITRAINITY_DEMO_SEED must be false in production.',
+            ),
+            $this->check(
+                'demo_identities_absent',
+                ! ($this->demoIdentityExists)(),
+                'Known disposable demo identities or institutions must not exist in production.',
+            ),
+            $this->check(
+                'disabled_account_lifecycle',
+                Schema::hasColumn('users', 'disabled_at')
+                    && Schema::hasColumn('users', 'disabled_by_user_id')
+                    && Schema::hasColumn('users', 'disabled_reason_code'),
+                'The auditable disabled-account lifecycle schema must be installed.',
+            ),
+            $this->check(
+                'tenant_role_and_learning_scope_schema',
+                Schema::hasTable('platform_role_assignments')
+                    && Schema::hasTable('institution_role_assignments')
+                    && Schema::hasTable('user_capability_assignments')
+                    && Schema::hasTable('institution_join_codes')
+                    && Schema::hasTable('institution_join_requests')
+                    && Schema::hasColumn('curriculum_activity_progress', 'learning_scope_key')
+                    && Schema::hasColumn('curriculum_activity_progress', 'institution_membership_id')
+                    && Schema::hasColumn('curriculum_attempts', 'learning_scope_key')
+                    && Schema::hasColumn('completions', 'learning_scope_key'),
+                'Normalized tenant roles, classroom-code requests, and separated learning-scope schema must be installed.',
+            ),
+            $this->check(
+                'identity_session_migration_finalized',
+                ($this->identityMigrationFinalized)(),
+                'The explicitly confirmed normalized-identity session revocation must be complete.',
+            ),
+            $this->check(
+                'active_curriculum_release',
+                ($this->activeCurriculumIsReleaseReady)(),
+                'Exactly one fully approved, checksum-coherent, non-draft curriculum release must be active.',
+            ),
         ];
     }
 
@@ -83,27 +189,63 @@ class ProductionReadinessChecker
             return ['passed' => false, 'message' => 'public/build/manifest.json is not valid JSON.'];
         }
 
-        $hasEntries = is_array($manifest)
-            && array_key_exists('resources/css/app.css', $manifest)
-            && array_key_exists('resources/js/app.js', $manifest);
+        $requiredEntries = ['resources/css/app.css', 'resources/js/app.js'];
+        $hasEntries = is_array($manifest);
+        if ($hasEntries) {
+            foreach ($requiredEntries as $source) {
+                $entry = $manifest[$source] ?? null;
+                $file = is_array($entry) ? ($entry['file'] ?? null) : null;
+                if (! is_string($file)
+                    || $file === ''
+                    || str_starts_with($file, '/')
+                    || str_starts_with($file, '\\')
+                    || preg_match('/(?:^|[\\\\\/])\.\.(?:[\\\\\/]|$)/', $file) === 1
+                    || ! is_file($this->path('public/build/'.str_replace('\\', '/', $file)))) {
+                    $hasEntries = false;
+                    break;
+                }
+            }
+        }
 
         return [
             'passed' => $hasEntries,
             'message' => $hasEntries
-                ? 'The Vite manifest contains the application CSS and JavaScript entries.'
-                : 'The Vite manifest is missing the application CSS or JavaScript entry.',
+                ? 'The Vite manifest and referenced application CSS/JavaScript assets are present.'
+                : 'The Vite manifest is missing a valid application CSS/JavaScript asset.',
         ];
     }
 
     private function hasDevDependencies(): bool
     {
-        foreach (['phpunit/phpunit', 'laravel/pint', 'laravel/sail'] as $package) {
+        foreach ([
+            'fakerphp/faker',
+            'laravel/pail',
+            'laravel/pint',
+            'laravel/sail',
+            'mockery/mockery',
+            'nunomaduro/collision',
+            'phpunit/phpunit',
+        ] as $package) {
             if (($this->packageInstalled)($package)) {
                 return true;
             }
         }
 
         return false;
+    }
+
+    private function appKeyIsValid(): bool
+    {
+        $key = (string) config('app.key');
+        if (str_starts_with($key, 'base64:')) {
+            $decoded = base64_decode(substr($key, 7), true);
+            if (! is_string($decoded)) {
+                return false;
+            }
+            $key = $decoded;
+        }
+
+        return Encrypter::supported($key, (string) config('app.cipher'));
     }
 
     private function path(string $path): string

@@ -226,9 +226,13 @@ final class ProgressAdministrationService
      *
      * @return array<string, mixed>
      */
-    public function learnerDetail(User $learner, ?string $packageName, ?string $contentVersion): array
-    {
-        $inventory = $this->versionInventoryFor($learner);
+    public function learnerDetail(
+        User $learner,
+        ?string $packageName,
+        ?string $contentVersion,
+        ?int $institutionMembershipId = null,
+    ): array {
+        $inventory = $this->versionInventoryFor($learner, $institutionMembershipId);
         [$packageName, $contentVersion] = $this->resolveSelection(
             $learner,
             $inventory,
@@ -251,6 +255,7 @@ final class ProgressAdministrationService
                     'completed_at', 'baseline_skipped_at', 'updated_at',
                 ])
                 ->where('user_id', $learner->id)
+                ->when($institutionMembershipId !== null, fn ($query) => $query->where('institution_membership_id', $institutionMembershipId))
                 ->where('package_name', $packageName)
                 ->where('content_version', $contentVersion)
                 ->get()
@@ -260,6 +265,7 @@ final class ProgressAdministrationService
         $attemptCounts = $packageName !== null && $contentVersion !== null
             ? DB::table('curriculum_attempts')
                 ->where('user_id', $learner->id)
+                ->when($institutionMembershipId !== null, fn ($query) => $query->where('institution_membership_id', $institutionMembershipId))
                 ->where('package_name', $packageName)
                 ->where('content_version', $contentVersion)
                 ->selectRaw('activity_code, COUNT(id) as attempt_count, MAX(created_at) as last_attempt_at')
@@ -455,7 +461,7 @@ final class ProgressAdministrationService
     }
 
     /** @return Collection<int, array<string, mixed>> */
-    private function versionInventoryFor(User $learner): Collection
+    private function versionInventoryFor(User $learner, ?int $institutionMembershipId = null): Collection
     {
         $packages = CurriculumPackage::query()
             ->orderByDesc('is_active')
@@ -471,6 +477,7 @@ final class ProgressAdministrationService
             ]);
         $progress = CurriculumActivityProgress::query()
             ->where('user_id', $learner->id)
+            ->when($institutionMembershipId !== null, fn ($query) => $query->where('institution_membership_id', $institutionMembershipId))
             ->selectRaw('package_name, content_version, MAX(updated_at) as last_activity_at')
             ->groupBy('package_name', 'content_version')
             ->get()

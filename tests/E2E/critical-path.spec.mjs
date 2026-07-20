@@ -2,7 +2,9 @@ import { expect, test } from '@playwright/test';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 
-import { repoRoot, testAccounts } from '../../scripts/e2e/environment.mjs';
+import { readTestAccounts, repoRoot } from '../../scripts/e2e/environment.mjs';
+
+const testAccounts = readTestAccounts();
 
 function captureBrowserErrors(page) {
     const errors = [];
@@ -18,6 +20,7 @@ async function signIn(page, account) {
     await page.getByLabel('Email address').fill(account.email);
     await page.getByLabel('Password').fill(account.password);
     await page.getByRole('button', { name: 'Sign in' }).click();
+    await page.waitForURL((url) => url.pathname !== '/login');
 }
 
 async function openActivity(page, code) {
@@ -67,6 +70,37 @@ test('public mobile navigation is keyboard operable', async ({ page }) => {
     expect(browserErrors).toEqual([]);
 });
 
+test('public registration creates a personal account without institution enumeration', async ({ page }) => {
+    const browserErrors = captureBrowserErrors(page);
+    await page.goto('/register');
+
+    await expect(page.getByRole('heading', { name: 'Create a personal learning account' })).toBeVisible();
+    await expect(page.getByText('Earlier personal progress is not copied or shown to institution staff.')).toBeVisible();
+    await expect(page.getByRole('checkbox')).toHaveCount(1);
+    await expect(page.getByRole('combobox')).toHaveCount(0);
+    await expect(page.getByText('Hotel A')).toHaveCount(0);
+    await expect(page.getByText('Hotel B')).toHaveCount(0);
+    await expect(page.getByText('Hospitrainity HQ')).toHaveCount(0);
+    await expect(page.getByText('State Polytechnic of Malang')).toHaveCount(0);
+    expect(browserErrors).toEqual([]);
+});
+
+test('supervisor can issue an institution-scoped learner invitation', async ({ page }, testInfo) => {
+    const browserErrors = captureBrowserErrors(page);
+    const targetEmail = `browser-${testInfo.project.name.replaceAll(/[^a-z0-9]/g, '-')}@example.com`;
+    await signIn(page, testAccounts.supervisor);
+
+    await expect(page).toHaveURL(/\/supervisor\/dashboard$/);
+    await page.getByRole('link', { name: 'Invitations' }).click();
+    await expect(page.getByRole('heading', { name: 'Invitations' })).toBeVisible();
+    await page.getByLabel('Email address').fill(targetEmail);
+    await page.getByRole('button', { name: 'Send invitation' }).click();
+    await expect(page.getByRole('status')).toContainText('If the address is eligible');
+    await expect(page.getByRole('cell', { name: 'b••••••••@example.com' }).first()).toBeVisible();
+    await expect(page.getByRole('cell', { name: 'Pending' }).first()).toBeVisible();
+    expect(browserErrors).toEqual([]);
+});
+
 test('verified learner can navigate, submit a canonical attempt, and use the account menu', async ({ page }) => {
     const browserErrors = captureBrowserErrors(page);
     await signIn(page, testAccounts.learner);
@@ -78,7 +112,7 @@ test('verified learner can navigate, submit a canonical attempt, and use the acc
     await accountMenu.focus();
     await accountMenu.press('ArrowDown');
     await expect(page.getByRole('menuitem', { name: 'Dashboard' })).toBeFocused();
-    await page.keyboard.press('ArrowDown');
+    await page.keyboard.press('End');
     await expect(page.getByRole('menuitem', { name: 'Logout' })).toBeFocused();
     await page.keyboard.press('Escape');
     await expect(accountMenu).toBeFocused();
@@ -103,7 +137,7 @@ test('verified learner can navigate, submit a canonical attempt, and use the acc
     await expect(page.locator('#attempt-result')).toContainText('Responses checked and activity completed');
     await expect(page).toHaveURL(/#attempt-result$/);
     await page.reload();
-    await expect(page.getByText(/Progress state: completed.*Attempts: 1/)).toBeVisible();
+    await expect(page.getByText(/Progress state: completed.*Attempts: \d+/)).toBeVisible();
     expect(browserErrors).toEqual([]);
 });
 

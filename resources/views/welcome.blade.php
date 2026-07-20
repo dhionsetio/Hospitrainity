@@ -18,7 +18,7 @@
                     <a href="{{ route('locale.switch', 'id') }}" class="font-medium hover:text-indigo-600" lang="id" hreflang="id">ID</a>
                 </div>
                 <a href="{{ route('login') }}" class="font-medium text-indigo-700 hover:text-indigo-900">{{ __('Login') }}</a>
-                <a href="{{ route('register') }}" class="rounded-lg bg-indigo-600 px-4 py-2 text-white transition duration-300 hover:bg-indigo-700">{{ __('Create an Account') }}</a>
+                <a href="{{ route('register') }}" class="rounded-lg bg-indigo-600 px-4 py-2 text-white transition duration-300 hover:bg-indigo-700">{{ __('Access by Invitation') }}</a>
             </div>
             <button class="rounded md:hidden" id="mobile-menu-button" type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="{{ __('Open navigation') }}" data-open-label="{{ __('Open navigation') }}" data-close-label="{{ __('Close navigation') }}">
                 <i class="fas fa-bars text-2xl text-neutral-700" aria-hidden="true"></i>
@@ -33,7 +33,7 @@
                 <a href="{{ route('locale.switch', 'id') }}" class="font-medium hover:text-indigo-600" lang="id" hreflang="id">ID</a>
             </div>
             <a href="{{ route('login') }}" class="block px-4 py-2 text-center text-sm font-medium text-indigo-700 hover:bg-neutral-100">{{ __('Login') }}</a>
-            <a href="{{ route('register') }}" class="block rounded-b-lg bg-indigo-600 px-4 py-2 text-center text-sm text-white hover:bg-indigo-700">{{ __('Create an Account') }}</a>
+            <a href="{{ route('register') }}" class="block rounded-b-lg bg-indigo-600 px-4 py-2 text-center text-sm text-white hover:bg-indigo-700">{{ __('Access by Invitation') }}</a>
         </div>
     </header>
 
@@ -48,7 +48,7 @@
                         {{ __('Work through structured modules, vocabulary, materials, and interactive exercises while tracking completed activities.') }}
                     </p>
                     <div class="mt-8 flex flex-col justify-center gap-4 sm:flex-row lg:justify-start">
-                        <a href="{{ route('register') }}" class="rounded-lg bg-indigo-600 px-8 py-3 text-lg font-medium text-white transition duration-300 hover:bg-indigo-700">{{ __('Create an Account') }}</a>
+                        <a href="{{ route('register') }}" class="rounded-lg bg-indigo-600 px-8 py-3 text-lg font-medium text-white transition duration-300 hover:bg-indigo-700">{{ __('Access by Invitation') }}</a>
                         <a href="#features" class="rounded-lg bg-neutral-200 px-8 py-3 text-lg font-medium text-neutral-800 transition duration-300 hover:bg-neutral-300">{{ __('Explore Features') }}</a>
                     </div>
                 </div>
@@ -114,8 +114,8 @@
         <section id="get-started" class="bg-indigo-700 text-white">
             <div class="container mx-auto px-6 py-20 text-center">
                 <h2 class="mb-4 text-3xl font-bold">{{ __('Ready to Start Practicing?') }}</h2>
-                <p class="mx-auto mb-8 max-w-2xl text-lg text-indigo-100">{{ __('Create an account to access the hospitality English modules available to your institution.') }}</p>
-                <a href="{{ route('register') }}" class="rounded-lg bg-white px-8 py-3 text-lg font-medium text-indigo-700 transition duration-300 hover:bg-neutral-100">{{ __('Create an Account') }}</a>
+                <p class="mx-auto mb-8 max-w-2xl text-lg text-indigo-100">{{ __('Ask an authorized staff member at your institution for a secure invitation.') }}</p>
+                <a href="{{ route('register') }}" class="rounded-lg bg-white px-8 py-3 text-lg font-medium text-indigo-700 transition duration-300 hover:bg-neutral-100">{{ __('How Invitations Work') }}</a>
             </div>
         </section>
     </main>

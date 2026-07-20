@@ -2,73 +2,70 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Enums\LegacyInstitutionState;
+use App\Enums\UserRole;
 use App\Http\Controllers\Controller;
+use App\Models\IdentityAudit;
 use App\Models\User;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rule;
-use Illuminate\Validation\Rules\Password as PasswordRule;
+use Illuminate\Validation\Rules\Password;
 use Illuminate\View\View;
 
 class RegisterController extends Controller
 {
-    /**
-     * Menampilkan halaman formulir registrasi.
-     *
-     * The institution ("instansi") options are pulled from the distinct values
-     * already present in the users table, so registrants can only join a real,
-     * existing institution (previously the form hard-coded "Instansi A/B/C",
-     * none of which matched the seeded institutions and broke supervisor scoping).
-     */
     public function showRegistrationForm(): View
     {
-        $institutions = User::query()
-            ->whereNotNull('instansi')
-            ->select('instansi')
-            ->distinct()
-            ->orderBy('instansi')
-            ->pluck('instansi');
-
-        return view('register', compact('institutions'));
+        return view('register');
     }
 
-    /**
-     * Menangani permintaan registrasi.
-     */
-    public function register(Request $request): RedirectResponse
+    public function store(Request $request): RedirectResponse
     {
         $request->merge(['email' => User::canonicalEmail($request->input('email'))]);
 
-        // 1. Validasi data input. instansi must match an existing institution.
-        $request->validate([
+        $validated = $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'instansi' => ['required', 'string', Rule::exists('users', 'instansi')],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'confirmed', PasswordRule::defaults()],
-            'terms' => ['accepted'],
+            'email' => [
+                'required',
+                'string',
+                'email:rfc',
+                'max:255',
+                Rule::unique(User::class, 'email'),
+            ],
+            'password' => ['required', 'confirmed', Password::defaults()],
+            'scope_acknowledgement' => ['accepted'],
         ]);
 
-        // 2. Buat user baru (role defaults to 'user' at the database level;
-        //    role is intentionally NOT accepted from the request to prevent
-        //    privilege escalation).
-        $user = User::create([
-            'name' => $request->name,
-            'instansi' => $request->instansi,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
+        $user = DB::transaction(function () use ($validated): User {
+            $user = User::query()->create([
+                'name' => $validated['name'],
+                'instansi' => '',
+                'email' => $validated['email'],
+                'password' => $validated['password'],
+            ]);
+            $user->forceFill([
+                'role' => UserRole::Learner,
+                'legacy_institution_state' => LegacyInstitutionState::Unresolved,
+            ])->save();
+            IdentityAudit::query()->create([
+                'target_user_id' => $user->getKey(),
+                'event' => 'registration.learning_scope_acknowledged',
+                'metadata' => ['notice_version' => 'personal-institution-boundary-v1'],
+                'created_at' => now(),
+            ]);
 
-        // 3. Kirim email verifikasi (Registered event triggers the notification)
+            return $user;
+        }, attempts: 3);
+
         event(new Registered($user));
-
-        // 4. Login user yang baru dibuat
         Auth::login($user);
+        $request->session()->regenerate();
 
-        // 5. Arahkan ke halaman "verifikasi email"; setelah terverifikasi
-        //    pengguna diarahkan ke dashboard oleh middleware 'verified'.
-        return redirect()->route('verification.notice');
+        return redirect()->route('verification.notice')
+            ->with('status', __('Your personal learning account has been created. Verify your email before joining an institution.'));
     }
 }

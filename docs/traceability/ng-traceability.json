@@ -17,38 +17,118 @@
                 "NG-B01-DECISIONS"
             ],
             "required_evidence": "Production seed fails before writes; no runtime literal credential; approved bootstrap/recovery runbook and tests",
-            "status": "open",
+            "status": "in_progress",
             "evidence": {
-                "code": [],
-                "migrations": [],
-                "automated_tests": [],
-                "browser_device_checks": [],
-                "human_legal_reviews": [],
-                "production_evidence": [],
-                "checkpoints": []
+                "code": [
+                    "app/Services/DemoSeedGuard.php",
+                    "app/Console/Commands/BootstrapSuperadmin.php",
+                    "app/Console/Commands/FinalizeIdentityMigration.php",
+                    "app/Console/Commands/IdentityMigrationPreflight.php",
+                    "app/Services/AccountLifecycleService.php",
+                    "app/Http/Middleware/EnsureAccountIsActive.php",
+                    "app/Providers/AppServiceProvider.php",
+                    "app/Models/User.php",
+                    "config/identity.php",
+                    "database/seeders/DatabaseSeeder.php",
+                    "database/seeders/UserSeeder.php",
+                    "scripts/e2e/prepare.mjs"
+                ],
+                "migrations": [
+                    "database/migrations/2026_07_19_000010_normalize_identity_and_invitations.php",
+                    "database/migrations/2026_07_20_000012_add_disabled_account_state.php"
+                ],
+                "automated_tests": [
+                    "tests/Feature/DemoSeedGuardTest.php",
+                    "tests/Feature/BootstrapSuperadminCommandTest.php",
+                    "tests/Feature/FinalizeIdentityMigrationCommandTest.php",
+                    "tests/Feature/IdentityMigrationPreflightCommandTest.php",
+                    "tests/Feature/ProductionReadinessCheckerTest.php",
+                    "tests/Feature/AuthHardeningTest.php",
+                    "tests/Feature/DisabledAccountLifecycleTest.php"
+                ],
+                "browser_device_checks": [
+                    "Isolated invitation journey passed in patched desktop/mobile Chromium and WebKit; patched Firefox launch is blocked by a reproduced host graphics-startup failure before application navigation."
+                ],
+                "human_legal_reviews": [
+                    "Owner accepted B01 questionnaire decisions on 2026-07-19; independent security and production review remain required."
+                ],
+                "production_evidence": [
+                    "The authoritative normalized-identity migration completed after verified database/private-storage backups; all three prior database sessions were explicitly revoked and postflight invariants pass. The reversible disabled-account lifecycle is installed and verified across authentication, reset, invitations, sessions, audit, and readiness, but no account was disabled. Demo identities still block production and creator bootstrap; B03/B17 recovery, target-environment, independent security, and production deployment evidence remain open."
+                ],
+                "checkpoints": [
+                    "docs/checkpoints/NG-B01-CHECKPOINT.md"
+                ]
             }
         },
         {
             "id": "NG-P0-002",
             "batches": [
                 "B01",
+                "B02",
+                "B05",
                 "B06"
             ],
             "requirement": "Institution integrity; role/scope safety",
             "decisions": [
                 "NG-B01-DECISIONS",
+                "NG-B02-DECISIONS",
+                "NG-B05-DECISIONS",
                 "NG-B06-DECISIONS"
             ],
             "required_evidence": "Non-enumerating registration; approved invitation/enrollment proof; migration mapping; cross-institution tests",
-            "status": "open",
+            "status": "in_progress",
             "evidence": {
-                "code": [],
-                "migrations": [],
-                "automated_tests": [],
-                "browser_device_checks": [],
-                "human_legal_reviews": [],
-                "production_evidence": [],
-                "checkpoints": []
+                "code": [
+                    "app/Services/InstitutionContext.php",
+                    "app/Services/InstitutionInvitationService.php",
+                    "app/Services/InstitutionJoinCodeService.php",
+                    "app/Services/InstitutionAccessService.php",
+                    "app/Services/LearningContext.php",
+                    "app/Services/WorkContext.php",
+                    "app/Services/InstitutionRoleManager.php",
+                    "app/Console/Commands/IdentityMigrationPreflight.php",
+                    "app/Policies/InstitutionInvitationPolicy.php",
+                    "app/Http/Controllers/InstitutionInvitationController.php",
+                    "app/Http/Controllers/InvitationAcceptanceController.php",
+                    "app/Http/Controllers/InstitutionEnrollmentController.php",
+                    "app/Http/Controllers/InstitutionJoinCodeController.php",
+                    "app/Http/Controllers/InstitutionJoinRequestController.php",
+                    "app/Http/Controllers/InstitutionRoleAssignmentController.php",
+                    "app/Http/Controllers/WorkContextController.php",
+                    "app/Http/Controllers/ActiveInstitutionController.php",
+                    "app/Http/Controllers/Superadmin/AdminDashboardController.php",
+                    "app/Models/User.php",
+                    "app/Providers/AppServiceProvider.php"
+                ],
+                "migrations": [
+                    "database/migrations/2026_07_19_000010_normalize_identity_and_invitations.php",
+                    "database/migrations/2026_07_20_000013_establish_tenant_roles_and_join_codes.php"
+                ],
+                "automated_tests": [
+                    "tests/Feature/RegistrationTest.php",
+                    "tests/Feature/InstitutionInvitationAuthorizationTest.php",
+                    "tests/Feature/IdentityMigrationTest.php",
+                    "tests/Feature/IdentityMigrationPreflightCommandTest.php",
+                    "tests/Feature/ProgressAdministrationTest.php",
+                    "tests/Feature/InstitutionJoinCodeEnrollmentTest.php",
+                    "tests/Feature/InstitutionRoleManagementTest.php",
+                    "tests/Feature/WorkContextAuthorizationTest.php",
+                    "tests/Feature/RoleRouteMatrixTest.php",
+                    "tests/Feature/AdministrationIntegrationTest.php"
+                ],
+                "browser_device_checks": [
+                    "Invitation and personal-registration journeys passed in patched desktop/mobile Chromium and WebKit. The separate Firefox run stalled at browser launch before application navigation and hit the host timeout; Opera was not directly tested."
+                ],
+                "human_legal_reviews": [
+                    "Owner approved personal self-study plus pending adjustable-duration classroom-code enrollment and explicit tenant roles/work contexts on 2026-07-20; all three demo accounts must remain enabled."
+                ],
+                "production_evidence": [
+                    "The authoritative database now has normalized platform/institution/capability assignments, pending classroom-code requests, and server-derived learning-scope keys. Personal history remains private; staff reads require the exact membership scope; cross-tenant and stale-context tests fail closed. All three demo accounts remain enabled, no business row or session was deleted, and B06 class/course scope remains open."
+                ],
+                "checkpoints": [
+                    "docs/checkpoints/NG-B01-CHECKPOINT.md",
+                    "docs/checkpoints/NG-B02-B05-ARCHITECTURE-CHECKPOINT.md"
+                ]
             }
         },
         {
@@ -63,15 +143,40 @@
                 "Applicable CF approval records"
             ],
             "required_evidence": "Human approval set; immutable non-draft active release; activation/rollback evidence",
-            "status": "open",
+            "status": "human_review",
             "evidence": {
-                "code": [],
-                "migrations": [],
-                "automated_tests": [],
-                "browser_device_checks": [],
-                "human_legal_reviews": [],
-                "production_evidence": [],
-                "checkpoints": []
+                "code": [
+                    "app/Services/Curriculum/CurriculumReleaseGuard.php",
+                    "app/Services/Curriculum/CurriculumReleaseLifecycle.php",
+                    "app/Models/CurriculumRelease.php",
+                    "app/Models/CurriculumReleaseApproval.php",
+                    "app/Models/CurriculumReleaseEvent.php",
+                    "app/Policies/CurriculumDraftPolicy.php",
+                    "app/Services/ProductionReadinessChecker.php",
+                    "resources/views/curriculum/partials/active-draft-banner.blade.php"
+                ],
+                "migrations": [
+                    "database/migrations/2026_07_19_000011_create_curriculum_releases.php"
+                ],
+                "automated_tests": [
+                    "tests/Feature/CurriculumReleaseGuardTest.php",
+                    "tests/Feature/CurriculumReleaseLifecycleTest.php",
+                    "tests/Feature/CanonicalCurriculumImportTest.php",
+                    "tests/Feature/CurriculumDraftAuthoringTest.php",
+                    "tests/Feature/ProductionReadinessCheckerTest.php"
+                ],
+                "browser_device_checks": [
+                    "Draft preview remains visibly labeled in patched desktop/mobile Chromium and WebKit; Firefox application assertions are unavailable because the patched browser fails during host graphics startup."
+                ],
+                "human_legal_reviews": [
+                    "Owner reports lecturer/expert approval but requests that no reviewer names be recorded. This supports owner-attested non-production testing only; named qualified gate evidence still does not exist for production or independent-review claims."
+                ],
+                "production_evidence": [
+                    "No release was approved or activated; named external reviewer identity is separated from the authenticated recorder, transitions and current Superadmin authority are serialized, referenced evidence is deletion-restricted, production draft delivery/replacement import remain fail-closed, and delivery plus rollback snapshot validation require a matching activation actor, timestamp, reason, and append-only transition event before mutation. Production rollback stays disabled, so B17 activation/rollback evidence remains open."
+                ],
+                "checkpoints": [
+                    "docs/checkpoints/NG-B01-CHECKPOINT.md"
+                ]
             }
         },
         {
@@ -365,15 +470,35 @@
                 "NG-B04-DECISIONS"
             ],
             "required_evidence": "Automated regression plus human keyboard, zoom/reflow, focus, target, error, screen-reader, and device evidence",
-            "status": "open",
+            "status": "in_progress",
             "evidence": {
-                "code": [],
+                "code": [
+                    "resources/views/login.blade.php",
+                    "resources/views/auth/confirm-password.blade.php",
+                    "resources/views/auth/forgot-password.blade.php",
+                    "resources/views/auth/reset-password.blade.php",
+                    "resources/views/auth/verify-email.blade.php",
+                    "resources/views/invitations/accept.blade.php",
+                    "resources/views/superadmin/sidebar.blade.php",
+                    "resources/views/superadmin/curriculum-drafts/index.blade.php",
+                    "resources/views/superadmin/modules/index.blade.php",
+                    "resources/views/supervisor/sidebar.blade.php",
+                    "resources/views/curriculum/activity.blade.php"
+                ],
                 "migrations": [],
-                "automated_tests": [],
-                "browser_device_checks": [],
+                "automated_tests": [
+                    "tests/Feature/AccessibilityMarkupTest.php (6 tests, 409 assertions; full Laravel suite 271 tests, 4,332 assertions on 2026-07-20)",
+                    "tests/E2E/critical-path.spec.mjs (36/36 journeys across the four viable configured profiles on 2026-07-20)"
+                ],
+                "browser_device_checks": [
+                    "Read-only guest-page audit at 320/390/768/1280 CSS pixels found no root horizontal overflow on the audited pages",
+                    "Playwright desktop Chromium, desktop WebKit, Pixel 7 emulation, and iPhone 15 emulation passed 36/36; Firefox application behavior remains unverified because firefox-1532 fails during host SWGL startup before navigation"
+                ],
                 "human_legal_reviews": [],
                 "production_evidence": [],
-                "checkpoints": []
+                "checkpoints": [
+                    "docs/checkpoints/NG-B04-PARTIAL-CHECKPOINT.md"
+                ]
             }
         },
         {
@@ -433,15 +558,38 @@
                 "NG-B06-DECISIONS"
             ],
             "required_evidence": "Accurate role/scope context on every admin surface; scope-switch and stale/unknown-context tests",
-            "status": "open",
+            "status": "in_progress",
             "evidence": {
-                "code": [],
-                "migrations": [],
-                "automated_tests": [],
-                "browser_device_checks": [],
-                "human_legal_reviews": [],
-                "production_evidence": [],
-                "checkpoints": []
+                "code": [
+                    "app/Services/WorkContext.php",
+                    "app/Services/InstitutionContext.php",
+                    "app/Services/InstitutionAccessService.php",
+                    "app/Services/InstitutionRoleManager.php",
+                    "app/Http/Middleware/CheckRole.php",
+                    "app/Http/Controllers/WorkContextController.php",
+                    "resources/views/work-context/index.blade.php",
+                    "resources/views/institution-roles/index.blade.php"
+                ],
+                "migrations": [
+                    "database/migrations/2026_07_20_000013_establish_tenant_roles_and_join_codes.php"
+                ],
+                "automated_tests": [
+                    "tests/Feature/WorkContextAuthorizationTest.php",
+                    "tests/Feature/InstitutionRoleManagementTest.php",
+                    "tests/Feature/RoleRouteMatrixTest.php"
+                ],
+                "browser_device_checks": [
+                    "Role-specific critical journeys passed in patched desktop/mobile Chromium and WebKit; Firefox and Opera evidence remains open."
+                ],
+                "human_legal_reviews": [
+                    "Owner approved the explicit multi-role context and tenant hierarchy on 2026-07-20."
+                ],
+                "production_evidence": [
+                    "Expand-first normalized assignments and the explicit context selector are installed; legacy role-column retirement and B06 coverage of every future tenant surface remain open."
+                ],
+                "checkpoints": [
+                    "docs/checkpoints/NG-B02-B05-ARCHITECTURE-CHECKPOINT.md"
+                ]
             }
         },
         {
@@ -526,15 +674,35 @@
                 "Qualified legal approval"
             ],
             "required_evidence": "Versioned accessible trust/support destinations; registration linkage/version evidence; link/locale/keyboard tests",
-            "status": "open",
+            "status": "in_progress",
             "evidence": {
-                "code": [],
-                "migrations": [],
-                "automated_tests": [],
-                "browser_device_checks": [],
-                "human_legal_reviews": [],
-                "production_evidence": [],
-                "checkpoints": []
+                "code": [
+                    "app/Http/Controllers/Auth/RegisterController.php",
+                    "app/Http/Controllers/InstitutionEnrollmentController.php",
+                    "resources/views/register.blade.php",
+                    "resources/views/institution-enrollment/index.blade.php"
+                ],
+                "migrations": [
+                    "database/migrations/2026_07_20_000013_establish_tenant_roles_and_join_codes.php"
+                ],
+                "automated_tests": [
+                    "tests/Feature/RegistrationTest.php",
+                    "tests/Feature/InstitutionJoinCodeEnrollmentTest.php",
+                    "tests/Feature/AccessibilityMarkupTest.php",
+                    "tests/Feature/LangParityTest.php"
+                ],
+                "browser_device_checks": [
+                    "Personal registration warning and non-enumeration journey passed in patched desktop/mobile Chromium and WebKit."
+                ],
+                "human_legal_reviews": [
+                    "Owner approved the personal/institution progress warning; qualified legal approval and final versioned trust copy remain open."
+                ],
+                "production_evidence": [
+                    "Registration records a versioned learning-scope acknowledgment, but final privacy/terms/help/support destinations and qualified legal interpretation remain release-blocking."
+                ],
+                "checkpoints": [
+                    "docs/checkpoints/NG-B02-B05-ARCHITECTURE-CHECKPOINT.md"
+                ]
             }
         },
         {
@@ -755,15 +923,28 @@
                 "NG-B04-DECISIONS"
             ],
             "required_evidence": "Non-shrinking semantic controls; target-size, narrow width, zoom, keyboard, screen-reader, contrast, touch evidence",
-            "status": "open",
+            "status": "in_progress",
             "evidence": {
-                "code": [],
+                "code": [
+                    "resources/views/curriculum/activity.blade.php",
+                    "resources/views/invitations/accept.blade.php",
+                    "resources/views/login.blade.php",
+                    "resources/views/superadmin/curriculum-drafts/index.blade.php",
+                    "resources/views/superadmin/modules/index.blade.php"
+                ],
                 "migrations": [],
-                "automated_tests": [],
-                "browser_device_checks": [],
+                "automated_tests": [
+                    "tests/Feature/AccessibilityMarkupTest.php::test_selection_controls_cannot_flex_shrink",
+                    "tests/E2E/critical-path.spec.mjs::selection, ordering, and short-text forms meet validation, focus, target, and non-drag contracts"
+                ],
+                "browser_device_checks": [
+                    "Playwright narrow-width activity journey passed in desktop Chromium/WebKit plus Pixel 7 and iPhone 15 emulation; physical touch, zoom, screen-reader, and branded-browser evidence remains open"
+                ],
                 "human_legal_reviews": [],
                 "production_evidence": [],
-                "checkpoints": []
+                "checkpoints": [
+                    "docs/checkpoints/NG-B04-PARTIAL-CHECKPOINT.md"
+                ]
             }
         },
         {
@@ -965,13 +1146,15 @@
                 "code": [
                     "config/authority-sources.json",
                     "scripts/release/verify-authorities.ps1",
-                    ".github/workflows/authority-release.yml"
+                    ".github/workflows/authority-release.yml",
+                    "tests/Feature/CurriculumImportAndAssetAuthoringTest.php"
                 ],
                 "migrations": [
                     "Target-database migration/concurrency lane remains B17."
                 ],
                 "automated_tests": [
-                    "Exact-hash verifier passed both protected authority inputs in the working folder and fresh baseline clone; the verifier logged IDs and hashes, not source paths."
+                    "Exact-hash verifier passed both protected authority inputs in the working folder and fresh baseline clone; the verifier logged IDs and hashes, not source paths.",
+                    "The protected learning-material compile test resolves the configured runner environment variable, verifies the approved SHA-256 before compilation, and fails closed for configured missing or mismatched inputs. The real compile test passed with 28 assertions; controlled missing and wrong-hash probes exited 2; the strict full suite with both process-only authority variables passed 272 tests and 4,334 assertions."
                 ],
                 "browser_device_checks": [],
                 "human_legal_reviews": [

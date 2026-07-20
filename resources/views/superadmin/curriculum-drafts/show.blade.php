@@ -43,13 +43,16 @@
                     @if(Auth::user()->isSuperAdmin() && $draft->status === \App\Enums\CurriculumDraftStatus::InReview)
                         <form method="POST" action="{{ route('superadmin.curriculum-drafts.approve', $draft) }}" class="flex flex-wrap items-end gap-3">@csrf<input type="hidden" name="draft_revision" value="{{ $draft->revision }}"><label class="text-sm font-semibold">{{ __('admin.review_reason') }}<input name="reason" required minlength="10" maxlength="1000" class="mt-1 block rounded-md border-neutral-300"></label><button class="rounded-md bg-emerald-700 px-5 py-2 font-semibold text-white">{{ __('admin.approve_draft') }}</button></form>
                     @endif
-                    @if(Auth::user()->isSuperAdmin() && $draft->status === \App\Enums\CurriculumDraftStatus::Approved)
+                    @can('publish', $draft)
                         <form method="POST" action="{{ route('superadmin.curriculum-drafts.publish', $draft) }}">@csrf<input type="hidden" name="draft_revision" value="{{ $draft->revision }}"><button class="rounded-md bg-red-700 px-5 py-2 font-semibold text-white">{{ __('admin.publish_version') }}</button></form>
-                    @endif
+                    @endcan
                     @if(Auth::user()->isSuperAdmin() && $draft->status === \App\Enums\CurriculumDraftStatus::Published && $draft->publication_run_id && $draft->publishedPackage?->is_active)
                         <form method="POST" action="{{ route('superadmin.curriculum-drafts.rollback', $draft) }}">@csrf<input type="hidden" name="draft_revision" value="{{ $draft->revision }}"><button class="rounded-md border border-red-700 px-5 py-2 font-semibold text-red-800">{{ __('admin.rollback_publication') }}</button></form>
                     @endif
                 </div>
+                @if(Auth::user()->isSuperAdmin() && $draft->status === \App\Enums\CurriculumDraftStatus::Approved)
+                    <p class="mt-4 rounded-md border border-amber-300 bg-amber-50 p-3 text-sm text-amber-950" role="note">{{ __('Release activation is contained until every required human approval gate has named evidence.') }}</p>
+                @endif
                 @unless($editable)<p class="mt-4 text-sm text-neutral-600">{{ __('admin.workspace_is_read_only') }}</p>@endunless
             </section>
 

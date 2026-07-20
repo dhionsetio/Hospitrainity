@@ -11,7 +11,6 @@
         <h1 class="text-3xl font-bold text-neutral-800">{{ __('Welcome Back!') }}</h1>
         <p class="text-neutral-600 mt-2">{{ __('Continue your learning and reach your goals.') }}</p>
 
-        <!-- Placeholder untuk konten dasbor -->
         <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             @forelse ($modules as $module)
             <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col transform hover:-translate-y-1 transition-transform duration-300">

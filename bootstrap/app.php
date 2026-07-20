@@ -2,6 +2,7 @@
 
 use App\Exceptions\CurriculumDraftConflictException;
 use App\Http\Middleware\CheckRole;
+use App\Http\Middleware\EnsureAccountIsActive;
 use App\Http\Middleware\EnsureLegacyCurriculumWritable;
 use App\Http\Middleware\SecurityHeaders;
 use App\Http\Middleware\SetLocale;
@@ -32,6 +33,7 @@ return Application::configure(basePath: dirname(__DIR__))
         // Apply the visitor's preferred UI locale (session-driven) on every web request.
         $middleware->web(append: [
             SetLocale::class,
+            EnsureAccountIsActive::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {

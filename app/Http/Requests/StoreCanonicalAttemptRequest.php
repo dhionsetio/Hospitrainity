@@ -2,8 +2,10 @@
 
 namespace App\Http\Requests;
 
+use App\Enums\WorkContextRole;
 use App\Models\CurriculumEntity;
 use App\Models\CurriculumPackage;
+use App\Services\WorkContext;
 
 class StoreCanonicalAttemptRequest extends CanonicalAttemptRequest
 {
@@ -12,7 +14,8 @@ class StoreCanonicalAttemptRequest extends CanonicalAttemptRequest
 
     public function authorize(): bool
     {
-        return $this->user()?->isLearner() === true;
+        return $this->user() !== null
+            && app(WorkContext::class)->current($this, $this->user()) === WorkContextRole::Learner;
     }
 
     /** @return array<string, mixed> */

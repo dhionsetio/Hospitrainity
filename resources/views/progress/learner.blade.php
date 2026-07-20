@@ -15,7 +15,7 @@
             <a href="{{ route($backRouteName) }}" class="font-semibold text-indigo-700 hover:text-indigo-900">&larr; {{ __('admin.back_to_progress') }}</a>
             <header class="mt-5">
                 <h1 class="text-3xl font-bold text-neutral-900">{{ $detail['learner']->name }}</h1>
-                <p class="mt-2 text-neutral-600">{{ $detail['learner']->email }} <span aria-hidden="true">·</span> {{ $detail['learner']->instansi }}</p>
+                <p class="mt-2 text-neutral-600">{{ $detail['learner']->email }} <span aria-hidden="true">·</span> {{ isset($scopeInstitution) ? $scopeInstitution->displayName(app()->getLocale()) : $detail['learner']->instansi }}</p>
                 <p class="mt-1 text-sm text-neutral-500">{{ __('admin.metadata_only_detail') }}</p>
             </header>
 

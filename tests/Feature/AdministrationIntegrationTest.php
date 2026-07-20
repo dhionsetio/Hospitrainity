@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use App\Enums\UserRole;
 use App\Models\AdministrationAudit;
 use App\Models\CurriculumDraftEvent;
+use App\Models\Institution;
 use App\Models\User;
 use App\Services\Curriculum\CurriculumDraftWorkspace;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -15,6 +16,27 @@ use Tests\TestCase;
 class AdministrationIntegrationTest extends TestCase
 {
     use RefreshDatabase;
+
+    public function test_dashboard_counts_normalized_institutions_instead_of_legacy_user_labels(): void
+    {
+        $admin = User::factory()->create([
+            'role' => UserRole::Admin,
+            'instansi' => 'Legacy Phantom One',
+        ]);
+        User::factory()->create(['instansi' => 'Legacy Phantom Two']);
+        User::factory()->create(['instansi' => 'Legacy Phantom Three']);
+        User::factory()->create(['instansi' => 'Legacy Phantom Four']);
+
+        $normalizedInstitutionCount = Institution::query()->count();
+
+        $this->actingAs($admin)
+            ->get(route('admin.dashboard'))
+            ->assertOk()
+            ->assertViewHas(
+                'stats',
+                static fn (array $stats): bool => $stats['total_institutions'] === $normalizedInstitutionCount,
+            );
+    }
 
     public function test_audit_review_requires_a_recently_confirmed_superadmin(): void
     {

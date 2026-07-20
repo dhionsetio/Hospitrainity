@@ -78,7 +78,7 @@
                                     <td class="px-6 py-4">{{ $exercise->order }}</td>
                                     <td class="px-6 py-4 flex items-center gap-3">
                                         @if($legacyCurriculumReadOnly)
-                                            <span class="text-xs font-medium text-neutral-500">{{ __('Read-only evidence') }}</span>
+                                            <span class="text-xs font-semibold text-neutral-700">{{ __('Read-only evidence') }}</span>
                                         @else
                                             <button type="button" @click="openEdit" data-record="{{ base64_encode($exercise->toJson()) }}" data-action="{{ route('superadmin.exercises.update', $exercise) }}" class="font-medium text-blue-600 hover:underline" aria-label="{{ __('admin.edit_named', ['name' => $exercise->title]) }}"><i class="fas fa-edit" aria-hidden="true"></i></button>
                                             <form action="{{ route('superadmin.exercises.destroy', $exercise) }}" method="POST" data-confirm-submit="{{ __('admin.confirm_delete_named', ['name' => $exercise->title]) }}">
@@ -88,6 +88,25 @@
                                         @endif
                                     </td>
                                 </tr>
+                                @if($legacyCurriculumReadOnly)
+                                    <tr class="bg-neutral-50/70">
+                                        <td colspan="5" class="px-6 py-3">
+                                            <details>
+                                                <summary class="cursor-pointer font-semibold text-indigo-700 underline">{{ __('View stored details') }}</summary>
+                                                <div class="mt-4 rounded-md border border-neutral-200 bg-white p-4">
+                                                    @include('superadmin.partials.legacy-structured-value', ['value' => [
+                                                        'record_id' => $exercise->id,
+                                                        'title' => $exercise->title,
+                                                        'type' => $exercise->type,
+                                                        'parent_lesson' => $exercise->lesson->title ?? null,
+                                                        'display_order' => $exercise->order,
+                                                        'content' => $exercise->content,
+                                                    ]])
+                                                </div>
+                                            </details>
+                                        </td>
+                                    </tr>
+                                @endif
                             @empty
                                 <tr><td colspan="5" class="px-6 py-4 text-center">{{ __('admin.no_exercises') }}</td></tr>
                             @endforelse

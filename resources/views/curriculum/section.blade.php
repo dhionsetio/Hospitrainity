@@ -7,6 +7,8 @@
     @include('partials.learner-nav')
     @isset($curriculumPreview)
         @include('curriculum.partials.preview-banner')
+    @else
+        @include('curriculum.partials.active-draft-banner', ['activePackage' => $curriculumSection['package']])
     @endisset
 
     <main class="container mx-auto max-w-4xl px-4 py-6 sm:px-6 sm:py-8">
@@ -17,7 +19,6 @@
         <header class="mt-4 rounded-xl bg-white p-5 shadow sm:p-7">
             <p class="text-sm font-semibold text-indigo-700">{{ __('Section :number of :total', ['number' => $curriculumSection['navigation']['position'], 'total' => $curriculumSection['navigation']['total']]) }}</p>
             <h1 class="mt-2 break-words text-3xl font-bold text-neutral-950 sm:text-4xl">{{ $curriculumSection['title'] }}</h1>
-            <p class="mt-2 text-sm text-neutral-600">{{ $curriculumSection['code'] }}</p>
         </header>
 
         <article class="mt-6 space-y-5 rounded-xl bg-white p-5 shadow sm:p-8" aria-label="{{ $curriculumSection['title'] }}">
@@ -134,6 +135,7 @@
             <summary class="cursor-pointer font-semibold">{{ __('Source and lifecycle evidence') }}</summary>
             <dl class="mt-3 grid gap-2 sm:grid-cols-2">
                 <div><dt class="font-semibold">{{ __('Package version') }}</dt><dd>{{ $curriculumSection['package']->content_version }}</dd></div>
+                <div><dt class="font-semibold">{{ __('Content code') }}</dt><dd class="font-mono">{{ $curriculumSection['code'] }}</dd></div>
                 <div><dt class="font-semibold">{{ __('Source artifact') }}</dt><dd>Hospitrainity.docx</dd></div>
                 <div><dt class="font-semibold">{{ __('Ordered blocks') }}</dt><dd>{{ count($curriculumSection['blocks']) }}</dd></div>
                 <div><dt class="font-semibold">{{ __('Lifecycle') }}</dt><dd>{{ $curriculumSection['status'] }}</dd></div>

@@ -33,8 +33,8 @@
                     </label>
                     <fieldset class="text-sm text-neutral-800">
                         <legend class="font-semibold">{{ __('admin.base_version') }}</legend>
-                        <label class="mt-2 flex gap-2"><input type="radio" name="source" value="clone" @checked(old('source', 'clone') === 'clone')> <span>{{ __('admin.clone_active') }}</span></label>
-                        <label class="mt-2 flex gap-2"><input type="radio" name="source" value="empty" @checked(old('source') === 'empty')> <span>{{ __('admin.start_empty') }}</span></label>
+                        <label class="mt-2 flex gap-2"><input type="radio" name="source" value="clone" class="shrink-0" @checked(old('source', 'clone') === 'clone')> <span>{{ __('admin.clone_active') }}</span></label>
+                        <label class="mt-2 flex gap-2"><input type="radio" name="source" value="empty" class="shrink-0" @checked(old('source') === 'empty')> <span>{{ __('admin.start_empty') }}</span></label>
                     </fieldset>
                     <div class="lg:col-span-3"><button class="rounded-md bg-indigo-700 px-5 py-2 font-semibold text-white hover:bg-indigo-800">{{ __('admin.create_draft') }}</button></div>
                 </form>

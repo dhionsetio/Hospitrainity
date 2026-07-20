@@ -10,17 +10,21 @@ use App\Models\CurriculumEntity;
 use App\Models\CurriculumPackage;
 use App\Models\CurriculumResponse;
 use App\Models\User;
+use App\Services\LearningContext;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\ValidationException;
 
 final class CurriculumAttemptService
 {
+    public function __construct(private readonly LearningContext $learningContext) {}
+
     public function markViewed(User $user, string $activityCode): void
     {
         $definition = $this->definition($activityCode);
-        DB::transaction(function () use ($user, $definition): void {
-            $progress = $this->progress($user, $definition);
+        $context = $this->learningContext->current(request(), $user);
+        DB::transaction(function () use ($user, $definition, $context): void {
+            $progress = $this->progress($user, $definition, $context);
             if ($progress->viewed_at === null) {
                 $progress->forceFill(['viewed_at' => now()])->save();
             }
@@ -31,6 +35,7 @@ final class CurriculumAttemptService
     public function submit(User $user, string $activityCode, array $validated): array
     {
         $definition = $this->definition($activityCode);
+        $context = $this->learningContext->current(request(), $user);
         $applicationKey = (string) config('app.key');
         if ($applicationKey === '') {
             throw new \RuntimeException('APP_KEY is required to protect canonical attempt idempotency fingerprints.');
@@ -41,18 +46,20 @@ final class CurriculumAttemptService
             'self_checks' => $validated['self_checks'] ?? [],
         ]), $applicationKey);
 
-        return DB::transaction(function () use ($user, $definition, $validated, $submissionHmacSha256): array {
+        return DB::transaction(function () use ($user, $definition, $validated, $submissionHmacSha256, $context): array {
             $package = $definition['package'];
             $activity = $definition['activity'];
             $now = now();
             $identity = [
                 'user_id' => $user->id,
+                'learning_scope_key' => $context['scope_key'],
                 'package_name' => $package->package_name,
                 'content_version' => $package->content_version,
                 'activity_code' => $activity->code,
                 'idempotency_key' => $validated['attempt_key'],
             ];
             $attempt = CurriculumAttempt::query()->firstOrCreate($identity, [
+                'institution_membership_id' => $context['membership_id'],
                 'activity_source_sha256' => $activity->source_sha256,
                 'submission_hmac_sha256' => $submissionHmacSha256,
                 'intent' => $validated['intent'],
@@ -72,7 +79,7 @@ final class CurriculumAttemptService
 
             $intent = $validated['intent'];
             $attempt->events()->create(['event_type' => 'started', 'occurred_at' => $now]);
-            $progress = $this->progress($user, $definition);
+            $progress = $this->progress($user, $definition, $context);
             $progress->forceFill([
                 'viewed_at' => $progress->viewed_at ?? $now,
                 'started_at' => $progress->started_at ?? $now,
@@ -180,6 +187,7 @@ final class CurriculumAttemptService
     {
         $attempts = CurriculumAttempt::query()
             ->where('user_id', $user->id)
+            ->where('learning_scope_key', $this->learningContext->current(request(), $user)['scope_key'])
             ->where('state', 'completed')
             ->whereHas('responses', static fn ($query) => $query->where('response_form', 'rating'))
             ->with(['responses' => static fn ($query) => $query->where('response_form', 'rating')->orderBy('prompt_code')])
@@ -286,16 +294,21 @@ final class CurriculumAttemptService
         return compact('draft', 'activity', 'prompts', 'answers', 'feedback');
     }
 
-    private function progress(User $user, array $definition): CurriculumActivityProgress
+    /** @param array{scope_key: string, membership_id: int|null} $context */
+    private function progress(User $user, array $definition, array $context): CurriculumActivityProgress
     {
         $package = $definition['package'];
         $activity = $definition['activity'];
         $progress = CurriculumActivityProgress::query()->firstOrCreate([
             'user_id' => $user->id,
+            'learning_scope_key' => $context['scope_key'],
             'package_name' => $package->package_name,
             'content_version' => $package->content_version,
             'activity_code' => $activity->code,
-        ], ['section_code' => $activity->parent_code]);
+        ], [
+            'institution_membership_id' => $context['membership_id'],
+            'section_code' => $activity->parent_code,
+        ]);
 
         return CurriculumActivityProgress::query()->whereKey($progress->id)->lockForUpdate()->firstOrFail();
     }

@@ -1,36 +1,49 @@
 @extends('layouts.app')
 
-@section('title', __('Canonical Curriculum - Hospitrainity'))
+@section('title', __('Learning Dashboard - Hospitrainity'))
 @section('bodyClass', 'bg-neutral-100')
 
 @section('content')
     @include('partials.learner-nav')
     @isset($curriculumPreview)
         @include('curriculum.partials.preview-banner')
+    @else
+        @include('curriculum.partials.active-draft-banner', ['activePackage' => $package])
     @endisset
 
     <main class="container mx-auto px-6 py-8">
         <header class="mb-8">
-            <p class="text-sm font-semibold uppercase tracking-wide text-indigo-700">{{ __('Canonical curriculum') }} · {{ $package->content_version }}</p>
+            <p class="text-sm font-semibold uppercase tracking-wide text-indigo-700">{{ __('Hospitality English learning') }}</p>
             <h1 class="mt-2 text-3xl font-bold text-neutral-900">{{ __('Welcome Back!') }}</h1>
-            <p class="mt-2 text-neutral-600">{{ __('Continue through the published Hospitrainity chapters and their source-traceable activities.') }}</p>
+            <p class="mt-2 text-neutral-600">{{ __('Continue through the available Hospitrainity modules and activities.') }}</p>
         </header>
 
         <div class="mb-8 rounded-lg border border-amber-200 bg-amber-50 p-4 text-sm text-amber-900" role="note">
-            <p>{{ $package->projection_meta['notice'] }}</p>
-            <p class="mt-2 font-medium">{{ __('The canonical manuscript is in English. Interface controls follow your selected language, while source content is shown without invented translation.') }}</p>
+            <p class="font-medium">{{ __('The canonical manuscript is in English. Interface controls follow your selected language, while source content is shown without invented translation.') }}</p>
         </div>
+
+        <details class="mb-8 rounded-lg border border-neutral-300 bg-white p-4 text-sm text-neutral-700">
+            <summary class="cursor-pointer font-semibold">{{ __('Source and lifecycle evidence') }}</summary>
+            <dl class="mt-3 grid gap-2 sm:grid-cols-2">
+                <div><dt class="font-semibold">{{ __('Package version') }}</dt><dd>{{ $package->content_version }}</dd></div>
+                <div><dt class="font-semibold">{{ __('Lifecycle') }}</dt><dd>{{ $package->lifecycle_status }}</dd></div>
+            </dl>
+            <p class="mt-3">{{ $package->projection_meta['notice'] }}</p>
+        </details>
 
         <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             @foreach ($chapters as $chapter)
                 <article class="flex flex-col overflow-hidden rounded-lg bg-white shadow-lg">
                     <div class="flex-grow p-6">
-                        <div class="flex flex-wrap items-center gap-2">
-                            <span class="rounded-full bg-indigo-100 px-3 py-1 text-sm font-semibold text-indigo-700">{{ __('Module :number', ['number' => $chapter['module']]) }}</span>
-                            <span class="rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold uppercase text-emerald-800">{{ $chapter['status'] }}</span>
-                        </div>
+                        <span class="rounded-full bg-indigo-100 px-3 py-1 text-sm font-semibold text-indigo-700">{{ __('Module :number', ['number' => $chapter['module']]) }}</span>
                         <h2 class="mt-4 text-xl font-bold text-neutral-900">{{ $chapter['title'] }}</h2>
-                        <p class="mt-2 font-mono text-xs text-neutral-500">{{ $chapter['code'] }}</p>
+                        <details class="mt-3 text-xs text-neutral-600">
+                            <summary class="cursor-pointer font-semibold">{{ __('Technical evidence') }}</summary>
+                            <dl class="mt-2 space-y-1">
+                                <div><dt class="inline font-semibold">{{ __('Content code') }}:</dt> <dd class="inline font-mono">{{ $chapter['code'] }}</dd></div>
+                                <div><dt class="inline font-semibold">{{ __('Lifecycle') }}:</dt> <dd class="inline">{{ $chapter['status'] }}</dd></div>
+                            </dl>
+                        </details>
                     </div>
                     <div class="px-6 pb-4">
                         @if ($chapter['activities_count'] > 0)

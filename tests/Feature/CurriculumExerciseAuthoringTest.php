@@ -300,6 +300,10 @@ class CurriculumExerciseAuthoringTest extends TestCase
         $draft = $review->validate($draft, $superadmin, $draft->revision);
         $this->assertSame('valid', $draft->validation_report['status'], json_encode($draft->validation_report));
         $draft = $review->approve($draft, $superadmin, $draft->revision, 'ADM-4 canonical validation and preview were reviewed.');
+        // This characterization test needs two synthetic delivered versions to
+        // prove historical attempts remain version-bound. The release guard
+        // also requires APP_ENV=testing, so this cannot widen runtime behavior.
+        config()->set('curriculum.release.allow_unapproved_replacement_for_tests', true);
         $review->publish($draft, $superadmin, $draft->revision);
 
         $live = $this->actingAs($learner)->get(route('curriculum.activities.show', $activity->code))

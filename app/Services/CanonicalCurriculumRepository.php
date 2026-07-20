@@ -2,16 +2,21 @@
 
 namespace App\Services;
 
+use App\Enums\InstitutionMembershipStatus;
 use App\Models\Completion;
 use App\Models\CurriculumActivityProgress;
 use App\Models\CurriculumAttempt;
 use App\Models\CurriculumEntity;
 use App\Models\CurriculumPackage;
+use App\Models\Institution;
+use App\Models\InstitutionMembership;
 use App\Models\User;
 use Illuminate\Support\Collection;
 
 class CanonicalCurriculumRepository
 {
+    public function __construct(private readonly LearningContext $learningContext) {}
+
     public function activePackage(): ?CurriculumPackage
     {
         return CurriculumPackage::active();
@@ -42,6 +47,7 @@ class CanonicalCurriculumRepository
         $activitiesByChapter = $activities->groupBy(fn (CurriculumEntity $activity): ?string => $sectionChapter[$activity->parent_code] ?? null);
         $completedActivityCodes = CurriculumActivityProgress::query()
             ->where('user_id', $user->id)
+            ->where('learning_scope_key', $this->scopeKey($user))
             ->where('package_name', $package->package_name)
             ->where('content_version', $package->content_version)
             ->whereNotNull('completed_at')
@@ -290,17 +296,20 @@ class CanonicalCurriculumRepository
 
         $progress = CurriculumActivityProgress::query()
             ->where('user_id', $user->id)
+            ->where('learning_scope_key', $this->scopeKey($user))
             ->where('package_name', $package->package_name)
             ->where('content_version', $package->content_version)
             ->where('activity_code', $activity->code)
             ->first();
         $legacyCompleted = Completion::query()
             ->where('user_id', $user->id)
+            ->where('learning_scope_key', $this->scopeKey($user))
             ->where('completable_type', CurriculumEntity::class)
             ->where('completable_id', $activity->id)
             ->exists();
         $legacyMapped = CurriculumActivityProgress::query()
             ->where('user_id', $user->id)
+            ->where('learning_scope_key', $this->scopeKey($user))
             ->where('package_name', $package->package_name)
             ->where('activity_code', $activity->code)
             ->where('legacy_status', 'legacy_reveal_only')
@@ -365,6 +374,7 @@ class CanonicalCurriculumRepository
                 'legacy_reveal_only' => $legacyCompleted || $legacyMapped || $progress?->legacy_status === 'legacy_reveal_only',
                 'attempt_count' => CurriculumAttempt::query()
                     ->where('user_id', $user->id)
+                    ->where('learning_scope_key', $this->scopeKey($user))
                     ->where('package_name', $package->package_name)
                     ->where('content_version', $package->content_version)
                     ->where('activity_code', $activity->code)
@@ -415,5 +425,58 @@ class CanonicalCurriculumRepository
 
             return [$user->getKey() => (int) round(($count / $activityCount) * 100)];
         })->all();
+    }
+
+    /**
+     * Return only progress explicitly attributed to the selected institution.
+     * Personal and other-institution rows are excluded even for the same user.
+     *
+     * @param  Collection<int, User>  $users
+     * @return array<int|string, int>
+     */
+    public function overallForInstitution(Collection $users, Institution $institution): array
+    {
+        $package = $this->activePackage();
+        if ($package === null || $users->isEmpty()) {
+            return [];
+        }
+        $activityCount = $package->entities()
+            ->where('entity_type', 'activity')
+            ->where('lifecycle_status', 'published')
+            ->count();
+        if ($activityCount === 0) {
+            return $users->mapWithKeys(static fn (User $user): array => [$user->getKey() => 0])->all();
+        }
+
+        $memberships = InstitutionMembership::query()
+            ->where('institution_id', $institution->getKey())
+            ->whereIn('user_id', $users->pluck('id'))
+            ->where('status', InstitutionMembershipStatus::Active->value)
+            ->pluck('id', 'user_id');
+        $completedCounts = CurriculumActivityProgress::query()
+            ->join('curriculum_entities as active_activity', function ($join) use ($package): void {
+                $join->on('active_activity.code', '=', 'curriculum_activity_progress.activity_code')
+                    ->where('active_activity.curriculum_package_id', '=', $package->id)
+                    ->where('active_activity.entity_type', '=', 'activity')
+                    ->where('active_activity.lifecycle_status', '=', 'published');
+            })
+            ->whereIn('curriculum_activity_progress.institution_membership_id', $memberships->values())
+            ->where('curriculum_activity_progress.package_name', $package->package_name)
+            ->where('curriculum_activity_progress.content_version', $package->content_version)
+            ->whereNotNull('curriculum_activity_progress.completed_at')
+            ->selectRaw('curriculum_activity_progress.user_id as progress_user_id, COUNT(*) as completed_count')
+            ->groupBy('curriculum_activity_progress.user_id')
+            ->pluck('completed_count', 'progress_user_id');
+
+        return $users->mapWithKeys(static function (User $user) use ($completedCounts, $activityCount): array {
+            return [
+                $user->getKey() => (int) round(((int) ($completedCounts[$user->getKey()] ?? 0) / $activityCount) * 100),
+            ];
+        })->all();
+    }
+
+    private function scopeKey(User $user): string
+    {
+        return $this->learningContext->current(request(), $user)['scope_key'];
     }
 }

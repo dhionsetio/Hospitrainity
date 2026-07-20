@@ -72,6 +72,14 @@ Only valid completed runs are counted above. Sandbox-restricted install/build at
 - The protected authority workflow is dormant: its offline self-hosted Windows runner is neither installed nor activated.
 - PostgreSQL 18.4, concurrency/locking/query-plan evidence, the broader browser/device matrix, and production configuration remain B17 work.
 - NG-P3-042 remains open because its target-database and no-critical-skip release evidence is only partially satisfied.
+
+## 2026-07-20 protected-source test follow-up
+
+The authority-DOCX import feature test now resolves the learning-material path from the `HOSPITRAINITY_LEARNING_DOCX` environment variable named by `config/authority-sources.json`, with the existing workstation path retained only as a local fallback. A configured path that is missing fails closed, and every available input must match the approved SHA-256 before compilation begins. The test no longer relies on location plus compiler-shape assertions as indirect source identity evidence.
+
+The real authority compile test passed with 28 assertions. Controlled missing-path and wrong-hash probes both failed before compilation with non-zero exit code 2 and path-neutral messages. The strict complete suite, supplied both protected sources through process-only environment variables, passed 272 tests with 4,334 assertions in 108.32 seconds with no skipped authority test. Pint and `git diff --check` passed.
+
+NG-P3-042 remains `in_progress`: the manual offline authority workflow currently verifies exact hashes but does not yet execute the protected compile test, and the actual target-database migration/query/lock/concurrency lane remains B17. No protected document was copied into the repository or uploaded.
 - Existing P0 findings NG-P0-001 through NG-P0-004 remain open. B01 requires its questionnaire before implementation.
 
 ## Rollback

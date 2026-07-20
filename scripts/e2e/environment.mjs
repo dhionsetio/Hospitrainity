@@ -1,10 +1,11 @@
-import { existsSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 export const repoRoot = path.resolve(fileURLToPath(new URL('../../', import.meta.url)));
 export const artifactRoot = path.join(repoRoot, 'storage', 'framework', 'testing', 'e2e');
 export const databasePath = path.join(artifactRoot, 'database.sqlite');
+export const credentialsPath = path.join(artifactRoot, 'credentials.json');
 export const baseURL = 'http://127.0.0.1:8010';
 export const phpBinary = process.env.PHP_BINARY
     || (process.platform === 'win32' && existsSync('C:\\php\\php.exe') ? 'C:\\php\\php.exe' : 'php');
@@ -23,6 +24,7 @@ export const e2eEnv = {
     LOG_LEVEL: 'debug',
     MAIL_MAILER: 'array',
     QUEUE_CONNECTION: 'sync',
+    SECURITY_CSP_REPORT_ONLY: 'false',
     SESSION_DRIVER: 'file',
     SESSION_FILES: path.join(artifactRoot, 'sessions'),
     VIEW_COMPILED_PATH: path.join(artifactRoot, 'views'),
@@ -40,7 +42,15 @@ export const e2eEnv = {
     CURRICULUM_STANDALONE_OUTPUT: path.join(artifactRoot, 'curriculum', 'Hospitrainity-Standalone.html'),
 };
 
-export const testAccounts = Object.freeze({
-    learner: Object.freeze({ email: 'user@example.com', password: 'password' }),
-    superadmin: Object.freeze({ email: 'superadmin@example.com', password: 'password' }),
-});
+export function readTestAccounts() {
+    if (!existsSync(credentialsPath)) {
+        throw new Error('E2E credentials are missing. Run the E2E preparation step first.');
+    }
+
+    const accounts = JSON.parse(readFileSync(credentialsPath, 'utf8'));
+    return Object.freeze({
+        learner: Object.freeze(accounts.learner),
+        superadmin: Object.freeze(accounts.superadmin),
+        supervisor: Object.freeze(accounts.supervisor),
+    });
+}

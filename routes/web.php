@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ActiveInstitutionController;
 use App\Http\Controllers\Admin\ProgressAggregateController;
 use App\Http\Controllers\Auth\EmailVerificationController;
 use App\Http\Controllers\Auth\LoginController;
@@ -16,6 +17,13 @@ use App\Http\Controllers\CurriculumDraftPreviewController;
 use App\Http\Controllers\CurriculumImportController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ExerciseController;
+use App\Http\Controllers\InstitutionEnrollmentController;
+use App\Http\Controllers\InstitutionInvitationController;
+use App\Http\Controllers\InstitutionJoinCodeController;
+use App\Http\Controllers\InstitutionJoinRequestController;
+use App\Http\Controllers\InstitutionRoleAssignmentController;
+use App\Http\Controllers\InvitationAcceptanceController;
+use App\Http\Controllers\LearningContextController;
 use App\Http\Controllers\LegacyEvidenceController;
 use App\Http\Controllers\LessonController;
 use App\Http\Controllers\MaterialController;
@@ -28,6 +36,7 @@ use App\Http\Controllers\Superadmin\UserAdministrationController;
 use App\Http\Controllers\Supervisor\LearnerProgressController as SupervisorLearnerProgressController;
 use App\Http\Controllers\Supervisor\SpvDashboardController;
 use App\Http\Controllers\VocabularyController;
+use App\Http\Controllers\WorkContextController;
 use App\Http\Middleware\SetLocale;
 use Illuminate\Support\Facades\Route;
 
@@ -88,6 +97,30 @@ $curriculumDraftRoutes = static function (bool $publicationAuthority): void {
     }
 };
 
+$invitationRoutes = static function (): void {
+    Route::get('/invitations', [InstitutionInvitationController::class, 'index'])->name('invitations.index');
+    Route::post('/invitations', [InstitutionInvitationController::class, 'store'])
+        ->middleware('throttle:invitation-issue')->name('invitations.store');
+    Route::post('/invitations/institution', [InstitutionInvitationController::class, 'selectInstitution'])
+        ->middleware('throttle:institution-switch')->name('invitations.institution');
+    Route::delete('/invitations/{invitation}', [InstitutionInvitationController::class, 'destroy'])
+        ->middleware('throttle:invitation-revoke')->name('invitations.destroy');
+};
+
+$joinCodeRoutes = static function (): void {
+    Route::get('/classroom-codes', [InstitutionJoinCodeController::class, 'index'])->name('join-codes.index');
+    Route::post('/classroom-codes', [InstitutionJoinCodeController::class, 'store'])
+        ->middleware('throttle:join-code-issue')->name('join-codes.store');
+    Route::delete('/classroom-codes/{joinCode}', [InstitutionJoinCodeController::class, 'destroy'])
+        ->middleware('throttle:join-code-revoke')->name('join-codes.destroy');
+    Route::patch('/membership-requests/{joinRequest}', [InstitutionJoinRequestController::class, 'update'])
+        ->middleware('throttle:membership-decision')->name('join-requests.update');
+    Route::get('/institution-roles', [InstitutionRoleAssignmentController::class, 'index'])
+        ->middleware('password.confirm')->name('institution-roles.index');
+    Route::patch('/institution-memberships/{membership}/role', [InstitutionRoleAssignmentController::class, 'update'])
+        ->middleware(['password.confirm', 'throttle:institution-role-change'])->name('institution-roles.update');
+};
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -115,7 +148,9 @@ Route::middleware('guest')->group(function () {
     Route::post('/login', [LoginController::class, 'login'])->middleware('throttle:login');
 
     Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
-    Route::post('/register', [RegisterController::class, 'register'])->middleware('throttle:registration');
+    Route::post('/register', [RegisterController::class, 'store'])
+        ->middleware('throttle:registration')
+        ->name('register.store');
 
     // Password reset via Laravel's native password broker.
     Route::get('/forgot-password', [PasswordResetController::class, 'showLinkRequestForm'])->name('password.request');
@@ -128,7 +163,28 @@ Route::middleware('guest')->group(function () {
         ->name('password.update');
 });
 
+Route::get('/join/unavailable', [InvitationAcceptanceController::class, 'unavailable'])
+    ->name('invitations.unavailable');
+Route::get('/join/{token}', [InvitationAcceptanceController::class, 'show'])
+    ->where('token', '[A-Za-z0-9_-]{43}')
+    ->middleware('throttle:invitation-view')
+    ->name('invitations.accept');
+Route::post('/join/{token}', [InvitationAcceptanceController::class, 'store'])
+    ->where('token', '[A-Za-z0-9_-]{43}')
+    ->middleware('throttle:invitation-redeem')
+    ->name('invitations.redeem');
+
 Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth')->name('logout');
+
+Route::post('/institution', ActiveInstitutionController::class)
+    ->middleware(['auth', 'verified', 'throttle:institution-switch'])
+    ->name('institution.select');
+
+Route::middleware(['auth', 'verified'])->group(function (): void {
+    Route::get('/work-context', [WorkContextController::class, 'index'])->name('work-context.index');
+    Route::post('/work-context', [WorkContextController::class, 'store'])
+        ->middleware('throttle:institution-switch')->name('work-context.store');
+});
 
 /*
 |--------------------------------------------------------------------------
@@ -153,7 +209,7 @@ Route::middleware('auth')->group(function () {
 | Recent-password confirmation for privileged account administration
 |--------------------------------------------------------------------------
 */
-Route::middleware(['auth', 'verified', 'role:superadmin'])->group(function () {
+Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/confirm-password', [PasswordConfirmationController::class, 'show'])
         ->name('password.confirm');
     Route::post('/confirm-password', [PasswordConfirmationController::class, 'store'])
@@ -168,6 +224,12 @@ Route::middleware(['auth', 'verified', 'role:superadmin'])->group(function () {
 */
 Route::middleware(['auth', 'verified', 'role:user'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/institution-memberships', [InstitutionEnrollmentController::class, 'index'])
+        ->name('institution-enrollment.index');
+    Route::post('/institution-memberships', [InstitutionEnrollmentController::class, 'store'])
+        ->middleware('throttle:join-code-redeem')->name('institution-enrollment.store');
+    Route::post('/learning-context', LearningContextController::class)
+        ->middleware('throttle:institution-switch')->name('learning-context.select');
 
     Route::get('/curriculum/activities/{activity}', [CanonicalCurriculumController::class, 'activity'])
         ->name('curriculum.activities.show');
@@ -220,10 +282,12 @@ Route::middleware(['auth', 'verified', 'role:user'])->group(function () {
 | Role-scoped dashboards
 |--------------------------------------------------------------------------
 */
-Route::middleware(['auth', 'verified', 'role:supervisor'])->prefix('supervisor')->name('supervisor.')->group(function () {
+Route::middleware(['auth', 'verified', 'role:supervisor'])->prefix('supervisor')->name('supervisor.')->group(function () use ($invitationRoutes, $joinCodeRoutes) {
     Route::get('/dashboard', [SpvDashboardController::class, 'index'])->name('dashboard');
     Route::get('/progress/learners/{learner}', [SupervisorLearnerProgressController::class, 'show'])
         ->name('progress.learners.show');
+    $invitationRoutes();
+    $joinCodeRoutes();
 });
 
 Route::middleware(['auth', 'verified', 'role:admin'])->prefix('admin')->name('admin.')->group(function () use ($curriculumDraftRoutes) {
@@ -241,7 +305,7 @@ Route::middleware(['auth', 'verified', 'role:admin'])->prefix('admin')->name('ad
     $curriculumDraftRoutes(false);
 });
 
-Route::middleware(['auth', 'verified', 'role:superadmin'])->prefix('superadmin')->name('superadmin.')->group(function () use ($curriculumDraftRoutes) {
+Route::middleware(['auth', 'verified', 'role:superadmin'])->prefix('superadmin')->name('superadmin.')->group(function () use ($curriculumDraftRoutes, $invitationRoutes, $joinCodeRoutes) {
     Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
     Route::get('/curriculum-exercises', [CurriculumDraftExerciseController::class, 'overview'])->name('curriculum-exercises.index');
     Route::get('/progress', [SuperadminLearnerProgressController::class, 'index'])->name('progress.index');
@@ -255,6 +319,8 @@ Route::middleware(['auth', 'verified', 'role:superadmin'])->prefix('superadmin')
     Route::resource('materials', MaterialController::class)->only('index');
     Route::resource('exercises', ExerciseController::class)->only('index');
     $curriculumDraftRoutes(true);
+    $invitationRoutes();
+    $joinCodeRoutes();
 
     Route::middleware('password.confirm')->group(function () {
         Route::get('/audit', [AdministrationAuditController::class, 'index'])

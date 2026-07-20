@@ -2,7 +2,12 @@
 
 namespace Tests\Feature;
 
+use App\Enums\InstitutionMembershipStatus;
+use App\Enums\UserRole;
+use App\Models\Institution;
+use App\Models\InstitutionMembership;
 use App\Models\User;
+use App\Services\InstitutionInvitationService;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -15,7 +20,10 @@ class EmailCanonicalizationTest extends TestCase
 
     public function test_model_storage_and_login_use_trimmed_lowercase_email(): void
     {
-        $user = User::factory()->create(['email' => '  Mixed.Case@Example.COM  ']);
+        $user = User::factory()->create([
+            'email' => '  Mixed.Case@Example.COM  ',
+            'password' => 'password',
+        ]);
 
         $this->assertSame('mixed.case@example.com', $user->fresh()->email);
 
@@ -26,21 +34,34 @@ class EmailCanonicalizationTest extends TestCase
         $this->assertAuthenticatedAs($user);
     }
 
-    public function test_registration_rejects_a_case_variant_of_an_existing_email(): void
+    public function test_invitation_redemption_does_not_duplicate_a_case_variant_of_an_existing_email(): void
     {
+        $institution = Institution::query()->where('key', 'hospitrainity-hq')->firstOrFail();
         $existing = User::factory()->create([
             'email' => 'learner@example.com',
-            'instansi' => 'Existing Hotel',
+            'instansi' => $institution->name_id,
         ]);
+        $issuer = User::factory()->create(['role' => UserRole::Supervisor]);
+        InstitutionMembership::query()->create([
+            'institution_id' => $institution->id,
+            'user_id' => $issuer->id,
+            'status' => InstitutionMembershipStatus::Active,
+            'is_default' => true,
+            'provenance' => 'test_fixture',
+            'joined_at' => now(),
+        ]);
+        $issued = app(InstitutionInvitationService::class)->issue(
+            $issuer,
+            $institution,
+            'LEARNER@EXAMPLE.COM',
+        );
 
-        $this->post('/register', [
+        $this->post(route('invitations.redeem', ['token' => $issued['token']]), [
             'name' => 'Duplicate Learner',
-            'instansi' => $existing->instansi,
-            'email' => 'LEARNER@EXAMPLE.COM',
             'password' => 'Password123!',
             'password_confirmation' => 'Password123!',
             'terms' => '1',
-        ])->assertSessionHasErrors('email');
+        ])->assertRedirect(route('invitations.unavailable'));
 
         $this->assertSame(1, User::where('email', 'learner@example.com')->count());
     }

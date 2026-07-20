@@ -18,6 +18,8 @@ class UserFactory extends Factory
      */
     protected static ?string $password;
 
+    protected static ?string $plainPassword;
+
     /**
      * Define the model's default state.
      *
@@ -30,7 +32,11 @@ class UserFactory extends Factory
             'instansi' => fake()->company(),
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
-            'password' => static::$password ??= Hash::make('password'),
+            // Factory identities are test doubles. Use an unpredictable process-
+            // local value so the factory cannot introduce a reusable credential.
+            'password' => static::$password ??= Hash::make(
+                static::$plainPassword ??= Str::password(40),
+            ),
             'role' => UserRole::Learner,
             'remember_token' => Str::random(10),
         ];

@@ -7,6 +7,8 @@
     @include('partials.learner-nav')
     @isset($curriculumPreview)
         @include('curriculum.partials.preview-banner')
+    @else
+        @include('curriculum.partials.active-draft-banner', ['activePackage' => $curriculumChapter['package']])
     @endisset
 
     <main class="container mx-auto px-6 py-8">
@@ -15,10 +17,8 @@
         <header class="mt-4 rounded-xl bg-white p-6 shadow">
             <div class="flex flex-wrap items-center gap-2">
                 <span class="rounded-full bg-indigo-100 px-3 py-1 text-sm font-semibold text-indigo-700">{{ __('Module :number', ['number' => $curriculumChapter['module']]) }}</span>
-                <span class="rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold uppercase text-emerald-800">{{ $curriculumChapter['status'] }}</span>
             </div>
             <h1 class="mt-3 text-4xl font-bold text-neutral-900">{{ $curriculumChapter['title'] }}</h1>
-            <p class="mt-2 font-mono text-sm text-neutral-500">{{ $curriculumChapter['code'] }}</p>
         </header>
 
         <section class="mt-8 rounded-xl bg-white p-6 shadow" aria-labelledby="outcomes-heading">
@@ -59,6 +59,8 @@
             <summary class="cursor-pointer font-semibold">{{ __('Source and lifecycle evidence') }}</summary>
             <dl class="mt-3 grid gap-2 md:grid-cols-2">
                 <div><dt class="font-semibold">{{ __('Package version') }}</dt><dd>{{ $curriculumChapter['package']->content_version }}</dd></div>
+                <div><dt class="font-semibold">{{ __('Content code') }}</dt><dd class="font-mono">{{ $curriculumChapter['code'] }}</dd></div>
+                <div><dt class="font-semibold">{{ __('Lifecycle') }}</dt><dd>{{ $curriculumChapter['status'] }}</dd></div>
                 <div><dt class="font-semibold">{{ __('Source artifact') }}</dt><dd>{{ $curriculumChapter['source_locator']['artifact'] ?? __('Not declared') }}</dd></div>
                 <div><dt class="font-semibold">{{ __('Source block') }}</dt><dd>{{ $curriculumChapter['source_locator']['body_index'] ?? __('Not declared') }}</dd></div>
                 <div><dt class="font-semibold">SHA-256</dt><dd class="break-all font-mono text-xs">{{ $curriculumChapter['source_locator']['normalized_text_sha256'] ?? __('Not declared') }}</dd></div>

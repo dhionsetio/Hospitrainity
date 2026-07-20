@@ -14,6 +14,12 @@
 </head>
 
 <body class="@yield('bodyClass', 'bg-neutral-100')">
+    @if(auth()->check() && request()->hasSession() && session(\App\Services\WorkContext::SESSION_PREVIEW_KEY) === true)
+        <div class="border-b border-amber-400 bg-amber-100 px-4 py-3 text-center font-bold text-amber-950" role="status">
+            {{ __('Preview mode is active. Actions still use your System Admin authority and are audited.') }}
+            <a href="{{ route('work-context.index') }}" class="ml-2 underline">{{ __('Exit or switch context') }}</a>
+        </div>
+    @endif
     @yield('content')
 
     @stack('scripts')

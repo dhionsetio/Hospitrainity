@@ -8,6 +8,7 @@ use App\Models\CurriculumDraft;
 use App\Models\CurriculumDraftEntity;
 use App\Models\CurriculumPackage;
 use App\Models\Exercise;
+use App\Models\Institution;
 use App\Models\Lesson;
 use App\Models\Material;
 use App\Models\Module;
@@ -30,11 +31,7 @@ class AdminDashboardController extends Controller
         $stats = [
             'total_learners' => User::where('role', UserRole::Learner->value)->count(),
             'total_supervisors' => User::where('role', UserRole::Supervisor->value)->count(),
-            'total_institutions' => User::query()
-                ->whereNotNull('instansi')
-                ->where('instansi', '!=', '')
-                ->distinct()
-                ->count('instansi'),
+            'total_institutions' => Institution::query()->count(),
             'active_canonical_chapters' => (int) ($activeEntityCounts['chapter'] ?? 0),
         ];
 

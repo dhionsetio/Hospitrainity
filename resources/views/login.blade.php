@@ -4,24 +4,24 @@
 @section('bodyClass', 'bg-neutral-50 flex items-center justify-center min-h-screen')
 
 @section('content')
-    <div class="w-full max-w-md p-8 space-y-8 bg-white rounded-lg shadow-md">
+    <main class="w-full max-w-md p-8 space-y-8 bg-white rounded-lg shadow-md">
         <div class="text-center">
             <a href="/" class="text-3xl font-bold text-indigo-600">Hospitrainity</a>
-            <h2 class="mt-4 text-2xl font-bold text-neutral-900">
+            <h1 class="mt-4 text-2xl font-bold text-neutral-900">
                 {{ __('Sign in to your account') }}
-            </h2>
+            </h1>
         </div>
         <form class="mt-8 space-y-6" action="{{ route('login') }}" method="POST">
             @csrf
             @error('email')
-            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
+            <div id="email-error" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
                 <span class="block sm:inline">{{ $message }}</span>
             </div>
             @enderror
             <div class="rounded-md shadow-sm -space-y-px flex flex-col gap-4">
                 <div>
                     <label for="email-address" class="sr-only">{{ __('Email address') }}</label>
-                    <input id="email-address" name="email" type="email" value="{{ old('email') }}" autocomplete="email" required class="appearance-none rounded-md relative block w-full px-3 py-3 border border-neutral-300 placeholder-neutral-500 text-neutral-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="{{ __('Email address') }}">
+                    <input id="email-address" name="email" type="email" value="{{ old('email') }}" autocomplete="email" required class="appearance-none rounded-md relative block w-full px-3 py-3 border border-neutral-300 placeholder-neutral-500 text-neutral-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="{{ __('Email address') }}" @error('email') aria-invalid="true" aria-describedby="email-error" @enderror>
                 </div>
                 <div>
                     <label for="password" class="sr-only">{{ __('Password') }}</label>
@@ -31,7 +31,7 @@
 
             <div class="flex items-center justify-between">
                 <div class="flex items-center">
-                    <input id="remember-me" name="remember" type="checkbox" value="1" @checked(old('remember')) class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-neutral-300 rounded">
+                    <input id="remember-me" name="remember" type="checkbox" value="1" @checked(old('remember')) class="h-4 w-4 shrink-0 text-indigo-600 focus:ring-indigo-500 border-neutral-300 rounded">
                     <label for="remember-me" class="ml-2 block text-sm text-neutral-900">
                         {{ __('Remember me') }}
                     </label>
@@ -49,12 +49,12 @@
                     {{ __('Sign in') }}
                 </button>
                 <p class="text-center text-sm text-neutral-600">
-                    {{ __('Don\'t have an account?') }}
+                    {{ __('Need an account?') }}
                     <a href="{{ route('register') }}" class="font-medium text-indigo-600 hover:text-indigo-500">
-                        {{ __('Register') }}
+                        {{ __('Learn about invitations') }}
                     </a>
                 </p>
             </div>
         </form>
-    </div>
+    </main>
 @endsection

@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Services\Curriculum\CanonicalCurriculumImporter;
 use App\Services\Curriculum\CanonicalPackageReader;
+use App\Services\DemoSeedGuard;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -18,6 +19,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        // This must remain the first operation: a rejected production seed may
+        // not import curriculum or perform any other database write.
+        app(DemoSeedGuard::class)->authorizedAccounts();
+
         $source = app(CanonicalPackageReader::class)->read();
         app(CanonicalCurriculumImporter::class)->import($source);
 

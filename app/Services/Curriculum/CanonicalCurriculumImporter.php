@@ -19,6 +19,7 @@ final class CanonicalCurriculumImporter
     public function __construct(
         private readonly StandaloneGenerator $standalone,
         private readonly CurriculumArtifactStore $artifacts,
+        private readonly CurriculumReleaseGuard $releaseGuard,
     ) {}
 
     /** @return array<string, mixed> */
@@ -55,6 +56,7 @@ final class CanonicalCurriculumImporter
     /** @return array<string, mixed> */
     public function import(CanonicalPackage $source, ?string $reportPath = null): array
     {
+        $this->releaseGuard->assertImportMayActivate($source);
         $runId = (string) Str::uuid();
         $plan = $this->plan($source);
         $beforeSnapshot = $this->snapshot();
@@ -147,6 +149,8 @@ final class CanonicalCurriculumImporter
                     $this->insertEntities($package->id, $source, $retainedEntityIds);
                     $this->insertLinks($package->id, $source);
                 }
+
+                $this->releaseGuard->recordImportedPackage($package);
 
                 $this->mapLegacyCompletions();
 
@@ -261,6 +265,7 @@ final class CanonicalCurriculumImporter
         }
 
         $snapshot = $this->artifacts->readVerifiedJson($realPath, $sourceRun->rollback_sha256);
+        $this->releaseGuard->assertRollbackSnapshotMayRestore($snapshot);
         $runId = (string) Str::uuid();
         $before = $this->databaseSnapshotSha256($this->snapshot());
         $this->restoreSnapshot($snapshot);
@@ -492,6 +497,11 @@ final class CanonicalCurriculumImporter
             DB::table('curriculum_responses')->delete();
             DB::table('curriculum_attempts')->delete();
             DB::table('curriculum_activity_progress')->delete();
+            // Release evidence is delete-restricted at the database boundary.
+            // An explicit verified rollback snapshots and restores it in order.
+            DB::table('curriculum_release_events')->delete();
+            DB::table('curriculum_release_approvals')->delete();
+            DB::table('curriculum_releases')->delete();
             DB::table('curriculum_packages')->delete();
             foreach ($this->snapshotTables() as $table) {
                 $rows = $tables[$table] ?? [];
@@ -647,6 +657,7 @@ final class CanonicalCurriculumImporter
             'curriculum_entities' => ['payload'],
             'curriculum_links' => ['metadata'],
             'curriculum_responses' => ['response'],
+            'curriculum_release_events' => ['metadata'],
             default => [],
         };
     }
@@ -663,6 +674,9 @@ final class CanonicalCurriculumImporter
             'curriculum_attempts',
             'curriculum_responses',
             'curriculum_attempt_events',
+            'curriculum_releases',
+            'curriculum_release_approvals',
+            'curriculum_release_events',
         ];
     }
 

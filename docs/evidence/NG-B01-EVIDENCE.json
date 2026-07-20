@@ -1,0 +1,254 @@
+{
+    "schema_version": "1.0.0",
+    "batch": "B01",
+    "captured_at": "2026-07-20T09:40:12+07:00",
+    "state": "implementation_verified_with_open_owner_and_human_gates",
+    "authority": {
+        "thesis_sha256": "c38ac625a2f7a34bb004e6b68183d748bc6c1d3c1c9896c3f791909072496d34",
+        "learning_materials_sha256": "7f8a2c62db6884498f7a1c2de56e79e39609262944a685fe7eb97f702444cbb4",
+        "matches_b00": true,
+        "modified_copied_or_uploaded": false
+    },
+    "source_control": {
+        "branch": "codex/ng-b01-release-containment",
+        "base_commit": "17e21871930ad220a4dce8be5fa12233cc1c0fbd",
+        "base_tree": "099a2253f60cffc649b04b294673d7f7531579af",
+        "remote_mutation": false,
+        "commit_created_in_checkpoint": false
+    },
+    "runtime": {
+        "os": "Windows",
+        "timezone": "Asia/Jakarta (UTC+07:00)",
+        "php": "8.2.32",
+        "laravel": "12.64.0",
+        "node": "26.4.0",
+        "npm": "11.17.0",
+        "git": "2.55.0.windows.2",
+        "vite": "6.4.3",
+        "playwright": "1.61.1"
+    },
+    "implementation": {
+        "migration_files": 25,
+        "routes_total": 152,
+        "routes_named": 149,
+        "real_institution_seeds": [
+            {
+                "key": "hospitrainity-hq",
+                "name_id": "Hospitrainity HQ",
+                "verified": false
+            },
+            {
+                "key": "politeknik-negeri-malang",
+                "name_id": "Politeknik Negeri Malang",
+                "name_en": "State Polytechnic of Malang",
+                "verified": false
+            }
+        ],
+        "demo_institution_boundary": "Hotel A and Hotel B exist only in guarded local/testing fixtures.",
+        "release_gates": [
+            "content",
+            "esp_hospitality",
+            "cefr",
+            "accessibility",
+            "rights_links",
+            "retention",
+            "final_owner"
+        ],
+        "release_activated": false,
+        "release_approval_identity_model": "Named external reviewer and qualification are distinct from the authenticated Superadmin recorder.",
+        "identity_migration_automatic_session_deletion": false,
+        "identity_migration_preflight_command": "php artisan hospitrainity:identity-migration-preflight",
+        "identity_migration_preflight_default_disclosure": "SHA-256 legacy-label groups and counts; no email addresses or plaintext legacy labels",
+        "identity_session_finalization_command": "php artisan hospitrainity:finalize-identity-migration --confirm=REVOKE-ALL-DATABASE-SESSIONS",
+        "identity_session_revocation_finalized": true,
+        "invitation_transaction_boundary": "Current actor role and membership are reloaded under institution-first locks; supersession and synchronous delivery failure are revoked and audited; a concurrent canonical-email collision rolls back to a bounded unavailable result.",
+        "invitation_cross_scope_id_contract": "A real invitation UUID outside the actor's authorized institution scope returns the same not-found result as an unknown UUID.",
+        "limiter_identity_storage": "Named authentication and invitation limiters use keyed HMAC fingerprints; canonical variants share a bucket and plaintext email is not retained in limiter keys.",
+        "malformed_email_contract": "Non-scalar array-shaped email input is rejected by validation without an unhandled canonicalization exception.",
+        "demo_seed_transaction_boundary": "All demo identity, institution, and membership writes are atomic; mid-seed failure rolls back every fixture write.",
+        "demo_seed_collision_boundary": "Existing non-demo identities and non-fixture institutions are never overwritten; idempotent reuse requires the expected disposable-demo membership marker.",
+        "release_activation_evidence": "Production delivery and rollback snapshot validation require activation actor, timestamp, reason, and a matching append-only active transition event.",
+        "production_rollback_policy": "Disabled until B17 rehearsal; snapshot activation/release/checksum/seven-gate evidence is validated before any restore mutation.",
+        "production_artifact_boundary": "APP_KEY must be supported by APP_CIPHER; referenced Vite assets must exist inside public/build; Composer dev packages, node_modules, and public/hot must be absent.",
+        "multi_institution_progress_boundary": "Owner approved institution-attributed staff visibility and combined learner history; B06 must add provenance for new rows and keep legacy rows explicitly unattributed.",
+        "account_archival_boundary": "A reversible disabled-account state is installed and verified across authentication, password reset, invitations, sessions, audit, and readiness. No authoritative account is disabled.",
+        "real_superadmin_bootstrapped": false,
+        "authoritative_database_migrated": true
+    },
+    "verification": {
+        "git_diff_check": "passed",
+        "pint": "passed",
+        "blade_cache": "passed",
+        "eslint": "passed with zero warnings",
+        "laravel": {
+            "tests": 281,
+            "assertions": 4388,
+            "failures": 0,
+            "duration_seconds": 108.8
+        },
+        "node": {
+            "tests": 50,
+            "failures": 0,
+            "duration_seconds": 4.408
+        },
+        "vite": {
+            "status": "passed",
+            "modules_transformed": 11,
+            "duration_seconds": 5.19
+        },
+        "composer": {
+            "validate": "passed",
+            "security_advisories": 0,
+            "abandoned_packages": 0
+        },
+        "npm": {
+            "vulnerabilities": 0,
+            "dependencies_reported": 246
+        },
+        "workflow_policy": "passed; 2 workflow files verified, authority lane manual-only, no uploads",
+        "traceability": "passed; all 43 findings mapped",
+        "secret_scan": {
+            "status": "passed",
+            "unallowlisted_secret_findings": 0,
+            "reviewed_synthetic_fixture_findings": 2,
+            "stale_allowlist_entries": [],
+            "deletion_performed": true
+        },
+        "authority_compiler": {
+            "status": "verified",
+            "deterministic_tree_sha256": "9d1511a24c84059a7c561603bb94b6c2c52a8076edfc2ba71def63ba2f2259ac",
+            "byte_identical_files": 469,
+            "negative_probes": 6
+        },
+        "canonical_isolated_database": {
+            "status": "verified",
+            "source_tree_sha256": "e864b4fcaa9d182b8379cf7d179279114baa7fef46624bcb261be41b8072dc9a",
+            "laravel_projection_sha256": "0967725acf53b46349ad8000a6b8e652e8855f37978912e796c3391cd9587f7f",
+            "standalone_sha256": "55d1418fc75e359f85c9f7bb8ad1d93ea36943859b48f3c18a1db65039bf36c4",
+            "counts": {
+                "chapters": 7,
+                "sections": 85,
+                "activities": 25,
+                "prompts": 124,
+                "answer_models": 96,
+                "feedback_models": 96,
+                "rubrics": 6
+            }
+        },
+        "brand_guard_isolated_database": {
+            "status": "verified",
+            "files_scanned": 784,
+            "active_violations": 0,
+            "historical_allowlist_matches": 2
+        }
+    },
+    "browser_matrix": {
+        "isolated_database": "storage/framework/testing/e2e/database.sqlite",
+        "passed": 36,
+        "failed": 0,
+        "skipped": 0,
+        "flaky": 0,
+        "duration_seconds": 136.2,
+        "projects": [
+            "Playwright patched desktop Chromium",
+            "Playwright patched desktop WebKit",
+            "Playwright Pixel 7 emulation on Chromium",
+            "Playwright iPhone 15 emulation on WebKit"
+        ],
+        "journeys_per_project": 9,
+        "firefox": {
+            "status": "host_launch_blocked",
+            "engine": "Playwright patched Firefox firefox-1532",
+            "reproduced": true,
+            "failure": "browserType.launch timed out before application navigation; RenderCompositorSWGL failed mapping default framebuffer",
+            "application_assertions_run": 0,
+            "upstream_primary_evidence": [
+                "https://bugzilla.mozilla.org/show_bug.cgi?id=1693011",
+                "https://bugzilla.mozilla.org/show_bug.cgi?id=1931611"
+            ]
+        },
+        "claim_boundary": "Patched engines and device emulation are not evidence for branded Chrome, Edge, Opera, Safari, Firefox, macOS, Android hardware, or iOS hardware."
+    },
+    "production_readiness": {
+        "ready": false,
+        "checks_total": 22,
+        "checks_passed": 11,
+        "checks_failed": 11,
+        "expected_failed_checks": [
+            "environment",
+            "debug",
+            "app_url",
+            "secure_session_cookie",
+            "csp_enforced",
+            "hsts",
+            "dev_dependencies",
+            "node_dependencies_absent",
+            "production_mail_transport",
+            "demo_identities_absent",
+            "active_curriculum_release"
+        ],
+        "environment": "current local development environment; not a real production topology"
+    },
+    "authoritative_main_database": {
+        "operation": "owner-authorized backup, migration, session finalization, and postflight",
+        "b00_sha256": "1500795734fce828592d3ca613c9c555d4b8d3879ebc8be00c1c8f84f970054a",
+        "current_sha256": "31532d0e1785e10d82baa3deacb29affdda9d631f43e890edb58acfeb0aeb8d2",
+        "hash_drift_since_b00": true,
+        "last_write_local": "2026-07-20T09:25:25.9449669+07:00",
+        "migration_rows": 25,
+        "b01_migrations_applied": true,
+        "identity_preflight": {
+            "operation": "post_migration_read_only",
+            "normalized_schema_present": true,
+            "users": 3,
+            "exact_mapping_candidates": 1,
+            "unmatched_or_empty_candidates": 2,
+            "known_demo_identities": 3,
+            "sessions": 0,
+            "authenticated_sessions": 0,
+            "all_normalized_invariants_passed": true,
+            "plaintext_legacy_values_included": false,
+            "email_addresses_included": false
+        },
+        "confirmed_demo_identities_retained_enabled": [
+            "Super Admin <superadmin@example.com>",
+            "Supervisor Hotel A <supervisor@example.com>",
+            "User Biasa <user@example.com>"
+        ],
+        "content_and_business_counts_match_b00": true,
+        "table_counts": {
+            "users": 3,
+            "disabled_users": 0,
+            "sessions": 0,
+            "institutions": 2,
+            "institution_memberships": 1,
+            "identity_audits": 1,
+            "curriculum_releases": 2,
+            "curriculum_release_approvals": 0,
+            "curriculum_packages": 2,
+            "curriculum_activity_progress": 4,
+            "curriculum_attempts": 4,
+            "curriculum_responses": 4,
+            "curriculum_imports": 0,
+            "administration_audits": 0,
+            "curriculum_draft_events": 0
+        },
+        "active_package": {
+            "content_version": "0.4.0-draft",
+            "lifecycle": "draft",
+            "source_tree_sha256": "e864b4fcaa9d182b8379cf7d179279114baa7fef46624bcb261be41b8072dc9a"
+        },
+        "identity_session_finalization": {
+            "completed": true,
+            "revoked_sessions": 3,
+            "completion_method": "confirmed_console_command"
+        }
+    },
+    "open_gates": [
+        "Exact permission to apply the verified disabled state to any named demo account.",
+        "Owner-attested unnamed lecturer approval supports non-production testing only; named evidence remains absent for a production or independent-review claim.",
+        "Real creator bootstrap is blocked by the active demo Superadmin and unverified production mail delivery.",
+        "B06 implementation of institution provenance for new progress/attempt rows while legacy rows remain unattributed.",
+        "B03/B06/B17, target database, real browser/device, specialist, penetration-test, and production operations evidence."
+    ]
+}
