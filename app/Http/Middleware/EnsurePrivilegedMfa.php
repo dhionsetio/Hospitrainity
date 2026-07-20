@@ -11,7 +11,7 @@ class EnsurePrivilegedMfa
     public function handle(Request $request, Closure $next): Response
     {
         $user = $request->user();
-        if ($user === null || ! $user->requiresMfa() || $this->isSecurityRoute($request)) {
+        if ($user === null || ! $user->requiresMfa()) {
             return $next($request);
         }
 
@@ -26,13 +26,5 @@ class EnsurePrivilegedMfa
         }
 
         return $next($request);
-    }
-
-    private function isSecurityRoute(Request $request): bool
-    {
-        return $request->routeIs([
-            'security.*', 'preferences.*', 'mfa.*', 'passkey.*', 'logout',
-            'verification.*', 'policies.*', 'help.*', 'glossary.*', 'about', 'locale.switch',
-        ]);
     }
 }

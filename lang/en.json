@@ -613,5 +613,9 @@
     "search_type.activity": "Activity",
     "search_type.help": "Help",
     "search_type.glossary": "Glossary",
-    "Choose a valid onboarding action.": "Choose a valid onboarding action."
+    "Choose a valid onboarding action.": "Choose a valid onboarding action.",
+    "Privileged tools are locked—not the whole website": "Privileged tools are locked—not the whole website",
+    "You can continue in Learner mode without administrative access. To use instructor, content, or system administration tools, finish MFA setup first.": "You can continue in Learner mode without administrative access. To use instructor, content, or system administration tools, finish MFA setup first.",
+    "Continue as Learner": "Continue as Learner",
+    "Visit public home": "Visit public home"
 }

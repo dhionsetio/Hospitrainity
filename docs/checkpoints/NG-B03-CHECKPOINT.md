@@ -59,6 +59,14 @@ Required external closure:
 5. Run approved SAST/DAST and independent penetration testing without uploading private authority artifacts.
 6. Reproduce Firefox and branded/physical browser-device coverage in a suitable host environment.
 
+## 2026-07-20 navigation-boundary follow-up
+
+The owner reported that an unenrolled privileged account could not leave `/security`. Reproduction confirmed that `EnsurePrivilegedMfa` had been appended to the global web middleware stack. The correction aliases that middleware and applies it only to the three privileged route groups. Public pages, Help, work-context selection, and the Learner dashboard are now usable without privileged assurance; privileged dashboards still redirect to `/security` unless strong MFA is enrolled and the current session has completed MFA verification.
+
+Focused regression passed 26 tests / 359 assertions across the security assurance, role landing, route matrix, and work-context authorization suites. The cumulative Laravel suite passed 336 tests / 5,322 assertions. Pint, PHPStan, ESLint, 50 Node tests, the Vite production build, translation-key parity, JSON parsing, diff checks, and governance verification also passed; governance mapped 43 findings and scanned 1,671 tracked files with 2 reviewed allowlisted and 0 unallowlisted findings.
+
+A browser journey against a disposable SQLite database and synthetic no-MFA System Admin verified all four transitions: sign-in lands on `/security`; the public home is reachable; `Continue as Learner` reaches `/dashboard`; switching back to System Admin returns to `/security`. The fixture did not modify the authoritative database, and the required production MFA/readiness gates remain unchanged.
+
 ## Rollback
 
 The isolated migration rollback/reapply test preserves users. Before real passkeys, recovery codes, events, or scanner records exist, the verified backup can support a controlled rejection of B03. After real security evidence exists, do not silently remove enforcement or restore stale credential state: stop affected flows visibly, preserve evidence, retain password/hash compatibility, and forward-fix. Emergency privileged recovery must use the documented dual-control process; no bypass was added.

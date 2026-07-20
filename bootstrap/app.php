@@ -28,6 +28,7 @@ return Application::configure(basePath: dirname(__DIR__))
 
         $middleware->alias([
             'legacy.curriculum.writable' => EnsureLegacyCurriculumWritable::class,
+            'privileged.mfa' => EnsurePrivilegedMfa::class,
             'role' => CheckRole::class,
         ]);
 
@@ -35,7 +36,6 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->web(append: [
             SetLocale::class,
             EnsureAccountIsActive::class,
-            EnsurePrivilegedMfa::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {

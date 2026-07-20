@@ -95,11 +95,36 @@ class SecurityAssuranceTest extends TestCase
 
     public function test_privileged_middleware_fails_closed_but_security_setup_remains_reachable(): void
     {
+        foreach ([
+            [UserRole::Supervisor, 'supervisor.dashboard'],
+            [UserRole::Admin, 'admin.dashboard'],
+            [UserRole::Superadmin, 'superadmin.dashboard'],
+        ] as [$role, $route]) {
+            $user = User::factory()->create(['role' => $role]);
+            $this->actingAsWithoutMfa($user);
+            $this->get(route($route))->assertRedirect(route('security.index'));
+        }
+
+        $this->get(route('security.index'))
+            ->assertOk()
+            ->assertSee('Account security')
+            ->assertSee('Privileged tools are locked—not the whole website')
+            ->assertSee('Continue as Learner');
+    }
+
+    public function test_unenrolled_privileged_account_can_reach_safe_surfaces_and_continue_as_learner(): void
+    {
         $user = User::factory()->create(['role' => UserRole::Superadmin]);
         $this->actingAsWithoutMfa($user);
 
-        $this->get(route('superadmin.dashboard'))->assertRedirect(route('security.index'));
-        $this->get(route('security.index'))->assertOk()->assertSee('Account security');
+        $this->get('/')->assertOk()->assertSee('Hospitrainity');
+        $this->get(route('help.index'))->assertOk();
+        $this->get(route('work-context.index'))->assertOk()->assertSee('Learner');
+
+        $this->post(route('work-context.store'), ['role' => 'learner'])
+            ->assertRedirect(route('dashboard'));
+        $this->get(route('dashboard'))->assertOk();
+        $this->get(route('superadmin.dashboard'))->assertForbidden();
     }
 
     public function test_passkey_registration_options_require_recent_password_and_are_user_bound(): void

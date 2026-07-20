@@ -444,6 +444,9 @@
                     "app/Http/Controllers/Auth/MfaChallengeController.php",
                     "app/Http/Controllers/SecuritySettingsController.php",
                     "app/Http/Middleware/EnsurePrivilegedMfa.php",
+                    "bootstrap/app.php",
+                    "routes/web.php",
+                    "resources/views/security/index.blade.php",
                     "app/Services/MfaService.php",
                     "app/Models/Passkey.php",
                     "resources/js/passkeys.js",
@@ -460,13 +463,14 @@
                     "tests/E2E/critical-path.spec.mjs"
                 ],
                 "browser_device_checks": [
-                    "B03 MFA-compatible critical paths passed 40/40 across patched desktop/mobile Chromium and WebKit; patched Firefox remained blocked before navigation by a reproducible host SWGL framebuffer startup failure."
+                    "B03 MFA-compatible critical paths passed 40/40 across patched desktop/mobile Chromium and WebKit; patched Firefox remained blocked before navigation by a reproducible host SWGL framebuffer startup failure.",
+                    "The 2026-07-20 navigation-boundary follow-up used a disposable SQLite database and synthetic no-MFA System Admin: sign-in reached Security, public home remained reachable, Continue as Learner reached the learner dashboard, and returning to System Admin was still MFA-gated."
                 ],
                 "human_legal_reviews": [
                     "Owner approved the B03 security architecture and role requirements; independent penetration testing and real authenticator/device review remain required."
                 ],
                 "production_evidence": [
-                    "Argon2id and opportunistic bcrypt rehash, 15-128-character context/blocklist validation, layered generic authentication, privileged MFA enforcement, encrypted TOTP, hashed one-use recovery codes, passkey integration, recent-password management, and owner-scoped session revocation are installed locally. All three enabled demo accounts intentionally remain unenrolled and therefore keep the production readiness gate closed."
+                    "Argon2id and opportunistic bcrypt rehash, 15-128-character context/blocklist validation, layered generic authentication, privileged-route MFA enforcement, encrypted TOTP, hashed one-use recovery codes, passkey integration, recent-password management, and owner-scoped session revocation are installed locally. Safe public, self-service, context-selection, and Learner surfaces do not require privileged assurance. All three enabled demo accounts intentionally remain unenrolled and therefore keep the production readiness gate closed."
                 ],
                 "checkpoints": [
                     "docs/checkpoints/NG-B03-CHECKPOINT.md"

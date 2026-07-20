@@ -14,6 +14,23 @@
     @if(session('warning'))<div role="alert" class="rounded-md border border-amber-300 bg-amber-50 p-4 text-amber-950">{{ session('warning') }}</div>@endif
     @if($errors->any())<div role="alert" class="rounded-md border border-red-300 bg-red-50 p-4 text-red-950"><p class="font-semibold">{{ __('Security change not completed') }}</p><ul class="mt-2 list-disc pl-5">@foreach($errors->all() as $error)<li>{{ $error }}</li>@endforeach</ul></div>@endif
 
+    @if(auth()->user()->requiresMfa() && !auth()->user()->hasStrongMfa())
+        <section class="rounded-lg border border-amber-300 bg-amber-50 p-5" aria-labelledby="privileged-boundary-heading">
+            <h2 id="privileged-boundary-heading" class="text-xl font-bold text-neutral-950">{{ __('Privileged tools are locked—not the whole website') }}</h2>
+            <p class="mt-2 text-neutral-800">{{ __('You can continue in Learner mode without administrative access. To use instructor, content, or system administration tools, finish MFA setup first.') }}</p>
+            <div class="mt-4 flex flex-wrap gap-3">
+                @if(auth()->user()->hasVerifiedEmail())
+                    <form method="POST" action="{{ route('work-context.store') }}">
+                        @csrf
+                        <input type="hidden" name="role" value="learner">
+                        <button type="submit" class="rounded-md bg-indigo-700 px-4 py-3 font-semibold text-white">{{ __('Continue as Learner') }}</button>
+                    </form>
+                @endif
+                <a href="{{ url('/') }}" class="inline-flex min-h-11 items-center rounded-md border border-indigo-700 px-4 py-3 font-semibold text-indigo-800">{{ __('Visit public home') }}</a>
+            </div>
+        </section>
+    @endif
+
     @if(!$passwordFresh)
         <section class="rounded-lg border border-indigo-300 bg-indigo-50 p-5" aria-labelledby="unlock-heading">
             <h2 id="unlock-heading" class="text-xl font-bold text-neutral-950">{{ __('Unlock security changes') }}</h2>

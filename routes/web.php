@@ -374,7 +374,7 @@ Route::middleware(['auth', 'verified', 'role:user'])->group(function () {
 | Role-scoped dashboards
 |--------------------------------------------------------------------------
 */
-Route::middleware(['auth', 'verified', 'role:supervisor'])->prefix('supervisor')->name('supervisor.')->group(function () use ($invitationRoutes, $joinCodeRoutes) {
+Route::middleware(['auth', 'verified', 'role:supervisor', 'privileged.mfa'])->prefix('supervisor')->name('supervisor.')->group(function () use ($invitationRoutes, $joinCodeRoutes) {
     Route::get('/dashboard', [SpvDashboardController::class, 'index'])->name('dashboard');
     Route::get('/progress/learners/{learner}', [SupervisorLearnerProgressController::class, 'show'])
         ->name('progress.learners.show');
@@ -382,7 +382,7 @@ Route::middleware(['auth', 'verified', 'role:supervisor'])->prefix('supervisor')
     $joinCodeRoutes();
 });
 
-Route::middleware(['auth', 'verified', 'role:admin'])->prefix('admin')->name('admin.')->group(function () use ($curriculumDraftRoutes) {
+Route::middleware(['auth', 'verified', 'role:admin', 'privileged.mfa'])->prefix('admin')->name('admin.')->group(function () use ($curriculumDraftRoutes) {
     Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
     Route::get('/curriculum-exercises', [CurriculumDraftExerciseController::class, 'overview'])->name('curriculum-exercises.index');
     Route::get('/progress', [ProgressAggregateController::class, 'index'])->name('progress.index');
@@ -397,7 +397,7 @@ Route::middleware(['auth', 'verified', 'role:admin'])->prefix('admin')->name('ad
     $curriculumDraftRoutes(false);
 });
 
-Route::middleware(['auth', 'verified', 'role:superadmin'])->prefix('superadmin')->name('superadmin.')->group(function () use ($curriculumDraftRoutes, $invitationRoutes, $joinCodeRoutes) {
+Route::middleware(['auth', 'verified', 'role:superadmin', 'privileged.mfa'])->prefix('superadmin')->name('superadmin.')->group(function () use ($curriculumDraftRoutes, $invitationRoutes, $joinCodeRoutes) {
     Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
     Route::get('/curriculum-exercises', [CurriculumDraftExerciseController::class, 'overview'])->name('curriculum-exercises.index');
     Route::get('/progress', [SuperadminLearnerProgressController::class, 'index'])->name('progress.index');
