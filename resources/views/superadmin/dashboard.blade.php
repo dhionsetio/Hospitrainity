@@ -13,7 +13,7 @@
             <header class="mb-8">
                 <h1 class="text-3xl font-bold text-neutral-800">{{ __('admin.welcome_name', ['name' => Auth::user()->name]) }}</h1>
                 <p class="text-neutral-500">{{ __('admin.platform_summary') }}</p>
-                <a href="{{ route((Auth::user()->isSuperAdmin() ? 'superadmin' : 'admin').'.curriculum-drafts.index') }}" class="mt-4 inline-flex min-h-11 items-center rounded-lg bg-indigo-700 px-5 py-3 font-semibold text-white">{{ __('admin.open_canonical_content') }}</a>
+                @include('partials.next-action', ['nextAction' => $nextAction])
             </header>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -59,6 +59,9 @@
             <div class="mt-8 grid grid-cols-1 gap-6 xl:grid-cols-3">
                 <section class="rounded-lg bg-white p-6 shadow-md" aria-labelledby="canonical-status-title">
                     <h2 id="canonical-status-title" class="text-xl font-semibold text-neutral-900">{{ __('admin.canonical_content_counts') }}</h2>
+                    <p class="mt-2 text-sm text-neutral-600">{{ __('Open canonical content to review published work or begin an authorized draft workflow.') }}</p>
+                    <details class="mt-5 rounded-lg border border-neutral-300 p-4">
+                        <summary class="cursor-pointer font-semibold text-indigo-800">{{ __('Technical evidence') }}</summary>
                     <dl class="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
                         <div>
                             <dt class="text-sm text-neutral-500">{{ __('admin.active_delivery_version') }}</dt>
@@ -96,6 +99,7 @@
                         <div><dt class="text-sm text-neutral-500">{{ __('admin.draft_lifecycle_versions') }}</dt><dd class="mt-1 font-semibold text-neutral-900">{{ $canonicalStatus['draft_lifecycle_versions'] }}</dd></div>
                         <div><dt class="text-sm text-neutral-500">{{ __('admin.inactive_versions') }}</dt><dd class="mt-1 font-semibold text-neutral-900">{{ $canonicalStatus['inactive_versions'] }}</dd></div>
                     </dl>
+                    </details>
                 </section>
 
                 <section class="rounded-lg bg-white p-6 shadow-md" aria-labelledby="draft-workspace-title">

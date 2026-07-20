@@ -8,6 +8,7 @@ use App\Models\CurriculumEntity;
 use App\Models\CurriculumImportRun;
 use App\Models\CurriculumPackage;
 use App\Models\User;
+use App\Services\SearchIndexBuilder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Str;
@@ -20,6 +21,7 @@ final class CanonicalCurriculumImporter
         private readonly StandaloneGenerator $standalone,
         private readonly CurriculumArtifactStore $artifacts,
         private readonly CurriculumReleaseGuard $releaseGuard,
+        private readonly SearchIndexBuilder $searchIndex,
     ) {}
 
     /** @return array<string, mixed> */
@@ -76,6 +78,7 @@ final class CanonicalCurriculumImporter
             ]);
             $reportArtifact = $this->writeReport($runId, $report, $reportPath);
             $this->recordRun($runId, 'import', 'no_changes', CurriculumPackage::active()?->id, $source->treeSha256, $beforeSha256, $beforeSha256, $standaloneSha256, null, $reportArtifact, $report);
+            $this->searchIndex->rebuild();
 
             return $report;
         }
@@ -182,6 +185,7 @@ final class CanonicalCurriculumImporter
             $reportArtifact = $this->writeReport($runId, $report, $reportPath);
             $this->recordRun($runId, 'import', 'imported', $packageId, $source->treeSha256, $beforeSha256, $afterSha256, $standaloneResult['sha256'], $rollbackArtifact, $reportArtifact, $report);
             User::forgetAllProgressCaches();
+            $this->searchIndex->rebuild();
 
             return $report;
         } catch (Throwable $exception) {
@@ -285,6 +289,7 @@ final class CanonicalCurriculumImporter
         $reportArtifact = $this->writeReport($runId, $report, $reportPath);
         $this->recordRun($runId, 'rollback', 'rolled_back', CurriculumPackage::active()?->id, null, $before, $after, null, null, $reportArtifact, $report);
         User::forgetAllProgressCaches();
+        $this->searchIndex->rebuild();
 
         return $report;
     }

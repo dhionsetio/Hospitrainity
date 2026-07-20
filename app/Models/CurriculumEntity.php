@@ -32,6 +32,14 @@ class CurriculumEntity extends Model
         return ['payload' => 'array'];
     }
 
+    /** @return array<string, mixed> */
+    public function payloadData(): array
+    {
+        $payload = $this->getAttribute('payload');
+
+        return is_array($payload) ? $payload : [];
+    }
+
     public function package(): BelongsTo
     {
         return $this->belongsTo(CurriculumPackage::class, 'curriculum_package_id');

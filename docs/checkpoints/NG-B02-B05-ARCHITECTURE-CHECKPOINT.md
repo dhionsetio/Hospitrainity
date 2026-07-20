@@ -78,6 +78,6 @@ At final handoff recheck, the one deliberately retained database session had adv
 
 - This is expand-first. The legacy `users.role` and `users.instansi` evidence remain until a later reviewed contract migration; no contract step is authorized here.
 - B02 rights requests, retention matrix, public privacy/terms/support pages, optional push, qualified legal interpretation, and provider/topology decisions remain open.
-- B05 onboarding, search, help/glossary, deterministic next-action rules, and the moderated first-use study remain open.
+- B05 onboarding, published-content search, Help/glossary/About, deterministic next-action rules, and the first-use study protocol are complete and installed; execution of the moderated intended-user study remains B17.
 - B06 still owns course/class/assignment structure and any broader institution domain model. The implemented membership scope must be reused rather than bypassed.
 - Real Firefox, Opera, Edge, Chrome, Safari, Windows/macOS, Android/iOS physical-device, assistive-technology, and human usability evidence remains required in the applicable later checkpoints.

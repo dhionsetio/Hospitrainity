@@ -32,7 +32,7 @@ class EnsurePrivilegedMfa
     {
         return $request->routeIs([
             'security.*', 'preferences.*', 'mfa.*', 'passkey.*', 'logout',
-            'verification.*', 'policies.*', 'locale.switch',
+            'verification.*', 'policies.*', 'help.*', 'glossary.*', 'about', 'locale.switch',
         ]);
     }
 }

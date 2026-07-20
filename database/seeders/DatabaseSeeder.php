@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Services\Curriculum\CanonicalCurriculumImporter;
 use App\Services\Curriculum\CanonicalPackageReader;
 use App\Services\DemoSeedGuard;
+use App\Services\SearchIndexBuilder;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -27,5 +28,6 @@ class DatabaseSeeder extends Seeder
         app(CanonicalCurriculumImporter::class)->import($source);
 
         $this->call(UserSeeder::class);
+        app(SearchIndexBuilder::class)->rebuild();
     }
 }

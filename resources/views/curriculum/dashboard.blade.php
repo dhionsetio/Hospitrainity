@@ -16,6 +16,7 @@
             <p class="text-sm font-semibold uppercase tracking-wide text-indigo-700">{{ __('Hospitality English learning') }}</p>
             <h1 class="mt-2 text-3xl font-bold text-neutral-900">{{ __('Welcome Back!') }}</h1>
             <p class="mt-2 text-neutral-600">{{ __('Continue through the available Hospitrainity modules and activities.') }}</p>
+            @include('partials.next-action', ['nextAction' => $nextAction])
         </header>
 
         <div class="mb-8 rounded-lg border border-amber-200 bg-amber-50 p-4 text-sm text-amber-900" role="note">

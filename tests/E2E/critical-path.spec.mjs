@@ -81,6 +81,25 @@ test('public mobile navigation is keyboard operable', async ({ page }) => {
     expect(browserErrors).toEqual([]);
 });
 
+test('public Help, glossary, and About expose bounded bilingual-ready guidance', async ({ page }) => {
+    const browserErrors = captureBrowserErrors(page);
+
+    await page.goto('/help');
+    await expect(page.getByRole('heading', { name: 'Help', exact: true })).toBeVisible();
+    await expect(page.getByRole('link', { name: 'Invitations and classroom codes' })).toBeVisible();
+    await expect(page.getByText(/Help version 2026-07-20/)).toBeVisible();
+    await expect(page.getByText('dhionsetio@gmail.com')).toHaveCount(0);
+
+    await page.goto('/glossary');
+    await expect(page.getByRole('heading', { name: 'Glossary' })).toBeVisible();
+    await expect(page.getByText('Confidence check', { exact: true })).toBeVisible();
+
+    await page.goto('/about');
+    await expect(page.getByRole('heading', { name: 'About Hospitrainity' })).toBeVisible();
+    await expect(page.getByText(/not proof of proficiency or mastery/i)).toBeVisible();
+    expect(browserErrors).toEqual([]);
+});
+
 test('public registration creates a personal account without institution enumeration', async ({ page }) => {
     const browserErrors = captureBrowserErrors(page);
     await page.goto('/register');
@@ -204,6 +223,26 @@ test('verified learner can navigate, submit a canonical attempt, and use the acc
     await expect(page).toHaveURL(/#attempt-result$/);
     await page.reload();
     await expect(page.getByText(/Progress state: completed.*Attempts: \d+/)).toBeVisible();
+    expect(browserErrors).toEqual([]);
+});
+
+test('learner can resume or restart onboarding and search only published content', async ({ page }) => {
+    const browserErrors = captureBrowserErrors(page);
+    await signIn(page, testAccounts.learner);
+
+    await page.goto('/getting-started');
+    const restart = page.getByRole('button', { name: 'Restart guide' });
+    if (await restart.isVisible()) await restart.click();
+    await expect(page.getByRole('heading', { name: 'Getting started' })).toBeVisible();
+    await expect(page.getByText('Step 1 of 3').first()).toBeVisible();
+    await page.getByRole('button', { name: 'Skip for now' }).click();
+    await expect(page).toHaveURL(/\/dashboard$/);
+
+    await page.goto('/search?q=front&type=section');
+    await expect(page.getByRole('heading', { name: 'Search results' })).toBeVisible();
+    await expect(page.getByText(/results? found/)).toBeVisible();
+    await expect(page.getByText(/No matching published content/)).toHaveCount(0);
+    await expect(page.locator('mark')).toHaveCount(0);
     expect(browserErrors).toEqual([]);
 });
 

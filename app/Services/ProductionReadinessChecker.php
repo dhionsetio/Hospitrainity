@@ -34,6 +34,9 @@ class ProductionReadinessChecker
     /** @var Closure(): bool */
     private Closure $uploadScannerHealthy;
 
+    /** @var Closure(): bool */
+    private Closure $activeSearchIndexReady;
+
     public function __construct(
         ?string $basePath = null,
         ?Closure $packageInstalled = null,
@@ -41,6 +44,7 @@ class ProductionReadinessChecker
         ?Closure $activeCurriculumIsReleaseReady = null,
         ?Closure $identityMigrationFinalized = null,
         ?Closure $uploadScannerHealthy = null,
+        ?Closure $activeSearchIndexReady = null,
     ) {
         $this->basePath = $basePath ?? base_path();
         $this->packageInstalled = $packageInstalled
@@ -84,6 +88,19 @@ class ProductionReadinessChecker
         };
         $this->uploadScannerHealthy = $uploadScannerHealthy
             ?? static fn (): bool => app(UploadSecurityService::class)->healthy();
+        $this->activeSearchIndexReady = $activeSearchIndexReady ?? static function (): bool {
+            try {
+                return Schema::hasTable('search_index_generations')
+                    && Schema::hasTable('search_documents')
+                    && Schema::hasTable('search_document_terms')
+                    && DB::table('search_index_generations')
+                        ->where('is_active', true)
+                        ->where('document_count', '>', 0)
+                        ->count() === 1;
+            } catch (Throwable) {
+                return false;
+            }
+        };
     }
 
     /**
@@ -240,6 +257,11 @@ class ProductionReadinessChecker
                 'active_curriculum_release',
                 ($this->activeCurriculumIsReleaseReady)(),
                 'Exactly one fully approved, checksum-coherent, non-draft curriculum release must be active.',
+            ),
+            $this->check(
+                'active_search_index',
+                ($this->activeSearchIndexReady)(),
+                'Exactly one non-empty published-content search index generation must be active.',
             ),
         ];
     }

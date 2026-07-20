@@ -108,6 +108,12 @@
         </ul>
     </nav>
     <div class="mt-4 border-t border-neutral-200 pt-4 md:mt-auto">
+        <a href="{{ route('search.index') }}" class="mb-2 flex w-full items-center gap-3 rounded-lg px-4 py-2 hover:bg-neutral-100">
+            <i class="fas fa-magnifying-glass fa-fw" aria-hidden="true"></i><span>{{ __('Search') }}</span>
+        </a>
+        <a href="{{ route('onboarding.show') }}" class="mb-2 flex w-full items-center gap-3 rounded-lg px-4 py-2 hover:bg-neutral-100">
+            <i class="fas fa-route fa-fw" aria-hidden="true"></i><span>{{ __('Getting started') }}</span>
+        </a>
         <a href="{{ route('preferences.edit') }}" class="mb-2 flex w-full items-center gap-3 rounded-lg px-4 py-2 hover:bg-neutral-100">
             <i class="fas fa-universal-access fa-fw" aria-hidden="true"></i><span>{{ __('Display preferences') }}</span>
         </a>
@@ -120,7 +126,7 @@
                 <span>{{ __('Switch role') }}</span>
             </a>
         @endif
-        <a href="{{ route('policies.show', ['type' => 'support']) }}" class="mb-2 flex w-full items-center gap-3 rounded-lg px-4 py-2 hover:bg-neutral-100">
+        <a href="{{ route('help.index') }}" class="mb-2 flex w-full items-center gap-3 rounded-lg px-4 py-2 hover:bg-neutral-100">
             <i class="fas fa-circle-question fa-fw" aria-hidden="true"></i><span>{{ __('Help') }}</span>
         </a>
         <form method="POST" action="{{ route('logout') }}">

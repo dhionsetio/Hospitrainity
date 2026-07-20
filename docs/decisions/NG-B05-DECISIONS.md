@@ -3,7 +3,7 @@
 - Decision date: 2026-07-20 (Asia/Jakarta)
 - Batch: B05
 - Accountable owner: Dhion Setio
-- Status: tenant-role foundation implemented expand-first; broader B05 public/onboarding work remains staged
+- Status: B05 technical implementation and authoritative local migration complete; moderated first-use execution remains B17
 
 ## Accepted direction
 
@@ -37,7 +37,7 @@ Merging Supervisor and Content Admin at the database-permission level is not rec
 
 This model follows least privilege and institution relationships while avoiding a confusing role explosion. The owner explicitly approved it on 2026-07-20 and instructed that all three existing demo accounts remain enabled. Implementation is expand-first: normalized tenant assignments and explicit work context are added before the legacy four-role column can be retired. No institution may receive global System Admin authority.
 
-The normalized assignment tables, explicit work/tenant/learning context, audited System Admin preview, learner-only classroom-code enrollment, exact-tenant staff progress, and recent-password institution-role administration are now implemented and installed in the authoritative local database. Content Author no longer inherits tenant enrollment routes. Legacy-role retirement remains a later reviewed contract step; onboarding, search, help/glossary, deterministic next-action rules, and moderated usability rounds remain open. Evidence is recorded in `docs/checkpoints/NG-B02-B05-ARCHITECTURE-CHECKPOINT.md`.
+The normalized assignment tables, explicit work/tenant/learning context, audited System Admin preview, learner-only classroom-code enrollment, exact-tenant staff progress, and recent-password institution-role administration are implemented and installed in the authoritative local database. Content Author no longer inherits tenant enrollment routes. Role-aware onboarding, bounded published-content search, versioned Help/glossary/About, deterministic next-action rules, evidence disclosures, and the approved study protocol are also implemented and installed. Legacy-role retirement remains a later reviewed contract step, and the moderated intended-user study itself remains B17. Evidence is recorded in `docs/checkpoints/NG-B02-B05-ARCHITECTURE-CHECKPOINT.md` and `docs/checkpoints/NG-B05-CHECKPOINT.md`.
 
 2026-07-20 follow-up: the owner confirmed that a learner-only account must not receive a redundant work-role switcher. The control appears only when the account has another authorized work role; a direct single-role visit returns to the current dashboard. Personal/institution learning selection remains a separate Learner control.
 

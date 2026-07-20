@@ -32,6 +32,7 @@ php artisan storage:link
 php artisan hospitrainity:identity-migration-preflight
 php artisan migrate --force
 php artisan hospitrainity:identity-migration-preflight
+php artisan hospitrainity:search-rebuild
 ```
 
 The first preflight is a read-only inventory for the approved mapping/disposition plan. The second checks the normalized membership, unresolved-user, default-membership, required-institution, and finalization-state invariants and must exit zero. By default the JSON report contains SHA-256 legacy-label groups and no email addresses. `--include-legacy-values` reveals plaintext legacy labels and is permitted only for the access-controlled mapping review; retain that output as sensitive migration evidence. Neither mode writes data.
@@ -67,7 +68,9 @@ HSTS `includeSubDomains` and `preload` default to off because enabling either wi
 
 ## Deployment gate
 
-`php artisan hospitrainity:deployment-check` exits non-zero if production mode, debug, HTTPS, the application encryption key, cookie settings, CSP/HSTS, the Vite manifest or referenced assets, storage link, `public/hot`, Composer development packages, a deployed `node_modules`, demo identity configuration, normalized-identity session finalization, or curriculum-release state are unsafe. Run it after environment configuration and before shifting traffic. A non-zero result is a stop condition, not an instruction to weaken the checker.
+`php artisan hospitrainity:deployment-check` exits non-zero if production mode, debug, HTTPS, the application encryption key, cookie settings, CSP/HSTS, the Vite manifest or referenced assets, storage link, `public/hot`, Composer development packages, a deployed `node_modules`, demo identity configuration, normalized-identity session finalization, curriculum-release state, or the active published-content search generation are unsafe. Run it after environment configuration and before shifting traffic. A non-zero result is a stop condition, not an instruction to weaken the checker.
+
+The search rebuild creates a new generation and atomically activates it; it does not delete prior generations. Canonical imports, rollbacks, and active-release transitions also trigger the same rebuild service. If the command fails or the readiness check reports `active_search_index`, keep traffic stopped and investigate instead of serving a silently stale or empty search.
 
 Do not import a first or replacement curriculum in production while the release gates are incomplete. Same-source repair is permitted only where the existing production package already has a deliverable release record. Production rollback is policy-disabled until B17 rehearses the approved release workflow; any future enabled path must preserve the prior package and release evidence, and the snapshot guard must validate the active non-draft release, coherent checksums, and all seven complete approval records before the first database mutation.
 

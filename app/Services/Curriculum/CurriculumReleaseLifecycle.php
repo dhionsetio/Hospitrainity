@@ -9,6 +9,7 @@ use App\Models\CurriculumRelease;
 use App\Models\CurriculumReleaseApproval;
 use App\Models\CurriculumReleaseEvent;
 use App\Models\User;
+use App\Services\SearchIndexBuilder;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Support\Facades\DB;
 use RuntimeException;
@@ -25,7 +26,10 @@ final class CurriculumReleaseLifecycle
         'withdrawn' => [],
     ];
 
-    public function __construct(private readonly CurriculumReleaseGuard $guard) {}
+    public function __construct(
+        private readonly CurriculumReleaseGuard $guard,
+        private readonly SearchIndexBuilder $searchIndex,
+    ) {}
 
     public function transition(
         CurriculumRelease $release,
@@ -43,7 +47,7 @@ final class CurriculumReleaseLifecycle
             throw new RuntimeException('A release-state reason of 1–1000 characters is required.');
         }
 
-        return DB::transaction(function () use ($release, $expected, $next, $actor, $reason): CurriculumRelease {
+        $updated = DB::transaction(function () use ($release, $expected, $next, $actor, $reason): CurriculumRelease {
             $this->lockLifecycle();
             $lockedActor = User::query()->lockForUpdate()->find($actor->getKey());
             if ($lockedActor === null || ! $lockedActor->isSuperAdmin()) {
@@ -82,6 +86,12 @@ final class CurriculumReleaseLifecycle
 
             return $locked->fresh(['package', 'approvals']);
         }, 3);
+
+        if ($expected === CurriculumReleaseState::Active || $next === CurriculumReleaseState::Active) {
+            $this->searchIndex->rebuild();
+        }
+
+        return $updated;
     }
 
     public function approveGate(

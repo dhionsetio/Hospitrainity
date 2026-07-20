@@ -12,7 +12,7 @@
             <header class="mb-8">
                 <h1 class="text-3xl font-bold text-neutral-800">{{ __('admin.team_progress') }}</h1>
                 <p class="text-neutral-500">{{ __('admin.monitor_institution_progress') }}</p>
-                <a href="{{ route('supervisor.invitations.index') }}" class="mt-4 inline-flex min-h-11 items-center rounded-lg bg-indigo-700 px-5 py-3 font-semibold text-white">{{ __('Invite a learner') }}</a>
+                @include('partials.next-action', ['nextAction' => $nextAction])
             </header>
 
             <section class="rounded-lg bg-white shadow-md" aria-labelledby="learner-progress-heading">

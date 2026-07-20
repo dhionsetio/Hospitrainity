@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Services\CurriculumProgressService;
 use App\Services\InstitutionContext;
+use App\Services\NextActionResolver;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
@@ -20,6 +21,7 @@ class SpvDashboardController extends Controller
     public function __construct(
         private readonly CurriculumProgressService $progress,
         private readonly InstitutionContext $institutions,
+        private readonly NextActionResolver $nextActions,
     ) {}
 
     public function index(Request $request): View
@@ -45,7 +47,8 @@ class SpvDashboardController extends Controller
         $users->getCollection()->each(function (User $user) use ($progressByUser): void {
             $user->overall_progress = $progressByUser[$user->getKey()] ?? 0;
         });
+        $nextAction = $this->nextActions->supervisor($request, $supervisor, $users);
 
-        return view('supervisor.dashboard', compact('users', 'institution'));
+        return view('supervisor.dashboard', compact('users', 'institution', 'nextAction'));
     }
 }

@@ -36,12 +36,14 @@
         </nav>
 
         <nav class="mt-auto space-y-2 border-t border-neutral-200 pt-4" aria-label="{{ __('Account and help') }}">
+            <a href="{{ route('search.index') }}" class="flex min-h-11 items-center gap-3 rounded-lg px-4 py-3 text-neutral-800 hover:bg-neutral-100"><i class="fas fa-magnifying-glass fa-fw" aria-hidden="true"></i>{{ __('Search') }}</a>
+            <a href="{{ route('onboarding.show') }}" class="flex min-h-11 items-center gap-3 rounded-lg px-4 py-3 text-neutral-800 hover:bg-neutral-100"><i class="fas fa-route fa-fw" aria-hidden="true"></i>{{ __('Getting started') }}</a>
             <a href="{{ route('security.index') }}" class="flex min-h-11 items-center gap-3 rounded-lg px-4 py-3 text-neutral-800 hover:bg-neutral-100"><i class="fas fa-shield-halved fa-fw" aria-hidden="true"></i>{{ __('Account security') }}</a>
             <a href="{{ route('preferences.edit') }}" class="flex min-h-11 items-center gap-3 rounded-lg px-4 py-3 text-neutral-800 hover:bg-neutral-100"><i class="fas fa-universal-access fa-fw" aria-hidden="true"></i>{{ __('Display preferences') }}</a>
             @if($hasAlternativeRole)
                 <a href="{{ route('work-context.index') }}" class="flex min-h-11 items-center gap-3 rounded-lg px-4 py-3 text-neutral-800 hover:bg-neutral-100"><i class="fas fa-repeat fa-fw" aria-hidden="true"></i>{{ __('Switch role') }}</a>
             @endif
-            <a href="{{ route('policies.show', ['type' => 'support']) }}" class="flex min-h-11 items-center gap-3 rounded-lg px-4 py-3 text-neutral-800 hover:bg-neutral-100"><i class="fas fa-circle-question fa-fw" aria-hidden="true"></i>{{ __('Help') }}</a>
+            <a href="{{ route('help.index') }}" class="flex min-h-11 items-center gap-3 rounded-lg px-4 py-3 text-neutral-800 hover:bg-neutral-100"><i class="fas fa-circle-question fa-fw" aria-hidden="true"></i>{{ __('Help') }}</a>
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
                 <button type="submit" class="flex w-full min-h-11 items-center gap-3 rounded-lg px-4 py-3 text-neutral-800 hover:bg-neutral-100"><i class="fas fa-sign-out-alt fa-fw" aria-hidden="true"></i>{{ __('Logout') }}</button>

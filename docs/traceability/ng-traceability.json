@@ -664,22 +664,29 @@
         "evidence": {
             "code": [
                 "resources/views/curriculum/section.blade.php",
+                "resources/views/curriculum/chapter.blade.php",
+                "resources/views/curriculum/dashboard.blade.php",
+                "resources/views/dashboard.blade.php",
+                "resources/views/partials/next-action.blade.php",
+                "resources/views/superadmin/dashboard.blade.php",
                 "resources/views/superadmin/progress/index.blade.php",
                 "resources/views/supervisor/dashboard.blade.php"
             ],
             "migrations": [],
             "automated_tests": [
-                "Full Laravel suite 323 tests / 5,144 assertions and Playwright 44/44 regression verify the installed B04 summary/filter/pagination and lesson outline/next-action patterns"
+                "tests/Feature/NextActionResolverTest.php",
+                "Full B05 Laravel suite passed 335 tests / 5,307 assertions; the clean supported-engine Playwright run passed 52/52 journeys"
             ],
             "browser_device_checks": [
-                "Responsive patterns passed desktop Chromium/WebKit and Pixel 7/iPhone 15 emulation; focus/history/query-count and B05/B10 completion evidence remains open"
+                "Task-first and evidence-disclosure patterns passed desktop Chromium/WebKit and Pixel 7/iPhone 15 emulation; ordinary-workflow human evidence and B08 authoring/B10 data-view closure remain open"
             ],
             "human_legal_reviews": [],
             "production_evidence": [
-                "B04 supplies long-lesson and progress-page structure; this multi-batch finding remains open through B05 and B10"
+                "B04 supplies long-lesson and progress-page structure; B05 installs deterministic task-first dashboard actions and moves exact technical evidence behind named disclosures. B08 authoring and observed ordinary-workflow usability remain open."
             ],
             "checkpoints": [
-                "docs/checkpoints/NG-B04-CHECKPOINT.md"
+                "docs/checkpoints/NG-B04-CHECKPOINT.md",
+                "docs/checkpoints/NG-B05-CHECKPOINT.md"
             ]
             }
         },
@@ -704,8 +711,12 @@
                     "app/Services/InstitutionRoleManager.php",
                     "app/Http/Middleware/CheckRole.php",
                     "app/Http/Controllers/WorkContextController.php",
+                    "app/Services/OnboardingService.php",
+                    "app/Services/NextActionResolver.php",
                     "resources/views/work-context/index.blade.php",
-                    "resources/views/institution-roles/index.blade.php"
+                    "resources/views/institution-roles/index.blade.php",
+                    "resources/views/onboarding/show.blade.php",
+                    "resources/views/partials/mobile-role-navigation.blade.php"
                 ],
                 "migrations": [
                     "database/migrations/2026_07_20_000013_establish_tenant_roles_and_join_codes.php"
@@ -713,19 +724,22 @@
                 "automated_tests": [
                     "tests/Feature/WorkContextAuthorizationTest.php",
                     "tests/Feature/InstitutionRoleManagementTest.php",
-                    "tests/Feature/RoleRouteMatrixTest.php"
+                    "tests/Feature/RoleRouteMatrixTest.php",
+                    "tests/Feature/OnboardingFlowTest.php",
+                    "tests/Feature/NextActionResolverTest.php"
                 ],
                 "browser_device_checks": [
-                    "Role-specific critical journeys passed in patched desktop/mobile Chromium and WebKit; Firefox and Opera evidence remains open."
+                    "Role-specific navigation, onboarding, and next-action journeys passed in the 52/52 clean supported-engine desktop/mobile Chromium and WebKit run; branded Firefox, Opera, and physical-device evidence remains open."
                 ],
                 "human_legal_reviews": [
                     "Owner approved the explicit multi-role context and tenant hierarchy on 2026-07-20."
                 ],
                 "production_evidence": [
-                    "Expand-first normalized assignments and the explicit context selector are installed; legacy role-column retirement and B06 coverage of every future tenant surface remain open."
+                    "Expand-first normalized assignments, explicit context selector, role-aware onboarding, and server-derived role next actions are installed; legacy role-column retirement and B06 coverage of future tenant/class surfaces remain open."
                 ],
                 "checkpoints": [
-                    "docs/checkpoints/NG-B02-B05-ARCHITECTURE-CHECKPOINT.md"
+                    "docs/checkpoints/NG-B02-B05-ARCHITECTURE-CHECKPOINT.md",
+                    "docs/checkpoints/NG-B05-CHECKPOINT.md"
                 ]
             }
         },
@@ -753,7 +767,7 @@
                 "tests/Feature/AccessibilityMarkupTest.php verifies visible ID/EN labels and accessible language names"
             ],
             "browser_device_checks": [
-                "Bilingual controls passed the four-profile Playwright regression; screen-reader, bilingual-layout, pedagogy, and B05/B08/B17 evidence remains open"
+                "Bilingual controls and B05 bilingual-ready Help/onboarding passed the four-profile Playwright regression; screen-reader, pedagogy, B08 source-content, and B17 human evidence remain open"
             ],
             "human_legal_reviews": [],
             "production_evidence": [
@@ -778,15 +792,32 @@
                 "NG-B10-DECISIONS"
             ],
             "required_evidence": "Approved bounded summary/filter/navigation pattern; truthful totals; focus/history/query-count evidence",
-            "status": "open",
+            "status": "in_progress",
             "evidence": {
-                "code": [],
+                "code": [
+                    "app/Services/NextActionResolver.php",
+                    "app/Services/SearchService.php",
+                    "resources/views/partials/next-action.blade.php",
+                    "resources/views/search/index.blade.php",
+                    "resources/views/curriculum/chapter.blade.php"
+                ],
                 "migrations": [],
-                "automated_tests": [],
-                "browser_device_checks": [],
+                "automated_tests": [
+                    "tests/Feature/NextActionResolverTest.php",
+                    "tests/Feature/PublishedContentSearchTest.php",
+                    "tests/E2E/critical-path.spec.mjs"
+                ],
+                "browser_device_checks": [
+                    "The clean supported-engine B05 run passed 52/52 desktop/mobile Chromium and WebKit journeys, including next-action, onboarding, search, empty-state, and recovery behavior."
+                ],
                 "human_legal_reviews": [],
-                "production_evidence": [],
-                "checkpoints": []
+                "production_evidence": [
+                    "B04/B05 bounded navigation and deterministic next-action foundations are installed; truthful aggregate totals, query-count evidence, and broader data-view closure remain B10."
+                ],
+                "checkpoints": [
+                    "docs/checkpoints/NG-B04-CHECKPOINT.md",
+                    "docs/checkpoints/NG-B05-CHECKPOINT.md"
+                ]
             }
         },
         {
@@ -801,15 +832,38 @@
                 "NG-B17-DECISIONS"
             ],
             "required_evidence": "Approved onboarding/help/search journey; accessible recovery; observed first-use evidence with limitations",
-            "status": "open",
+            "status": "in_progress",
             "evidence": {
-                "code": [],
-                "migrations": [],
-                "automated_tests": [],
-                "browser_device_checks": [],
-                "human_legal_reviews": [],
-                "production_evidence": [],
-                "checkpoints": []
+                "code": [
+                    "app/Services/OnboardingService.php",
+                    "app/Services/HelpContentRegistry.php",
+                    "app/Services/SearchIndexBuilder.php",
+                    "app/Services/SearchService.php",
+                    "resources/views/onboarding/show.blade.php",
+                    "resources/views/help/index.blade.php",
+                    "resources/views/search/index.blade.php"
+                ],
+                "migrations": [
+                    "database/migrations/2026_07_20_000017_create_onboarding_and_search_foundation.php"
+                ],
+                "automated_tests": [
+                    "tests/Feature/OnboardingFlowTest.php",
+                    "tests/Feature/HelpContentTest.php",
+                    "tests/Feature/PublishedContentSearchTest.php",
+                    "tests/E2E/critical-path.spec.mjs"
+                ],
+                "browser_device_checks": [
+                    "The clean supported-engine B05 run passed 52/52 desktop/mobile Chromium and WebKit journeys, including skip/resume/restart, published-only search, Help, glossary, and no-result recovery."
+                ],
+                "human_legal_reviews": [
+                    "Owner approved the short role-aware first-use sequence, searchable/versioned Help, glossary, bounded search, no behavioral analytics, and two-round study design. Observed intended-user evidence remains B17."
+                ],
+                "production_evidence": [
+                    "Migration batch 16 installed empty per-user onboarding state plus an atomically activated 223-document published-content index; no user was silently placed into onboarding and no private/draft records are indexed."
+                ],
+                "checkpoints": [
+                    "docs/checkpoints/NG-B05-CHECKPOINT.md"
+                ]
             }
         },
         {
@@ -831,10 +885,16 @@
                     "app/Http/Controllers/Auth/RegisterController.php",
                     "app/Http/Controllers/InstitutionEnrollmentController.php",
                     "app/Http/Controllers/PublicPolicyController.php",
+                    "app/Http/Controllers/HelpController.php",
+                    "app/Services/HelpContentRegistry.php",
                     "app/Services/PolicyDocumentRegistry.php",
                     "resources/views/register.blade.php",
                     "resources/views/institution-enrollment/index.blade.php",
                     "resources/views/policies/show.blade.php",
+                    "resources/views/help/index.blade.php",
+                    "resources/views/help/show.blade.php",
+                    "resources/views/help/about.blade.php",
+                    "resources/views/help/glossary.blade.php",
                     "resources/views/partials/public-footer.blade.php"
                 ],
                 "migrations": [
@@ -845,21 +905,23 @@
                     "tests/Feature/RegistrationTest.php",
                     "tests/Feature/InstitutionJoinCodeEnrollmentTest.php",
                     "tests/Feature/PrivacyLifecycleTest.php",
+                    "tests/Feature/HelpContentTest.php",
                     "tests/Feature/AccessibilityMarkupTest.php",
                     "tests/Feature/LangParityTest.php"
                 ],
                 "browser_device_checks": [
-                    "Personal registration warning, versioned public trust links, and sensitive privacy-request step-up passed in patched desktop/mobile Chromium and WebKit."
+                    "Personal registration warning, versioned public trust links, Help, glossary, About, and sensitive privacy-request step-up passed in the clean desktop/mobile Chromium and WebKit matrix."
                 ],
                 "human_legal_reviews": [
                     "Owner approved the personal/institution progress warning and prototype trust direction; qualified legal approval and final production-controller determination remain open."
                 ],
                 "production_evidence": [
-                    "Registration now separately records hashed versioned privacy and terms acknowledgements. Privacy, terms, accessibility, acceptable-use, support, and authenticated request destinations exist; qualified legal interpretation and B05 final public IA/usability evidence remain release-blocking."
+                    "Registration separately records hashed versioned privacy and terms acknowledgements. Privacy, terms, accessibility, acceptable-use, support, versioned Help/glossary, About, and authenticated request destinations exist; qualified legal interpretation and intended-user validation remain release-blocking."
                 ],
                 "checkpoints": [
                     "docs/checkpoints/NG-B02-B05-ARCHITECTURE-CHECKPOINT.md",
-                    "docs/checkpoints/NG-B02-CHECKPOINT.md"
+                    "docs/checkpoints/NG-B02-CHECKPOINT.md",
+                    "docs/checkpoints/NG-B05-CHECKPOINT.md"
                 ]
             }
         },
@@ -873,15 +935,32 @@
                 "NG-B05-DECISIONS"
             ],
             "required_evidence": "Deterministic authorized next-action rules; empty/recovery states; no false/unavailable CTA",
-            "status": "open",
+            "status": "closed",
             "evidence": {
-                "code": [],
+                "code": [
+                    "app/Services/NextActionResolver.php",
+                    "resources/views/partials/next-action.blade.php",
+                    "app/Http/Controllers/DashboardController.php",
+                    "app/Http/Controllers/Supervisor/SpvDashboardController.php",
+                    "app/Http/Controllers/Superadmin/AdminDashboardController.php"
+                ],
                 "migrations": [],
-                "automated_tests": [],
-                "browser_device_checks": [],
-                "human_legal_reviews": [],
-                "production_evidence": [],
-                "checkpoints": []
+                "automated_tests": [
+                    "tests/Feature/NextActionResolverTest.php",
+                    "tests/E2E/critical-path.spec.mjs"
+                ],
+                "browser_device_checks": [
+                    "The clean supported-engine B05 run passed all 52 journeys; role dashboards expose only actions backed by current authorized facts and provide truthful empty/help recovery."
+                ],
+                "human_legal_reviews": [
+                    "Owner approved the role-specific priority rules in NG-B05-DECISIONS."
+                ],
+                "production_evidence": [
+                    "The server-derived resolver is installed for Learner, Institution Supervisor, Content Admin, and System Admin dashboards; unavailable categories and actions are omitted."
+                ],
+                "checkpoints": [
+                    "docs/checkpoints/NG-B05-CHECKPOINT.md"
+                ]
             }
         },
         {
@@ -1036,15 +1115,35 @@
                 "NG-B08-DECISIONS"
             ],
             "required_evidence": "Approved localization/pedagogy boundary; no raw ordinary-UI enum; fallback, bilingual layout, screen-reader, fidelity review",
-            "status": "open",
+            "status": "in_progress",
             "evidence": {
-                "code": [],
+                "code": [
+                    "app/Services/HelpContentRegistry.php",
+                    "app/Services/OnboardingService.php",
+                    "resources/views/help",
+                    "resources/views/onboarding/show.blade.php",
+                    "lang/en.json",
+                    "lang/id.json"
+                ],
                 "migrations": [],
-                "automated_tests": [],
-                "browser_device_checks": [],
-                "human_legal_reviews": [],
-                "production_evidence": [],
-                "checkpoints": []
+                "automated_tests": [
+                    "tests/Feature/LangParityTest.php",
+                    "tests/Feature/HelpContentTest.php",
+                    "tests/Feature/OnboardingFlowTest.php"
+                ],
+                "browser_device_checks": [
+                    "Bilingual-ready Help/onboarding and human labels passed the clean desktop/mobile Chromium and WebKit matrix; screen-reader and human language/content fidelity review remains open."
+                ],
+                "human_legal_reviews": [
+                    "Owner approved Indonesian/English language selection, human-facing role labels, and the boundary that authoritative English learning content is not silently translated."
+                ],
+                "production_evidence": [
+                    "B05 UI enum-like values are mapped to localized human labels; B08 authoring/source-content boundaries and B17 human closure remain open."
+                ],
+                "checkpoints": [
+                    "docs/checkpoints/NG-B04-CHECKPOINT.md",
+                    "docs/checkpoints/NG-B05-CHECKPOINT.md"
+                ]
             }
         },
         {
@@ -1122,15 +1221,21 @@
                 "Supervisor/ethics approval"
             ],
             "required_evidence": "Approved non-assumed sample/design; raw permitted evidence; reproducible analysis; limitations/adverse findings retained",
-            "status": "open",
+            "status": "in_progress",
             "evidence": {
                 "code": [],
                 "migrations": [],
                 "automated_tests": [],
                 "browser_device_checks": [],
-                "human_legal_reviews": [],
-                "production_evidence": [],
-                "checkpoints": []
+                "human_legal_reviews": [
+                    "Owner approved two formative moderated rounds totaling six intended learners and four instructor/supervisor/admin participants, including disabled/assistive-technology/lower-confidence participants where possible. Supervisor/ethics approval is required before execution."
+                ],
+                "production_evidence": [
+                    "docs/research/NG-B05-FORMATIVE-FIRST-USE-PROTOCOL.md defines recruitment, consent, role-specific tasks, assistance coding, severity, round gates, data minimization, evidence retention, and explicit limits on claims. No participant results are claimed; execution remains B17."
+                ],
+                "checkpoints": [
+                    "docs/checkpoints/NG-B05-CHECKPOINT.md"
+                ]
             }
         },
         {

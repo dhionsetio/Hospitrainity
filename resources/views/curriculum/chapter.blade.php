@@ -26,8 +26,11 @@
             <ul class="mt-4 space-y-3">
                 @foreach ($curriculumChapter['outcomes'] as $outcome)
                     <li class="rounded-lg border border-neutral-200 p-4">
-                        <p class="font-mono text-xs font-semibold text-indigo-700">{{ $outcome['code'] }} · {{ $outcome['type'] }} · {{ __('Provisional band: :band', ['band' => $outcome['provisional_band']]) }}</p>
-                        <p class="mt-2 text-neutral-800">{{ $outcome['statement'] }}</p>
+                        <p class="text-neutral-800">{{ $outcome['statement'] }}</p>
+                        <details class="mt-3 text-sm text-neutral-700">
+                            <summary class="cursor-pointer font-semibold text-indigo-800">{{ __('Outcome evidence') }}</summary>
+                            <p class="mt-2 font-mono text-xs">{{ $outcome['code'] }} · {{ $outcome['type'] }} · {{ __('Provisional band: :band', ['band' => $outcome['provisional_band']]) }}</p>
+                        </details>
                     </li>
                 @endforeach
             </ul>
@@ -40,13 +43,17 @@
                     <article class="rounded-xl border border-neutral-200 bg-white p-5 shadow-sm">
                         <div class="flex flex-col justify-between gap-4 md:flex-row md:items-center">
                             <div>
-                                <p class="text-xs font-semibold uppercase tracking-wide text-neutral-500">{{ __('Section :number', ['number' => $section['order']]) }} · {{ $section['code'] }}</p>
+                                <p class="text-xs font-semibold uppercase tracking-wide text-neutral-500">{{ __('Section :number', ['number' => $section['order']]) }}</p>
                                 <h3 class="mt-1 text-lg font-bold text-neutral-900">{{ $section['title'] }}</h3>
                                 @if ($section['activity'])
-                                    <p class="mt-2 text-sm text-neutral-600">{{ $section['activity']['response_form'] }} · {{ $section['activity']['scoring_mode'] }}</p>
+                                    <p class="mt-2 text-sm text-neutral-600">{{ __('Includes an interactive activity') }}</p>
                                 @else
                                     <p class="mt-2 text-sm text-neutral-500">{{ __('Reading section') }}</p>
                                 @endif
+                                <details class="mt-2 text-sm text-neutral-700">
+                                    <summary class="cursor-pointer font-semibold text-indigo-800">{{ __('Section evidence') }}</summary>
+                                    <p class="mt-2 font-mono text-xs">{{ $section['code'] }}@if($section['activity']) · {{ $section['activity']['response_form'] }} · {{ $section['activity']['scoring_mode'] }}@endif</p>
+                                </details>
                             </div>
                             <a href="{{ isset($curriculumPreview) ? route((Auth::user()->isSuperAdmin() ? 'superadmin' : 'admin').'.curriculum-drafts.preview.sections.show', [$curriculumPreview, $section['code']]) : route('curriculum.sections.show', $section['code']) }}" class="self-start rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-700">{{ __('Open section') }}</a>
                         </div>

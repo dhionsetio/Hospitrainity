@@ -10,6 +10,7 @@
     <main class="container mx-auto px-6 py-8">
         <h1 class="text-3xl font-bold text-neutral-800">{{ __('Welcome Back!') }}</h1>
         <p class="text-neutral-600 mt-2">{{ __('Continue your learning and reach your goals.') }}</p>
+        @include('partials.next-action', ['nextAction' => $nextAction])
 
         <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             @forelse ($modules as $module)
@@ -34,7 +35,6 @@
                 </div>
             </div>
             @empty
-            <!-- Tampilkan pesan ini jika tidak ada modul yang ditemukan -->
             <div class="col-span-1 md:col-span-2 lg:col-span-3 text-center py-12">
                 <p class="text-neutral-500 text-lg">{{ __('Oops! It looks like there are no modules available right now.') }}</p>
             </div>

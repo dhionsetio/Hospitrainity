@@ -40,6 +40,7 @@ class ProductionReadinessCheckerTest extends TestCase
             static fn (): bool => true,
             static fn (): bool => true,
             static fn (): bool => true,
+            static fn (): bool => true,
         ))->inspect();
         $failed = collect($checks)->where('passed', false)->pluck('name')->all();
 
@@ -63,6 +64,7 @@ class ProductionReadinessCheckerTest extends TestCase
             $this->releasePath,
             static fn (string $package): bool => $package === 'fakerphp/faker',
             static fn (): bool => false,
+            static fn (): bool => true,
             static fn (): bool => true,
             static fn (): bool => true,
             static fn (): bool => true,
@@ -90,6 +92,7 @@ class ProductionReadinessCheckerTest extends TestCase
             static fn (): bool => true,
             static fn (): bool => true,
             static fn (): bool => true,
+            static fn (): bool => true,
         ))->inspect();
 
         $this->assertContains('app_key', collect($checks)->where('passed', false)->pluck('name')->all());
@@ -107,6 +110,7 @@ class ProductionReadinessCheckerTest extends TestCase
             static fn (string $package): bool => false,
             static fn (): bool => true,
             static fn (): bool => false,
+            static fn (): bool => true,
             static fn (): bool => true,
             static fn (): bool => true,
         ))->inspect();
@@ -129,6 +133,7 @@ class ProductionReadinessCheckerTest extends TestCase
             static fn (): bool => false,
             static fn (): bool => true,
             static fn (): bool => false,
+            static fn (): bool => true,
             static fn (): bool => true,
         ))->inspect();
 
@@ -163,12 +168,32 @@ class ProductionReadinessCheckerTest extends TestCase
             activeCurriculumIsReleaseReady: static fn (): bool => true,
             identityMigrationFinalized: static fn (): bool => true,
             uploadScannerHealthy: static fn (): bool => true,
+            activeSearchIndexReady: static fn (): bool => true,
         ))->inspect();
 
         $this->assertContains(
             'demo_identities_absent',
             collect($checks)->where('passed', false)->pluck('name')->all(),
         );
+    }
+
+    public function test_checker_rejects_a_missing_or_empty_active_search_generation(): void
+    {
+        $this->configureProductionRuntime();
+        $this->releasePath = storage_path('framework/testing/production-readiness-'.bin2hex(random_bytes(5)));
+        $this->writeValidReleaseAssets();
+
+        $checks = (new ProductionReadinessChecker(
+            $this->releasePath,
+            static fn (string $package): bool => false,
+            static fn (): bool => false,
+            static fn (): bool => true,
+            static fn (): bool => true,
+            static fn (): bool => true,
+            static fn (): bool => false,
+        ))->inspect();
+
+        $this->assertContains('active_search_index', collect($checks)->where('passed', false)->pluck('name')->all());
     }
 
     private function configureProductionRuntime(): void

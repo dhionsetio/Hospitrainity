@@ -20,6 +20,7 @@ use App\Http\Controllers\CurriculumImportController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DisplayPreferenceController;
 use App\Http\Controllers\ExerciseController;
+use App\Http\Controllers\HelpController;
 use App\Http\Controllers\InstitutionEnrollmentController;
 use App\Http\Controllers\InstitutionInvitationController;
 use App\Http\Controllers\InstitutionJoinCodeController;
@@ -31,10 +32,12 @@ use App\Http\Controllers\LegacyEvidenceController;
 use App\Http\Controllers\LessonController;
 use App\Http\Controllers\MaterialController;
 use App\Http\Controllers\ModuleController;
+use App\Http\Controllers\OnboardingController;
 use App\Http\Controllers\PrivacyRequestController;
 use App\Http\Controllers\ProgressController;
 use App\Http\Controllers\PublicPolicyController;
 use App\Http\Controllers\PushSubscriptionController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SecuritySettingsController;
 use App\Http\Controllers\Superadmin\AdminDashboardController;
 use App\Http\Controllers\Superadmin\AdministrationAuditController;
@@ -136,6 +139,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/help', [HelpController::class, 'index'])->name('help.index');
+Route::get('/help/{slug}', [HelpController::class, 'show'])
+    ->where('slug', '[a-z0-9-]+')->name('help.show');
+Route::get('/glossary', [HelpController::class, 'glossary'])->name('glossary.index');
+Route::get('/about', [HelpController::class, 'about'])->name('about');
+
 Route::get('/policies/{type}', [PublicPolicyController::class, 'show'])
     ->whereIn('type', ['privacy', 'terms', 'accessibility', 'acceptable-use', 'support'])
     ->name('policies.show');
@@ -207,6 +216,10 @@ Route::post('/institution', ActiveInstitutionController::class)
     ->name('institution.select');
 
 Route::middleware(['auth', 'verified'])->group(function (): void {
+    Route::get('/search', [SearchController::class, 'index'])->name('search.index');
+    Route::get('/getting-started', [OnboardingController::class, 'show'])->name('onboarding.show');
+    Route::patch('/getting-started', [OnboardingController::class, 'update'])
+        ->middleware('throttle:60,1')->name('onboarding.update');
     Route::get('/work-context', [WorkContextController::class, 'index'])->name('work-context.index');
     Route::post('/work-context', [WorkContextController::class, 'store'])
         ->middleware('throttle:institution-switch')->name('work-context.store');

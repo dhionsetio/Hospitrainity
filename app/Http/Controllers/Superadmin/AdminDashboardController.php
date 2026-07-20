@@ -14,11 +14,15 @@ use App\Models\Material;
 use App\Models\Module;
 use App\Models\User;
 use App\Models\Vocabulary;
+use App\Services\NextActionResolver;
+use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class AdminDashboardController extends Controller
 {
-    public function index(): View
+    public function __construct(private readonly NextActionResolver $nextActions) {}
+
+    public function index(Request $request): View
     {
         $activeCanonicalPackage = CurriculumPackage::active();
         $activeEntityCounts = $activeCanonicalPackage?->entities()
@@ -68,6 +72,7 @@ class AdminDashboardController extends Controller
             'available_entities' => CurriculumDraftEntity::query()->whereNull('archived_at')->count(),
             'archived_entities' => CurriculumDraftEntity::query()->whereNotNull('archived_at')->count(),
         ];
+        $nextAction = $this->nextActions->administration($request, $request->user(), $draftWorkspaceCounts);
 
         return view('superadmin.dashboard', compact(
             'activeCanonicalPackage',
@@ -75,6 +80,7 @@ class AdminDashboardController extends Controller
             'legacyEvidenceCounts',
             'draftWorkspaceCounts',
             'stats',
+            'nextAction',
         ));
     }
 }

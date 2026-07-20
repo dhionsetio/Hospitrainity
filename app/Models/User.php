@@ -146,6 +146,11 @@ class User extends Authenticatable implements MustVerifyEmail, PasskeyUser
         return $this->hasMany(Completion::class);
     }
 
+    public function onboardingStates(): HasMany
+    {
+        return $this->hasMany(UserOnboardingState::class);
+    }
+
     public function institutionMemberships(): HasMany
     {
         return $this->hasMany(InstitutionMembership::class);
