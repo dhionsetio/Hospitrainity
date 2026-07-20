@@ -47,6 +47,8 @@ The normalized assignment tables, explicit work/tenant/learning context, audited
 
 The owner also selected a layered gray/charcoal Dark theme resembling the supplied Codex reference rather than a near-black treatment. The technical implementation follows the repository's recommendation-first rule: semantic paired colors, system/light/dark support, native-control `color-scheme`, WCAG contrast floors, and coverage for every palette utility currently used by Blade views. This visual preference does not change roles, features, curriculum, or stored business data.
 
+2026-07-20 dark-theme verification follow-up: the owner requires visual inspection before Dark-mode work can be called complete. Source review, builds, and automated contrast assertions are necessary but insufficient on their own. Dark-theme changes must include representative rendered checks at desktop and mobile sizes, cover ordinary and privileged surfaces plus component states introduced by framework/vendor templates, and retain failures until their cause is explained. This process rule does not represent full WCAG, physical-device, branded-browser, or assistive-technology conformance.
+
 ## Evidence basis
 
 - Unicode Technical Standard #51 regional-indicator and flag-sequence behavior.

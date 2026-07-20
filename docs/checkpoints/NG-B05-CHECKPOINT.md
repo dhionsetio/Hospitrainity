@@ -100,6 +100,24 @@ Primary references:
 - [MDN — `color-scheme`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/color-scheme)
 - [Tailwind CSS — Dark mode](https://tailwindcss.com/docs/dark-mode)
 
+## 2026-07-20 dark-theme variant and visual-audit follow-up
+
+The owner supplied a screenshot showing that the source-table header was readable but its body text was nearly white on alternating white/light-gray rows. This was a confirmed application defect. `resources/views/curriculum/section.blade.php` uses `odd:bg-white even:bg-neutral-50`; the first coverage test reduced those variant tokens to their base utilities and therefore falsely treated them as covered. A second confirmed low-contrast state came from Laravel's rendered pagination templates, whose `dark:text-gray-*` utilities were outside the original Blade-only inventory.
+
+The semantic theme layer now maps alternating rows, read-only controls, translucent neutral overlays, placeholders, dividers, and the gray utilities and interaction variants emitted by Laravel pagination. The utility-inventory test now tokenizes exact class names, preserves state and opacity variants, scans application Blade/JavaScript plus the installed Laravel pagination views, and requires exact semantic mappings for variant, opacity, and divider tokens. The affected E2E journey measures the computed background and foreground of every source-table row and the pagination summary at a minimum 4.5:1 ratio. The login remember/recovery row also wraps with a deliberate gap at narrow widths after visual inspection found cramped text.
+
+Visual verification was performed after the production build, not inferred from source inspection. The in-app browser showed the repaired source table at desktop and 390 × 844 CSS pixels, the repaired search results at desktop and mobile, and the corrected mobile login row. A visible-text/placeholder contrast probe reported no sub-4.5:1 pairs on the audited learner, supervisor, System Admin, public, policy, Help, glossary, authentication, preference, security, onboarding, search, curriculum, and legacy-evidence pages. Representative screenshots were visually inspected rather than relying only on computed colors. This is still bounded visual evidence, not a full WCAG audit or a substitute for B17 human and assistive-technology validation.
+
+Final verification passed:
+
+- ESLint with zero warnings; Pint; PHPStan with no errors; and the Vite 6.4.3 production build with 31 transformed modules.
+- All 54 Node tests, including the exact-variant/vendor-template theme inventory.
+- All 339 Laravel tests / 5,384 assertions.
+- The focused repaired-theme Chromium journey, followed by all 56 critical E2E journeys across desktop Chromium, desktop WebKit, Pixel 7/mobile Chromium, and iPhone 15/mobile WebKit in the fresh `e2e-dark-audit-matrix-20260720-2220` run.
+- Port 8010 was closed after the final matrix.
+
+During verification, a stale disposable PHP server was proven to own port 8010 and caused an initial E2E process to combine old-server data with new-run credentials. The retained failure was diagnosed rather than counted as an application failure. `scripts/e2e/start-server.mjs` now refuses to launch when its fixed isolated port is already occupied, preventing misleading cross-run evidence. The verified stale disposable server process was stopped; no user file, authoritative database row, or retained test artifact was deleted.
+
 ## Evidence boundary and remaining gates
 
 The green automated/browser matrix proves the tested software contracts, not unaided human comprehension, branded-browser compatibility, physical-device behavior, WCAG conformance, engagement, learning effectiveness, legal approval, or production readiness. B17 must execute the approved study under the required supervisor/ethics process and retain raw permitted observations, assistance, adverse findings, environment details, analysis, and limitations. Branded Chrome, Safari, Edge, Firefox, and Opera on the target Windows, macOS, Android, and iOS matrix remain external validation work.

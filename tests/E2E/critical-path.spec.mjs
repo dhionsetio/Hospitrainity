@@ -131,6 +131,29 @@ test('language switcher and gray dark theme render stable, readable states', asy
     expect(renderedTheme.surfaceBackground).toBe('rgb(41, 46, 52)');
     expect(renderedTheme.selectedBackground).toBe('rgb(55, 59, 102)');
     expect(contrastRatio(renderedTheme.selectedColor, renderedTheme.selectedBackground)).toBeGreaterThanOrEqual(4.5);
+
+    await page.goto('/curriculum/sections/HSP-C01-LS-05');
+    const sourceTableTheme = await page.evaluate(() => [...globalThis.document.querySelectorAll('tbody tr')]
+        .map((row) => {
+            const cell = row.querySelector('td');
+
+            return {
+                background: globalThis.getComputedStyle(row).backgroundColor,
+                color: globalThis.getComputedStyle(cell).color,
+            };
+        }));
+    expect(sourceTableTheme).not.toHaveLength(0);
+    for (const [index, row] of sourceTableTheme.entries()) {
+        expect(row.background).toBe(index % 2 === 0 ? 'rgb(41, 46, 52)' : 'rgb(37, 42, 47)');
+        expect(contrastRatio(row.color, row.background)).toBeGreaterThanOrEqual(4.5);
+    }
+
+    await page.goto('/search?q=guest');
+    const paginationTheme = await page.locator('nav[role="navigation"] p').evaluate((summary) => ({
+        background: globalThis.getComputedStyle(globalThis.document.body).backgroundColor,
+        color: globalThis.getComputedStyle(summary).color,
+    }));
+    expect(contrastRatio(paginationTheme.color, paginationTheme.background)).toBeGreaterThanOrEqual(4.5);
     expect(browserErrors).toEqual([]);
 });
 

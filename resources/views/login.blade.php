@@ -29,7 +29,7 @@
                 </div>
             </div>
 
-            <div class="flex items-center justify-between">
+            <div class="flex flex-wrap items-center justify-between gap-3">
                 <div class="flex items-center">
                     <input id="remember-me" name="remember" type="checkbox" value="1" @checked(old('remember')) class="h-4 w-4 shrink-0 text-indigo-600 focus:ring-indigo-500 border-neutral-300 rounded">
                     <label for="remember-me" class="ml-2 block text-sm text-neutral-900">

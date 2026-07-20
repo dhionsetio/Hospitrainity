@@ -83,27 +83,37 @@ test("dark theme control boundaries exceed the non-text contrast threshold", () 
     assert.match(source, /has-\[:checked\]:bg-indigo-50/);
 });
 
-test("every numbered color utility used by a Blade view has a semantic theme override", () => {
+test("every theme-sensitive color utility used by views and scripts has an exact semantic override", () => {
     const families = [
         "neutral", "slate", "gray", "zinc", "stone", "indigo", "blue", "green", "red", "amber", "yellow",
         "purple", "pink", "orange", "cyan", "teal", "emerald", "lime", "sky", "violet", "fuchsia", "rose",
     ].join("|");
-    const variants = "(?:(?:hover|focus|focus-visible|disabled|file|has-\\[:checked\\]):)*";
     const utilityPattern = new RegExp(
-        `(?<![A-Za-z0-9_-])(${variants}(?:bg|text|border|ring|outline)-(?:${families})-[0-9]+)`,
-        "g",
+        `^(?:(?:[a-z0-9-]+|has-\\[[^\\]]+\\]):)*(?:bg|text|border|ring|outline|divide|placeholder|decoration|accent|caret|fill|stroke)-(?:white|black|transparent|current|inherit|${families})(?:-[0-9]+)?(?:/[0-9]+)?$`,
     );
+    const intentionallyFixed = new Set(["bg-transparent", "border-transparent", "border-white", "text-white"]);
     const utilities = new Set();
+    const paths = [
+        ...filesBelow("resources/views").filter((file) => file.endsWith(".blade.php")),
+        ...filesBelow("resources/js").filter((file) => file.endsWith(".js")),
+        ...filesBelow("vendor/laravel/framework/src/Illuminate/Pagination/resources/views")
+            .filter((file) => file.endsWith(".blade.php")),
+    ];
 
-    for (const path of filesBelow("resources/views").filter((file) => file.endsWith(".blade.php"))) {
-        for (const match of readFileSync(path, "utf8").matchAll(utilityPattern)) {
-            utilities.add(match[1]);
+    for (const path of paths) {
+        const candidates = readFileSync(path, "utf8").match(/[A-Za-z0-9_:[\]/.-]+/g) ?? [];
+        for (const candidate of candidates) {
+            if (utilityPattern.test(candidate) && !intentionallyFixed.has(candidate)) utilities.add(candidate);
         }
     }
 
-    const missing = [...utilities].filter((utility) => utility.includes(":")
-        ? !source.includes(`[class~="${utility}"]`)
-        : !source.includes(`.${utility}`));
+    const missing = [...utilities].filter((utility) => {
+        const needsExactClassToken = utility.includes(":") || utility.includes("/") || utility.startsWith("divide-");
+
+        return needsExactClassToken
+            ? !source.includes(`[class~="${utility}"]`)
+            : !source.includes(`.${utility}`);
+    });
 
     assert.deepEqual(missing, [], `Missing semantic overrides: ${missing.join(", ")}`);
 });

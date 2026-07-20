@@ -590,7 +590,8 @@
                 "resources/views/partials/mobile-role-navigation.blade.php",
                 "resources/views/preferences/edit.blade.php",
                 "resources/css/app.css",
-                "resources/js/app.js"
+                "resources/js/app.js",
+                "scripts/e2e/start-server.mjs"
             ],
             "migrations": [
                 "2026_07_20_000016_add_display_preferences_to_users (batch 15; additive display preferences; rollback/reapply verified)"
@@ -598,14 +599,17 @@
                 "automated_tests": [
                     "tests/Feature/AccessibilityMarkupTest.php and tests/Feature/DisplayPreferenceTest.php (focused B04 total 15 tests, 761 assertions; full Laravel suite 323 tests, 5,144 assertions on 2026-07-20)",
                     "tests/E2E/critical-path.spec.mjs (44/44 journeys across the four viable configured profiles in isolated run e2e-b04-20260720-1600)",
-                    "tests/Node/theme-contrast.test.mjs measures dark semantic text/control contrast and rejects any numbered Blade palette utility without a semantic override",
-                    "Post-theme full regression passed 339 Laravel tests / 5,384 assertions and all 54 Node tests"
+                    "tests/Node/theme-contrast.test.mjs measures dark semantic text/control contrast and rejects exact unmapped color tokens, including state/structural variants, opacity forms, placeholders, dividers, application JavaScript, and installed Laravel pagination templates",
+                    "tests/E2E/critical-path.spec.mjs measures every rendered alternating source-table row plus Laravel pagination summary contrast at or above 4.5:1",
+                    "Post-variant full regression passed 339 Laravel tests / 5,384 assertions and all 54 Node tests"
                 ],
             "browser_device_checks": [
                 "Read-only guest-page audit at 320/390/768/1280 CSS pixels found no root horizontal overflow on the audited pages",
                 "Playwright desktop Chromium, desktop WebKit, Pixel 7 emulation, and iPhone 15 emulation passed 44/44; the mobile shell check includes Escape/focus return and root no-overflow at 390 CSS pixels",
                 "Firefox application behavior remains unverified because firefox-1532 fails during host SWGL startup before navigation; branded-browser, physical-device, browser-zoom, screen-reader, and human evidence remains open",
-                "The fresh isolated e2e-theme-final-20260720-2200 run passed 56/56 complete critical journeys across desktop/mobile Chromium and WebKit, including stable gray Dark-theme colors and readable selected controls"
+                "The fresh isolated e2e-theme-final-20260720-2200 run passed 56/56 complete critical journeys across desktop/mobile Chromium and WebKit, including stable gray Dark-theme colors and readable selected controls",
+                "Rendered desktop and 390x844 checks visually confirmed the repaired alternating source table, search results/pagination, and mobile login row; broader learner, supervisor, System Admin, public/policy, authentication, preference, search, curriculum, and legacy-evidence contrast probes reported no sub-4.5:1 visible text or placeholder pairs on the audited pages",
+                "The fresh isolated e2e-dark-audit-matrix-20260720-2220 run passed 56/56 journeys across desktop/mobile Chromium and WebKit after the E2E server gained a fail-fast occupied-port isolation guard"
             ],
                 "human_legal_reviews": [],
                 "production_evidence": [],
