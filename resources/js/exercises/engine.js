@@ -651,7 +651,7 @@ function renderSoundSorting(content) {
         });
         showFeedback(allCorrect, t(
             "soundSortingRetry",
-            "Some words are still in the wrong group — the red ones need to be moved.",
+            "Some words are still in the wrong group. Move the red ones.",
         ));
     };
 }
@@ -735,7 +735,7 @@ function renderSequencing(content) {
             }
             if (!correct) allCorrect = false;
         });
-        showFeedback(allCorrect, t("sequencingRetry", "Not quite — adjust the rows marked in red."));
+        showFeedback(allCorrect, t("sequencingRetry", "Not quite. Adjust the rows marked in red."));
         if (allCorrect) done = true;
     };
 }

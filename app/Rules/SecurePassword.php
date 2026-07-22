@@ -23,7 +23,7 @@ class SecurePassword implements ValidationRule
             ? (Normalizer::normalize($value, Normalizer::FORM_C) ?: $value)
             : $value;
         $length = mb_strlen($normalized);
-        $minimum = (int) config('authentication.password.minimum', 15);
+        $minimum = (int) config('authentication.password.minimum', 8);
         $maximum = (int) config('authentication.password.maximum', 128);
         if ($length < $minimum) {
             $fail("The :attribute must be at least {$minimum} characters.");

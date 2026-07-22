@@ -58,6 +58,11 @@ class CurriculumPackage extends Model
         return $this->hasOne(CurriculumRelease::class);
     }
 
+    public function courseRevisions(): HasMany
+    {
+        return $this->hasMany(CourseRevision::class);
+    }
+
     public static function active(): ?self
     {
         $packages = static::query()->with('release')->where('is_active', true)->limit(2)->get();

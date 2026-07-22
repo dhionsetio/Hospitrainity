@@ -186,7 +186,7 @@ class AdministrationIntegrationTest extends TestCase
             ->assertSee('href="'.route('admin.curriculum-drafts.index').'"', false)
             ->assertSee('href="'.route('admin.curriculum-exercises.index').'"', false)
             ->assertSee('href="'.route('admin.progress.index').'"', false)
-            ->assertSee('href="'.route('admin.legacy-evidence.index').'"', false)
+            ->assertDontSee('href="'.route('admin.legacy-evidence.index').'"', false)
             ->assertDontSee('href="'.route('superadmin.users.index').'"', false)
             ->assertDontSee('href="'.route('superadmin.audit.index').'"', false);
 

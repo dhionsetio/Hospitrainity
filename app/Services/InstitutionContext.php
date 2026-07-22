@@ -34,7 +34,9 @@ final class InstitutionContext
     public function current(Request $request, User $user): Institution
     {
         $available = $this->availableFor($user);
-        $selected = (string) $request->session()->get(self::SESSION_KEY, '');
+        $selected = $request->hasSession()
+            ? (string) $request->session()->get(self::SESSION_KEY, '')
+            : '';
         $current = $available->firstWhere('id', $selected);
 
         if ($current === null) {
@@ -51,7 +53,9 @@ final class InstitutionContext
             throw new AuthorizationException(__('No active institution is available for this account.'));
         }
 
-        $request->session()->put(self::SESSION_KEY, $current->getKey());
+        if ($request->hasSession()) {
+            $request->session()->put(self::SESSION_KEY, $current->getKey());
+        }
 
         return $current;
     }

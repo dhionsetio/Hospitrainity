@@ -48,7 +48,7 @@ New-Item -ItemType File -Path database\database.sqlite -Force
 & 'C:\Program Files\nodejs\npm.cmd' run build
 ```
 
-Database seeding is fail-closed. It exits before any database write unless `HOSPITRAINITY_DEMO_SEED=true`, the runtime is explicitly `local` or `testing`, and three separate process-supplied secrets of at least 24 characters are present. Production is rejected even if the flag is accidentally enabled. Use it only with a disposable database; it creates Hospitrainity HQ plus Hotel A/Hotel B testing fixtures and never uses a literal reusable password. Demo identities are written in one transaction, and an idempotent rerun refuses to overwrite an account or institution that lacks disposable-fixture provenance.
+Database seeding is fail-closed. It exits before any database write unless `HOSPITRAINITY_DEMO_SEED=true`, the runtime is explicitly `local` or `testing`, and four separate process-supplied secrets of at least 24 characters are present. Production is rejected even if the flag is accidentally enabled. Use it only with a disposable database; it creates Hospitrainity HQ plus Hotel A/Hotel B testing fixtures and never uses a literal reusable password. Demo identities are written in one transaction, and an idempotent rerun refuses to overwrite an account or institution that lacks disposable-fixture provenance.
 
 On a POSIX shell, use `cp .env.example .env`, `touch database/database.sqlite`, `php`, `composer`, and `npm` in place of the explicit Windows commands.
 
@@ -59,6 +59,10 @@ Start all development services:
 ```
 
 `dev:windows` starts the Laravel server, database queue listener, and Vite without Laravel Pail because Pail requires the `pcntl` extension that is normally unavailable on Windows. On a compatible POSIX system, `composer run dev` also starts Pail.
+
+### Agent context API
+
+Hospitrainity exposes an optional, versioned, read-only API for agents that need product, domain, workflow, architecture, route, or curriculum-outline context without receiving the application source or user data. It is disabled by default and requires a deployment bearer token of at least 32 characters. See [Agent context API](docs/AGENT_CONTEXT_API.md) for setup, response boundaries, examples, and the validation checklist.
 
 ### Bootstrap and enrollment onboarding
 
@@ -88,7 +92,7 @@ Do not run that example with placeholder identity data. Configure and test the r
 
 An Instructor or Institution Admin may instead issue a reusable classroom code with a selected duration from one second through 30 days and a bounded use count. The form defaults to one hour. Only a keyed one-way hash and four-character display suffix are retained. Redeeming the code creates a pending request, not a membership; authorized institution staff approve or reject it. Approval grants only the institution Learner role. The learner explicitly selects personal or institution learning context, and pre-existing personal progress is neither copied nor disclosed to the institution.
 
-The log mailer and demo seeder are local/testing tools only. To create disposable fixtures, supply all three `HOSPITRAINITY_DEMO_*_PASSWORD` values as fresh process secrets of at least 24 characters and explicitly enable `HOSPITRAINITY_DEMO_SEED`; never store those values in a committed environment file. Hotel A and Hotel B exist only as isolated test fixtures, not as verified real institutions.
+The log mailer and demo seeder are local/testing tools only. To create disposable fixtures, supply all four `HOSPITRAINITY_DEMO_*_PASSWORD` values as fresh process secrets of at least 24 characters and explicitly enable `HOSPITRAINITY_DEMO_SEED`; never store those values in a committed environment file. Hotel A and Hotel B exist only as isolated test fixtures, not as verified real institutions.
 
 ## Architecture
 

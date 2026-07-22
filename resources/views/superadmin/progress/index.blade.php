@@ -58,7 +58,7 @@
                             <option value="">{{ __('admin.all_package_versions') }}</option>
                             @foreach($options['versions']->unique('content_version') as $version)
                                 <option value="{{ $version['content_version'] }}" @selected(($filters['version'] ?? '') === $version['content_version'])>
-                                    {{ $version['content_version'] }}{{ $version['is_active'] ? ' — '.__('admin.active') : '' }}
+                                    {{ $version['content_version'] }}{{ $version['is_active'] ? ', '.__('admin.active') : '' }}
                                 </option>
                             @endforeach
                         </select>
@@ -69,7 +69,7 @@
                             <option value="">{{ __('admin.all_modules') }}</option>
                             @foreach($options['modules'] as $module)
                                 <option value="{{ $module['code'] }}" @selected(($filters['module'] ?? '') === $module['code'])>
-                                    {{ $module['module'] ? __('admin.module_number', ['number' => $module['module']]).' — ' : '' }}{{ $module['title'] }}
+                                    {{ $module['module'] ? __('admin.module_number', ['number' => $module['module']]).': ' : '' }}{{ $module['title'] }}
                                 </option>
                             @endforeach
                         </select>

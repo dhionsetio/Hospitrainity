@@ -89,7 +89,7 @@
                                             <button type="submit" class="font-semibold text-red-700 hover:text-red-900">{{ __('Revoke') }}</button>
                                         </form>
                                     @else
-                                        <span class="text-neutral-400">—</span>
+                                        <span class="text-neutral-500">{{ __('None') }}</span>
                                     @endif
                                 </td>
                             </tr>

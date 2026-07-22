@@ -100,6 +100,10 @@ class AccountErasureService
             DB::table('curriculum_attempt_events')->whereIn('curriculum_attempt_id', $attemptIds)->delete();
             DB::table('curriculum_attempts')->whereIn('id', $attemptIds)->delete();
         }
+        DB::table('learner_text_responses')
+            ->where('user_id', $request->user_id)
+            ->whereNull('institution_membership_id')
+            ->delete();
         DB::table('curriculum_activity_progress')
             ->where('user_id', $request->user_id)
             ->whereNull('institution_membership_id')

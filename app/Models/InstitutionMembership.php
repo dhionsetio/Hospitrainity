@@ -8,6 +8,10 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use LogicException;
 
+/**
+ * @property InstitutionMembershipStatus $status
+ * @property string $institution_id
+ */
 class InstitutionMembership extends Model
 {
     protected static function booted(): void
@@ -55,5 +59,15 @@ class InstitutionMembership extends Model
     public function roleAssignments(): HasMany
     {
         return $this->hasMany(InstitutionRoleAssignment::class);
+    }
+
+    public function courseEnrollments(): HasMany
+    {
+        return $this->hasMany(CourseEnrollment::class);
+    }
+
+    public function teachingAssignments(): HasMany
+    {
+        return $this->hasMany(TeachingAssignment::class);
     }
 }

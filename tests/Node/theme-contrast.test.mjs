@@ -1,13 +1,26 @@
 import assert from "node:assert/strict";
-import { readdirSync, readFileSync } from "node:fs";
+import { createHash } from "node:crypto";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import test from "node:test";
 
 const source = readFileSync("resources/css/app.css", "utf8");
+const lightBlock = source.match(/:root\s*\{([\s\S]*?)\n\}/)?.[1] ?? "";
 const darkBlock = source.match(/html\[data-theme="dark"\]\s*\{([\s\S]*?)\n\}/)?.[1] ?? "";
-const tokens = Object.fromEntries(
-    [...darkBlock.matchAll(/--([a-z0-9-]+):\s*(#[0-9a-f]{6});/gi)].map((match) => [match[1], match[2]]),
-);
+const systemDarkBlock = source.match(/html\[data-theme="system"\]\s*\{([\s\S]*?)\n\s*\}/)?.[1] ?? "";
+
+function directColorTokens(block) {
+    return Object.fromEntries(
+        [...block.matchAll(/--([a-z0-9-]+):\s*(#[0-9a-f]{6});/gi)]
+            .map((match) => [match[1], match[2].toLowerCase()]),
+    );
+}
+
+const themes = {
+    light: directColorTokens(lightBlock),
+    dark: directColorTokens(darkBlock),
+};
+const systemDarkTokens = directColorTokens(systemDarkBlock);
 
 function luminance(hex) {
     const channels = hex.slice(1).match(/../g).map((channel) => Number.parseInt(channel, 16) / 255);
@@ -18,7 +31,10 @@ function luminance(hex) {
     return (0.2126 * linear[0]) + (0.7152 * linear[1]) + (0.0722 * linear[2]);
 }
 
-function contrast(foreground, background) {
+function contrast(tokens, foreground, background) {
+    assert.ok(tokens[foreground], `Missing ${foreground}`);
+    assert.ok(tokens[background], `Missing ${background}`);
+
     const foregroundLuminance = luminance(tokens[foreground]);
     const backgroundLuminance = luminance(tokens[background]);
 
@@ -34,20 +50,25 @@ function filesBelow(directory) {
     });
 }
 
-test("dark theme uses layered gray surfaces instead of pure black", () => {
-    assert.equal(tokens["hsp-canvas"], "#202428");
-    assert.equal(tokens["hsp-surface"], "#292e34");
-    assert.equal(tokens["hsp-surface-subtle"], "#30363d");
-    assert.notEqual(tokens["hsp-canvas"], "#000000");
-    assert.notEqual(tokens["hsp-surface"], tokens["hsp-canvas"]);
+test("light and dark themes use the approved layered surfaces", () => {
+    assert.equal(themes.light["hsp-canvas"], "#f7fafc");
+    assert.equal(themes.light["hsp-surface"], "#ffffff");
+    assert.equal(themes.light["hsp-surface-subtle"], "#eaf6fc");
+
+    assert.equal(themes.dark["hsp-canvas"], "#16232c");
+    assert.equal(themes.dark["hsp-surface"], "#1e2d37");
+    assert.equal(themes.dark["hsp-surface-subtle"], "#283a45");
+    assert.notEqual(themes.dark["hsp-canvas"], "#000000");
+    assert.notEqual(themes.dark["hsp-surface"], themes.dark["hsp-canvas"]);
+    assert.deepEqual(systemDarkTokens, themes.dark, "System dark mode must use the explicit dark palette");
 });
 
-test("dark theme text and selected-state pairs exceed WCAG AA contrast thresholds", () => {
-    const textPairs = [
+test("documented text and action pairs exceed WCAG AA contrast thresholds", () => {
+    const sharedPairs = [
         ["hsp-text", "hsp-canvas"],
         ["hsp-text-muted", "hsp-canvas"],
         ["hsp-text-subtle", "hsp-canvas"],
-        ["hsp-accent-text-strong", "hsp-accent-soft"],
+        ["hsp-accent-text", "hsp-surface"],
         ["hsp-success-text", "hsp-success-soft"],
         ["hsp-danger-text", "hsp-danger-soft"],
         ["hsp-warning-text", "hsp-warning-soft"],
@@ -55,32 +76,62 @@ test("dark theme text and selected-state pairs exceed WCAG AA contrast threshold
         ["hsp-purple-text", "hsp-purple-soft"],
     ];
 
-    for (const [foreground, background] of textPairs) {
+    for (const [theme, tokens] of Object.entries(themes)) {
+        for (const [foreground, background] of sharedPairs) {
+            assert.ok(
+                contrast(tokens, foreground, background) >= 4.5,
+                `${theme}: ${foreground} on ${background} must be at least 4.5:1`,
+            );
+        }
+
         assert.ok(
-            contrast(foreground, background) >= 4.5,
-            `${foreground} on ${background} must be at least 4.5:1`,
+            contrast(tokens, "hsp-accent-on-bright", "hsp-accent-bright") >= 4.5,
+            `${theme}: primary button text must be at least 4.5:1`,
+        );
+        assert.ok(
+            contrast(tokens, "hsp-accent-on-solid", "hsp-accent-solid") >= 4.5,
+            `${theme}: compatibility button text must be at least 4.5:1`,
         );
     }
 });
 
-test("dark theme control boundaries exceed the non-text contrast threshold", () => {
-    for (const background of ["hsp-canvas", "hsp-surface", "hsp-surface-subtle"]) {
-        assert.ok(
-            contrast("hsp-border", background) >= 3,
-            `hsp-border on ${background} must be at least 3:1`,
-        );
-    }
+test("meaningful component boundaries exceed the non-text contrast threshold", () => {
+    for (const [theme, tokens] of Object.entries(themes)) {
+        for (const background of ["hsp-canvas", "hsp-surface", "hsp-surface-subtle"]) {
+            assert.ok(
+                contrast(tokens, "hsp-border", background) >= 3,
+                `${theme}: hsp-border on ${background} must be at least 3:1`,
+            );
+        }
 
-    assert.ok(contrast("hsp-accent-border", "hsp-accent-soft") >= 3);
-    for (const family of ["success", "danger", "warning", "info", "purple"]) {
-        assert.ok(
-            contrast(`hsp-${family}-border`, `hsp-${family}-soft`) >= 3,
-            `${family} boundary must be at least 3:1 against its semantic surface`,
-        );
+        assert.ok(contrast(tokens, "hsp-accent-border", "hsp-accent-soft") >= 3);
+        for (const family of ["success", "danger", "warning", "info", "purple"]) {
+            assert.ok(
+                contrast(tokens, `hsp-${family}-border`, `hsp-${family}-soft`) >= 3,
+                `${theme}: ${family} boundary must be at least 3:1 against its semantic surface`,
+            );
+        }
     }
+});
 
-    assert.match(source, /prefers-color-scheme:\s*dark/);
-    assert.match(source, /has-\[:checked\]:bg-indigo-50/);
+test("the approved self-hosted variable font and interaction tokens are present", () => {
+    const fontPath = "resources/fonts/plus-jakarta-sans/PlusJakartaSans-Variable.ttf";
+    const licensePath = "resources/fonts/plus-jakarta-sans/OFL.txt";
+
+    assert.ok(existsSync(fontPath));
+    assert.ok(existsSync(licensePath));
+    assert.equal(
+        createHash("sha256").update(readFileSync(fontPath)).digest("hex"),
+        "3c9102733d96af218ea12aab89fd2c04a6d3c2bee9acf37057fc9b29139b451b",
+    );
+    assert.match(source, /font-family:\s*"Plus Jakarta Sans"/);
+    assert.match(source, /font-weight:\s*200 800/);
+    assert.match(source, /font-display:\s*swap/);
+    assert.match(source, /--hsp-space-md:\s*1rem/);
+    assert.match(source, /--hsp-radius-card:\s*0\.875rem/);
+    assert.match(source, /--hsp-motion-state:\s*200ms/);
+    assert.match(source, /--hsp-control-min:\s*2\.75rem/);
+    assert.match(source, /prefers-reduced-motion:\s*reduce/);
 });
 
 test("every theme-sensitive color utility used by views and scripts has an exact semantic override", () => {

@@ -4,7 +4,6 @@ namespace App\Services;
 
 use App\Models\CurriculumActivityProgress;
 use App\Models\CurriculumEntity;
-use App\Models\CurriculumPackage;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
@@ -15,6 +14,7 @@ final class NextActionResolver
     public function __construct(
         private readonly OnboardingService $onboarding,
         private readonly LearningContext $learningContext,
+        private readonly LearningContentScope $contentScope,
     ) {}
 
     /** @param Collection<int, array<string, mixed>>|Collection<int, mixed> $chapters @return array<string, string>|null */
@@ -24,7 +24,8 @@ final class NextActionResolver
             return $action;
         }
 
-        $package = CurriculumPackage::active();
+        $contentScope = $this->contentScope->current($request, $user);
+        $package = $contentScope['package'];
         if ($package !== null) {
             $scope = $this->learningContext->current($request, $user)['scope_key'];
             $progress = CurriculumActivityProgress::query()
@@ -45,13 +46,13 @@ final class NextActionResolver
                     ->published()
                     ->where('code', $progress->activity_code)
                     ->first();
-                if ($activity !== null) {
+                if ($activity !== null && $this->contentScope->allowsEntity($contentScope, $activity)) {
                     $payload = $activity->payloadData();
 
                     return [
                         'eyebrow' => __('Continue'),
                         'title' => (string) ($payload['title'] ?? __('Started activity')),
-                        'description' => __('Resume the most recently started activity in this learning context.'),
+                        'description' => __('Resume the activity you started most recently.'),
                         'label' => __('Resume activity'),
                         'url' => route('curriculum.activities.show', $activity->code),
                     ];
@@ -66,7 +67,7 @@ final class NextActionResolver
             return [
                 'eyebrow' => $started ? __('Continue') : __('Start learning'),
                 'title' => (string) $chapter['title'],
-                'description' => $started ? __('Continue the next incomplete module in this learning context.') : __('Open the first published module that is not yet complete.'),
+                'description' => $started ? __('Continue your next incomplete module.') : __('Open the first module you have not completed.'),
                 'label' => $started ? __('Continue module') : __('Open module'),
                 'url' => route('curriculum.chapters.show', $chapter['code']),
             ];
@@ -76,7 +77,7 @@ final class NextActionResolver
             return [
                 'eyebrow' => __('Review'),
                 'title' => __('All published activities are complete'),
-                'description' => __('Review your optional confidence history or revisit any published module.'),
+                'description' => __('Review your confidence history or revisit any module.'),
                 'label' => __('View confidence history'),
                 'url' => route('curriculum.confidence-history'),
             ];
@@ -97,7 +98,7 @@ final class NextActionResolver
             return [
                 'eyebrow' => __('Institution work'),
                 'title' => __('Review learner participation'),
-                'description' => __('Open the first learner in the current institution scope or use the bounded list below.'),
+                'description' => __('Open a learner from the current institution or choose one from the list below.'),
                 'label' => __('View learner progress'),
                 'url' => route('supervisor.progress.learners.show', $first),
             ];
@@ -124,8 +125,8 @@ final class NextActionResolver
             return [
                 'eyebrow' => __('Content review'),
                 'title' => __('Review content awaiting a decision'),
-                'description' => __('Open the versioned content queue. Exact source evidence remains available inside each authorized workspace.'),
-                'label' => __('Review canonical content'),
+                'description' => $user->isSuperAdmin() ? __('Open the versioned content queue. Exact source evidence remains available inside each authorized workspace.') : __('Open the content queue and review work awaiting a decision.'),
+                'label' => __('Review learning content'),
                 'url' => route($prefix.'.curriculum-drafts.index'),
             ];
         }
@@ -133,17 +134,17 @@ final class NextActionResolver
             return [
                 'eyebrow' => __('Content work'),
                 'title' => __('Continue an editable content workspace'),
-                'description' => __('Resume current draft work and preview it before any review or publication step.'),
-                'label' => __('Open canonical content'),
+                'description' => __('Resume your content work and preview it before submitting it for review.'),
+                'label' => __('Open learning content'),
                 'url' => route($prefix.'.curriculum-drafts.index'),
             ];
         }
 
         return [
             'eyebrow' => __('Content work'),
-            'title' => __('No editable content workspace'),
-            'description' => __('Open canonical content to review published work or begin an authorized draft workflow.'),
-            'label' => __('Open canonical content'),
+            'title' => __('No content work in progress'),
+            'description' => __('Open learning content to review published work or start an update.'),
+            'label' => __('Open learning content'),
             'url' => route($prefix.'.curriculum-drafts.index'),
         ];
     }

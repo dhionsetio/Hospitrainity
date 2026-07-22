@@ -233,8 +233,10 @@ class InstitutionJoinCodeEnrollmentTest extends TestCase
 
     public function test_expand_first_migration_rolls_back_and_reapplies_without_foreign_key_damage(): void
     {
+        $classCutover = require database_path('migrations/2026_07_22_000021_cut_learning_progress_over_to_class_context.php');
         $migration = require database_path('migrations/2026_07_20_000013_establish_tenant_roles_and_join_codes.php');
 
+        $classCutover->down();
         $migration->down();
         $this->assertFalse(Schema::hasTable('institution_join_codes'));
         $this->assertFalse(Schema::hasColumn('curriculum_activity_progress', 'learning_scope_key'));
@@ -242,10 +244,12 @@ class InstitutionJoinCodeEnrollmentTest extends TestCase
         $this->assertFalse(Schema::hasColumn('completions', 'learning_scope_key'));
 
         $migration->up();
+        $classCutover->up();
         $this->assertTrue(Schema::hasTable('institution_join_codes'));
         $this->assertTrue(Schema::hasColumn('curriculum_activity_progress', 'learning_scope_key'));
         $this->assertTrue(Schema::hasColumn('curriculum_attempts', 'institution_membership_id'));
         $this->assertTrue(Schema::hasColumn('completions', 'learning_scope_key'));
+        $this->assertTrue(Schema::hasColumn('completions', 'course_enrollment_id'));
         if (DB::getDriverName() === 'sqlite') {
             $this->assertSame([], DB::select('PRAGMA foreign_key_check'));
         }

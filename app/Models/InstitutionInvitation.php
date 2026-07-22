@@ -2,11 +2,16 @@
 
 namespace App\Models;
 
+use Carbon\CarbonImmutable;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use LogicException;
 
+/**
+ * @property CarbonImmutable $expires_at
+ * @property string|null $course_offering_id
+ */
 class InstitutionInvitation extends Model
 {
     use HasUuids;
@@ -16,6 +21,7 @@ class InstitutionInvitation extends Model
         static::updating(function (self $invitation): void {
             if ($invitation->isDirty([
                 'institution_id',
+                'course_offering_id',
                 'issued_by_user_id',
                 'target_email_ciphertext',
                 'target_email_hash',
@@ -33,6 +39,7 @@ class InstitutionInvitation extends Model
 
     protected $fillable = [
         'institution_id',
+        'course_offering_id',
         'issued_by_user_id',
         'target_email_ciphertext',
         'target_email_hash',
@@ -61,6 +68,11 @@ class InstitutionInvitation extends Model
     public function institution(): BelongsTo
     {
         return $this->belongsTo(Institution::class);
+    }
+
+    public function offering(): BelongsTo
+    {
+        return $this->belongsTo(CourseOffering::class, 'course_offering_id');
     }
 
     public function issuer(): BelongsTo

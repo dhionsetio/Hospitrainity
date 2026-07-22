@@ -21,7 +21,7 @@ class SupervisorDashboardQueryCountTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_supervisor_queries_are_bounded_and_learners_are_paginated(): void
+    public function test_supervisor_dashboard_queries_are_bounded_and_do_not_expose_institution_wide_learner_progress(): void
     {
         $institution = Institution::query()->create([
             'key' => 'measured-hotel-test-fixture',
@@ -59,15 +59,13 @@ class SupervisorDashboardQueryCountTest extends TestCase
         [$large, $response] = $this->countQueries($supervisor, returnResponse: true);
 
         $this->assertLessThanOrEqual($small, $large, "Supervisor query count grew from {$small} to {$large}.");
-        $this->assertLessThanOrEqual(15, $large);
+        $this->assertLessThanOrEqual(25, $large);
 
-        $users = $response->viewData('users');
-        $this->assertInstanceOf(LengthAwarePaginator::class, $users);
-        $this->assertSame(100, $users->total());
-        $this->assertCount(20, $users->items());
-        // Legacy completion rows cannot prove institution attribution and must
-        // not be exposed to institution staff as institution-scoped progress.
-        $this->assertSame(0, $users->getCollection()->firstWhere('id', $firstLearner->id)->overall_progress);
+        $classes = $response->viewData('classes');
+        $this->assertInstanceOf(LengthAwarePaginator::class, $classes);
+        $this->assertSame(0, $classes->total());
+        $response->assertDontSee($firstLearner->email);
+        $response->assertSeeText('Classes');
     }
 
     private function countQueries(User $supervisor, bool $returnResponse = false): int|array

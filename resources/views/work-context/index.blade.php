@@ -8,7 +8,7 @@
         <header>
             <x-back-control :href="app(\App\Services\RoleLandingResolver::class)->url(auth()->user())" :label="__('Return to current dashboard')" />
             <h1 class="mt-4 text-3xl font-bold text-neutral-900">{{ __('Switch role or work context') }}</h1>
-            <p class="mt-2 max-w-3xl text-neutral-600">{{ __('Only one role and institution context is active at a time. Hospitrainity validates it again on every request.') }}</p>
+            <p class="mt-2 max-w-3xl text-neutral-600">{{ __('Choose the role and institution you want to use now. You can switch again later.') }}</p>
         </header>
 
         <div class="grid gap-4 sm:grid-cols-2">
@@ -27,11 +27,11 @@
                     \App\Enums\WorkContextRole::SystemAdmin => __('System Admin'),
                 })
                 @php($description = match($role) {
-                    \App\Enums\WorkContextRole::Learner => __('Personal or institution-attributed learning, selected separately in Learning context.'),
-                    \App\Enums\WorkContextRole::Instructor => __('Learner oversight, invitations, and classroom membership requests for this institution.'),
-                    \App\Enums\WorkContextRole::InstitutionAdmin => __('Institution-scoped management without global platform authority.'),
-                    \App\Enums\WorkContextRole::ContentAuthor => __('Shared curriculum authoring without institution or system administration.'),
-                    \App\Enums\WorkContextRole::SystemAdmin => __('Global platform administration. Institutions cannot grant this role.'),
+                    \App\Enums\WorkContextRole::Learner => __('Study independently or with one of your institutions.'),
+                    \App\Enums\WorkContextRole::Instructor => __('Manage your Classes, learners, invitations, and progress.'),
+                    \App\Enums\WorkContextRole::InstitutionAdmin => __('Manage people and Classes for this institution.'),
+                    \App\Enums\WorkContextRole::ContentAuthor => __('Create and review shared learning content.'),
+                    \App\Enums\WorkContextRole::SystemAdmin => __('Manage Hospitrainity settings and accounts.'),
                 })
                 @if($isCurrent)
                     <div class="hsp-context-current" aria-current="true">

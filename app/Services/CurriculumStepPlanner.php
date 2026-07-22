@@ -9,12 +9,12 @@ final class CurriculumStepPlanner
     public const SECTIONS_PER_STEP = 5;
 
     /**
-     * @param  Collection<int, array<string, mixed>>  $sections
-     * @return Collection<int, array<string, mixed>>
+     * @param  iterable<int, array<string, mixed>>  $sections
+     * @return Collection<int, covariant array<string, mixed>>
      */
-    public function group(Collection $sections): Collection
+    public function group(iterable $sections): Collection
     {
-        $chunks = $sections->values()->chunk(self::SECTIONS_PER_STEP)->values();
+        $chunks = collect($sections)->values()->chunk(self::SECTIONS_PER_STEP)->values();
         $total = $chunks->count();
 
         return $chunks->map(static function (Collection $chunk, int $index) use ($total): array {
@@ -32,10 +32,10 @@ final class CurriculumStepPlanner
     }
 
     /**
-     * @param  Collection<int, array<string, mixed>>  $sections
+     * @param  iterable<int, array<string, mixed>>  $sections
      * @return array<string, mixed>|null
      */
-    public function context(Collection $sections, string $sectionCode): ?array
+    public function context(iterable $sections, string $sectionCode): ?array
     {
         foreach ($this->group($sections) as $step) {
             $position = $step['sections']->search(

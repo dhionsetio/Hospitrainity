@@ -17,6 +17,7 @@ class CanonicalCurriculumRepository
 {
     public function __construct(
         private readonly LearningContext $learningContext,
+        private readonly LearningContentScope $contentScope,
         private readonly CurriculumStepPlanner $steps,
     ) {}
 
@@ -30,10 +31,21 @@ class CanonicalCurriculumRepository
         return $this->activePackage() !== null;
     }
 
+    public function packageFor(User $user): ?CurriculumPackage
+    {
+        return $this->contentScope->current(request(), $user)['package'];
+    }
+
+    public function isActiveFor(User $user): bool
+    {
+        return $this->packageFor($user) !== null;
+    }
+
     /** @return Collection<int, array<string, mixed>> */
     public function dashboardChaptersFor(User $user): Collection
     {
-        $package = $this->activePackage();
+        $scope = $this->contentScope->current(request(), $user);
+        $package = $scope['package'];
         if ($package === null) {
             return collect();
         }
@@ -43,6 +55,21 @@ class CanonicalCurriculumRepository
             ->whereIn('entity_type', ['chapter', 'lesson-section', 'activity'])
             ->published()
             ->get();
+
+        if ($scope['allowed_chapter_codes'] !== null) {
+            $allowedChapterCodes = $scope['allowed_chapter_codes'];
+            $entities = $entities->filter(static function (CurriculumEntity $entity) use ($allowedChapterCodes, $entities): bool {
+                return match ($entity->entity_type) {
+                    'chapter' => in_array($entity->code, $allowedChapterCodes, true),
+                    'lesson-section' => in_array($entity->parent_code, $allowedChapterCodes, true),
+                    'activity' => $entities->contains(static fn (CurriculumEntity $section): bool => $section->entity_type === 'lesson-section'
+                        && $section->code === $entity->parent_code
+                        && in_array($section->parent_code, $allowedChapterCodes, true)
+                    ),
+                    default => false,
+                };
+            });
+        }
 
         $sections = $entities->where('entity_type', 'lesson-section')->groupBy('parent_code');
         $sectionChapter = $entities->where('entity_type', 'lesson-section')->pluck('parent_code', 'code');
@@ -58,10 +85,11 @@ class CanonicalCurriculumRepository
             ->flip();
 
         return $entities->where('entity_type', 'chapter')
-            ->sortBy(static fn (CurriculumEntity $chapter): int => (int) $chapter->payload['module'])
+            ->sortBy(static fn (CurriculumEntity $chapter): int => (int) $chapter->payloadData()['module'])
             ->values()
             ->map(function (CurriculumEntity $chapter) use ($sections, $activitiesByChapter, $completedActivityCodes): array {
                 $chapterActivities = $activitiesByChapter[$chapter->code] ?? collect();
+                $chapterPayload = $chapter->payloadData();
                 $completedCount = $chapterActivities->filter(
                     static fn (CurriculumEntity $activity): bool => isset($completedActivityCodes[$activity->code]),
                 )->count();
@@ -69,8 +97,8 @@ class CanonicalCurriculumRepository
 
                 return [
                     'code' => $chapter->code,
-                    'title' => $chapter->payload['title'],
-                    'module' => (int) $chapter->payload['module'],
+                    'title' => $chapterPayload['title'],
+                    'module' => (int) $chapterPayload['module'],
                     'status' => $chapter->lifecycle_status,
                     'sections_count' => ($sections[$chapter->code] ?? collect())->count(),
                     'activities_count' => $activityCount,
@@ -81,9 +109,10 @@ class CanonicalCurriculumRepository
     }
 
     /** @return array<string, mixed>|null */
-    public function chapter(string $code): ?array
+    public function chapter(string $code, ?User $user = null): ?array
     {
-        $package = $this->activePackage();
+        $scope = $user === null ? null : $this->contentScope->current(request(), $user);
+        $package = $scope['package'] ?? $this->activePackage();
         if ($package === null) {
             return null;
         }
@@ -94,7 +123,7 @@ class CanonicalCurriculumRepository
             ->published()
             ->where('code', $code)
             ->first();
-        if ($chapter === null) {
+        if ($chapter === null || ($scope !== null && ! $this->contentScope->allowsEntity($scope, $chapter))) {
             return null;
         }
 
@@ -156,9 +185,10 @@ class CanonicalCurriculumRepository
     }
 
     /** @return array<string, mixed>|null */
-    public function section(string $code): ?array
+    public function section(string $code, ?User $user = null): ?array
     {
-        $package = $this->activePackage();
+        $scope = $user === null ? null : $this->contentScope->current(request(), $user);
+        $package = $scope['package'] ?? $this->activePackage();
         if ($package === null) {
             return null;
         }
@@ -169,7 +199,7 @@ class CanonicalCurriculumRepository
             ->published()
             ->where('code', $code)
             ->first();
-        if ($section === null) {
+        if ($section === null || ($scope !== null && ! $this->contentScope->allowsEntity($scope, $section))) {
             return null;
         }
         $chapter = CurriculumEntity::query()
@@ -190,6 +220,8 @@ class CanonicalCurriculumRepository
             ->where('entity_type', 'chapter')
             ->published()
             ->get()
+            ->when($scope !== null && $scope['allowed_chapter_codes'] !== null, static fn (Collection $chapters): Collection => $chapters->whereIn('code', $scope['allowed_chapter_codes'])
+            )
             ->sortBy(static fn (CurriculumEntity $item): int => (int) $item->payload['module'])
             ->values();
         $chapterOrder = $chapters->pluck('payload.module', 'code');
@@ -198,6 +230,8 @@ class CanonicalCurriculumRepository
             ->where('entity_type', 'lesson-section')
             ->published()
             ->get()
+            ->when($scope !== null && $scope['allowed_chapter_codes'] !== null, static fn (Collection $sections): Collection => $sections->whereIn('parent_code', $scope['allowed_chapter_codes'])
+            )
             ->sortBy(static fn (CurriculumEntity $item): string => sprintf(
                 '%03d-%03d',
                 (int) ($chapterOrder[$item->parent_code] ?? PHP_INT_MAX),
@@ -263,7 +297,8 @@ class CanonicalCurriculumRepository
     /** @return array<string, mixed>|null */
     public function activity(string $code, User $user): ?array
     {
-        $package = $this->activePackage();
+        $scope = $this->contentScope->current(request(), $user);
+        $package = $scope['package'];
         if ($package === null) {
             return null;
         }
@@ -274,7 +309,7 @@ class CanonicalCurriculumRepository
             ->published()
             ->where('code', $code)
             ->first();
-        if ($activity === null) {
+        if ($activity === null || ! $this->contentScope->allowsEntity($scope, $activity)) {
             return null;
         }
 
@@ -346,31 +381,32 @@ class CanonicalCurriculumRepository
             'guidance' => $activity->payload['guidance'] ?? null,
             'completion_rule' => $activity->payload['completion_rule'] ?? null,
             'chapter' => ['code' => $chapter->code, 'title' => $chapter->payload['title'], 'module' => (int) $chapter->payload['module']],
-            'section' => ['code' => $section->code, 'title' => $section->payload['title']],
+            'section' => ['code' => $section->code, 'title' => $section->payloadData()['title']],
             'prompts' => $prompts->map(static function (CurriculumEntity $prompt) use ($models): array {
                 $promptModels = $models[$prompt->code] ?? collect();
                 $answer = $promptModels->firstWhere('entity_type', 'answer-model');
+                $promptPayload = $prompt->payloadData();
 
-                $audio = $prompt->payload['audio_asset'] ?? null;
+                $audio = $promptPayload['audio_asset'] ?? null;
                 if (is_array($audio) && is_string($audio['path'] ?? null) && preg_match('#^assets/([0-9a-f]{64})\.(mp3|wav)$#', $audio['path'], $matches) === 1) {
                     $audio['url'] = route('curriculum.assets.show', [$matches[1], $matches[2]]);
                 }
 
                 return [
                     'code' => $prompt->code,
-                    'stem' => $prompt->payload['stem'],
-                    'response_form' => $prompt->payload['response_form'],
+                    'stem' => $promptPayload['stem'],
+                    'response_form' => $promptPayload['response_form'],
                     'choices' => array_map(static fn (array $choice): array => [
                         'id' => $choice['id'],
                         'label' => $choice['label'],
                         'text' => $choice['text'],
-                    ], array_values($prompt->payload['choices'] ?? [])),
-                    'rating_scale' => $prompt->payload['rating_scale'] ?? null,
-                    'response_constraints' => $prompt->payload['response_constraints'] ?? null,
-                    'scoring_mode' => $prompt->payload['scoring_mode'] ?? $answer?->payload['scoring_mode'] ?? null,
-                    'self_check_required' => (bool) ($prompt->payload['self_check_required'] ?? false),
-                    'source_locator' => $prompt->payload['source_locator'] ?? null,
-                    'tokens' => array_values($prompt->payload['tokens'] ?? []),
+                    ], array_values($promptPayload['choices'] ?? [])),
+                    'rating_scale' => $promptPayload['rating_scale'] ?? null,
+                    'response_constraints' => $promptPayload['response_constraints'] ?? null,
+                    'scoring_mode' => $promptPayload['scoring_mode'] ?? $answer?->payload['scoring_mode'] ?? null,
+                    'self_check_required' => (bool) ($promptPayload['self_check_required'] ?? false),
+                    'source_locator' => $promptPayload['source_locator'] ?? null,
+                    'tokens' => array_values($promptPayload['tokens'] ?? []),
                     'audio' => $audio,
                 ];
             })->values(),

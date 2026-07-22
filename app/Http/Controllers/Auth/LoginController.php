@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Services\LocalTesterMfaBypass;
 use App\Services\RoleLandingResolver;
 use App\Services\SecurityEventRecorder;
 use Illuminate\Http\RedirectResponse;
@@ -23,7 +24,11 @@ class LoginController extends Controller
     }
 
     /** Handle a login request. */
-    public function login(Request $request, SecurityEventRecorder $events): RedirectResponse
+    public function login(
+        Request $request,
+        SecurityEventRecorder $events,
+        LocalTesterMfaBypass $testerMfaBypass,
+    ): RedirectResponse
     {
         $request->merge(['email' => User::canonicalEmail($request->input('email'))]);
 
@@ -40,7 +45,8 @@ class LoginController extends Controller
             if (Hash::needsRehash($user->password)) {
                 $user->forceFill(['password' => Hash::make($credentials['password'])])->save();
             }
-            if ($user->hasConfirmedTotp()) {
+            $usesLocalTesterBypass = $testerMfaBypass->allows($user, $request);
+            if ($user->hasConfirmedTotp() && ! $usesLocalTesterBypass) {
                 $request->session()->regenerate();
                 $request->session()->put([
                     'auth.mfa_pending_user_id' => $user->getKey(),
@@ -54,14 +60,18 @@ class LoginController extends Controller
             Auth::login($user, $request->boolean('remember'));
             // Rotate the session identifier after successful authentication.
             $request->session()->regenerate();
-            if (! $user->requiresMfa()) {
+            if ($usesLocalTesterBypass) {
+                $request->session()->forget('auth.mfa_verified_at');
+                $request->session()->put(['auth.mfa_method' => 'local_tester_bypass']);
+            } elseif (! $user->requiresMfa()) {
                 $request->session()->put(['auth.mfa_verified_at' => time(), 'auth.mfa_method' => 'not_required']);
             }
             $events->record('authentication.password_succeeded', 'allowed', $user, $user->email, $request, [
-                'mfa_enrollment_required' => $user->requiresMfa() && ! $user->hasStrongMfa(),
+                'mfa_enrollment_required' => $user->requiresMfa() && ! $user->hasStrongMfa() && ! $usesLocalTesterBypass,
+                'local_tester_mfa_bypass' => $usesLocalTesterBypass,
             ]);
 
-            if ($user->requiresMfa()) {
+            if ($user->requiresMfa() && ! $usesLocalTesterBypass) {
                 return redirect()->route('security.index');
             }
 

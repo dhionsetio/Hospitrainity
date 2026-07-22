@@ -14,8 +14,12 @@ final class SearchService
     public function __construct(private readonly SearchIndexBuilder $index) {}
 
     /** @return LengthAwarePaginator<int, array<string, mixed>> */
-    public function search(string $query, ?string $type, string $locale): LengthAwarePaginator
-    {
+    public function search(
+        string $query,
+        ?string $type,
+        string $locale,
+        bool $includeActiveCurriculum = true,
+    ): LengthAwarePaginator {
         $tokens = array_slice($this->index->tokens($query), 0, 6);
         if ($tokens === []) {
             return new LengthAwarePaginator([], 0, 12, 1, ['path' => request()->url(), 'query' => request()->query()]);
@@ -27,6 +31,10 @@ final class SearchService
             ->where('generation.is_active', true)
             ->where('document.published', true)
             ->whereIn('document.audience', ['public', 'authenticated'])
+            ->when(! $includeActiveCurriculum, static fn ($builder) => $builder->whereNotIn(
+                'document.source_type',
+                ['module', 'section', 'vocabulary', 'activity'],
+            ))
             ->whereIn('term.term', $tokens)
             ->where(function ($scope) use ($locale): void {
                 $scope->where('document.locale', $locale);

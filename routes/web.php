@@ -11,6 +11,11 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\CanonicalAttemptController;
 use App\Http\Controllers\CanonicalCurriculumAssetController;
 use App\Http\Controllers\CanonicalCurriculumController;
+use App\Http\Controllers\ClassConnectionController;
+use App\Http\Controllers\ClassRosterController;
+use App\Http\Controllers\ClassTeachingController;
+use App\Http\Controllers\ClassWorkspaceController;
+use App\Http\Controllers\CourseAssistantController;
 use App\Http\Controllers\CspReportController;
 use App\Http\Controllers\CurriculumAssetController;
 use App\Http\Controllers\CurriculumDraftController;
@@ -27,6 +32,7 @@ use App\Http\Controllers\InstitutionJoinCodeController;
 use App\Http\Controllers\InstitutionJoinRequestController;
 use App\Http\Controllers\InstitutionRoleAssignmentController;
 use App\Http\Controllers\InvitationAcceptanceController;
+use App\Http\Controllers\LearnerTextResponseController;
 use App\Http\Controllers\LearningContextController;
 use App\Http\Controllers\LegacyEvidenceController;
 use App\Http\Controllers\LessonController;
@@ -41,6 +47,7 @@ use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SecuritySettingsController;
 use App\Http\Controllers\Superadmin\AdminDashboardController;
 use App\Http\Controllers\Superadmin\AdministrationAuditController;
+use App\Http\Controllers\Superadmin\InstitutionController;
 use App\Http\Controllers\Superadmin\LearnerProgressController as SuperadminLearnerProgressController;
 use App\Http\Controllers\Superadmin\PrivacyRequestAdministrationController;
 use App\Http\Controllers\Superadmin\UserAdministrationController;
@@ -316,6 +323,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
 */
 Route::middleware(['auth', 'verified', 'role:user'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/assistant', [CourseAssistantController::class, 'index'])->name('assistant.index');
+    Route::post('/assistant', [CourseAssistantController::class, 'ask'])
+        ->middleware('throttle:12,1')->name('assistant.ask');
+    Route::get('/saved-writing', [LearnerTextResponseController::class, 'index'])
+        ->name('responses.index');
     Route::get('/institution-memberships', [InstitutionEnrollmentController::class, 'index'])
         ->name('institution-enrollment.index');
     Route::post('/institution-memberships', [InstitutionEnrollmentController::class, 'store'])
@@ -328,6 +340,11 @@ Route::middleware(['auth', 'verified', 'role:user'])->group(function () {
     Route::post('/curriculum/activities/{activity}/attempts', [CanonicalAttemptController::class, 'store'])
         ->middleware('throttle:curriculum-attempt')
         ->name('curriculum.activities.attempts.store');
+    Route::get('/curriculum/activities/{activity}/responses/{prompt}', [LearnerTextResponseController::class, 'edit'])
+        ->name('responses.edit');
+    Route::post('/curriculum/activities/{activity}/responses/{prompt}', [LearnerTextResponseController::class, 'store'])
+        ->middleware('throttle:30,1')
+        ->name('responses.store');
     Route::get('/curriculum/confidence-history', [CanonicalCurriculumController::class, 'confidence'])
         ->name('curriculum.confidence-history');
     Route::get('/curriculum/sections/{section}', [CanonicalCurriculumController::class, 'section'])
@@ -379,6 +396,49 @@ Route::middleware(['auth', 'verified', 'role:user'])->group(function () {
 */
 Route::middleware(['auth', 'verified', 'role:supervisor', 'privileged.mfa'])->prefix('supervisor')->name('supervisor.')->group(function () use ($invitationRoutes, $joinCodeRoutes) {
     Route::get('/dashboard', [SpvDashboardController::class, 'index'])->name('dashboard');
+    Route::get('/classes', [ClassWorkspaceController::class, 'index'])->name('classes.index');
+    Route::get('/classes/create', [ClassWorkspaceController::class, 'create'])->name('classes.create');
+    Route::post('/classes/with-course', [ClassWorkspaceController::class, 'storeWithCourse'])
+        ->middleware('throttle:membership-decision')->name('classes.store-with-course');
+    Route::post('/classes/from-revision', [ClassWorkspaceController::class, 'storeFromRevision'])
+        ->middleware('throttle:membership-decision')->name('classes.store-from-revision');
+    Route::get('/classes/{offering}/preview', [ClassWorkspaceController::class, 'preview'])
+        ->name('classes.preview');
+    Route::get('/classes/{offering}', [ClassWorkspaceController::class, 'show'])->name('classes.show');
+    Route::patch('/classes/{offering}', [ClassWorkspaceController::class, 'update'])
+        ->middleware('throttle:membership-decision')->name('classes.update');
+    Route::post('/classes/{offering}/transition', [ClassWorkspaceController::class, 'transition'])
+        ->middleware('throttle:membership-decision')->name('classes.transition');
+    Route::post('/classes/{offering}/copy', [ClassWorkspaceController::class, 'copy'])
+        ->middleware('throttle:membership-decision')->name('classes.copy');
+    Route::post('/classes/{offering}/content-revisions', [ClassTeachingController::class, 'revise'])
+        ->middleware('throttle:membership-decision')->name('classes.content-revisions.store');
+    Route::post('/classes/{offering}/instructions', [ClassTeachingController::class, 'announce'])
+        ->middleware('throttle:membership-decision')->name('classes.instructions.store');
+    Route::patch('/classes/{offering}/instructions/{announcement}/archive', [ClassTeachingController::class, 'archive'])
+        ->middleware('throttle:membership-decision')->name('classes.instructions.archive');
+    Route::post('/classes/{offering}/enrollments', [ClassRosterController::class, 'enroll'])
+        ->middleware('throttle:membership-decision')->name('classes.enrollments.store');
+    Route::patch('/classes/{offering}/enrollments/{enrollment}', [ClassRosterController::class, 'status'])
+        ->middleware('throttle:membership-decision')->name('classes.enrollments.status');
+    Route::post('/classes/{offering}/enrollments/{enrollment}/transfer', [ClassRosterController::class, 'transfer'])
+        ->middleware('throttle:membership-decision')->name('classes.enrollments.transfer');
+    Route::get('/classes/{offering}/enrollments/{enrollment}/progress', [SupervisorLearnerProgressController::class, 'showClass'])
+        ->name('classes.enrollments.progress');
+    Route::post('/classes/{offering}/instructors', [ClassRosterController::class, 'assignInstructor'])
+        ->middleware('throttle:institution-role-change')->name('classes.instructors.store');
+    Route::delete('/classes/{offering}/instructors/{assignment}', [ClassRosterController::class, 'revokeInstructor'])
+        ->middleware('throttle:institution-role-change')->name('classes.instructors.destroy');
+    Route::post('/classes/{offering}/invitations', [ClassConnectionController::class, 'invite'])
+        ->middleware('throttle:invitation-issue')->name('classes.invitations.store');
+    Route::delete('/classes/{offering}/invitations/{invitation}', [ClassConnectionController::class, 'revokeInvitation'])
+        ->middleware('throttle:invitation-revoke')->name('classes.invitations.destroy');
+    Route::post('/classes/{offering}/classroom-codes', [ClassConnectionController::class, 'issueCode'])
+        ->middleware('throttle:join-code-issue')->name('classes.join-codes.store');
+    Route::delete('/classes/{offering}/classroom-codes/{joinCode}', [ClassConnectionController::class, 'revokeCode'])
+        ->middleware('throttle:join-code-revoke')->name('classes.join-codes.destroy');
+    Route::patch('/classes/{offering}/membership-requests/{joinRequest}', [ClassConnectionController::class, 'decideRequest'])
+        ->middleware('throttle:membership-decision')->name('classes.join-requests.update');
     Route::get('/progress/learners/{learner}', [SupervisorLearnerProgressController::class, 'show'])
         ->name('progress.learners.show');
     $invitationRoutes();
@@ -402,6 +462,7 @@ Route::middleware(['auth', 'verified', 'role:admin', 'privileged.mfa'])->prefix(
 
 Route::middleware(['auth', 'verified', 'role:superadmin', 'privileged.mfa'])->prefix('superadmin')->name('superadmin.')->group(function () use ($curriculumDraftRoutes, $invitationRoutes, $joinCodeRoutes) {
     Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
+    Route::get('/institutions', [InstitutionController::class, 'index'])->name('institutions.index');
     Route::get('/curriculum-exercises', [CurriculumDraftExerciseController::class, 'overview'])->name('curriculum-exercises.index');
     Route::get('/progress', [SuperadminLearnerProgressController::class, 'index'])->name('progress.index');
     Route::get('/progress/learners/{learner}', [SuperadminLearnerProgressController::class, 'show'])

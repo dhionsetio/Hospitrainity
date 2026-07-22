@@ -28,6 +28,10 @@ class CurriculumDraftPreviewController extends Controller
             ],
             'curriculumPreview' => $curriculumDraft,
             'showCurriculumEvidence' => true,
+            'nextAction' => null,
+            'learningStreak' => 0,
+            'reviewQueue' => [],
+            'classAnnouncements' => collect(),
         ]);
     }
 

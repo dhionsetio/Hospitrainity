@@ -16,7 +16,7 @@ class CanonicalCurriculumController extends Controller
 
     public function chapter(Request $request, string $chapter): View
     {
-        $curriculumChapter = $this->curriculum->chapter($chapter);
+        $curriculumChapter = $this->curriculum->chapter($chapter, $request->user());
         abort_if($curriculumChapter === null, 404);
         $showCurriculumEvidence = $request->user()->isSuperAdmin();
 
@@ -43,7 +43,7 @@ class CanonicalCurriculumController extends Controller
 
     public function section(Request $request, string $section): View
     {
-        $curriculumSection = $this->curriculum->section($section);
+        $curriculumSection = $this->curriculum->section($section, $request->user());
         abort_if($curriculumSection === null, 404);
         $showCurriculumEvidence = $request->user()->isSuperAdmin();
 
@@ -52,7 +52,7 @@ class CanonicalCurriculumController extends Controller
 
     public function checkpoint(Request $request, string $chapter, int $step): View
     {
-        $curriculumChapter = $this->curriculum->chapter($chapter);
+        $curriculumChapter = $this->curriculum->chapter($chapter, $request->user());
         abort_if($curriculumChapter === null, 404);
 
         $steps = collect($curriculumChapter['steps']);

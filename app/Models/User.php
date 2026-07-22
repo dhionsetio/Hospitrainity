@@ -10,6 +10,7 @@ use App\Enums\PlatformRole;
 use App\Enums\UserCapability;
 use App\Enums\UserRole;
 use App\Services\CurriculumProgressService;
+use App\Services\Time\IanaTimeZone;
 use Database\Factories\UserFactory;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Casts\Attribute;
@@ -46,6 +47,7 @@ class User extends Authenticatable implements MustVerifyEmail, PasskeyUser
         'instansi',
         'email',
         'password',
+        'timezone',
     ];
 
     /**
@@ -76,6 +78,7 @@ class User extends Authenticatable implements MustVerifyEmail, PasskeyUser
             'legacy_institution_state' => LegacyInstitutionState::class,
             'ui_high_contrast' => 'boolean',
             'ui_no_audio' => 'boolean',
+            'learning_streak_enabled' => 'boolean',
         ];
     }
 
@@ -92,6 +95,13 @@ class User extends Authenticatable implements MustVerifyEmail, PasskeyUser
     {
         return Attribute::make(
             set: fn (mixed $value): string => static::canonicalEmail($value),
+        );
+    }
+
+    protected function timezone(): Attribute
+    {
+        return Attribute::make(
+            set: static fn (mixed $value): ?string => IanaTimeZone::nullable($value),
         );
     }
 
@@ -154,6 +164,16 @@ class User extends Authenticatable implements MustVerifyEmail, PasskeyUser
     public function institutionMemberships(): HasMany
     {
         return $this->hasMany(InstitutionMembership::class);
+    }
+
+    public function createdCourses(): HasMany
+    {
+        return $this->hasMany(Course::class, 'created_by_user_id');
+    }
+
+    public function createdCourseOfferings(): HasMany
+    {
+        return $this->hasMany(CourseOffering::class, 'created_by_user_id');
     }
 
     public function platformRoleAssignments(): HasMany

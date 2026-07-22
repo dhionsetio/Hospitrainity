@@ -17,6 +17,5 @@
             </div>
         @endforeach
     </dl>
-    <p class="mt-8 text-sm text-neutral-600">{{ __('Help version :version · updated :date', ['version' => config('help.version'), 'date' => config('help.updated_at')]) }}</p>
 </main>
 @endsection

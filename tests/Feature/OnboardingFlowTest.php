@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Enums\InstitutionRole;
 use App\Enums\UserRole;
 use App\Models\User;
 use App\Models\UserOnboardingState;
@@ -22,7 +23,7 @@ class OnboardingFlowTest extends TestCase
         $this->actingAs($learner)->get(route('onboarding.show'))
             ->assertOk()
             ->assertSee('Step 1 of 3')
-            ->assertSee('Choose where progress is recorded');
+            ->assertSee('Choose where to save progress');
         $this->assertDatabaseCount('user_onboarding_states', 0);
 
         $this->patch(route('onboarding.update'), ['action' => 'advance', 'step' => 0])
@@ -74,14 +75,17 @@ class OnboardingFlowTest extends TestCase
         $service = app(OnboardingService::class);
         $request = Request::create('/getting-started');
         $expectations = [
-            UserRole::Learner->value => ['Learner', 'Choose where progress is recorded'],
-            UserRole::Supervisor->value => ['Institution Supervisor', 'Review institution progress'],
+            UserRole::Learner->value => ['Learner', 'Choose where to save progress'],
+            UserRole::Supervisor->value => ['Institution Instructor', 'Review institution progress'],
             UserRole::Admin->value => ['Content Admin', 'Open the content workspace'],
             UserRole::Superadmin->value => ['System Admin', 'Confirm role and scope'],
         ];
 
         foreach ($expectations as $role => [$label, $firstStep]) {
             $user = User::factory()->create(['role' => $role]);
+            if ($role === UserRole::Supervisor->value) {
+                $this->grantInstitutionRole($user, InstitutionRole::Instructor);
+            }
             $snapshot = $service->snapshot($request, $user);
 
             $this->assertSame($label, $snapshot['label']);

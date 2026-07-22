@@ -2,7 +2,7 @@
     "schema_version": "1.0.0",
     "roadmap": {
         "path": "docs/HOSPITRAINITY_NEXT_GENERATION_AUDIT_AND_UPDATE_ROADMAP.md",
-        "sha256": "465099eb07881dc5f32ee6b3f06fc7d0e080971313a1eab2b290316bc7e5c5a9"
+        "sha256": "c5e17467cfd49ec23e200aa15a82c538dfdbfd4fa31b0ad1f1ab7b480e881a10"
     },
     "findings": [
         {
@@ -86,6 +86,9 @@
                     "app/Services/LearningContext.php",
                     "app/Services/WorkContext.php",
                     "app/Services/InstitutionRoleManager.php",
+                    "app/Services/CourseAccessService.php",
+                    "app/Services/CourseOfferingLifecycle.php",
+                    "app/Services/CourseRevisionService.php",
                     "app/Console/Commands/IdentityMigrationPreflight.php",
                     "app/Policies/InstitutionInvitationPolicy.php",
                     "app/Http/Controllers/InstitutionInvitationController.php",
@@ -98,11 +101,19 @@
                     "app/Http/Controllers/ActiveInstitutionController.php",
                     "app/Http/Controllers/Superadmin/AdminDashboardController.php",
                     "app/Models/User.php",
+                    "app/Models/Course.php",
+                    "app/Models/CourseRevision.php",
+                    "app/Models/CourseOffering.php",
+                    "app/Models/CourseOfferingEvent.php",
+                    "app/Models/CourseEnrollment.php",
+                    "app/Models/TeachingAssignment.php",
                     "app/Providers/AppServiceProvider.php"
                 ],
                 "migrations": [
                     "database/migrations/2026_07_19_000010_normalize_identity_and_invitations.php",
-                    "database/migrations/2026_07_20_000013_establish_tenant_roles_and_join_codes.php"
+                    "database/migrations/2026_07_20_000013_establish_tenant_roles_and_join_codes.php",
+                    "database/migrations/2026_07_21_000019_establish_course_class_and_time_foundation.php",
+                    "database/migrations/2026_07_21_000020_add_class_roster_operations.php"
                 ],
                 "automated_tests": [
                     "tests/Feature/RegistrationTest.php",
@@ -113,21 +124,26 @@
                     "tests/Feature/InstitutionJoinCodeEnrollmentTest.php",
                     "tests/Feature/InstitutionRoleManagementTest.php",
                     "tests/Feature/WorkContextAuthorizationTest.php",
+                    "tests/Feature/CourseClassFoundationTest.php",
+                    "tests/Feature/ClassRosterOperationsTest.php",
                     "tests/Feature/RoleRouteMatrixTest.php",
                     "tests/Feature/AdministrationIntegrationTest.php"
                 ],
                 "browser_device_checks": [
-                    "Invitation and personal-registration journeys passed in patched desktop/mobile Chromium and WebKit. The separate Firefox run stalled at browser launch before application navigation and hit the host timeout; Opera was not directly tested."
+                    "Invitation and personal-registration journeys passed in patched desktop/mobile Chromium and WebKit. UI-R02 then passed 56 current desktop/mobile Chromium and WebKit scenarios plus 31 responsive Chromium visual checks at 320, 390, 768, and 1280 CSS pixels. B06-B's assigned-Class and privacy-bounded roster journey passed in desktop Chromium and mobile Chromium profiles. The separate Firefox run stalled at browser launch before application navigation and hit the host timeout; branded Chrome, Edge, Safari, Opera, and physical devices were not directly tested."
                 ],
                 "human_legal_reviews": [
                     "Owner approved personal self-study plus pending adjustable-duration classroom-code enrollment and explicit tenant roles/work contexts on 2026-07-20; all three demo accounts must remain enabled."
                 ],
                 "production_evidence": [
-                    "The authoritative database now has normalized platform/institution/capability assignments, pending classroom-code requests, and server-derived learning-scope keys. Personal history remains private; staff reads require the exact membership scope; cross-tenant and stale-context tests fail closed. All three demo accounts remain enabled, no business row or session was deleted, and B06 class/course scope remains open."
+                    "The authoritative schema now has normalized platform/institution/capability assignments, Class-scoped invitations/codes/requests, retained roster and teaching history, and server-derived learning-scope keys. B06-A and B06-B are verified in disposable SQLite with composite cross-tenant constraints and a task-oriented UI; the user's localhost database was not migrated. Personal history remains private. All three demo accounts remain enabled, no business row or session was deleted, and B06-C remains open."
                 ],
                 "checkpoints": [
                     "docs/checkpoints/NG-B01-CHECKPOINT.md",
-                    "docs/checkpoints/NG-B02-B05-ARCHITECTURE-CHECKPOINT.md"
+                    "docs/checkpoints/NG-B02-B05-ARCHITECTURE-CHECKPOINT.md",
+                    "docs/checkpoints/NG-B06-A-FOUNDATION-2026-07-21.md",
+                    "docs/checkpoints/UI-R02-RESPONSIVE-LEARNER-SHELL-2026-07-21.md",
+                    "docs/checkpoints/NG-B06-B-CLASS-ROSTER-2026-07-21.md"
                 ]
             }
         },
@@ -352,15 +368,68 @@
                 "NG-B06-DECISIONS"
             ],
             "required_evidence": "Normalized scoped domains; enrollment/teaching policy matrix; cross-class/direct-ID/history tests",
-            "status": "open",
+            "status": "closed",
             "evidence": {
-                "code": [],
-                "migrations": [],
-                "automated_tests": [],
-                "browser_device_checks": [],
-                "human_legal_reviews": [],
-                "production_evidence": [],
-                "checkpoints": []
+                "code": [
+                    "app/Models/Course.php",
+                    "app/Models/CourseRevision.php",
+                    "app/Models/CourseRevisionModule.php",
+                    "app/Models/CourseOffering.php",
+                    "app/Models/CourseOfferingEvent.php",
+                    "app/Models/CourseEnrollment.php",
+                    "app/Models/CourseEnrollmentEvent.php",
+                    "app/Models/TeachingAssignment.php",
+                    "app/Http/Controllers/ClassWorkspaceController.php",
+                    "app/Http/Controllers/ClassRosterController.php",
+                    "app/Http/Controllers/ClassConnectionController.php",
+                    "app/Services/ClassWorkspaceService.php",
+                    "app/Services/CourseEnrollmentService.php",
+                    "app/Services/TeachingAssignmentService.php",
+                    "app/Services/CourseAccessService.php",
+                    "app/Services/CourseOfferingLifecycle.php",
+                    "app/Services/CourseRevisionService.php",
+                    "app/Services/InstitutionInvitationService.php",
+                    "app/Services/InstitutionJoinCodeService.php",
+                    "app/Policies/CoursePolicy.php",
+                    "app/Policies/CourseRevisionPolicy.php",
+                    "app/Policies/CourseOfferingPolicy.php",
+                    "resources/views/supervisor/classes/index.blade.php",
+                    "resources/views/supervisor/classes/create.blade.php",
+                    "resources/views/supervisor/classes/show.blade.php",
+                    "resources/views/supervisor/classes/preview.blade.php",
+                    "app/Services/LearningContext.php",
+                    "app/Services/LearningContentScope.php",
+                    "app/Services/CanonicalCurriculumRepository.php",
+                    "app/Services/Curriculum/CurriculumAttemptService.php",
+                    "app/Services/ProgressAdministrationService.php",
+                    "app/Http/Controllers/Supervisor/LearnerProgressController.php",
+                    "resources/views/partials/learner-shell.blade.php"
+                ],
+                "migrations": [
+                    "database/migrations/2026_07_21_000019_establish_course_class_and_time_foundation.php",
+                    "database/migrations/2026_07_21_000020_add_class_roster_operations.php",
+                    "database/migrations/2026_07_22_000021_cut_learning_progress_over_to_class_context.php"
+                ],
+                "automated_tests": [
+                    "tests/Feature/CourseClassFoundationTest.php",
+                    "tests/Feature/ClassRosterOperationsTest.php",
+                    "tests/Feature/ClassLearningContextTest.php",
+                    "tests/E2E/critical-path.spec.mjs"
+                ],
+                "browser_device_checks": [
+                    "Playwright 1.61.1 assigned-Class journey passed in the Chromium Desktop Chrome profile and mobile Chromium Pixel 7 profile: MFA sign-in, scoped Class discovery, roster display, learner-email exclusion, synthetic preview notice, console/page-error check, and root-overflow check. The complete 14-test Firefox project passed in headed mode after the local headless SWGL compositor failed before test execution. These are engine/profile checks, not branded-browser or physical-device certification."
+                ],
+                "human_legal_reviews": [
+                    "Owner approved every B06 recommendation on 2026-07-21; qualified privacy, accessibility, academic/content, and security reviews remain separate gates."
+                ],
+                "production_evidence": [
+                    "B06 is locally complete through B06-C in disposable SQLite: exact-Class learner delivery and progress attribution passed focused and full regression coverage. The user's localhost database was not migrated, and no production, lecturer-usability, physical-device, or qualified-review claim exists yet."
+                ],
+                "checkpoints": [
+                    "docs/checkpoints/NG-B06-A-FOUNDATION-2026-07-21.md",
+                    "docs/checkpoints/NG-B06-B-CLASS-ROSTER-2026-07-21.md",
+                    "docs/checkpoints/NG-B06-C-CLASS-LEARNING-CUTOVER-2026-07-22.md"
+                ]
             }
         },
         {
@@ -470,7 +539,7 @@
                     "Owner approved the B03 security architecture and role requirements; independent penetration testing and real authenticator/device review remain required."
                 ],
                 "production_evidence": [
-                    "Argon2id and opportunistic bcrypt rehash, 15-128-character context/blocklist validation, layered generic authentication, privileged-route MFA enforcement, encrypted TOTP, hashed one-use recovery codes, passkey integration, recent-password management, and owner-scoped session revocation are installed locally. Safe public, self-service, context-selection, and Learner surfaces do not require privileged assurance. All three enabled demo accounts intentionally remain unenrolled and therefore keep the production readiness gate closed."
+                    "Argon2id and opportunistic bcrypt rehash, 15-128-character context/blocklist validation, layered generic authentication, privileged-route MFA enforcement, encrypted TOTP, hashed one-use recovery codes, passkey integration, recent-password management, and owner-scoped session revocation are installed locally. Safe public, self-service, context-selection, and Learner surfaces do not require privileged assurance. All four enabled demo accounts intentionally remain unenrolled and therefore keep the production readiness gate closed."
                 ],
                 "checkpoints": [
                     "docs/checkpoints/NG-B03-CHECKPOINT.md"
@@ -729,7 +798,7 @@
                 "NG-B06-DECISIONS"
             ],
             "required_evidence": "Accurate role/scope context on every admin surface; scope-switch and stale/unknown-context tests",
-            "status": "in_progress",
+            "status": "closed",
             "evidence": {
                 "code": [
                     "app/Services/WorkContext.php",
@@ -740,6 +809,10 @@
                     "app/Http/Controllers/WorkContextController.php",
                     "app/Services/OnboardingService.php",
                     "app/Services/NextActionResolver.php",
+                    "app/Services/LearningContext.php",
+                    "app/Services/LearningContentScope.php",
+                    "app/Http/Controllers/LearningContextController.php",
+                    "app/Http/Controllers/Supervisor/SpvDashboardController.php",
                     "resources/views/work-context/index.blade.php",
                     "resources/views/institution-roles/index.blade.php",
                     "resources/views/onboarding/show.blade.php",
@@ -753,20 +826,24 @@
                     "tests/Feature/InstitutionRoleManagementTest.php",
                     "tests/Feature/RoleRouteMatrixTest.php",
                     "tests/Feature/OnboardingFlowTest.php",
-                    "tests/Feature/NextActionResolverTest.php"
+                    "tests/Feature/NextActionResolverTest.php",
+                    "tests/Feature/ClassLearningContextTest.php",
+                    "tests/Feature/SupervisorDashboardQueryCountTest.php"
                 ],
                 "browser_device_checks": [
-                    "Role-specific navigation, onboarding, and next-action journeys passed in the 52/52 clean supported-engine desktop/mobile Chromium and WebKit run; branded Firefox, Opera, and physical-device evidence remains open."
+                    "Role-specific navigation, onboarding, next-action, Class selection, and stale-context journeys passed in the supported Chromium/WebKit/mobile profiles; all 14 Firefox project tests passed in headed mode after the local headless compositor failed before test execution. Physical-device evidence remains open."
                 ],
                 "human_legal_reviews": [
                     "Owner approved the explicit multi-role context and tenant hierarchy on 2026-07-20."
                 ],
                 "production_evidence": [
-                    "Expand-first normalized assignments, explicit context selector, role-aware onboarding, and server-derived role next actions are installed; legacy role-column retirement and B06 coverage of future tenant/class surfaces remain open."
+                    "Expand-first normalized assignments, explicit work and learning context selectors, role-aware onboarding, exact-Class server checks, and stale-context recovery are installed. Legacy role and institution columns remain readable provenance and do not authorize tenant/Class operations."
                 ],
                 "checkpoints": [
                     "docs/checkpoints/NG-B02-B05-ARCHITECTURE-CHECKPOINT.md",
-                    "docs/checkpoints/NG-B05-CHECKPOINT.md"
+                    "docs/checkpoints/NG-B05-CHECKPOINT.md",
+                    "docs/checkpoints/UI-R02-RESPONSIVE-LEARNER-SHELL-2026-07-21.md",
+                    "docs/checkpoints/NG-B06-C-CLASS-LEARNING-CUTOVER-2026-07-22.md"
                 ]
             }
         },
@@ -1038,15 +1115,30 @@
                 "NG-B13-DECISIONS"
             ],
             "required_evidence": "One shared Clock/TimeContext; approved timezone precedence; DST/skew/retry/reschedule/accommodation and cross-scope tests",
-            "status": "open",
+            "status": "in_progress",
             "evidence": {
-                "code": [],
-                "migrations": [],
-                "automated_tests": [],
+                "code": [
+                    "app/Services/Time/IanaTimeZone.php",
+                    "app/Services/Time/TimeContext.php",
+                    "app/Providers/AppServiceProvider.php"
+                ],
+                "migrations": [
+                    "database/migrations/2026_07_21_000019_establish_course_class_and_time_foundation.php"
+                ],
+                "automated_tests": [
+                    "tests/Feature/TimeContextTest.php"
+                ],
                 "browser_device_checks": [],
-                "human_legal_reviews": [],
-                "production_evidence": [],
-                "checkpoints": []
+                "human_legal_reviews": [
+                    "Owner approved the B06 UTC/IANA precedence on 2026-07-21; later B07/B11/B12/B13 scheduling and accommodation decisions remain mandatory."
+                ],
+                "production_evidence": [
+                    "B06-A supplies one injectable UTC PSR Clock and shared TimeContext with IANA validation, fallback, frozen-time, and DST gap/fold tests. Later scheduling, retry, reschedule, and accommodation evidence remains open."
+                ],
+                "checkpoints": [
+                    "docs/checkpoints/NG-B06-A-FOUNDATION-2026-07-21.md",
+                    "docs/checkpoints/NG-B06-C-CLASS-LEARNING-CUTOVER-2026-07-22.md"
+                ]
             }
         },
         {

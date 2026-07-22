@@ -24,7 +24,7 @@ return [
         'account_identity' => 'While active; pseudonymized after an approved deletion request.',
         'enrollment' => 'While active plus the institution archive period; production policy remains institution-specific.',
         'learning_progress' => 'While the account or institution learning scope is active; handled by the approved request workflow.',
-        'open_responses' => 'Only bounded structured responses are stored; free-form production responses are not retained.',
+        'open_responses' => 'Saved writing is encrypted at rest and retained while the account or Class is active. Submitted Class assessments are visible only to authorized Class staff.',
         'administration_audits' => 'Three years in the prototype policy, using pseudonymous actors after deletion.',
         'security_logs' => 'One year in the prototype policy; production log storage is not yet selected.',
         'exports' => '24 hours after generation, then the encrypted artifact is removed.',

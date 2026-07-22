@@ -1,4 +1,5 @@
-<nav class="bg-white shadow-md">
+@isset($curriculumPreview)
+<nav class="bg-white shadow-md" aria-label="{{ __('Curriculum preview navigation') }}">
         <div class="container mx-auto flex flex-wrap items-center justify-between gap-y-3 px-6 py-3">
             <!-- Logo -->
             <a href="{{ isset($curriculumPreview) ? route((Auth::user()->isSuperAdmin() ? 'superadmin' : 'admin').'.curriculum-drafts.show', $curriculumPreview) : route('dashboard') }}" class="text-2xl font-bold text-indigo-600">Hospitrainity</a>
@@ -8,15 +9,19 @@
                 @if(!isset($curriculumPreview) && app(\App\Services\WorkContext::class)->current(request(), Auth::user()) === \App\Enums\WorkContextRole::Learner)
                     @php($learningService = app(\App\Services\LearningContext::class))
                     @php($learningMemberships = $learningService->availableMemberships(Auth::user()))
+                    @php($learningClassEnrollments = $learningService->availableClassEnrollments(Auth::user()))
                     @php($learningContext = $learningService->current(request(), Auth::user()))
-                    @if($learningMemberships->isNotEmpty())
+                    @if($learningMemberships->isNotEmpty() || $learningClassEnrollments->isNotEmpty())
                         <form method="POST" action="{{ route('learning-context.select') }}" class="order-last flex w-full items-center gap-2 sm:order-none sm:w-auto" aria-label="{{ __('Switch learning context') }}">
                             @csrf
                             <label for="learner-context" class="sr-only">{{ __('Learning context') }}</label>
                             <select id="learner-context" name="context" class="min-w-0 flex-1 rounded-md border border-neutral-300 bg-white px-2 py-2 text-sm sm:max-w-56">
-                                <option value="personal" @selected($learningContext['membership_id'] === null)>{{ __('Personal self-study') }}</option>
+                                <option value="personal" @selected($learningContext['membership_id'] === null && !$learningContext['class_invalidated'])>{{ __('Personal self-study') }}</option>
                                 @foreach($learningMemberships as $membership)
-                                    <option value="membership:{{ $membership->id }}" @selected($learningContext['membership_id'] === $membership->id)>{{ $membership->institution->displayName(app()->getLocale()) }}</option>
+                                    <option value="membership:{{ $membership->id }}" @selected($learningContext['course_enrollment_id'] === null && $learningContext['membership_id'] === $membership->id)>{{ $membership->institution->displayName(app()->getLocale()) }}</option>
+                                @endforeach
+                                @foreach($learningClassEnrollments as $enrollment)
+                                    <option value="class:{{ $enrollment->id }}" @selected($learningContext['course_enrollment_id'] === $enrollment->id)>{{ $enrollment->offering->title }}, {{ $enrollment->membership->institution->displayName(app()->getLocale()) }}</option>
                                 @endforeach
                             </select>
                             <button type="submit" class="rounded-md border border-indigo-600 px-3 py-2 text-sm font-semibold text-indigo-700 hover:bg-indigo-50">{{ __('Switch') }}</button>
@@ -64,4 +69,5 @@
                 </div>
             </div>
         </div>
-    </nav>
+</nav>
+@endisset

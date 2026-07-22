@@ -32,6 +32,14 @@ return [
                 'role' => 'supervisor',
             ],
             [
+                'name' => 'Hospitrainity Test Content Admin',
+                'institution_key' => 'demo-hotel-a',
+                'legacy_institution' => 'Hotel A',
+                'email' => env('HOSPITRAINITY_DEMO_ADMIN_EMAIL', 'admin@example.com'),
+                'password' => env('HOSPITRAINITY_DEMO_ADMIN_PASSWORD'),
+                'role' => 'admin',
+            ],
+            [
                 'name' => 'Hospitrainity Test Learner',
                 'institution_key' => 'demo-hotel-b',
                 'legacy_institution' => 'Hotel B',
@@ -45,6 +53,7 @@ return [
     'known_demo_emails' => [
         'superadmin@example.com',
         'supervisor@example.com',
+        'admin@example.com',
         'user@example.com',
     ],
     'known_demo_institution_keys' => [

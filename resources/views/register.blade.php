@@ -11,10 +11,9 @@
             <p class="mt-2 text-neutral-600">{{ __('You can learn independently without joining an institution.') }}</p>
         </div>
 
-        <section class="rounded-md border border-amber-300 bg-amber-50 p-4 text-sm text-amber-950" aria-labelledby="institution-boundary-heading">
-            <h2 id="institution-boundary-heading" class="font-bold">{{ __('Are you learning with an institution?') }}</h2>
-            <p class="mt-1">{{ __('Create and verify this personal account first. Then enter a current classroom code supplied by your lecturer or institution.') }}</p>
-            <p class="mt-2">{{ __('Your institution will receive a new, separate progress view only after it approves your request. Earlier personal progress is not copied or shown to institution staff.') }}</p>
+        <section class="rounded-md border border-indigo-100 bg-indigo-50 p-4 text-sm text-indigo-950" aria-labelledby="institution-boundary-heading">
+            <h2 id="institution-boundary-heading" class="font-bold">{{ __('Joining an institution?') }}</h2>
+            <p class="mt-1">{{ __('After creating your account, you can join your institution using a classroom code from your lecturer. Earlier personal progress is not copied or shown to institution staff.') }}</p>
         </section>
 
         <form method="POST" action="{{ route('register.store') }}" class="space-y-5">
@@ -35,14 +34,14 @@
             </div>
             <div>
                 <label for="password" class="block text-sm font-medium text-neutral-700">{{ __('Password') }}</label>
-                <input id="password" name="password" type="password" autocomplete="new-password" minlength="15" maxlength="128" required
+                <input id="password" name="password" type="password" autocomplete="new-password" minlength="8" maxlength="128" required
                     @error('password') aria-invalid="true" aria-describedby="registration-password-error" @enderror
                     class="mt-1 block w-full rounded-md border border-neutral-300 px-3 py-3 focus:border-indigo-500 focus:ring-indigo-500">
                 @error('password')<p id="registration-password-error" class="mt-1 text-sm text-red-700">{{ $message }}</p>@enderror
             </div>
             <div>
                 <label for="password_confirmation" class="block text-sm font-medium text-neutral-700">{{ __('Confirm password') }}</label>
-                <input id="password_confirmation" name="password_confirmation" type="password" autocomplete="new-password" minlength="15" maxlength="128" required
+                <input id="password_confirmation" name="password_confirmation" type="password" autocomplete="new-password" minlength="8" maxlength="128" required
                     class="mt-1 block w-full rounded-md border border-neutral-300 px-3 py-3 focus:border-indigo-500 focus:ring-indigo-500">
             </div>
             <div>
@@ -58,11 +57,10 @@
                     <input type="checkbox" name="policy_acknowledgement" value="1" required @checked(old('policy_acknowledgement')) class="mt-1 shrink-0 rounded border-neutral-300 text-indigo-600 focus:ring-indigo-500"
                         @error('policy_acknowledgement') aria-invalid="true" aria-describedby="registration-policy-error" @enderror>
                     <span>
-                        {{ __('I have read the prototype') }}
+                        {{ __('I agree to the') }}
                         <a href="{{ route('policies.show', ['type' => 'privacy']) }}" class="font-semibold text-indigo-700 underline">{{ __('privacy notice') }}</a>
                         {{ __('and') }}
-                        <a href="{{ route('policies.show', ['type' => 'terms']) }}" class="font-semibold text-indigo-700 underline">{{ __('terms') }}</a>
-                        ({{ $privacyPolicy['version'] }}). {{ __('This acknowledgment is separate from optional consent.') }}
+                        <a href="{{ route('policies.show', ['type' => 'terms']) }}" class="font-semibold text-indigo-700 underline">{{ __('terms') }}</a>.
                     </span>
                 </label>
                 @error('policy_acknowledgement')<p id="registration-policy-error" class="mt-1 text-sm text-red-700">{{ $message }}</p>@enderror

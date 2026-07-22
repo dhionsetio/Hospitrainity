@@ -29,6 +29,7 @@ class InstitutionInvitationController extends Controller
         $rows = InstitutionInvitation::query()
             ->with(['issuer:id,name', 'acceptedBy:id,name'])
             ->where('institution_id', $institution->getKey())
+            ->whereNull('course_offering_id')
             ->latest()
             ->paginate(20)
             ->withQueryString();

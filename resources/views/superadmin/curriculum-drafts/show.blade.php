@@ -73,7 +73,7 @@
                             @if($fields['outcome'] ?? false)
                                 <label class="mt-3 block text-sm font-semibold">{{ __('admin.parent_module') }}<input name="module" type="number" min="1" max="7" required value="1" class="mt-1 block w-full rounded-md border-neutral-300"></label>
                                 <label class="mt-3 block text-sm font-semibold">{{ __('admin.statement') }}<textarea name="statement" required maxlength="2000" rows="3" class="mt-1 block w-full rounded-md border-neutral-300"></textarea></label>
-                                <label class="mt-3 block text-sm font-semibold">{{ __('admin.outcome_type') }}<select name="outcome_type" required class="mt-1 block w-full rounded-md border-neutral-300"><option value="knowledge">knowledge</option><option value="performance">performance</option><option value="reflection">reflection</option></select></label>
+                                <label class="mt-3 block text-sm font-semibold">{{ __('admin.outcome_type') }}<select name="outcome_type" required class="mt-1 block w-full rounded-md border-neutral-300">@foreach(['knowledge', 'performance', 'reflection'] as $outcomeType)<option value="{{ $outcomeType }}">{{ __('admin.outcome_types.'.$outcomeType) }}</option>@endforeach</select></label>
                                 <label class="mt-3 block text-sm font-semibold">{{ __('admin.provisional_band') }}<input name="provisional_band" required maxlength="30" value="local" class="mt-1 block w-full rounded-md border-neutral-300"></label>
                             @endif
                             <button class="mt-4 rounded-md bg-indigo-700 px-4 py-2 font-semibold text-white">{{ __('admin.save') }}</button>
@@ -97,8 +97,10 @@
                     <ol class="mt-5 space-y-3">
                         @forelse($draft->imports as $import)
                             <li class="rounded-lg border border-neutral-200 p-4">
-                                <div class="flex flex-wrap items-center justify-between gap-2"><span class="font-semibold">{{ $import->source_original_name }}</span><span class="rounded-full bg-neutral-100 px-2 py-1 font-mono text-xs">{{ $import->status->value }}</span></div>
-                                <p class="mt-2 break-all font-mono text-xs text-neutral-600">SHA-256 {{ $import->source_sha256 }} &middot; {{ number_format($import->source_bytes) }} bytes &middot; r{{ $import->revision }}</p>
+                                <div class="flex flex-wrap items-center justify-between gap-2"><span class="font-semibold">{{ $import->source_original_name }}</span><span class="rounded-full bg-neutral-100 px-2 py-1 text-xs font-semibold">{{ __('admin.import_statuses.'.$import->status->value) }}</span></div>
+                                @if(Auth::user()->isSuperAdmin())
+                                    <p class="mt-2 break-all font-mono text-xs text-neutral-600">SHA-256 {{ $import->source_sha256 }} &middot; {{ number_format($import->source_bytes) }} bytes &middot; r{{ $import->revision }}</p>
+                                @endif
                                 @if($import->diff_report)
                                     <div class="mt-3 flex flex-wrap gap-2">@foreach($import->diff_report['summary'] as $change => $count)<span class="rounded-full bg-indigo-50 px-2 py-1 text-xs font-semibold text-indigo-900">{{ $change }}: {{ $count }}</span>@endforeach</div>
                                 @endif
@@ -133,7 +135,7 @@
                     @endif
                     <ul class="mt-5 space-y-3">
                         @forelse($draft->assets as $asset)
-                            <li class="rounded-lg border border-neutral-200 p-3"><div class="flex flex-wrap items-center justify-between gap-2"><a class="font-semibold text-indigo-700 underline" href="{{ route($routePrefix.'.curriculum-drafts.assets.show', [$draft, $asset]) }}" target="_blank" rel="noopener">{{ $asset->display_name }}</a><span class="text-xs font-semibold">{{ $asset->kind->value }}</span></div><p class="mt-1 text-sm text-neutral-700">{{ $asset->accessibility_text }}</p><p class="mt-1 break-all font-mono text-xs text-neutral-500">{{ $asset->blob->sha256 }} &middot; {{ number_format($asset->blob->bytes) }} bytes</p></li>
+                            <li class="rounded-lg border border-neutral-200 p-3"><div class="flex flex-wrap items-center justify-between gap-2"><a class="font-semibold text-indigo-700 underline" href="{{ route($routePrefix.'.curriculum-drafts.assets.show', [$draft, $asset]) }}" target="_blank" rel="noopener">{{ $asset->display_name }}</a><span class="text-xs font-semibold">{{ __('admin.asset_kinds.'.$asset->kind->value) }}</span></div><p class="mt-1 text-sm text-neutral-700">{{ $asset->accessibility_text }}</p>@if(Auth::user()->isSuperAdmin())<p class="mt-1 break-all font-mono text-xs text-neutral-500">{{ $asset->blob->sha256 }} &middot; {{ number_format($asset->blob->bytes) }} bytes</p>@endif</li>
                         @empty<li class="text-sm text-neutral-500">{{ __('admin.no_assets') }}</li>@endforelse
                     </ul>
                 </section>

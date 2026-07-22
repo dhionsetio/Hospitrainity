@@ -26,12 +26,12 @@
             'entity' => $moduleInitial,
         ], JSON_THROW_ON_ERROR));
     @endphp
-    <div x-data="moduleAdmin" data-admin-state="{{ $moduleAdminState }}" class="flex min-h-screen flex-col bg-neutral-100 md:h-screen md:flex-row">
+    <div x-data="moduleAdmin" data-admin-state="{{ $moduleAdminState }}" class="flex min-h-screen flex-col bg-neutral-100 md:flex-row">
 
         @include('superadmin.sidebar')
 
         <!-- Main Content -->
-        <main class="min-w-0 flex-1 p-6 md:overflow-y-auto md:p-10">
+        <main class="min-w-0 flex-1 p-6 md:p-10">
             @include('superadmin.canonical-curriculum-notice')
             <header class="mb-8 flex justify-between items-center">
                 <div>

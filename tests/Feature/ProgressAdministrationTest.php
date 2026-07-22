@@ -36,7 +36,15 @@ class ProgressAdministrationTest extends TestCase
         $superadmin = User::factory()->create(['role' => UserRole::Superadmin]);
         $admin = User::factory()->create(['role' => UserRole::Admin]);
         $supervisor = User::factory()->create(['role' => UserRole::Supervisor, 'instansi' => 'Hotel A']);
-        $this->addMembership($supervisor, $this->institution('Hotel A'));
+        $supervisorMembership = $supervisor->institutionMemberships()->where('institution_id', $this->institution('Hotel A')->getKey())->first();
+        if ($supervisorMembership === null) {
+            $this->addMembership($supervisor, $this->institution('Hotel A'));
+            $supervisorMembership = $supervisor->institutionMemberships()->where('institution_id', $this->institution('Hotel A')->getKey())->firstOrFail();
+        }
+        InstitutionRoleAssignment::query()->firstOrCreate([
+            'institution_membership_id' => $supervisorMembership->getKey(),
+            'role' => InstitutionRole::InstitutionAdmin->value,
+        ], ['assigned_at' => now()]);
         $this->addMembership($multiInstitutionLearner, $this->institution('Hotel A'));
         $blankSupervisor = User::factory()->create(['role' => UserRole::Supervisor, 'instansi' => '']);
         $unverified = User::factory()->unverified()->create(['role' => UserRole::Superadmin]);
@@ -66,7 +74,7 @@ class ProgressAdministrationTest extends TestCase
             ->assertDontSee('Hotel B');
         $this->actingAs($blankSupervisor)
             ->get(route('supervisor.progress.learners.show', $learner))
-            ->assertNotFound();
+            ->assertForbidden();
         $this->actingAs($superadmin)
             ->get(route('superadmin.progress.learners.show', $otherLearner))
             ->assertOk();
@@ -226,7 +234,11 @@ class ProgressAdministrationTest extends TestCase
             ->assertSee('institution=Hotel%20A', escape: false)
             ->assertSee('status=viewed', escape: false);
         $this->assertSame($oneLearnerQueries, $manyLearnerQueries);
-        $this->assertLessThanOrEqual(24, $manyLearnerQueries);
+        $this->assertLessThanOrEqual(
+            24,
+            $manyLearnerQueries,
+            collect(DB::getQueryLog())->pluck('query')->implode("\n"),
+        );
     }
 
     public function test_detail_reflects_new_progress_without_a_stale_administration_cache(): void

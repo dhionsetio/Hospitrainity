@@ -8,9 +8,9 @@
         <h1 class="mt-4 text-3xl font-bold">{{ $requestType === \App\Enums\DataSubjectRequestType::Deletion ? __('Request account deletion') : __('Download my data') }}</h1>
         <div class="mt-6 rounded-lg border {{ $requestType === \App\Enums\DataSubjectRequestType::Deletion ? 'border-red-300 bg-red-50' : 'border-indigo-300 bg-indigo-50' }} p-5">
             @if($requestType === \App\Enums\DataSubjectRequestType::Deletion)
-                <p>{{ __('Approval disables sign-in, revokes sessions and notifications, removes personal-scope learning data, closes active memberships, and replaces identifying account fields with a pseudonymous tombstone. Institution-attributed evidence and bounded audit/request evidence may remain under the documented retention policy.') }}</p>
+                <p>{{ __('If approved, you will be signed out, your personal learning data will be removed, and active memberships will close. Some institution learning records and request history may be kept for the periods explained in the privacy notice.') }}</p>
             @else
-                <p>{{ __('After staff approval, a background job creates an encrypted archive containing allowlisted account, membership, progress, attempt, and policy-acknowledgment fields. The signed download expires after 24 hours.') }}</p>
+                <p>{{ __('If approved, Hospitrainity will prepare a protected download of your account, membership, and learning data. The download link expires after 24 hours.') }}</p>
             @endif
         </div>
         <form method="POST" action="{{ route('privacy-requests.store') }}" class="mt-6 space-y-5">
@@ -22,7 +22,7 @@
             </div>
             <label class="flex items-start gap-3">
                 <input type="checkbox" name="confirm_effects" value="1" required class="mt-1 shrink-0 rounded border-neutral-300">
-                <span>{{ __('I understand the described scope, review process, retention limits, and that this request is not immediate.') }}</span>
+                <span>{{ __('I understand what this request changes, what may be kept, and that staff must review it first.') }}</span>
             </label>
             <button class="rounded-md px-5 py-3 font-semibold text-white {{ $requestType === \App\Enums\DataSubjectRequestType::Deletion ? 'bg-red-700 hover:bg-red-800' : 'bg-indigo-700 hover:bg-indigo-800' }}">{{ __('Submit sensitive request') }}</button>
         </form>

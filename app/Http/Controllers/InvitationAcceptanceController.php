@@ -72,7 +72,11 @@ class InvitationAcceptanceController extends Controller
         }
         $request->session()->regenerate();
         $request->session()->put(InstitutionContext::SESSION_KEY, $redeemed['institution']->getKey());
-        $learning->selectInstitution($request, $redeemed['user'], (int) $redeemed['membership']->getKey());
+        if ($redeemed['enrollment'] !== null) {
+            $learning->selectClass($request, $redeemed['user'], (int) $redeemed['enrollment']->getKey());
+        } else {
+            $learning->selectInstitution($request, $redeemed['user'], (int) $redeemed['membership']->getKey());
+        }
         $work->select($request, $redeemed['user'], WorkContextRole::Learner);
 
         return redirect()->to($landing->url($redeemed['user']))

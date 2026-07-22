@@ -26,6 +26,7 @@ export const e2eEnv = {
     APP_ENV: 'testing',
     APP_DEBUG: 'false',
     APP_URL: baseURL,
+    AUTH_LOCAL_TESTER_MFA_BYPASS: 'false',
     BCRYPT_ROUNDS: '4',
     CACHE_STORE: 'array',
     DB_CONNECTION: 'sqlite',
@@ -63,5 +64,6 @@ export function readTestAccounts() {
         learner: Object.freeze(accounts.learner),
         superadmin: Object.freeze(accounts.superadmin),
         supervisor: Object.freeze(accounts.supervisor),
+        admin: Object.freeze(accounts.admin),
     });
 }

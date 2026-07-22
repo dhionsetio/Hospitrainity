@@ -58,7 +58,7 @@ final class CurriculumReleaseLifecycle
                 throw new RuntimeException('The curriculum release state changed since it was reviewed.');
             }
 
-            if (! in_array($next, self::ALLOWED[$expected->value] ?? [], true)) {
+            if (! in_array($next, self::ALLOWED[$expected->value], true)) {
                 throw new RuntimeException("The {$expected->value} to {$next->value} release transition is not allowed.");
             }
 
@@ -71,7 +71,7 @@ final class CurriculumReleaseLifecycle
             } else {
                 $locked->forceFill([
                     'state' => $next,
-                    'preview_only' => $next !== CurriculumReleaseState::Active,
+                    'preview_only' => true,
                     'retired_at' => in_array($next, [CurriculumReleaseState::Retired, CurriculumReleaseState::Withdrawn], true)
                         ? now()
                         : $locked->retired_at,

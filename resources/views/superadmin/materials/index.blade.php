@@ -26,9 +26,9 @@
         ], JSON_THROW_ON_ERROR));
     @endphp
     <div x-data="materialAdmin" data-admin-state="{{ $materialAdminState }}">
-        <div class="flex min-h-screen flex-col md:h-screen md:flex-row">
+        <div class="flex min-h-screen flex-col md:flex-row">
             @include('superadmin.sidebar')
-            <main class="min-w-0 flex-1 p-6 md:overflow-y-auto md:p-10">
+            <main class="min-w-0 flex-1 p-6 md:p-10">
                 @include('superadmin.canonical-curriculum-notice')
                 <header class="mb-8 flex justify-between items-center">
                     <div>

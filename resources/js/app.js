@@ -6,6 +6,7 @@ import { initializeCanonicalActivity } from './canonical-activity';
 import { initializeExerciseAuthoring } from './canonical-exercise-authoring';
 import { initializePushNotifications } from './push-notifications';
 import { initializePasskeys } from './passkeys';
+import { initializeLessonListening } from './lesson-listening';
 
 registerAdminComponents(Alpine);
 window.Alpine = Alpine;
@@ -21,6 +22,7 @@ function initializePageInteractions() {
     initializeExerciseAuthoring();
     initializePushNotifications();
     initializePasskeys();
+    initializeLessonListening();
 
     const priorityFocusTarget = document.querySelector('[data-focus-errors], [data-focus-status]');
     if (priorityFocusTarget instanceof HTMLElement) {
@@ -49,6 +51,67 @@ function initializePageInteractions() {
         drawer.addEventListener('close', () => {
             document.body.style.removeProperty('overflow');
             openButton.focus();
+        });
+    });
+
+    const shellDisclosures = Array.from(document.querySelectorAll('[data-shell-disclosure]'));
+    const setShellDisclosureOpen = (disclosure, open, returnFocus = false) => {
+        const button = disclosure.querySelector('[data-shell-disclosure-button]');
+        const panel = disclosure.querySelector('[data-shell-disclosure-panel]');
+        if (!(button instanceof HTMLButtonElement) || !(panel instanceof HTMLElement)) return;
+
+        panel.hidden = !open;
+        button.setAttribute('aria-expanded', String(open));
+        button.setAttribute(
+            'aria-label',
+            open ? button.dataset.closeLabel : button.dataset.openLabel,
+        );
+        if (returnFocus) button.focus();
+    };
+    const closeOtherShellDisclosures = (current) => {
+        shellDisclosures.forEach((disclosure) => {
+            if (disclosure !== current) setShellDisclosureOpen(disclosure, false);
+        });
+    };
+
+    shellDisclosures.forEach((disclosure) => {
+        const button = disclosure.querySelector('[data-shell-disclosure-button]');
+        const panel = disclosure.querySelector('[data-shell-disclosure-panel]');
+        if (!(button instanceof HTMLButtonElement) || !(panel instanceof HTMLElement)) return;
+
+        button.addEventListener('click', () => {
+            const willOpen = button.getAttribute('aria-expanded') !== 'true';
+            closeOtherShellDisclosures(disclosure);
+            setShellDisclosureOpen(disclosure, willOpen);
+        });
+        disclosure.querySelectorAll('[data-shell-disclosure-close]').forEach((closeButton) => {
+            closeButton.addEventListener('click', () => setShellDisclosureOpen(disclosure, false, true));
+        });
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key !== 'Escape') return;
+
+        const openDisclosure = shellDisclosures.find((disclosure) => (
+            disclosure.querySelector('[data-shell-disclosure-button]')?.getAttribute('aria-expanded') === 'true'
+        ));
+        if (!openDisclosure) return;
+
+        event.preventDefault();
+        setShellDisclosureOpen(openDisclosure, false, true);
+    });
+
+    document.addEventListener('focusin', (event) => {
+        if (!(event.target instanceof Node)) return;
+        shellDisclosures.forEach((disclosure) => {
+            if (!disclosure.contains(event.target)) setShellDisclosureOpen(disclosure, false);
+        });
+    });
+
+    window.addEventListener('click', (event) => {
+        if (!(event.target instanceof Node)) return;
+        shellDisclosures.forEach((disclosure) => {
+            if (!disclosure.contains(event.target)) setShellDisclosureOpen(disclosure, false);
         });
     });
 

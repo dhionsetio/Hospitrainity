@@ -55,7 +55,7 @@
                 <p class="text-center text-sm text-neutral-600">
                     {{ __('Need an account?') }}
                     <a href="{{ route('register') }}" class="font-medium text-indigo-600 hover:text-indigo-500">
-                        {{ __('Learn about invitations') }}
+                        {{ __('Create account') }}
                     </a>
                 </p>
             </div>

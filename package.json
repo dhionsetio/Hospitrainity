@@ -10,7 +10,7 @@
         "build": "vite build",
         "dev": "vite",
         "lint:js": "eslint resources/js tests/Node tests/E2E scripts/e2e scripts/curriculum/*.mjs scripts/quality/*.mjs scripts/security/*.mjs eslint.config.js playwright.config.mjs vite.config.js --max-warnings=0",
-        "test:js": "node --test tests/Node/progress.test.mjs tests/Node/learner-dom-safety.test.mjs tests/Node/media-playback.test.mjs tests/Node/exercise-engine.test.mjs tests/Node/canonical-activity.test.mjs tests/Node/canonical-exercise-authoring.test.mjs tests/Node/standalone-projection.test.mjs tests/Node/secret-scan.test.mjs tests/Node/theme-contrast.test.mjs",
+        "test:js": "node --test tests/Node/progress.test.mjs tests/Node/learner-dom-safety.test.mjs tests/Node/media-playback.test.mjs tests/Node/lesson-listening.test.mjs tests/Node/exercise-engine.test.mjs tests/Node/canonical-activity.test.mjs tests/Node/canonical-exercise-authoring.test.mjs tests/Node/standalone-projection.test.mjs tests/Node/secret-scan.test.mjs tests/Node/theme-contrast.test.mjs",
         "test:unit": "npm run test:js",
         "governance:verify": "node scripts/quality/verify-traceability.mjs && node scripts/security/scan-tracked-secrets.mjs",
         "test:e2e:prepare": "node scripts/e2e/prepare.mjs",

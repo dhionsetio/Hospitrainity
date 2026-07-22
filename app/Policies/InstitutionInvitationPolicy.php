@@ -3,15 +3,20 @@
 namespace App\Policies;
 
 use App\Enums\InstitutionStatus;
+use App\Models\CourseOffering;
 use App\Models\Institution;
 use App\Models\InstitutionInvitation;
 use App\Models\User;
+use App\Services\CourseAccessService;
 use App\Services\InstitutionAccessService;
 use Illuminate\Auth\Access\Response;
 
 class InstitutionInvitationPolicy
 {
-    public function __construct(private readonly InstitutionAccessService $access) {}
+    public function __construct(
+        private readonly InstitutionAccessService $access,
+        private readonly CourseAccessService $courses,
+    ) {}
 
     public function create(User $actor, Institution $institution): bool
     {
@@ -24,9 +29,17 @@ class InstitutionInvitationPolicy
 
     public function revoke(User $actor, InstitutionInvitation $invitation): Response
     {
+        $offering = $invitation->course_offering_id === null
+            ? null
+            : CourseOffering::query()->find($invitation->course_offering_id);
+        $authorized = $offering === null
+            ? $this->create($actor, $invitation->institution)
+            : $offering->institution_id === $invitation->institution_id
+                && $this->courses->canManageOffering($actor, $offering);
+
         if ($invitation->revoked_at === null
             && $invitation->accepted_at === null
-            && $this->create($actor, $invitation->institution)) {
+            && $authorized) {
             return Response::allow();
         }
 

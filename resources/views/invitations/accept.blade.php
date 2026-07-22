@@ -12,6 +12,7 @@
 
         <div class="rounded-md border border-indigo-200 bg-indigo-50 p-4 text-sm text-indigo-950">
             <p><strong>{{ __('Institution') }}:</strong> {{ $invitation->institution->displayName(app()->getLocale()) }}</p>
+            @if($invitation->offering)<p class="mt-1"><strong>{{ __('classes.navigation') }}:</strong> {{ $invitation->offering->title }}</p>@endif
             <p class="mt-1"><strong>{{ __('Invited email') }}:</strong> {{ $maskedEmail }}</p>
             <p class="mt-1"><strong>{{ __('Expires') }}:</strong> {{ $invitation->expires_at->toDayDateTimeString() }}</p>
         </div>
@@ -45,14 +46,14 @@
                 </div>
                 <div>
                     <label for="password" class="block text-sm font-medium text-neutral-700">{{ __('Password') }}</label>
-                    <input id="password" name="password" type="password" autocomplete="new-password" minlength="15" maxlength="128" required
+                    <input id="password" name="password" type="password" autocomplete="new-password" minlength="8" maxlength="128" required
                         @error('password') aria-invalid="true" aria-describedby="invitation-password-error" @enderror
                         class="mt-1 block w-full rounded-md border border-neutral-300 px-3 py-3 focus:border-indigo-500 focus:ring-indigo-500">
                     @error('password')<p id="invitation-password-error" class="mt-1 text-sm text-red-600">{{ $message }}</p>@enderror
                 </div>
                 <div>
                     <label for="password_confirmation" class="block text-sm font-medium text-neutral-700">{{ __('Confirm Password') }}</label>
-                    <input id="password_confirmation" name="password_confirmation" type="password" autocomplete="new-password" minlength="15" maxlength="128" required
+                    <input id="password_confirmation" name="password_confirmation" type="password" autocomplete="new-password" minlength="8" maxlength="128" required
                         class="mt-1 block w-full rounded-md border border-neutral-300 px-3 py-3 focus:border-indigo-500 focus:ring-indigo-500">
                 </div>
                 <div class="flex items-start gap-2">

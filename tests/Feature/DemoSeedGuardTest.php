@@ -77,8 +77,8 @@ class DemoSeedGuardTest extends TestCase
 
         $this->seed(UserSeeder::class);
 
-        $this->assertDatabaseCount('users', 3);
-        $this->assertDatabaseCount('institution_memberships', 3);
+        $this->assertDatabaseCount('users', 4);
+        $this->assertDatabaseCount('institution_memberships', 4);
         $this->assertDatabaseHas('institutions', ['key' => 'demo-hotel-a', 'verification_method' => 'disposable_demo_fixture']);
         $this->assertDatabaseHas('institutions', ['key' => 'demo-hotel-b', 'verification_method' => 'disposable_demo_fixture']);
         foreach (config('identity.demo_seed.accounts') as $index => $account) {
@@ -165,12 +165,13 @@ class DemoSeedGuardTest extends TestCase
     /** @return list<string> */
     private function configureDemoAccounts(): array
     {
-        $secrets = [Str::password(40), Str::password(40), Str::password(40)];
+        $secrets = [Str::password(40), Str::password(40), Str::password(40), Str::password(40)];
         config()->set([
             'identity.demo_seed.enabled' => true,
             'identity.demo_seed.accounts.0.password' => $secrets[0],
             'identity.demo_seed.accounts.1.password' => $secrets[1],
             'identity.demo_seed.accounts.2.password' => $secrets[2],
+            'identity.demo_seed.accounts.3.password' => $secrets[3],
         ]);
 
         return $secrets;

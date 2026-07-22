@@ -78,6 +78,29 @@ class ProductionReadinessCheckerTest extends TestCase
         $this->assertTrue($failed->contains('node_dependencies_absent'));
     }
 
+    public function test_checker_rejects_the_local_tester_mfa_bypass_in_production(): void
+    {
+        $this->configureProductionRuntime();
+        config()->set('authentication.mfa.local_tester_bypass', true);
+        $this->releasePath = storage_path('framework/testing/production-readiness-'.bin2hex(random_bytes(5)));
+        $this->writeValidReleaseAssets();
+
+        $checks = (new ProductionReadinessChecker(
+            $this->releasePath,
+            static fn (string $package): bool => false,
+            static fn (): bool => false,
+            static fn (): bool => true,
+            static fn (): bool => true,
+            static fn (): bool => true,
+            static fn (): bool => true,
+        ))->inspect();
+
+        $this->assertContains(
+            'local_tester_mfa_bypass_disabled',
+            collect($checks)->where('passed', false)->pluck('name')->all(),
+        );
+    }
+
     public function test_checker_rejects_a_non_generated_application_key(): void
     {
         $this->configureProductionRuntime();
@@ -223,6 +246,7 @@ class ProductionReadinessCheckerTest extends TestCase
             'passkeys.relying_party_id' => 'hospitrainity.example',
             'passkeys.allowed_origins' => ['https://hospitrainity.example'],
             'upload_security.required' => true,
+            'authentication.mfa.local_tester_bypass' => false,
         ]);
     }
 

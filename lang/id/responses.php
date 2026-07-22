@@ -1,0 +1,31 @@
+<?php
+
+return [
+    'title' => 'Tulisan tersimpan',
+    'intro' => 'Lanjutkan draf atau tinjau tulisan yang telah Anda kirim dalam konteks belajar ini.',
+    'empty' => 'Belum ada tulisan yang tersimpan di sini.',
+    'edit_title' => 'Simpan jawaban Anda',
+    'response_label' => 'Jawaban Anda',
+    'kind_label' => 'Simpan sebagai',
+    'assessment' => 'Jawaban latihan',
+    'journal' => 'Catatan jurnal pribadi',
+    'draft' => 'Draf',
+    'submitted_state' => 'Terkirim',
+    'submitted_assessments' => 'Penilaian yang dikirim',
+    'submitted_assessments_intro' => 'Jawaban yang dikirim pelajar untuk Kelas ini muncul di sini. Draf jurnal pribadi tidak disertakan.',
+    'submitted_at' => 'Dikirim :time',
+    'save_draft' => 'Simpan draf',
+    'submit' => 'Kirim jawaban',
+    'saved' => 'Draf tersimpan.',
+    'submitted' => 'Jawaban terkirim.',
+    'privacy_note' => 'Draf tetap pribadi. Jawaban yang sudah dikirim tidak dapat diubah.',
+    'updated' => 'Diperbarui :time',
+    'back_to_activity' => 'Kembali ke aktivitas',
+    'back_to_saved' => 'Lihat tulisan tersimpan',
+    'validation' => [
+        'body_required' => 'Isi jawaban sebelum menyimpan.',
+        'body_max' => 'Batasi jawaban hingga :max karakter.',
+        'submitted_immutable' => 'Jawaban ini sudah dikirim dan tidak dapat diubah.',
+        'key_reused' => 'Draf ini berasal dari aktivitas lain. Muat ulang halaman lalu coba lagi.',
+    ],
+];

@@ -7,21 +7,27 @@ use App\Models\CurriculumAttempt;
 use App\Models\CurriculumDraft;
 use App\Models\CurriculumDraftEntity;
 use App\Models\CurriculumEntity;
-use App\Models\CurriculumPackage;
 use App\Models\CurriculumResponse;
 use App\Models\User;
+use App\Services\Engagement\ReviewScheduleService;
+use App\Services\LearningContentScope;
 use App\Services\LearningContext;
+use Carbon\CarbonImmutable;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\ValidationException;
 
 final class CurriculumAttemptService
 {
-    public function __construct(private readonly LearningContext $learningContext) {}
+    public function __construct(
+        private readonly LearningContext $learningContext,
+        private readonly LearningContentScope $contentScope,
+        private readonly ReviewScheduleService $reviewSchedule,
+    ) {}
 
     public function markViewed(User $user, string $activityCode): void
     {
-        $definition = $this->definition($activityCode);
+        $definition = $this->definition($activityCode, $user);
         $context = $this->learningContext->current(request(), $user);
         DB::transaction(function () use ($user, $definition, $context): void {
             $progress = $this->progress($user, $definition, $context);
@@ -34,7 +40,7 @@ final class CurriculumAttemptService
     /** @param array<string, mixed> $validated @return array<string, mixed> */
     public function submit(User $user, string $activityCode, array $validated): array
     {
-        $definition = $this->definition($activityCode);
+        $definition = $this->definition($activityCode, $user);
         $context = $this->learningContext->current(request(), $user);
         $applicationKey = (string) config('app.key');
         if ($applicationKey === '') {
@@ -60,6 +66,8 @@ final class CurriculumAttemptService
             ];
             $attempt = CurriculumAttempt::query()->firstOrCreate($identity, [
                 'institution_membership_id' => $context['membership_id'],
+                'course_offering_id' => $context['course_offering_id'],
+                'course_enrollment_id' => $context['course_enrollment_id'],
                 'activity_source_sha256' => $activity->source_sha256,
                 'submission_hmac_sha256' => $submissionHmacSha256,
                 'intent' => $validated['intent'],
@@ -102,6 +110,7 @@ final class CurriculumAttemptService
             }
 
             $selfChecked = false;
+            $objectiveResults = [];
             foreach ($definition['prompts'] as $prompt) {
                 $code = $prompt->code;
                 $form = $prompt->payload['response_form'];
@@ -110,6 +119,9 @@ final class CurriculumAttemptService
                 $responsePresent = is_array($value) ? $value !== [] : trim((string) $value) !== '';
                 $checked = (bool) ($validated['self_checks'][$code] ?? false);
                 $isCorrect = $this->score($prompt, $definition['answers'][$code] ?? null, $value);
+                if (is_bool($isCorrect)) {
+                    $objectiveResults[] = $isCorrect;
+                }
                 $stored = $this->minimizedResponse($form, $mode, $value);
 
                 $attempt->responses()->create([
@@ -140,6 +152,11 @@ final class CurriculumAttemptService
                 'self_checked_at' => $selfChecked ? $now : $progress->self_checked_at,
                 'completed_at' => $now,
             ])->save();
+            $this->reviewSchedule->schedule(
+                $progress,
+                CarbonImmutable::instance($now),
+                $objectiveResults,
+            );
             User::forgetAllProgressCaches();
 
             return $this->result($attempt->load('responses'), $definition);
@@ -230,9 +247,10 @@ final class CurriculumAttemptService
     }
 
     /** @return array<string, mixed> */
-    private function definition(string $activityCode): array
+    private function definition(string $activityCode, User $user): array
     {
-        $package = CurriculumPackage::active();
+        $scope = $this->contentScope->current(request(), $user);
+        $package = $scope['package'];
         abort_if($package === null, 404);
         $activity = CurriculumEntity::query()
             ->where('curriculum_package_id', $package->id)
@@ -240,7 +258,7 @@ final class CurriculumAttemptService
             ->published()
             ->where('code', $activityCode)
             ->first();
-        abort_if($activity === null, 404);
+        abort_if($activity === null || ! $this->contentScope->allowsEntity($scope, $activity), 404);
         $prompts = CurriculumEntity::query()
             ->where('curriculum_package_id', $package->id)
             ->where('entity_type', 'prompt-item')
@@ -294,7 +312,7 @@ final class CurriculumAttemptService
         return compact('draft', 'activity', 'prompts', 'answers', 'feedback');
     }
 
-    /** @param array{scope_key: string, membership_id: int|null} $context */
+    /** @param array{scope_key: string, membership_id: int|null, course_offering_id: string|null, course_enrollment_id: int|null} $context */
     private function progress(User $user, array $definition, array $context): CurriculumActivityProgress
     {
         $package = $definition['package'];
@@ -307,6 +325,8 @@ final class CurriculumAttemptService
             'activity_code' => $activity->code,
         ], [
             'institution_membership_id' => $context['membership_id'],
+            'course_offering_id' => $context['course_offering_id'],
+            'course_enrollment_id' => $context['course_enrollment_id'],
             'section_code' => $activity->parent_code,
         ]);
 

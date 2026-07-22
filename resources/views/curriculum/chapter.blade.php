@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title'){{ $curriculumChapter['title'] }} - {{ __('Canonical Module - Hospitrainity') }}@endsection
+@section('title'){{ $curriculumChapter['title'] }} - {{ __('Module - Hospitrainity') }}@endsection
 @section('bodyClass', 'bg-neutral-100')
 
 @section('content')
@@ -38,7 +38,7 @@
                         <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
                         <div>
                             <p class="text-neutral-800">{{ $outcome['statement'] }}</p>
-                        @if($showCurriculumEvidence)
+                        @if($showCurriculumEvidence && Auth::user()?->isSuperAdmin())
                             <details class="mt-3 text-sm text-neutral-700">
                                 <summary class="cursor-pointer font-semibold text-indigo-800">{{ __('Outcome evidence') }}</summary>
                                 <p class="mt-2 font-mono text-xs">{{ $outcome['code'] }} · {{ $outcome['type'] }} · {{ __('Provisional band: :band', ['band' => $outcome['provisional_band']]) }}</p>
@@ -84,7 +84,7 @@
                                             <i class="fa-solid fa-arrow-right hsp-card-link__arrow" aria-hidden="true"></i>
                                             <span class="sr-only">{{ __('Open section') }}</span>
                                         </a>
-                                        @if($showCurriculumEvidence)
+                                        @if($showCurriculumEvidence && Auth::user()?->isSuperAdmin())
                                             <details class="border-t border-neutral-200 px-4 py-3 text-sm text-neutral-700">
                                         <summary class="cursor-pointer font-semibold text-indigo-800">{{ __('Section evidence') }}</summary>
                                         <p class="mt-2 font-mono text-xs">{{ $section['code'] }}@if($section['activity']) · {{ $section['activity']['response_form'] }} · {{ $section['activity']['scoring_mode'] }}@endif</p>
@@ -99,7 +99,7 @@
             </div>
         </section>
 
-        @if($showCurriculumEvidence)
+        @if($showCurriculumEvidence && Auth::user()?->isSuperAdmin())
             <details class="mt-8 rounded-lg border border-neutral-300 bg-white p-4 text-sm text-neutral-700">
                 <summary class="cursor-pointer font-semibold">{{ __('Source and lifecycle evidence') }}</summary>
                 <dl class="mt-3 grid gap-2 md:grid-cols-2">

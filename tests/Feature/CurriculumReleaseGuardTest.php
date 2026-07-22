@@ -11,6 +11,7 @@ use App\Models\User;
 use App\Services\Curriculum\CanonicalCurriculumImporter;
 use App\Services\Curriculum\CanonicalPackage;
 use App\Services\Curriculum\CanonicalPackageReader;
+use App\Services\Curriculum\CurriculumReleaseGuard;
 use App\Services\Curriculum\CurriculumReleaseLifecycle;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\DB;
@@ -259,5 +260,60 @@ class CurriculumReleaseGuardTest extends TestCase
         $this->expectExceptionMessage('does not have an approved non-draft release');
 
         CurriculumPackage::active();
+    }
+
+    public function test_production_class_delivery_accepts_a_retired_release_with_complete_activation_evidence(): void
+    {
+        $source = app(CanonicalPackageReader::class)->read();
+        app(CanonicalCurriculumImporter::class)->import($source);
+        $package = CurriculumPackage::query()->sole();
+        $package->forceFill(['lifecycle_status' => 'published'])->save();
+        $release = CurriculumRelease::query()->sole();
+        $recorder = User::factory()->create(['role' => UserRole::Superadmin]);
+        $lifecycle = app(CurriculumReleaseLifecycle::class);
+        $release = $lifecycle->transition(
+            $release,
+            CurriculumReleaseState::Draft,
+            CurriculumReleaseState::InReview,
+            $recorder,
+            'Begin pinned Class release validation.',
+        );
+        foreach (CurriculumApprovalGate::cases() as $gate) {
+            $lifecycle->approveGate(
+                $release,
+                $gate,
+                $recorder,
+                'Named '.$gate->value.' reviewer',
+                'Recorded external qualification',
+                hash('sha256', 'pinned-class-evidence-'.$gate->value),
+            );
+        }
+        $release = $lifecycle->transition(
+            $release,
+            CurriculumReleaseState::InReview,
+            CurriculumReleaseState::Approved,
+            $recorder,
+            'All release gates are complete.',
+        );
+        $release = $lifecycle->transition(
+            $release,
+            CurriculumReleaseState::Approved,
+            CurriculumReleaseState::Active,
+            $recorder,
+            'Activate the approved release.',
+        );
+        $lifecycle->transition(
+            $release,
+            CurriculumReleaseState::Active,
+            CurriculumReleaseState::Retired,
+            $recorder,
+            'A newer package superseded this release.',
+        );
+        $this->app['env'] = 'production';
+
+        app(CurriculumReleaseGuard::class)
+            ->assertPinnedDeliverable($package->fresh('release'));
+
+        $this->addToAssertionCount(1);
     }
 }

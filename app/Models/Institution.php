@@ -3,12 +3,15 @@
 namespace App\Models;
 
 use App\Enums\InstitutionStatus;
+use App\Services\Time\IanaTimeZone;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use LogicException;
 
+/** @property InstitutionStatus $status */
 class Institution extends Model
 {
     use HasUuids;
@@ -29,6 +32,7 @@ class Institution extends Model
         'key',
         'name_id',
         'name_en',
+        'timezone',
         'status',
         'owner_user_id',
         'verified_at',
@@ -51,6 +55,23 @@ class Institution extends Model
     public function memberships(): HasMany
     {
         return $this->hasMany(InstitutionMembership::class);
+    }
+
+    protected function timezone(): Attribute
+    {
+        return Attribute::make(
+            set: static fn (mixed $value): ?string => IanaTimeZone::nullable($value),
+        );
+    }
+
+    public function courses(): HasMany
+    {
+        return $this->hasMany(Course::class);
+    }
+
+    public function courseOfferings(): HasMany
+    {
+        return $this->hasMany(CourseOffering::class);
     }
 
     public function invitations(): HasMany

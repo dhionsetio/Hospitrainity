@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use App\Enums\InstitutionMembershipStatus;
+use App\Enums\InstitutionRole;
 use App\Models\Exercise;
 use App\Models\Institution;
 use App\Models\InstitutionMembership;
@@ -60,6 +61,7 @@ class RoleRouteMatrixTest extends TestCase
     {
         $supervisor = User::factory()->create(['role' => 'supervisor']);
         $this->addHqMembership($supervisor);
+        $this->grantInstitutionRole($supervisor, InstitutionRole::Instructor);
         $fixture = $this->learnerFixture();
 
         $this->actingAs($supervisor)->get(route('supervisor.dashboard'))->assertOk();

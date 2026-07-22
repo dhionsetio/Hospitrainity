@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Enums\InstitutionRole;
 use App\Models\User;
 use App\Services\MfaService;
 use Illuminate\Database\QueryException;
@@ -33,6 +34,9 @@ class RoleLandingRedirectTest extends TestCase
 
         foreach (self::LANDINGS as $role => $routeName) {
             $user = User::factory()->create(['role' => $role]);
+            if ($role === 'supervisor') {
+                $this->grantInstitutionRole($user, InstitutionRole::Instructor);
+            }
 
             foreach ($guestPages as $page) {
                 $this->actingAs($user)->get($page)->assertRedirect(route($routeName));
@@ -56,6 +60,9 @@ class RoleLandingRedirectTest extends TestCase
                     'password' => 'password',
                     'role' => $role,
                 ]);
+                if ($role === 'supervisor') {
+                    $this->grantInstitutionRole($user, InstitutionRole::Instructor);
+                }
 
                 $secret = null;
                 $recoveryCode = null;
@@ -89,6 +96,9 @@ class RoleLandingRedirectTest extends TestCase
     {
         foreach (self::LANDINGS as $role => $routeName) {
             $user = User::factory()->create(['role' => $role]);
+            if ($role === 'supervisor') {
+                $this->grantInstitutionRole($user, InstitutionRole::Instructor);
+            }
 
             $this->actingAs($user)
                 ->withSession(['url.intended' => '/dashboard'])
@@ -106,6 +116,9 @@ class RoleLandingRedirectTest extends TestCase
     {
         foreach (self::LANDINGS as $role => $routeName) {
             $user = User::factory()->unverified()->create(['role' => $role]);
+            if ($role === 'supervisor') {
+                $this->grantInstitutionRole($user, InstitutionRole::Instructor);
+            }
             $verificationUrl = URL::temporarySignedRoute(
                 'verification.verify',
                 now()->addMinutes(30),

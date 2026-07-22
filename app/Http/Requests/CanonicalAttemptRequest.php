@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Contracts\Validation\Validator as ValidatorContract;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 use Illuminate\Validation\Validator;
@@ -82,6 +83,45 @@ abstract class CanonicalAttemptRequest extends FormRequest
                 $validator->errors()->add('intent', 'Only the Chapter 1 baseline may be explicitly skipped.');
             }
         }];
+    }
+
+    protected function failedValidation(ValidatorContract $validator): void
+    {
+        $this->forgetOpenResponseInput();
+
+        parent::failedValidation($validator);
+    }
+
+    private function forgetOpenResponseInput(): void
+    {
+        $openResponseCodes = collect($this->definition()['prompts'])
+            ->reject(static fn (array $prompt): bool => in_array(
+                $prompt['payload']['response_form'] ?? null,
+                ['selection', 'ordering', 'rating'],
+                true,
+            ))
+            ->keys()
+            ->all();
+
+        foreach ([$this, $this->container->make('request')] as $request) {
+            $responses = $request->input('responses');
+
+            if (! is_array($responses)) {
+                $request->offsetUnset('responses');
+
+                continue;
+            }
+
+            foreach ($openResponseCodes as $code) {
+                unset($responses[$code]);
+            }
+
+            if ($responses === []) {
+                $request->offsetUnset('responses');
+            } else {
+                $request->merge(['responses' => $responses]);
+            }
+        }
     }
 
     /** @return array<string, string> */

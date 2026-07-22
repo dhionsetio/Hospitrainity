@@ -11,7 +11,9 @@
         <main class="min-w-0 flex-1 p-6 md:p-10">
             <x-back-control :href="route($routePrefix.'.curriculum-drafts.show', $draft)" :label="$draft->title" />
             <header class="mt-4 rounded-xl bg-white p-6 shadow">
-                <p class="text-sm font-semibold uppercase tracking-wide text-indigo-700">{{ __('admin.registry_version') }} {{ \App\Services\Curriculum\CanonicalExerciseTemplateRegistry::VERSION }}</p>
+                @if(Auth::user()->isSuperAdmin())
+                    <p class="text-sm font-semibold uppercase tracking-wide text-indigo-700">{{ __('admin.registry_version') }} {{ \App\Services\Curriculum\CanonicalExerciseTemplateRegistry::VERSION }}</p>
+                @endif
                 <h1 class="mt-2 text-3xl font-bold text-neutral-950">{{ __('admin.exercise_builder') }}</h1>
                 <p class="mt-2 max-w-4xl text-neutral-700">{{ __('admin.exercise_builder_help') }}</p>
             </header>

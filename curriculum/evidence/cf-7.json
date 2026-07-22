@@ -15,8 +15,8 @@
     },
     "standalone": {
         "path": "standalone/Hospitrainity-Standalone.html",
-        "byte_count": 707504,
-        "sha256": "55d1418fc75e359f85c9f7bb8ad1d93ea36943859b48f3c18a1db65039bf36c4"
+        "byte_count": 702930,
+        "sha256": "58bb4f61e32c4cc3855a786ea38c247aeef1b66059f18933e979856c912daf21"
     },
     "expected_counts": {
         "chapters": 7,
@@ -52,7 +52,7 @@
         "source_artifact": "Hospitrainity.docx",
         "status": "development",
         "subtitle": "Practical customer-care English for hotel and hospitality staff, organized into seven modules derived from the source manuscript.",
-        "title": "Hospitrainity — Hospitality English"
+        "title": "Hospitrainity: Hospitality English"
     },
     "workflow_gate": {
         "id": "CF-7",

@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Enums\InstitutionRole;
 use App\Enums\UserRole;
 use App\Models\MfaRecoveryCode;
 use App\Models\SecurityEvent;
@@ -9,6 +10,7 @@ use App\Models\User;
 use App\Rules\SecurePassword;
 use App\Services\MfaService;
 use App\Services\UploadSecurityService;
+use Illuminate\Foundation\Http\Middleware\ValidateCsrfToken;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\DB;
@@ -33,7 +35,8 @@ class SecurityAssuranceTest extends TestCase
 
         $tooShort = Validator::make(['password' => 'short'], ['password' => [new SecurePassword]]);
         $this->assertTrue($tooShort->fails());
-        $this->assertStringContainsString('at least 15', $tooShort->errors()->first('password'));
+        $minimum = (int) config('authentication.password.minimum', 8);
+        $this->assertStringContainsString("at least {$minimum}", $tooShort->errors()->first('password'));
 
         $common = Validator::make(['password' => $blocked], ['password' => [new SecurePassword]]);
         $this->assertTrue($common->fails());
@@ -65,6 +68,91 @@ class SecurityAssuranceTest extends TestCase
         $this->assertSame('argon2id', password_get_info($user->fresh()->password)['algoName']);
         $this->get(route('superadmin.dashboard'))->assertRedirect(route('security.index'));
         $this->assertDatabaseHas('security_events', ['event' => 'authentication.password_succeeded', 'outcome' => 'allowed']);
+    }
+
+    public function test_local_tester_bypass_unlocks_only_a_known_demo_account_on_loopback(): void
+    {
+        $this->withoutMiddleware(ValidateCsrfToken::class);
+        $this->app['env'] = 'local';
+        config()->set('authentication.mfa.local_tester_bypass', true);
+        config()->set('identity.demo_seed.accounts.0.email', 'configured-superadmin@example.test');
+        $password = Str::password(40);
+        $user = User::factory()->create([
+            'email' => 'configured-superadmin@example.test',
+            'role' => UserRole::Superadmin,
+            'password' => Hash::make($password),
+        ]);
+
+        $this->withSession(['auth.mfa_verified_at' => time()])
+            ->post(route('login'), ['email' => $user->email, 'password' => $password])
+            ->assertRedirect(route('superadmin.dashboard'))
+            ->assertSessionHas('auth.mfa_method', 'local_tester_bypass')
+            ->assertSessionMissing('auth.mfa_verified_at');
+
+        $this->assertAuthenticatedAs($user);
+        $this->get(route('superadmin.dashboard'))->assertOk();
+        $this->assertDatabaseHas('security_events', [
+            'event' => 'authentication.password_succeeded',
+            'outcome' => 'allowed',
+        ]);
+        $event = SecurityEvent::query()
+            ->where('event', 'authentication.password_succeeded')
+            ->latest('id')
+            ->firstOrFail();
+        $this->assertTrue($event->metadata['local_tester_mfa_bypass'] ?? false);
+    }
+
+    public function test_local_tester_bypass_skips_totp_challenge_without_recording_real_mfa(): void
+    {
+        $this->withoutMiddleware(ValidateCsrfToken::class);
+        $this->app['env'] = 'local';
+        config()->set('authentication.mfa.local_tester_bypass', true);
+        $password = Str::password(40);
+        $user = User::factory()->create([
+            'email' => 'superadmin@example.com',
+            'role' => UserRole::Superadmin,
+            'password' => Hash::make($password),
+        ]);
+        $secret = app(MfaService::class)->beginTotp($user);
+        app(MfaService::class)->confirmTotp($user->fresh(), (new Google2FA)->getCurrentOtp($secret));
+
+        $this->post(route('login'), ['email' => $user->email, 'password' => $password])
+            ->assertRedirect(route('superadmin.dashboard'))
+            ->assertSessionHas('auth.mfa_method', 'local_tester_bypass')
+            ->assertSessionMissing('auth.mfa_verified_at');
+
+        $this->assertAuthenticatedAs($user);
+    }
+
+    public function test_local_tester_bypass_rejects_unknown_non_loopback_and_non_local_accounts(): void
+    {
+        $this->withoutMiddleware(ValidateCsrfToken::class);
+        $this->app['env'] = 'local';
+        config()->set('authentication.mfa.local_tester_bypass', true);
+        $password = Str::password(40);
+
+        $unknown = User::factory()->create([
+            'email' => 'unknown@example.test',
+            'role' => UserRole::Superadmin,
+            'password' => Hash::make($password),
+        ]);
+        $this->post(route('login'), ['email' => $unknown->email, 'password' => $password])
+            ->assertRedirect(route('security.index'));
+        $this->post(route('logout'));
+
+        $known = User::factory()->create([
+            'email' => 'superadmin@example.com',
+            'role' => UserRole::Superadmin,
+            'password' => Hash::make($password),
+        ]);
+        $this->withServerVariables(['REMOTE_ADDR' => '203.0.113.10'])
+            ->post(route('login'), ['email' => $known->email, 'password' => $password])
+            ->assertRedirect(route('security.index'));
+        $this->post(route('logout'));
+
+        $this->app['env'] = 'production';
+        $this->post(route('login'), ['email' => $known->email, 'password' => $password])
+            ->assertRedirect(route('security.index'));
     }
 
     public function test_confirmed_totp_challenges_before_login_and_recovery_code_is_hashed_and_one_use(): void
@@ -101,6 +189,9 @@ class SecurityAssuranceTest extends TestCase
             [UserRole::Superadmin, 'superadmin.dashboard'],
         ] as [$role, $route]) {
             $user = User::factory()->create(['role' => $role]);
+            if ($role === UserRole::Supervisor) {
+                $this->grantInstitutionRole($user, InstitutionRole::Instructor);
+            }
             $this->actingAsWithoutMfa($user);
             $this->get(route($route))->assertRedirect(route('security.index'));
         }
@@ -110,8 +201,41 @@ class SecurityAssuranceTest extends TestCase
             ->assertSee('Account security')
             ->assertSee('href="'.route('superadmin.dashboard').'"', false)
             ->assertSee('Return to current dashboard')
-            ->assertSee('Privileged tools are locked—not the whole website')
+            ->assertSee('Administrative tools are locked')
+            ->assertSee('Start MFA setup')
             ->assertSee('Continue as Learner');
+    }
+
+    public function test_privileged_mfa_step_up_expires_after_the_configured_window(): void
+    {
+        config()->set('authentication.mfa.step_up_seconds', 900);
+        $user = User::factory()->create(['role' => UserRole::Superadmin]);
+        $secret = app(MfaService::class)->beginTotp($user);
+        app(MfaService::class)->confirmTotp($user->fresh(), (new Google2FA)->getCurrentOtp($secret));
+
+        $this->actingAsWithoutMfa($user->fresh())
+            ->withSession(['auth.mfa_verified_at' => time() - 901, 'auth.mfa_method' => 'totp'])
+            ->get(route('superadmin.dashboard'))
+            ->assertRedirect(route('security.index'))
+            ->assertSessionHas('warning', __('Your MFA confirmation expired. Sign in again or confirm with a passkey before continuing.'));
+
+        $this->withSession(['auth.mfa_verified_at' => time(), 'auth.mfa_method' => 'totp'])
+            ->get(route('superadmin.dashboard'))
+            ->assertOk();
+    }
+
+    public function test_security_password_confirmation_description_is_translated_in_both_locales(): void
+    {
+        $user = User::factory()->create();
+
+        foreach (['en', 'id'] as $locale) {
+            $this->actingAs($user)->withSession(['locale' => $locale]);
+            $this->get(route('security.confirm'))->assertRedirect(route('password.confirm'));
+            $this->get(route('password.confirm'))
+                ->assertOk()
+                ->assertSee(__('admin.confirm_password_description.security', locale: $locale))
+                ->assertDontSee('admin.confirm_password_description.security');
+        }
     }
 
     public function test_unenrolled_privileged_account_can_reach_safe_surfaces_and_continue_as_learner(): void
@@ -212,6 +336,11 @@ class SecurityAssuranceTest extends TestCase
 
     public function test_csp_report_is_bounded_and_does_not_store_report_urls(): void
     {
+        $this->assertContains(
+            'security/csp-reports',
+            app(ValidateCsrfToken::class)->getExcludedPaths(),
+        );
+
         $this->postJson(route('security.csp-report'), ['csp-report' => [
             'effective-directive' => 'script-src-elem',
             'disposition' => 'enforce',

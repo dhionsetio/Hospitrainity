@@ -13,6 +13,12 @@
 
     @if($errors->any())<div class="mt-6 rounded-lg border border-red-400 bg-red-50 p-4 text-red-950" role="alert"><p class="font-bold">{{ __('Review your search.') }}</p><ul class="mt-2 list-disc pl-5">@foreach($errors->all() as $error)<li>{{ $error }}</li>@endforeach</ul></div>@endif
 
+    @if($classSearchRestricted)
+        <div class="mt-6 rounded-lg border border-amber-300 bg-amber-50 p-4 text-amber-950" role="status">
+            {{ __('Course search is unavailable while you are working inside a Class. Open your learning dashboard for Class modules. You can still search Help and the glossary here.') }}
+        </div>
+    @endif
+
     <form method="GET" action="{{ route('search.index') }}" role="search" class="mt-8 grid gap-4 rounded-xl border border-neutral-300 bg-white p-5 sm:grid-cols-[1fr_13rem_auto] sm:items-end">
         <div>
             <label for="global-search-query" class="block font-semibold text-neutral-800">{{ __('Search terms') }}</label>
@@ -45,7 +51,7 @@
                 @empty
                     <div class="rounded-xl border border-dashed border-neutral-400 bg-white p-6">
                         <h3 class="font-bold text-neutral-950">{{ __('No matching published content') }}</h3>
-                        <p class="mt-2 text-neutral-700">{{ __('Try fewer words, remove the type filter, or search the Help glossary. Drafts, private responses, and cross-institution user records are never included here.') }}</p>
+                        <p class="mt-2 text-neutral-700">{{ __('Try fewer words, remove the type filter, or search Help and the glossary. Search does not include people or private responses.') }}</p>
                         <a href="{{ route('help.index', ['q' => $query]) }}" class="mt-4 inline-flex min-h-11 items-center font-semibold text-indigo-800 underline">{{ __('Search Help and glossary') }}</a>
                     </div>
                 @endforelse
@@ -55,7 +61,7 @@
     @else
         <section class="mt-8 rounded-xl border border-neutral-300 bg-white p-6" aria-labelledby="search-scope-title">
             <h2 id="search-scope-title" class="text-xl font-bold text-neutral-950">{{ __('What search includes') }}</h2>
-            <p class="mt-2 text-neutral-700">{{ __('Only the active published curriculum and versioned self-help content are indexed. User lookup remains inside authorized administration pages.') }}</p>
+            <p class="mt-2 text-neutral-700">{{ __('Search covers published learning content, Help, and the glossary. It does not include people or private responses.') }}</p>
         </section>
     @endif
 </main>

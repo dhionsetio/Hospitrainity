@@ -22,6 +22,7 @@ class DisplayPreferenceTest extends TestCase
             ->assertSee('data-text-scale="default"', escape: false)
             ->assertSee('data-contrast="default"', escape: false)
             ->assertSee('data-audio="on"', escape: false)
+            ->assertSeeText('Show my learning streak')
             ->assertSee('Browser zoom');
     }
 
@@ -35,6 +36,7 @@ class DisplayPreferenceTest extends TestCase
             'ui_text_scale' => 'larger',
             'ui_high_contrast' => '1',
             'ui_no_audio' => '1',
+            'learning_streak_enabled' => '0',
         ])->assertRedirect(route('preferences.edit'));
 
         $user->refresh();
@@ -43,6 +45,7 @@ class DisplayPreferenceTest extends TestCase
         $this->assertSame('larger', $user->ui_text_scale);
         $this->assertTrue($user->ui_high_contrast);
         $this->assertTrue($user->ui_no_audio);
+        $this->assertFalse($user->learning_streak_enabled);
 
         $this->get(route('preferences.edit'))
             ->assertSee('data-theme="dark"', escape: false)

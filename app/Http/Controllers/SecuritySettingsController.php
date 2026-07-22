@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Rules\SecurePassword;
+use App\Services\LocalTesterMfaBypass;
 use App\Services\MfaService;
 use App\Services\RoleLandingResolver;
 use App\Services\SecurityEventRecorder;
@@ -22,6 +23,7 @@ class SecuritySettingsController extends Controller
         Request $request,
         TwoFactorAuthenticationProvider $totp,
         RoleLandingResolver $landing,
+        LocalTesterMfaBypass $testerMfaBypass,
     ): View {
         $user = $request->user();
         $secret = $user->two_factor_secret === null ? null : Crypt::decryptString($user->two_factor_secret);
@@ -35,6 +37,7 @@ class SecuritySettingsController extends Controller
             'currentSessionId' => $request->session()->getId(),
             'recoveryCodes' => $request->session()->pull('new_mfa_recovery_codes', []),
             'passwordFresh' => time() - (int) $request->session()->get('auth.password_confirmed_at', 0) <= (int) config('auth.password_timeout', 900),
+            'localTesterMfaBypass' => $testerMfaBypass->allows($user, $request),
             'returnUrl' => $landing->url($user),
         ]);
     }

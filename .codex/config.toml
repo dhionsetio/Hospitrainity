@@ -1,0 +1,4 @@
+# Repository-scoped MCP configuration. Codex loads this only for a trusted project.
+[mcp_servers.playwright]
+command = "npx.cmd"
+args = ["-y", "@playwright/mcp@0.0.78", "--headless", "--isolated"]

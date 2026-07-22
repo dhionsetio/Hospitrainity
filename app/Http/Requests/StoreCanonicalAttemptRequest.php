@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Enums\WorkContextRole;
 use App\Models\CurriculumEntity;
-use App\Models\CurriculumPackage;
+use App\Services\LearningContentScope;
 use App\Services\WorkContext;
 
 class StoreCanonicalAttemptRequest extends CanonicalAttemptRequest
@@ -24,7 +24,8 @@ class StoreCanonicalAttemptRequest extends CanonicalAttemptRequest
         if ($this->definition !== null) {
             return $this->definition;
         }
-        $package = CurriculumPackage::active();
+        $scope = app(LearningContentScope::class)->current($this, $this->user());
+        $package = $scope['package'];
         abort_if($package === null, 404);
         $activity = CurriculumEntity::query()
             ->where('curriculum_package_id', $package->id)
@@ -32,7 +33,7 @@ class StoreCanonicalAttemptRequest extends CanonicalAttemptRequest
             ->published()
             ->where('code', (string) $this->route('activity'))
             ->first();
-        abort_if($activity === null, 404);
+        abort_if($activity === null || ! app(LearningContentScope::class)->allowsEntity($scope, $activity), 404);
         $prompts = CurriculumEntity::query()
             ->where('curriculum_package_id', $package->id)
             ->where('entity_type', 'prompt-item')

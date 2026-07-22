@@ -24,29 +24,12 @@ final class InstitutionAccessService
             return true;
         }
 
-        if ($this->hasInstitutionRole(
+        return $this->hasInstitutionRole(
             $actor,
             $institution,
             InstitutionRole::Instructor,
             InstitutionRole::InstitutionAdmin,
-        )) {
-            return true;
-        }
-
-        // Expand-first compatibility for existing B01 staff rows. The legacy
-        // role alone is never enough; an active membership in this exact
-        // institution is still required. This branch is removed only after the
-        // normalized-role backfill and role-management UI are fully rehearsed.
-        return ($actor->isAdmin() || $actor->isSupervisor())
-            && $actor->institutionMemberships()
-                ->where('institution_id', $institution->getKey())
-                ->where('status', InstitutionMembershipStatus::Active->value)
-                ->whereIn('provenance', [
-                    'reviewed_exact_legacy_mapping',
-                    'disposable_demo_fixture',
-                    'test_fixture',
-                ])
-                ->exists();
+        );
     }
 
     public function canManageStaff(User $actor, Institution $institution): bool

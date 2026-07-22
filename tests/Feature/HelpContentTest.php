@@ -11,20 +11,21 @@ class HelpContentTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_versioned_public_help_about_and_glossary_are_available_without_a_support_claim(): void
+    public function test_public_help_about_and_glossary_use_plain_task_focused_copy(): void
     {
         $this->get(route('help.index'))
             ->assertOk()
             ->assertSee('Getting started')
             ->assertSee('hsp-card-link', escape: false)
             ->assertSee('aria-label="Return to Hospitrainity"', escape: false)
-            ->assertSee('Help version '.config('help.version'))
+            ->assertDontSee('Help version')
+            ->assertDontSee('thesis prototype')
             ->assertDontSee('dhionsetio@gmail.com');
 
         $this->get(route('help.show', 'invitations-and-codes'))
             ->assertOk()
             ->assertSee('up to 30 days')
-            ->assertSee('separate no-progress view')
+            ->assertSee('separate progress record')
             ->assertDontSee('dhionsetio@gmail.com');
 
         $this->get(route('glossary.index'))
@@ -34,9 +35,9 @@ class HelpContentTest extends TestCase
 
         $this->get(route('about'))
             ->assertOk()
-            ->assertSee('thesis prototype')
-            ->assertSee('not proof of proficiency or mastery')
-            ->assertSee('does not claim guaranteed fluency');
+            ->assertSee('practise English used in hospitality situations')
+            ->assertSee('not a grade or proof of mastery')
+            ->assertDontSee('independent WCAG conformance');
 
         $learner = User::factory()->create(['role' => 'user', 'email_verified_at' => now()]);
         $this->actingAs($learner)

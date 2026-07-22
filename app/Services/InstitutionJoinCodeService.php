@@ -7,6 +7,7 @@ use App\Enums\InstitutionMembershipStatus;
 use App\Enums\InstitutionRole;
 use App\Enums\InstitutionStatus;
 use App\Exceptions\JoinCodeUnavailableException;
+use App\Models\CourseOffering;
 use App\Models\IdentityAudit;
 use App\Models\Institution;
 use App\Models\InstitutionJoinCode;
@@ -31,7 +32,11 @@ final class InstitutionJoinCodeService
 
     private const CODE_LENGTH = 16;
 
-    public function __construct(private readonly InstitutionAccessService $access) {}
+    public function __construct(
+        private readonly InstitutionAccessService $access,
+        private readonly CourseAccessService $courses,
+        private readonly CourseEnrollmentService $enrollments,
+    ) {}
 
     /** @return array{record: InstitutionJoinCode, code: string} */
     public function issue(
@@ -39,6 +44,7 @@ final class InstitutionJoinCodeService
         Institution $institution,
         int $useLimit = 100,
         int $ttlSeconds = self::DEFAULT_TTL_SECONDS,
+        ?CourseOffering $offering = null,
     ): array {
         $useLimit = max(1, min(500, $useLimit));
         if ($ttlSeconds < self::MIN_TTL_SECONDS || $ttlSeconds > self::MAX_TTL_SECONDS) {
@@ -46,7 +52,7 @@ final class InstitutionJoinCodeService
         }
         $plain = $this->generateCode();
 
-        $record = DB::transaction(function () use ($actor, $institution, $useLimit, $ttlSeconds, $plain): InstitutionJoinCode {
+        $record = DB::transaction(function () use ($actor, $institution, $useLimit, $ttlSeconds, $plain, $offering): InstitutionJoinCode {
             $lockedInstitution = Institution::query()->lockForUpdate()->find($institution->getKey());
             $lockedActor = User::query()->lockForUpdate()->find($actor->getKey());
             if ($lockedInstitution === null
@@ -55,10 +61,17 @@ final class InstitutionJoinCodeService
                 || $lockedActor->isDisabled()) {
                 throw new AuthorizationException(__('This action is not authorized.'));
             }
-            $this->access->authorizeLearnerManagement($lockedActor, $lockedInstitution);
+            $lockedOffering = $offering === null
+                ? null
+                : CourseOffering::query()->lockForUpdate()->find($offering->getKey());
+            if ($lockedOffering === null && $offering !== null) {
+                throw new AuthorizationException(__('This action is not authorized.'));
+            }
+            $this->authorizeManagement($lockedActor, $lockedInstitution, $lockedOffering);
 
             $record = InstitutionJoinCode::query()->create([
                 'institution_id' => $lockedInstitution->getKey(),
+                'course_offering_id' => $lockedOffering?->getKey(),
                 'issued_by_user_id' => $lockedActor->getKey(),
                 'token_hash' => $this->hash($plain),
                 'display_suffix' => substr($plain, -4),
@@ -75,6 +88,7 @@ final class InstitutionJoinCodeService
                     'expires_at' => $record->expires_at->toAtomString(),
                     'ttl_seconds' => $ttlSeconds,
                     'use_limit' => $useLimit,
+                    'course_offering_id' => $lockedOffering?->getKey(),
                 ],
                 'created_at' => now(),
             ]);
@@ -88,7 +102,7 @@ final class InstitutionJoinCodeService
     public function revoke(User $actor, InstitutionJoinCode $code): void
     {
         DB::transaction(function () use ($actor, $code): void {
-            $reference = InstitutionJoinCode::query()->select(['id', 'institution_id'])->find($code->getKey());
+            $reference = InstitutionJoinCode::query()->select(['id', 'institution_id', 'course_offering_id'])->find($code->getKey());
             if ($reference === null) {
                 throw new AuthorizationException(__('This action is not authorized.'));
             }
@@ -98,7 +112,13 @@ final class InstitutionJoinCodeService
             if ($institution === null || $lockedActor === null || $lockedCode === null) {
                 throw new AuthorizationException(__('This action is not authorized.'));
             }
-            $this->access->authorizeLearnerManagement($lockedActor, $institution);
+            $offering = $reference->course_offering_id === null
+                ? null
+                : CourseOffering::query()->lockForUpdate()->find($reference->course_offering_id);
+            if ($reference->course_offering_id !== null && $offering === null) {
+                throw new AuthorizationException(__('This action is not authorized.'));
+            }
+            $this->authorizeManagement($lockedActor, $institution, $offering);
             if ($lockedCode->revoked_at !== null) {
                 return;
             }
@@ -125,7 +145,7 @@ final class InstitutionJoinCodeService
 
         $request = DB::transaction(function () use ($user, $normalized): InstitutionJoinRequest {
             $reference = InstitutionJoinCode::query()
-                ->select(['id', 'institution_id'])
+                ->select(['id', 'institution_id', 'course_offering_id'])
                 ->where('token_hash', $this->hash($normalized))
                 ->first();
             if ($reference === null) {
@@ -134,17 +154,24 @@ final class InstitutionJoinCodeService
 
             $institution = Institution::query()->lockForUpdate()->find($reference->institution_id);
             $code = InstitutionJoinCode::query()->whereKey($reference->getKey())->lockForUpdate()->first();
+            $offering = $reference->course_offering_id === null
+                ? null
+                : CourseOffering::query()->lockForUpdate()->find($reference->course_offering_id);
             $lockedUser = User::query()->lockForUpdate()->find($user->getKey());
             if ($institution === null
                 || $institution->status !== InstitutionStatus::Active
                 || $code === null
                 || ! $code->isRedeemable()
+                || ($reference->course_offering_id !== null
+                    && ($offering === null
+                        || $offering->institution_id !== $institution->getKey()
+                        || ! $offering->acceptsEnrollments()))
                 || $lockedUser === null
                 || $lockedUser->isDisabled()) {
                 throw new JoinCodeUnavailableException('The join code is unavailable.');
             }
 
-            if (InstitutionMembership::query()
+            if ($offering === null && InstitutionMembership::query()
                 ->where('institution_id', $institution->getKey())
                 ->where('user_id', $lockedUser->getKey())
                 ->where('status', InstitutionMembershipStatus::Active->value)
@@ -155,6 +182,7 @@ final class InstitutionJoinCodeService
             $pending = InstitutionJoinRequest::query()
                 ->where('institution_id', $institution->getKey())
                 ->where('user_id', $lockedUser->getKey())
+                ->where('course_offering_id', $offering?->getKey())
                 ->where('status', InstitutionJoinRequestStatus::Pending->value)
                 ->lockForUpdate()
                 ->first();
@@ -164,6 +192,7 @@ final class InstitutionJoinCodeService
 
             $request = InstitutionJoinRequest::query()->create([
                 'institution_id' => $institution->getKey(),
+                'course_offering_id' => $offering?->getKey(),
                 'user_id' => $lockedUser->getKey(),
                 'join_code_id' => $code->getKey(),
                 'status' => InstitutionJoinRequestStatus::Pending,
@@ -177,6 +206,7 @@ final class InstitutionJoinCodeService
                 'metadata' => [
                     'join_request_id' => $request->getKey(),
                     'join_code_id' => $code->getKey(),
+                    'course_offering_id' => $offering?->getKey(),
                 ],
                 'created_at' => now(),
             ]);
@@ -184,14 +214,14 @@ final class InstitutionJoinCodeService
             return $request;
         }, attempts: 3);
 
-        return $request->loadMissing('institution');
+        return $request->loadMissing(['institution', 'offering']);
     }
 
     public function decide(User $actor, InstitutionJoinRequest $request, bool $approve): InstitutionJoinRequest
     {
         return DB::transaction(function () use ($actor, $request, $approve): InstitutionJoinRequest {
             $reference = InstitutionJoinRequest::query()
-                ->select(['id', 'institution_id'])
+                ->select(['id', 'institution_id', 'course_offering_id'])
                 ->find($request->getKey());
             if ($reference === null) {
                 throw new AuthorizationException(__('This action is not authorized.'));
@@ -204,10 +234,16 @@ final class InstitutionJoinCodeService
                 ->where('institution_id', $reference->institution_id)
                 ->lockForUpdate()
                 ->first();
+            $offering = $reference->course_offering_id === null
+                ? null
+                : CourseOffering::query()->lockForUpdate()->find($reference->course_offering_id);
             if ($institution === null || $lockedActor === null || $lockedRequest === null) {
                 throw new AuthorizationException(__('This action is not authorized.'));
             }
-            $this->access->authorizeLearnerManagement($lockedActor, $institution);
+            if ($reference->course_offering_id !== null && $offering === null) {
+                throw new AuthorizationException(__('This action is not authorized.'));
+            }
+            $this->authorizeManagement($lockedActor, $institution, $offering);
             if ($lockedRequest->status !== InstitutionJoinRequestStatus::Pending) {
                 throw new RuntimeException('This membership request has already been decided.');
             }
@@ -245,6 +281,15 @@ final class InstitutionJoinCodeService
                     'assigned_by_user_id' => $lockedActor->getKey(),
                     'assigned_at' => now(),
                 ])->forceFill(['revoked_at' => null])->save();
+
+                if ($offering !== null) {
+                    $this->enrollments->enrollFromApprovedConnection(
+                        $offering,
+                        $membership,
+                        $lockedActor,
+                        __('classes.events.code_enrollment'),
+                    );
+                }
             }
 
             $lockedRequest->forceFill([
@@ -257,7 +302,10 @@ final class InstitutionJoinCodeService
                 'target_user_id' => $lockedRequest->user_id,
                 'institution_id' => $institution->getKey(),
                 'event' => $approve ? 'membership_request.approved' : 'membership_request.rejected',
-                'metadata' => ['join_request_id' => $lockedRequest->getKey()],
+                'metadata' => [
+                    'join_request_id' => $lockedRequest->getKey(),
+                    'course_offering_id' => $offering?->getKey(),
+                ],
                 'created_at' => now(),
             ]);
 
@@ -274,6 +322,23 @@ final class InstitutionJoinCodeService
         }
 
         return $code;
+    }
+
+    private function authorizeManagement(
+        User $actor,
+        Institution $institution,
+        ?CourseOffering $offering,
+    ): void {
+        if ($offering === null) {
+            $this->access->authorizeLearnerManagement($actor, $institution);
+
+            return;
+        }
+        if ($offering->institution_id !== $institution->getKey()
+            || ! $offering->acceptsEnrollments()
+            || ! $this->courses->canManageOffering($actor, $offering)) {
+            throw new AuthorizationException(__('This action is not authorized.'));
+        }
     }
 
     private function normalize(string $code): ?string

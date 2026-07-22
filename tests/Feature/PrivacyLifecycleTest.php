@@ -6,9 +6,11 @@ use App\Enums\DataSubjectRequestStatus;
 use App\Enums\DataSubjectRequestType;
 use App\Enums\UserRole;
 use App\Jobs\SendPushNotification;
+use App\Models\CurriculumEntity;
 use App\Models\DataExport;
 use App\Models\Institution;
 use App\Models\InstitutionMembership;
+use App\Models\LearnerTextResponse;
 use App\Models\PushSubscription;
 use App\Models\User;
 use App\Services\AccountErasureService;
@@ -22,22 +24,29 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Str;
+use Tests\Feature\Concerns\InstallsCanonicalCurriculumFixture;
 use Tests\TestCase;
 use ZipArchive;
 
 class PrivacyLifecycleTest extends TestCase
 {
+    use InstallsCanonicalCurriculumFixture;
     use RefreshDatabase;
 
-    public function test_public_policy_pages_are_versioned_bilingual_and_linked_before_registration(): void
+    public function test_public_policy_pages_show_useful_content_and_links_before_registration(): void
     {
         foreach (['privacy', 'terms', 'accessibility', 'acceptable-use', 'support'] as $type) {
             $this->get(route('policies.show', ['type' => $type]))
                 ->assertOk()
-                ->assertSee('2026-07-20-prototype.1')
                 ->assertSee('href="'.url('/').'"', false)
-                ->assertSee('qualified legal review not recorded', false);
+                ->assertDontSee('2026-07-20-prototype.1')
+                ->assertDontSee('qualified legal review not recorded', false);
         }
+
+        $this->get(route('policies.show', ['type' => 'privacy']))
+            ->assertOk()
+            ->assertSeeText('Data we handle')
+            ->assertSeeText('How long data is kept');
 
         $this->get(route('register'))
             ->assertOk()
@@ -150,6 +159,7 @@ class PrivacyLifecycleTest extends TestCase
 
     public function test_deletion_orchestrator_is_idempotent_and_keeps_only_pseudonymous_institution_evidence(): void
     {
+        $package = $this->installCanonicalCurriculumFixture();
         $learner = User::factory()->create(['email' => 'erase@example.test']);
         $admin = User::factory()->create(['role' => UserRole::Superadmin]);
         $institution = Institution::query()->create([
@@ -166,6 +176,43 @@ class PrivacyLifecycleTest extends TestCase
             'is_default' => true,
             'provenance' => 'test_double',
             'joined_at' => now(),
+        ]);
+        $activity = CurriculumEntity::query()
+            ->where('curriculum_package_id', $package->getKey())
+            ->where('code', 'HSP-C07-ACT-ROLEPLAY')
+            ->sole();
+        $prompt = CurriculumEntity::query()
+            ->where('curriculum_package_id', $package->getKey())
+            ->where('code', 'HSP-C07-RP-FREE')
+            ->sole();
+        $responseEvidence = [
+            'user_id' => $learner->getKey(),
+            'curriculum_package_id' => $package->getKey(),
+            'activity_entity_id' => $activity->getKey(),
+            'prompt_entity_id' => $prompt->getKey(),
+            'activity_source_sha256' => $activity->source_sha256,
+            'prompt_source_sha256' => $prompt->source_sha256,
+        ];
+        $personalBody = 'Private personal journal response.';
+        $personalResponse = LearnerTextResponse::query()->create($responseEvidence + [
+            'response_key' => (string) Str::uuid(),
+            'learning_scope_key' => 'personal',
+            'institution_membership_id' => null,
+            'kind' => 'journal',
+            'state' => 'draft',
+            'body' => $personalBody,
+            'body_hmac_sha256' => hash_hmac('sha256', $personalBody, (string) config('app.key')),
+        ]);
+        $institutionBody = 'Submitted institution assessment response.';
+        $institutionResponse = LearnerTextResponse::query()->create($responseEvidence + [
+            'response_key' => (string) Str::uuid(),
+            'learning_scope_key' => 'institution:'.$membership->getKey(),
+            'institution_membership_id' => $membership->getKey(),
+            'kind' => 'assessment',
+            'state' => 'submitted',
+            'body' => $institutionBody,
+            'body_hmac_sha256' => hash_hmac('sha256', $institutionBody, (string) config('app.key')),
+            'submitted_at' => now(),
         ]);
 
         DB::table('curriculum_activity_progress')->insert([
@@ -201,6 +248,9 @@ class PrivacyLifecycleTest extends TestCase
         $this->assertNull($learner->email_verified_at);
         $this->assertDatabaseMissing('curriculum_activity_progress', ['user_id' => $learner->getKey(), 'activity_code' => 'personal-a']);
         $this->assertDatabaseHas('curriculum_activity_progress', ['user_id' => $learner->getKey(), 'activity_code' => 'institution-a']);
+        $this->assertDatabaseMissing('learner_text_responses', ['id' => $personalResponse->getKey()]);
+        $this->assertDatabaseHas('learner_text_responses', ['id' => $institutionResponse->getKey()]);
+        $this->assertSame($institutionBody, $institutionResponse->fresh()->body);
         $this->assertDatabaseHas('institution_memberships', ['id' => $membership->getKey(), 'status' => 'revoked', 'is_default' => false]);
         $this->assertNotNull(PushSubscription::query()->firstOrFail()->revoked_at);
         $this->assertDatabaseCount('account_erasure_steps', 5);

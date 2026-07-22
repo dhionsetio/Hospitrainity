@@ -67,8 +67,9 @@ class CanonicalPackageReaderTest extends TestCase
 
         $this->assertSame($package->evidence['standalone']['sha256'], hash('sha256', $rendered));
         $this->assertSame(file_get_contents(config('curriculum.standalone_output')), $rendered);
-        $this->assertStringContainsString('CF-7 release pending', $rendered);
-        $this->assertStringContainsString('development verification only', $rendered);
+        $this->assertStringContainsString('Hospitrainity offline course', $rendered);
+        $this->assertStringNotContainsString('CF-7 release pending', $rendered);
+        $this->assertStringNotContainsString('development verification only', $rendered);
         $this->assertStringNotContainsString('closed CP-02 approval gate', $rendered);
         $this->assertStringNotContainsString('phase-09/curriculum.sql', $rendered);
         $this->assertStringNotContainsString('24 activities / 102 prompts', $rendered);

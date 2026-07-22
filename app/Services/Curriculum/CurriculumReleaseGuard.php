@@ -73,7 +73,7 @@ final class CurriculumReleaseGuard
     public function assertDeliverable(CurriculumPackage $package): void
     {
         $draft = strtolower(trim((string) $package->lifecycle_status)) === 'draft';
-        $release = $package->release;
+        $release = $this->releaseFor($package);
         if ($release !== null
             && ! hash_equals((string) $package->source_tree_sha256, (string) $release->source_tree_sha256)) {
             throw new RuntimeException('Curriculum delivery refused: release and package source checksums do not match.');
@@ -93,6 +93,40 @@ final class CurriculumReleaseGuard
                 || ! $this->releaseHasActivationEvidence($release)
                 || ! hash_equals((string) $package->source_tree_sha256, (string) $release->source_tree_sha256)) {
                 throw new RuntimeException('Production delivery refused: the active curriculum does not have an approved non-draft release.');
+            }
+
+            return;
+        }
+
+        if ($draft && config('curriculum.release.allow_draft_active_preview') !== true) {
+            throw new RuntimeException('Draft curriculum preview is disabled in this environment.');
+        }
+    }
+
+    /**
+     * A Class keeps delivering the immutable package pinned by its Course
+     * Revision after a newer global package is activated. In production, the
+     * pinned package must still carry the complete approval and activation
+     * evidence that made it deliverable originally; withdrawn or never-active
+     * releases remain blocked.
+     */
+    public function assertPinnedDeliverable(CurriculumPackage $package): void
+    {
+        $draft = strtolower(trim((string) $package->lifecycle_status)) === 'draft';
+        $release = $this->releaseFor($package);
+        if ($release !== null
+            && ! hash_equals((string) $package->source_tree_sha256, (string) $release->source_tree_sha256)) {
+            throw new RuntimeException('Curriculum delivery refused: release and package source checksums do not match.');
+        }
+
+        if (app()->isProduction()) {
+            if ($draft
+                || $release === null
+                || ! in_array($release->state, [CurriculumReleaseState::Active, CurriculumReleaseState::Retired], true)
+                || ($release->state === CurriculumReleaseState::Active && $release->preview_only)
+                || ! $this->releaseHasCompleteApprovalEvidence($release)
+                || ! $this->releaseHasActivationEvidence($release)) {
+                throw new RuntimeException('Production Class delivery refused: the pinned curriculum was not fully approved and activated.');
             }
 
             return;
@@ -236,5 +270,21 @@ final class CurriculumReleaseGuard
     private function refuseProductionRollback(): never
     {
         throw new RuntimeException('Production rollback refused: the snapshot does not contain exactly one fully approved, non-draft active release.');
+    }
+
+    private function releaseFor(CurriculumPackage $package): ?CurriculumRelease
+    {
+        if (! $package->relationLoaded('release')) {
+            return CurriculumRelease::query()
+                ->where('curriculum_package_id', $package->getKey())
+                ->first();
+        }
+
+        $release = $package->getRelation('release');
+        if ($release !== null && ! $release instanceof CurriculumRelease) {
+            throw new RuntimeException('Curriculum delivery refused: the loaded release relationship is invalid.');
+        }
+
+        return $release;
     }
 }

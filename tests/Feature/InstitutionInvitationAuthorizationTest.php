@@ -4,12 +4,14 @@ namespace Tests\Feature;
 
 use App\Enums\AccountDisableReason;
 use App\Enums\InstitutionMembershipStatus;
+use App\Enums\InstitutionRole;
 use App\Enums\LegacyInstitutionState;
 use App\Enums\UserRole;
 use App\Exceptions\InvitationUnavailableException;
 use App\Models\Institution;
 use App\Models\InstitutionInvitation;
 use App\Models\InstitutionMembership;
+use App\Models\InstitutionRoleAssignment;
 use App\Models\User;
 use App\Services\AccountLifecycleService;
 use App\Services\InstitutionContext;
@@ -143,7 +145,12 @@ class InstitutionInvitationAuthorizationTest extends TestCase
             ]);
 
         $roleChangedActor = $this->member(UserRole::Admin, $hq);
-        User::query()->whereKey($roleChangedActor->id)->update(['role' => UserRole::Learner->value]);
+        InstitutionRoleAssignment::query()
+            ->whereHas('membership', fn ($query) => $query
+                ->where('user_id', $roleChangedActor->getKey())
+                ->where('institution_id', $hq->getKey()))
+            ->where('role', InstitutionRole::InstitutionAdmin->value)
+            ->update(['revoked_at' => now()]);
 
         foreach ([
             fn () => $service->issue($membershipRevokedActor, $hq, 'blocked-membership@example.com'),
@@ -317,13 +324,22 @@ class InstitutionInvitationAuthorizationTest extends TestCase
             'instansi' => $institution->name_id,
             'legacy_institution_state' => LegacyInstitutionState::Mapped,
         ]);
-        InstitutionMembership::query()->create([
+        $membership = InstitutionMembership::query()->create([
             'institution_id' => $institution->id,
             'user_id' => $user->id,
             'status' => InstitutionMembershipStatus::Active,
             'is_default' => true,
             'provenance' => 'test_fixture',
             'joined_at' => now(),
+        ]);
+        InstitutionRoleAssignment::query()->create([
+            'institution_membership_id' => $membership->getKey(),
+            'role' => match ($role) {
+                UserRole::Admin => InstitutionRole::InstitutionAdmin,
+                UserRole::Supervisor => InstitutionRole::Instructor,
+                default => InstitutionRole::Learner,
+            },
+            'assigned_at' => now(),
         ]);
 
         return $user;

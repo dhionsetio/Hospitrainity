@@ -61,6 +61,10 @@
                     <input id="ui_no_audio" name="ui_no_audio" value="1" type="checkbox" class="mt-0.5 h-5 w-5 shrink-0" @checked(old('ui_no_audio', $user->ui_no_audio))>
                     <span><span class="block font-semibold">{{ __('Prefer no audio') }}</span><span class="block text-sm text-neutral-700">{{ __('Records your preference for text or visual alternatives. It does not remove required learning information.') }}</span></span>
                 </label>
+                <label class="flex min-h-11 cursor-pointer items-start gap-3 rounded-lg border border-neutral-300 p-4">
+                    <input id="learning_streak_enabled" name="learning_streak_enabled" value="1" type="checkbox" class="mt-0.5 h-5 w-5 shrink-0" @checked(old('learning_streak_enabled', $user->learning_streak_enabled))>
+                    <span><span class="block font-semibold">{{ __('engagement.show_streak') }}</span><span class="block text-sm text-neutral-700">{{ __('engagement.show_streak_help') }}</span></span>
+                </label>
             </div>
         </fieldset>
 

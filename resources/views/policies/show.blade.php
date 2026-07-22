@@ -8,15 +8,8 @@
         <x-back-control :href="$returnUrl" :label="$returnLabel" />
         <article class="mt-6 rounded-xl border border-neutral-200 bg-white p-6 shadow-sm sm:p-10">
             <header class="border-b border-neutral-200 pb-6">
-                <p class="text-sm font-semibold uppercase tracking-wide text-indigo-700">{{ __('Public trust document') }}</p>
-                <h1 class="mt-2 text-3xl font-bold">{{ $document['title'] }}</h1>
+                <h1 class="text-3xl font-bold">{{ $document['title'] }}</h1>
                 <p class="mt-3 text-lg text-neutral-700">{{ $document['summary'] }}</p>
-                <dl class="mt-4 grid gap-2 text-sm text-neutral-700 sm:grid-cols-2">
-                    <div><dt class="font-semibold">{{ __('Version') }}</dt><dd>{{ $document['version'] }}</dd></div>
-                    <div><dt class="font-semibold">{{ __('Effective date') }}</dt><dd>{{ $document['effective_date'] }}</dd></div>
-                    <div><dt class="font-semibold">{{ __('Authoritative language') }}</dt><dd>{{ strtoupper($document['authoritative_locale']) }}</dd></div>
-                    <div><dt class="font-semibold">{{ __('Review status') }}</dt><dd>{{ $document['review_status'] }}</dd></div>
-                </dl>
             </header>
 
             <div class="mt-8 space-y-8">

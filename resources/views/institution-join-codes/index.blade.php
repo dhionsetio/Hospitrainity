@@ -20,7 +20,7 @@
                 <div class="rounded-md border border-amber-300 bg-amber-50 p-5 text-amber-950" role="status">
                     <p class="font-bold">{{ __('Copy this code now') }}</p>
                     <code class="mt-2 block break-all text-xl font-bold tracking-wider">{{ session('issued_join_code') }}</code>
-                    <p class="mt-2 text-sm">{{ __('Only a one-way fingerprint is stored; the full code cannot be recovered later.') }}</p>
+                    <p class="mt-2 text-sm">{{ __('This is the only time the full code will be shown.') }}</p>
                 </div>
             @endif
 
@@ -103,7 +103,7 @@
                                             <button type="submit" class="font-semibold text-red-700 hover:text-red-900">{{ __('Revoke') }}</button>
                                         </form>
                                     @else
-                                        <span aria-hidden="true" class="text-neutral-400">—</span><span class="sr-only">{{ __('No actions available') }}</span>
+                                        <span class="text-neutral-500">{{ __('None') }}</span>
                                     @endif
                                 </td>
                             </tr>
@@ -132,7 +132,7 @@
                                             <form method="POST" action="{{ route($routePrefix.'.join-requests.update', $joinRequest) }}">@csrf @method('PATCH')<input type="hidden" name="decision" value="reject"><button type="submit" class="font-semibold text-red-700 hover:text-red-900">{{ __('Reject') }}</button></form>
                                         </div>
                                     @else
-                                        <span aria-hidden="true" class="text-neutral-400">—</span><span class="sr-only">{{ __('No actions available') }}</span>
+                                        <span class="text-neutral-500">{{ __('None') }}</span>
                                     @endif
                                 </td>
                             </tr>

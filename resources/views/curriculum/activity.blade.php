@@ -59,13 +59,13 @@
         />
 
         <header class="hsp-practice-hero mt-4">
-            <p class="text-sm font-semibold text-indigo-700">{{ $curriculumActivity['section']['title'] }}@if($showCurriculumEvidence) · {{ $curriculumActivity['section']['code'] }}@endif</p>
+            <p class="text-sm font-semibold text-indigo-700">{{ $curriculumActivity['section']['title'] }}@if($showCurriculumEvidence && Auth::user()?->isSuperAdmin()) · {{ $curriculumActivity['section']['code'] }}@endif</p>
             <h1 class="mt-2 text-3xl font-bold text-neutral-950">{{ $curriculumActivity['title'] }}</h1>
             <div class="hsp-practice-status mt-4">
                 <span><i class="fa-solid {{ $curriculumActivity['progress']['completed'] ? 'fa-circle-check' : 'fa-bolt' }}" aria-hidden="true"></i> {{ $progressLabel }}</span>
                 <small>{{ trans_choice(':count attempt|:count attempts', $curriculumActivity['progress']['attempt_count'], ['count' => $curriculumActivity['progress']['attempt_count']]) }}</small>
             </div>
-            @if($showCurriculumEvidence)
+            @if($showCurriculumEvidence && Auth::user()?->isSuperAdmin())
                 <div class="mt-4 flex flex-wrap gap-2">
                     <span class="rounded-full border border-neutral-300 bg-neutral-50 px-3 py-1 text-xs font-semibold text-neutral-700">{{ __('Progress state: :state', ['state' => str_replace('_', ' ', $curriculumActivity['progress']['state'])]) }}</span>
                     @foreach (['cefr_activity', 'pedagogical_function', 'response_form', 'channel', 'participation', 'scoring_mode', 'timing'] as $field)
@@ -79,20 +79,14 @@
             <aside class="mt-5 rounded-lg border border-sky-200 bg-sky-50 p-4 leading-7 text-sky-950" aria-label="{{ __('Activity guidance') }}">{{ $curriculumActivity['guidance'] }}</aside>
         @endif
 
-        @if($showCurriculumEvidence)
+        @if($showCurriculumEvidence && Auth::user()?->isSuperAdmin())
             <aside class="mt-5 rounded-lg border border-amber-300 bg-amber-50 p-4 text-sm leading-6 text-amber-950" aria-label="{{ __('Response privacy') }}">
-                {{ __('Raw open role-play and writing text is not saved in your attempt history. A validation error may keep it temporarily in your current session so this form can preserve your response. Audio recording is disabled. Confidence ratings are saved for your own history and are not proficiency or CEFR evidence.') }}
+                {{ __('Open writing is not copied into attempt history. Learners can save it through the separate Saved writing workflow. Audio recording is disabled. Confidence ratings remain separate from grades.') }}
             </aside>
         @else
             <aside class="mt-5 flex gap-3 rounded-lg border border-sky-200 bg-sky-50 p-4 text-sm leading-6 text-sky-950" aria-label="{{ __('Response privacy') }}">
                 <i class="fa-solid fa-shield-halved mt-1" aria-hidden="true"></i>
-                <p>{{ __('Your written practice stays private and is not added to your attempt history. Confidence ratings, when shown, are saved only for your own reflection.') }}</p>
-            </aside>
-        @endif
-
-        @if ($curriculumActivity['progress']['legacy_reveal_only'])
-            <aside class="mt-5 rounded-lg border border-neutral-300 bg-white p-4 text-sm text-neutral-800" role="note">
-                {{ __('A legacy reveal-only completion exists. It is preserved as history but does not count as a completed response attempt for this version.') }}
+                <p>{{ __('Your activity check stays private. For open writing, use Save this response when you want to keep a draft or submit it.') }}</p>
             </aside>
         @endif
 
@@ -145,7 +139,7 @@
                             <span><i class="fa-solid {{ $promptIcon($prompt['response_form']) }}" aria-hidden="true"></i></span>
                             <p>{{ __('Prompt :number of :total', ['number' => $loop->iteration, 'total' => count($curriculumActivity['prompts'])]) }}</p>
                         </div>
-                        @if($showCurriculumEvidence)
+                        @if($showCurriculumEvidence && Auth::user()?->isSuperAdmin())
                             <p class="text-xs font-semibold uppercase tracking-wide text-indigo-700">{{ $prompt['code'] }} · {{ str_replace('_', ' ', $prompt['scoring_mode']) }}</p>
                         @endif
 
@@ -226,10 +220,16 @@
                             @else
                                 <textarea id="response-{{ $prompt['code'] }}" name="responses[{{ $prompt['code'] }}]" rows="6" maxlength="{{ $prompt['response_constraints']['maximum_characters'] ?? 6000 }}" class="mt-3 block w-full rounded-lg border-neutral-400" aria-describedby="privacy-{{ $prompt['code'] }}{{ $responseInvalid ? ' prompt-error-'.$prompt['code'] : '' }}" @if($responseInvalid) aria-invalid="true" @endif>{{ old('responses.'.$prompt['code']) }}</textarea>
                                 <p id="privacy-{{ $prompt['code'] }}" class="mt-2 text-sm text-neutral-600">
-                                    {{ $showCurriculumEvidence
+                                    {{ ($showCurriculumEvidence && Auth::user()?->isSuperAdmin())
                                         ? __('This text stays in the current form/session and is not persisted as a raw server response.')
                                         : __('Your response is used only for this practice check and is not added to your attempt history.') }}
                                 </p>
+                                @if(!isset($curriculumPreview) && in_array($prompt['response_form'], config('course_assistant.open_response_forms', []), true))
+                                    <a href="{{ route('responses.edit', [$curriculumActivity['code'], $prompt['code']]) }}" class="mt-3 inline-flex min-h-11 items-center gap-2 rounded-lg border border-indigo-700 px-4 py-2 font-semibold text-indigo-800 hover:bg-indigo-50">
+                                        <i class="fa-solid fa-floppy-disk" aria-hidden="true"></i>
+                                        <span><span class="block">{{ __('engagement.save_response') }}</span><span class="block text-sm font-normal text-neutral-600">{{ __('engagement.save_response_help') }}</span></span>
+                                    </a>
+                                @endif
                                 @if ($prompt['self_check_required'])
                                     <label class="mt-3 flex min-h-11 items-center gap-3 rounded-lg border border-neutral-300 p-3">
                                         <input type="checkbox" name="self_checks[{{ $prompt['code'] }}]" value="1" class="h-5 w-5 shrink-0" @checked(old('self_checks.'.$prompt['code'])) @if($selfCheckInvalid) aria-invalid="true" aria-describedby="prompt-error-{{ $prompt['code'] }}" @endif>

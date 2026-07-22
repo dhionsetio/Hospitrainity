@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Models\LearnerTextResponse;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use RuntimeException;
@@ -49,7 +50,8 @@ class DataExportBuilder
             ->where('user_id', $user->getKey())
             ->orderBy('created_at')
             ->get([
-                'learning_scope_key', 'package_name', 'content_version', 'activity_code', 'section_code',
+                'learning_scope_key', 'institution_membership_id', 'course_offering_id', 'course_enrollment_id',
+                'package_name', 'content_version', 'activity_code', 'section_code',
                 'viewed_at', 'started_at', 'attempted_at', 'self_checked_at', 'completed_at', 'baseline_skipped_at',
             ])->map(fn ($row): array => (array) $row)->all();
 
@@ -57,9 +59,27 @@ class DataExportBuilder
             ->where('user_id', $user->getKey())
             ->orderBy('created_at')
             ->get([
-                'id', 'learning_scope_key', 'package_name', 'content_version', 'activity_code',
+                'id', 'learning_scope_key', 'institution_membership_id', 'course_offering_id', 'course_enrollment_id',
+                'package_name', 'content_version', 'activity_code',
                 'intent', 'state', 'completion_reason', 'started_at', 'attempted_at', 'self_checked_at', 'completed_at',
             ])->map(fn ($row): array => (array) $row)->all();
+
+        $savedWriting = LearnerTextResponse::query()
+            ->with(['activity:id,code,payload', 'prompt:id,code,payload'])
+            ->where('user_id', $user->getKey())
+            ->orderBy('created_at')
+            ->get()
+            ->map(static fn (LearnerTextResponse $response): array => [
+                'activity' => $response->activity?->payloadData()['title'] ?? $response->activity?->code,
+                'prompt' => $response->prompt?->payloadData()['stem'] ?? $response->prompt?->code,
+                'kind' => $response->kind,
+                'state' => $response->state,
+                'response' => $response->body,
+                'submitted_at' => $response->submitted_at?->toIso8601String(),
+                'created_at' => $response->created_at?->toIso8601String(),
+                'updated_at' => $response->updated_at?->toIso8601String(),
+            ])
+            ->all();
 
         $acknowledgements = DB::table('policy_acknowledgements')
             ->where('user_id', $user->getKey())
@@ -78,10 +98,11 @@ class DataExportBuilder
                 throw new RuntimeException('export_archive_unavailable');
             }
             $zip->addFromString('profile.json', json_encode($profile, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_THROW_ON_ERROR));
-            $zip->addFromString('summary.html', $this->html($profile, $memberships, $progress, $attempts, $acknowledgements));
+            $zip->addFromString('summary.html', $this->html($profile, $memberships, $progress, $attempts, $savedWriting, $acknowledgements));
             $zip->addFromString('memberships.csv', $this->csv($memberships));
             $zip->addFromString('progress.csv', $this->csv($progress));
             $zip->addFromString('attempts.csv', $this->csv($attempts));
+            $zip->addFromString('saved-writing.csv', $this->csv($savedWriting));
             $zip->addFromString('policy-acknowledgements.csv', $this->csv($acknowledgements));
             $zip->close();
 
@@ -135,7 +156,7 @@ class DataExportBuilder
      */
     private function html(array $profile, array ...$datasets): string
     {
-        [$memberships, $progress, $attempts, $acknowledgements] = $datasets;
+        [$memberships, $progress, $attempts, $savedWriting, $acknowledgements] = $datasets;
         $account = $profile['account'];
 
         $body = '<h1>Hospitrainity personal data export</h1>';
@@ -149,6 +170,7 @@ class DataExportBuilder
         $body .= $this->htmlTable('Institution memberships', $memberships);
         $body .= $this->htmlTable('Learning progress', $progress);
         $body .= $this->htmlTable('Learning attempts', $attempts);
+        $body .= $this->htmlTable('Saved writing', $savedWriting);
         $body .= $this->htmlTable('Policy acknowledgements', $acknowledgements);
 
         return '<!doctype html><html lang="en"><head><meta charset="utf-8">'

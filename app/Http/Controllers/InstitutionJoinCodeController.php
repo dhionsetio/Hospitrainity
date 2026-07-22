@@ -23,8 +23,9 @@ class InstitutionJoinCodeController extends Controller
         return view('institution-join-codes.index', [
             'institution' => $institution,
             'institutions' => $context->availableFor($actor),
-            'codes' => $institution->joinCodes()->with('issuer:id,name')->latest()->paginate(20, ['*'], 'codes'),
+            'codes' => $institution->joinCodes()->whereNull('course_offering_id')->with('issuer:id,name')->latest()->paginate(20, ['*'], 'codes'),
             'requests' => $institution->joinRequests()
+                ->whereNull('course_offering_id')
                 ->with(['user:id,name,email', 'decidedBy:id,name'])
                 ->orderByRaw('CASE WHEN status = ? THEN 0 ELSE 1 END', [InstitutionJoinRequestStatus::Pending->value])
                 ->latest('requested_at')

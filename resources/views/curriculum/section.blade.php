@@ -52,6 +52,25 @@
             </ol>
             <h1 class="mt-2 break-words text-3xl font-bold text-neutral-950 sm:text-4xl">{{ $curriculumSection['title'] }}</h1>
             <div class="mt-5 flex flex-wrap gap-3">
+                @unless(Auth::user()?->ui_no_audio)
+                    <button
+                        type="button"
+                        class="hsp-action inline-flex min-h-11 items-center gap-2 rounded-lg border border-indigo-700 bg-white px-5 py-2 font-semibold text-indigo-800 hover:bg-indigo-50"
+                        data-speak-target="lesson-content"
+                        data-speak-language="en-US"
+                        data-playing-message="{{ __('engagement.listening_started') }}"
+                        data-finished-message="{{ __('engagement.listening_finished') }}"
+                        data-stopped-message="{{ __('engagement.listening_stopped') }}"
+                        data-failed-message="{{ __('engagement.listening_failed') }}"
+                        aria-describedby="lesson-listening-status"
+                        aria-pressed="false"
+                    >
+                        <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
+                        <span data-listen-label>{{ __('engagement.listen_lesson') }}</span>
+                        <span data-stop-label hidden>{{ __('engagement.stop_listening') }}</span>
+                    </button>
+                    <span id="lesson-listening-status" class="sr-only" aria-live="polite"></span>
+                @endunless
                 @if ($primaryActivity)
                     <a href="#activity-{{ $primaryActivity['id'] }}" class="hsp-action inline-flex min-h-11 items-center rounded-lg bg-indigo-700 px-5 py-2 font-semibold text-white hover:bg-indigo-800">{{ __('Continue to activity') }}</a>
                 @elseif (!isset($curriculumPreview) && $curriculumSection['step']['is_last_section'])
@@ -75,7 +94,7 @@
             </details>
         @endif
 
-        <article class="hsp-lesson-content mt-6 space-y-5" aria-label="{{ $curriculumSection['title'] }}">
+        <article id="lesson-content" class="hsp-lesson-content mt-6 space-y-5" aria-label="{{ $curriculumSection['title'] }}">
             @foreach ($curriculumSection['blocks'] as $block)
                 @switch($block['type'])
                     @case('heading')
@@ -112,7 +131,7 @@
                         @break
 
                     @case('source_table')
-                        @if($showCurriculumEvidence)
+                        @if($showCurriculumEvidence && Auth::user()?->isSuperAdmin())
                             <div class="max-w-full overflow-x-auto rounded-lg border border-neutral-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-700" role="region" aria-label="{{ $block['caption'] }}" tabindex="0">
                                 <table class="min-w-full border-collapse text-left text-sm text-neutral-900">
                                     <caption class="sr-only">{{ $block['caption'] }}</caption>
@@ -172,7 +191,7 @@
                         @elseif(($block['asset']['kind'] ?? null) === 'audio')
                             <audio controls preload="metadata" class="w-full"><source src="{{ $block['asset']['url'] }}" type="{{ $block['asset']['mime_type'] ?? '' }}">{{ __('Your browser does not support embedded audio.') }}</audio>
                         @endif
-                        <figcaption class="mt-2 text-sm text-neutral-700"><span class="font-semibold">{{ $block['asset']['display_name'] }}</span> &mdash; {{ $block['asset']['accessibility_text'] }}</figcaption>
+                        <figcaption class="mt-2 text-sm text-neutral-700"><span class="font-semibold">{{ $block['asset']['display_name'] }}</span>: {{ $block['asset']['accessibility_text'] }}</figcaption>
                     </figure>
                 @endif
             @endforeach
@@ -200,7 +219,7 @@
             @endif
         </nav>
 
-        @if($showCurriculumEvidence)
+        @if($showCurriculumEvidence && Auth::user()?->isSuperAdmin())
             <details class="mt-6 rounded-lg border border-neutral-300 bg-white p-4 text-sm text-neutral-700">
                 <summary class="cursor-pointer font-semibold">{{ __('Source and lifecycle evidence') }}</summary>
                 <dl class="mt-3 grid gap-2 sm:grid-cols-2">

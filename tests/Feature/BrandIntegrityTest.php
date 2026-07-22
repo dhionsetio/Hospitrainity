@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use App\Enums\InstitutionMembershipStatus;
+use App\Enums\InstitutionRole;
 use App\Models\Institution;
 use App\Models\InstitutionMembership;
 use App\Models\User;
@@ -79,6 +80,7 @@ class BrandIntegrityTest extends TestCase
                     'provenance' => 'test_fixture',
                     'joined_at' => now(),
                 ]);
+                $this->grantInstitutionRole($user, InstitutionRole::Instructor, $institution);
             }
             $route = match ($role) {
                 'user' => 'dashboard',

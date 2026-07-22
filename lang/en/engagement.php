@@ -1,0 +1,27 @@
+<?php
+
+return [
+    'practice_tools' => 'Practice tools',
+    'practice_tools_intro' => 'Get help from your course or continue writing you saved.',
+    'assistant' => 'Ask the course assistant',
+    'assistant_description' => 'Find answers and related pages from your current course.',
+    'saved_writing' => 'Open saved writing',
+    'saved_writing_description' => 'Continue private drafts or review submitted responses.',
+    'review_title' => 'Review practice',
+    'review_due' => 'Ready to review',
+    'review_empty' => 'No review activity is due now.',
+    'open_review' => 'Review now',
+    'streak' => ':count-day learning streak',
+    'streak_zero' => 'Complete an activity today to start a learning streak.',
+    'streak_note' => 'A streak counts distinct learning days. It does not affect grades or progress.',
+    'show_streak' => 'Show my learning streak',
+    'show_streak_help' => 'Display consecutive learning days on your dashboard. You can turn this off at any time.',
+    'save_response' => 'Save this response',
+    'save_response_help' => 'Keep a private draft or submit a copy of this writing.',
+    'listen_lesson' => 'Listen to this lesson',
+    'stop_listening' => 'Stop listening',
+    'listening_started' => 'Reading the lesson aloud.',
+    'listening_finished' => 'Lesson reading finished.',
+    'listening_stopped' => 'Lesson reading stopped.',
+    'listening_failed' => 'Your browser could not read this lesson aloud. You can continue reading the text.',
+];

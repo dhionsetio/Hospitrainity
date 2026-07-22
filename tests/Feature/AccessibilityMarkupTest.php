@@ -165,7 +165,6 @@ class AccessibilityMarkupTest extends TestCase
             'admin content' => $this->actingAs($admin)->get(route('admin.curriculum-drafts.index')),
             'admin exercises' => $this->actingAs($admin)->get(route('admin.curriculum-exercises.index')),
             'admin progress' => $this->actingAs($admin)->get(route('admin.progress.index')),
-            'admin legacy evidence' => $this->actingAs($admin)->get(route('admin.legacy-evidence.index')),
             'superadmin dashboard' => $this->actingAs($superadmin)->get(route('superadmin.dashboard')),
             'superadmin content' => $this->actingAs($superadmin)->get(route('superadmin.curriculum-drafts.index')),
             'superadmin exercises' => $this->actingAs($superadmin)->get(route('superadmin.curriculum-exercises.index')),

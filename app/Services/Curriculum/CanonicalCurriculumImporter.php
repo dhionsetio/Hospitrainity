@@ -124,14 +124,8 @@ final class CanonicalCurriculumImporter
                     $this->insertEntities($package->id, $source);
                     $this->insertLinks($package->id, $source);
                 } else {
-                    $retainedEntityIds = DB::table('curriculum_entities')
-                        ->where('curriculum_package_id', $package->id)
-                        ->pluck('id', 'source_path')
-                        ->map(static fn ($id): int => (int) $id)
-                        ->all();
                     DB::table('curriculum_links')->where('curriculum_package_id', $package->id)->delete();
                     DB::table('curriculum_source_files')->where('curriculum_package_id', $package->id)->delete();
-                    DB::table('curriculum_entities')->where('curriculum_package_id', $package->id)->delete();
                     $package->update([
                         'package_name' => $source->metadata['package'],
                         'content_version' => $source->metadata['content_version'],
@@ -149,7 +143,7 @@ final class CanonicalCurriculumImporter
                         'imported_at' => now(),
                     ]);
                     $this->insertSourceFiles($package->id, $source);
-                    $this->insertEntities($package->id, $source, $retainedEntityIds);
+                    $this->synchronizeEntities($package->id, $source);
                     $this->insertLinks($package->id, $source);
                 }
 
@@ -306,31 +300,145 @@ final class CanonicalCurriculumImporter
         }
     }
 
-    /** @param array<string, int> $retainedIdsBySourcePath */
-    private function insertEntities(int $packageId, CanonicalPackage $source, array $retainedIdsBySourcePath = []): void
+    private function insertEntities(int $packageId, CanonicalPackage $source): void
     {
         foreach (array_chunk($source->entities, 100) as $chunk) {
-            DB::table('curriculum_entities')->insert(array_map(static function (array $entity) use ($packageId, $retainedIdsBySourcePath): array {
-                $row = [
-                    'curriculum_package_id' => $packageId,
-                    'entity_uuid' => $entity['entity_uuid'],
-                    'code' => $entity['code'],
-                    'entity_type' => $entity['entity_type'],
-                    'parent_code' => $entity['parent_code'],
-                    'position' => $entity['position'],
-                    'lifecycle_status' => $entity['lifecycle_status'],
-                    'content_version' => $entity['content_version'],
-                    'source_path' => $entity['source_path'],
-                    'source_sha256' => $entity['source_sha256'],
-                    'payload' => CanonicalJson::encode($entity['payload']),
-                ];
-                if (isset($retainedIdsBySourcePath[$entity['source_path']])) {
-                    $row['id'] = $retainedIdsBySourcePath[$entity['source_path']];
-                }
-
-                return $row;
-            }, $chunk));
+            DB::table('curriculum_entities')->insert(array_map(
+                fn (array $entity): array => $this->entityStorageRow($packageId, $entity),
+                $chunk,
+            ));
         }
+    }
+
+    private function synchronizeEntities(int $packageId, CanonicalPackage $source): void
+    {
+        $existingByPath = [];
+        $existingById = [];
+        foreach (DB::table('curriculum_entities')->where('curriculum_package_id', $packageId)->orderBy('id')->get() as $stored) {
+            $row = (array) $stored;
+            $existingByPath[$row['source_path']] = $row;
+            $existingById[(int) $row['id']] = $row;
+        }
+
+        $desiredByPath = [];
+        foreach ($source->entities as $entity) {
+            $path = (string) $entity['source_path'];
+            if (isset($desiredByPath[$path])) {
+                throw new RuntimeException("Canonical projection contains a duplicate entity source path: {$path}");
+            }
+            $desiredByPath[$path] = $entity;
+        }
+
+        $this->assertLearnerResponseEntityIdentities($packageId, $existingById, $desiredByPath);
+
+        $orphanIds = [];
+        foreach ($existingByPath as $path => $row) {
+            if (! isset($desiredByPath[$path])) {
+                $orphanIds[] = (int) $row['id'];
+            }
+        }
+
+        // Free the package-scoped UUID and code keys before repairing rows so
+        // a swapped or otherwise corrupted projection cannot cause an
+        // order-dependent uniqueness failure.
+        DB::table('curriculum_entities')->where('curriculum_package_id', $packageId)->update([
+            'entity_uuid' => null,
+            'code' => null,
+        ]);
+
+        if ($orphanIds !== []) {
+            DB::table('curriculum_entities')->whereIn('id', $orphanIds)->delete();
+        }
+
+        foreach ($desiredByPath as $path => $entity) {
+            $row = $this->entityStorageRow($packageId, $entity);
+            if (isset($existingByPath[$path])) {
+                DB::table('curriculum_entities')
+                    ->where('curriculum_package_id', $packageId)
+                    ->where('id', (int) $existingByPath[$path]['id'])
+                    ->update($row);
+
+                continue;
+            }
+
+            DB::table('curriculum_entities')->insert($row);
+        }
+    }
+
+    /**
+     * @param  array<int, array<string, mixed>>  $existingById
+     * @param  array<string, array<string, mixed>>  $desiredByPath
+     */
+    private function assertLearnerResponseEntityIdentities(int $packageId, array $existingById, array $desiredByPath): void
+    {
+        $responses = DB::table('learner_text_responses')
+            ->where('curriculum_package_id', $packageId)
+            ->orderBy('id')
+            ->lockForUpdate()
+            ->get();
+
+        foreach ($responses as $response) {
+            $activity = $this->desiredReferencedEntity(
+                $existingById,
+                $desiredByPath,
+                (int) $response->activity_entity_id,
+                'activity',
+                (string) $response->activity_source_sha256,
+            );
+            $prompt = $this->desiredReferencedEntity(
+                $existingById,
+                $desiredByPath,
+                (int) $response->prompt_entity_id,
+                'prompt-item',
+                (string) $response->prompt_source_sha256,
+            );
+
+            if (($prompt['parent_code'] ?? null) !== ($activity['code'] ?? null)) {
+                throw new RuntimeException('Projection repair refused because a saved learner response no longer references the same activity and prompt relationship.');
+            }
+        }
+    }
+
+    /**
+     * @param  array<int, array<string, mixed>>  $existingById
+     * @param  array<string, array<string, mixed>>  $desiredByPath
+     * @return array<string, mixed>
+     */
+    private function desiredReferencedEntity(
+        array $existingById,
+        array $desiredByPath,
+        int $entityId,
+        string $expectedType,
+        string $expectedSha256,
+    ): array {
+        $existing = $existingById[$entityId] ?? null;
+        $desired = $existing === null ? null : ($desiredByPath[$existing['source_path']] ?? null);
+        if ($desired === null
+            || ($desired['entity_type'] ?? null) !== $expectedType
+            || ! is_string($desired['source_sha256'] ?? null)
+            || ! hash_equals(strtolower($expectedSha256), strtolower($desired['source_sha256']))) {
+            throw new RuntimeException('Projection repair refused because a saved learner response cannot retain its exact curriculum entity identity.');
+        }
+
+        return $desired;
+    }
+
+    /** @param array<string, mixed> $entity @return array<string, mixed> */
+    private function entityStorageRow(int $packageId, array $entity): array
+    {
+        return [
+            'curriculum_package_id' => $packageId,
+            'entity_uuid' => $entity['entity_uuid'],
+            'code' => $entity['code'],
+            'entity_type' => $entity['entity_type'],
+            'parent_code' => $entity['parent_code'],
+            'position' => $entity['position'],
+            'lifecycle_status' => $entity['lifecycle_status'],
+            'content_version' => $entity['content_version'],
+            'source_path' => $entity['source_path'],
+            'source_sha256' => $entity['source_sha256'],
+            'payload' => CanonicalJson::encode($entity['payload']),
+        ];
     }
 
     private function insertLinks(int $packageId, CanonicalPackage $source): void
@@ -463,7 +571,7 @@ final class CanonicalCurriculumImporter
         $contents = is_file($output) ? file_get_contents($output) : false;
 
         return [
-            'snapshot_version' => '1.0.0',
+            'snapshot_version' => '1.1.0',
             'created_at' => now()->toIso8601String(),
             'tables' => $tables,
             'standalone' => $contents === false ? ['exists' => false] : [
@@ -480,15 +588,35 @@ final class CanonicalCurriculumImporter
         return hash('sha256', CanonicalJson::encode($snapshot['tables']));
     }
 
+    /** @param list<array<string, mixed>> $snapshotResponses */
+    private function assertLearnerResponsesUnchangedSinceSnapshot(array $snapshotResponses): void
+    {
+        $currentResponses = DB::table('learner_text_responses')
+            ->orderBy('id')
+            ->lockForUpdate()
+            ->get()
+            ->map(static fn ($row): array => (array) $row)
+            ->all();
+        $expected = hash('sha256', CanonicalJson::encode($snapshotResponses));
+        $actual = hash('sha256', CanonicalJson::encode($currentResponses));
+
+        if (! hash_equals($expected, $actual)) {
+            throw new RuntimeException('Rollback refused because saved learner responses changed after the rollback snapshot was recorded.');
+        }
+    }
+
     /** @param array<string, mixed> $snapshot */
     private function restoreSnapshot(array $snapshot): void
     {
         $tables = $snapshot['tables'] ?? throw new RuntimeException('Rollback artifact has no database tables.');
+        $snapshotResponses = $tables['learner_text_responses'] ?? [];
         $draftReferences = $this->draftReferences();
         $retainedEntityIds = array_map(static fn (array $row): int => (int) $row['id'], $tables['curriculum_entities'] ?? []);
         $orphanIds = DB::table('curriculum_entities')->whereNotIn('id', $retainedEntityIds === [] ? [-1] : $retainedEntityIds)->pluck('id')->map(static fn ($id): int => (int) $id)->all();
 
-        DB::transaction(function () use ($tables, $orphanIds, $draftReferences): void {
+        DB::transaction(function () use ($tables, $orphanIds, $draftReferences, $snapshotResponses): void {
+            $this->assertLearnerResponsesUnchangedSinceSnapshot($snapshotResponses);
+
             if ($orphanIds !== []) {
                 Completion::purgeForCompletableIds([CurriculumEntity::class => $orphanIds]);
             }
@@ -498,6 +626,10 @@ final class CanonicalCurriculumImporter
                 DB::table('curriculum_drafts')->update(['base_package_id' => null, 'published_package_id' => null]);
             }
 
+            $responseIds = array_column($snapshotResponses, 'id');
+            if ($responseIds !== []) {
+                DB::table('learner_text_responses')->whereIn('id', $responseIds)->delete();
+            }
             DB::table('curriculum_attempt_events')->delete();
             DB::table('curriculum_responses')->delete();
             DB::table('curriculum_attempts')->delete();
@@ -675,6 +807,7 @@ final class CanonicalCurriculumImporter
             'curriculum_source_files',
             'curriculum_entities',
             'curriculum_links',
+            'learner_text_responses',
             'curriculum_activity_progress',
             'curriculum_attempts',
             'curriculum_responses',

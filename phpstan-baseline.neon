@@ -127,12 +127,6 @@ parameters:
 			path: app/Http/Controllers/InstitutionInvitationController.php
 
 		-
-			message: '#^Cannot call method toDayDateTimeString\(\) on string\.$#'
-			identifier: method.nonObject
-			count: 1
-			path: app/Http/Controllers/InstitutionInvitationController.php
-
-		-
 			message: '#^Offset 0 on non\-empty\-list\<string\> on left side of \?\? always exists and is not nullable\.$#'
 			identifier: nullCoalesce.offset
 			count: 1
@@ -233,12 +227,6 @@ parameters:
 			identifier: argument.type
 			count: 2
 			path: app/Http/Controllers/Superadmin/PrivacyRequestAdministrationController.php
-
-		-
-			message: '#^Access to an undefined property App\\Models\\User\:\:\$overall_progress\.$#'
-			identifier: property.notFound
-			count: 1
-			path: app/Http/Controllers/Supervisor/SpvDashboardController.php
 
 		-
 			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$media_url\.$#'
@@ -397,18 +385,6 @@ parameters:
 			path: app/Models/IdentityAudit.php
 
 		-
-			message: '#^Cannot call method isFuture\(\) on string\.$#'
-			identifier: method.nonObject
-			count: 1
-			path: app/Models/InstitutionInvitation.php
-
-		-
-			message: '#^Cannot call method isFuture\(\) on string\.$#'
-			identifier: method.nonObject
-			count: 1
-			path: app/Models/InstitutionJoinCode.php
-
-		-
 			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$items\.$#'
 			identifier: property.notFound
 			count: 2
@@ -517,24 +493,6 @@ parameters:
 			path: app/Policies/InstitutionInvitationPolicy.php
 
 		-
-			message: '#^Property App\\Policies\\InstitutionInvitationPolicy\:\:\$access is never read, only written\.$#'
-			identifier: property.onlyWritten
-			count: 1
-			path: app/Policies/InstitutionInvitationPolicy.php
-
-		-
-			message: '#^Strict comparison using \!\=\= between string and App\\Enums\\InstitutionStatus\:\:Active will always evaluate to true\.$#'
-			identifier: notIdentical.alwaysTrue
-			count: 1
-			path: app/Policies/InstitutionInvitationPolicy.php
-
-		-
-			message: '#^Unreachable statement \- code above always terminates\.$#'
-			identifier: deadCode.unreachable
-			count: 1
-			path: app/Policies/InstitutionInvitationPolicy.php
-
-		-
 			message: '#^Access to an undefined property Illuminate\\Contracts\\Auth\\Authenticatable\:\:\$email\.$#'
 			identifier: property.notFound
 			count: 2
@@ -631,31 +589,13 @@ parameters:
 			path: app/Services/CanonicalCurriculumRepository.php
 
 		-
-			message: '#^Call to function is_array\(\) with null will always evaluate to false\.$#'
-			identifier: function.impossibleType
-			count: 1
-			path: app/Services/CanonicalCurriculumRepository.php
-
-		-
 			message: '#^Method App\\Services\\CanonicalCurriculumRepository\:\:dashboardChaptersFor\(\) should return Illuminate\\Support\\Collection\<int, array\<string, mixed\>\> but returns Illuminate\\Support\\Collection\<int, array\{code\: string\|null, title\: mixed, module\: int, status\: string\|null, sections_count\: int\<0, max\>, activities_count\: int\<0, max\>, progress\: int, completed_activities\: int\<0, max\>\}\>\.$#'
 			identifier: return.type
 			count: 1
 			path: app/Services/CanonicalCurriculumRepository.php
 
 		-
-			message: '#^Offset ''audio_asset'' on string on left side of \?\? does not exist\.$#'
-			identifier: nullCoalesce.offset
-			count: 1
-			path: app/Services/CanonicalCurriculumRepository.php
-
-		-
 			message: '#^Offset ''blocks'' on string on left side of \?\? does not exist\.$#'
-			identifier: nullCoalesce.offset
-			count: 1
-			path: app/Services/CanonicalCurriculumRepository.php
-
-		-
-			message: '#^Offset ''choices'' on string on left side of \?\? does not exist\.$#'
 			identifier: nullCoalesce.offset
 			count: 1
 			path: app/Services/CanonicalCurriculumRepository.php
@@ -675,7 +615,7 @@ parameters:
 		-
 			message: '#^Offset ''module'' does not exist on string\.$#'
 			identifier: offsetAccess.notFound
-			count: 6
+			count: 4
 			path: app/Services/CanonicalCurriculumRepository.php
 
 		-
@@ -685,27 +625,9 @@ parameters:
 			path: app/Services/CanonicalCurriculumRepository.php
 
 		-
-			message: '#^Offset ''path'' on \*NEVER\* on left side of \?\? always exists and is not nullable\.$#'
-			identifier: nullCoalesce.offset
-			count: 1
-			path: app/Services/CanonicalCurriculumRepository.php
-
-		-
-			message: '#^Offset ''rating_scale'' on string on left side of \?\? does not exist\.$#'
-			identifier: nullCoalesce.offset
-			count: 1
-			path: app/Services/CanonicalCurriculumRepository.php
-
-		-
-			message: '#^Offset ''response_constraints'' on string on left side of \?\? does not exist\.$#'
-			identifier: nullCoalesce.offset
-			count: 1
-			path: app/Services/CanonicalCurriculumRepository.php
-
-		-
 			message: '#^Offset ''response_form'' does not exist on string\.$#'
 			identifier: offsetAccess.notFound
-			count: 3
+			count: 2
 			path: app/Services/CanonicalCurriculumRepository.php
 
 		-
@@ -715,51 +637,27 @@ parameters:
 			path: app/Services/CanonicalCurriculumRepository.php
 
 		-
-			message: '#^Offset ''scoring_mode'' on string on left side of \?\? does not exist\.$#'
-			identifier: nullCoalesce.offset
-			count: 1
-			path: app/Services/CanonicalCurriculumRepository.php
-
-		-
-			message: '#^Offset ''self_check_required'' on string on left side of \?\? does not exist\.$#'
-			identifier: nullCoalesce.offset
-			count: 1
-			path: app/Services/CanonicalCurriculumRepository.php
-
-		-
 			message: '#^Offset ''source_locator'' on string on left side of \?\? does not exist\.$#'
 			identifier: nullCoalesce.offset
-			count: 3
-			path: app/Services/CanonicalCurriculumRepository.php
-
-		-
-			message: '#^Offset ''stem'' does not exist on string\.$#'
-			identifier: offsetAccess.notFound
-			count: 1
+			count: 2
 			path: app/Services/CanonicalCurriculumRepository.php
 
 		-
 			message: '#^Offset ''title'' does not exist on string\.$#'
 			identifier: offsetAccess.notFound
-			count: 11
-			path: app/Services/CanonicalCurriculumRepository.php
-
-		-
-			message: '#^Offset ''tokens'' on string on left side of \?\? does not exist\.$#'
-			identifier: nullCoalesce.offset
-			count: 1
+			count: 10
 			path: app/Services/CanonicalCurriculumRepository.php
 
 		-
 			message: '#^Parameter \#1 \$array \(array\{\}\) to function array_values is empty, call has no effect\.$#'
 			identifier: arrayValues.empty
-			count: 3
+			count: 1
 			path: app/Services/CanonicalCurriculumRepository.php
 
 		-
 			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,App\\Models\\CurriculumEntity\>\:\:map\(\) contains unresolvable type\.$#'
 			identifier: argument.unresolvableType
-			count: 3
+			count: 2
 			path: app/Services/CanonicalCurriculumRepository.php
 
 		-
@@ -783,12 +681,6 @@ parameters:
 		-
 			message: '#^Parameter \#2 \.\.\.\$arrays of function array_merge expects array, string given\.$#'
 			identifier: argument.type
-			count: 2
-			path: app/Services/CanonicalCurriculumRepository.php
-
-		-
-			message: '#^Result of && is always false\.$#'
-			identifier: booleanAnd.alwaysFalse
 			count: 2
 			path: app/Services/CanonicalCurriculumRepository.php
 
@@ -1441,12 +1333,6 @@ parameters:
 			path: app/Services/Curriculum/CurriculumReleaseGuard.php
 
 		-
-			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$preview_only\.$#'
-			identifier: property.notFound
-			count: 1
-			path: app/Services/Curriculum/CurriculumReleaseGuard.php
-
-		-
 			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$recorded_by_user_id\.$#'
 			identifier: property.notFound
 			count: 1
@@ -1465,18 +1351,6 @@ parameters:
 			path: app/Services/Curriculum/CurriculumReleaseGuard.php
 
 		-
-			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$source_tree_sha256\.$#'
-			identifier: property.notFound
-			count: 2
-			path: app/Services/Curriculum/CurriculumReleaseGuard.php
-
-		-
-			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$state\.$#'
-			identifier: property.notFound
-			count: 1
-			path: app/Services/Curriculum/CurriculumReleaseGuard.php
-
-		-
 			message: '#^Offset ''actor_user_id'' on non\-empty\-array\<mixed\> on left side of \?\? always exists and is not nullable\.$#'
 			identifier: nullCoalesce.offset
 			count: 1
@@ -1485,18 +1359,6 @@ parameters:
 		-
 			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,Illuminate\\Database\\Eloquent\\Model\>\:\:map\(\) contains unresolvable type\.$#'
 			identifier: argument.unresolvableType
-			count: 1
-			path: app/Services/Curriculum/CurriculumReleaseGuard.php
-
-		-
-			message: '#^Parameter \#1 \$release of method App\\Services\\Curriculum\\CurriculumReleaseGuard\:\:releaseHasActivationEvidence\(\) expects App\\Models\\CurriculumRelease, Illuminate\\Database\\Eloquent\\Model given\.$#'
-			identifier: argument.type
-			count: 1
-			path: app/Services/Curriculum/CurriculumReleaseGuard.php
-
-		-
-			message: '#^Parameter \#1 \$release of method App\\Services\\Curriculum\\CurriculumReleaseGuard\:\:releaseHasCompleteApprovalEvidence\(\) expects App\\Models\\CurriculumRelease, Illuminate\\Database\\Eloquent\\Model given\.$#'
-			identifier: argument.type
 			count: 1
 			path: app/Services/Curriculum/CurriculumReleaseGuard.php
 
@@ -1510,42 +1372,6 @@ parameters:
 			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$source_tree_sha256\.$#'
 			identifier: property.notFound
 			count: 1
-			path: app/Services/Curriculum/CurriculumReleaseLifecycle.php
-
-		-
-			message: '#^Constant App\\Services\\Curriculum\\CurriculumReleaseLifecycle\:\:ALLOWED is unused\.$#'
-			identifier: classConstant.unused
-			count: 1
-			path: app/Services/Curriculum/CurriculumReleaseLifecycle.php
-
-		-
-			message: '#^Method App\\Services\\Curriculum\\CurriculumReleaseLifecycle\:\:activate\(\) is unused\.$#'
-			identifier: method.unused
-			count: 1
-			path: app/Services/Curriculum/CurriculumReleaseLifecycle.php
-
-		-
-			message: '#^Method App\\Services\\Curriculum\\CurriculumReleaseLifecycle\:\:assertAllApprovalGates\(\) is unused\.$#'
-			identifier: method.unused
-			count: 1
-			path: app/Services/Curriculum/CurriculumReleaseLifecycle.php
-
-		-
-			message: '#^Strict comparison using \!\=\= between string and App\\Enums\\CurriculumReleaseState will always evaluate to true\.$#'
-			identifier: notIdentical.alwaysTrue
-			count: 1
-			path: app/Services/Curriculum/CurriculumReleaseLifecycle.php
-
-		-
-			message: '#^Strict comparison using \!\=\= between string and App\\Enums\\CurriculumReleaseState\:\:InReview will always evaluate to true\.$#'
-			identifier: notIdentical.alwaysTrue
-			count: 1
-			path: app/Services/Curriculum/CurriculumReleaseLifecycle.php
-
-		-
-			message: '#^Unreachable statement \- code above always terminates\.$#'
-			identifier: deadCode.unreachable
-			count: 2
 			path: app/Services/Curriculum/CurriculumReleaseLifecycle.php
 
 		-
@@ -1627,24 +1453,6 @@ parameters:
 			path: app/Services/InstitutionAccessService.php
 
 		-
-			message: '#^Result of \|\| is always true\.$#'
-			identifier: booleanOr.alwaysTrue
-			count: 1
-			path: app/Services/InstitutionAccessService.php
-
-		-
-			message: '#^Strict comparison using \!\=\= between string and App\\Enums\\InstitutionStatus\:\:Active will always evaluate to true\.$#'
-			identifier: notIdentical.alwaysTrue
-			count: 1
-			path: app/Services/InstitutionAccessService.php
-
-		-
-			message: '#^Unreachable statement \- code above always terminates\.$#'
-			identifier: deadCode.unreachable
-			count: 1
-			path: app/Services/InstitutionAccessService.php
-
-		-
 			message: '#^Using nullsafe property access on non\-nullable type string\. Use \-\> instead\.$#'
 			identifier: nullsafe.neverNull
 			count: 1
@@ -1655,72 +1463,6 @@ parameters:
 			identifier: property.notFound
 			count: 1
 			path: app/Services/InstitutionInvitationService.php
-
-		-
-			message: '#^Method App\\Services\\InstitutionInvitationService\:\:authorizeInvitationActor\(\) is unused\.$#'
-			identifier: method.unused
-			count: 1
-			path: app/Services/InstitutionInvitationService.php
-
-		-
-			message: '#^Result of \|\| is always true\.$#'
-			identifier: booleanOr.alwaysTrue
-			count: 3
-			path: app/Services/InstitutionInvitationService.php
-
-		-
-			message: '#^Strict comparison using \!\=\= between string and App\\Enums\\InstitutionStatus\:\:Active will always evaluate to true\.$#'
-			identifier: notIdentical.alwaysTrue
-			count: 3
-			path: app/Services/InstitutionInvitationService.php
-
-		-
-			message: '#^Unreachable statement \- code above always terminates\.$#'
-			identifier: deadCode.unreachable
-			count: 3
-			path: app/Services/InstitutionInvitationService.php
-
-		-
-			message: '#^Result of \|\| is always true\.$#'
-			identifier: booleanOr.alwaysTrue
-			count: 8
-			path: app/Services/InstitutionJoinCodeService.php
-
-		-
-			message: '#^Strict comparison using \!\=\= between string and App\\Enums\\InstitutionJoinRequestStatus\:\:Pending will always evaluate to true\.$#'
-			identifier: notIdentical.alwaysTrue
-			count: 1
-			path: app/Services/InstitutionJoinCodeService.php
-
-		-
-			message: '#^Strict comparison using \!\=\= between string and App\\Enums\\InstitutionStatus\:\:Active will always evaluate to true\.$#'
-			identifier: notIdentical.alwaysTrue
-			count: 2
-			path: app/Services/InstitutionJoinCodeService.php
-
-		-
-			message: '#^Unreachable statement \- code above always terminates\.$#'
-			identifier: deadCode.unreachable
-			count: 3
-			path: app/Services/InstitutionJoinCodeService.php
-
-		-
-			message: '#^Property App\\Services\\InstitutionRoleManager\:\:\$access is never read, only written\.$#'
-			identifier: property.onlyWritten
-			count: 1
-			path: app/Services/InstitutionRoleManager.php
-
-		-
-			message: '#^Strict comparison using \!\=\= between string and App\\Enums\\InstitutionMembershipStatus\:\:Active will always evaluate to true\.$#'
-			identifier: notIdentical.alwaysTrue
-			count: 1
-			path: app/Services/InstitutionRoleManager.php
-
-		-
-			message: '#^Unreachable statement \- code above always terminates\.$#'
-			identifier: deadCode.unreachable
-			count: 1
-			path: app/Services/InstitutionRoleManager.php
 
 		-
 			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$is_active\.$#'

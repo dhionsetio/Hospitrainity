@@ -40,7 +40,7 @@
             <h2 id="learning-context-heading" class="text-xl font-bold text-neutral-900">{{ __('Learning context') }}</h2>
             <p class="mt-1 text-sm text-neutral-600">{{ __('Choose where new progress is recorded. Contexts never combine institution permissions invisibly.') }}</p>
             <div class="mt-4 grid gap-3 sm:grid-cols-2">
-                @if($currentContext['membership_id'] === null)
+                @if($currentContext['membership_id'] === null && !$currentContext['class_invalidated'])
                     <div class="hsp-context-current" aria-current="true">
                         <div>
                             <h3 class="font-bold text-neutral-900">{{ __('Personal self-study') }}</h3>
@@ -62,7 +62,7 @@
                     </form>
                 @endif
                 @foreach($memberships as $membership)
-                    @if($currentContext['membership_id'] === $membership->id)
+                    @if($currentContext['course_enrollment_id'] === null && $currentContext['membership_id'] === $membership->id)
                         <div class="hsp-context-current" aria-current="true">
                             <div>
                                 <h3 class="font-bold text-neutral-900">{{ $membership->institution->displayName(app()->getLocale()) }}</h3>
@@ -85,6 +85,30 @@
                         </form>
                     @endif
                 @endforeach
+                @foreach($classEnrollments as $enrollment)
+                    @if($currentContext['course_enrollment_id'] === $enrollment->id)
+                        <div class="hsp-context-current" aria-current="true">
+                            <div>
+                                <h3 class="font-bold text-neutral-900">{{ $enrollment->offering->title }}</h3>
+                                <p class="mt-1 text-sm text-neutral-600">{{ $enrollment->membership->institution->displayName(app()->getLocale()) }} · {{ __('New progress is saved to this Class.') }}</p>
+                            </div>
+                            <span class="hsp-status-pill"><i class="fa-solid fa-check" aria-hidden="true"></i> {{ __('Current context') }}</span>
+                        </div>
+                    @else
+                        <form method="POST" action="{{ route('learning-context.select') }}">
+                            @csrf
+                            <input type="hidden" name="scope" value="class">
+                            <input type="hidden" name="course_enrollment_id" value="{{ $enrollment->id }}">
+                            <button type="submit" class="hsp-context-choice">
+                                <span>
+                                    <span class="block font-bold text-neutral-900">{{ $enrollment->offering->title }}</span>
+                                    <span class="mt-1 block text-sm text-neutral-600">{{ $enrollment->membership->institution->displayName(app()->getLocale()) }} · {{ __('New progress is saved to this Class.') }}</span>
+                                </span>
+                                <span class="hsp-context-choice__action">{{ __('Use this context') }} <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+                            </button>
+                        </form>
+                    @endif
+                @endforeach
             </div>
         </section>
 
@@ -92,17 +116,18 @@
             <h2 id="request-history-heading" class="p-6 text-xl font-bold text-neutral-900">{{ __('Join-request history') }}</h2>
             <table class="w-full text-left text-sm text-neutral-700">
                 <thead class="border-y bg-neutral-50 text-xs uppercase text-neutral-600">
-                    <tr><th class="px-6 py-3">{{ __('Institution') }}</th><th class="px-6 py-3">{{ __('Requested') }}</th><th class="px-6 py-3">{{ __('Status') }}</th></tr>
+                    <tr><th class="px-6 py-3">{{ __('Institution') }}</th><th class="px-6 py-3">{{ __('classes.navigation') }}</th><th class="px-6 py-3">{{ __('Requested') }}</th><th class="px-6 py-3">{{ __('Status') }}</th></tr>
                 </thead>
                 <tbody class="divide-y">
                     @forelse($requests as $joinRequest)
                         <tr>
                             <td class="px-6 py-4">{{ $joinRequest->institution->displayName(app()->getLocale()) }}</td>
+                            <td class="px-6 py-4">{{ $joinRequest->offering?->title ?? __('None') }}</td>
                             <td class="px-6 py-4">{{ $joinRequest->requested_at->toDayDateTimeString() }}</td>
                             <td class="px-6 py-4">{{ __(ucfirst($joinRequest->status->value)) }}</td>
                         </tr>
                     @empty
-                        <tr><td colspan="3" class="px-6 py-8 text-center text-neutral-500">{{ __('No join requests yet.') }}</td></tr>
+                        <tr><td colspan="4" class="px-6 py-8 text-center text-neutral-500">{{ __('No join requests yet.') }}</td></tr>
                     @endforelse
                 </tbody>
             </table>

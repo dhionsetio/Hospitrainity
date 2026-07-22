@@ -43,6 +43,8 @@ class ProgressController extends Controller
 
         $user = $request->user();
         $context = $learning->current($request, $user);
+        abort_if($context['class_invalidated'], 403);
+        abort_if($context['course_enrollment_id'] !== null, 410, __('Legacy progress tracking is unavailable in a Class learning context.'));
 
         // Resolve to a known model class via the allowlist (never from raw input).
         $modelClass = self::COMPLETABLE_TYPES[$validated['type']];
@@ -74,6 +76,8 @@ class ProgressController extends Controller
                 'user_id' => $user->getKey(),
                 'learning_scope_key' => $context['scope_key'],
                 'institution_membership_id' => $context['membership_id'],
+                'course_offering_id' => null,
+                'course_enrollment_id' => null,
                 'completable_id' => $itemId,
                 'completable_type' => $modelClass,
                 'created_at' => $timestamp,

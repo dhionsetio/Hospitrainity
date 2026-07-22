@@ -23,6 +23,7 @@ const accounts = {
     learner: { email: 'user@example.com', password: randomSecret() },
     superadmin: { email: 'superadmin@example.com', password: randomSecret() },
     supervisor: { email: 'supervisor@example.com', password: randomSecret() },
+    admin: { email: 'admin@example.com', password: randomSecret() },
 };
 
 const seedEnv = {
@@ -31,12 +32,14 @@ const seedEnv = {
     HOSPITRAINITY_DEMO_LEARNER_PASSWORD: accounts.learner.password,
     HOSPITRAINITY_DEMO_SUPERADMIN_PASSWORD: accounts.superadmin.password,
     HOSPITRAINITY_DEMO_SUPERVISOR_PASSWORD: accounts.supervisor.password,
+    HOSPITRAINITY_DEMO_ADMIN_PASSWORD: accounts.admin.password,
 };
 
 for (const args of [
     ['artisan', 'package:discover', '--ansi', '--no-interaction'],
     ['artisan', 'migrate', '--force', '--no-interaction'],
     ['artisan', 'db:seed', '--force', '--no-interaction'],
+    ['artisan', 'hospitrainity:e2e-prepare-class', '--no-interaction'],
 ]) {
     const result = spawnSync(phpBinary, args, {
         cwd: repoRoot,
@@ -62,4 +65,5 @@ const mfaLine = mfaResult.stdout.trim().split(/\r?\n/).at(-1);
 const mfa = JSON.parse(mfaLine);
 accounts.superadmin.recoveryCodes = mfa.superadmin.recoveryCodes;
 accounts.supervisor.recoveryCodes = mfa.supervisor.recoveryCodes;
+accounts.admin.recoveryCodes = mfa.admin.recoveryCodes;
 writeFileSync(credentialsPath, JSON.stringify(accounts), { encoding: 'utf8', mode: 0o600 });

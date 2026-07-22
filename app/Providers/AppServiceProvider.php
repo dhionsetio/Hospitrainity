@@ -20,6 +20,8 @@ use Laravel\Passkeys\Contracts\PasskeyLoginResponse;
 use Laravel\Passkeys\Events\PasskeyDeleted;
 use Laravel\Passkeys\Events\PasskeyRegistered;
 use Laravel\Passkeys\Passkeys;
+use Psr\Clock\ClockInterface;
+use Symfony\Component\Clock\NativeClock;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -31,6 +33,7 @@ class AppServiceProvider extends ServiceProvider
         Fortify::ignoreRoutes();
         $this->app->singleton(PasskeyLoginResponse::class, SecurePasskeyLoginResponse::class);
         $this->app->singleton(PasskeyConfirmationResponse::class, SecurePasskeyConfirmationResponse::class);
+        $this->app->singleton(ClockInterface::class, static fn (): ClockInterface => new NativeClock('UTC'));
     }
 
     /**

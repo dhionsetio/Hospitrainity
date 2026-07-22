@@ -239,7 +239,7 @@ class CanonicalCurriculumDeliveryTest extends TestCase
             ->assertOk()
             ->assertSeeText('Completed')
             ->assertSeeText('1 attempt')
-            ->assertSeeText('Your written practice stays private')
+            ->assertSeeText('Your activity check stays private')
             ->assertDontSeeText('raw server response')
             ->assertDontSeeText('validation error may keep it temporarily')
             ->assertDontSeeText('Progress state: completed');

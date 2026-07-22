@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use App\Enums\InstitutionMembershipStatus;
+use App\Enums\InstitutionRole;
 use App\Enums\UserRole;
 use App\Models\Institution;
 use App\Models\InstitutionMembership;
@@ -50,6 +51,7 @@ class EmailCanonicalizationTest extends TestCase
             'provenance' => 'test_fixture',
             'joined_at' => now(),
         ]);
+        $this->grantInstitutionRole($issuer, InstitutionRole::Instructor, $institution);
         $issued = app(InstitutionInvitationService::class)->issue(
             $issuer,
             $institution,

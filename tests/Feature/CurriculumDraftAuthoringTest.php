@@ -104,8 +104,8 @@ class CurriculumDraftAuthoringTest extends TestCase
             ->get(route('admin.curriculum-drafts.preview.activities.show', [$draft, 'HSP-C02-ACT-PRACTICE']))
             ->assertOk()
             ->assertSee(__('admin.draft_preview'))
-            ->assertSee('preview not recorded')
-            ->assertSee('HSP-C02-PR-I1');
+            ->assertSee(__('admin.preview_does_not_record_progress'))
+            ->assertSeeText('Your responses');
 
         $this->assertDatabaseCount((new CurriculumAttempt)->getTable(), 0);
         $this->assertDatabaseCount((new CurriculumActivityProgress)->getTable(), 0);

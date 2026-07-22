@@ -12,7 +12,7 @@
         <p class="text-neutral-600 mt-2">{{ __('Continue your learning and reach your goals.') }}</p>
         @include('partials.next-action', ['nextAction' => $nextAction])
 
-        <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div id="learning-modules" tabindex="-1" class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             @forelse ($modules as $module)
             <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col transform hover:-translate-y-1 transition-transform duration-300">
                 <div class="p-6 flex-grow">

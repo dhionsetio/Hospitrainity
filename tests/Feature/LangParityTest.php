@@ -31,16 +31,22 @@ class LangParityTest extends TestCase
         $this->assertSame([], $missingInEn, 'Keys in id.json missing from en.json: '.implode(', ', $missingInEn));
     }
 
-    public function test_admin_translation_group_keys_match(): void
+    public function test_php_translation_group_keys_match(): void
     {
-        $en = Arr::dot(require lang_path('en/admin.php'));
-        $id = Arr::dot(require lang_path('id/admin.php'));
+        $enFiles = collect(glob(lang_path('en/*.php')) ?: [])->map(fn (string $path): string => basename($path))->sort()->values();
+        $idFiles = collect(glob(lang_path('id/*.php')) ?: [])->map(fn (string $path): string => basename($path))->sort()->values();
 
-        $missingInId = array_values(array_diff(array_keys($en), array_keys($id)));
-        $missingInEn = array_values(array_diff(array_keys($id), array_keys($en)));
+        $this->assertSame($enFiles->all(), $idFiles->all(), 'English and Indonesian PHP translation groups differ.');
 
-        $this->assertSame([], $missingInId, 'Admin keys missing from Indonesian: '.implode(', ', $missingInId));
-        $this->assertSame([], $missingInEn, 'Admin keys missing from English: '.implode(', ', $missingInEn));
+        foreach ($enFiles as $file) {
+            $en = Arr::dot(require lang_path('en/'.$file));
+            $id = Arr::dot(require lang_path('id/'.$file));
+            $missingInId = array_values(array_diff(array_keys($en), array_keys($id)));
+            $missingInEn = array_values(array_diff(array_keys($id), array_keys($en)));
+
+            $this->assertSame([], $missingInId, "$file keys missing from Indonesian: ".implode(', ', $missingInId));
+            $this->assertSame([], $missingInEn, "$file keys missing from English: ".implode(', ', $missingInEn));
+        }
     }
 
     public function test_retired_or_unverified_public_copy_is_not_kept_as_translation_inventory(): void

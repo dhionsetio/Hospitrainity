@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Enums\InstitutionRole;
 use App\Enums\UserRole;
 use App\Models\User;
 use App\Models\UserOnboardingState;
@@ -41,6 +42,7 @@ class NextActionResolverTest extends TestCase
         $resolver = app(NextActionResolver::class);
         $request = Request::create('/dashboard');
         $supervisor = User::factory()->create(['role' => UserRole::Supervisor]);
+        $this->grantInstitutionRole($supervisor, InstitutionRole::Instructor);
         $this->finishedOnboarding($supervisor, 'instructor');
 
         $empty = new LengthAwarePaginator([], 0, 15);
@@ -57,7 +59,7 @@ class NextActionResolverTest extends TestCase
         $systemAdmin = User::factory()->create(['role' => UserRole::Superadmin]);
         $this->finishedOnboarding($systemAdmin, 'system_admin');
         $workspace = $resolver->administration($request, $systemAdmin, ['in_review' => 0, 'editable' => 0]);
-        $this->assertSame('No editable content workspace', $workspace['title']);
+        $this->assertSame('No content work in progress', $workspace['title']);
         $this->assertSame(route('superadmin.curriculum-drafts.index'), $workspace['url']);
     }
 

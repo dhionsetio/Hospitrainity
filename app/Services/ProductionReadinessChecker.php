@@ -155,6 +155,11 @@ class ProductionReadinessChecker
                 'HOSPITRAINITY_DEMO_SEED must be false in production.',
             ),
             $this->check(
+                'local_tester_mfa_bypass_disabled',
+                config('authentication.mfa.local_tester_bypass') === false,
+                'AUTH_LOCAL_TESTER_MFA_BYPASS must be false in production.',
+            ),
+            $this->check(
                 'demo_identities_absent',
                 ! ($this->demoIdentityExists)(),
                 'Known disposable demo identities or institutions must not exist in production.',
@@ -175,8 +180,12 @@ class ProductionReadinessChecker
                     && Schema::hasTable('institution_join_requests')
                     && Schema::hasColumn('curriculum_activity_progress', 'learning_scope_key')
                     && Schema::hasColumn('curriculum_activity_progress', 'institution_membership_id')
+                    && Schema::hasColumn('curriculum_activity_progress', 'course_offering_id')
+                    && Schema::hasColumn('curriculum_activity_progress', 'course_enrollment_id')
                     && Schema::hasColumn('curriculum_attempts', 'learning_scope_key')
-                    && Schema::hasColumn('completions', 'learning_scope_key'),
+                    && Schema::hasColumn('curriculum_attempts', 'course_enrollment_id')
+                    && Schema::hasColumn('completions', 'learning_scope_key')
+                    && Schema::hasColumn('completions', 'course_enrollment_id'),
                 'Normalized tenant roles, classroom-code requests, and separated learning-scope schema must be installed.',
             ),
             $this->check(

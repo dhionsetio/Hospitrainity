@@ -19,6 +19,5 @@
             </section>
         @endforeach
     </div>
-    <p class="mt-8 text-sm text-neutral-600">{{ __('Help version :version · updated :date', ['version' => $topic['version'], 'date' => $topic['updated_at']]) }}</p>
 </main>
 @endsection

@@ -6,6 +6,7 @@ use App\Enums\InstitutionMembershipStatus;
 use App\Enums\InstitutionRole;
 use App\Enums\UserCapability;
 use App\Enums\UserRole;
+use App\Enums\WorkContextRole;
 use App\Models\Institution;
 use App\Models\InstitutionMembership;
 use App\Models\InstitutionRoleAssignment;
@@ -28,7 +29,7 @@ class WorkContextAuthorizationTest extends TestCase
         $this->assertFalse(app(WorkContext::class)->hasAlternativeRole($learner));
         $this->actingAs($learner)->get(route('dashboard'))
             ->assertOk()
-            ->assertSee('aria-label="'.__('Switch learning context').'"', false)
+            ->assertSee('aria-label="'.__('Open learning context').'"', false)
             ->assertDontSee('href="'.route('work-context.index').'"', false)
             ->assertDontSee('Switch role');
         $this->get(route('work-context.index'))
@@ -54,6 +55,47 @@ class WorkContextAuthorizationTest extends TestCase
             ->assertSee('Current context')
             ->assertSee('hsp-context-choice', false)
             ->assertDontSee('Continue in this context');
+    }
+
+    public function test_unresolved_legacy_supervisor_has_no_role_switcher_until_normalized_access_exists(): void
+    {
+        $supervisor = User::factory()->create([
+            'role' => UserRole::Supervisor,
+            'instansi' => 'Hotel A',
+        ]);
+
+        $this->assertFalse(app(WorkContext::class)->hasAlternativeRole($supervisor));
+        $contexts = app(WorkContext::class)->available(request(), $supervisor);
+        $this->assertSame([WorkContextRole::Learner], $contexts->pluck('role')->all());
+
+        $this->actingAs($supervisor)
+            ->get(route('work-context.index'))
+            ->assertRedirect(route('dashboard'));
+    }
+
+    public function test_normalized_supervisor_can_use_only_learner_and_instructor_contexts(): void
+    {
+        $institution = Institution::query()->where('key', 'politeknik-negeri-malang')->firstOrFail();
+        $supervisor = User::factory()->create(['role' => UserRole::Supervisor]);
+        $this->membership($supervisor, $institution, InstitutionRole::Instructor);
+
+        $contexts = app(WorkContext::class)->available(request(), $supervisor);
+        $this->assertSame(
+            [WorkContextRole::Learner, WorkContextRole::Instructor],
+            $contexts->pluck('role')->all(),
+        );
+
+        $this->actingAs($supervisor)
+            ->post(route('work-context.store'), [
+                'role' => WorkContextRole::InstitutionAdmin->value,
+                'institution_id' => $institution->getKey(),
+            ])->assertForbidden();
+        $this->post(route('work-context.store'), [
+            'role' => WorkContextRole::ContentAuthor->value,
+        ])->assertForbidden();
+        $this->post(route('work-context.store'), [
+            'role' => WorkContextRole::SystemAdmin->value,
+        ])->assertForbidden();
     }
 
     public function test_one_account_switches_between_content_instructor_and_learner_without_combining_authority(): void

@@ -7,18 +7,19 @@
     <div>
         <x-back-control :href="$returnUrl" :label="__('Return to current dashboard')" />
         <h1 class="mt-3 text-3xl font-bold text-neutral-950">{{ __('Account security') }}</h1>
-        <p class="mt-2 text-neutral-700">{{ __('Manage phishing-resistant passkeys, authenticator-app fallback, recovery codes, password, and signed-in sessions.') }}</p>
+        <p class="mt-2 text-neutral-700">{{ __('Manage your sign-in methods, recovery codes, password, and signed-in devices.') }}</p>
     </div>
 
     @if(session('status'))<div role="status" class="rounded-md border border-green-300 bg-green-50 p-4 text-green-950">{{ session('status') }}</div>@endif
     @if(session('warning'))<div role="alert" class="rounded-md border border-amber-300 bg-amber-50 p-4 text-amber-950">{{ session('warning') }}</div>@endif
     @if($errors->any())<div role="alert" class="rounded-md border border-red-300 bg-red-50 p-4 text-red-950"><p class="font-semibold">{{ __('Security change not completed') }}</p><ul class="mt-2 list-disc pl-5">@foreach($errors->all() as $error)<li>{{ $error }}</li>@endforeach</ul></div>@endif
 
-    @if(auth()->user()->requiresMfa() && !auth()->user()->hasStrongMfa())
+    @if(auth()->user()->requiresMfa() && !auth()->user()->hasStrongMfa() && !$localTesterMfaBypass)
         <section class="rounded-lg border border-amber-300 bg-amber-50 p-5" aria-labelledby="privileged-boundary-heading">
-            <h2 id="privileged-boundary-heading" class="text-xl font-bold text-neutral-950">{{ __('Privileged tools are locked—not the whole website') }}</h2>
-            <p class="mt-2 text-neutral-800">{{ __('You can continue in Learner mode without administrative access. To use instructor, content, or system administration tools, finish MFA setup first.') }}</p>
+            <h2 id="privileged-boundary-heading" class="text-xl font-bold text-neutral-950">{{ __('Administrative tools are locked') }}</h2>
+            <p class="mt-2 max-w-3xl leading-7 text-neutral-800">{{ __('You can continue in Learner mode without administrative access. To use instructor, content, or system administration tools, finish MFA setup first.') }}</p>
             <div class="mt-4 flex flex-wrap gap-3">
+                <a href="{{ $passwordFresh ? '#passkeys-heading' : route('security.confirm') }}" class="inline-flex min-h-11 items-center rounded-md bg-indigo-700 px-4 py-3 font-semibold text-white">{{ __('Start MFA setup') }}</a>
                 @if(auth()->user()->hasVerifiedEmail())
                     <form method="POST" action="{{ route('work-context.store') }}">
                         @csrf
@@ -26,7 +27,6 @@
                         <button type="submit" class="rounded-md bg-indigo-700 px-4 py-3 font-semibold text-white">{{ __('Continue as Learner') }}</button>
                     </form>
                 @endif
-                <a href="{{ url('/') }}" class="inline-flex min-h-11 items-center rounded-md border border-indigo-700 px-4 py-3 font-semibold text-indigo-800">{{ __('Visit public home') }}</a>
             </div>
         </section>
     @endif
@@ -46,7 +46,7 @@
 
     <section class="rounded-lg border border-neutral-300 bg-white p-5" aria-labelledby="passkeys-heading">
         <h2 id="passkeys-heading" class="text-xl font-bold text-neutral-950">{{ __('Passkeys and security keys') }}</h2>
-        <p class="mt-2 text-neutral-700">{{ __('Recommended. Passkeys use Windows Hello, Touch ID, Face ID, Android screen lock, a password manager, or a compatible hardware security key. Private keys never reach Hospitrainity.') }}</p>
+        <p class="mt-2 text-neutral-700">{{ __('Recommended. Use Windows Hello, Touch ID, Face ID, your Android screen lock, a password manager, or a security key.') }}</p>
         @if($passwordFresh)
             <div class="mt-4 flex flex-col gap-3 sm:flex-row">
                 <label class="flex-1"><span class="block text-sm font-medium">{{ __('Passkey name') }}</span><input data-passkey-name maxlength="100" value="{{ __('My device') }}" class="mt-1 w-full rounded-md border border-neutral-400 px-3 py-3"></label>
@@ -64,7 +64,7 @@
     </section>
 
     <section class="rounded-lg border border-neutral-300 bg-white p-5" aria-labelledby="totp-heading">
-        <h2 id="totp-heading" class="text-xl font-bold text-neutral-950">{{ __('Authenticator app (TOTP fallback)') }}</h2>
+        <h2 id="totp-heading" class="text-xl font-bold text-neutral-950">{{ __('Authenticator app') }}</h2>
         @if(auth()->user()->hasConfirmedTotp())
             <p class="mt-2 text-green-800">{{ __('Active. A six-digit authenticator code is required after password sign-in.') }}</p>
             @if($passwordFresh)
@@ -77,24 +77,24 @@
             <details class="mt-2"><summary class="cursor-pointer font-medium text-indigo-800">{{ __('Show authenticator URI') }}</summary><code class="mt-2 block break-all rounded bg-neutral-100 p-3 text-sm">{{ $totpUri }}</code></details>
             <form method="POST" action="{{ route('security.totp.confirm') }}" class="mt-4 flex max-w-md flex-col gap-3 sm:flex-row">@csrf<label class="flex-1"><span class="block font-medium">{{ __('Six-digit code') }}</span><input name="code" required inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" maxlength="6" class="mt-1 w-full rounded-md border border-neutral-400 px-3 py-3"></label><button class="self-end rounded-md bg-indigo-700 px-4 py-3 font-semibold text-white">{{ __('Confirm setup') }}</button></form>
         @elseif($passwordFresh)
-            <p class="mt-2 text-neutral-700">{{ __('Use a standards-compatible authenticator app when a passkey is unavailable.') }}</p>
+            <p class="mt-2 text-neutral-700">{{ __('Set up an authenticator app as another way to sign in.') }}</p>
             <form method="POST" action="{{ route('security.totp.begin') }}" class="mt-4">@csrf<button class="rounded-md border border-indigo-700 px-4 py-3 font-semibold text-indigo-800">{{ __('Set up authenticator app') }}</button></form>
         @else
             <p class="mt-2 text-neutral-700">{{ __('Confirm your password above to start setup.') }}</p>
         @endif
 
         @if($recoveryCodes !== [])
-            <div class="mt-5 rounded-md border-2 border-amber-500 bg-amber-50 p-4" role="status"><h3 class="font-bold">{{ __('Save these one-use recovery codes now') }}</h3><p class="mt-1 text-sm">{{ __('They are shown only once. Each stored copy is hashed, and using one revokes it.') }}</p><ul class="mt-3 grid gap-2 font-mono sm:grid-cols-2">@foreach($recoveryCodes as $code)<li><code>{{ $code }}</code></li>@endforeach</ul></div>
+            <div class="mt-5 rounded-md border-2 border-amber-500 bg-amber-50 p-4" role="status"><h3 class="font-bold">{{ __('Save these one-use recovery codes now') }}</h3><p class="mt-1 text-sm">{{ __('They are shown only once. Store them somewhere safe.') }}</p><ul class="mt-3 grid gap-2 font-mono sm:grid-cols-2">@foreach($recoveryCodes as $code)<li><code>{{ $code }}</code></li>@endforeach</ul></div>
         @endif
     </section>
 
     <section class="rounded-lg border border-neutral-300 bg-white p-5" aria-labelledby="password-heading">
         <h2 id="password-heading" class="text-xl font-bold text-neutral-950">{{ __('Change password') }}</h2>
-        <p class="mt-2 text-neutral-700">{{ __('Use 15–128 characters. Pasting and password managers are supported; composition rules and periodic changes are not required.') }}</p>
+        <p class="mt-2 text-neutral-700">{{ __('Use 15 to 128 characters. You can paste a password from your password manager.') }}</p>
         <form method="POST" action="{{ route('security.password.update') }}" class="mt-4 grid max-w-xl gap-4">@csrf @method('PATCH')
             <label><span class="font-medium">{{ __('Current password') }}</span><input type="password" name="current_password" required autocomplete="current-password" class="mt-1 w-full rounded-md border border-neutral-400 px-3 py-3"></label>
-            <label><span class="font-medium">{{ __('New password') }}</span><input type="password" name="password" required autocomplete="new-password" minlength="15" maxlength="128" class="mt-1 w-full rounded-md border border-neutral-400 px-3 py-3"></label>
-            <label><span class="font-medium">{{ __('Confirm new password') }}</span><input type="password" name="password_confirmation" required autocomplete="new-password" minlength="15" maxlength="128" class="mt-1 w-full rounded-md border border-neutral-400 px-3 py-3"></label>
+            <label><span class="font-medium">{{ __('New password') }}</span><input type="password" name="password" required autocomplete="new-password" minlength="8" maxlength="128" class="mt-1 w-full rounded-md border border-neutral-400 px-3 py-3"></label>
+            <label><span class="font-medium">{{ __('Confirm new password') }}</span><input type="password" name="password_confirmation" required autocomplete="new-password" minlength="8" maxlength="128" class="mt-1 w-full rounded-md border border-neutral-400 px-3 py-3"></label>
             <button class="justify-self-start rounded-md bg-indigo-700 px-4 py-3 font-semibold text-white">{{ __('Change password') }}</button>
         </form>
     </section>
@@ -105,7 +105,7 @@
         <ul class="mt-4 divide-y divide-neutral-200">
             @forelse($sessions as $session)
                 <li class="flex flex-wrap items-center justify-between gap-3 py-3"><div><p class="font-semibold">{{ hash_equals($currentSessionId, $session->id) ? __('This session') : __('Other session') }}</p><p class="max-w-2xl break-words text-sm text-neutral-600">{{ \Illuminate\Support\Str::limit($session->user_agent ?: __('Unknown device'), 120) }} &middot; {{ $session->ip_address ?: __('Unknown address') }} &middot; {{ \Carbon\CarbonImmutable::createFromTimestamp($session->last_activity)->diffForHumans() }}</p></div>@unless(hash_equals($currentSessionId, $session->id))<form method="POST" action="{{ route('security.sessions.destroy', $session->id) }}">@csrf @method('DELETE')<button class="rounded-md border border-red-700 px-3 py-2 text-sm font-semibold text-red-800">{{ __('Revoke') }}</button></form>@endunless</li>
-            @empty<li class="py-3 text-neutral-700">{{ __('No database-backed session record is available.') }}</li>@endforelse
+            @empty<li class="py-3 text-neutral-700">{{ __('No session details are available.') }}</li>@endforelse
         </ul>
         <form method="POST" action="{{ route('security.sessions.destroy-others') }}" class="mt-4">@csrf @method('DELETE')<button class="rounded-md border border-red-700 px-4 py-3 font-semibold text-red-800">{{ __('Revoke all other sessions') }}</button></form>
     </section>

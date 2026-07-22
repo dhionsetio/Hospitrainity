@@ -102,19 +102,19 @@ final class OnboardingService
     {
         return match ($role) {
             WorkContextRole::Learner => [
-                ['key' => 'learning-context', 'title' => __('Choose where progress is recorded'), 'description' => __('Review personal and institution learning contexts before starting.'), 'action' => __('Review learning contexts'), 'url' => route('institution-enrollment.index')],
-                ['key' => 'published-learning', 'title' => __('Open published learning'), 'description' => __('Use the dashboard to start or resume a published module.'), 'action' => __('Open learning dashboard'), 'url' => route('dashboard')],
-                ['key' => 'help', 'title' => __('Know where to get Help'), 'description' => __('Review progress meanings, recovery guidance, and current limitations.'), 'action' => __('Open learner Help'), 'url' => route('help.show', 'getting-started')],
+                ['key' => 'learning-context', 'title' => __('Choose where to save progress'), 'description' => __('Choose personal learning, an institution, or a Class before starting.'), 'action' => __('Review learning choices'), 'url' => route('institution-enrollment.index')],
+                ['key' => 'published-learning', 'title' => __('Open your learning'), 'description' => __('Use the dashboard to start or resume a module.'), 'action' => __('Open learning dashboard'), 'url' => route('dashboard')],
+                ['key' => 'help', 'title' => __('Know where to get Help'), 'description' => __('Learn what progress means and how to recover your account.'), 'action' => __('Open learner Help'), 'url' => route('help.show', 'getting-started')],
             ],
             WorkContextRole::Instructor, WorkContextRole::InstitutionAdmin => [
-                ['key' => 'team-progress', 'title' => __('Review institution progress'), 'description' => __('Confirm the active institution and review only its attributed learner progress.'), 'action' => __('Open team dashboard'), 'url' => route('supervisor.dashboard')],
+                ['key' => 'team-progress', 'title' => __('Review institution progress'), 'description' => __('Choose an institution and review its learner progress.'), 'action' => __('Open team dashboard'), 'url' => route('supervisor.dashboard')],
                 ['key' => 'invite', 'title' => __('Choose a learner entry path'), 'description' => __('Use an addressed invitation or a time-limited classroom code.'), 'action' => __('Open invitations'), 'url' => route('supervisor.invitations.index')],
-                ['key' => 'help', 'title' => __('Review staff Help'), 'description' => __('See current progress meaning, approval steps, and unavailable capabilities.'), 'action' => __('Open institution staff Help'), 'url' => route('help.show', 'institution-staff')],
+                ['key' => 'help', 'title' => __('Review staff Help'), 'description' => __('Learn how progress, invitations, and approvals work.'), 'action' => __('Open institution staff Help'), 'url' => route('help.show', 'institution-staff')],
             ],
             WorkContextRole::ContentAuthor => [
-                ['key' => 'content', 'title' => __('Open the content workspace'), 'description' => __('Create or resume work in a versioned draft before publication.'), 'action' => __('Open canonical content'), 'url' => route('admin.curriculum-drafts.index')],
+                ['key' => 'content', 'title' => __('Open the content workspace'), 'description' => __('Create or resume learning content and preview it before review.'), 'action' => __('Open learning content'), 'url' => route('admin.curriculum-drafts.index')],
                 ['key' => 'activities', 'title' => __('Review activity templates'), 'description' => __('Use only currently enabled activity templates and preview before publication.'), 'action' => __('Open exercises'), 'url' => route('admin.curriculum-exercises.index')],
-                ['key' => 'evidence', 'title' => __('Find technical evidence'), 'description' => __('Keep source hashes and legacy records in the named evidence views.'), 'action' => __('Open content and evidence Help'), 'url' => route('help.show', 'content-and-evidence')],
+                ['key' => 'evidence', 'title' => __('Learn the content workflow'), 'description' => __('See how to create, preview, and submit learning content.'), 'action' => __('Open content Help'), 'url' => route('help.show', 'content-and-evidence')],
             ],
             WorkContextRole::SystemAdmin => [
                 ['key' => 'scope', 'title' => __('Confirm role and scope'), 'description' => __('Use explicit work contexts and preview banners; permissions are still checked on every request.'), 'action' => __('Review work contexts'), 'url' => route('work-context.index')],

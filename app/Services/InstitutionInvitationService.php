@@ -8,6 +8,8 @@ use App\Enums\InstitutionStatus;
 use App\Enums\LegacyInstitutionState;
 use App\Enums\UserRole;
 use App\Exceptions\InvitationUnavailableException;
+use App\Models\CourseEnrollment;
+use App\Models\CourseOffering;
 use App\Models\IdentityAudit;
 use App\Models\Institution;
 use App\Models\InstitutionInvitation;
@@ -21,25 +23,37 @@ use RuntimeException;
 
 final class InstitutionInvitationService
 {
-    public function __construct(private readonly InstitutionAccessService $access) {}
+    public function __construct(
+        private readonly InstitutionAccessService $access,
+        private readonly CourseAccessService $courses,
+        private readonly CourseEnrollmentService $enrollments,
+    ) {}
 
     /** @return array{invitation: InstitutionInvitation, token: string} */
-    public function issue(User $actor, Institution $institution, string $targetEmail): array
-    {
+    public function issue(
+        User $actor,
+        Institution $institution,
+        string $targetEmail,
+        ?CourseOffering $offering = null,
+    ): array {
         $email = User::canonicalEmail($targetEmail);
         $ttlHours = max(1, min(168, (int) config('identity.invitation.ttl_hours', 72)));
         $token = $this->newToken();
 
-        $invitation = DB::transaction(function () use ($actor, $institution, $email, $ttlHours, $token): InstitutionInvitation {
+        $invitation = DB::transaction(function () use ($actor, $institution, $email, $ttlHours, $token, $offering): InstitutionInvitation {
             $lockedInstitution = Institution::query()->lockForUpdate()->find($institution->getKey());
             if ($lockedInstitution === null || $lockedInstitution->status !== InstitutionStatus::Active) {
                 throw new RuntimeException('The selected institution is not active.');
             }
-            $lockedActor = $this->authorizeInvitationActor($actor, $lockedInstitution);
+            $lockedOffering = $offering === null
+                ? null
+                : CourseOffering::query()->lockForUpdate()->find($offering->getKey());
+            $lockedActor = $this->authorizeInvitationActor($actor, $lockedInstitution, $lockedOffering);
 
             $emailHash = $this->emailHash($email);
             $superseded = InstitutionInvitation::query()
                 ->where('institution_id', $lockedInstitution->getKey())
+                ->where('course_offering_id', $lockedOffering?->getKey())
                 ->where('target_email_hash', $emailHash)
                 ->whereNull('accepted_at')
                 ->whereNull('revoked_at')
@@ -61,6 +75,7 @@ final class InstitutionInvitationService
 
             $invitation = InstitutionInvitation::query()->create([
                 'institution_id' => $lockedInstitution->getKey(),
+                'course_offering_id' => $lockedOffering?->getKey(),
                 'issued_by_user_id' => $lockedActor->getKey(),
                 'target_email_ciphertext' => $email,
                 'target_email_hash' => $emailHash,
@@ -75,7 +90,10 @@ final class InstitutionInvitationService
                 'institution_id' => $lockedInstitution->getKey(),
                 'invitation_id' => $invitation->getKey(),
                 'event' => 'invitation.issued',
-                'metadata' => ['expires_at' => $invitation->expires_at->toAtomString()],
+                'metadata' => [
+                    'expires_at' => $invitation->expires_at->toAtomString(),
+                    'course_offering_id' => $lockedOffering?->getKey(),
+                ],
                 'created_at' => now(),
             ]);
 
@@ -92,19 +110,24 @@ final class InstitutionInvitationService
         }
 
         $invitation = InstitutionInvitation::query()
-            ->with('institution')
+            ->with(['institution', 'offering'])
             ->where('token_hash', $this->tokenHash($token))
             ->first();
+
+        $offering = $invitation?->course_offering_id === null
+            ? null
+            : CourseOffering::query()->find($invitation->course_offering_id);
 
         return $invitation !== null
             && $this->targetEmail($invitation) !== null
             && $invitation->institution->status === InstitutionStatus::Active
+            && ($invitation->course_offering_id === null || $offering?->acceptsEnrollments() === true)
             && $invitation->isRedeemable()
                 ? $invitation
                 : null;
     }
 
-    /** @return array{user: User, institution: Institution, membership: InstitutionMembership, created: bool, sessions_revoked: int} */
+    /** @return array{user: User, institution: Institution, membership: InstitutionMembership, offering: CourseOffering|null, enrollment: CourseEnrollment|null, created: bool, sessions_revoked: int} */
     public function redeem(string $token, ?User $authenticatedUser, ?array $newUser): array
     {
         if (! $this->hasValidTokenShape($token)) {
@@ -114,7 +137,7 @@ final class InstitutionInvitationService
         return DB::transaction(function () use ($token, $authenticatedUser, $newUser): array {
             $tokenHash = $this->tokenHash($token);
             $invitationReference = InstitutionInvitation::query()
-                ->select(['id', 'institution_id'])
+                ->select(['id', 'institution_id', 'course_offering_id'])
                 ->where('token_hash', $tokenHash)
                 ->first();
             if ($invitationReference === null) {
@@ -136,6 +159,15 @@ final class InstitutionInvitationService
             if ($invitation === null || ! $invitation->isRedeemable()) {
                 throw new InvitationUnavailableException;
             }
+            $offering = $invitationReference->course_offering_id === null
+                ? null
+                : CourseOffering::query()->lockForUpdate()->find($invitationReference->course_offering_id);
+            if ($invitationReference->course_offering_id !== null
+                && ($offering === null
+                    || $offering->institution_id !== $institution->getKey()
+                    || ! $offering->acceptsEnrollments())) {
+                throw new InvitationUnavailableException;
+            }
 
             $targetEmail = $this->targetEmail($invitation);
             if ($targetEmail === null) {
@@ -144,7 +176,10 @@ final class InstitutionInvitationService
             $created = false;
 
             if ($authenticatedUser !== null) {
-                $user = User::query()->lockForUpdate()->find($authenticatedUser->getKey());
+                $user = User::query()
+                    ->whereKey($authenticatedUser->getKey())
+                    ->lockForUpdate()
+                    ->first();
                 if ($user === null
                     || $user->isDisabled()
                     || ! hash_equals($invitation->target_email_hash, $this->emailHash($user->email))) {
@@ -176,11 +211,12 @@ final class InstitutionInvitationService
                 $created = true;
             }
 
-            $hasActiveMembership = InstitutionMembership::query()
-                ->where('user_id', $user->getKey())
-                ->where('institution_id', $institution->getKey())
-                ->where('status', InstitutionMembershipStatus::Active->value)
-                ->exists();
+            $membership = InstitutionMembership::query()->firstOrNew([
+                'user_id' => $user->getKey(),
+                'institution_id' => $institution->getKey(),
+            ]);
+            $hasActiveMembership = $membership->exists
+                && $membership->status === InstitutionMembershipStatus::Active;
 
             if (! $hasActiveMembership) {
                 $hasAnyActiveMembership = InstitutionMembership::query()
@@ -188,10 +224,6 @@ final class InstitutionInvitationService
                     ->where('status', InstitutionMembershipStatus::Active->value)
                     ->exists();
 
-                $membership = InstitutionMembership::query()->firstOrNew([
-                    'user_id' => $user->getKey(),
-                    'institution_id' => $institution->getKey(),
-                ]);
                 $membership->fill([
                     'status' => InstitutionMembershipStatus::Active,
                     'is_default' => ! $hasAnyActiveMembership,
@@ -205,13 +237,28 @@ final class InstitutionInvitationService
                 }
                 $membership->save();
 
-                InstitutionRoleAssignment::query()->firstOrCreate([
-                    'institution_membership_id' => $membership->getKey(),
-                    'role' => InstitutionRole::Learner->value,
-                ], [
-                    'assigned_by_user_id' => $invitation->issued_by_user_id,
-                    'assigned_at' => now(),
-                ])->forceFill(['revoked_at' => null])->save();
+            }
+
+            // A class invitation is also an explicit learner-role grant. This
+            // must run for an existing active staff membership as well as for a
+            // newly-created membership because one person may hold both roles.
+            InstitutionRoleAssignment::query()->firstOrCreate([
+                'institution_membership_id' => $membership->getKey(),
+                'role' => InstitutionRole::Learner->value,
+            ], [
+                'assigned_by_user_id' => $invitation->issued_by_user_id,
+                'assigned_at' => now(),
+            ])->forceFill(['revoked_at' => null])->save();
+
+            $enrollment = null;
+            if ($offering !== null) {
+                $issuer = User::query()->find($invitation->issued_by_user_id);
+                $enrollment = $this->enrollments->enrollFromApprovedConnection(
+                    $offering,
+                    $membership,
+                    $issuer,
+                    __('classes.events.invitation_enrollment'),
+                );
             }
 
             $invitation->forceFill([
@@ -232,7 +279,10 @@ final class InstitutionInvitationService
                 'institution_id' => $institution->getKey(),
                 'invitation_id' => $invitation->getKey(),
                 'event' => 'invitation.redeemed',
-                'metadata' => ['created_account' => $created],
+                'metadata' => [
+                    'created_account' => $created,
+                    'course_offering_id' => $offering?->getKey(),
+                ],
                 'created_at' => now(),
             ]);
             IdentityAudit::query()->create([
@@ -247,6 +297,8 @@ final class InstitutionInvitationService
                 'user' => $user->fresh(),
                 'institution' => $institution,
                 'membership' => $membership->fresh(),
+                'offering' => $offering,
+                'enrollment' => $enrollment,
                 'created' => $created,
                 'sessions_revoked' => $sessionsRevoked,
             ];
@@ -260,7 +312,13 @@ final class InstitutionInvitationService
             if ($institution === null || $institution->status !== InstitutionStatus::Active) {
                 throw new InvitationUnavailableException;
             }
-            $lockedActor = $this->authorizeInvitationActor($actor, $institution);
+            $offering = $invitation->course_offering_id === null
+                ? null
+                : CourseOffering::query()->lockForUpdate()->find($invitation->course_offering_id);
+            if ($invitation->course_offering_id !== null && $offering === null) {
+                throw new AuthorizationException(__('This action is not authorized.'));
+            }
+            $lockedActor = $this->authorizeInvitationActor($actor, $institution, $offering);
             $locked = InstitutionInvitation::query()
                 ->whereKey($invitation->getKey())
                 ->where('institution_id', $institution->getKey())
@@ -349,14 +407,23 @@ final class InstitutionInvitationService
      * but cannot be the final authority if role or membership changes while the
      * request is in flight.
      */
-    private function authorizeInvitationActor(User $actor, Institution $institution): User
-    {
+    private function authorizeInvitationActor(
+        User $actor,
+        Institution $institution,
+        ?CourseOffering $offering = null,
+    ): User {
         $lockedActor = User::query()->lockForUpdate()->find($actor->getKey());
         if ($lockedActor === null || $lockedActor->isDisabled()) {
             throw new AuthorizationException(__('This action is not authorized.'));
         }
 
-        $this->access->authorizeLearnerManagement($lockedActor, $institution);
+        if ($offering === null) {
+            $this->access->authorizeLearnerManagement($lockedActor, $institution);
+        } elseif ($offering->institution_id !== $institution->getKey()
+            || ! $offering->acceptsEnrollments()
+            || ! $this->courses->canManageOffering($lockedActor, $offering)) {
+            throw new AuthorizationException(__('This action is not authorized.'));
+        }
 
         return $lockedActor;
     }

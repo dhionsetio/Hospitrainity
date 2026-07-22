@@ -45,10 +45,9 @@ final class WorkContext
         return match ($user->role) {
             UserRole::Superadmin => WorkContextRole::SystemAdmin,
             UserRole::Admin => WorkContextRole::ContentAuthor,
-            // Preserve the legacy staff route shape during expand-first
-            // migration. Resource policies still deny as not-found when no
-            // valid institution context exists.
-            UserRole::Supervisor => WorkContextRole::Instructor,
+            UserRole::Supervisor => $this->canUse($request, $user, WorkContextRole::Instructor)
+                ? WorkContextRole::Instructor
+                : WorkContextRole::Learner,
             default => WorkContextRole::Learner,
         };
     }
@@ -85,8 +84,10 @@ final class WorkContext
             return false;
         }
 
-        // Every legacy staff identity can also enter its Learner context.
-        if ($user->role !== UserRole::Learner) {
+        // Content and system authority can come from a compatibility role or a
+        // normalized assignment. A legacy Supervisor needs an active normalized
+        // institution assignment before a second context exists.
+        if ($user->isContentAdministrator()) {
             return true;
         }
 
@@ -175,12 +176,7 @@ final class WorkContext
         $role = $workRole === WorkContextRole::InstitutionAdmin
             ? InstitutionRole::InstitutionAdmin
             : InstitutionRole::Instructor;
-        if ($user->hasInstitutionRole($institution, $role)) {
-            return true;
-        }
 
-        return $workRole === WorkContextRole::Instructor
-            && ! $user->isSuperAdmin()
-            && $this->access->canManageLearners($user, $institution);
+        return $user->hasInstitutionRole($institution, $role);
     }
 }

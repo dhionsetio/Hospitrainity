@@ -1,0 +1,7 @@
+interface:
+  display_name: "Frontend Design (Vipul)"
+  short_description: "Implement frontend UI with reusable patterns and starter assets."
+  default_prompt: "Use $frontend-design-vipul for this frontend design task."
+
+policy:
+  allow_implicit_invocation: false

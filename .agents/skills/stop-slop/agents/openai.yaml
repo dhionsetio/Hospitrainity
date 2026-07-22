@@ -1,0 +1,7 @@
+interface:
+  display_name: "Stop Slop"
+  short_description: "Improve user-facing prose and UI copy without changing exact text."
+  default_prompt: "Use $stop-slop to edit this prose."
+
+policy:
+  allow_implicit_invocation: false

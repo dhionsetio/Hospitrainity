@@ -334,6 +334,16 @@ class RegistrationTest extends TestCase
             'joined_at' => now(),
         ]);
 
+        $normalizedRole = match ($role) {
+            UserRole::Supervisor => InstitutionRole::Instructor,
+            UserRole::Admin => InstitutionRole::InstitutionAdmin,
+            UserRole::Learner => InstitutionRole::Learner,
+            UserRole::Superadmin => null,
+        };
+        if ($normalizedRole !== null) {
+            $this->grantInstitutionRole($user, $normalizedRole, $institution);
+        }
+
         return $user;
     }
 }

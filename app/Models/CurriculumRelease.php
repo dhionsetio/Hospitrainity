@@ -9,6 +9,11 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use LogicException;
 
+/**
+ * @property CurriculumReleaseState $state
+ * @property bool $preview_only
+ * @property string $source_tree_sha256
+ */
 class CurriculumRelease extends Model
 {
     use HasUuids;

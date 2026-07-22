@@ -7,8 +7,7 @@
     <x-back-control :href="route('help.index')" :label="__('Return to Help')" />
 
     <header class="mt-5">
-        <p class="text-sm font-semibold uppercase tracking-wide text-indigo-700">{{ __('Thesis prototype') }}</p>
-        <h1 class="mt-2 text-4xl font-bold text-neutral-950">{{ $document['title'] }}</h1>
+        <h1 class="text-4xl font-bold text-neutral-950">{{ $document['title'] }}</h1>
         <p class="mt-3 text-lg text-neutral-700">{{ $document['summary'] }}</p>
     </header>
     <div class="mt-8 space-y-6">

@@ -6,8 +6,8 @@
 @php
     $currentLocale = app()->getLocale();
     $languages = [
-        ['locale' => 'id', 'label' => __('Bahasa Indonesia'), 'short' => 'ID', 'flag' => 'id'],
-        ['locale' => 'en', 'label' => __('English'), 'short' => 'EN', 'flag' => 'gb'],
+        ['locale' => 'id', 'label' => __('Bahasa Indonesia'), 'flag' => 'id'],
+        ['locale' => 'en', 'label' => __('English'), 'flag' => 'gb'],
     ];
 @endphp
 
@@ -26,7 +26,7 @@
             data-locale-option="{{ $language['locale'] }}"
             @if($menu) role="menuitem" tabindex="-1" @endif
             @if($isCurrent) aria-current="true" @endif
-            aria-label="{{ $language['label'] }}{{ $isCurrent ? ' — '.__('Current language') : '' }}"
+            aria-label="{{ $language['label'] }}{{ $isCurrent ? ', '.__('Current language') : '' }}"
             @class([
                 'inline-flex min-h-11 items-center gap-2 rounded-lg border px-3 py-2 text-sm font-semibold transition-colors',
                 'w-full justify-start' => $menu,
@@ -48,7 +48,7 @@
                     <path stroke="#c8102e" stroke-width="6" d="M30 0v30M0 15h60"/>
                 </svg>
             @endif
-            <span>{{ $compact ? $language['short'] : $language['label'] }}</span>
+            <span>{{ $language['label'] }}</span>
             @if($isCurrent)
                 <span class="ml-auto text-indigo-700" aria-hidden="true">✓</span>
             @endif
