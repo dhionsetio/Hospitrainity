@@ -1,0 +1,85 @@
+{
+    "meta": {
+        "id": "hospitrainity-agent-context",
+        "api_version": "1.0.0",
+        "contract": "read_only",
+        "scope": "non_user_specific",
+        "included": [
+            "glossary"
+        ],
+        "data_excluded": [
+            "credentials_and_secrets",
+            "personal_data",
+            "learner_responses_and_progress",
+            "draft_curriculum_payloads",
+            "model_answers_and_release_evidence"
+        ]
+    },
+    "links": {
+        "self": "/api/v1/agent-context/glossary",
+        "index": "/api/v1/agent-context",
+        "openapi": "/api/v1/agent-context/openapi",
+        "focused_section_template": "/api/v1/agent-context/{section}"
+    },
+    "available_sections": [
+        {
+            "key": "product",
+            "description": "Purpose, audiences, supported experiences, and explicit non-goals.",
+            "endpoint": "/api/v1/agent-context/product"
+        },
+        {
+            "key": "domain",
+            "description": "Roles, scopes, lifecycle states, entity relationships, and invariants.",
+            "endpoint": "/api/v1/agent-context/domain"
+        },
+        {
+            "key": "capabilities",
+            "description": "What each actor can do and which exercise contracts are available.",
+            "endpoint": "/api/v1/agent-context/capabilities"
+        },
+        {
+            "key": "workflows",
+            "description": "Ordered registration, enrollment, learning, authoring, release, and privacy flows.",
+            "endpoint": "/api/v1/agent-context/workflows"
+        },
+        {
+            "key": "architecture",
+            "description": "Runtime layers, sources of truth, storage boundaries, and operational dependencies.",
+            "endpoint": "/api/v1/agent-context/architecture"
+        },
+        {
+            "key": "curriculum",
+            "description": "Safe outline and counts from the currently deliverable curriculum package.",
+            "endpoint": "/api/v1/agent-context/curriculum"
+        },
+        {
+            "key": "routes",
+            "description": "Live named-route inventory with inferred access requirements and no controller source.",
+            "endpoint": "/api/v1/agent-context/routes"
+        },
+        {
+            "key": "glossary",
+            "description": "Short, canonical definitions for commonly confused Hospitrainity terms.",
+            "endpoint": "/api/v1/agent-context/glossary"
+        }
+    ],
+    "sections": {
+        "glossary": {
+            "canonical curriculum": "The versioned source package used to create learner delivery and standalone projections.",
+            "legacy curriculum": "Earlier module/lesson content retained as read-only evidence while canonical delivery is active.",
+            "work context": "The active role through which a user is operating.",
+            "institution context": "The active institution against which staff authority is revalidated.",
+            "learning context": "The personal or institution scope to which new progress is attributed.",
+            "membership": "A user-to-institution relationship; it grants no staff power without a current role assignment.",
+            "institution role": "Learner, Instructor, or Institution Admin authority attached to an active membership.",
+            "content author": "A separately assignable shared-curriculum capability, not an institution role.",
+            "system admin": "The single global platform role with cross-institution administrative authority.",
+            "attempt": "One versioned activity submission or self-check event in a specific learning scope.",
+            "progress": "A bounded state such as viewed, attempted, self-checked, or completed; it is not synonymous with mastery.",
+            "deliverable package": "The one active package that passes the environment-specific curriculum release guard.",
+            "draft preview": "A visibly labeled non-production curriculum view; never evidence of production approval.",
+            "targeted invitation": "An expiring, revocable, single-use institution invitation bound to one canonical email.",
+            "classroom code": "A bounded reusable secret that creates a pending join request rather than immediate membership."
+        }
+    }
+}

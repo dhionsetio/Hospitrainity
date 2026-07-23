@@ -1093,5 +1093,18 @@
     "The score cannot exceed the maximum score.": "The score cannot exceed the maximum score.",
     "Legacy score tracking is unavailable in a Class learning context.": "Legacy score tracking is unavailable in a Class learning context.",
     "The requested exercise is unavailable for score tracking.": "The requested exercise is unavailable for score tracking.",
-    "Score saved successfully.": "Score saved successfully."
+    "Score saved successfully.": "Score saved successfully.",
+    "Referenced Exercise IDs": "Referenced Exercise IDs",
+    "Enter comma-separated exercise IDs included in this quiz set.": "Enter comma-separated exercise IDs included in this quiz set.",
+    "Pass Target (%)": "Pass Target (%)",
+    "Allow Retry": "Allow Retry",
+    "Show Solution": "Show Solution",
+    "Range Feedback Bands": "Range Feedback Bands",
+    "Add Range Band": "Add Range Band",
+    "Feedback message...": "Feedback message...",
+    "Content Migration Assistant (Type Suggestions)": "Content Migration Assistant (Type Suggestions)",
+    "Paste raw curriculum text below to see rule-based suggestions for exercise types.": "Paste raw curriculum text below to see rule-based suggestions for exercise types.",
+    "Paste raw exercise text, asterisks gaps, or choices here...": "Paste raw exercise text, asterisks gaps, or choices here...",
+    "Suggested Exercise Types:": "Suggested Exercise Types:",
+    "Apply": "Apply"
 }

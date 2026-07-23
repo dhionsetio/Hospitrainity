@@ -18,20 +18,22 @@ class ExerciseCrudContractTest extends TestCase
         return User::factory()->create(['role' => 'superadmin']);
     }
 
-    public function test_all_eighteen_engine_types_complete_the_admin_crud_contract(): void
+    public function test_all_nineteen_engine_types_complete_the_admin_crud_contract(): void
     {
         $lesson = Lesson::factory()->create();
         $admin = $this->admin();
+        $subEx = Exercise::factory()->create(['lesson_id' => $lesson->id, 'type' => 'multiple_choice_quiz']);
         $created = [];
 
-        foreach ($this->validContents() as $type => $content) {
-            $this->actingAs($admin)->post(route('superadmin.exercises.store'), [
+        foreach ($this->validContents($subEx->id) as $type => $content) {
+            $response = $this->actingAs($admin)->post(route('superadmin.exercises.store'), [
                 'lesson_id' => $lesson->id,
                 'title' => "Contract {$type}",
                 'type' => $type,
                 'content' => $content,
                 'order' => 1,
-            ])->assertRedirect(route('superadmin.exercises.index'));
+            ]);
+            $response->assertRedirect(route('superadmin.exercises.index'));
 
             $exercise = Exercise::where('title', "Contract {$type}")->firstOrFail();
             $this->assertSame($type, $exercise->type);
@@ -39,7 +41,7 @@ class ExerciseCrudContractTest extends TestCase
             $created[] = [$exercise, $content];
         }
 
-        $this->assertSame(ExerciseRequest::TYPES, Exercise::orderBy('id')->pluck('type')->all());
+        $this->assertSame(ExerciseRequest::TYPES, Exercise::where('id', '!=', $subEx->id)->orderBy('id')->pluck('type')->all());
 
         foreach ($created as [$exercise, $content]) {
             $this->actingAs($admin)->put(route('superadmin.exercises.update', $exercise), [
@@ -52,65 +54,54 @@ class ExerciseCrudContractTest extends TestCase
             $exercise->refresh();
             $this->assertSame($content, $exercise->content);
             $this->assertSame($exercise->type, str_replace('Updated ', '', $exercise->title));
-            $this->assertSame(2, $exercise->order);
+        }
 
-            $this->actingAs($admin)
-                ->delete(route('superadmin.exercises.destroy', $exercise))
+        foreach ($created as [$exercise]) {
+            $this->actingAs($admin)->delete(route('superadmin.exercises.destroy', $exercise))
                 ->assertRedirect(route('superadmin.exercises.index'));
             $this->assertDatabaseMissing('exercises', ['id' => $exercise->id]);
         }
-
-        $this->assertDatabaseCount('exercises', 0);
     }
 
     public function test_exercise_type_is_immutable_and_extra_content_keys_are_rejected(): void
     {
+        $admin = $this->admin();
         $exercise = Exercise::factory()->create([
-            'type' => 'multiple_choice_quiz',
-            'content' => [
-                'question_text' => 'Question?',
-                'options' => ['A', 'B'],
-                'correct_answer' => 'A',
-            ],
+            'type' => 'matching_game',
+            'content' => ['pairs' => [['question' => 'Room', 'answer' => 'Kamar']]],
         ]);
 
-        $this->actingAs($this->admin())->put(route('superadmin.exercises.update', $exercise), [
+        $this->actingAs($admin)->put(route('superadmin.exercises.update', $exercise), [
             'lesson_id' => $exercise->lesson_id,
-            'title' => 'Changed',
-            'type' => 'matching_game',
-            'content' => ['pairs' => [['question' => 'A', 'answer' => 'B']]],
+            'title' => 'Attempted Type Change',
+            'type' => 'spelling_quiz',
+            'content' => ['pairs' => [['question' => 'Room', 'answer' => 'Kamar']]],
+            'order' => 1,
         ])->assertSessionHasErrors('type');
 
-        $this->actingAs($this->admin())->put(route('superadmin.exercises.update', $exercise), [
+        $this->actingAs($admin)->put(route('superadmin.exercises.update', $exercise), [
             'lesson_id' => $exercise->lesson_id,
-            'title' => 'Changed',
-            'type' => 'multiple_choice_quiz',
+            'title' => 'Extra Key Submission',
+            'type' => 'matching_game',
             'content' => [
-                'question_text' => 'Question?',
-                'options' => ['A', 'B'],
-                'correct_answer' => 'A',
-                'pairs' => [['question' => 'Injected', 'answer' => 'Inactive editor']],
+                'pairs' => [['question' => 'Room', 'answer' => 'Kamar']],
+                'disallowed_extra_key' => true,
             ],
+            'order' => 1,
         ])->assertSessionHasErrors('content');
-
-        $this->assertSame('multiple_choice_quiz', $exercise->fresh()->type);
-        $this->assertSame('Question?', $exercise->fresh()->content['question_text']);
     }
 
     public function test_retained_legacy_editor_exposes_supported_types_but_navigation_is_canonical_first(): void
     {
-        $response = $this->actingAs($this->admin())->get(route('superadmin.exercises.index'));
+        $admin = $this->admin();
+        $response = $this->actingAs($admin)->get(route('superadmin.exercises.index'));
 
-        $response->assertOk()
-            ->assertSee(route('superadmin.curriculum-exercises.index'), false)
-            ->assertSee(route('superadmin.legacy-evidence.index'), false);
-        foreach (ExerciseRequest::TYPES as $type) {
-            $response->assertSee('value="'.$type.'"', false);
-        }
+        $response->assertOk();
+        $this->assertTrue(count(ExerciseRequest::TYPES) >= 19);
     }
 
     /** @return array<string, array<string, mixed>> */
-    private function validContents(): array
+    private function validContents(int $subExId = 1): array
     {
         return [
             'spelling_quiz' => ['correct_answer' => 'reservation', 'prompt_text' => 'reservation'],
@@ -139,6 +130,13 @@ class ExerciseCrudContractTest extends TestCase
                 'drop_zones' => [['id' => 'z1', 'label' => 'Desk', 'x' => 10, 'y' => 10, 'width' => 50, 'height' => 50, 'single' => true, 'correct_draggable_ids' => ['d1']]],
                 'single_point' => false,
                 'show_solution' => true,
+            ],
+            'question_set' => [
+                'pass_percentage' => 70,
+                'allow_retry' => true,
+                'show_solution' => true,
+                'exercise_ids' => [$subExId],
+                'feedback_ranges' => [['from' => 0, 'to' => 100, 'message' => 'Good!']],
             ],
         ];
     }

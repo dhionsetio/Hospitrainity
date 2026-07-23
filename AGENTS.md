@@ -29,3 +29,10 @@ Use the minimal set required for the task, but do not skip an applicable skill. 
 - Preserve unrelated working-tree changes. Do not delete files, records, retained evidence, or user data without the owner's explicit permission for the exact target.
 - Use isolated disposable databases and test artifacts for mutations whenever possible. Do not test destructive behavior against the user's main database.
 - Hidden UI is not authorization. Enforce tenant, role, resource, and lifecycle boundaries on the server and test denial paths.
+
+## Agent context maintenance
+
+- Every agent that updates or modifies the website (including routes, models, curriculum, capabilities, features, or architecture) MUST re-generate and update the agent context files in `context/` before reporting completion.
+- To update the context files, run: `php scripts/operations/export-agent-context.php`
+- Ensure all files in `context/` (`README.md`, `AGENT_INSTRUCTIONS.md`, `MATERIALS_CHANGE_GUIDE.md`, `CHANGE_REQUEST_TEMPLATE.md`, `MANIFEST.json`, and `context/api/v1/agent-context/*.json`) are kept in sync with the current website state and pass manifest verification.
+

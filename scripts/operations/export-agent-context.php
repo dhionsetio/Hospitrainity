@@ -75,6 +75,16 @@ $manifest = [
 $files['MANIFEST.json'] = prettyJson($manifest);
 ksort($files);
 
+$contextDirectory = dirname(__DIR__, 2).'/context';
+foreach ($files as $relativePath => $contents) {
+    $targetFile = $contextDirectory.'/'.$relativePath;
+    $targetDir = dirname($targetFile);
+    if (! is_dir($targetDir) && ! mkdir($targetDir, 0755, true) && ! is_dir($targetDir)) {
+        throw new RuntimeException("Unable to create context directory: {$targetDir}");
+    }
+    file_put_contents($targetFile, $contents);
+}
+
 $outputDirectory = storage_path('app/private/agent-context-exports');
 if (! is_dir($outputDirectory) && ! mkdir($outputDirectory, 0700, true) && ! is_dir($outputDirectory)) {
     throw new RuntimeException("Unable to create agent context export directory: {$outputDirectory}");

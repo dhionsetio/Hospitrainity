@@ -125,3 +125,67 @@ export async function saveScore({
     return response;
 }
 
+export function bufferOfflineScore({ exerciseId, score, maxScore, responseData = null }) {
+    try {
+        const raw = localStorage.getItem("hsp_offline_scores");
+        const scores = raw ? JSON.parse(raw) : [];
+        scores.push({ exerciseId, score, maxScore, responseData, timestamp: Date.now() });
+        localStorage.setItem("hsp_offline_scores", JSON.stringify(scores));
+    } catch (e) {
+        console.warn("Failed to buffer offline score:", e);
+    }
+}
+
+export async function syncOfflineScores({ url = "/scores/store", fetchImpl = globalThis.fetch } = {}) {
+    let raw;
+    try {
+        raw = localStorage.getItem("hsp_offline_scores");
+    } catch {
+        return;
+    }
+    if (!raw) return;
+
+    let scores;
+    try {
+        scores = JSON.parse(raw);
+    } catch {
+        localStorage.removeItem("hsp_offline_scores");
+        return;
+    }
+
+    if (!Array.isArray(scores) || scores.length === 0) return;
+
+    const remaining = [];
+    for (const item of scores) {
+        try {
+            await saveScore({
+                url,
+                exerciseId: item.exerciseId,
+                score: item.score,
+                maxScore: item.maxScore,
+                responseData: item.responseData,
+                fetchImpl,
+            });
+        } catch {
+            remaining.push(item);
+        }
+    }
+
+    try {
+        if (remaining.length > 0) {
+            localStorage.setItem("hsp_offline_scores", JSON.stringify(remaining));
+        } else {
+            localStorage.removeItem("hsp_offline_scores");
+        }
+    } catch (e) {
+        console.warn("Failed to update offline score buffer:", e);
+    }
+}
+
+if (typeof window !== "undefined") {
+    window.addEventListener("online", () => {
+        syncOfflineScores().catch(() => {});
+    });
+}
+
+

@@ -1,0 +1,112 @@
+{
+    "meta": {
+        "id": "hospitrainity-agent-context",
+        "api_version": "1.0.0",
+        "contract": "read_only",
+        "scope": "non_user_specific",
+        "included": [
+            "architecture"
+        ],
+        "data_excluded": [
+            "credentials_and_secrets",
+            "personal_data",
+            "learner_responses_and_progress",
+            "draft_curriculum_payloads",
+            "model_answers_and_release_evidence"
+        ]
+    },
+    "links": {
+        "self": "/api/v1/agent-context/architecture",
+        "index": "/api/v1/agent-context",
+        "openapi": "/api/v1/agent-context/openapi",
+        "focused_section_template": "/api/v1/agent-context/{section}"
+    },
+    "available_sections": [
+        {
+            "key": "product",
+            "description": "Purpose, audiences, supported experiences, and explicit non-goals.",
+            "endpoint": "/api/v1/agent-context/product"
+        },
+        {
+            "key": "domain",
+            "description": "Roles, scopes, lifecycle states, entity relationships, and invariants.",
+            "endpoint": "/api/v1/agent-context/domain"
+        },
+        {
+            "key": "capabilities",
+            "description": "What each actor can do and which exercise contracts are available.",
+            "endpoint": "/api/v1/agent-context/capabilities"
+        },
+        {
+            "key": "workflows",
+            "description": "Ordered registration, enrollment, learning, authoring, release, and privacy flows.",
+            "endpoint": "/api/v1/agent-context/workflows"
+        },
+        {
+            "key": "architecture",
+            "description": "Runtime layers, sources of truth, storage boundaries, and operational dependencies.",
+            "endpoint": "/api/v1/agent-context/architecture"
+        },
+        {
+            "key": "curriculum",
+            "description": "Safe outline and counts from the currently deliverable curriculum package.",
+            "endpoint": "/api/v1/agent-context/curriculum"
+        },
+        {
+            "key": "routes",
+            "description": "Live named-route inventory with inferred access requirements and no controller source.",
+            "endpoint": "/api/v1/agent-context/routes"
+        },
+        {
+            "key": "glossary",
+            "description": "Short, canonical definitions for commonly confused Hospitrainity terms.",
+            "endpoint": "/api/v1/agent-context/glossary"
+        }
+    ],
+    "sections": {
+        "architecture": {
+            "runtime": {
+                "language": "PHP 8.2.32",
+                "framework": "12.64.0",
+                "database_connection": "sqlite",
+                "queue_connection": "database",
+                "session_driver": "database"
+            },
+            "layers": {
+                "routes": "Define guest, verified learner, institution staff, content author, and system administrator boundaries.",
+                "controllers": "Validate HTTP input and delegate delivery or mutations to scoped services.",
+                "middleware_and_policies": "Enforce authentication, verification, role, MFA, recent-password, record, and security-header boundaries.",
+                "services": "Own work/learning context, enrollment, curriculum lifecycle, progress, privacy, search, and security behavior.",
+                "models": "Persist normalized identity, institution, curriculum, evidence, privacy, and security records.",
+                "views_and_javascript": "Render accessible server-driven pages and bounded interactive exercise/progress clients."
+            },
+            "sources_of_truth": {
+                "curriculum": "A versioned canonical curriculum package; database entities and standalone output are projections.",
+                "authorization": "Normalized platform, capability, membership, and institution-role assignments revalidated per request.",
+                "learning_scope": "The selected personal or institution learning context, persisted with every new evidence record.",
+                "public_trust_content": "Versioned application policy/help configuration and translated views."
+            },
+            "storage_boundaries": {
+                "public_media": "Learner-facing approved media only.",
+                "private_artifacts": "Imports, reports, exports, release evidence, and rollback material; never web-served directly.",
+                "database": "Application state and bounded structured evidence; secrets use hashing or encryption according to purpose.",
+                "generated_standalone": "Deterministic projection; never an authoring input."
+            },
+            "operational_dependencies": [
+                "queue worker for asynchronous production jobs",
+                "scheduler for cleanup and retention work",
+                "real production mail transport before accepting users",
+                "private artifact backup and recovery procedure",
+                "storage link only for explicitly public media"
+            ],
+            "security_posture": [
+                "deny by default across role and tenant boundaries",
+                "CSRF protection for session-authenticated writes",
+                "strong MFA for privileged work contexts",
+                "recent-password confirmation for selected sensitive operations",
+                "rate limits on authentication, enrollment, attempts, privacy, and agent-context reads",
+                "CSP and browser security headers on responses"
+            ]
+        }
+    }
+}

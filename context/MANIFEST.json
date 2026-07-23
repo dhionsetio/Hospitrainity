@@ -1,0 +1,95 @@
+{
+    "archive_format": "hospitrainity-portable-agent-context",
+    "archive_format_version": "1.0.0",
+    "context_api_version": "1.0.0",
+    "generated_at": "2026-07-23T21:49:11+00:00",
+    "curriculum_snapshot": {
+        "status": "deliverable",
+        "content_version": "0.4.0-draft"
+    },
+    "handling": {
+        "classification": "private project context",
+        "contains_application_source": false,
+        "contains_credentials_or_secrets": false,
+        "contains_personal_or_learner_data": false,
+        "contains_prompt_bodies_or_answer_keys": false,
+        "share_only_with": "An agent or collaborator authorized to understand or revise this project."
+    },
+    "files": [
+        {
+            "path": "AGENT_INSTRUCTIONS.md",
+            "sha256": "dbe48fabfc2e8171bc0337315db2d2658061051cf6cf87f9a36ea277eaf31004",
+            "bytes": 2128
+        },
+        {
+            "path": "CHANGE_REQUEST_TEMPLATE.md",
+            "sha256": "26b9d104a1bc63d420efb4b8b3255d699a2dfb097e8130bfc77852c4e05f22cd",
+            "bytes": 1151
+        },
+        {
+            "path": "MATERIALS_CHANGE_GUIDE.md",
+            "sha256": "c2d1f5e219be5552d47d734721b0acf7273015ea449fa3e52f35dfabf920b336",
+            "bytes": 3439
+        },
+        {
+            "path": "README.md",
+            "sha256": "e75347a9e6a217eebbc29ac77a76a7baa2869552b5a43eb9c4a3b61e7dfa2c16",
+            "bytes": 2789
+        },
+        {
+            "path": "api/v1/agent-context/all.json",
+            "sha256": "8557d3396bd2212e1f7c2e52ae3c09ed5c89c146beb6ec6893789b2bab3d784a",
+            "bytes": 288404
+        },
+        {
+            "path": "api/v1/agent-context/architecture.json",
+            "sha256": "9ca6d1d5ba92c37584590af45c9ebbfa030bf755f5e0ed5d240aa7094b2ce1ae",
+            "bytes": 5568
+        },
+        {
+            "path": "api/v1/agent-context/capabilities.json",
+            "sha256": "5f0ec5c0987f3aaf0ff8bae5c99552f526b80b8dc47687f7d1a4509a9a894411",
+            "bytes": 13214
+        },
+        {
+            "path": "api/v1/agent-context/curriculum.json",
+            "sha256": "1a8051bf86d2c6e2a907797a8c480858c9d86940158d7e07be8df5d24ff0af97",
+            "bytes": 37925
+        },
+        {
+            "path": "api/v1/agent-context/domain.json",
+            "sha256": "1281ead1384b61a3a03d2b87bd24f365cf48ef81e1bf97ce7827f4dc2b83d4b6",
+            "bytes": 8656
+        },
+        {
+            "path": "api/v1/agent-context/glossary.json",
+            "sha256": "3cd5bb4c614d74877a1a65cc05aff70ce1c1ea6eb274813d199f4f1e3414009f",
+            "bytes": 4295
+        },
+        {
+            "path": "api/v1/agent-context/index.json",
+            "sha256": "f75964ac4cc14d03718e46bba81955724bcf6854c506aab268f2485611688a78",
+            "bytes": 21491
+        },
+        {
+            "path": "api/v1/agent-context/openapi.json",
+            "sha256": "42e95a92c28efcb521365025990e99c2c5dfedfc509d99118f1b1bb9e748990e",
+            "bytes": 12429
+        },
+        {
+            "path": "api/v1/agent-context/product.json",
+            "sha256": "747ba2f5214d0a57f1323087893daf0a6a68af6b29c1b84a0037ebafa9062535",
+            "bytes": 4571
+        },
+        {
+            "path": "api/v1/agent-context/routes.json",
+            "sha256": "67e4097be31d429cd81e462d5adb0931fecbe22a3c4b44bbe444b59ff3e3c62e",
+            "bytes": 224008
+        },
+        {
+            "path": "api/v1/agent-context/workflows.json",
+            "sha256": "be89062c1fa9e4ee19979ba3b85a6be836e3987bab72e007cf84d85131e74818",
+            "bytes": 7472
+        }
+    ]
+}

@@ -1093,5 +1093,18 @@
     "The score cannot exceed the maximum score.": "Skor tidak boleh melebihi skor maksimum.",
     "Legacy score tracking is unavailable in a Class learning context.": "Pelacakan skor tidak tersedia dalam konteks pembelajaran Kelas.",
     "The requested exercise is unavailable for score tracking.": "Latihan yang diminta tidak tersedia untuk pelacakan skor.",
-    "Score saved successfully.": "Skor berhasil disimpan."
+    "Score saved successfully.": "Skor berhasil disimpan.",
+    "Referenced Exercise IDs": "ID Latihan Terkait",
+    "Enter comma-separated exercise IDs included in this quiz set.": "Masukkan ID latihan yang dipisahkan koma dalam kuis ini.",
+    "Pass Target (%)": "Target Kelulusan (%)",
+    "Allow Retry": "Izinkan Ulangi",
+    "Show Solution": "Tampilkan Solusi",
+    "Range Feedback Bands": "Rentang Umpan Balik",
+    "Add Range Band": "Tambah Rentang Umpan Balik",
+    "Feedback message...": "Pesan umpan balik...",
+    "Content Migration Assistant (Type Suggestions)": "Asisten Migrasi Konten (Saran Tipe)",
+    "Paste raw curriculum text below to see rule-based suggestions for exercise types.": "Tempel teks kurikulum di bawah ini untuk melihat saran tipe latihan.",
+    "Paste raw exercise text, asterisks gaps, or choices here...": "Tempel teks latihan, celah tanda bintang, atau pilihan di sini...",
+    "Suggested Exercise Types:": "Tipe Latihan Disarankan:",
+    "Apply": "Terapkan"
 }

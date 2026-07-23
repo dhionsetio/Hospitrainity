@@ -39,6 +39,7 @@ abstract class ExerciseRequest extends FormRequest
         'writing',
         'drag_the_words',
         'drag_and_drop',
+        'question_set',
     ];
 
     public function authorize(): bool
@@ -222,6 +223,18 @@ abstract class ExerciseRequest extends FormRequest
                 'content.drop_zones.*.correct_draggable_ids' => ['required', 'array', 'list', 'min:1'],
                 'content.drop_zones.*.correct_draggable_ids.*' => ['required', 'string', 'max:255'],
                 'content.single_point' => ['sometimes', 'nullable', 'boolean'],
+                'content.show_solution' => ['sometimes', 'nullable', 'boolean'],
+            ],
+            'question_set' => [
+                'content' => ['required', 'array'],
+                'content.exercise_ids' => ['required', 'array', 'min:1', 'max:50'],
+                'content.exercise_ids.*' => ['required', 'integer', 'exists:exercises,id'],
+                'content.pass_percentage' => ['required', 'integer', 'between:1,100'],
+                'content.feedback_ranges' => ['sometimes', 'nullable', 'array', 'max:10'],
+                'content.feedback_ranges.*.from' => ['required', 'integer', 'between:0,100'],
+                'content.feedback_ranges.*.to' => ['required', 'integer', 'between:0,100'],
+                'content.feedback_ranges.*.message' => ['required', 'string', 'max:500'],
+                'content.allow_retry' => ['sometimes', 'nullable', 'boolean'],
                 'content.show_solution' => ['sometimes', 'nullable', 'boolean'],
             ],
             default => [],

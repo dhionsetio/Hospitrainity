@@ -35,6 +35,7 @@ final class CanonicalExerciseTemplateRegistry
             'writing' => $this->definition('open', 'short_text', 'rubric_self_assessment', 1, 10, rubric: true),
             'drag_the_words' => $this->definition('ordering', 'ordering', 'objective_ordered', 1, 20),
             'drag_and_drop' => $this->definition('explicit_selection', 'selection', 'objective_choice', 1, 50),
+            'question_set' => $this->definition('explicit_selection', 'selection', 'objective_choice', 1, 50),
         ];
     }
 
