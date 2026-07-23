@@ -83,8 +83,8 @@ class AgentContextApiTest extends TestCase
             ->assertJsonPath('links.openapi', '/api/v1/agent-context/openapi')
             ->assertJsonPath('sections.domain.roles.work_context_roles', WorkContextRole::values())
             ->assertJsonPath('sections.domain.roles.institution_roles', InstitutionRole::values())
-            ->assertJsonPath('sections.capabilities.exercise_contract.enabled_count', 12)
-            ->assertJsonPath('sections.capabilities.exercise_contract.total_count', 14)
+            ->assertJsonPath('sections.capabilities.exercise_contract.enabled_count', 16)
+            ->assertJsonPath('sections.capabilities.exercise_contract.total_count', 18)
             ->assertJsonPath('sections.capabilities.exercise_contract.templates.spelling_quiz.enabled', false)
             ->assertJsonMissingPath('sections.curriculum')
             ->assertJsonCount(count(AgentContextRepository::SECTIONS), 'available_sections');

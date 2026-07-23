@@ -1089,5 +1089,9 @@
     "Drop Target Zones": "Zona Target Penempatan",
     "Correct Draggable ID:": "ID Item Tarik Benar:",
     "Remove Zone": "Hapus Zona",
-    "Add Target Zone": "Tambah Zona Target"
+    "Add Target Zone": "Tambah Zona Target",
+    "The score cannot exceed the maximum score.": "Skor tidak boleh melebihi skor maksimum.",
+    "Legacy score tracking is unavailable in a Class learning context.": "Pelacakan skor tidak tersedia dalam konteks pembelajaran Kelas.",
+    "The requested exercise is unavailable for score tracking.": "Latihan yang diminta tidak tersedia untuk pelacakan skor.",
+    "Score saved successfully.": "Skor berhasil disimpan."
 }

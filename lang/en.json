@@ -1089,5 +1089,9 @@
     "Drop Target Zones": "Drop Target Zones",
     "Correct Draggable ID:": "Correct Draggable ID:",
     "Remove Zone": "Remove Zone",
-    "Add Target Zone": "Add Target Zone"
+    "Add Target Zone": "Add Target Zone",
+    "The score cannot exceed the maximum score.": "The score cannot exceed the maximum score.",
+    "Legacy score tracking is unavailable in a Class learning context.": "Legacy score tracking is unavailable in a Class learning context.",
+    "The requested exercise is unavailable for score tracking.": "The requested exercise is unavailable for score tracking.",
+    "Score saved successfully.": "Score saved successfully."
 }

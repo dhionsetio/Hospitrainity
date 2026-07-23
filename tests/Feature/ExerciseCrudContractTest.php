@@ -18,7 +18,7 @@ class ExerciseCrudContractTest extends TestCase
         return User::factory()->create(['role' => 'superadmin']);
     }
 
-    public function test_all_fourteen_engine_types_complete_the_admin_crud_contract(): void
+    public function test_all_eighteen_engine_types_complete_the_admin_crud_contract(): void
     {
         $lesson = Lesson::factory()->create();
         $admin = $this->admin();
@@ -130,6 +130,16 @@ class ExerciseCrudContractTest extends TestCase
                 'words' => [['word' => 'ship', 'category_id' => 'short']],
             ],
             'sequencing' => ['steps' => ['Greet the guest', 'Confirm the reservation']],
+            'information' => ['body' => 'Welcome to the course.', 'media_url' => null, 'media_type' => null],
+            'writing' => ['prompt' => 'Greet the guest.', 'min_words' => 5, 'max_words' => 100, 'keywords' => [['text' => 'welcome', 'weight' => 1, 'required' => false, 'case_sensitive' => false]], 'model_answer' => null, 'accept_spelling_errors' => true],
+            'drag_the_words' => ['text' => 'The guest is *checking in*.', 'distractors' => ['checking out'], 'show_solution' => true, 'instant_feedback' => false],
+            'drag_and_drop' => [
+                'background_image' => null,
+                'draggables' => [['id' => 'd1', 'label' => 'Key', 'image' => null, 'multiple' => false]],
+                'drop_zones' => [['id' => 'z1', 'label' => 'Desk', 'x' => 10, 'y' => 10, 'width' => 50, 'height' => 50, 'single' => true, 'correct_draggable_ids' => ['d1']]],
+                'single_point' => false,
+                'show_solution' => true,
+            ],
         ];
     }
 }

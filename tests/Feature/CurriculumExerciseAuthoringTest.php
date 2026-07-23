@@ -56,7 +56,7 @@ class CurriculumExerciseAuthoringTest extends TestCase
     {
         $registry = app(CanonicalExerciseTemplateRegistry::class);
         $this->assertSame(ExerciseRequest::TYPES, array_keys($registry->all()));
-        $this->assertCount(12, $registry->enabledTypes());
+        $this->assertCount(16, $registry->enabledTypes());
         $this->assertSame(
             ['spelling_quiz', 'listening_task'],
             array_keys(array_filter($registry->all(), static fn (array $definition): bool => $definition['enabled'] === false)),
@@ -113,7 +113,7 @@ class CurriculumExerciseAuthoringTest extends TestCase
                 ->assertOk()->assertSee($payload['title'])->assertSee($payload['items'][0]['stem']);
         }
 
-        $this->assertSame(12, $draft->entities()->where('entity_type', 'activity')->whereNotNull('payload->template_type')->count());
+        $this->assertSame(16, $draft->entities()->where('entity_type', 'activity')->whereNotNull('payload->template_type')->count());
         $selectionPrompts = $draft->entities()->where('entity_type', 'prompt-item')->where('payload->response_form', 'selection')->get();
         foreach ($selectionPrompts as $prompt) {
             $answer = $draft->entities()->where('entity_type', 'answer-model')->where('parent_code', $prompt->code)->sole();
