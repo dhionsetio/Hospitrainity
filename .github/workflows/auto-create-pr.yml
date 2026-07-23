@@ -1,0 +1,30 @@
+name: Auto-create PR on branch push
+
+on:
+  push:
+    # ignore pushes to main - only create PRs for feature branches
+    branches-ignore:
+      - main
+
+jobs:
+  create-pull-request:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Create Pull Request
+        uses: actions/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          title: "Auto PR: ${{ github.ref_name }} -> main"
+          body: |
+            This pull request was automatically created by the repository workflow.
+
+            Branch: ${{ github.ref_name }}
+            Base: main
+
+            Merge when ready.
+          base: main
+          branch: ${{ github.ref_name }}
+          draft: false
