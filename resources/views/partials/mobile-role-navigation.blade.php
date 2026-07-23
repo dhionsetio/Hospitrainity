@@ -44,7 +44,7 @@
                 <a href="{{ route('work-context.index') }}" class="flex min-h-11 items-center gap-3 rounded-lg px-4 py-3 text-neutral-800 hover:bg-neutral-100"><i class="fas fa-repeat fa-fw" aria-hidden="true"></i>{{ __('Switch role') }}</a>
             @endif
             <a href="{{ route('help.index') }}" class="flex min-h-11 items-center gap-3 rounded-lg px-4 py-3 text-neutral-800 hover:bg-neutral-100"><i class="fas fa-circle-question fa-fw" aria-hidden="true"></i>{{ __('Help') }}</a>
-            <form method="POST" action="{{ route('logout') }}">
+            <form method="POST" action="{{ route('logout') }}" data-confirm-submit="{{ __('Are you sure you want to sign out?') }}">
                 @csrf
                 <button type="submit" class="flex w-full min-h-11 items-center gap-3 rounded-lg px-4 py-3 text-neutral-800 hover:bg-neutral-100"><i class="fas fa-sign-out-alt fa-fw" aria-hidden="true"></i>{{ __('Logout') }}</button>
             </form>

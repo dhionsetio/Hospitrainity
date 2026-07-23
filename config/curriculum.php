@@ -23,6 +23,7 @@ return [
     ],
     'import' => [
         'disk' => 'curriculum_private',
+        'authority_docx' => env('CURRICULUM_AUTHORITY_DOCX', base_path('tests/Fixtures/curriculum/authority/Hospitrainity.docx')),
         'docx_max_kib' => 2048,
         'asset_max_kib' => 2048,
         // The authority DOCX has 12 entries / 2,269,083 uncompressed bytes;

@@ -203,6 +203,83 @@ function initializePageInteractions() {
         }
     });
 
+    // Login modal controller
+    const loginModal = document.getElementById('login-modal');
+    const openLoginButtons = document.querySelectorAll('[data-login-modal-open]');
+    const closeLoginButtons = document.querySelectorAll('[data-login-modal-close]');
+    let lastActiveElement = null;
+
+    const setLoginModalOpen = (open) => {
+        if (!loginModal) return;
+        if (open) {
+            lastActiveElement = document.activeElement;
+            loginModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            const emailInput = loginModal.querySelector('#email-address');
+            if (emailInput instanceof HTMLElement) emailInput.focus();
+        } else {
+            loginModal.classList.add('hidden');
+            document.body.style.removeProperty('overflow');
+            if (lastActiveElement instanceof HTMLElement) lastActiveElement.focus();
+        }
+    };
+
+    openLoginButtons.forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            setLoginModalOpen(true);
+        });
+    });
+
+    closeLoginButtons.forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            setLoginModalOpen(false);
+        });
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && loginModal && !loginModal.classList.contains('hidden')) {
+            setLoginModalOpen(false);
+        }
+    });
+
+    // Theme toggle controller
+    const themeButtons = document.querySelectorAll('[data-theme-toggle]');
+    const updateThemeUI = (isDark) => {
+        document.documentElement.classList.toggle('dark', isDark);
+        document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+        document.cookie = `hospitrainity_theme=${isDark ? 'dark' : 'light'};path=/;max-age=31536000;SameSite=Lax`;
+        themeButtons.forEach((btn) => {
+            btn.setAttribute('aria-pressed', String(isDark));
+            const label = btn.querySelector('[data-theme-label]');
+            if (label) label.textContent = isDark ? btn.dataset.labelLight : btn.dataset.labelDark;
+            const icon = btn.querySelector('[data-theme-icon]');
+            if (icon) {
+                icon.className = isDark ? 'fas fa-sun fa-fw text-amber-400' : 'fas fa-moon fa-fw text-neutral-600';
+            }
+        });
+    };
+
+    const initialIsDark = document.documentElement.classList.contains('dark');
+    themeButtons.forEach((btn) => {
+        btn.setAttribute('aria-pressed', String(initialIsDark));
+        const label = btn.querySelector('[data-theme-label]');
+        if (label) label.textContent = initialIsDark ? btn.dataset.labelLight : btn.dataset.labelDark;
+        const icon = btn.querySelector('[data-theme-icon]');
+        if (icon) {
+            icon.className = initialIsDark ? 'fas fa-sun fa-fw text-amber-400' : 'fas fa-moon fa-fw text-neutral-600';
+        }
+    });
+
+    themeButtons.forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const isDark = document.documentElement.classList.contains('dark');
+            updateThemeUI(!isDark);
+        });
+    });
+
     document.addEventListener('submit', (event) => {
         const form = event.target;
         if (!(form instanceof HTMLFormElement) || !form.matches('[data-confirm-submit]')) return;

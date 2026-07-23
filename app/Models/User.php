@@ -44,11 +44,35 @@ class User extends Authenticatable implements MustVerifyEmail, PasskeyUser
      */
     protected $fillable = [
         'name',
+        'first_name',
+        'middle_name',
+        'last_name',
+        'gender',
+        'occupation',
+        'occupation_other',
+        'prefix',
         'instansi',
         'email',
         'password',
         'timezone',
     ];
+
+    /**
+     * Get formatted full display name including prefix if present.
+     */
+    public function formattedName(): string
+    {
+        if ($this->first_name !== null && $this->first_name !== '') {
+            return trim(implode(' ', array_filter([
+                $this->prefix !== null && $this->prefix !== 'None' ? $this->prefix : null,
+                $this->first_name,
+                $this->middle_name,
+                $this->last_name,
+            ])));
+        }
+
+        return $this->name;
+    }
 
     /**
      * The attributes that should be hidden for serialization.

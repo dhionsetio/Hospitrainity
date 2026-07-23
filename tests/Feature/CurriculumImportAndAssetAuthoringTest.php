@@ -282,7 +282,7 @@ class CurriculumImportAndAssetAuthoringTest extends TestCase
                 throw new RuntimeException('The configured learning-material authority is unavailable.');
             }
         } else {
-            $path = 'C:/Users/dhion/Desktop/Documents/000 - Thesis Dhion Setio/Revisi 30 Juni 2026/Learning Materials - Fixed/Hospitrainity.docx';
+            $path = config('curriculum.import.authority_docx', base_path('tests/Fixtures/curriculum/authority/Hospitrainity.docx'));
             if (! is_file($path)) {
                 return null;
             }

@@ -44,4 +44,65 @@ class LearnerProgressController extends Controller
             'backRouteName' => 'superadmin.progress.index',
         ]);
     }
+
+    public function export(ListLearnerProgressRequest $request): \Symfony\Component\HttpFoundation\StreamedResponse
+    {
+        $filters = $request->validated();
+        $learners = $this->progress->identityLearners($filters);
+
+        \App\Models\AdministrationAudit::query()->create([
+            'actor_user_id' => $request->user()->id,
+            'target_user_id' => $request->user()->id,
+            'event' => 'superadmin.progress_exported',
+            'old_role' => $request->user()->role,
+            'new_role' => $request->user()->role,
+            'reason' => 'Exported learner progress CSV',
+            'metadata' => [
+                'count' => $learners->count(),
+            ],
+            'created_at' => now(),
+        ]);
+
+        $filename = 'hospitrainity_learner_progress_' . date('Y-m-d_His') . '.csv';
+
+        $headers = [
+            'Content-Type' => 'text/csv; charset=UTF-8',
+            'Content-Disposition' => "attachment; filename=\"{$filename}\"",
+        ];
+
+        return response()->stream(function () use ($learners) {
+            $handle = fopen('php://output', 'w');
+            fputs($handle, "\xEF\xBB\xBF");
+
+            fputcsv($handle, [
+                'Learner ID',
+                'Name',
+                'Email',
+                'Role',
+                'Institution',
+                'Registered At',
+            ]);
+
+            $sanitize = static function ($value): string {
+                $str = (string) $value;
+                if (preg_match('/^[\=\+\-\@\t\r]/', $str)) {
+                    return "'" . $str;
+                }
+                return $str;
+            };
+
+            foreach ($learners as $learner) {
+                fputcsv($handle, [
+                    $sanitize($learner->id),
+                    $sanitize($learner->name),
+                    $sanitize($learner->email),
+                    $sanitize($learner->role->value ?? (string) $learner->role),
+                    $sanitize($learner->instansi ?: '-'),
+                    $sanitize($learner->created_at?->toIso8601String() ?? '-'),
+                ]);
+            }
+
+            fclose($handle);
+        }, 200, $headers);
+    }
 }

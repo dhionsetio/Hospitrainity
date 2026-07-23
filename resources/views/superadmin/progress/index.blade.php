@@ -14,10 +14,9 @@
                     <p class="mt-2 max-w-3xl text-neutral-600">{{ __('admin.learner_progress_description') }}</p>
                 </div>
                 <div>
-                    <button type="button" disabled aria-disabled="true" class="cursor-not-allowed rounded-md bg-neutral-200 px-4 py-2 font-semibold text-neutral-500">
-                        {{ __('admin.csv_export_unavailable') }}
-                    </button>
-                    <p class="mt-1 max-w-xs text-xs text-neutral-500">{{ __('admin.progress_export_disabled_short') }}</p>
+                    <x-button :href="route('superadmin.progress.export', request()->query())" variant="primary" class="inline-flex items-center gap-2">
+                        <i class="fas fa-file-csv" aria-hidden="true"></i> {{ __('Export CSV') }}
+                    </x-button>
                 </div>
             </header>
 

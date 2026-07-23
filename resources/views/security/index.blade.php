@@ -109,5 +109,36 @@
         </ul>
         <form method="POST" action="{{ route('security.sessions.destroy-others') }}" class="mt-4">@csrf @method('DELETE')<button class="rounded-md border border-red-700 px-4 py-3 font-semibold text-red-800">{{ __('Revoke all other sessions') }}</button></form>
     </section>
+
+    <section class="rounded-lg border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-5" aria-labelledby="email-heading">
+        <h2 id="email-heading" class="text-xl font-bold text-neutral-950 dark:text-white">{{ __('Change email address') }}</h2>
+        <p class="mt-2 text-neutral-700 dark:text-neutral-300">{{ __('Update your email address. A new verification link will be sent before the new email becomes active.') }}</p>
+        <form method="POST" action="{{ route('account.email.update') }}" class="mt-4 grid max-w-xl gap-4">
+            @csrf @method('PATCH')
+            <label><span class="font-medium text-neutral-900 dark:text-neutral-200">{{ __('New email address') }}</span><input type="email" name="email" value="{{ old('email', auth()->user()->email) }}" required autocomplete="email" class="mt-1 w-full rounded-md border border-neutral-400 dark:border-neutral-700 dark:bg-neutral-800 dark:text-white px-3 py-3"></label>
+            <label><span class="font-medium text-neutral-900 dark:text-neutral-200">{{ __('Current password') }}</span><input type="password" name="current_password" required autocomplete="current-password" class="mt-1 w-full rounded-md border border-neutral-400 dark:border-neutral-700 dark:bg-neutral-800 dark:text-white px-3 py-3"></label>
+            <x-button type="submit" variant="primary" class="justify-self-start">{{ __('Update email address') }}</x-button>
+        </form>
+    </section>
+
+    <section class="rounded-lg border border-red-200 dark:border-red-900 bg-red-50/50 dark:bg-neutral-900 p-5" aria-labelledby="data-heading">
+        <h2 id="data-heading" class="text-xl font-bold text-neutral-950 dark:text-white">{{ __('Delete personal learning data') }}</h2>
+        <p class="mt-2 text-neutral-700 dark:text-neutral-300">{{ __('Permanently remove your scores, exercise attempts, and saved writing responses while keeping your account active.') }}</p>
+        <form method="POST" action="{{ route('account.data.destroy') }}" data-confirm-submit="{{ __('Are you sure you want to delete all your learning data? This action cannot be undone.') }}" class="mt-4 grid max-w-xl gap-4">
+            @csrf @method('DELETE')
+            <label><span class="font-medium text-neutral-900 dark:text-neutral-200">{{ __('Current password') }}</span><input type="password" name="current_password" required autocomplete="current-password" class="mt-1 w-full rounded-md border border-neutral-400 dark:border-neutral-700 dark:bg-neutral-800 dark:text-white px-3 py-3"></label>
+            <x-button type="submit" variant="danger" class="justify-self-start">{{ __('Delete my learning data') }}</x-button>
+        </form>
+    </section>
+
+    <section class="rounded-lg border border-red-400 dark:border-red-800 bg-red-100/50 dark:bg-neutral-900 p-5" aria-labelledby="account-deletion-heading">
+        <h2 id="account-deletion-heading" class="text-xl font-bold text-red-950 dark:text-red-400">{{ __('Danger zone: Delete account') }}</h2>
+        <p class="mt-2 text-neutral-700 dark:text-neutral-300">{{ __('Permanently anonymize your account profile, revoke all access, and end your active sessions.') }}</p>
+        <form method="POST" action="{{ route('account.destroy') }}" data-confirm-submit="{{ __('Are you sure you want to delete your account? This action cannot be undone.') }}" class="mt-4 grid max-w-xl gap-4">
+            @csrf @method('DELETE')
+            <label><span class="font-medium text-neutral-900 dark:text-neutral-200">{{ __('Current password') }}</span><input type="password" name="current_password" required autocomplete="current-password" class="mt-1 w-full rounded-md border border-neutral-400 dark:border-neutral-700 dark:bg-neutral-800 dark:text-white px-3 py-3"></label>
+            <x-button type="submit" variant="danger" class="justify-self-start">{{ __('Delete my account') }}</x-button>
+        </form>
+    </section>
 </main>
 @endsection

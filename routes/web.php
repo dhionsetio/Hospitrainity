@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccountSettingsController;
 use App\Http\Controllers\ActiveInstitutionController;
 use App\Http\Controllers\Admin\ProgressAggregateController;
 use App\Http\Controllers\Auth\EmailVerificationController;
@@ -286,6 +287,12 @@ Route::middleware('auth')->group(function () {
         ->middleware(['password.confirm', 'throttle:security-settings'])->name('security.recovery-codes.regenerate');
     Route::patch('/security/password', [SecuritySettingsController::class, 'updatePassword'])
         ->middleware('throttle:security-settings')->name('security.password.update');
+    Route::patch('/account/email', [AccountSettingsController::class, 'updateEmail'])
+        ->middleware('throttle:6,1')->name('account.email.update');
+    Route::delete('/account/data', [AccountSettingsController::class, 'destroyData'])
+        ->middleware('throttle:6,1')->name('account.data.destroy');
+    Route::delete('/account', [AccountSettingsController::class, 'destroyAccount'])
+        ->middleware('throttle:6,1')->name('account.destroy');
     Route::delete('/security/sessions/{session}', [SecuritySettingsController::class, 'revokeSession'])
         ->middleware('throttle:security-settings')->name('security.sessions.destroy');
     Route::delete('/security/sessions', [SecuritySettingsController::class, 'revokeOtherSessions'])
@@ -332,6 +339,8 @@ Route::middleware(['auth', 'verified', 'role:user'])->group(function () {
         ->name('institution-enrollment.index');
     Route::post('/institution-memberships', [InstitutionEnrollmentController::class, 'store'])
         ->middleware('throttle:join-code-redeem')->name('institution-enrollment.store');
+    Route::delete('/institution-memberships/{membership}', [InstitutionEnrollmentController::class, 'destroy'])
+        ->name('institution-enrollment.destroy');
     Route::post('/learning-context', LearningContextController::class)
         ->middleware('throttle:institution-switch')->name('learning-context.select');
 
@@ -465,6 +474,7 @@ Route::middleware(['auth', 'verified', 'role:superadmin', 'privileged.mfa'])->pr
     Route::get('/institutions', [InstitutionController::class, 'index'])->name('institutions.index');
     Route::get('/curriculum-exercises', [CurriculumDraftExerciseController::class, 'overview'])->name('curriculum-exercises.index');
     Route::get('/progress', [SuperadminLearnerProgressController::class, 'index'])->name('progress.index');
+    Route::get('/progress/export', [SuperadminLearnerProgressController::class, 'export'])->name('progress.export');
     Route::get('/progress/learners/{learner}', [SuperadminLearnerProgressController::class, 'show'])
         ->name('progress.learners.show');
     Route::get('/legacy-evidence', [LegacyEvidenceController::class, 'index'])->name('legacy-evidence.index');

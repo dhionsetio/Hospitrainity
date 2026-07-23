@@ -64,7 +64,8 @@ class PrivacyLifecycleTest extends TestCase
     public function test_registration_records_separate_versioned_policy_acknowledgements(): void
     {
         $response = $this->post(route('register.store'), [
-            'name' => 'Policy Learner',
+            'first_name' => 'Policy',
+            'last_name' => 'Learner',
             'email' => 'policy@example.test',
             'password' => 'Correct Horse Battery Staple 2026!',
             'password_confirmation' => 'Correct Horse Battery Staple 2026!',

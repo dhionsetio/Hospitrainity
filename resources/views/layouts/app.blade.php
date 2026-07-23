@@ -3,9 +3,10 @@
     $uiUseLearnerShell = $uiUser !== null
         && $uiUser->hasVerifiedEmail()
         && app(\App\Services\WorkContext::class)->current(request(), $uiUser) === \App\Enums\WorkContextRole::Learner;
+    $isDarkMode = request()->cookie('hospitrainity_theme') === 'dark' || ($uiUser?->ui_theme === 'dark');
 @endphp
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-shell="{{ $uiUseLearnerShell ? 'learner' : 'default' }}" data-confirm-fallback="{{ __('Are you sure you want to continue?') }}" data-theme="{{ $uiUser?->ui_theme ?? 'system' }}" data-motion="{{ $uiUser?->ui_motion ?? 'system' }}" data-text-scale="{{ $uiUser?->ui_text_scale ?? 'default' }}" data-contrast="{{ $uiUser?->ui_high_contrast ? 'stronger' : 'default' }}" data-audio="{{ $uiUser?->ui_no_audio ? 'off' : 'on' }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="{{ $isDarkMode ? 'dark' : '' }}" data-shell="{{ $uiUseLearnerShell ? 'learner' : 'default' }}" data-confirm-fallback="{{ __('Are you sure you want to continue?') }}" data-theme="{{ $isDarkMode ? 'dark' : ($uiUser?->ui_theme ?? 'system') }}" data-motion="{{ $uiUser?->ui_motion ?? 'system' }}" data-text-scale="{{ $uiUser?->ui_text_scale ?? 'default' }}" data-contrast="{{ $uiUser?->ui_high_contrast ? 'stronger' : 'default' }}" data-audio="{{ $uiUser?->ui_no_audio ? 'off' : 'on' }}">
 
 <head>
     <meta charset="UTF-8">

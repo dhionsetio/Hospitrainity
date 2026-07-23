@@ -37,6 +37,8 @@ class DashboardController extends Controller
     {
         $user = Auth::user();
 
+        $greeting = app(\App\Services\GreetingService::class)->greeting($user);
+
         if ($this->canonicalCurriculum->isActiveFor($user)) {
             $chapters = $this->canonicalCurriculum->dashboardChaptersFor($user);
             $package = $this->canonicalCurriculum->packageFor($user);
@@ -73,12 +75,13 @@ class DashboardController extends Controller
                 'learningStreak',
                 'reviewQueue',
                 'classAnnouncements',
+                'greeting',
             ));
         }
 
         $modules = $this->progress->dashboardModulesFor($user);
         $nextAction = null;
 
-        return view('dashboard', compact('modules', 'nextAction'));
+        return view('dashboard', compact('modules', 'nextAction', 'greeting'));
     }
 }

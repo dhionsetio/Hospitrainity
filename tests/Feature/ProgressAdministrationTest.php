@@ -168,7 +168,7 @@ class ProgressAdministrationTest extends TestCase
             ->assertDontSee($learner->instansi);
 
         $routeNames = collect(app('router')->getRoutes()->getRoutes())->map->getName()->filter();
-        $this->assertFalse($routeNames->contains(fn (string $name): bool => str_contains($name, 'progress.export')));
+        $this->assertFalse($routeNames->contains(fn (string $name): bool => $name === 'admin.progress.export'));
     }
 
     public function test_stale_and_unknown_versions_are_labeled_without_invented_content(): void

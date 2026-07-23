@@ -48,7 +48,10 @@
 
 <aside class="hidden w-full flex-shrink-0 flex-col border-b border-neutral-200 bg-white p-4 text-neutral-600 md:sticky md:top-0 md:flex md:h-dvh md:w-64 md:self-start md:overflow-y-auto md:border-b-0 md:border-r">
     <div class="mb-4 py-4 text-center">
-        <a href="{{ route($administrationRoutePrefix.'.dashboard') }}" class="text-2xl font-bold text-neutral-900">Hospitrainity <span class="text-indigo-600">{{ __('admin.admin') }}</span></a>
+        <a href="{{ route($administrationRoutePrefix.'.dashboard') }}" class="inline-flex items-center gap-2" aria-label="{{ __('Hospitrainity admin dashboard') }}">
+            <x-brand-logo class="h-8 w-auto" />
+            <span class="text-xs font-semibold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-2 py-1 rounded">{{ __('admin.admin') }}</span>
+        </a>
     </div>
     <nav class="flex-grow" aria-label="{{ __('admin.administration_navigation') }}">
         <ul class="space-y-2">
@@ -148,7 +151,7 @@
                 <a href="{{ route('help.index') }}" class="flex w-full items-center gap-3 rounded-lg px-4 py-2 hover:bg-neutral-100">
                     <i class="fas fa-circle-question fa-fw" aria-hidden="true"></i><span>{{ __('Help') }}</span>
                 </a>
-                <form method="POST" action="{{ route('logout') }}">
+                <form method="POST" action="{{ route('logout') }}" data-confirm-submit="{{ __('Are you sure you want to sign out?') }}">
                     @csrf
                     <button type="submit" class="flex w-full items-center gap-3 rounded-lg px-4 py-2 hover:bg-neutral-100">
                         <i class="fas fa-sign-out-alt fa-fw" aria-hidden="true"></i>

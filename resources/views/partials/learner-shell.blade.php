@@ -49,9 +49,8 @@
 @endphp
 
 <aside class="hsp-shell-rail" aria-label="{{ __('Learner navigation') }}">
-    <a href="{{ route('dashboard') }}" class="hsp-shell-brand" aria-label="{{ __('Hospitrainity learning dashboard') }}">
-        <span class="hsp-shell-brand__mark" aria-hidden="true"><i class="fa-solid fa-bell-concierge"></i></span>
-        <span>Hospitrainity</span>
+    <a href="{{ route('dashboard') }}" class="hsp-shell-brand flex items-center gap-2" aria-label="{{ __('Hospitrainity learning dashboard') }}">
+        <x-brand-logo class="h-7 w-auto" />
     </a>
 
     <nav class="hsp-shell-nav" aria-label="{{ __('Primary learner navigation') }}">
@@ -75,9 +74,8 @@
 </aside>
 
 <header class="hsp-shell-topbar">
-    <a href="{{ route('dashboard') }}" class="hsp-shell-topbar__brand" aria-label="{{ __('Hospitrainity learning dashboard') }}">
-        <span class="hsp-shell-brand__mark" aria-hidden="true"><i class="fa-solid fa-bell-concierge"></i></span>
-        <span>Hospitrainity</span>
+    <a href="{{ route('dashboard') }}" class="hsp-shell-topbar__brand flex items-center gap-2" aria-label="{{ __('Hospitrainity learning dashboard') }}">
+        <x-brand-logo class="h-7 w-auto" />
     </a>
 
     <div class="hsp-shell-disclosure hsp-shell-disclosure--context" data-shell-disclosure>
@@ -244,7 +242,7 @@
                 <x-language-switcher compact />
             </div>
 
-            <form method="POST" action="{{ route('logout') }}" class="hsp-shell-logout">
+            <form method="POST" action="{{ route('logout') }}" class="hsp-shell-logout" data-confirm-submit="{{ __('Are you sure you want to sign out?') }}">
                 @csrf
                 <button type="submit"><i class="fa-solid fa-arrow-right-from-bracket" aria-hidden="true"></i><span>{{ __('Logout') }}</span></button>
             </form>

@@ -14,7 +14,7 @@
     <main class="container mx-auto px-6 py-8">
         <header class="mb-8">
             <p class="text-sm font-semibold uppercase tracking-wide text-indigo-700">{{ __('Hospitality English learning') }}</p>
-            <h1 class="mt-2 text-3xl font-bold text-neutral-900">{{ __('Welcome Back!') }}</h1>
+            <h1 class="mt-2 text-3xl font-bold text-neutral-900">{{ $greeting ?? __('Welcome Back!') }}</h1>
             <p class="mt-2 text-neutral-600">{{ __('Continue through the available Hospitrainity modules and activities.') }}</p>
             @isset($nextAction)
                 @include('partials.next-action', ['nextAction' => $nextAction])

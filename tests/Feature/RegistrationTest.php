@@ -35,10 +35,11 @@ class RegistrationTest extends TestCase
             ->assertDontSee('Hotel B')
             ->assertDontSee('Politeknik Negeri Malang')
             ->assertDontSee('State Polytechnic of Malang')
-            ->assertDontSee('<select', false);
+            ->assertDontSee('institution_id');
 
         $this->post(route('register.store'), [
-            'name' => 'Personal Learner',
+            'first_name' => 'Personal',
+            'last_name' => 'Learner',
             'email' => 'Personal.Learner@example.com',
             'password' => 'A-reliable-test-password-2026!',
             'password_confirmation' => 'A-reliable-test-password-2026!',
@@ -66,7 +67,8 @@ class RegistrationTest extends TestCase
         User::factory()->create(['email' => 'existing.learner@example.com']);
 
         $this->post(route('register.store'), [
-            'name' => 'Duplicate Learner',
+            'first_name' => 'Duplicate',
+            'last_name' => 'Learner',
             'email' => ' Existing.Learner@Example.com ',
             'password' => 'A-reliable-test-password-2026!',
             'password_confirmation' => 'A-reliable-test-password-2026!',

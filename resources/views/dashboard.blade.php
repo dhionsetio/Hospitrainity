@@ -8,7 +8,7 @@
 
     <!-- Main Content -->
     <main class="container mx-auto px-6 py-8">
-        <h1 class="text-3xl font-bold text-neutral-800">{{ __('Welcome Back!') }}</h1>
+        <h1 class="text-3xl font-bold text-neutral-800">{{ $greeting ?? __('Welcome Back!') }}</h1>
         <p class="text-neutral-600 mt-2">{{ __('Continue your learning and reach your goals.') }}</p>
         @include('partials.next-action', ['nextAction' => $nextAction])
 

@@ -50,7 +50,8 @@
                     </li>
                 @endfor
             </ol>
-            <h1 class="mt-2 break-words text-3xl font-bold text-neutral-950 sm:text-4xl">{{ $curriculumSection['title'] }}</h1>
+            @php($displayTitle = preg_replace('/^\s*Step\s+\d+[\.\:\-\s]*/i', '', $curriculumSection['title']))
+            <h1 class="mt-2 break-words text-3xl font-bold text-neutral-950 sm:text-4xl">{{ $displayTitle }}</h1>
             <div class="mt-5 flex flex-wrap gap-3">
                 @unless(Auth::user()?->ui_no_audio)
                     <button

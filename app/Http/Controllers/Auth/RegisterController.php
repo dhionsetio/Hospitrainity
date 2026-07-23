@@ -33,7 +33,13 @@ class RegisterController extends Controller
         $request->merge(['email' => User::canonicalEmail($request->input('email'))]);
 
         $validated = $request->validate([
-            'name' => ['required', 'string', 'max:255'],
+            'first_name' => ['required', 'string', 'max:100'],
+            'middle_name' => ['nullable', 'string', 'max:100'],
+            'last_name' => ['nullable', 'string', 'max:100'],
+            'gender' => ['nullable', Rule::in(['male', 'female', 'rather_not_say'])],
+            'occupation' => ['nullable', Rule::in(['student', 'lecturer', 'teacher', 'staff', 'manager', 'other'])],
+            'occupation_other' => ['nullable', 'string', 'max:100'],
+            'prefix' => ['nullable', Rule::in(['Mr.', 'Mrs.', 'Ms.', 'None'])],
             'email' => [
                 'required',
                 'string',
@@ -41,15 +47,28 @@ class RegisterController extends Controller
                 'max:255',
                 Rule::unique(User::class, 'email'),
             ],
-            'password' => ['required', 'confirmed', new SecurePassword([$request->input('name'), $request->input('email')])],
+            'password' => ['required', 'confirmed', new SecurePassword([$request->input('first_name'), $request->input('email')])],
             'scope_acknowledgement' => ['accepted'],
             'policy_acknowledgement' => ['accepted'],
         ]);
 
         $user = DB::transaction(function () use ($validated): User {
             $policies = app(PolicyDocumentRegistry::class);
+            $fullName = trim(implode(' ', array_filter([
+                $validated['first_name'],
+                $validated['middle_name'] ?? null,
+                $validated['last_name'] ?? null,
+            ])));
+
             $user = User::query()->create([
-                'name' => $validated['name'],
+                'name' => $fullName,
+                'first_name' => $validated['first_name'],
+                'middle_name' => $validated['middle_name'] ?? null,
+                'last_name' => $validated['last_name'] ?? null,
+                'gender' => $validated['gender'] ?? null,
+                'occupation' => $validated['occupation'] ?? null,
+                'occupation_other' => $validated['occupation_other'] ?? null,
+                'prefix' => $validated['prefix'] ?? null,
                 'instansi' => '',
                 'email' => $validated['email'],
                 'password' => $validated['password'],

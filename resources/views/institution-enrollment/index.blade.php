@@ -63,26 +63,48 @@
                 @endif
                 @foreach($memberships as $membership)
                     @if($currentContext['course_enrollment_id'] === null && $currentContext['membership_id'] === $membership->id)
-                        <div class="hsp-context-current" aria-current="true">
+                        <div class="hsp-context-current flex flex-col justify-between rounded-lg border border-neutral-200 bg-white p-4 shadow-sm" aria-current="true">
                             <div>
                                 <h3 class="font-bold text-neutral-900">{{ $membership->institution->displayName(app()->getLocale()) }}</h3>
-                                <p class="mt-1 text-sm text-neutral-600">{{ __('New activity here is visible to authorized staff from this institution.') }}</p>
+                                <p class="mt-1 text-sm text-neutral-600">{{ __('Active institution membership.') }}</p>
                             </div>
-                            <span class="hsp-status-pill"><i class="fa-solid fa-check" aria-hidden="true"></i> {{ __('Current context') }}</span>
+                            <div class="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-neutral-100 pt-3">
+                                <span class="hsp-status-pill inline-flex items-center gap-1 rounded bg-green-100 px-2.5 py-1 text-xs font-semibold text-green-800">
+                                    <i class="fa-solid fa-check" aria-hidden="true"></i> {{ __('Current context') }}
+                                </span>
+                                <form method="POST" action="{{ route('institution-enrollment.destroy', $membership) }}" data-confirm-submit="{{ __('Are you sure you want to leave :institution? Your progress will be preserved.', ['institution' => $membership->institution->displayName(app()->getLocale())]) }}">
+                                    @csrf
+                                    @method('DELETE')
+                                    <x-button type="submit" variant="danger" size="sm">
+                                        {{ __('Leave') }}
+                                    </x-button>
+                                </form>
+                            </div>
                         </div>
                     @else
-                        <form method="POST" action="{{ route('learning-context.select') }}">
-                            @csrf
-                            <input type="hidden" name="scope" value="institution">
-                            <input type="hidden" name="membership_id" value="{{ $membership->id }}">
-                            <button type="submit" class="hsp-context-choice">
-                                <span>
-                                    <span class="block font-bold text-neutral-900">{{ $membership->institution->displayName(app()->getLocale()) }}</span>
-                                    <span class="mt-1 block text-sm text-neutral-600">{{ __('New activity here is visible to authorized staff from this institution.') }}</span>
-                                </span>
-                                <span class="hsp-context-choice__action">{{ __('Use this context') }} <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
-                            </button>
-                        </form>
+                        <div class="hsp-context-choice flex flex-col justify-between rounded-lg border border-neutral-200 bg-white p-4 shadow-sm">
+                            <div>
+                                <h3 class="font-bold text-neutral-900">{{ $membership->institution->displayName(app()->getLocale()) }}</h3>
+                                <p class="mt-1 text-sm text-neutral-600">{{ __('Active institution membership.') }}</p>
+                            </div>
+                            <div class="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-neutral-100 pt-3">
+                                <form method="POST" action="{{ route('learning-context.select') }}">
+                                    @csrf
+                                    <input type="hidden" name="scope" value="institution">
+                                    <input type="hidden" name="membership_id" value="{{ $membership->id }}">
+                                    <x-button type="submit" variant="secondary" size="sm">
+                                        {{ __('Learn') }}
+                                    </x-button>
+                                </form>
+                                <form method="POST" action="{{ route('institution-enrollment.destroy', $membership) }}" data-confirm-submit="{{ __('Are you sure you want to leave :institution? Your progress will be preserved.', ['institution' => $membership->institution->displayName(app()->getLocale())]) }}">
+                                    @csrf
+                                    @method('DELETE')
+                                    <x-button type="submit" variant="danger" size="sm">
+                                        {{ __('Leave') }}
+                                    </x-button>
+                                </form>
+                            </div>
+                        </div>
                     @endif
                 @endforeach
                 @foreach($classEnrollments as $enrollment)

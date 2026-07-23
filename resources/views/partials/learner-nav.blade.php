@@ -2,7 +2,9 @@
 <nav class="bg-white shadow-md" aria-label="{{ __('Curriculum preview navigation') }}">
         <div class="container mx-auto flex flex-wrap items-center justify-between gap-y-3 px-6 py-3">
             <!-- Logo -->
-            <a href="{{ isset($curriculumPreview) ? route((Auth::user()->isSuperAdmin() ? 'superadmin' : 'admin').'.curriculum-drafts.show', $curriculumPreview) : route('dashboard') }}" class="text-2xl font-bold text-indigo-600">Hospitrainity</a>
+            <a href="{{ isset($curriculumPreview) ? route((Auth::user()->isSuperAdmin() ? 'superadmin' : 'admin').'.curriculum-drafts.show', $curriculumPreview) : route('dashboard') }}" aria-label="{{ __('Hospitrainity dashboard') }}" class="inline-block">
+                <x-brand-logo class="h-8 w-auto" />
+            </a>
 
             <!-- Profile Section -->
             <div class="flex items-center gap-4">
@@ -24,7 +26,7 @@
                                     <option value="class:{{ $enrollment->id }}" @selected($learningContext['course_enrollment_id'] === $enrollment->id)>{{ $enrollment->offering->title }}, {{ $enrollment->membership->institution->displayName(app()->getLocale()) }}</option>
                                 @endforeach
                             </select>
-                            <button type="submit" class="rounded-md border border-indigo-600 px-3 py-2 text-sm font-semibold text-indigo-700 hover:bg-indigo-50">{{ __('Switch') }}</button>
+                            <x-button type="submit" variant="outline" size="sm">{{ __('Switch') }}</x-button>
                         </form>
                     @endif
                 @endif
@@ -55,13 +57,17 @@
                         <a href="{{ route('preferences.edit') }}" role="menuitem" tabindex="-1" class="block px-4 py-2 text-sm text-neutral-700 hover:bg-neutral-100">{{ __('Display preferences') }}</a>
                         <a href="{{ route('help.index') }}" role="menuitem" tabindex="-1" class="block px-4 py-2 text-sm text-neutral-700 hover:bg-neutral-100">{{ __('Help') }}</a>
                         <x-language-switcher menu />
+                        <button type="button" role="menuitem" tabindex="-1" data-theme-toggle data-label-dark="{{ __('Dark Mode') }}" data-label-light="{{ __('Light Mode') }}" class="flex w-full items-center gap-2 px-4 py-2 text-sm text-neutral-700 hover:bg-neutral-100 dark:text-neutral-200 dark:hover:bg-neutral-800">
+                            <i data-theme-icon class="fas fa-moon fa-fw text-neutral-600 dark:text-amber-400" aria-hidden="true"></i>
+                            <span data-theme-label>{{ __('Dark Mode') }}</span>
+                        </button>
                         <div role="separator" class="border-t border-neutral-200 my-1"></div>
 
                         <!-- Logout action -->
-                        <form method="POST" action="{{ route('logout') }}">
+                        <form method="POST" action="{{ route('logout') }}" data-confirm-submit="{{ __('Are you sure you want to sign out?') }}">
                             @csrf
                             <button type="submit" role="menuitem" tabindex="-1"
-                                class="block w-full text-left px-4 py-2 text-sm text-neutral-700 hover:bg-neutral-100">
+                                class="block w-full text-left px-4 py-2 text-sm text-neutral-700 hover:bg-neutral-100 dark:text-neutral-200 dark:hover:bg-neutral-800">
                                 {{ __('Logout') }}
                             </button>
                         </form>
