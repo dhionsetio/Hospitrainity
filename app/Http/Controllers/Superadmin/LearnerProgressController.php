@@ -4,10 +4,12 @@ namespace App\Http\Controllers\Superadmin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Superadmin\ListLearnerProgressRequest;
+use App\Models\AdministrationAudit;
 use App\Models\User;
 use App\Services\ProgressAdministrationService;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class LearnerProgressController extends Controller
 {
@@ -45,12 +47,12 @@ class LearnerProgressController extends Controller
         ]);
     }
 
-    public function export(ListLearnerProgressRequest $request): \Symfony\Component\HttpFoundation\StreamedResponse
+    public function export(ListLearnerProgressRequest $request): StreamedResponse
     {
         $filters = $request->validated();
         $learners = $this->progress->identityLearners($filters);
 
-        \App\Models\AdministrationAudit::query()->create([
+        AdministrationAudit::query()->create([
             'actor_user_id' => $request->user()->id,
             'target_user_id' => $request->user()->id,
             'event' => 'superadmin.progress_exported',
@@ -63,7 +65,7 @@ class LearnerProgressController extends Controller
             'created_at' => now(),
         ]);
 
-        $filename = 'hospitrainity_learner_progress_' . date('Y-m-d_His') . '.csv';
+        $filename = 'hospitrainity_learner_progress_'.date('Y-m-d_His').'.csv';
 
         $headers = [
             'Content-Type' => 'text/csv; charset=UTF-8',
@@ -72,7 +74,7 @@ class LearnerProgressController extends Controller
 
         return response()->stream(function () use ($learners) {
             $handle = fopen('php://output', 'w');
-            fputs($handle, "\xEF\xBB\xBF");
+            fwrite($handle, "\xEF\xBB\xBF");
 
             fputcsv($handle, [
                 'Learner ID',
@@ -86,8 +88,9 @@ class LearnerProgressController extends Controller
             $sanitize = static function ($value): string {
                 $str = (string) $value;
                 if (preg_match('/^[\=\+\-\@\t\r]/', $str)) {
-                    return "'" . $str;
+                    return "'".$str;
                 }
+
                 return $str;
             };
 

@@ -228,6 +228,28 @@ const exerciseDefaults = {
         words: [{ word: '', category_id: 'group-1' }],
     },
     sequencing: { steps: ['', ''] },
+    information: { body: '', media_url: '', media_type: '' },
+    writing: {
+        prompt: '',
+        min_words: 5,
+        max_words: 100,
+        keywords: [{ text: '', weight: 1, required: false, case_sensitive: false }],
+        model_answer: '',
+        accept_spelling_errors: true,
+    },
+    drag_the_words: {
+        text: '',
+        distractors: [],
+        show_solution: true,
+        instant_feedback: false,
+    },
+    drag_and_drop: {
+        background_image: '',
+        draggables: [{ id: 'd1', label: '', image: '', multiple: false }],
+        drop_zones: [{ id: 'z1', label: '', x: 0, y: 0, width: 100, height: 50, single: true, correct_draggable_ids: ['d1'] }],
+        single_point: false,
+        show_solution: true,
+    },
 };
 
 function defaultExerciseContent(type) {
@@ -306,6 +328,30 @@ function exerciseAdminComponent() {
             this.exercise.content.words.push({
                 word: '',
                 category_id: this.exercise.content.categories[0]?.id || '',
+            });
+        },
+
+        addKeyword() {
+            this.exercise.content.keywords.push({ text: '', weight: 1, required: false, case_sensitive: false });
+        },
+
+        addDraggable() {
+            const nextId = `d${this.exercise.content.draggables.length + 1}`;
+            this.exercise.content.draggables.push({ id: nextId, label: '', image: '', multiple: false });
+        },
+
+        addDropZone() {
+            const nextId = `z${this.exercise.content.drop_zones.length + 1}`;
+            const firstDraggableId = this.exercise.content.draggables[0]?.id || '';
+            this.exercise.content.drop_zones.push({
+                id: nextId,
+                label: '',
+                x: 0,
+                y: 0,
+                width: 100,
+                height: 50,
+                single: true,
+                correct_draggable_ids: firstDraggableId ? [firstDraggableId] : [],
             });
         },
     };

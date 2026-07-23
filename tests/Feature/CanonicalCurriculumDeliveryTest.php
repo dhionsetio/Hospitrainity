@@ -191,7 +191,7 @@ class CanonicalCurriculumDeliveryTest extends TestCase
             ->assertOk()
             ->assertSeeText('You reached the step wrap-up')
             ->assertSeeText('Continue to learning step 2')
-            ->assertSeeText('Step 2. Key vocabulary');
+            ->assertSeeText('Key vocabulary');
         $this->get(route('curriculum.sections.show', 'HSP-C02-LS-13'))
             ->assertOk()
             ->assertSee('(external site, opens in a new tab)')

@@ -50,7 +50,7 @@ final class CurriculumDraftPreviewRepository
             $activity = $activities[$section['code']] ?? null;
 
             return [
-                'code' => $section['code'], 'title' => $section['payload']['title'],
+                'code' => $section['code'], 'title' => $this->sanitizeSectionTitle($section['payload']['title']),
                 'order' => (int) $section['position'], 'status' => 'draft preview',
                 'source_locator' => $section['payload']['source_locator'] ?? null,
                 'activity' => $activity === null ? null : [
@@ -94,13 +94,13 @@ final class CurriculumDraftPreviewRepository
         if ($current === false) {
             return null;
         }
-        $nav = fn (?array $item): ?array => $item === null ? null : ['code' => $item['code'], 'title' => $item['payload']['title']];
+        $nav = fn (?array $item): ?array => $item === null ? null : ['code' => $item['code'], 'title' => $this->sanitizeSectionTitle($item['payload']['title'])];
         $chapterSections = $sequence
             ->filter(fn (array $item): bool => $item['parent_code'] === $chapter['code'])
             ->values()
             ->map(fn (array $item): array => [
                 'code' => $item['code'],
-                'title' => $item['payload']['title'],
+                'title' => $this->sanitizeSectionTitle($item['payload']['title']),
                 'order' => (int) $item['position'],
             ]);
         $step = $this->steps->context($chapterSections, $section['code']);
@@ -117,7 +117,7 @@ final class CurriculumDraftPreviewRepository
         }, array_values($section['payload']['blocks'] ?? []));
 
         return [
-            'code' => $section['code'], 'title' => $section['payload']['title'], 'order' => (int) $section['position'],
+            'code' => $section['code'], 'title' => $this->sanitizeSectionTitle($section['payload']['title']), 'order' => (int) $section['position'],
             'status' => 'draft preview', 'blocks' => $blocks,
             'chapter' => ['code' => $chapter['code'], 'title' => $chapter['payload']['title'], 'module' => (int) $chapter['payload']['module']],
             'activity' => $activity === null ? null : ['code' => $activity['code'], 'title' => $activity['payload']['title'], 'response_form' => $activity['payload']['response_form']],
@@ -156,7 +156,7 @@ final class CurriculumDraftPreviewRepository
             'guidance' => $activity['payload']['guidance'] ?? null,
             'completion_rule' => $activity['payload']['completion_rule'] ?? null,
             'chapter' => ['code' => $chapter['code'], 'title' => $chapter['payload']['title'], 'module' => (int) $chapter['payload']['module']],
-            'section' => ['code' => $section['code'], 'title' => $section['payload']['title']],
+            'section' => ['code' => $section['code'], 'title' => $this->sanitizeSectionTitle($section['payload']['title'])],
             'prompts' => $prompts->map(function (array $prompt) use ($models, $draft): array {
                 $answer = ($models[$prompt['code']] ?? collect())->firstWhere('entity_type', 'answer-model');
 
@@ -185,5 +185,10 @@ final class CurriculumDraftPreviewRepository
             'completed' => false,
             'package' => (object) ['content_version' => $draft->content_version],
         ];
+    }
+
+    private function sanitizeSectionTitle(string $title): string
+    {
+        return (string) preg_replace('/^\s*Step\s+\d+[\.\:\-\s]*/i', '', $title);
     }
 }

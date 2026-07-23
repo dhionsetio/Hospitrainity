@@ -44,6 +44,7 @@ use App\Http\Controllers\PrivacyRequestController;
 use App\Http\Controllers\ProgressController;
 use App\Http\Controllers\PublicPolicyController;
 use App\Http\Controllers\PushSubscriptionController;
+use App\Http\Controllers\ScoreController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SecuritySettingsController;
 use App\Http\Controllers\Superadmin\AdminDashboardController;
@@ -382,6 +383,7 @@ Route::middleware(['auth', 'verified', 'role:user'])->group(function () {
     // via lessons.material.show (nested under a lesson).
 
     Route::post('/progress/store', [ProgressController::class, 'store'])->name('progress.store');
+    Route::post('/scores/store', [ScoreController::class, 'store'])->name('scores.store');
 
     Route::get('/lessons/{lesson:slug}/practice/{vocabulary}', [LessonController::class, 'practice'])
         ->scopeBindings()

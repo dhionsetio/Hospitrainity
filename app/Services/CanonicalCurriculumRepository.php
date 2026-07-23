@@ -149,12 +149,12 @@ class CanonicalCurriculumRepository
             ->get()
             ->keyBy('code');
 
-        $sectionModels = $sections->map(static function (CurriculumEntity $section) use ($activities): array {
+        $sectionModels = $sections->map(function (CurriculumEntity $section) use ($activities): array {
             $activity = $activities[$section->code] ?? null;
 
             return [
                 'code' => $section->code,
-                'title' => $section->payload['title'],
+                'title' => $this->sanitizeSectionTitle($section->payload['title']),
                 'order' => (int) $section->position,
                 'status' => $section->lifecycle_status,
                 'source_locator' => $section->payload['source_locator'] ?? null,
@@ -242,18 +242,22 @@ class CanonicalCurriculumRepository
         if ($current === false) {
             return null;
         }
-        $navigationItem = static fn (?CurriculumEntity $item): ?array => $item === null ? null : [
-            'code' => $item->code,
-            'title' => $item->payload['title'],
-        ];
+        $navigationItem = function (?CurriculumEntity $item): ?array {
+            return $item === null ? null : [
+                'code' => $item->code,
+                'title' => $this->sanitizeSectionTitle($item->payload['title']),
+            ];
+        };
         $chapterSections = $sequence
             ->filter(static fn (CurriculumEntity $item): bool => $item->parent_code === $chapter->code)
             ->values()
-            ->map(static fn (CurriculumEntity $item): array => [
-                'code' => $item->code,
-                'title' => $item->payload['title'],
-                'order' => (int) $item->position,
-            ]);
+            ->map(function (CurriculumEntity $item): array {
+                return [
+                    'code' => $item->code,
+                    'title' => $this->sanitizeSectionTitle($item->payload['title']),
+                    'order' => (int) $item->position,
+                ];
+            });
         $step = $this->steps->context($chapterSections, $section->code);
         if ($step === null) {
             return null;
@@ -269,7 +273,7 @@ class CanonicalCurriculumRepository
 
         return [
             'code' => $section->code,
-            'title' => $section->payload['title'],
+            'title' => $this->sanitizeSectionTitle($section->payload['title']),
             'order' => (int) $section->position,
             'status' => $section->lifecycle_status,
             'blocks' => $blocks,
@@ -533,5 +537,10 @@ class CanonicalCurriculumRepository
     private function scopeKey(User $user): string
     {
         return $this->learningContext->current(request(), $user)['scope_key'];
+    }
+
+    private function sanitizeSectionTitle(string $title): string
+    {
+        return (string) preg_replace('/^\s*Step\s+\d+[\.\:\-\s]*/i', '', $title);
     }
 }

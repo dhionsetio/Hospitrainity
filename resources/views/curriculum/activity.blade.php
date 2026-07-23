@@ -156,18 +156,30 @@
             </section>
         @endif
 
-        <form method="POST" action="{{ isset($curriculumPreview) ? route((Auth::user()->isSuperAdmin() ? 'superadmin' : 'admin').'.curriculum-drafts.preview.activities.attempt', [$curriculumPreview, $curriculumActivity['code']]) : route('curriculum.activities.attempts.store', $curriculumActivity['code']) }}" @if(isset($curriculumPreview)) data-preview-form @endif class="mt-8 space-y-6" novalidate>
+        <form method="POST" action="{{ isset($curriculumPreview) ? route((Auth::user()->isSuperAdmin() ? 'superadmin' : 'admin').'.curriculum-drafts.preview.activities.attempt', [$curriculumPreview, $curriculumActivity['code']]) : route('curriculum.activities.attempts.store', $curriculumActivity['code']) }}" @if(isset($curriculumPreview)) data-preview-form @endif enctype="multipart/form-data" class="mt-8 space-y-6" novalidate>
             @csrf
+            @if ($errors->any())
+                <div tabindex="-1" data-error-summary class="rounded-xl border border-red-300 bg-red-50 p-4 text-red-950 focus:outline-none focus:ring-2 focus:ring-red-600 sm:p-5" role="alert">
+                    <p class="font-bold text-red-900"><i class="fa-solid fa-triangle-exclamation mr-1" aria-hidden="true"></i> {{ __('Review the highlighted fields below:') }}</p>
+                    <ul class="mt-2 list-inside list-disc space-y-1 text-sm">
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
             <input type="hidden" name="attempt_key" value="{{ old('attempt_key', (string) \Illuminate\Support\Str::uuid()) }}">
 
-            <section class="space-y-5" aria-labelledby="prompts-heading">
+            <section class="space-y-6" aria-labelledby="prompts-heading">
                 <h2 id="prompts-heading" class="text-2xl font-bold text-neutral-950">{{ __('Your responses') }}</h2>
                 @foreach ($curriculumActivity['prompts'] as $prompt)
                     @php
+                        $promptErrorKey = 'responses.'.$prompt['code'];
+                        $selfCheckErrorKey = 'self_checks.'.$prompt['code'];
+                        $responseInvalid = $errors->has($promptErrorKey);
+                        $selfCheckInvalid = $errors->has($selfCheckErrorKey);
                         $result = $attemptResult['prompt_results'][$prompt['code']] ?? null;
-                        $promptErrors = $promptErrorMessages($prompt['code']);
-                        $responseInvalid = $hasResponseError($prompt['code']);
-                        $selfCheckInvalid = $hasSelfCheckError($prompt['code']);
                     @endphp
                     <article class="hsp-activity-prompt hsp-activity-prompt--{{ $prompt['response_form'] }}" id="prompt-{{ $prompt['code'] }}" tabindex="-1">
                         <div class="hsp-activity-prompt__heading">
@@ -181,17 +193,17 @@
                             <p>{{ $promptLabelText }}</p>
                         </div>
                         @if($showCurriculumEvidence && Auth::user()?->isSuperAdmin())
-                            <p class="text-xs font-semibold uppercase tracking-wide text-indigo-700">{{ $prompt['code'] }} · {{ str_replace('_', ' ', $prompt['scoring_mode']) }}</p>
+                            <p class="mt-1 font-mono text-xs text-neutral-500">{{ $prompt['code'] }}</p>
                         @endif
 
-                        @if ($promptErrors !== [])
-                            <div id="prompt-error-{{ $prompt['code'] }}" class="mt-3 rounded-lg border border-red-400 bg-red-50 p-3 font-semibold text-red-950" role="alert">
-                                <span class="sr-only">{{ __('Error:') }}</span>
-                                <ul class="list-disc space-y-1 pl-5">
-                                    @foreach ($promptErrors as $promptError)
-                                        <li>{{ $promptError }}</li>
-                                    @endforeach
-                                </ul>
+                        @if ($responseInvalid || $selfCheckInvalid)
+                            <div id="prompt-error-{{ $prompt['code'] }}" class="mt-3 rounded-md bg-red-100 p-3 text-sm text-red-900" role="alert">
+                                @if ($responseInvalid)
+                                    <p>{{ $errors->first($promptErrorKey) }}</p>
+                                @endif
+                                @if ($selfCheckInvalid)
+                                    <p>{{ $errors->first($selfCheckErrorKey) }}</p>
+                                @endif
                             </div>
                         @endif
 
@@ -262,15 +274,16 @@
                                     <p class="text-xs text-indigo-900">{{ __('Record your spoken response in-browser or attach an audio file (.mp3, .ogg).') }}</p>
 
                                     <div class="flex flex-wrap items-center gap-3 pt-2">
-                                        <button type="button" class="inline-flex items-center gap-2 rounded-lg bg-indigo-700 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-800 focus:ring-2 focus:ring-indigo-500" data-roleplay-record>
-                                            <i class="fa-solid fa-circle-dot text-red-400" aria-hidden="true"></i> {{ __('Record Audio') }}
+                                        <button type="button" class="inline-flex items-center gap-2 rounded-lg bg-indigo-700 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-800 focus:ring-2 focus:ring-indigo-500" data-roleplay-record="{{ $prompt['code'] }}">
+                                            <i class="fa-solid fa-circle-dot text-red-400" aria-hidden="true"></i> <span data-roleplay-record-label="{{ $prompt['code'] }}">{{ __('Record Audio') }}</span>
                                         </button>
 
                                         <label class="inline-flex cursor-pointer items-center gap-2 rounded-lg border border-neutral-300 bg-white px-4 py-2 text-sm font-semibold text-neutral-700 hover:bg-neutral-50">
                                             <i class="fa-solid fa-upload" aria-hidden="true"></i> {{ __('Upload Audio (.mp3, .ogg)') }}
-                                            <input type="file" accept="audio/mp3,audio/ogg,audio/wav" class="hidden">
+                                            <input type="file" name="audio[{{ $prompt['code'] }}]" accept="audio/mp3,audio/ogg" class="hidden" data-roleplay-file="{{ $prompt['code'] }}">
                                         </label>
                                     </div>
+                                    <p class="text-xs font-semibold text-indigo-950" data-roleplay-file-label="{{ $prompt['code'] }}"></p>
                                 </div>
 
                                 <div>
@@ -285,30 +298,23 @@
                                     </label>
                                 @endif
                             </fieldset>
+                        @elseif ($prompt['response_form'] === 'short_text')
+                            <fieldset class="mt-3">
+                                <legend class="text-base font-semibold leading-7 text-neutral-950">{{ $prompt['stem'] }}</legend>
+                                <input type="text" id="response-{{ $prompt['code'] }}" name="responses[{{ $prompt['code'] }}]" value="{{ old('responses.'.$prompt['code']) }}" class="mt-3 block w-full cursor-text rounded-lg border-2 border-neutral-300 bg-neutral-50 p-3 text-neutral-900 shadow-sm focus:border-indigo-600 focus:bg-white focus:ring-2 focus:ring-indigo-500" placeholder="{{ __('Click to Type your answer...') }}" @if($responseInvalid) aria-invalid="true" aria-describedby="prompt-error-{{ $prompt['code'] }}" @endif>
+                            </fieldset>
                         @else
-                            <label for="response-{{ $prompt['code'] }}" class="mt-3 block text-base font-semibold leading-7 text-neutral-950">{{ $prompt['stem'] }}</label>
-                            @if ($prompt['response_form'] === 'short_text' && $prompt['scoring_mode'] === 'objective_normalized_closed')
-                                <input type="text" id="response-{{ $prompt['code'] }}" name="responses[{{ $prompt['code'] }}]" value="{{ old('responses.'.$prompt['code']) }}" maxlength="{{ $prompt['response_constraints']['maximum_characters'] ?? 1000 }}" class="mt-3 block min-h-11 w-full cursor-text rounded-lg border-2 border-neutral-300 bg-neutral-50 p-3 font-medium text-neutral-900 shadow-sm focus:border-indigo-600 focus:bg-white focus:ring-2 focus:ring-indigo-500" placeholder="{{ __('Click to Type your answer...') }}" autocomplete="off" @if($responseInvalid) aria-invalid="true" aria-describedby="prompt-error-{{ $prompt['code'] }}" @endif>
-                            @else
-                                <textarea id="response-{{ $prompt['code'] }}" name="responses[{{ $prompt['code'] }}]" rows="6" maxlength="{{ $prompt['response_constraints']['maximum_characters'] ?? 6000 }}" class="mt-3 block w-full cursor-text rounded-lg border-2 border-neutral-300 bg-neutral-50 p-3 font-medium text-neutral-900 shadow-sm focus:border-indigo-600 focus:bg-white focus:ring-2 focus:ring-indigo-500" placeholder="{{ __('Click to Type your response...') }}" aria-describedby="privacy-{{ $prompt['code'] }}{{ $responseInvalid ? ' prompt-error-'.$prompt['code'] : '' }}" @if($responseInvalid) aria-invalid="true" @endif>{{ old('responses.'.$prompt['code']) }}</textarea>
-                                <p id="privacy-{{ $prompt['code'] }}" class="mt-2 text-sm text-neutral-600">
-                                    {{ ($showCurriculumEvidence && Auth::user()?->isSuperAdmin())
-                                        ? __('This text stays in the current form/session and is not persisted as a raw server response.')
-                                        : __('Your response is used only for this practice check and is not added to your attempt history.') }}
-                                </p>
-                                @if(!isset($curriculumPreview) && in_array($prompt['response_form'], config('course_assistant.open_response_forms', []), true))
-                                    <a href="{{ route('responses.edit', [$curriculumActivity['code'], $prompt['code']]) }}" class="mt-3 inline-flex min-h-11 items-center gap-2 rounded-lg border border-indigo-700 px-4 py-2 font-semibold text-indigo-800 hover:bg-indigo-50">
-                                        <i class="fa-solid fa-floppy-disk" aria-hidden="true"></i>
-                                        <span><span class="block">{{ __('engagement.save_response') }}</span><span class="block text-sm font-normal text-neutral-600">{{ __('engagement.save_response_help') }}</span></span>
-                                    </a>
-                                @endif
+                            <fieldset class="mt-3">
+                                <legend class="text-base font-semibold leading-7 text-neutral-950">{{ $prompt['stem'] }}</legend>
+                                <textarea id="response-{{ $prompt['code'] }}" name="responses[{{ $prompt['code'] }}]" rows="5" maxlength="{{ $prompt['response_constraints']['maximum_characters'] ?? 6000 }}" class="mt-3 block w-full cursor-text rounded-lg border-2 border-neutral-300 bg-neutral-50 p-3 text-neutral-900 shadow-sm focus:border-indigo-600 focus:bg-white focus:ring-2 focus:ring-indigo-500" placeholder="{{ __('Click to Type your response...') }}" @if($responseInvalid) aria-invalid="true" aria-describedby="prompt-error-{{ $prompt['code'] }}" @endif>{{ old('responses.'.$prompt['code']) }}</textarea>
+
                                 @if ($prompt['self_check_required'])
                                     <label class="mt-3 flex min-h-11 items-center gap-3 rounded-lg border border-neutral-300 p-3">
                                         <input type="checkbox" name="self_checks[{{ $prompt['code'] }}]" value="1" class="h-5 w-5 shrink-0" @checked(old('self_checks.'.$prompt['code'])) @if($selfCheckInvalid) aria-invalid="true" aria-describedby="prompt-error-{{ $prompt['code'] }}" @endif>
                                         <span>{{ __('I completed or rehearsed this response and will compare it with the model/rubric.') }}</span>
                                     </label>
                                 @endif
-                            @endif
+                            </fieldset>
                         @endif
 
                         @if ($result)
@@ -361,7 +367,7 @@
                                 <div class="mt-3 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
                                     @foreach ($criterion['levels'] as $levelIndex => $levelText)
                                         <label class="flex cursor-pointer items-start gap-2.5 rounded-md border border-neutral-300 bg-white p-3 hover:border-indigo-500 has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50">
-                                            <input type="radio" name="rubric_scores[{{ $criterionIndex }}]" value="{{ $levelIndex }}" class="mt-0.5 h-4 w-4 shrink-0 text-indigo-600 focus:ring-indigo-500" @checked((string) old('rubric_scores.'.$criterionIndex) === (string) $levelIndex)>
+                                            <input type="radio" name="rubric_scores[{{ $criterionIndex }}]" value="{{ $levelIndex }}" class="mt-0.5 h-4 w-4 shrink-0 text-indigo-600 focus:ring-indigo-500" @checked((string) old('rubric_scores.'.$criterionIndex, $attemptResult['rubric_scores'][$criterionIndex] ?? null) === (string) $levelIndex)>
                                             <span class="text-xs text-neutral-800">{{ $levelText }}</span>
                                         </label>
                                     @endforeach

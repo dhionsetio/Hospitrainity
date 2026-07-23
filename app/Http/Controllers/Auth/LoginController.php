@@ -28,8 +28,7 @@ class LoginController extends Controller
         Request $request,
         SecurityEventRecorder $events,
         LocalTesterMfaBypass $testerMfaBypass,
-    ): RedirectResponse
-    {
+    ): RedirectResponse {
         $request->merge(['email' => User::canonicalEmail($request->input('email'))]);
 
         // 1. Validate the submitted credentials.

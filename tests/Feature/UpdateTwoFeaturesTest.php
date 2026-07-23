@@ -27,7 +27,7 @@ class UpdateTwoFeaturesTest extends TestCase
             'timezone' => 'Asia/Jakarta',
         ]);
 
-        $service = new GreetingService();
+        $service = new GreetingService;
         $greeting = $service->greeting($user);
 
         if (str_contains($greeting, '?')) {

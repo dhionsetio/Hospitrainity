@@ -8,6 +8,7 @@ use App\Services\CanonicalCurriculumRepository;
 use App\Services\CurriculumProgressService;
 use App\Services\Engagement\LearningStreakService;
 use App\Services\Engagement\ReviewQueueService;
+use App\Services\GreetingService;
 use App\Services\LearningContext;
 use App\Services\NextActionResolver;
 use Illuminate\Http\Request;
@@ -37,7 +38,7 @@ class DashboardController extends Controller
     {
         $user = Auth::user();
 
-        $greeting = app(\App\Services\GreetingService::class)->greeting($user);
+        $greeting = app(GreetingService::class)->greeting($user);
 
         if ($this->canonicalCurriculum->isActiveFor($user)) {
             $chapters = $this->canonicalCurriculum->dashboardChaptersFor($user);

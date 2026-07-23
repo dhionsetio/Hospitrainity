@@ -57,6 +57,10 @@ abstract class CanonicalAttemptRequest extends FormRequest
             }
         }
         $rules['self_checks'] = ['nullable', 'array:'.implode(',', $openCodes)];
+        $rules['rubric_scores'] = ['nullable', 'array'];
+        $rules['rubric_scores.*'] = ['nullable', 'integer', 'min:0'];
+        $rules['audio'] = ['nullable', 'array'];
+        $rules['audio.*'] = ['nullable', 'file', 'mimes:mp3,ogg,wav,webm', 'max:10240'];
 
         return $rules;
     }
@@ -64,7 +68,7 @@ abstract class CanonicalAttemptRequest extends FormRequest
     public function after(): array
     {
         return [function (Validator $validator): void {
-            $allowed = ['_token', 'attempt_key', 'intent', 'responses', 'self_checks'];
+            $allowed = ['_token', 'attempt_key', 'intent', 'responses', 'self_checks', 'rubric_scores', 'audio'];
             $unexpected = array_values(array_diff(array_keys($this->all()), $allowed));
             if ($unexpected !== []) {
                 $validator->errors()->add('request', 'Unexpected request fields: '.implode(', ', $unexpected).'.');

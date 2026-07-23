@@ -82,6 +82,7 @@ class CurriculumImportAndAssetAuthoringTest extends TestCase
         $authority = $this->authorityDocx();
         if ($authority === null) {
             $this->assertNull($authority);
+
             return;
         }
         $this->importActive();

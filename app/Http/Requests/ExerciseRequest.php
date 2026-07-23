@@ -35,6 +35,10 @@ abstract class ExerciseRequest extends FormRequest
         'pronunciation_drill',
         'sound_sorting',
         'sequencing',
+        'information',
+        'writing',
+        'drag_the_words',
+        'drag_and_drop',
     ];
 
     public function authorize(): bool
@@ -169,6 +173,57 @@ abstract class ExerciseRequest extends FormRequest
                 'content.steps' => ['required', 'array', 'list', 'min:2', 'max:100'],
                 'content.steps.*' => ['required', 'string', 'max:5000'],
             ],
+            'information' => [
+                'content' => ['required', 'array:body,media_url,media_type'],
+                'content.body' => ['required', 'string', 'max:10000'],
+                'content.media_url' => ['sometimes', 'nullable', 'string', 'max:2048'],
+                'content.media_type' => ['sometimes', 'nullable', 'string', Rule::in(['image', 'video'])],
+            ],
+            'writing' => [
+                'content' => ['required', 'array:prompt,min_words,max_words,keywords,model_answer,accept_spelling_errors'],
+                'content.prompt' => ['required', 'string', 'max:5000'],
+                'content.min_words' => ['sometimes', 'nullable', 'integer', 'min:1', 'max:10000'],
+                'content.max_words' => ['sometimes', 'nullable', 'integer', 'min:1', 'max:10000'],
+                'content.keywords' => ['required', 'array', 'list', 'min:1', 'max:50'],
+                'content.keywords.*' => ['array:text,weight,required,case_sensitive'],
+                'content.keywords.*.text' => ['required', 'string', 'max:255'],
+                'content.keywords.*.weight' => ['sometimes', 'nullable', 'integer', 'min:0', 'max:10'],
+                'content.keywords.*.required' => ['sometimes', 'nullable', 'boolean'],
+                'content.keywords.*.case_sensitive' => ['sometimes', 'nullable', 'boolean'],
+                'content.model_answer' => ['sometimes', 'nullable', 'string', 'max:10000'],
+                'content.accept_spelling_errors' => ['sometimes', 'nullable', 'boolean'],
+            ],
+            'drag_the_words' => [
+                'content' => ['required', 'array:text,distractors,show_solution,instant_feedback'],
+                'content.text' => ['required', 'string', 'max:10000'],
+                'content.distractors' => ['sometimes', 'nullable', 'array', 'list', 'max:20'],
+                'content.distractors.*' => ['required', 'string', 'max:1000'],
+                'content.show_solution' => ['sometimes', 'nullable', 'boolean'],
+                'content.instant_feedback' => ['sometimes', 'nullable', 'boolean'],
+            ],
+            'drag_and_drop' => [
+                'content' => ['required', 'array:background_image,draggables,drop_zones,single_point,show_solution'],
+                'content.background_image' => ['sometimes', 'nullable', 'string', 'max:2048'],
+                'content.draggables' => ['required', 'array', 'list', 'min:1', 'max:50'],
+                'content.draggables.*' => ['array:id,label,image,multiple'],
+                'content.draggables.*.id' => ['required', 'string', 'max:255'],
+                'content.draggables.*.label' => ['required', 'string', 'max:1000'],
+                'content.draggables.*.image' => ['sometimes', 'nullable', 'string', 'max:2048'],
+                'content.draggables.*.multiple' => ['sometimes', 'nullable', 'boolean'],
+                'content.drop_zones' => ['required', 'array', 'list', 'min:1', 'max:50'],
+                'content.drop_zones.*' => ['array:id,label,x,y,width,height,single,correct_draggable_ids'],
+                'content.drop_zones.*.id' => ['required', 'string', 'max:255'],
+                'content.drop_zones.*.label' => ['required', 'string', 'max:1000'],
+                'content.drop_zones.*.x' => ['required', 'integer', 'min:0'],
+                'content.drop_zones.*.y' => ['required', 'integer', 'min:0'],
+                'content.drop_zones.*.width' => ['required', 'integer', 'min:1'],
+                'content.drop_zones.*.height' => ['required', 'integer', 'min:1'],
+                'content.drop_zones.*.single' => ['sometimes', 'nullable', 'boolean'],
+                'content.drop_zones.*.correct_draggable_ids' => ['required', 'array', 'list', 'min:1'],
+                'content.drop_zones.*.correct_draggable_ids.*' => ['required', 'string', 'max:255'],
+                'content.single_point' => ['sometimes', 'nullable', 'boolean'],
+                'content.show_solution' => ['sometimes', 'nullable', 'boolean'],
+            ],
             default => [],
         };
     }
@@ -235,6 +290,39 @@ abstract class ExerciseRequest extends FormRequest
                             "content.words.{$index}.silent_letter_index",
                             'The silent-letter index must point to a character in the word.',
                         );
+                    }
+                }
+            }
+
+            if ($type === 'drag_the_words') {
+                $text = $content['text'] ?? '';
+                if (! is_string($text) || ! preg_match('/\*[^*]+\*/', $text)) {
+                    $validator->errors()->add('content.text', 'The text must contain at least one *word* marker for a draggable position.');
+                }
+            }
+
+            if ($type === 'drag_and_drop') {
+                $draggableIds = collect($content['draggables'] ?? [])->pluck('id')->filter()->all();
+                if (count($draggableIds) !== count(array_unique($draggableIds))) {
+                    $validator->errors()->add('content.draggables', 'Draggable IDs must be unique.');
+                }
+
+                $dropZoneIds = collect($content['drop_zones'] ?? [])->pluck('id')->filter()->all();
+                if (count($dropZoneIds) !== count(array_unique($dropZoneIds))) {
+                    $validator->errors()->add('content.drop_zones', 'Drop zone IDs must be unique.');
+                }
+
+                foreach ($content['drop_zones'] ?? [] as $zIdx => $zone) {
+                    if (! is_array($zone) || ! is_array($zone['correct_draggable_ids'] ?? null)) {
+                        continue;
+                    }
+                    foreach ($zone['correct_draggable_ids'] as $cId) {
+                        if (! in_array($cId, $draggableIds, true)) {
+                            $validator->errors()->add(
+                                "content.drop_zones.{$zIdx}.correct_draggable_ids",
+                                "Target draggable '{$cId}' does not exist.",
+                            );
+                        }
                     }
                 }
             }

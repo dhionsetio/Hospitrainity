@@ -52,10 +52,34 @@ $exerciseI18n = [
     'doneLabel' => __('Done'),
     'savingProgress' => __('Saving progress...'),
     'progressSaveError' => __('Unable to save your progress. Check your connection and try again.'),
+    'summaryTitle' => __('Summary & Submit'),
+    'practiceSummaryHeader' => __('Practice Completed!'),
+    'itemsCompletedLabel' => __('Items Completed'),
+    'exercisesFinishedLabel' => __('Exercises Finished'),
+    'practiceResultsLabel' => __('Practice Results'),
+    'scoreSummaryText' => __('You answered :correct of :total correctly'),
+    'restartPracticeLabel' => __('Restart Practice'),
+    'writingPlaceholder' => __('Type your response here...'),
+    'writingMinWordsError' => __('Please write at least :min words (currently :count).'),
+    'writingCheckedMessage' => __('Response submitted. Earned :score of :max points.'),
+    'modelAnswerTitle' => __('Reference Model Answer:'),
+    'dragWordsBankLabel' => __('Available Words:'),
+    'dropZoneLabel' => __('Drop zone :pos'),
+    'deselectedWord' => __('Deselected :word'),
+    'selectedWord' => __('Selected :word. Click a gap to place.'),
+    'placedWordInGap' => __('Placed :word in gap.'),
+    'removedWordFromGap' => __('Removed :word from gap.'),
+    'dragWordsCheckedMessage' => __('You placed :correct of :total words correctly.'),
+    'dragDropBankLabel' => __('Available Items:'),
+    'zoneFull' => __('Drop zone is full.'),
+    'placedItemOnZone' => __('Placed :item on :zone'),
+    'selectedItem' => __('Selected :item. Click a target area to place.'),
+    'dragDropCheckedMessage' => __('Placed :correct of :total targets correctly.'),
+    'informationViewed' => __('Section completed. Click Next to continue.'),
 ];
 @endphp
 
-    <div id="exercises-data" data-i18n='@json($exerciseI18n)' data-exercises='@json($exercises)' data-return-url="{{ route('lessons.show', $lesson) }}" data-progress-url="{{ route('progress.store') }}" class="hidden"></div>
+    <div id="exercises-data" data-i18n='@json($exerciseI18n)' data-exercises='@json($exercises)' data-return-url="{{ route('lessons.show', $lesson) }}" data-progress-url="{{ route('progress.store') }}" data-score-url="{{ route('scores.store') }}" class="hidden"></div>
 
     <main class="flex flex-col md:flex-row h-screen antialiased">
         <aside class="w-full md:w-24 bg-white shadow-lg md:shadow-md flex md:flex-col items-center p-2 md:py-6 no-scrollbar shrink-0">

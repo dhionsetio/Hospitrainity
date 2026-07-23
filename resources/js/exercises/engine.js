@@ -1,10 +1,13 @@
-import { saveProgress } from "../progress.js";
+import { saveProgress, saveScore } from "../progress.js";
 import { createMediaController, isPlaybackCancellation } from "../media-playback.js";
 
 let allExercises = [];
 let currentExerciseIndex = 0;
 let returnUrl = "";
 let progressUrl = "";
+let scoreUrl = "";
+let exerciseScores = {};
+let isShowingSummary = false;
 let progressSavePending = false;
 let retryProgressAction = null;
 let selectedItems = { question: null, answer: null };
@@ -27,6 +30,42 @@ function t(key, fallback, replacements) {
     }
 
     return String(value);
+}
+
+function computeLevenshteinDistance(a, b) {
+    if (a === b) return 0;
+    if (!a.length) return b.length;
+    if (!b.length) return a.length;
+    const matrix = Array.from({ length: b.length + 1 }, (_, i) => [i]);
+    for (let j = 0; j <= a.length; j++) matrix[0][j] = j;
+    for (let i = 1; i <= b.length; i++) {
+        for (let j = 1; j <= a.length; j++) {
+            if (b.charAt(i - 1) === a.charAt(j - 1)) {
+                matrix[i][j] = matrix[i - 1][j - 1];
+            } else {
+                matrix[i][j] = Math.min(
+                    matrix[i - 1][j - 1] + 1,
+                    matrix[i][j - 1] + 1,
+                    matrix[i - 1][j] + 1,
+                );
+            }
+        }
+    }
+    return matrix[b.length][a.length];
+}
+
+function recordScore(exerciseId, score, maxScore, responseData = null) {
+    if (!exerciseId) return;
+    exerciseScores[exerciseId] = { score, maxScore, responseData };
+    if (scoreUrl) {
+        saveScore({
+            url: scoreUrl,
+            exerciseId,
+            score,
+            maxScore,
+            responseData,
+        }).catch(err => console.error("Score save error:", err));
+    }
 }
 
 function element(tagName, { className = "", text = null, type = null } = {}) {
@@ -119,6 +158,14 @@ function isContentValid(type, content) {
             const steps = content.steps || content.sequence || content.order || [];
             return Array.isArray(steps) && steps.length >= 2;
         }
+        case "information":
+            return str(content.body);
+        case "writing":
+            return str(content.prompt) && arr(content.keywords);
+        case "drag_the_words":
+            return str(content.text);
+        case "drag_and_drop":
+            return arr(content.draggables) && arr(content.drop_zones);
         default:
             return true;
     }
@@ -883,7 +930,9 @@ async function saveCurrentExercise(action) {
         });
 
         if (action.returnAfterSave) {
-            window.location.assign(returnUrl);
+            progressSavePending = false;
+            retryProgressAction = null;
+            renderSummaryScreen();
             return;
         }
 
@@ -907,6 +956,499 @@ async function saveCurrentExercise(action) {
     }
 }
 
+function renderInformation(content) {
+    ui.gameContainer.replaceChildren();
+    const wrapper = element("div", { className: "max-w-2xl mx-auto space-y-4 text-neutral-800 leading-relaxed" });
+
+    if (content.media_url) {
+        if (content.media_type === "video") {
+            const video = element("video", { className: "w-full rounded-lg shadow border border-neutral-200" });
+            video.controls = true;
+            video.src = content.media_url;
+            wrapper.appendChild(video);
+        } else {
+            const img = element("img", { className: "w-full max-h-96 object-cover rounded-lg shadow border border-neutral-200" });
+            img.src = content.media_url;
+            img.alt = "";
+            wrapper.appendChild(img);
+        }
+    }
+
+    const bodyParagraph = element("div", { className: "prose max-w-none text-base md:text-lg text-neutral-700 whitespace-pre-line" });
+    bodyParagraph.textContent = content.body || "";
+    wrapper.appendChild(bodyParagraph);
+
+    ui.gameContainer.appendChild(wrapper);
+
+    const currentEx = allExercises[currentExerciseIndex];
+    if (currentEx) recordScore(currentEx.id, 0, 0);
+    showFeedback(true, t("informationViewed", "Section completed. Click Next to continue."));
+}
+
+function renderWriting(content) {
+    ui.gameContainer.replaceChildren();
+    const currentEx = allExercises[currentExerciseIndex];
+
+    const wrapper = element("div", { className: "max-w-2xl mx-auto space-y-4" });
+    appendPrompt(wrapper, content.prompt || "", "text-base font-medium text-neutral-700 mb-2");
+
+    const textarea = element("textarea", {
+        className: "w-full p-4 border border-neutral-300 rounded-lg shadow-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-neutral-800 min-h-[140px]",
+    });
+    textarea.setAttribute("aria-label", content.prompt || "Writing prompt");
+    textarea.placeholder = t("writingPlaceholder", "Type your response here...");
+    wrapper.appendChild(textarea);
+
+    const metaRow = element("div", { className: "flex justify-between items-center text-xs text-neutral-500 font-mono" });
+    const wordCounter = element("span", { text: "0 words" });
+    metaRow.appendChild(wordCounter);
+    if (content.min_words) {
+        metaRow.appendChild(element("span", { text: `Min: ${content.min_words} words` }));
+    }
+    wrapper.appendChild(metaRow);
+
+    const modelAnswerBox = element("div", { className: "hidden mt-4 p-4 bg-indigo-50 border border-indigo-200 rounded-lg text-sm text-indigo-900" });
+    if (content.model_answer) {
+        const modelTitle = element("p", { className: "font-semibold text-indigo-800 mb-1", text: t("modelAnswerTitle", "Reference Model Answer:") });
+        const modelBody = element("p", { text: content.model_answer });
+        modelAnswerBox.replaceChildren(modelTitle, modelBody);
+        wrapper.appendChild(modelAnswerBox);
+    }
+
+    textarea.addEventListener("input", () => {
+        const words = textarea.value.trim().split(/\s+/).filter(w => w.length > 0);
+        wordCounter.textContent = `${words.length} word${words.length === 1 ? "" : "s"}`;
+    });
+
+    ui.gameContainer.appendChild(wrapper);
+
+    ui.checkButton.onclick = () => {
+        const userText = textarea.value.trim();
+        const words = userText.split(/\s+/).filter(w => w.length > 0);
+        if (content.min_words && words.length < content.min_words) {
+            showFeedback(false, t("writingMinWordsError", "Please write at least :min words (currently :count).", {
+                min: content.min_words,
+                count: words.length,
+            }));
+            return;
+        }
+
+        const keywords = content.keywords || [];
+        let earnedPoints = 0;
+        let totalMaxPoints = 0;
+
+        keywords.forEach(kw => {
+            const weight = Number.isInteger(kw.weight) ? kw.weight : 1;
+            totalMaxPoints += weight;
+            const targetText = kw.text || "";
+            const isCaseSensitive = kw.case_sensitive === true;
+            const acceptSpelling = content.accept_spelling_errors !== false;
+
+            let matched = false;
+            if (isCaseSensitive ? userText.includes(targetText) : userText.toLowerCase().includes(targetText.toLowerCase())) {
+                matched = true;
+            } else if (acceptSpelling) {
+                const userWords = userText.split(/[\s,.;!?]+/).filter(w => w.length > 0);
+                for (const uw of userWords) {
+                    const cleanUw = isCaseSensitive ? uw : uw.toLowerCase();
+                    const cleanKw = isCaseSensitive ? targetText : targetText.toLowerCase();
+                    const dist = computeLevenshteinDistance(cleanUw, cleanKw);
+                    if (cleanKw.length > 9 && dist <= 2) { matched = true; break; }
+                    if (cleanKw.length > 3 && dist <= 1) { matched = true; break; }
+                }
+            }
+
+            if (matched) {
+                earnedPoints += weight;
+            }
+        });
+
+        if (totalMaxPoints === 0) totalMaxPoints = 1;
+        recordScore(currentEx.id, earnedPoints, totalMaxPoints, { text: userText });
+
+        if (content.model_answer) {
+            modelAnswerBox.classList.remove("hidden");
+        }
+
+        textarea.disabled = true;
+        showFeedback(true, t("writingCheckedMessage", "Response submitted. Earned :score of :max points.", {
+            score: earnedPoints,
+            max: totalMaxPoints,
+        }));
+    };
+}
+
+function renderDragTheWords(content) {
+    ui.gameContainer.replaceChildren();
+    const currentEx = allExercises[currentExerciseIndex];
+
+    const text = content.text || "";
+    const parts = text.split(/(\*.*?\*)/).filter(Boolean);
+
+    const targets = [];
+    const correctWords = [];
+
+    parts.forEach((part, idx) => {
+        if (part.startsWith("*") && part.endsWith("*")) {
+            const inner = part.slice(1, -1).trim();
+            const word = inner.split(":")[0].split("\\+")[0].split("\\-")[0].trim();
+            correctWords.push(word);
+            targets.push({ id: `target-${idx}`, correctWord: word, placedWord: null });
+        }
+    });
+
+    const draggablesList = [...correctWords, ...(content.distractors || [])];
+    draggablesList.sort((a, b) => a.localeCompare(b));
+
+    const wrapper = element("div", { className: "max-w-3xl mx-auto space-y-6" });
+    const liveAnnouncer = element("div", { className: "sr-only" });
+    liveAnnouncer.setAttribute("aria-live", "polite");
+    wrapper.appendChild(liveAnnouncer);
+
+    const bankLabel = element("p", { className: "text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-2", text: t("dragWordsBankLabel", "Available Words:") });
+    const bankContainer = element("div", { className: "flex flex-wrap gap-2 p-3 bg-neutral-100 rounded-lg border border-neutral-200 min-h-[52px]" });
+    wrapper.appendChild(bankLabel);
+    wrapper.appendChild(bankContainer);
+
+    const sentenceContainer = element("div", { className: "p-4 bg-white rounded-lg border border-neutral-200 leading-loose text-lg text-neutral-800 flex flex-wrap items-center gap-1.5" });
+
+    let activeSelectedDraggable = null;
+
+    let targetIdx = 0;
+    parts.forEach(part => {
+        if (part.startsWith("*") && part.endsWith("*")) {
+            const targetObj = targets[targetIdx++];
+            const dropZone = element("button", {
+                className: "drop-zone-blank px-3 py-1 bg-neutral-100 border-2 border-dashed border-neutral-400 rounded min-w-[80px] text-center font-semibold text-indigo-800 hover:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-colors cursor-pointer",
+                type: "button",
+            });
+            dropZone.dataset.targetId = targetObj.id;
+            dropZone.setAttribute("aria-label", t("dropZoneLabel", "Drop zone :pos", { pos: targetIdx }));
+
+            dropZone.addEventListener("click", () => {
+                if (activeSelectedDraggable) {
+                    placeDraggable(activeSelectedDraggable, dropZone, targetObj);
+                } else if (targetObj.placedWord) {
+                    removeDraggable(dropZone, targetObj);
+                }
+            });
+
+            sentenceContainer.appendChild(dropZone);
+        } else {
+            const span = element("span", { text: part });
+            sentenceContainer.appendChild(span);
+        }
+    });
+    wrapper.appendChild(sentenceContainer);
+
+    draggablesList.forEach((wordText, chipIdx) => {
+        const chip = element("button", {
+            className: "draggable-word-chip px-3 py-1.5 bg-white border border-neutral-300 shadow-sm rounded-md font-semibold text-neutral-800 hover:bg-neutral-50 hover:border-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 cursor-pointer transition-all",
+            text: wordText,
+            type: "button",
+        });
+        chip.dataset.word = wordText;
+        chip.dataset.chipId = `chip-${chipIdx}`;
+
+        chip.addEventListener("click", () => {
+            if (activeSelectedDraggable === chip) {
+                chip.classList.remove("ring-4", "ring-indigo-400", "bg-indigo-50");
+                activeSelectedDraggable = null;
+                liveAnnouncer.textContent = t("deselectedWord", "Deselected :word", { word: wordText });
+            } else {
+                if (activeSelectedDraggable) {
+                    activeSelectedDraggable.classList.remove("ring-4", "ring-indigo-400", "bg-indigo-50");
+                }
+                activeSelectedDraggable = chip;
+                chip.classList.add("ring-4", "ring-indigo-400", "bg-indigo-50");
+                liveAnnouncer.textContent = t("selectedWord", "Selected :word. Click a gap to place.", { word: wordText });
+            }
+        });
+
+        bankContainer.appendChild(chip);
+    });
+
+    function placeDraggable(chip, dropZone, targetObj) {
+        if (targetObj.placedWord) {
+            removeDraggable(dropZone, targetObj);
+        }
+        targetObj.placedWord = chip.dataset.word;
+        dropZone.textContent = chip.dataset.word;
+        dropZone.classList.remove("border-dashed", "bg-neutral-100", "border-neutral-400");
+        dropZone.classList.add("border-solid", "border-indigo-600", "bg-indigo-50");
+        chip.classList.add("hidden");
+        chip.classList.remove("ring-4", "ring-indigo-400", "bg-indigo-50");
+        activeSelectedDraggable = null;
+        liveAnnouncer.textContent = t("placedWordInGap", "Placed :word in gap.", { word: chip.dataset.word });
+    }
+
+    function removeDraggable(dropZone, targetObj) {
+        const word = targetObj.placedWord;
+        targetObj.placedWord = null;
+        dropZone.replaceChildren();
+        dropZone.classList.remove("border-solid", "border-indigo-600", "bg-indigo-50");
+        dropZone.classList.add("border-dashed", "bg-neutral-100", "border-neutral-400");
+
+        const hiddenChip = Array.from(bankContainer.children).find(c => c.dataset.word === word && c.classList.contains("hidden"));
+        if (hiddenChip) hiddenChip.classList.remove("hidden");
+        liveAnnouncer.textContent = t("removedWordFromGap", "Removed :word from gap.", { word });
+    }
+
+    ui.gameContainer.appendChild(wrapper);
+
+    ui.checkButton.onclick = () => {
+        let correctCount = 0;
+        targets.forEach(tObj => {
+            const dz = sentenceContainer.querySelector(`[data-target-id="${tObj.id}"]`);
+            if (tObj.placedWord === tObj.correctWord) {
+                correctCount++;
+                if (dz) dz.classList.add("border-emerald-500", "bg-emerald-50", "text-emerald-900");
+            } else if (dz) {
+                dz.classList.add("border-red-500", "bg-red-50", "text-red-900");
+            }
+        });
+
+        const maxScore = targets.length || 1;
+        recordScore(currentEx.id, correctCount, maxScore);
+        showFeedback(correctCount === maxScore, t("dragWordsCheckedMessage", "You placed :correct of :total words correctly.", {
+            correct: correctCount,
+            total: maxScore,
+        }));
+    };
+}
+
+function renderDragAndDrop(content) {
+    ui.gameContainer.replaceChildren();
+    const currentEx = allExercises[currentExerciseIndex];
+
+    const draggables = content.draggables || [];
+    const dropZones = content.drop_zones || [];
+    const isSinglePoint = content.single_point === true;
+
+    const wrapper = element("div", { className: "max-w-4xl mx-auto space-y-4" });
+    const liveAnnouncer = element("div", { className: "sr-only" });
+    liveAnnouncer.setAttribute("aria-live", "polite");
+    wrapper.appendChild(liveAnnouncer);
+
+    const bankLabel = element("p", { className: "text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-1", text: t("dragDropBankLabel", "Available Items:") });
+    const bankContainer = element("div", { className: "flex flex-wrap gap-2 p-3 bg-neutral-100 rounded-lg border border-neutral-200 min-h-[56px]" });
+    wrapper.appendChild(bankLabel);
+    wrapper.appendChild(bankContainer);
+
+    const stageContainer = element("div", { className: "relative bg-neutral-900 rounded-xl overflow-hidden shadow border border-neutral-300 min-h-[300px]" });
+
+    if (content.background_image) {
+        const bgImg = element("img", { className: "w-full h-auto block max-h-[500px] object-contain" });
+        bgImg.src = content.background_image;
+        bgImg.alt = "";
+        stageContainer.appendChild(bgImg);
+    }
+
+    const placements = {};
+    let activeSelectedChip = null;
+
+    dropZones.forEach(zone => {
+        placements[zone.id] = [];
+        const zoneEl = element("button", {
+            className: "absolute border-2 border-dashed border-amber-400 bg-amber-400/20 rounded-md p-1 font-semibold text-xs text-amber-100 flex flex-wrap items-center justify-center gap-1 hover:bg-amber-400/40 focus:outline-none focus:ring-2 focus:ring-amber-400 transition-colors cursor-pointer",
+            type: "button",
+        });
+        zoneEl.style.left = `${zone.x}px`;
+        zoneEl.style.top = `${zone.y}px`;
+        zoneEl.style.width = `${zone.width}px`;
+        zoneEl.style.height = `${zone.height}px`;
+        zoneEl.dataset.zoneId = zone.id;
+        zoneEl.setAttribute("aria-label", zone.label || "Drop zone");
+
+        zoneEl.addEventListener("click", () => {
+            if (activeSelectedChip) {
+                const chipId = activeSelectedChip.dataset.draggableId;
+                if (zone.single && placements[zone.id].length >= 1) {
+                    liveAnnouncer.textContent = t("zoneFull", "Drop zone is full.");
+                    return;
+                }
+                placements[zone.id].push(chipId);
+
+                const badge = element("span", {
+                    className: "px-2 py-0.5 bg-indigo-600 text-white rounded text-xs shadow font-sans",
+                    text: activeSelectedChip.dataset.label,
+                });
+                zoneEl.appendChild(badge);
+
+                if (!activeSelectedChip.dataset.multiple) {
+                    activeSelectedChip.classList.add("hidden");
+                }
+                activeSelectedChip.classList.remove("ring-4", "ring-indigo-400");
+                liveAnnouncer.textContent = t("placedItemOnZone", "Placed :item on :zone", { item: activeSelectedChip.dataset.label, zone: zone.label });
+                activeSelectedChip = null;
+            }
+        });
+
+        stageContainer.appendChild(zoneEl);
+    });
+    wrapper.appendChild(stageContainer);
+
+    draggables.forEach(d => {
+        const chip = element("button", {
+            className: "px-3 py-1.5 bg-white border border-neutral-300 shadow-sm rounded-md font-semibold text-neutral-800 hover:bg-neutral-50 hover:border-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 cursor-pointer transition-all",
+            text: d.label,
+            type: "button",
+        });
+        chip.dataset.draggableId = d.id;
+        chip.dataset.label = d.label;
+        if (d.multiple) chip.dataset.multiple = "true";
+
+        chip.addEventListener("click", () => {
+            if (activeSelectedChip === chip) {
+                chip.classList.remove("ring-4", "ring-indigo-400");
+                activeSelectedChip = null;
+            } else {
+                if (activeSelectedChip) activeSelectedChip.classList.remove("ring-4", "ring-indigo-400");
+                activeSelectedChip = chip;
+                chip.classList.add("ring-4", "ring-indigo-400");
+                liveAnnouncer.textContent = t("selectedItem", "Selected :item. Click a target area to place.", { item: d.label });
+            }
+        });
+
+        bankContainer.appendChild(chip);
+    });
+
+    ui.gameContainer.appendChild(wrapper);
+
+    ui.checkButton.onclick = () => {
+        let correctPlacements = 0;
+        let maxPlacements = 0;
+
+        dropZones.forEach(zone => {
+            const correctIds = zone.correct_draggable_ids || [];
+            maxPlacements += correctIds.length;
+            const userPlaced = placements[zone.id] || [];
+            const zoneEl = stageContainer.querySelector(`[data-zone-id="${zone.id}"]`);
+
+            let zoneCorrect = true;
+            correctIds.forEach(cId => {
+                if (userPlaced.includes(cId)) correctPlacements++;
+                else zoneCorrect = false;
+            });
+
+            if (zoneEl) {
+                if (zoneCorrect && userPlaced.length > 0) {
+                    zoneEl.classList.remove("border-amber-400", "bg-amber-400/20");
+                    zoneEl.classList.add("border-emerald-500", "bg-emerald-500/30");
+                } else {
+                    zoneEl.classList.remove("border-amber-400", "bg-amber-400/20");
+                    zoneEl.classList.add("border-red-500", "bg-red-500/30");
+                }
+            }
+        });
+
+        let finalScore = correctPlacements;
+        let finalMax = maxPlacements || 1;
+
+        if (isSinglePoint) {
+            finalScore = correctPlacements === maxPlacements ? 1 : 0;
+            finalMax = 1;
+        }
+
+        recordScore(currentEx.id, finalScore, finalMax);
+        showFeedback(finalScore === finalMax, t("dragDropCheckedMessage", "Placed :correct of :total targets correctly.", {
+            correct: correctPlacements,
+            total: maxPlacements,
+        }));
+    };
+}
+
+function renderSummaryScreen() {
+    isShowingSummary = true;
+    mediaController?.stop();
+    ui.title.textContent = t("summaryTitle", "Summary & Submit");
+    setMediaStatus();
+    ui.feedbackFooter.className = "border-t-4 transition-colors duration-300 -mt-2 -mx-6 mb-4 hidden";
+    ui.feedbackText.replaceChildren();
+    setVisible(ui.checkButton, false);
+    setVisible(ui.nextButton, false);
+    setVisible(ui.answerRetryButton, false);
+
+    let totalScore = 0;
+    let totalMax = 0;
+    let scorableCount = 0;
+    let finishedCount = 0;
+
+    Object.values(exerciseScores).forEach(s => {
+        finishedCount++;
+        if (s.maxScore > 0) {
+            scorableCount++;
+            totalScore += s.score;
+            totalMax += s.maxScore;
+        }
+    });
+
+    const percentage = totalMax > 0 ? Math.round((100 * totalScore) / totalMax) : 100;
+
+    const summaryCard = element("div", { className: "p-6 bg-white rounded-xl shadow-sm border border-neutral-200 text-center max-w-lg mx-auto space-y-6" });
+
+    const iconWrapper = element("div", { className: "inline-flex items-center justify-center w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 mb-2" });
+    iconWrapper.appendChild(icon("fas fa-check-circle text-3xl"));
+    summaryCard.appendChild(iconWrapper);
+
+    summaryCard.appendChild(element("h2", { className: "text-2xl font-bold text-neutral-800", text: t("practiceSummaryHeader", "Practice Completed!") }));
+
+    const grid = element("div", { className: "grid grid-cols-3 gap-4 text-left bg-neutral-50 p-4 rounded-lg border border-neutral-100" });
+
+    const col1 = element("div");
+    col1.appendChild(element("p", { className: "text-xs uppercase tracking-wider text-neutral-500 font-semibold", text: t("itemsCompletedLabel", "Items Completed") }));
+    col1.appendChild(element("p", { className: "text-lg font-bold text-neutral-800", text: `${finishedCount} / ${allExercises.length}` }));
+
+    const col2 = element("div");
+    col2.appendChild(element("p", { className: "text-xs uppercase tracking-wider text-neutral-500 font-semibold", text: t("exercisesFinishedLabel", "Exercises Finished") }));
+    col2.appendChild(element("p", { className: "text-lg font-bold text-neutral-800", text: `${scorableCount}` }));
+
+    const col3 = element("div");
+    col3.appendChild(element("p", { className: "text-xs uppercase tracking-wider text-neutral-500 font-semibold", text: t("practiceResultsLabel", "Practice Results") }));
+    col3.appendChild(element("p", { className: "text-lg font-bold text-emerald-700", text: `${totalScore} / ${totalMax} (${percentage}%)` }));
+
+    grid.appendChild(col1);
+    grid.appendChild(col2);
+    grid.appendChild(col3);
+    summaryCard.appendChild(grid);
+
+    summaryCard.appendChild(element("p", {
+        className: "text-sm text-neutral-600",
+        text: t("scoreSummaryText", "You answered :correct of :total correctly", { correct: totalScore, total: totalMax }),
+    }));
+
+    const btnRow = element("div", { className: "flex flex-wrap justify-center gap-3 pt-2" });
+
+    const restartBtn = element("button", {
+        className: "px-4 py-2 border border-neutral-300 rounded-lg text-neutral-700 font-semibold hover:bg-neutral-50 focus:ring-2 focus:ring-indigo-500 cursor-pointer",
+        type: "button",
+    });
+    setButtonLabel(restartBtn, t("restartPracticeLabel", "Restart Practice"), "fas fa-redo mr-2");
+    restartBtn.addEventListener("click", () => {
+        isShowingSummary = false;
+        currentExerciseIndex = 0;
+        renderCurrentExercise();
+    });
+
+    const finishBtn = element("button", {
+        className: "px-5 py-2 bg-indigo-600 text-white rounded-lg font-semibold shadow hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 cursor-pointer",
+        type: "button",
+    });
+    setButtonLabel(finishBtn, t("doneLabel", "Done"), "fas fa-check mr-2");
+    finishBtn.addEventListener("click", () => {
+        if (returnUrl) {
+            window.location.assign(returnUrl);
+        }
+    });
+
+    btnRow.appendChild(restartBtn);
+    btnRow.appendChild(finishBtn);
+    summaryCard.appendChild(btnRow);
+
+    ui.gameContainer.replaceChildren(summaryCard);
+    setVisible(ui.footerContainer, false);
+}
+
 const RENDERERS = {
     spelling_quiz: renderSpellingQuiz,
     matching_game: renderMatchingGame,
@@ -922,6 +1464,10 @@ const RENDERERS = {
     pronunciation_drill: renderPronunciationDrill,
     sound_sorting: renderSoundSorting,
     sequencing: renderSequencing,
+    information: renderInformation,
+    writing: renderWriting,
+    drag_the_words: renderDragTheWords,
+    drag_and_drop: renderDragAndDrop,
 };
 
 function initExercises() {
@@ -939,6 +1485,9 @@ function initExercises() {
 
     returnUrl = dataElement.dataset.returnUrl || "";
     progressUrl = dataElement.dataset.progressUrl || "";
+    scoreUrl = dataElement.dataset.scoreUrl || "/scores/store";
+    exerciseScores = {};
+    isShowingSummary = false;
     currentExerciseIndex = 0;
     progressSavePending = false;
     retryProgressAction = null;

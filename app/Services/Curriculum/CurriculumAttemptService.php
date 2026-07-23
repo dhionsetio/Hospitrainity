@@ -14,6 +14,7 @@ use App\Services\LearningContentScope;
 use App\Services\LearningContext;
 use Carbon\CarbonImmutable;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\ValidationException;
 
@@ -50,6 +51,7 @@ final class CurriculumAttemptService
             'intent' => $validated['intent'],
             'responses' => $validated['responses'] ?? [],
             'self_checks' => $validated['self_checks'] ?? [],
+            'rubric_scores' => $validated['rubric_scores'] ?? [],
         ]), $applicationKey);
 
         return DB::transaction(function () use ($user, $definition, $validated, $submissionHmacSha256, $context): array {
@@ -82,7 +84,7 @@ final class CurriculumAttemptService
                     ]);
                 }
 
-                return $this->result($existing->load('responses'), $definition, reused: true);
+                return $this->result($existing->load('responses'), $definition, reused: true, rubricScores: $validated['rubric_scores'] ?? []);
             }
 
             $intent = $validated['intent'];
@@ -93,8 +95,21 @@ final class CurriculumAttemptService
                 'started_at' => $progress->started_at ?? $now,
             ])->save();
 
+            if (! empty($validated['rubric_scores']) && is_array($validated['rubric_scores'])) {
+                $attempt->events()->create(['event_type' => 'rubric_self_assessment', 'occurred_at' => $now]);
+            }
+
+            if (! empty($validated['audio']) && is_array($validated['audio'])) {
+                foreach ($validated['audio'] as $promptCode => $file) {
+                    if ($file instanceof UploadedFile && $file->isValid()) {
+                        $extension = strtolower($file->getClientOriginalExtension() ?: 'ogg');
+                        $file->storeAs('attempts/'.$attempt->id, $promptCode.'.'.$extension, 'curriculum_private');
+                    }
+                }
+            }
+
             if ($intent === 'show_model') {
-                return $this->result($attempt, $definition);
+                return $this->result($attempt, $definition, rubricScores: $validated['rubric_scores'] ?? []);
             }
             if ($intent === 'skip_baseline') {
                 $attempt->forceFill([
@@ -106,7 +121,7 @@ final class CurriculumAttemptService
                 $progress->forceFill(['baseline_skipped_at' => $now, 'completed_at' => $now])->save();
                 User::forgetAllProgressCaches();
 
-                return $this->result($attempt, $definition);
+                return $this->result($attempt, $definition, rubricScores: $validated['rubric_scores'] ?? []);
             }
 
             $selfChecked = false;
@@ -115,7 +130,7 @@ final class CurriculumAttemptService
                 $code = $prompt->code;
                 $form = $prompt->payload['response_form'];
                 $mode = $prompt->payload['scoring_mode'];
-                $value = $validated['responses'][$code];
+                $value = $validated['responses'][$code] ?? null;
                 $responsePresent = is_array($value) ? $value !== [] : trim((string) $value) !== '';
                 $checked = (bool) ($validated['self_checks'][$code] ?? false);
                 $isCorrect = $this->score($prompt, $definition['answers'][$code] ?? null, $value);
@@ -159,7 +174,7 @@ final class CurriculumAttemptService
             );
             User::forgetAllProgressCaches();
 
-            return $this->result($attempt->load('responses'), $definition);
+            return $this->result($attempt->load('responses'), $definition, rubricScores: $validated['rubric_scores'] ?? []);
         }, attempts: 3);
     }
 
@@ -370,7 +385,7 @@ final class CurriculumAttemptService
     }
 
     /** @return array<string, mixed> */
-    private function result(CurriculumAttempt $attempt, array $definition, bool $reused = false): array
+    private function result(CurriculumAttempt $attempt, array $definition, bool $reused = false, array $rubricScores = []): array
     {
         $storedResponses = $attempt->relationLoaded('responses') ? $attempt->responses->keyBy('prompt_code') : collect();
         $responses = $storedResponses->map(static fn (CurriculumResponse $response): array => [
@@ -386,6 +401,7 @@ final class CurriculumAttemptService
             definition: $definition,
             reused: $reused,
             attemptId: $attempt->id,
+            rubricScores: $rubricScores,
         );
     }
 
@@ -402,6 +418,7 @@ final class CurriculumAttemptService
         array $definition,
         bool $reused = false,
         int|string|null $attemptId = null,
+        array $rubricScores = [],
     ): array {
         $promptResults = [];
         foreach ($definition['prompts'] as $prompt) {
@@ -443,6 +460,7 @@ final class CurriculumAttemptService
             'reused' => $reused,
             'model_without_attempt' => $intent === 'show_model',
             'prompt_results' => $promptResults,
+            'rubric_scores' => $rubricScores,
         ];
     }
 }

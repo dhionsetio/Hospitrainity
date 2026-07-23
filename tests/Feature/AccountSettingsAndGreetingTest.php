@@ -3,10 +3,8 @@
 namespace Tests\Feature;
 
 use App\Models\Completion;
-use App\Models\IdentityAudit;
 use App\Models\User;
 use App\Services\GreetingService;
-use Carbon\CarbonImmutable;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Hash;
 use Tests\TestCase;
@@ -95,7 +93,7 @@ class AccountSettingsAndGreetingTest extends TestCase
             'timezone' => 'Asia/Jakarta',
         ]);
 
-        $service = new GreetingService();
+        $service = new GreetingService;
         $greeting = $service->greeting($user);
 
         $this->assertStringContainsString('Mr. Dhion Setio', $greeting);
