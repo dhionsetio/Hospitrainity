@@ -81,6 +81,20 @@ class SecurityHeaders
             $directives[] = 'report-uri '.$reportUri;
         }
 
+        if (app()->environment('local')) {
+            foreach ($directives as $index => $directive) {
+                if (str_starts_with($directive, 'script-src ')) {
+                    $directives[$index] .= " 'unsafe-eval' http://127.0.0.1:5173 http://[::1]:5173";
+                } elseif (str_starts_with($directive, 'style-src ')) {
+                    $directives[$index] .= ' http://127.0.0.1:5173 http://[::1]:5173';
+                } elseif (str_starts_with($directive, 'connect-src ')) {
+                    $directives[$index] .= ' ws://127.0.0.1:5173 ws://[::1]:5173 http://127.0.0.1:5173 http://[::1]:5173';
+                } elseif (str_starts_with($directive, 'font-src ')) {
+                    $directives[$index] .= ' http://127.0.0.1:5173 http://[::1]:5173';
+                }
+            }
+        }
+
         return implode('; ', $directives).';';
     }
 

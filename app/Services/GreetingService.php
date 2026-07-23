@@ -17,7 +17,7 @@ class GreetingService
             return __('Welcome back!');
         }
 
-        $tz = $user->timezone ?? 'UTC';
+        $tz = ! empty($user->timezone) ? $user->timezone : (config('app.timezone') !== 'UTC' ? config('app.timezone') : 'Asia/Jakarta');
         $now = CarbonImmutable::now($tz);
         $hour = $now->hour;
         $isLearner = ! $user->isSupervisor() && ! $user->isAdmin() && ! $user->isSuperAdmin();

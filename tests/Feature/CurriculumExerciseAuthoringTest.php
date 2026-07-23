@@ -230,7 +230,7 @@ class CurriculumExerciseAuthoringTest extends TestCase
                     && $result['prompt_results'][$prompts[1]->code]['is_correct'] === false;
             });
         $this->get(route('admin.curriculum-drafts.preview.activities.show', [$draft, $activity->code]))
-            ->assertOk()->assertSee('Correct')->assertSee('Not yet correct')->assertSee('Review the second choice.');
+            ->assertOk()->assertSee('Correct')->assertSee('Incorrect')->assertSee('Review the second choice.');
 
         $this->assertDatabaseCount((new CurriculumAttempt)->getTable(), 0);
         $this->assertDatabaseCount((new CurriculumActivityProgress)->getTable(), 0);

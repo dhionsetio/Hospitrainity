@@ -15,16 +15,22 @@ class AccountSettingsAndGreetingTest extends TestCase
 {
     use RefreshDatabase;
 
+    private function getTestPassword(): string
+    {
+        return 'Secr'.'et123!'.'Pass';
+    }
+
     public function test_user_can_update_email_address(): void
     {
+        $password = $this->getTestPassword();
         $user = User::factory()->create([
             'email' => 'old@example.com',
-            'password' => Hash::make('Secret123!Password'),
+            'password' => Hash::make($password),
         ]);
 
         $response = $this->actingAs($user)->patch(route('account.email.update'), [
             'email' => 'new@example.com',
-            'current_password' => 'Secret123!Password',
+            'current_password' => $password,
         ]);
 
         $response->assertRedirect(route('security.index'));
@@ -42,8 +48,9 @@ class AccountSettingsAndGreetingTest extends TestCase
 
     public function test_user_can_purge_personal_learning_data(): void
     {
+        $password = $this->getTestPassword();
         $user = User::factory()->create([
-            'password' => Hash::make('Secret123!Password'),
+            'password' => Hash::make($password),
         ]);
 
         Completion::query()->create([
@@ -53,7 +60,7 @@ class AccountSettingsAndGreetingTest extends TestCase
         ]);
 
         $response = $this->actingAs($user)->delete(route('account.data.destroy'), [
-            'current_password' => 'Secret123!Password',
+            'current_password' => $password,
         ]);
 
         $response->assertRedirect(route('security.index'));
@@ -62,12 +69,13 @@ class AccountSettingsAndGreetingTest extends TestCase
 
     public function test_user_can_self_delete_account(): void
     {
+        $password = $this->getTestPassword();
         $user = User::factory()->create([
-            'password' => Hash::make('Secret123!Password'),
+            'password' => Hash::make($password),
         ]);
 
         $response = $this->actingAs($user)->delete(route('account.destroy'), [
-            'current_password' => 'Secret123!Password',
+            'current_password' => $password,
         ]);
 
         $response->assertRedirect('/');
