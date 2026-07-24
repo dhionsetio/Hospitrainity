@@ -53,74 +53,90 @@
             <span class="text-xs font-semibold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-2 py-1 rounded">{{ __('admin.admin') }}</span>
         </a>
     </div>
-    <nav class="flex-grow" aria-label="{{ __('admin.administration_navigation') }}">
-        <ul class="space-y-2">
-            <li>
-                <a href="{{ route($administrationRoutePrefix.'.dashboard') }}" @if($administrationDashboardRouteActive) aria-current="page" @endif class="flex items-center gap-3 rounded-lg px-4 py-2 transition-colors {{ $administrationDashboardRouteActive ? 'bg-indigo-600 font-semibold text-white' : 'hover:bg-neutral-100' }}">
-                    <i class="fas fa-tachometer-alt fa-fw" aria-hidden="true"></i>
-                    <span>{{ __('Dashboard') }}</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{ route($administrationRoutePrefix.'.curriculum-drafts.index') }}" @if($canonicalContentRouteActive) aria-current="page" @endif class="flex items-center gap-3 rounded-lg px-4 py-2 transition-colors {{ $canonicalContentRouteActive ? 'bg-indigo-600 font-semibold text-white' : 'hover:bg-neutral-100' }}">
-                    <i class="fas fa-pen-ruler fa-fw" aria-hidden="true"></i>
-                    <span>{{ __('admin.content') }}</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{ route($administrationRoutePrefix.'.curriculum-exercises.index') }}" @if($canonicalExerciseRouteActive) aria-current="page" @endif class="flex items-center gap-3 rounded-lg px-4 py-2 transition-colors {{ $canonicalExerciseRouteActive ? 'bg-indigo-600 font-semibold text-white' : 'hover:bg-neutral-100' }}">
-                    <i class="fas fa-puzzle-piece fa-fw" aria-hidden="true"></i>
-                    <span>{{ __('admin.exercises') }}</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{ route($administrationRoutePrefix.'.progress.index') }}" @if($administrationProgressRouteActive) aria-current="page" @endif class="flex items-center gap-3 rounded-lg px-4 py-2 transition-colors {{ $administrationProgressRouteActive ? 'bg-indigo-600 font-semibold text-white' : 'hover:bg-neutral-100' }}">
-                    <i class="fas fa-chart-line fa-fw" aria-hidden="true"></i>
-                    <span>{{ __('admin.progress') }}</span>
-                </a>
-            </li>
-            @if(Auth::user()->isSuperAdmin())
+    <nav class="flex-grow space-y-6" aria-label="{{ __('admin.administration_navigation') }}">
+        <!-- Section 1: Overview -->
+        <div>
+            <h3 class="px-4 text-xs font-bold uppercase tracking-wider text-neutral-400 mb-2">{{ __('admin.nav_group_overview') }}</h3>
+            <ul class="space-y-1">
                 <li>
-                    <a href="{{ route('superadmin.institutions.index') }}" @if($institutionRouteActive) aria-current="page" @endif class="flex items-center gap-3 rounded-lg px-4 py-2 transition-colors {{ $institutionRouteActive ? 'bg-indigo-600 font-semibold text-white' : 'hover:bg-neutral-100' }}">
-                        <i class="fas fa-building fa-fw" aria-hidden="true"></i>
-                        <span>{{ __('Institutions') }}</span>
+                    <a href="{{ route($administrationRoutePrefix.'.dashboard') }}" @if($administrationDashboardRouteActive) aria-current="page" @endif class="flex items-center gap-3 rounded-lg px-4 py-2 text-sm font-medium transition-colors {{ $administrationDashboardRouteActive ? 'bg-indigo-600 font-semibold text-white' : 'hover:bg-neutral-100 text-neutral-700' }}">
+                        <i class="fas fa-tachometer-alt fa-fw" aria-hidden="true"></i>
+                        <span>{{ __('Dashboard') }}</span>
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('superadmin.invitations.index') }}" @if($administrationInvitationsRouteActive) aria-current="page" @endif class="flex items-center gap-3 rounded-lg px-4 py-2 transition-colors {{ $administrationInvitationsRouteActive ? 'bg-indigo-600 font-semibold text-white' : 'hover:bg-neutral-100' }}">
-                        <i class="fas fa-envelope-open-text fa-fw" aria-hidden="true"></i>
-                        <span>{{ __('Invitations') }}</span>
+                    <a href="{{ route($administrationRoutePrefix.'.progress.index') }}" @if($administrationProgressRouteActive) aria-current="page" @endif class="flex items-center gap-3 rounded-lg px-4 py-2 text-sm font-medium transition-colors {{ $administrationProgressRouteActive ? 'bg-indigo-600 font-semibold text-white' : 'hover:bg-neutral-100 text-neutral-700' }}">
+                        <i class="fas fa-chart-line fa-fw" aria-hidden="true"></i>
+                        <span>{{ __('admin.progress') }}</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Section 2: Learning Content -->
+        <div>
+            <h3 class="px-4 text-xs font-bold uppercase tracking-wider text-neutral-400 mb-2">{{ __('admin.nav_group_learning') }}</h3>
+            <ul class="space-y-1">
+                <li>
+                    <a href="{{ route($administrationRoutePrefix.'.curriculum-drafts.index') }}" @if($canonicalContentRouteActive) aria-current="page" @endif class="flex items-center gap-3 rounded-lg px-4 py-2 text-sm font-medium transition-colors {{ $canonicalContentRouteActive ? 'bg-indigo-600 font-semibold text-white' : 'hover:bg-neutral-100 text-neutral-700' }}">
+                        <i class="fas fa-pen-ruler fa-fw" aria-hidden="true"></i>
+                        <span>{{ __('admin.content') }}</span>
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('superadmin.join-codes.index') }}" @if($administrationJoinCodesRouteActive) aria-current="page" @endif class="flex items-center gap-3 rounded-lg px-4 py-2 transition-colors {{ $administrationJoinCodesRouteActive ? 'bg-indigo-600 font-semibold text-white' : 'hover:bg-neutral-100' }}">
-                        <i class="fas fa-key fa-fw" aria-hidden="true"></i>
-                        <span>{{ __('Classroom codes') }}</span>
+                    <a href="{{ route($administrationRoutePrefix.'.curriculum-exercises.index') }}" @if($canonicalExerciseRouteActive) aria-current="page" @endif class="flex items-center gap-3 rounded-lg px-4 py-2 text-sm font-medium transition-colors {{ $canonicalExerciseRouteActive ? 'bg-indigo-600 font-semibold text-white' : 'hover:bg-neutral-100 text-neutral-700' }}">
+                        <i class="fas fa-puzzle-piece fa-fw" aria-hidden="true"></i>
+                        <span>{{ __('admin.exercises') }}</span>
                     </a>
                 </li>
-                <li>
-                    <a href="{{ route('superadmin.users.index') }}" @if($userAdministrationRouteActive) aria-current="page" @endif class="flex items-center gap-3 rounded-lg px-4 py-2 transition-colors {{ $userAdministrationRouteActive ? 'bg-indigo-600 font-semibold text-white' : 'hover:bg-neutral-100' }}">
-                        <i class="fas fa-users-cog fa-fw" aria-hidden="true"></i>
-                        <span>{{ __('admin.users') }}</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ route('superadmin.audit.index') }}" @if($auditRouteActive) aria-current="page" @endif class="flex items-center gap-3 rounded-lg px-4 py-2 transition-colors {{ $auditRouteActive ? 'bg-indigo-600 font-semibold text-white' : 'hover:bg-neutral-100' }}">
-                        <i class="fas fa-clipboard-list fa-fw" aria-hidden="true"></i>
-                        <span>{{ __('admin.audit') }}</span>
-                    </a>
-                </li>
-            @endif
-            @if(Auth::user()->isSuperAdmin())
-            <li class="pt-3">
-                <a href="{{ route($administrationRoutePrefix.'.legacy-evidence.index') }}" @if($legacyEvidenceRouteActive) aria-current="page" @endif class="flex items-center gap-3 rounded-lg px-4 py-2 transition-colors {{ $legacyEvidenceRouteActive ? 'bg-amber-100 font-semibold text-amber-950' : 'hover:bg-neutral-100' }}">
-                    <i class="fas fa-box-archive fa-fw" aria-hidden="true"></i>
-                    <span>{{ __('admin.legacy_evidence') }}</span>
-                    <span class="ml-auto rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-semibold uppercase text-amber-950">{{ __('admin.read_only') }}</span>
-                </a>
-            </li>
-            @endif
-        </ul>
+            </ul>
+        </div>
+
+        <!-- Section 3: People & Settings -->
+        <div>
+            <h3 class="px-4 text-xs font-bold uppercase tracking-wider text-neutral-400 mb-2">{{ __('admin.nav_group_people_settings') }}</h3>
+            <ul class="space-y-1">
+                @if(Auth::user()->isSuperAdmin())
+                    <li>
+                        <a href="{{ route('superadmin.institutions.index') }}" @if($institutionRouteActive) aria-current="page" @endif class="flex items-center gap-3 rounded-lg px-4 py-2 text-sm font-medium transition-colors {{ $institutionRouteActive ? 'bg-indigo-600 font-semibold text-white' : 'hover:bg-neutral-100 text-neutral-700' }}">
+                            <i class="fas fa-building fa-fw" aria-hidden="true"></i>
+                            <span>{{ __('Institutions') }}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('superadmin.invitations.index') }}" @if($administrationInvitationsRouteActive) aria-current="page" @endif class="flex items-center gap-3 rounded-lg px-4 py-2 text-sm font-medium transition-colors {{ $administrationInvitationsRouteActive ? 'bg-indigo-600 font-semibold text-white' : 'hover:bg-neutral-100 text-neutral-700' }}">
+                            <i class="fas fa-envelope-open-text fa-fw" aria-hidden="true"></i>
+                            <span>{{ __('Invitations') }}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('superadmin.join-codes.index') }}" @if($administrationJoinCodesRouteActive) aria-current="page" @endif class="flex items-center gap-3 rounded-lg px-4 py-2 text-sm font-medium transition-colors {{ $administrationJoinCodesRouteActive ? 'bg-indigo-600 font-semibold text-white' : 'hover:bg-neutral-100 text-neutral-700' }}">
+                            <i class="fas fa-key fa-fw" aria-hidden="true"></i>
+                            <span>{{ __('Classroom codes') }}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('superadmin.users.index') }}" @if($userAdministrationRouteActive) aria-current="page" @endif class="flex items-center gap-3 rounded-lg px-4 py-2 text-sm font-medium transition-colors {{ $userAdministrationRouteActive ? 'bg-indigo-600 font-semibold text-white' : 'hover:bg-neutral-100 text-neutral-700' }}">
+                            <i class="fas fa-users-cog fa-fw" aria-hidden="true"></i>
+                            <span>{{ __('admin.users') }}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('superadmin.audit.index') }}" @if($auditRouteActive) aria-current="page" @endif class="flex items-center gap-3 rounded-lg px-4 py-2 text-sm font-medium transition-colors {{ $auditRouteActive ? 'bg-indigo-600 font-semibold text-white' : 'hover:bg-neutral-100 text-neutral-700' }}">
+                            <i class="fas fa-clipboard-list fa-fw" aria-hidden="true"></i>
+                            <span>{{ __('admin.audit') }}</span>
+                        </a>
+                    </li>
+                    <li class="pt-2">
+                        <a href="{{ route($administrationRoutePrefix.'.legacy-evidence.index') }}" @if($legacyEvidenceRouteActive) aria-current="page" @endif class="flex items-center gap-3 rounded-lg px-4 py-2 text-sm font-medium transition-colors {{ $legacyEvidenceRouteActive ? 'bg-amber-100 font-semibold text-amber-950' : 'hover:bg-neutral-100 text-neutral-700' }}">
+                            <i class="fas fa-box-archive fa-fw" aria-hidden="true"></i>
+                            <span>{{ __('admin.legacy_evidence') }}</span>
+                            <span class="ml-auto rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-semibold uppercase text-amber-950">{{ __('admin.read_only') }}</span>
+                        </a>
+                    </li>
+                @endif
+            </ul>
+        </div>
     </nav>
     <div class="mt-4 border-t border-neutral-200 pt-4 md:mt-auto">
         <a href="{{ route('search.index') }}" class="mb-2 flex w-full items-center gap-3 rounded-lg px-4 py-2 hover:bg-neutral-100">

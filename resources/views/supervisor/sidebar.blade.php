@@ -36,33 +36,44 @@
             <span class="text-xs font-semibold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-2 py-1 rounded">{{ __('admin.supervisor') }}</span>
         </a>
     </div>
-    <nav class="flex-grow" aria-label="{{ __('admin.supervisor_navigation') }}">
-        <ul class="space-y-2">
-            <li>
-                <a href="{{ route('supervisor.dashboard') }}" @if($supervisorDashboardRouteActive) aria-current="page" @endif class="flex items-center gap-3 rounded-lg px-4 py-2 transition-colors {{ $supervisorDashboardRouteActive ? 'bg-indigo-600 font-semibold text-white shadow-md' : 'hover:bg-neutral-100' }}">
-                    <i class="fas fa-chart-line fa-fw" aria-hidden="true"></i>
-                    <span>{{ __('admin.team_dashboard') }}</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{ route('supervisor.classes.index') }}" @if($supervisorClassesRouteActive) aria-current="page" @endif class="flex items-center gap-3 rounded-lg px-4 py-2 transition-colors {{ $supervisorClassesRouteActive ? 'bg-indigo-600 font-semibold text-white shadow-md' : 'hover:bg-neutral-100' }}">
-                    <i class="fas fa-chalkboard-user fa-fw" aria-hidden="true"></i>
-                    <span>{{ __('classes.navigation') }}</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{ route('supervisor.invitations.index') }}" @if($supervisorInvitationsRouteActive) aria-current="page" @endif class="flex items-center gap-3 rounded-lg px-4 py-2 transition-colors {{ $supervisorInvitationsRouteActive ? 'bg-indigo-600 font-semibold text-white shadow-md' : 'hover:bg-neutral-100' }}">
-                    <i class="fas fa-envelope-open-text fa-fw" aria-hidden="true"></i>
-                    <span>{{ __('Invitations') }}</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{ route('supervisor.join-codes.index') }}" @if($supervisorJoinCodesRouteActive) aria-current="page" @endif class="flex items-center gap-3 rounded-lg px-4 py-2 transition-colors {{ $supervisorJoinCodesRouteActive ? 'bg-indigo-600 font-semibold text-white shadow-md' : 'hover:bg-neutral-100' }}">
-                    <i class="fas fa-key fa-fw" aria-hidden="true"></i>
-                    <span>{{ __('Classroom codes') }}</span>
-                </a>
-            </li>
-        </ul>
+    <nav class="flex-grow space-y-6" aria-label="{{ __('admin.supervisor_navigation') }}">
+        <!-- Section 1: Overview -->
+        <div>
+            <h3 class="px-4 text-xs font-bold uppercase tracking-wider text-neutral-400 mb-2">{{ __('admin.nav_group_overview') }}</h3>
+            <ul class="space-y-1">
+                <li>
+                    <a href="{{ route('supervisor.dashboard') }}" @if($supervisorDashboardRouteActive) aria-current="page" @endif class="flex items-center gap-3 rounded-lg px-4 py-2 transition-colors {{ $supervisorDashboardRouteActive ? 'bg-indigo-600 font-semibold text-white shadow-md' : 'hover:bg-neutral-100' }}">
+                        <i class="fas fa-chart-line fa-fw" aria-hidden="true"></i>
+                        <span>{{ __('admin.team_dashboard') }}</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Section 2: People & Settings -->
+        <div>
+            <h3 class="px-4 text-xs font-bold uppercase tracking-wider text-neutral-400 mb-2">{{ __('admin.nav_group_people_settings') }}</h3>
+            <ul class="space-y-1">
+                <li>
+                    <a href="{{ route('supervisor.classes.index') }}" @if($supervisorClassesRouteActive) aria-current="page" @endif class="flex items-center gap-3 rounded-lg px-4 py-2 transition-colors {{ $supervisorClassesRouteActive ? 'bg-indigo-600 font-semibold text-white shadow-md' : 'hover:bg-neutral-100' }}">
+                        <i class="fas fa-chalkboard-user fa-fw" aria-hidden="true"></i>
+                        <span>{{ __('classes.navigation') }}</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('supervisor.invitations.index') }}" @if($supervisorInvitationsRouteActive) aria-current="page" @endif class="flex items-center gap-3 rounded-lg px-4 py-2 transition-colors {{ $supervisorInvitationsRouteActive ? 'bg-indigo-600 font-semibold text-white shadow-md' : 'hover:bg-neutral-100' }}">
+                        <i class="fas fa-envelope-open-text fa-fw" aria-hidden="true"></i>
+                        <span>{{ __('Invitations') }}</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('supervisor.join-codes.index') }}" @if($supervisorJoinCodesRouteActive) aria-current="page" @endif class="flex items-center gap-3 rounded-lg px-4 py-2 transition-colors {{ $supervisorJoinCodesRouteActive ? 'bg-indigo-600 font-semibold text-white shadow-md' : 'hover:bg-neutral-100' }}">
+                        <i class="fas fa-key fa-fw" aria-hidden="true"></i>
+                        <span>{{ __('Classroom codes') }}</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </nav>
     <div class="mt-4 border-t border-neutral-200 pt-4 md:mt-auto">
         <a href="{{ route('search.index') }}" class="mb-2 flex w-full items-center gap-3 rounded-lg px-4 py-2 hover:bg-neutral-100">

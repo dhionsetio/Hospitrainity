@@ -57,7 +57,7 @@ class ProgressAdministrationTest extends TestCase
 
         $this->actingAs($admin)->get(route('admin.progress.index'))
             ->assertOk()
-            ->assertSee('Aggregate progress')
+            ->assertSee('Overall progress')
             ->assertDontSee($learner->email);
         $this->actingAs($superadmin)->get(route('admin.progress.index'))->assertForbidden();
 

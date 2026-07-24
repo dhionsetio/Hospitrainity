@@ -7,6 +7,8 @@ import { initializeExerciseAuthoring } from './canonical-exercise-authoring';
 import { initializePushNotifications } from './push-notifications';
 import { initializePasskeys } from './passkeys';
 import { initializeLessonListening } from './lesson-listening';
+import { initPasswordStrengthMeter } from './password-strength';
+import { initCurriculumAccordion } from './curriculum-accordion';
 
 registerAdminComponents(Alpine);
 window.Alpine = Alpine;
@@ -23,6 +25,8 @@ function initializePageInteractions() {
     initializePushNotifications();
     initializePasskeys();
     initializeLessonListening();
+    initPasswordStrengthMeter();
+    initCurriculumAccordion();
 
     const priorityFocusTarget = document.querySelector('[data-focus-errors], [data-focus-status]');
     if (priorityFocusTarget instanceof HTMLElement) {

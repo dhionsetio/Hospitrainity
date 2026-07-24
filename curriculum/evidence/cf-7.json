@@ -7,16 +7,16 @@
     "package": {
         "path": "curriculum/hospitrainity/0.4.0-draft",
         "file_count": 469,
-        "byte_count": 1473828,
+        "byte_count": 1475287,
         "json_file_count": 463,
         "markdown_file_count": 6,
-        "tree_sha256": "e864b4fcaa9d182b8379cf7d179279114baa7fef46624bcb261be41b8072dc9a",
+        "tree_sha256": "badf333292dbc24fb76c24c48713ee370bce8d1074691af3d4b53cca0aac061c",
         "tree_digest_definition": "SHA-256 over UTF-8 rows sorted by ordinal relative path: path + NUL + lowercase raw-file SHA-256 + NUL + byte length + LF"
     },
     "standalone": {
         "path": "standalone/Hospitrainity-Standalone.html",
         "byte_count": 702930,
-        "sha256": "58bb4f61e32c4cc3855a786ea38c247aeef1b66059f18933e979856c912daf21"
+        "sha256": "22350af3fff39dd5b5cecca186e45cabe43e8895649c4464dba8d3467a9e82ca"
     },
     "expected_counts": {
         "chapters": 7,
@@ -33,7 +33,7 @@
         "migration_edges": 8
     },
     "coverage_counts": {
-        "content_blocks": 774,
+        "content_blocks": 776,
         "source_tables": 21,
         "warm_up_questions": 21,
         "exercise_prompts": 96,

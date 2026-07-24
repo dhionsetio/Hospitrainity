@@ -95,6 +95,24 @@
             },
             "text": "The whole idea in one line: lead with what you can do, keep it warm, and always offer a next step.",
             "type": "paragraph"
+        },
+        {
+            "activity_code": "HSP-C01-ACT-BASELINE",
+            "id": "b836d521-93ef-5a98-ac14-23916edda099",
+            "language": "en",
+            "order": 4,
+            "provenance_kind": "derived_navigation",
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 65,
+                "chapter": 1,
+                "heading_path": [
+                    "Welcome and Introduction to Customer Care",
+                    "The one skill that runs through everything: positive language"
+                ],
+                "normalized_text_sha256": "4aa29364d58604f492ef18c103247237c97807c5aeba0f54bba21d43b53fc39b"
+            },
+            "type": "activity_embed"
         }
     ],
     "chapter_code": "HSP-C01",

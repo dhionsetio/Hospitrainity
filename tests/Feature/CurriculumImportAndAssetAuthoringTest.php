@@ -226,7 +226,7 @@ class CurriculumImportAndAssetAuthoringTest extends TestCase
 
         $validated = app(CurriculumDraftReview::class)->validate($draft->fresh(), $admin, 2);
         $this->assertSame('valid', $validated->validation_report['status'], json_encode($validated->validation_report));
-        $this->assertSame(775, $draft->blocks()->count());
+        $this->assertSame(777, $draft->blocks()->count());
         $this->assertSame(CurriculumPackage::active()?->id, $draft->base_package_id);
     }
 
@@ -247,7 +247,7 @@ class CurriculumImportAndAssetAuthoringTest extends TestCase
             'link_text' => ['Unsafe reference'], 'link_target' => ['javascript:alert(1)'],
             'provenance_note' => 'Manual link under source review.',
         ])->assertSessionHasErrors('link_target.0');
-        $this->assertSame(774, $draft->blocks()->count());
+        $this->assertSame(776, $draft->blocks()->count());
     }
 
     private function importActive(): void

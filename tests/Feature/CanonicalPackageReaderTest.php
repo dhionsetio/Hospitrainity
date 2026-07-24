@@ -56,7 +56,7 @@ class CanonicalPackageReaderTest extends TestCase
 
         $sections = array_filter($package->entities, static fn (array $entity): bool => $entity['entity_type'] === 'lesson-section');
         $this->assertCount(85, $sections);
-        $this->assertSame(774, array_sum(array_map(static fn (array $section): int => count($section['payload']['blocks']), $sections)));
+        $this->assertSame(776, array_sum(array_map(static fn (array $section): int => count($section['payload']['blocks']), $sections)));
     }
 
     public function test_standalone_projection_is_deterministic_and_matches_the_recorded_artifact(): void

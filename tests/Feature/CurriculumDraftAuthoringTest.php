@@ -74,7 +74,7 @@ class CurriculumDraftAuthoringTest extends TestCase
 
         $this->assertSame($activeBefore->id, CurriculumPackage::active()?->id);
         $this->assertSame($activeBefore->entities()->count(), $draft->entities()->count());
-        $this->assertSame(774, CurriculumDraftBlock::query()->where('curriculum_draft_id', $draft->id)->count());
+        $this->assertSame(776, CurriculumDraftBlock::query()->where('curriculum_draft_id', $draft->id)->count());
         $chapter = CurriculumDraftEntity::query()->where('curriculum_draft_id', $draft->id)->where('code', 'HSP-C01')->sole();
 
         $payload = [

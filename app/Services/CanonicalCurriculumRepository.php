@@ -271,10 +271,42 @@ class CanonicalCurriculumRepository
             return $block;
         }, array_values($section->payload['blocks'] ?? []));
 
+        $isWarmUp = (int) $section->position === 1 || str_contains(strtolower($section->payload['title']), 'warm-up');
+
+        $activityDetails = null;
+        if ($activity !== null) {
+            $promptCount = CurriculumEntity::query()
+                ->where('curriculum_package_id', $package->id)
+                ->where('entity_type', 'prompt-item')
+                ->where('parent_code', $activity->code)
+                ->count();
+            $unitCount = max(1, $promptCount);
+            $responseForm = $activity->payload['response_form'] ?? 'explicit_selection';
+            $formLabels = [
+                'explicit_selection' => 'Question Set',
+                'short_text' => 'Fill in the Blank',
+                'ordering' => 'Sequence Ordering',
+                'role_play' => 'Speaking Practice',
+            ];
+            $typeLabel = $formLabels[$responseForm] ?? ucfirst(str_replace('_', ' ', $responseForm));
+            $summaryText = $activity->payload['guidance'] ?? __('Practice key concepts covered in this lesson.');
+
+            $activityDetails = [
+                'code' => $activity->code,
+                'title' => $activity->payload['title'],
+                'response_form' => $responseForm,
+                'type_label' => $typeLabel,
+                'summary' => $summaryText,
+                'unit_count' => $unitCount,
+                'estimated_minutes' => max(2, (int) ceil($unitCount * 1.5)),
+            ];
+        }
+
         return [
             'code' => $section->code,
             'title' => $this->sanitizeSectionTitle($section->payload['title']),
             'order' => (int) $section->position,
+            'is_warm_up' => $isWarmUp,
             'status' => $section->lifecycle_status,
             'blocks' => $blocks,
             'chapter' => [
@@ -282,11 +314,7 @@ class CanonicalCurriculumRepository
                 'title' => $chapter->payload['title'],
                 'module' => (int) $chapter->payload['module'],
             ],
-            'activity' => $activity === null ? null : [
-                'code' => $activity->code,
-                'title' => $activity->payload['title'],
-                'response_form' => $activity->payload['response_form'],
-            ],
+            'activity' => $activityDetails,
             'navigation' => [
                 'position' => $current + 1,
                 'total' => $sequence->count(),

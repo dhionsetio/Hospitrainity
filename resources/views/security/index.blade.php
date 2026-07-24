@@ -90,11 +90,26 @@
 
     <section class="rounded-lg border border-neutral-300 bg-white p-5" aria-labelledby="password-heading">
         <h2 id="password-heading" class="text-xl font-bold text-neutral-950">{{ __('Change password') }}</h2>
-        <p class="mt-2 text-neutral-700">{{ __('Use 15 to 128 characters. You can paste a password from your password manager.') }}</p>
+        <p class="mt-2 text-neutral-700">{{ __('Use :min to 128 characters. You can paste a password from your password manager.', ['min' => config('authentication.password.minimum', 8)]) }}</p>
         <form method="POST" action="{{ route('security.password.update') }}" class="mt-4 grid max-w-xl gap-4">@csrf @method('PATCH')
             <label><span class="font-medium">{{ __('Current password') }}</span><input type="password" name="current_password" required autocomplete="current-password" class="mt-1 w-full rounded-md border border-neutral-400 px-3 py-3"></label>
-            <label><span class="font-medium">{{ __('New password') }}</span><input type="password" name="password" required autocomplete="new-password" minlength="8" maxlength="128" class="mt-1 w-full rounded-md border border-neutral-400 px-3 py-3"></label>
-            <label><span class="font-medium">{{ __('Confirm new password') }}</span><input type="password" name="password_confirmation" required autocomplete="new-password" minlength="8" maxlength="128" class="mt-1 w-full rounded-md border border-neutral-400 px-3 py-3"></label>
+            <div>
+                <label for="sec_password" class="block font-medium">{{ __('New password') }}</label>
+                <input id="sec_password" type="password" name="password" required autocomplete="new-password" minlength="{{ config('authentication.password.minimum', 8) }}" maxlength="128" aria-describedby="security-password-strength-hint" class="mt-1 w-full rounded-md border border-neutral-400 px-3 py-3">
+                <div id="security-password-strength-hint" data-password-strength data-for="sec_password" data-min-length="{{ config('authentication.password.minimum', 8) }}"
+                     data-label-weak="{{ __('Weak') }}" data-label-good="{{ __('Good') }}"
+                     data-label-strong="{{ __('Strong') }}" data-label-very-strong="{{ __('Very Strong') }}"
+                     class="mt-2 space-y-1">
+                    <div class="flex items-center justify-between text-xs font-medium text-neutral-600">
+                        <span>{{ __('Password strength') }}</span>
+                        <span data-strength-status role="status" aria-live="polite" class="font-semibold text-neutral-700"></span>
+                    </div>
+                    <div class="h-2 w-full overflow-hidden rounded-full bg-neutral-200">
+                        <div data-strength-bar class="h-2 w-0 rounded-full transition-all duration-300 bg-neutral-200"></div>
+                    </div>
+                </div>
+            </div>
+            <label><span class="font-medium">{{ __('Confirm new password') }}</span><input type="password" name="password_confirmation" required autocomplete="new-password" minlength="{{ config('authentication.password.minimum', 8) }}" maxlength="128" class="mt-1 w-full rounded-md border border-neutral-400 px-3 py-3"></label>
             <button class="justify-self-start rounded-md bg-indigo-700 px-4 py-3 font-semibold text-white">{{ __('Change password') }}</button>
         </form>
     </section>

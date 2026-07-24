@@ -79,14 +79,27 @@
             </div>
             <div>
                 <label for="password" class="block text-sm font-medium text-neutral-700">{{ __('Password') }}</label>
-                <input id="password" name="password" type="password" autocomplete="new-password" minlength="8" maxlength="128" required
-                    @error('password') aria-invalid="true" aria-describedby="registration-password-error" @enderror
+                <input id="password" name="password" type="password" autocomplete="new-password" minlength="{{ config('authentication.password.minimum', 8) }}" maxlength="128" required
+                    aria-describedby="password-strength-hint @error('password') registration-password-error @enderror"
+                    @error('password') aria-invalid="true" @enderror
                     class="mt-1 block w-full rounded-md border border-neutral-300 px-3 py-3 focus:border-indigo-500 focus:ring-indigo-500">
+                <div id="password-strength-hint" data-password-strength data-for="password" data-min-length="{{ config('authentication.password.minimum', 8) }}"
+                     data-label-weak="{{ __('Weak') }}" data-label-good="{{ __('Good') }}"
+                     data-label-strong="{{ __('Strong') }}" data-label-very-strong="{{ __('Very Strong') }}"
+                     class="mt-2 space-y-1">
+                    <div class="flex items-center justify-between text-xs font-medium text-neutral-600">
+                        <span>{{ __('Password strength') }}</span>
+                        <span data-strength-status role="status" aria-live="polite" class="font-semibold text-neutral-700"></span>
+                    </div>
+                    <div class="h-2 w-full overflow-hidden rounded-full bg-neutral-200">
+                        <div data-strength-bar class="h-2 w-0 rounded-full transition-all duration-300 bg-neutral-200"></div>
+                    </div>
+                </div>
                 @error('password')<p id="registration-password-error" class="mt-1 text-sm text-red-700">{{ $message }}</p>@enderror
             </div>
             <div>
                 <label for="password_confirmation" class="block text-sm font-medium text-neutral-700">{{ __('Confirm password') }}</label>
-                <input id="password_confirmation" name="password_confirmation" type="password" autocomplete="new-password" minlength="8" maxlength="128" required
+                <input id="password_confirmation" name="password_confirmation" type="password" autocomplete="new-password" minlength="{{ config('authentication.password.minimum', 8) }}" maxlength="128" required
                     class="mt-1 block w-full rounded-md border border-neutral-300 px-3 py-3 focus:border-indigo-500 focus:ring-indigo-500">
             </div>
             <div>
