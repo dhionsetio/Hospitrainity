@@ -1,4 +1,5 @@
 import { once } from 'node:events';
+import { createConnection } from 'node:net';
 import path from 'node:path';
 import { spawn, spawnSync } from 'node:child_process';
 
@@ -19,6 +20,22 @@ const serverRouter = path.join(
 
 function delay(milliseconds) {
     return new Promise(resolve => setTimeout(resolve, milliseconds));
+}
+
+function isServerPortOccupied() {
+    const url = new URL(baseURL);
+
+    return new Promise((resolve) => {
+        const socket = createConnection({ host: url.hostname, port: Number(url.port) });
+        const finish = (occupied) => {
+            socket.destroy();
+            resolve(occupied);
+        };
+
+        socket.setTimeout(1_000, () => finish(false));
+        socket.once('connect', () => finish(true));
+        socket.once('error', () => finish(false));
+    });
 }
 
 async function waitForServer(server) {
@@ -59,6 +76,10 @@ async function stopServer(server) {
 }
 
 export default async function startServer() {
+    if (await isServerPortOccupied()) {
+        throw new Error(`Refusing to start the isolated E2E server because ${baseURL} is already in use.`);
+    }
+
     const server = spawn(phpBinary, [
         '-S',
         '127.0.0.1:8010',

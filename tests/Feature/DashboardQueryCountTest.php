@@ -20,7 +20,7 @@ use Tests\TestCase;
  *
  * Before this phase, DashboardController called Lesson::getProgressFor() per
  * lesson, which re-queried vocabularies/materials/exercises and ran 3 count()
- * queries each — roughly 8 queries per lesson. Now a single completions query
+ * queries each, roughly 8 queries per lesson. Now a single completions query
  * covers the whole page.
  */
 class DashboardQueryCountTest extends TestCase
@@ -81,12 +81,14 @@ class DashboardQueryCountTest extends TestCase
         $this->assertSame(
             $small,
             $large,
-            "Dashboard query count grew from {$small} to {$large} as lessons increased — N+1 regression."
+            "Dashboard query count grew from {$small} to {$large} as lessons increased. N+1 regression."
         );
 
-        // And the absolute count stays small and bounded.
+        // B03 adds one account-wide privileged-role assurance query. The
+        // growth assertion above remains the N+1 guard; this ceiling covers
+        // the fixed security check without allowing data-dependent growth.
         $this->assertLessThanOrEqual(
-            15,
+            20,
             $large,
             "Dashboard issued {$large} queries; expected a small, bounded number."
         );

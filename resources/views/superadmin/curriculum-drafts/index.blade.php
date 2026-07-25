@@ -33,14 +33,33 @@
                     </label>
                     <fieldset class="text-sm text-neutral-800">
                         <legend class="font-semibold">{{ __('admin.base_version') }}</legend>
-                        <label class="mt-2 flex gap-2"><input type="radio" name="source" value="clone" @checked(old('source', 'clone') === 'clone')> <span>{{ __('admin.clone_active') }}</span></label>
-                        <label class="mt-2 flex gap-2"><input type="radio" name="source" value="empty" @checked(old('source') === 'empty')> <span>{{ __('admin.start_empty') }}</span></label>
+                        <label class="mt-2 flex gap-2"><input type="radio" name="source" value="clone" class="shrink-0" @checked(old('source', 'clone') === 'clone')> <span>{{ __('admin.clone_active') }}</span></label>
+                        <label class="mt-2 flex gap-2"><input type="radio" name="source" value="empty" class="shrink-0" @checked(old('source') === 'empty')> <span>{{ __('admin.start_empty') }}</span></label>
                     </fieldset>
                     <div class="lg:col-span-3"><button class="rounded-md bg-indigo-700 px-5 py-2 font-semibold text-white hover:bg-indigo-800">{{ __('admin.create_draft') }}</button></div>
                 </form>
             </section>
 
-            <div class="overflow-x-auto rounded-xl bg-white shadow">
+            <section class="space-y-4 md:hidden" aria-label="{{ __('admin.canonical_drafts') }}">
+                @forelse($drafts as $draft)
+                    <article class="rounded-xl border border-neutral-300 bg-white p-5 shadow-sm">
+                        <div class="flex flex-wrap items-start justify-between gap-3">
+                            <div><h2 class="font-bold text-neutral-950">{{ $draft->title }}</h2><p class="mt-1 font-mono text-xs text-neutral-600">{{ $draft->public_id }}</p></div>
+                            <span class="rounded-full bg-indigo-100 px-3 py-1 text-sm font-semibold text-indigo-800">{{ __('admin.'.$draft->status->value) }}</span>
+                        </div>
+                        <dl class="mt-4 grid grid-cols-2 gap-3 text-sm">
+                            <div><dt class="font-medium text-neutral-600">{{ __('admin.content_version') }}</dt><dd class="mt-1 font-mono text-neutral-900">{{ $draft->content_version }}</dd></div>
+                            <div><dt class="font-medium text-neutral-600">{{ __('admin.revision') }}</dt><dd class="mt-1 text-neutral-900">{{ $draft->revision }}</dd></div>
+                            <div class="col-span-2"><dt class="font-medium text-neutral-600">{{ __('admin.updated') }}</dt><dd class="mt-1 text-neutral-900">{{ $draft->updated_at?->format('Y-m-d H:i') }}</dd></div>
+                        </dl>
+                        <a href="{{ route($routePrefix.'.curriculum-drafts.show', $draft) }}" class="mt-4 inline-flex min-h-11 items-center rounded-lg bg-indigo-700 px-4 py-2 font-semibold text-white">{{ __('admin.open_draft') }}</a>
+                    </article>
+                @empty
+                    <p class="rounded-lg border border-dashed border-neutral-400 bg-white p-6 text-center text-neutral-600">{{ __('admin.no_canonical_drafts') }}</p>
+                @endforelse
+            </section>
+
+            <div class="hidden overflow-x-auto rounded-xl bg-white shadow md:block">
                 <table class="min-w-full text-left text-sm">
                     <thead class="bg-neutral-50 text-xs uppercase text-neutral-600"><tr><th class="p-4">{{ __('admin.draft_title') }}</th><th class="p-4">{{ __('admin.status') }}</th><th class="p-4">{{ __('admin.base_version') }}</th><th class="p-4">{{ __('admin.content_version') }}</th><th class="p-4">{{ __('admin.revision') }}</th><th class="p-4">{{ __('admin.updated') }}</th><th class="p-4">{{ __('admin.actions') }}</th></tr></thead>
                     <tbody class="divide-y divide-neutral-200">

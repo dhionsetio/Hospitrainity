@@ -31,6 +31,16 @@ class DatabaseIndexPlanTest extends TestCase
             ['user', 'Measured Hotel'],
             'users_role_instansi_id_idx',
         );
+        $this->assertPlanUses(
+            'SELECT search_document_id FROM search_document_terms WHERE term = ? ORDER BY search_document_id',
+            ['hospitality'],
+            'search_document_terms_term_search_document_id_index',
+        );
+        $this->assertPlanUses(
+            'SELECT * FROM search_documents WHERE search_index_generation_id = ? AND published = ? AND locale = ? AND source_type = ?',
+            ['00000000-0000-0000-0000-000000000000', 1, 'en', 'section'],
+            'search_documents_scope_index',
+        );
     }
 
     private function assertPlanUses(string $sql, array $bindings, string $index): void

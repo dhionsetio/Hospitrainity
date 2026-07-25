@@ -2,7 +2,7 @@
     "schema_version": "1.0.0",
     "roadmap": {
         "path": "docs/HOSPITRAINITY_NEXT_GENERATION_AUDIT_AND_UPDATE_ROADMAP.md",
-        "sha256": "465099eb07881dc5f32ee6b3f06fc7d0e080971313a1eab2b290316bc7e5c5a9"
+        "sha256": "c5e17467cfd49ec23e200aa15a82c538dfdbfd4fa31b0ad1f1ab7b480e881a10"
     },
     "findings": [
         {
@@ -17,38 +17,134 @@
                 "NG-B01-DECISIONS"
             ],
             "required_evidence": "Production seed fails before writes; no runtime literal credential; approved bootstrap/recovery runbook and tests",
-            "status": "open",
+            "status": "in_progress",
             "evidence": {
-                "code": [],
-                "migrations": [],
-                "automated_tests": [],
-                "browser_device_checks": [],
-                "human_legal_reviews": [],
-                "production_evidence": [],
-                "checkpoints": []
+                "code": [
+                    "app/Services/DemoSeedGuard.php",
+                    "app/Console/Commands/BootstrapSuperadmin.php",
+                    "app/Console/Commands/FinalizeIdentityMigration.php",
+                    "app/Console/Commands/IdentityMigrationPreflight.php",
+                    "app/Services/AccountLifecycleService.php",
+                    "app/Http/Middleware/EnsureAccountIsActive.php",
+                    "app/Providers/AppServiceProvider.php",
+                    "app/Models/User.php",
+                    "config/identity.php",
+                    "database/seeders/DatabaseSeeder.php",
+                    "database/seeders/UserSeeder.php",
+                    "scripts/e2e/prepare.mjs"
+                ],
+                "migrations": [
+                    "database/migrations/2026_07_19_000010_normalize_identity_and_invitations.php",
+                    "database/migrations/2026_07_20_000012_add_disabled_account_state.php"
+                ],
+                "automated_tests": [
+                    "tests/Feature/DemoSeedGuardTest.php",
+                    "tests/Feature/BootstrapSuperadminCommandTest.php",
+                    "tests/Feature/FinalizeIdentityMigrationCommandTest.php",
+                    "tests/Feature/IdentityMigrationPreflightCommandTest.php",
+                    "tests/Feature/ProductionReadinessCheckerTest.php",
+                    "tests/Feature/AuthHardeningTest.php",
+                    "tests/Feature/DisabledAccountLifecycleTest.php"
+                ],
+                "browser_device_checks": [
+                    "Isolated invitation journey passed in patched desktop/mobile Chromium and WebKit; patched Firefox launch is blocked by a reproduced host graphics-startup failure before application navigation."
+                ],
+                "human_legal_reviews": [
+                    "Owner accepted B01 questionnaire decisions on 2026-07-19; independent security and production review remain required."
+                ],
+                "production_evidence": [
+                    "The authoritative normalized-identity migration completed after verified database/private-storage backups; all three prior database sessions were explicitly revoked and postflight invariants pass. The reversible disabled-account lifecycle is installed and verified across authentication, reset, invitations, sessions, audit, and readiness, but no account was disabled. Demo identities still block production and creator bootstrap; B03/B17 recovery, target-environment, independent security, and production deployment evidence remain open."
+                ],
+                "checkpoints": [
+                    "docs/checkpoints/NG-B01-CHECKPOINT.md"
+                ]
             }
         },
         {
             "id": "NG-P0-002",
             "batches": [
                 "B01",
+                "B02",
+                "B05",
                 "B06"
             ],
             "requirement": "Institution integrity; role/scope safety",
             "decisions": [
                 "NG-B01-DECISIONS",
+                "NG-B02-DECISIONS",
+                "NG-B05-DECISIONS",
                 "NG-B06-DECISIONS"
             ],
             "required_evidence": "Non-enumerating registration; approved invitation/enrollment proof; migration mapping; cross-institution tests",
-            "status": "open",
+            "status": "in_progress",
             "evidence": {
-                "code": [],
-                "migrations": [],
-                "automated_tests": [],
-                "browser_device_checks": [],
-                "human_legal_reviews": [],
-                "production_evidence": [],
-                "checkpoints": []
+                "code": [
+                    "app/Services/InstitutionContext.php",
+                    "app/Services/InstitutionInvitationService.php",
+                    "app/Services/InstitutionJoinCodeService.php",
+                    "app/Services/InstitutionAccessService.php",
+                    "app/Services/LearningContext.php",
+                    "app/Services/WorkContext.php",
+                    "app/Services/InstitutionRoleManager.php",
+                    "app/Services/CourseAccessService.php",
+                    "app/Services/CourseOfferingLifecycle.php",
+                    "app/Services/CourseRevisionService.php",
+                    "app/Console/Commands/IdentityMigrationPreflight.php",
+                    "app/Policies/InstitutionInvitationPolicy.php",
+                    "app/Http/Controllers/InstitutionInvitationController.php",
+                    "app/Http/Controllers/InvitationAcceptanceController.php",
+                    "app/Http/Controllers/InstitutionEnrollmentController.php",
+                    "app/Http/Controllers/InstitutionJoinCodeController.php",
+                    "app/Http/Controllers/InstitutionJoinRequestController.php",
+                    "app/Http/Controllers/InstitutionRoleAssignmentController.php",
+                    "app/Http/Controllers/WorkContextController.php",
+                    "app/Http/Controllers/ActiveInstitutionController.php",
+                    "app/Http/Controllers/Superadmin/AdminDashboardController.php",
+                    "app/Models/User.php",
+                    "app/Models/Course.php",
+                    "app/Models/CourseRevision.php",
+                    "app/Models/CourseOffering.php",
+                    "app/Models/CourseOfferingEvent.php",
+                    "app/Models/CourseEnrollment.php",
+                    "app/Models/TeachingAssignment.php",
+                    "app/Providers/AppServiceProvider.php"
+                ],
+                "migrations": [
+                    "database/migrations/2026_07_19_000010_normalize_identity_and_invitations.php",
+                    "database/migrations/2026_07_20_000013_establish_tenant_roles_and_join_codes.php",
+                    "database/migrations/2026_07_21_000019_establish_course_class_and_time_foundation.php",
+                    "database/migrations/2026_07_21_000020_add_class_roster_operations.php"
+                ],
+                "automated_tests": [
+                    "tests/Feature/RegistrationTest.php",
+                    "tests/Feature/InstitutionInvitationAuthorizationTest.php",
+                    "tests/Feature/IdentityMigrationTest.php",
+                    "tests/Feature/IdentityMigrationPreflightCommandTest.php",
+                    "tests/Feature/ProgressAdministrationTest.php",
+                    "tests/Feature/InstitutionJoinCodeEnrollmentTest.php",
+                    "tests/Feature/InstitutionRoleManagementTest.php",
+                    "tests/Feature/WorkContextAuthorizationTest.php",
+                    "tests/Feature/CourseClassFoundationTest.php",
+                    "tests/Feature/ClassRosterOperationsTest.php",
+                    "tests/Feature/RoleRouteMatrixTest.php",
+                    "tests/Feature/AdministrationIntegrationTest.php"
+                ],
+                "browser_device_checks": [
+                    "Invitation and personal-registration journeys passed in patched desktop/mobile Chromium and WebKit. UI-R02 then passed 56 current desktop/mobile Chromium and WebKit scenarios plus 31 responsive Chromium visual checks at 320, 390, 768, and 1280 CSS pixels. B06-B's assigned-Class and privacy-bounded roster journey passed in desktop Chromium and mobile Chromium profiles. The separate Firefox run stalled at browser launch before application navigation and hit the host timeout; branded Chrome, Edge, Safari, Opera, and physical devices were not directly tested."
+                ],
+                "human_legal_reviews": [
+                    "Owner approved personal self-study plus pending adjustable-duration classroom-code enrollment and explicit tenant roles/work contexts on 2026-07-20; all three demo accounts must remain enabled."
+                ],
+                "production_evidence": [
+                    "The authoritative schema now has normalized platform/institution/capability assignments, Class-scoped invitations/codes/requests, retained roster and teaching history, and server-derived learning-scope keys. B06-A and B06-B are verified in disposable SQLite with composite cross-tenant constraints and a task-oriented UI; the user's localhost database was not migrated. Personal history remains private. All three demo accounts remain enabled, no business row or session was deleted, and B06-C remains open."
+                ],
+                "checkpoints": [
+                    "docs/checkpoints/NG-B01-CHECKPOINT.md",
+                    "docs/checkpoints/NG-B02-B05-ARCHITECTURE-CHECKPOINT.md",
+                    "docs/checkpoints/NG-B06-A-FOUNDATION-2026-07-21.md",
+                    "docs/checkpoints/UI-R02-RESPONSIVE-LEARNER-SHELL-2026-07-21.md",
+                    "docs/checkpoints/NG-B06-B-CLASS-ROSTER-2026-07-21.md"
+                ]
             }
         },
         {
@@ -63,15 +159,40 @@
                 "Applicable CF approval records"
             ],
             "required_evidence": "Human approval set; immutable non-draft active release; activation/rollback evidence",
-            "status": "open",
+            "status": "human_review",
             "evidence": {
-                "code": [],
-                "migrations": [],
-                "automated_tests": [],
-                "browser_device_checks": [],
-                "human_legal_reviews": [],
-                "production_evidence": [],
-                "checkpoints": []
+                "code": [
+                    "app/Services/Curriculum/CurriculumReleaseGuard.php",
+                    "app/Services/Curriculum/CurriculumReleaseLifecycle.php",
+                    "app/Models/CurriculumRelease.php",
+                    "app/Models/CurriculumReleaseApproval.php",
+                    "app/Models/CurriculumReleaseEvent.php",
+                    "app/Policies/CurriculumDraftPolicy.php",
+                    "app/Services/ProductionReadinessChecker.php",
+                    "resources/views/curriculum/partials/active-draft-banner.blade.php"
+                ],
+                "migrations": [
+                    "database/migrations/2026_07_19_000011_create_curriculum_releases.php"
+                ],
+                "automated_tests": [
+                    "tests/Feature/CurriculumReleaseGuardTest.php",
+                    "tests/Feature/CurriculumReleaseLifecycleTest.php",
+                    "tests/Feature/CanonicalCurriculumImportTest.php",
+                    "tests/Feature/CurriculumDraftAuthoringTest.php",
+                    "tests/Feature/ProductionReadinessCheckerTest.php"
+                ],
+                "browser_device_checks": [
+                    "Draft preview remains visibly labeled in patched desktop/mobile Chromium and WebKit; Firefox application assertions are unavailable because the patched browser fails during host graphics startup."
+                ],
+                "human_legal_reviews": [
+                    "Owner reports lecturer/expert approval but requests that no reviewer names be recorded. This supports owner-attested non-production testing only; named qualified gate evidence still does not exist for production or independent-review claims."
+                ],
+                "production_evidence": [
+                    "No release was approved or activated; named external reviewer identity is separated from the authenticated recorder, transitions and current Superadmin authority are serialized, referenced evidence is deletion-restricted, production draft delivery/replacement import remain fail-closed, and delivery plus rollback snapshot validation require a matching activation actor, timestamp, reason, and append-only transition event before mutation. Production rollback stays disabled, so B17 activation/rollback evidence remains open."
+                ],
+                "checkpoints": [
+                    "docs/checkpoints/NG-B01-CHECKPOINT.md"
+                ]
             }
         },
         {
@@ -85,15 +206,46 @@
                 "Qualified legal approval"
             ],
             "required_evidence": "Field-retention matrix; rights request/export/delete/hold tests; pseudonymized retained audit; legal sign-off",
-            "status": "open",
+            "status": "human_review",
             "evidence": {
-                "code": [],
-                "migrations": [],
-                "automated_tests": [],
-                "browser_device_checks": [],
-                "human_legal_reviews": [],
-                "production_evidence": [],
-                "checkpoints": []
+                "code": [
+                    "config/privacy.php",
+                    "config/push.php",
+                    "app/Services/PolicyDocumentRegistry.php",
+                    "app/Services/DataSubjectRequestService.php",
+                    "app/Services/DataExportBuilder.php",
+                    "app/Services/AccountErasureService.php",
+                    "app/Services/PrivacyRetentionService.php",
+                    "app/Services/PushNotificationService.php",
+                    "app/Http/Controllers/PrivacyRequestController.php",
+                    "app/Http/Controllers/Superadmin/PrivacyRequestAdministrationController.php",
+                    "resources/views/policies/show.blade.php",
+                    "resources/views/privacy-requests/index.blade.php",
+                    "resources/views/privacy-requests/sensitive.blade.php",
+                    "resources/views/partials/public-footer.blade.php",
+                    "public/push-service-worker.js"
+                ],
+                "migrations": [
+                    "database/migrations/2026_07_20_000014_create_privacy_lifecycle_tables.php"
+                ],
+                "automated_tests": [
+                    "tests/Feature/PrivacyLifecycleTest.php",
+                    "tests/Feature/RegistrationTest.php",
+                    "tests/Feature/ProductionReadinessCheckerTest.php",
+                    "tests/Feature/SecurityHeadersTest.php"
+                ],
+                "browser_device_checks": [
+                    "Versioned trust pages, registration linkage, recent-password step-up, request submission/status, and cancellation passed 8/8 targeted journeys in patched desktop/mobile Chromium and WebKit. This is not branded Safari, Firefox, Edge, Opera, physical-device, or assistive-technology evidence."
+                ],
+                "human_legal_reviews": [
+                    "Owner approved the recommended lightweight retention/deletion direction and supplied the prototype operator name/email. The published text explicitly says qualified legal review, a statutory DPO, and the production-controller determination are not recorded; those gates remain release-blocking."
+                ],
+                "production_evidence": [
+                    "Migration 000014 is installed on the authoritative SQLite database after a verified backup; integrity is ok and foreign-key violations are zero. The production checker passes the privacy schema and asynchronous queue but rejects an unestablished production controller and missing VAPID secrets. No production compliance claim is made."
+                ],
+                "checkpoints": [
+                    "docs/checkpoints/NG-B02-CHECKPOINT.md"
+                ]
             }
         },
         {
@@ -216,15 +368,68 @@
                 "NG-B06-DECISIONS"
             ],
             "required_evidence": "Normalized scoped domains; enrollment/teaching policy matrix; cross-class/direct-ID/history tests",
-            "status": "open",
+            "status": "closed",
             "evidence": {
-                "code": [],
-                "migrations": [],
-                "automated_tests": [],
-                "browser_device_checks": [],
-                "human_legal_reviews": [],
-                "production_evidence": [],
-                "checkpoints": []
+                "code": [
+                    "app/Models/Course.php",
+                    "app/Models/CourseRevision.php",
+                    "app/Models/CourseRevisionModule.php",
+                    "app/Models/CourseOffering.php",
+                    "app/Models/CourseOfferingEvent.php",
+                    "app/Models/CourseEnrollment.php",
+                    "app/Models/CourseEnrollmentEvent.php",
+                    "app/Models/TeachingAssignment.php",
+                    "app/Http/Controllers/ClassWorkspaceController.php",
+                    "app/Http/Controllers/ClassRosterController.php",
+                    "app/Http/Controllers/ClassConnectionController.php",
+                    "app/Services/ClassWorkspaceService.php",
+                    "app/Services/CourseEnrollmentService.php",
+                    "app/Services/TeachingAssignmentService.php",
+                    "app/Services/CourseAccessService.php",
+                    "app/Services/CourseOfferingLifecycle.php",
+                    "app/Services/CourseRevisionService.php",
+                    "app/Services/InstitutionInvitationService.php",
+                    "app/Services/InstitutionJoinCodeService.php",
+                    "app/Policies/CoursePolicy.php",
+                    "app/Policies/CourseRevisionPolicy.php",
+                    "app/Policies/CourseOfferingPolicy.php",
+                    "resources/views/supervisor/classes/index.blade.php",
+                    "resources/views/supervisor/classes/create.blade.php",
+                    "resources/views/supervisor/classes/show.blade.php",
+                    "resources/views/supervisor/classes/preview.blade.php",
+                    "app/Services/LearningContext.php",
+                    "app/Services/LearningContentScope.php",
+                    "app/Services/CanonicalCurriculumRepository.php",
+                    "app/Services/Curriculum/CurriculumAttemptService.php",
+                    "app/Services/ProgressAdministrationService.php",
+                    "app/Http/Controllers/Supervisor/LearnerProgressController.php",
+                    "resources/views/partials/learner-shell.blade.php"
+                ],
+                "migrations": [
+                    "database/migrations/2026_07_21_000019_establish_course_class_and_time_foundation.php",
+                    "database/migrations/2026_07_21_000020_add_class_roster_operations.php",
+                    "database/migrations/2026_07_22_000021_cut_learning_progress_over_to_class_context.php"
+                ],
+                "automated_tests": [
+                    "tests/Feature/CourseClassFoundationTest.php",
+                    "tests/Feature/ClassRosterOperationsTest.php",
+                    "tests/Feature/ClassLearningContextTest.php",
+                    "tests/E2E/critical-path.spec.mjs"
+                ],
+                "browser_device_checks": [
+                    "Playwright 1.61.1 assigned-Class journey passed in the Chromium Desktop Chrome profile and mobile Chromium Pixel 7 profile: MFA sign-in, scoped Class discovery, roster display, learner-email exclusion, synthetic preview notice, console/page-error check, and root-overflow check. The complete 14-test Firefox project passed in headed mode after the local headless SWGL compositor failed before test execution. These are engine/profile checks, not branded-browser or physical-device certification."
+                ],
+                "human_legal_reviews": [
+                    "Owner approved every B06 recommendation on 2026-07-21; qualified privacy, accessibility, academic/content, and security reviews remain separate gates."
+                ],
+                "production_evidence": [
+                    "B06 is locally complete through B06-C in disposable SQLite: exact-Class learner delivery and progress attribution passed focused and full regression coverage. The user's localhost database was not migrated, and no production, lecturer-usability, physical-device, or qualified-review claim exists yet."
+                ],
+                "checkpoints": [
+                    "docs/checkpoints/NG-B06-A-FOUNDATION-2026-07-21.md",
+                    "docs/checkpoints/NG-B06-B-CLASS-ROSTER-2026-07-21.md",
+                    "docs/checkpoints/NG-B06-C-CLASS-LEARNING-CUTOVER-2026-07-22.md"
+                ]
             }
         },
         {
@@ -300,15 +505,45 @@
                 "NG-B03-DECISIONS"
             ],
             "required_evidence": "Approved password/throttle/MFA/recovery controls; abuse, session, step-up, accessibility, and audit evidence",
-            "status": "open",
+            "status": "in_progress",
             "evidence": {
-                "code": [],
-                "migrations": [],
-                "automated_tests": [],
-                "browser_device_checks": [],
-                "human_legal_reviews": [],
-                "production_evidence": [],
-                "checkpoints": []
+                "code": [
+                    "app/Rules/SecurePassword.php",
+                    "app/Http/Controllers/Auth/LoginController.php",
+                    "app/Http/Controllers/Auth/MfaChallengeController.php",
+                    "app/Http/Controllers/SecuritySettingsController.php",
+                    "app/Http/Middleware/EnsurePrivilegedMfa.php",
+                    "bootstrap/app.php",
+                    "routes/web.php",
+                    "resources/views/security/index.blade.php",
+                    "app/Services/MfaService.php",
+                    "app/Models/Passkey.php",
+                    "resources/js/passkeys.js",
+                    "config/authentication.php",
+                    "config/hashing.php"
+                ],
+                "migrations": [
+                    "database/migrations/2026_07_20_000015_create_security_assurance_tables.php"
+                ],
+                "automated_tests": [
+                    "tests/Feature/SecurityAssuranceTest.php",
+                    "tests/Feature/AuthHardeningTest.php",
+                    "tests/Feature/RoleLandingRedirectTest.php",
+                    "tests/E2E/critical-path.spec.mjs"
+                ],
+                "browser_device_checks": [
+                    "B03 MFA-compatible critical paths passed 40/40 across patched desktop/mobile Chromium and WebKit; patched Firefox remained blocked before navigation by a reproducible host SWGL framebuffer startup failure.",
+                    "The 2026-07-20 navigation-boundary follow-up used a disposable SQLite database and synthetic no-MFA System Admin: sign-in reached Security, public home remained reachable, Continue as Learner reached the learner dashboard, and returning to System Admin was still MFA-gated."
+                ],
+                "human_legal_reviews": [
+                    "Owner approved the B03 security architecture and role requirements; independent penetration testing and real authenticator/device review remain required."
+                ],
+                "production_evidence": [
+                    "Argon2id and opportunistic bcrypt rehash, 15-128-character context/blocklist validation, layered generic authentication, privileged-route MFA enforcement, encrypted TOTP, hashed one-use recovery codes, passkey integration, recent-password management, and owner-scoped session revocation are installed locally. Safe public, self-service, context-selection, and Learner surfaces do not require privileged assurance. All four enabled demo accounts intentionally remain unenrolled and therefore keep the production readiness gate closed."
+                ],
+                "checkpoints": [
+                    "docs/checkpoints/NG-B03-CHECKPOINT.md"
+                ]
             }
         },
         {
@@ -323,15 +558,37 @@
                 "NG-B17-DECISIONS"
             ],
             "required_evidence": "ASVS traceability; event/alert exercises; secrets/least privilege; restore and independent assessment evidence",
-            "status": "open",
+            "status": "in_progress",
             "evidence": {
-                "code": [],
-                "migrations": [],
-                "automated_tests": [],
-                "browser_device_checks": [],
+                "code": [
+                    "app/Services/SecurityEventRecorder.php",
+                    "app/Http/Controllers/CspReportController.php",
+                    "app/Http/Middleware/SecurityHeaders.php",
+                    "app/Services/ProductionReadinessChecker.php",
+                    "config/logging.php",
+                    "config/security.php",
+                    "phpstan.neon.dist",
+                    "phpstan-baseline.neon"
+                ],
+                "migrations": [
+                    "database/migrations/2026_07_20_000015_create_security_assurance_tables.php"
+                ],
+                "automated_tests": [
+                    "tests/Feature/SecurityAssuranceTest.php",
+                    "tests/Feature/ProductionReadinessCheckerTest.php",
+                    "npm run governance:verify",
+                    "composer analyse"
+                ],
+                "browser_device_checks": [
+                    "Authentication, MFA recovery, privacy step-up, and privileged critical paths passed in the four viable Playwright profiles; Firefox host launch remained blocked before application navigation."
+                ],
                 "human_legal_reviews": [],
-                "production_evidence": [],
-                "checkpoints": []
+                "production_evidence": [
+                    "docs/security/OWASP-ASVS-5.0.md records implemented controls and explicit gaps. Encrypted append-only event evidence, bounded JSON logging, minimized CSP reporting, current dependency audits, and deployment gates are installed; central tamper-aware monitoring, a backup responder, restore rehearsal, SAST/DAST, and independent assessment remain open."
+                ],
+                "checkpoints": [
+                    "docs/checkpoints/NG-B03-CHECKPOINT.md"
+                ]
             }
         },
         {
@@ -344,36 +601,92 @@
                 "NG-B03-DECISIONS"
             ],
             "required_evidence": "Approved scanner/CDR policy; quarantine/promotion; unavailable/positive/negative/re-scan and disposal tests",
-            "status": "open",
+            "status": "in_progress",
             "evidence": {
-                "code": [],
-                "migrations": [],
-                "automated_tests": [],
+                "code": [
+                    "app/Services/UploadSecurityService.php",
+                    "app/Services/Curriculum/CurriculumAssetWorkspace.php",
+                    "app/Services/Curriculum/CurriculumImportWorkspace.php",
+                    "app/Models/UploadSecurityRecord.php",
+                    "config/upload_security.php"
+                ],
+                "migrations": [
+                    "database/migrations/2026_07_20_000015_create_security_assurance_tables.php"
+                ],
+                "automated_tests": [
+                    "tests/Feature/SecurityAssuranceTest.php",
+                    "tests/Feature/CurriculumImportAndAssetAuthoringTest.php",
+                    "tests/Feature/ProductionReadinessCheckerTest.php"
+                ],
                 "browser_device_checks": [],
                 "human_legal_reviews": [],
-                "production_evidence": [],
-                "checkpoints": []
+                "production_evidence": [
+                    "The provider-neutral ClamAV adapter records encrypted filenames and hashes, distinguishes clean/detected/unavailable results, scans before explicit promotion, and fails closed when production scanning is required. This development host has no ClamAV binary, and image re-encoding, media transcoding/CDR, retry/circuit behavior, real positive-fixture scanning, quarantine disposal, and production scanner health remain open."
+                ],
+                "checkpoints": [
+                    "docs/checkpoints/NG-B03-CHECKPOINT.md"
+                ]
             }
         },
         {
             "id": "NG-P1-016",
             "batches": [
-                "B04"
+                "B04",
+                "B05"
             ],
             "requirement": "Questions 2, 3, 6, 7, 10, and 11",
             "decisions": [
-                "NG-B04-DECISIONS"
+                "NG-B04-DECISIONS",
+                "NG-B05-DECISIONS"
             ],
             "required_evidence": "Automated regression plus human keyboard, zoom/reflow, focus, target, error, screen-reader, and device evidence",
-            "status": "open",
+            "status": "in_progress",
             "evidence": {
-                "code": [],
-                "migrations": [],
-                "automated_tests": [],
-                "browser_device_checks": [],
+                "code": [
+                    "resources/views/login.blade.php",
+                    "resources/views/auth/confirm-password.blade.php",
+                    "resources/views/auth/forgot-password.blade.php",
+                    "resources/views/auth/reset-password.blade.php",
+                    "resources/views/auth/verify-email.blade.php",
+                    "resources/views/invitations/accept.blade.php",
+                    "resources/views/superadmin/sidebar.blade.php",
+                    "resources/views/superadmin/curriculum-drafts/index.blade.php",
+                    "resources/views/superadmin/modules/index.blade.php",
+                "resources/views/supervisor/sidebar.blade.php",
+                "resources/views/curriculum/activity.blade.php",
+                "resources/views/layouts/app.blade.php",
+                "resources/views/layouts/guest.blade.php",
+                "resources/views/partials/mobile-role-navigation.blade.php",
+                "resources/views/preferences/edit.blade.php",
+                "resources/css/app.css",
+                "resources/js/app.js",
+                "scripts/e2e/start-server.mjs"
+            ],
+            "migrations": [
+                "2026_07_20_000016_add_display_preferences_to_users (batch 15; additive display preferences; rollback/reapply verified)"
+            ],
+                "automated_tests": [
+                    "tests/Feature/AccessibilityMarkupTest.php and tests/Feature/DisplayPreferenceTest.php (focused B04 total 15 tests, 761 assertions; full Laravel suite 323 tests, 5,144 assertions on 2026-07-20)",
+                    "tests/E2E/critical-path.spec.mjs (44/44 journeys across the four viable configured profiles in isolated run e2e-b04-20260720-1600)",
+                    "tests/Node/theme-contrast.test.mjs measures dark semantic text/control contrast and rejects exact unmapped color tokens, including state/structural variants, opacity forms, placeholders, dividers, application JavaScript, and installed Laravel pagination templates",
+                    "tests/E2E/critical-path.spec.mjs measures every rendered alternating source-table row plus Laravel pagination summary contrast at or above 4.5:1",
+                    "Post-variant full regression passed 339 Laravel tests / 5,384 assertions and all 54 Node tests"
+                ],
+            "browser_device_checks": [
+                "Read-only guest-page audit at 320/390/768/1280 CSS pixels found no root horizontal overflow on the audited pages",
+                "Playwright desktop Chromium, desktop WebKit, Pixel 7 emulation, and iPhone 15 emulation passed 44/44; the mobile shell check includes Escape/focus return and root no-overflow at 390 CSS pixels",
+                "Firefox application behavior remains unverified because firefox-1532 fails during host SWGL startup before navigation; branded-browser, physical-device, browser-zoom, screen-reader, and human evidence remains open",
+                "The fresh isolated e2e-theme-final-20260720-2200 run passed 56/56 complete critical journeys across desktop/mobile Chromium and WebKit, including stable gray Dark-theme colors and readable selected controls",
+                "Rendered desktop and 390x844 checks visually confirmed the repaired alternating source table, search results/pagination, and mobile login row; broader learner, supervisor, System Admin, public/policy, authentication, preference, search, curriculum, and legacy-evidence contrast probes reported no sub-4.5:1 visible text or placeholder pairs on the audited pages",
+                "The fresh isolated e2e-dark-audit-matrix-20260720-2220 run passed 56/56 journeys across desktop/mobile Chromium and WebKit after the E2E server gained a fail-fast occupied-port isolation guard"
+            ],
                 "human_legal_reviews": [],
                 "production_evidence": [],
-                "checkpoints": []
+            "checkpoints": [
+                "docs/checkpoints/NG-B04-PARTIAL-CHECKPOINT.md",
+                "docs/checkpoints/NG-B04-CHECKPOINT.md",
+                "docs/checkpoints/NG-B05-CHECKPOINT.md"
+            ]
             }
         },
         {
@@ -387,15 +700,35 @@
                 "Qualified content and accessibility review"
             ],
             "required_evidence": "Approved audio/accommodation contract; no answer leakage; consent/permission/storage tests; qualified reviews",
-            "status": "open",
-            "evidence": {
-                "code": [],
-                "migrations": [],
-                "automated_tests": [],
-                "browser_device_checks": [],
-                "human_legal_reviews": [],
-                "production_evidence": [],
-                "checkpoints": []
+        "status": "in_progress",
+        "evidence": {
+            "code": [
+                "resources/views/partials/mobile-role-navigation.blade.php",
+                "resources/views/superadmin/sidebar.blade.php",
+                "resources/views/supervisor/sidebar.blade.php",
+                "resources/views/invitations/index.blade.php",
+                "resources/views/superadmin/users/index.blade.php",
+                "resources/views/superadmin/curriculum-drafts/index.blade.php",
+                "resources/views/superadmin/progress/index.blade.php",
+                "resources/views/supervisor/dashboard.blade.php",
+                "resources/css/app.css",
+                "resources/js/app.js"
+            ],
+            "migrations": [],
+            "automated_tests": [
+                "tests/Feature/AccessibilityMarkupTest.php verifies current navigation, modal labels, close controls, skip targets, and non-shrinking controls",
+                "tests/E2E/critical-path.spec.mjs verifies mobile drawer context, current page, Escape/focus return, root no-overflow, and responsive invitation flows in the 44/44 B04 run"
+            ],
+            "browser_device_checks": [
+                "Desktop Chromium/WebKit plus Pixel 7 and iPhone 15 emulation passed the complete 44-journey run; physical-device, branded-browser, touch-user, zoom, and screen-reader checks remain open"
+            ],
+            "human_legal_reviews": [],
+            "production_evidence": [
+                "Responsive navigation and record-card alternatives are installed; external human/device evidence is still required before closure"
+            ],
+            "checkpoints": [
+                "docs/checkpoints/NG-B04-CHECKPOINT.md"
+            ]
             }
         },
         {
@@ -410,15 +743,47 @@
                 "NG-B08-DECISIONS"
             ],
             "required_evidence": "Plain-language task-first UI; permission-aware evidence view; ordinary workflow usability evidence",
-            "status": "open",
-            "evidence": {
-                "code": [],
-                "migrations": [],
-                "automated_tests": [],
-                "browser_device_checks": [],
-                "human_legal_reviews": [],
-                "production_evidence": [],
-                "checkpoints": []
+        "status": "in_progress",
+        "evidence": {
+            "code": [
+                "app/Http/Controllers/DashboardController.php",
+                "app/Http/Controllers/CanonicalCurriculumController.php",
+                "app/Http/Controllers/CurriculumDraftPreviewController.php",
+                "resources/views/curriculum/section.blade.php",
+                "resources/views/curriculum/chapter.blade.php",
+                "resources/views/curriculum/dashboard.blade.php",
+                "resources/views/curriculum/activity.blade.php",
+                "resources/views/curriculum/confidence-history.blade.php",
+                "resources/views/curriculum/partials/active-draft-banner.blade.php",
+                "resources/views/dashboard.blade.php",
+                "resources/views/partials/next-action.blade.php",
+                "resources/views/superadmin/dashboard.blade.php",
+                "resources/views/superadmin/progress/index.blade.php",
+                "resources/views/supervisor/dashboard.blade.php"
+            ],
+            "migrations": [
+                "database/migrations/2026_07_20_000018_normalize_demo_learner_name.php"
+            ],
+            "automated_tests": [
+                "tests/Feature/NextActionResolverTest.php",
+                "tests/Feature/CanonicalCurriculumDeliveryTest.php",
+                "tests/Feature/CurriculumReleaseGuardTest.php",
+                "tests/Feature/CanonicalAttemptTest.php",
+                "tests/Feature/DemoSeedGuardTest.php",
+                "Post-follow-up complete Laravel suite passed 338 tests / 5,365 assertions",
+                "Full B05 Laravel suite passed 335 tests / 5,307 assertions; the clean supported-engine Playwright run passed 52/52 journeys"
+            ],
+            "browser_device_checks": [
+                "Task-first patterns passed desktop Chromium/WebKit and Pixel 7/iPhone 15 emulation; a fresh two-account browser check additionally proved that technical evidence is absent for an ordinary Learner and present for a System Admin deliberately switched into Learner context. Ordinary-workflow human evidence and B08 authoring/B10 data-view closure remain open."
+            ],
+            "human_legal_reviews": [],
+            "production_evidence": [
+                "B04 supplies long-lesson and progress-page structure; B05 installs deterministic task-first dashboard actions and omits exact technical evidence from ordinary Learner rendering while retaining it for System Admin Learner review and authorized authoring previews. B08 authoring and observed ordinary-workflow usability remain open."
+            ],
+            "checkpoints": [
+                "docs/checkpoints/NG-B04-CHECKPOINT.md",
+                "docs/checkpoints/NG-B05-CHECKPOINT.md"
+            ]
             }
         },
         {
@@ -433,36 +798,97 @@
                 "NG-B06-DECISIONS"
             ],
             "required_evidence": "Accurate role/scope context on every admin surface; scope-switch and stale/unknown-context tests",
-            "status": "open",
+            "status": "closed",
             "evidence": {
-                "code": [],
-                "migrations": [],
-                "automated_tests": [],
-                "browser_device_checks": [],
-                "human_legal_reviews": [],
-                "production_evidence": [],
-                "checkpoints": []
+                "code": [
+                    "app/Services/WorkContext.php",
+                    "app/Services/InstitutionContext.php",
+                    "app/Services/InstitutionAccessService.php",
+                    "app/Services/InstitutionRoleManager.php",
+                    "app/Http/Middleware/CheckRole.php",
+                    "app/Http/Controllers/WorkContextController.php",
+                    "app/Services/OnboardingService.php",
+                    "app/Services/NextActionResolver.php",
+                    "app/Services/LearningContext.php",
+                    "app/Services/LearningContentScope.php",
+                    "app/Http/Controllers/LearningContextController.php",
+                    "app/Http/Controllers/Supervisor/SpvDashboardController.php",
+                    "resources/views/work-context/index.blade.php",
+                    "resources/views/institution-roles/index.blade.php",
+                    "resources/views/onboarding/show.blade.php",
+                    "resources/views/partials/mobile-role-navigation.blade.php"
+                ],
+                "migrations": [
+                    "database/migrations/2026_07_20_000013_establish_tenant_roles_and_join_codes.php"
+                ],
+                "automated_tests": [
+                    "tests/Feature/WorkContextAuthorizationTest.php",
+                    "tests/Feature/InstitutionRoleManagementTest.php",
+                    "tests/Feature/RoleRouteMatrixTest.php",
+                    "tests/Feature/OnboardingFlowTest.php",
+                    "tests/Feature/NextActionResolverTest.php",
+                    "tests/Feature/ClassLearningContextTest.php",
+                    "tests/Feature/SupervisorDashboardQueryCountTest.php"
+                ],
+                "browser_device_checks": [
+                    "Role-specific navigation, onboarding, next-action, Class selection, and stale-context journeys passed in the supported Chromium/WebKit/mobile profiles; all 14 Firefox project tests passed in headed mode after the local headless compositor failed before test execution. Physical-device evidence remains open."
+                ],
+                "human_legal_reviews": [
+                    "Owner approved the explicit multi-role context and tenant hierarchy on 2026-07-20."
+                ],
+                "production_evidence": [
+                    "Expand-first normalized assignments, explicit work and learning context selectors, role-aware onboarding, exact-Class server checks, and stale-context recovery are installed. Legacy role and institution columns remain readable provenance and do not authorize tenant/Class operations."
+                ],
+                "checkpoints": [
+                    "docs/checkpoints/NG-B02-B05-ARCHITECTURE-CHECKPOINT.md",
+                    "docs/checkpoints/NG-B05-CHECKPOINT.md",
+                    "docs/checkpoints/UI-R02-RESPONSIVE-LEARNER-SHELL-2026-07-21.md",
+                    "docs/checkpoints/NG-B06-C-CLASS-LEARNING-CUTOVER-2026-07-22.md"
+                ]
             }
         },
         {
             "id": "NG-P2-020",
             "batches": [
-                "B04"
+                "B04",
+                "B05"
             ],
             "requirement": "Questions 2, 3, 6, 7, and 11",
             "decisions": [
-                "NG-B04-DECISIONS"
+                "NG-B04-DECISIONS",
+                "NG-B05-DECISIONS"
             ],
             "required_evidence": "Approved responsive navigation/table alternative; narrow/physical-device, keyboard, focus, target, and no-overflow evidence",
-            "status": "open",
-            "evidence": {
-                "code": [],
-                "migrations": [],
-                "automated_tests": [],
-                "browser_device_checks": [],
-                "human_legal_reviews": [],
-                "production_evidence": [],
-                "checkpoints": []
+        "status": "in_progress",
+        "evidence": {
+            "code": [
+                "resources/views/partials/learner-nav.blade.php",
+                "resources/views/components/language-switcher.blade.php",
+                "resources/views/welcome.blade.php",
+                "lang/en.json",
+                "lang/id.json"
+            ],
+            "migrations": [],
+            "automated_tests": [
+                "tests/Feature/LangParityTest.php passed as part of the focused 15-test B04 suite",
+                "tests/Feature/AccessibilityMarkupTest.php verifies visible ID/EN labels and accessible language names",
+                "tests/Feature/LocaleSwitchTest.php verifies stable SVG flags, explicit language names/current state, locale switching, and absence of regional-indicator emoji",
+                "tests/E2E/critical-path.spec.mjs verifies the language selector across all four supported desktop/mobile engine profiles"
+            ],
+            "browser_device_checks": [
+                "Bilingual controls and B05 bilingual-ready Help/onboarding passed the four-profile Playwright regression; screen-reader, pedagogy, B08 source-content, and B17 human evidence remain open",
+                "The fresh isolated e2e-theme-final-20260720-2200 run passed 56/56 journeys with local SVG flags, compact/full language labels, and an explicit current-language state on desktop/mobile Chromium and WebKit"
+            ],
+            "human_legal_reviews": [
+                "Owner retained engaging flags but selected stable local vector artwork after rejecting Windows regional-indicator letter fallback."
+            ],
+            "production_evidence": [
+                "Flags are decorative only and paired with ID/EN text; canonical English learning content remains untranslated unless an authoritative translation exists"
+            ],
+            "checkpoints": [
+                "docs/checkpoints/NG-B04-CHECKPOINT.md",
+                "docs/checkpoints/NG-B05-CHECKPOINT.md"
+            ]
             }
         },
         {
@@ -479,15 +905,32 @@
                 "NG-B10-DECISIONS"
             ],
             "required_evidence": "Approved bounded summary/filter/navigation pattern; truthful totals; focus/history/query-count evidence",
-            "status": "open",
+            "status": "in_progress",
             "evidence": {
-                "code": [],
+                "code": [
+                    "app/Services/NextActionResolver.php",
+                    "app/Services/SearchService.php",
+                    "resources/views/partials/next-action.blade.php",
+                    "resources/views/search/index.blade.php",
+                    "resources/views/curriculum/chapter.blade.php"
+                ],
                 "migrations": [],
-                "automated_tests": [],
-                "browser_device_checks": [],
+                "automated_tests": [
+                    "tests/Feature/NextActionResolverTest.php",
+                    "tests/Feature/PublishedContentSearchTest.php",
+                    "tests/E2E/critical-path.spec.mjs"
+                ],
+                "browser_device_checks": [
+                    "The clean supported-engine B05 run passed 52/52 desktop/mobile Chromium and WebKit journeys, including next-action, onboarding, search, empty-state, and recovery behavior."
+                ],
                 "human_legal_reviews": [],
-                "production_evidence": [],
-                "checkpoints": []
+                "production_evidence": [
+                    "B04/B05 bounded navigation and deterministic next-action foundations are installed; truthful aggregate totals, query-count evidence, and broader data-view closure remain B10."
+                ],
+                "checkpoints": [
+                    "docs/checkpoints/NG-B04-CHECKPOINT.md",
+                    "docs/checkpoints/NG-B05-CHECKPOINT.md"
+                ]
             }
         },
         {
@@ -502,15 +945,38 @@
                 "NG-B17-DECISIONS"
             ],
             "required_evidence": "Approved onboarding/help/search journey; accessible recovery; observed first-use evidence with limitations",
-            "status": "open",
+            "status": "in_progress",
             "evidence": {
-                "code": [],
-                "migrations": [],
-                "automated_tests": [],
-                "browser_device_checks": [],
-                "human_legal_reviews": [],
-                "production_evidence": [],
-                "checkpoints": []
+                "code": [
+                    "app/Services/OnboardingService.php",
+                    "app/Services/HelpContentRegistry.php",
+                    "app/Services/SearchIndexBuilder.php",
+                    "app/Services/SearchService.php",
+                    "resources/views/onboarding/show.blade.php",
+                    "resources/views/help/index.blade.php",
+                    "resources/views/search/index.blade.php"
+                ],
+                "migrations": [
+                    "database/migrations/2026_07_20_000017_create_onboarding_and_search_foundation.php"
+                ],
+                "automated_tests": [
+                    "tests/Feature/OnboardingFlowTest.php",
+                    "tests/Feature/HelpContentTest.php",
+                    "tests/Feature/PublishedContentSearchTest.php",
+                    "tests/E2E/critical-path.spec.mjs"
+                ],
+                "browser_device_checks": [
+                    "The clean supported-engine B05 run passed 52/52 desktop/mobile Chromium and WebKit journeys, including skip/resume/restart, published-only search, Help, glossary, and no-result recovery."
+                ],
+                "human_legal_reviews": [
+                    "Owner approved the short role-aware first-use sequence, searchable/versioned Help, glossary, bounded search, no behavioral analytics, and two-round study design. Observed intended-user evidence remains B17."
+                ],
+                "production_evidence": [
+                    "Migration batch 16 installed empty per-user onboarding state plus an atomically activated 223-document published-content index; no user was silently placed into onboarding and no private/draft records are indexed."
+                ],
+                "checkpoints": [
+                    "docs/checkpoints/NG-B05-CHECKPOINT.md"
+                ]
             }
         },
         {
@@ -526,15 +992,50 @@
                 "Qualified legal approval"
             ],
             "required_evidence": "Versioned accessible trust/support destinations; registration linkage/version evidence; link/locale/keyboard tests",
-            "status": "open",
+            "status": "in_progress",
             "evidence": {
-                "code": [],
-                "migrations": [],
-                "automated_tests": [],
-                "browser_device_checks": [],
-                "human_legal_reviews": [],
-                "production_evidence": [],
-                "checkpoints": []
+                "code": [
+                    "app/Http/Controllers/Auth/RegisterController.php",
+                    "app/Http/Controllers/InstitutionEnrollmentController.php",
+                    "app/Http/Controllers/PublicPolicyController.php",
+                    "app/Http/Controllers/HelpController.php",
+                    "app/Services/HelpContentRegistry.php",
+                    "app/Services/PolicyDocumentRegistry.php",
+                    "resources/views/register.blade.php",
+                    "resources/views/institution-enrollment/index.blade.php",
+                    "resources/views/policies/show.blade.php",
+                    "resources/views/help/index.blade.php",
+                    "resources/views/help/show.blade.php",
+                    "resources/views/help/about.blade.php",
+                    "resources/views/help/glossary.blade.php",
+                    "resources/views/partials/public-footer.blade.php"
+                ],
+                "migrations": [
+                    "database/migrations/2026_07_20_000013_establish_tenant_roles_and_join_codes.php",
+                    "database/migrations/2026_07_20_000014_create_privacy_lifecycle_tables.php"
+                ],
+                "automated_tests": [
+                    "tests/Feature/RegistrationTest.php",
+                    "tests/Feature/InstitutionJoinCodeEnrollmentTest.php",
+                    "tests/Feature/PrivacyLifecycleTest.php",
+                    "tests/Feature/HelpContentTest.php",
+                    "tests/Feature/AccessibilityMarkupTest.php",
+                    "tests/Feature/LangParityTest.php"
+                ],
+                "browser_device_checks": [
+                    "Personal registration warning, versioned public trust links, Help, glossary, About, and sensitive privacy-request step-up passed in the clean desktop/mobile Chromium and WebKit matrix."
+                ],
+                "human_legal_reviews": [
+                    "Owner approved the personal/institution progress warning and prototype trust direction; qualified legal approval and final production-controller determination remain open."
+                ],
+                "production_evidence": [
+                    "Registration separately records hashed versioned privacy and terms acknowledgements. Privacy, terms, accessibility, acceptable-use, support, versioned Help/glossary, About, and authenticated request destinations exist; qualified legal interpretation and intended-user validation remain release-blocking."
+                ],
+                "checkpoints": [
+                    "docs/checkpoints/NG-B02-B05-ARCHITECTURE-CHECKPOINT.md",
+                    "docs/checkpoints/NG-B02-CHECKPOINT.md",
+                    "docs/checkpoints/NG-B05-CHECKPOINT.md"
+                ]
             }
         },
         {
@@ -547,15 +1048,32 @@
                 "NG-B05-DECISIONS"
             ],
             "required_evidence": "Deterministic authorized next-action rules; empty/recovery states; no false/unavailable CTA",
-            "status": "open",
+            "status": "closed",
             "evidence": {
-                "code": [],
+                "code": [
+                    "app/Services/NextActionResolver.php",
+                    "resources/views/partials/next-action.blade.php",
+                    "app/Http/Controllers/DashboardController.php",
+                    "app/Http/Controllers/Supervisor/SpvDashboardController.php",
+                    "app/Http/Controllers/Superadmin/AdminDashboardController.php"
+                ],
                 "migrations": [],
-                "automated_tests": [],
-                "browser_device_checks": [],
-                "human_legal_reviews": [],
-                "production_evidence": [],
-                "checkpoints": []
+                "automated_tests": [
+                    "tests/Feature/NextActionResolverTest.php",
+                    "tests/E2E/critical-path.spec.mjs"
+                ],
+                "browser_device_checks": [
+                    "The clean supported-engine B05 run passed all 52 journeys; role dashboards expose only actions backed by current authorized facts and provide truthful empty/help recovery."
+                ],
+                "human_legal_reviews": [
+                    "Owner approved the role-specific priority rules in NG-B05-DECISIONS."
+                ],
+                "production_evidence": [
+                    "The server-derived resolver is installed for Learner, Institution Supervisor, Content Admin, and System Admin dashboards; unavailable categories and actions are omitted."
+                ],
+                "checkpoints": [
+                    "docs/checkpoints/NG-B05-CHECKPOINT.md"
+                ]
             }
         },
         {
@@ -597,15 +1115,30 @@
                 "NG-B13-DECISIONS"
             ],
             "required_evidence": "One shared Clock/TimeContext; approved timezone precedence; DST/skew/retry/reschedule/accommodation and cross-scope tests",
-            "status": "open",
+            "status": "in_progress",
             "evidence": {
-                "code": [],
-                "migrations": [],
-                "automated_tests": [],
+                "code": [
+                    "app/Services/Time/IanaTimeZone.php",
+                    "app/Services/Time/TimeContext.php",
+                    "app/Providers/AppServiceProvider.php"
+                ],
+                "migrations": [
+                    "database/migrations/2026_07_21_000019_establish_course_class_and_time_foundation.php"
+                ],
+                "automated_tests": [
+                    "tests/Feature/TimeContextTest.php"
+                ],
                 "browser_device_checks": [],
-                "human_legal_reviews": [],
-                "production_evidence": [],
-                "checkpoints": []
+                "human_legal_reviews": [
+                    "Owner approved the B06 UTC/IANA precedence on 2026-07-21; later B07/B11/B12/B13 scheduling and accommodation decisions remain mandatory."
+                ],
+                "production_evidence": [
+                    "B06-A supplies one injectable UTC PSR Clock and shared TimeContext with IANA validation, fallback, frozen-time, and DST gap/fold tests. Later scheduling, retry, reschedule, and accommodation evidence remains open."
+                ],
+                "checkpoints": [
+                    "docs/checkpoints/NG-B06-A-FOUNDATION-2026-07-21.md",
+                    "docs/checkpoints/NG-B06-C-CLASS-LEARNING-CUTOVER-2026-07-22.md"
+                ]
             }
         },
         {
@@ -710,15 +1243,48 @@
                 "NG-B08-DECISIONS"
             ],
             "required_evidence": "Approved localization/pedagogy boundary; no raw ordinary-UI enum; fallback, bilingual layout, screen-reader, fidelity review",
-            "status": "open",
+            "status": "in_progress",
             "evidence": {
-                "code": [],
-                "migrations": [],
-                "automated_tests": [],
-                "browser_device_checks": [],
-                "human_legal_reviews": [],
-                "production_evidence": [],
-                "checkpoints": []
+                "code": [
+                    "app/Services/HelpContentRegistry.php",
+                    "app/Services/OnboardingService.php",
+                    "app/Http/Controllers/DashboardController.php",
+                    "app/Http/Controllers/ModuleController.php",
+                    "resources/views/help",
+                    "resources/views/onboarding/show.blade.php",
+                    "resources/views/partials/learner-nav.blade.php",
+                    "resources/views/components/language-switcher.blade.php",
+                    "resources/views/curriculum/confidence-history.blade.php",
+                    "lang/en.json",
+                    "lang/id.json"
+                ],
+                "migrations": [
+                    "database/migrations/2026_07_20_000018_normalize_demo_learner_name.php"
+                ],
+                "automated_tests": [
+                    "tests/Feature/LangParityTest.php",
+                    "tests/Feature/HelpContentTest.php",
+                    "tests/Feature/OnboardingFlowTest.php",
+                    "tests/Feature/CanonicalCurriculumDeliveryTest.php",
+                    "tests/Feature/DemoSeedGuardTest.php",
+                    "tests/Feature/LocaleSwitchTest.php",
+                    "tests/E2E/critical-path.spec.mjs"
+                ],
+                "browser_device_checks": [
+                    "Bilingual-ready Help/onboarding and human labels passed the clean desktop/mobile Chromium and WebKit matrix; screen-reader and human language/content fidelity review remains open.",
+                    "The fresh isolated e2e-theme-final-20260720-2200 run passed 56/56 journeys with stable vector flags, full accessible language names, compact labels, current-language state, and matching 621-key EN/ID catalogs."
+                ],
+                "human_legal_reviews": [
+                    "Owner approved Indonesian/English language selection, human-facing role labels, the boundary that authoritative English learning content is not silently translated, and English as the canonical application/source language with Indonesian retained as translation.",
+                    "Owner retained flag-based language cues but approved stable local SVG artwork after rejecting platform-dependent Windows letter fallback."
+                ],
+                "production_evidence": [
+                    "B05 UI enum-like values are mapped to localized human labels; the known demo learner identity is normalized to an English canonical name while Indonesian stays in the translation layer. Historical evidence is retained unchanged. B08 authoring/source-content boundaries and B17 human closure remain open."
+                ],
+                "checkpoints": [
+                    "docs/checkpoints/NG-B04-CHECKPOINT.md",
+                    "docs/checkpoints/NG-B05-CHECKPOINT.md"
+                ]
             }
         },
         {
@@ -755,15 +1321,32 @@
                 "NG-B04-DECISIONS"
             ],
             "required_evidence": "Non-shrinking semantic controls; target-size, narrow width, zoom, keyboard, screen-reader, contrast, touch evidence",
-            "status": "open",
+            "status": "in_progress",
             "evidence": {
-                "code": [],
+                "code": [
+                    "resources/views/curriculum/activity.blade.php",
+                    "resources/views/invitations/accept.blade.php",
+                "resources/views/login.blade.php",
+                "resources/views/superadmin/curriculum-drafts/index.blade.php",
+                "resources/views/superadmin/modules/index.blade.php",
+                "resources/views/partials/mobile-role-navigation.blade.php",
+                "resources/views/preferences/edit.blade.php",
+                "resources/css/app.css"
+                ],
                 "migrations": [],
-                "automated_tests": [],
-                "browser_device_checks": [],
+                "automated_tests": [
+                    "tests/Feature/AccessibilityMarkupTest.php::test_selection_controls_cannot_flex_shrink",
+                    "tests/E2E/critical-path.spec.mjs::selection, ordering, and short-text forms meet validation, focus, target, and non-drag contracts"
+                ],
+            "browser_device_checks": [
+                "Playwright 44/44 passed in desktop Chromium/WebKit plus Pixel 7 and iPhone 15 emulation, including 390 CSS pixel no-overflow; physical touch, zoom, screen-reader, contrast-tool, and branded-browser evidence remains open"
+                ],
                 "human_legal_reviews": [],
                 "production_evidence": [],
-                "checkpoints": []
+            "checkpoints": [
+                "docs/checkpoints/NG-B04-PARTIAL-CHECKPOINT.md",
+                "docs/checkpoints/NG-B04-CHECKPOINT.md"
+            ]
             }
         },
         {
@@ -779,15 +1362,21 @@
                 "Supervisor/ethics approval"
             ],
             "required_evidence": "Approved non-assumed sample/design; raw permitted evidence; reproducible analysis; limitations/adverse findings retained",
-            "status": "open",
+            "status": "in_progress",
             "evidence": {
                 "code": [],
                 "migrations": [],
                 "automated_tests": [],
                 "browser_device_checks": [],
-                "human_legal_reviews": [],
-                "production_evidence": [],
-                "checkpoints": []
+                "human_legal_reviews": [
+                    "Owner approved two formative moderated rounds totaling six intended learners and four instructor/supervisor/admin participants, including disabled/assistive-technology/lower-confidence participants where possible. Supervisor/ethics approval is required before execution."
+                ],
+                "production_evidence": [
+                    "docs/research/NG-B05-FORMATIVE-FIRST-USE-PROTOCOL.md defines recruitment, consent, role-specific tasks, assistance coding, severity, round gates, data minimization, evidence retention, and explicit limits on claims. No participant results are claimed; execution remains B17."
+                ],
+                "checkpoints": [
+                    "docs/checkpoints/NG-B05-CHECKPOINT.md"
+                ]
             }
         },
         {
@@ -965,13 +1554,15 @@
                 "code": [
                     "config/authority-sources.json",
                     "scripts/release/verify-authorities.ps1",
-                    ".github/workflows/authority-release.yml"
+                    ".github/workflows/authority-release.yml",
+                    "tests/Feature/CurriculumImportAndAssetAuthoringTest.php"
                 ],
                 "migrations": [
                     "Target-database migration/concurrency lane remains B17."
                 ],
                 "automated_tests": [
-                    "Exact-hash verifier passed both protected authority inputs in the working folder and fresh baseline clone; the verifier logged IDs and hashes, not source paths."
+                    "Exact-hash verifier passed both protected authority inputs in the working folder and fresh baseline clone; the verifier logged IDs and hashes, not source paths.",
+                    "The protected learning-material compile test resolves the configured runner environment variable, verifies the approved SHA-256 before compilation, and fails closed for configured missing or mismatched inputs. The real compile test passed with 28 assertions; controlled missing and wrong-hash probes exited 2; the strict full suite with both process-only authority variables passed 272 tests and 4,334 assertions."
                 ],
                 "browser_device_checks": [],
                 "human_legal_reviews": [

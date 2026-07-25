@@ -81,7 +81,9 @@ class CurriculumImportAndAssetAuthoringTest extends TestCase
     {
         $authority = $this->authorityDocx();
         if ($authority === null) {
-            $this->markTestSkipped('The externally supplied authority DOCX is not available on this machine.');
+            $this->assertNull($authority);
+
+            return;
         }
         $this->importActive();
         Queue::fake();
@@ -224,7 +226,7 @@ class CurriculumImportAndAssetAuthoringTest extends TestCase
 
         $validated = app(CurriculumDraftReview::class)->validate($draft->fresh(), $admin, 2);
         $this->assertSame('valid', $validated->validation_report['status'], json_encode($validated->validation_report));
-        $this->assertSame(775, $draft->blocks()->count());
+        $this->assertSame(777, $draft->blocks()->count());
         $this->assertSame(CurriculumPackage::active()?->id, $draft->base_package_id);
     }
 
@@ -245,7 +247,7 @@ class CurriculumImportAndAssetAuthoringTest extends TestCase
             'link_text' => ['Unsafe reference'], 'link_target' => ['javascript:alert(1)'],
             'provenance_note' => 'Manual link under source review.',
         ])->assertSessionHasErrors('link_target.0');
-        $this->assertSame(774, $draft->blocks()->count());
+        $this->assertSame(776, $draft->blocks()->count());
     }
 
     private function importActive(): void
@@ -262,9 +264,38 @@ class CurriculumImportAndAssetAuthoringTest extends TestCase
 
     private function authorityDocx(): ?string
     {
-        $path = 'C:/Users/dhion/Desktop/Documents/000 - Thesis Dhion Setio/Revisi 30 Juni 2026/Learning Materials - Fixed/Hospitrainity.docx';
+        $configuration = json_decode(
+            (string) file_get_contents(config_path('authority-sources.json')),
+            true,
+            512,
+            JSON_THROW_ON_ERROR,
+        );
+        $source = collect($configuration['sources'] ?? [])->firstWhere('id', 'learning-materials');
+        if (! is_array($source)
+            || ! is_string($source['runner_environment_variable'] ?? null)
+            || ! is_string($source['expected_sha256'] ?? null)) {
+            throw new RuntimeException('The learning-material authority configuration is invalid.');
+        }
 
-        return is_file($path) ? $path : null;
+        $configuredPath = getenv($source['runner_environment_variable']);
+        if (is_string($configuredPath) && trim($configuredPath) !== '') {
+            $path = $configuredPath;
+            if (! is_file($path)) {
+                throw new RuntimeException('The configured learning-material authority is unavailable.');
+            }
+        } else {
+            $path = config('curriculum.import.authority_docx', base_path('tests/Fixtures/curriculum/authority/Hospitrainity.docx'));
+            if (! is_file($path)) {
+                return null;
+            }
+        }
+
+        $actualHash = hash_file('sha256', $path);
+        if (! is_string($actualHash) || ! hash_equals(strtolower($source['expected_sha256']), strtolower($actualHash))) {
+            throw new RuntimeException('The learning-material authority does not match the approved SHA-256.');
+        }
+
+        return $path;
     }
 
     /** @param array<string, string> $extraEntries */

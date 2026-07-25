@@ -1,0 +1,472 @@
+{
+    "meta": {
+        "id": "hospitrainity-agent-context",
+        "api_version": "1.0.0",
+        "contract": "read_only",
+        "scope": "non_user_specific",
+        "included": [
+            "product",
+            "domain",
+            "capabilities"
+        ],
+        "data_excluded": [
+            "credentials_and_secrets",
+            "personal_data",
+            "learner_responses_and_progress",
+            "draft_curriculum_payloads",
+            "model_answers_and_release_evidence"
+        ]
+    },
+    "links": {
+        "self": "/api/v1/agent-context",
+        "index": "/api/v1/agent-context",
+        "openapi": "/api/v1/agent-context/openapi",
+        "focused_section_template": "/api/v1/agent-context/{section}"
+    },
+    "available_sections": [
+        {
+            "key": "product",
+            "description": "Purpose, audiences, supported experiences, and explicit non-goals.",
+            "endpoint": "/api/v1/agent-context/product"
+        },
+        {
+            "key": "domain",
+            "description": "Roles, scopes, lifecycle states, entity relationships, and invariants.",
+            "endpoint": "/api/v1/agent-context/domain"
+        },
+        {
+            "key": "capabilities",
+            "description": "What each actor can do and which exercise contracts are available.",
+            "endpoint": "/api/v1/agent-context/capabilities"
+        },
+        {
+            "key": "workflows",
+            "description": "Ordered registration, enrollment, learning, authoring, release, and privacy flows.",
+            "endpoint": "/api/v1/agent-context/workflows"
+        },
+        {
+            "key": "architecture",
+            "description": "Runtime layers, sources of truth, storage boundaries, and operational dependencies.",
+            "endpoint": "/api/v1/agent-context/architecture"
+        },
+        {
+            "key": "curriculum",
+            "description": "Safe outline and counts from the currently deliverable curriculum package.",
+            "endpoint": "/api/v1/agent-context/curriculum"
+        },
+        {
+            "key": "routes",
+            "description": "Live named-route inventory with inferred access requirements and no controller source.",
+            "endpoint": "/api/v1/agent-context/routes"
+        },
+        {
+            "key": "glossary",
+            "description": "Short, canonical definitions for commonly confused Hospitrainity terms.",
+            "endpoint": "/api/v1/agent-context/glossary"
+        }
+    ],
+    "sections": {
+        "product": {
+            "name": "Hospitrainity",
+            "kind": "hospitality English learning and curriculum delivery platform",
+            "purpose": "Help learners practise workplace English while keeping personal and institution-attributed learning evidence separate.",
+            "primary_audiences": {
+                "learner": "Studies personally or through an approved institution membership.",
+                "instructor": "Supports institution learners and sees only institution-attributed progress.",
+                "institution_admin": "Manages institution-scoped instructor authority and enrollment.",
+                "content_author": "Authors and reviews shared canonical curriculum.",
+                "system_admin": "Operates platform-wide identity, evidence, privacy, and release controls."
+            },
+            "supported_locales": [
+                "en",
+                "id"
+            ],
+            "content_language": "Canonical learning content remains English unless an approved translation exists.",
+            "delivery_modes": [
+                "responsive authenticated web application",
+                "generated offline standalone curriculum projection"
+            ],
+            "core_properties": [
+                "versioned checksum-locked canonical curriculum",
+                "verified-account learner delivery",
+                "scope-separated progress",
+                "institution-scoped supervision",
+                "reviewed curriculum publication lifecycle",
+                "retained legacy content as read-only evidence while canonical delivery is active"
+            ],
+            "explicit_non_goals": [
+                "public institution directory",
+                "automatic institution enrollment from an email domain",
+                "copying personal progress into an institution scope",
+                "content marketplace or general-purpose LMS interoperability",
+                "production claims not backed by recorded release, legal, or deployment evidence"
+            ]
+        },
+        "domain": {
+            "roles": {
+                "work_context_roles": [
+                    "learner",
+                    "instructor",
+                    "institution_admin",
+                    "content_author",
+                    "system_admin"
+                ],
+                "institution_roles": [
+                    "learner",
+                    "instructor",
+                    "institution_admin"
+                ],
+                "platform_roles": [
+                    "system_admin"
+                ],
+                "separate_capabilities": [
+                    "content_author"
+                ],
+                "authority_model": {
+                    "learner": "May access learning only in a currently valid personal or institution learning scope.",
+                    "instructor": "Institution-scoped; may see only learners and progress attributed to the selected institution.",
+                    "institution_admin": "Institution-scoped; includes instructor functions and may grant or revoke instructor access in that institution.",
+                    "content_author": "Shared curriculum authority; grants no enrollment or platform authority.",
+                    "system_admin": "Global platform authority; privileged operations require stronger assurance and may require a recent password."
+                }
+            },
+            "context_dimensions": {
+                "work_context": "The one active role used to resolve navigation and authorization for the request.",
+                "institution_context": "The revalidated active institution used by institution-scoped staff actions.",
+                "learning_context": "The personal or institution scope that receives new learning progress."
+            },
+            "core_entities": {
+                "identity": [
+                    "user",
+                    "platform_role_assignment",
+                    "user_capability_assignment"
+                ],
+                "tenancy": [
+                    "institution",
+                    "institution_membership",
+                    "institution_role_assignment"
+                ],
+                "enrollment": [
+                    "institution_invitation",
+                    "institution_join_code",
+                    "institution_join_request"
+                ],
+                "curriculum": [
+                    "curriculum_package",
+                    "curriculum_entity",
+                    "curriculum_release",
+                    "curriculum_draft"
+                ],
+                "learning_evidence": [
+                    "curriculum_attempt",
+                    "curriculum_response",
+                    "curriculum_activity_progress"
+                ],
+                "privacy_and_security": [
+                    "data_subject_request",
+                    "data_export",
+                    "security_event",
+                    "identity_audit"
+                ]
+            },
+            "relationships": [
+                "A user can have multiple institution memberships, but progress belongs to exactly one learning scope.",
+                "An institution membership can have role assignments; a membership alone does not imply staff authority.",
+                "A curriculum package owns versioned entities and has at most one release record.",
+                "An activity belongs to a lesson section; a lesson section belongs to a chapter.",
+                "Attempts and progress retain package name, content version, user, and learning-scope identity."
+            ],
+            "lifecycle_states": {
+                "institution": [
+                    "pending",
+                    "active",
+                    "suspended",
+                    "archived"
+                ],
+                "membership": [
+                    "active",
+                    "suspended",
+                    "revoked"
+                ],
+                "join_request": [
+                    "pending",
+                    "approved",
+                    "rejected",
+                    "cancelled"
+                ],
+                "curriculum_draft": [
+                    "draft",
+                    "validating",
+                    "in_review",
+                    "approved",
+                    "published"
+                ],
+                "curriculum_release": [
+                    "draft",
+                    "in_review",
+                    "approved",
+                    "active",
+                    "retired",
+                    "withdrawn"
+                ],
+                "privacy_request": [
+                    "submitted",
+                    "identity_pending",
+                    "in_review",
+                    "approved",
+                    "denied",
+                    "held",
+                    "executing",
+                    "completed",
+                    "failed",
+                    "cancelled",
+                    "appealed"
+                ],
+                "privacy_request_types": [
+                    "access_export",
+                    "correction",
+                    "restriction",
+                    "objection",
+                    "deletion",
+                    "consent_withdrawal",
+                    "appeal"
+                ]
+            },
+            "invariants": [
+                "Unknown, stale, disabled, or cross-institution contexts fail closed.",
+                "Personal progress is never disclosed to an institution and is not reattributed on enrollment.",
+                "Invitation acceptance and classroom-code approval grant only the institution Learner role.",
+                "Membership identity and provenance are immutable; membership removal is represented by revocation or suspension.",
+                "Only one curriculum package may be active, and production delivery requires a fully approved non-draft release.",
+                "Canonical content is changed through a reviewed draft/version, not by mutating generated output.",
+                "Learner response payloads are bounded and validated against the versioned activity contract."
+            ]
+        },
+        "capabilities": {
+            "by_actor": {
+                "visitor": [
+                    "read public help, glossary, about, and policy pages",
+                    "register for personal self-study",
+                    "sign in, reset a password, or redeem a targeted invitation"
+                ],
+                "learner": [
+                    "select personal or approved institution learning context",
+                    "browse canonical chapters, learning steps, sections, and activities",
+                    "submit bounded activity attempts and review own progress",
+                    "redeem a classroom code to create a pending join request",
+                    "exercise privacy rights and manage account security/preferences"
+                ],
+                "instructor": [
+                    "view institution-attributed learner progress in the selected institution",
+                    "issue or revoke targeted invitations and classroom codes",
+                    "approve or reject institution join requests"
+                ],
+                "institution_admin": [
+                    "perform instructor capabilities",
+                    "grant or revoke institution Instructor access"
+                ],
+                "content_author": [
+                    "create, import, validate, review, preview, and approve curriculum drafts",
+                    "inspect retained legacy curriculum evidence read-only",
+                    "cannot publish, manage enrollment, or administer platform identities solely from this capability"
+                ],
+                "system_admin": [
+                    "perform platform-wide administration and audited preview-as-role operations",
+                    "publish or roll back curriculum through guarded lifecycle operations",
+                    "manage platform roles, institution administration, privacy queues, and retained evidence"
+                ]
+            },
+            "learning": {
+                "progress_states": [
+                    "not_started",
+                    "viewed",
+                    "started",
+                    "attempted",
+                    "self_checked",
+                    "completed"
+                ],
+                "completion_is_not_mastery": true,
+                "attempts_are_version_scoped": true,
+                "open_language_scoring": "model or rubric self-check; not presented as objective auto-grading"
+            },
+            "exercise_contract": {
+                "registry_version": "1.0.0",
+                "enabled_count": 17,
+                "total_count": 19,
+                "templates": {
+                    "spelling_quiz": {
+                        "enabled": false,
+                        "unavailable_reason": "audio_equivalent_not_approved",
+                        "response_form": "short_text",
+                        "scoring_mode": "objective_normalized_closed",
+                        "server_scored": true,
+                        "audio_required": true,
+                        "rubric_required": false
+                    },
+                    "matching_game": {
+                        "enabled": true,
+                        "unavailable_reason": null,
+                        "response_form": "selection",
+                        "scoring_mode": "objective_choice",
+                        "server_scored": true,
+                        "audio_required": false,
+                        "rubric_required": false
+                    },
+                    "fill_in_the_blank": {
+                        "enabled": true,
+                        "unavailable_reason": null,
+                        "response_form": "short_text",
+                        "scoring_mode": "objective_normalized_closed",
+                        "server_scored": true,
+                        "audio_required": false,
+                        "rubric_required": false
+                    },
+                    "listening_task": {
+                        "enabled": false,
+                        "unavailable_reason": "audio_equivalent_not_approved",
+                        "response_form": "selection",
+                        "scoring_mode": "objective_choice",
+                        "server_scored": true,
+                        "audio_required": true,
+                        "rubric_required": false
+                    },
+                    "speaking_practice": {
+                        "enabled": true,
+                        "unavailable_reason": null,
+                        "response_form": "role_play",
+                        "scoring_mode": "rubric_self_assessment",
+                        "server_scored": false,
+                        "audio_required": false,
+                        "rubric_required": true
+                    },
+                    "sentence_scramble": {
+                        "enabled": true,
+                        "unavailable_reason": null,
+                        "response_form": "ordering",
+                        "scoring_mode": "objective_ordered",
+                        "server_scored": true,
+                        "audio_required": false,
+                        "rubric_required": false
+                    },
+                    "translation_match": {
+                        "enabled": true,
+                        "unavailable_reason": null,
+                        "response_form": "selection",
+                        "scoring_mode": "objective_choice",
+                        "server_scored": true,
+                        "audio_required": false,
+                        "rubric_required": false
+                    },
+                    "fill_with_options": {
+                        "enabled": true,
+                        "unavailable_reason": null,
+                        "response_form": "selection",
+                        "scoring_mode": "objective_choice",
+                        "server_scored": true,
+                        "audio_required": false,
+                        "rubric_required": false
+                    },
+                    "multiple_choice_quiz": {
+                        "enabled": true,
+                        "unavailable_reason": null,
+                        "response_form": "selection",
+                        "scoring_mode": "objective_choice",
+                        "server_scored": true,
+                        "audio_required": false,
+                        "rubric_required": false
+                    },
+                    "fill_multiple_blanks": {
+                        "enabled": true,
+                        "unavailable_reason": null,
+                        "response_form": "short_text",
+                        "scoring_mode": "objective_normalized_closed",
+                        "server_scored": true,
+                        "audio_required": false,
+                        "rubric_required": false
+                    },
+                    "silent_letter_hunt": {
+                        "enabled": true,
+                        "unavailable_reason": null,
+                        "response_form": "selection",
+                        "scoring_mode": "objective_choice",
+                        "server_scored": true,
+                        "audio_required": false,
+                        "rubric_required": false
+                    },
+                    "pronunciation_drill": {
+                        "enabled": true,
+                        "unavailable_reason": null,
+                        "response_form": "role_play",
+                        "scoring_mode": "model_self_check",
+                        "server_scored": false,
+                        "audio_required": false,
+                        "rubric_required": false
+                    },
+                    "sound_sorting": {
+                        "enabled": true,
+                        "unavailable_reason": null,
+                        "response_form": "selection",
+                        "scoring_mode": "objective_choice",
+                        "server_scored": true,
+                        "audio_required": false,
+                        "rubric_required": false
+                    },
+                    "sequencing": {
+                        "enabled": true,
+                        "unavailable_reason": null,
+                        "response_form": "ordering",
+                        "scoring_mode": "objective_ordered",
+                        "server_scored": true,
+                        "audio_required": false,
+                        "rubric_required": false
+                    },
+                    "information": {
+                        "enabled": true,
+                        "unavailable_reason": null,
+                        "response_form": "short_text",
+                        "scoring_mode": "unscored_self_report",
+                        "server_scored": false,
+                        "audio_required": false,
+                        "rubric_required": false
+                    },
+                    "writing": {
+                        "enabled": true,
+                        "unavailable_reason": null,
+                        "response_form": "short_text",
+                        "scoring_mode": "rubric_self_assessment",
+                        "server_scored": false,
+                        "audio_required": false,
+                        "rubric_required": true
+                    },
+                    "drag_the_words": {
+                        "enabled": true,
+                        "unavailable_reason": null,
+                        "response_form": "ordering",
+                        "scoring_mode": "objective_ordered",
+                        "server_scored": true,
+                        "audio_required": false,
+                        "rubric_required": false
+                    },
+                    "drag_and_drop": {
+                        "enabled": true,
+                        "unavailable_reason": null,
+                        "response_form": "selection",
+                        "scoring_mode": "objective_choice",
+                        "server_scored": true,
+                        "audio_required": false,
+                        "rubric_required": false
+                    },
+                    "question_set": {
+                        "enabled": true,
+                        "unavailable_reason": null,
+                        "response_form": "selection",
+                        "scoring_mode": "objective_choice",
+                        "server_scored": true,
+                        "audio_required": false,
+                        "rubric_required": false
+                    }
+                }
+            }
+        }
+    }
+}

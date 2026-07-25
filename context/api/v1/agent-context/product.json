@@ -1,0 +1,104 @@
+{
+    "meta": {
+        "id": "hospitrainity-agent-context",
+        "api_version": "1.0.0",
+        "contract": "read_only",
+        "scope": "non_user_specific",
+        "included": [
+            "product"
+        ],
+        "data_excluded": [
+            "credentials_and_secrets",
+            "personal_data",
+            "learner_responses_and_progress",
+            "draft_curriculum_payloads",
+            "model_answers_and_release_evidence"
+        ]
+    },
+    "links": {
+        "self": "/api/v1/agent-context/product",
+        "index": "/api/v1/agent-context",
+        "openapi": "/api/v1/agent-context/openapi",
+        "focused_section_template": "/api/v1/agent-context/{section}"
+    },
+    "available_sections": [
+        {
+            "key": "product",
+            "description": "Purpose, audiences, supported experiences, and explicit non-goals.",
+            "endpoint": "/api/v1/agent-context/product"
+        },
+        {
+            "key": "domain",
+            "description": "Roles, scopes, lifecycle states, entity relationships, and invariants.",
+            "endpoint": "/api/v1/agent-context/domain"
+        },
+        {
+            "key": "capabilities",
+            "description": "What each actor can do and which exercise contracts are available.",
+            "endpoint": "/api/v1/agent-context/capabilities"
+        },
+        {
+            "key": "workflows",
+            "description": "Ordered registration, enrollment, learning, authoring, release, and privacy flows.",
+            "endpoint": "/api/v1/agent-context/workflows"
+        },
+        {
+            "key": "architecture",
+            "description": "Runtime layers, sources of truth, storage boundaries, and operational dependencies.",
+            "endpoint": "/api/v1/agent-context/architecture"
+        },
+        {
+            "key": "curriculum",
+            "description": "Safe outline and counts from the currently deliverable curriculum package.",
+            "endpoint": "/api/v1/agent-context/curriculum"
+        },
+        {
+            "key": "routes",
+            "description": "Live named-route inventory with inferred access requirements and no controller source.",
+            "endpoint": "/api/v1/agent-context/routes"
+        },
+        {
+            "key": "glossary",
+            "description": "Short, canonical definitions for commonly confused Hospitrainity terms.",
+            "endpoint": "/api/v1/agent-context/glossary"
+        }
+    ],
+    "sections": {
+        "product": {
+            "name": "Hospitrainity",
+            "kind": "hospitality English learning and curriculum delivery platform",
+            "purpose": "Help learners practise workplace English while keeping personal and institution-attributed learning evidence separate.",
+            "primary_audiences": {
+                "learner": "Studies personally or through an approved institution membership.",
+                "instructor": "Supports institution learners and sees only institution-attributed progress.",
+                "institution_admin": "Manages institution-scoped instructor authority and enrollment.",
+                "content_author": "Authors and reviews shared canonical curriculum.",
+                "system_admin": "Operates platform-wide identity, evidence, privacy, and release controls."
+            },
+            "supported_locales": [
+                "en",
+                "id"
+            ],
+            "content_language": "Canonical learning content remains English unless an approved translation exists.",
+            "delivery_modes": [
+                "responsive authenticated web application",
+                "generated offline standalone curriculum projection"
+            ],
+            "core_properties": [
+                "versioned checksum-locked canonical curriculum",
+                "verified-account learner delivery",
+                "scope-separated progress",
+                "institution-scoped supervision",
+                "reviewed curriculum publication lifecycle",
+                "retained legacy content as read-only evidence while canonical delivery is active"
+            ],
+            "explicit_non_goals": [
+                "public institution directory",
+                "automatic institution enrollment from an email domain",
+                "copying personal progress into an institution scope",
+                "content marketplace or general-purpose LMS interoperability",
+                "production claims not backed by recorded release, legal, or deployment evidence"
+            ]
+        }
+    }
+}

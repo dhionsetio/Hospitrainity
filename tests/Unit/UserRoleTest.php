@@ -11,7 +11,7 @@ use Symfony\Component\HttpKernel\Exception\HttpException;
 use Tests\TestCase;
 
 /**
- * Pure role-predicate checks. No database is touched — the role helpers only
+ * Pure role-predicate checks. No database is touched. The role helpers only
  * read the in-memory `role` attribute, so these run fast and in isolation.
  */
 class UserRoleTest extends TestCase

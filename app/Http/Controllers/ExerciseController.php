@@ -24,9 +24,7 @@ class ExerciseController extends Controller
         return view('superadmin.exercises.index', compact('exercises', 'lessons'));
     }
 
-    /**
-     * Menyimpan exercise baru dari form modal.
-     */
+    /** Store a new exercise submitted through the modal form. */
     public function store(StoreExerciseRequest $request): RedirectResponse
     {
         $this->authorize('create', Exercise::class);
@@ -44,9 +42,7 @@ class ExerciseController extends Controller
         return redirect()->route('superadmin.exercises.index')->with('success', __('Exercise created successfully.'));
     }
 
-    /**
-     * Memperbarui exercise dari form modal.
-     */
+    /** Update an exercise submitted through the modal form. */
     public function update(UpdateExerciseRequest $request, Exercise $exercise): RedirectResponse
     {
         $this->authorize('update', $exercise);
@@ -65,9 +61,7 @@ class ExerciseController extends Controller
         return redirect()->route('superadmin.exercises.index')->with('success', __('Exercise updated successfully.'));
     }
 
-    /**
-     * Menghapus exercise.
-     */
+    /** Delete an exercise. */
     public function destroy(Exercise $exercise): RedirectResponse
     {
         $this->authorize('delete', $exercise);

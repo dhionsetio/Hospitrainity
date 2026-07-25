@@ -69,4 +69,81 @@ export function initializeCanonicalActivity(root = document, currentLocation = w
         });
         refresh();
     });
+
+    root.querySelectorAll('[data-roleplay-file]').forEach((fileInput) => {
+        if (!(fileInput instanceof HTMLInputElement)) return;
+        const code = fileInput.dataset.roleplayFile;
+        const label = root.querySelector(`[data-roleplay-file-label="${code}"]`);
+        fileInput.addEventListener('change', () => {
+            if (label instanceof HTMLElement) {
+                const file = fileInput.files?.[0];
+                label.textContent = file ? `Attached: ${file.name}` : '';
+            }
+        });
+    });
+
+    const activeRecorders = new Map();
+    root.querySelectorAll('[data-roleplay-record]').forEach((recordBtn) => {
+        if (!(recordBtn instanceof HTMLButtonElement)) return;
+        const code = recordBtn.dataset.roleplayRecord;
+        const recordLabel = root.querySelector(`[data-roleplay-record-label="${code}"]`);
+        const fileInput = root.querySelector(`[data-roleplay-file="${code}"]`);
+        const fileLabel = root.querySelector(`[data-roleplay-file-label="${code}"]`);
+
+        recordBtn.addEventListener('click', async () => {
+            const current = activeRecorders.get(code);
+            if (current && current.state === 'recording') {
+                current.stop();
+                return;
+            }
+
+            if (!navigator.mediaDevices?.getUserMedia) {
+                alert('Microphone access is not supported in this browser environment.');
+                return;
+            }
+
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                const mediaRecorder = new MediaRecorder(stream);
+                const chunks = [];
+
+                mediaRecorder.ondataavailable = (e) => {
+                    if (e.data.size > 0) chunks.push(e.data);
+                };
+
+                mediaRecorder.onstop = () => {
+                    stream.getTracks().forEach((track) => track.stop());
+                    const blob = new Blob(chunks, { type: mediaRecorder.mimeType || 'audio/ogg' });
+                    const ext = mediaRecorder.mimeType?.includes('webm') ? 'webm' : 'ogg';
+                    const file = new File([blob], `recorded_audio.${ext}`, { type: blob.type });
+
+                    if (fileInput instanceof HTMLInputElement && typeof DataTransfer !== 'undefined') {
+                        const dt = new DataTransfer();
+                        dt.items.add(file);
+                        fileInput.files = dt.files;
+                    }
+                    if (fileLabel instanceof HTMLElement) {
+                        fileLabel.textContent = `Recorded Audio Attached (${file.name})`;
+                    }
+                    if (recordLabel instanceof HTMLElement) {
+                        recordLabel.textContent = 'Record Audio';
+                    }
+                    recordBtn.classList.remove('animate-pulse', 'bg-red-700');
+                    recordBtn.classList.add('bg-indigo-700');
+                    activeRecorders.delete(code);
+                };
+
+                mediaRecorder.start();
+                activeRecorders.set(code, mediaRecorder);
+
+                if (recordLabel instanceof HTMLElement) {
+                    recordLabel.textContent = 'Stop Recording';
+                }
+                recordBtn.classList.remove('bg-indigo-700');
+                recordBtn.classList.add('animate-pulse', 'bg-red-700');
+            } catch {
+                alert('Microphone access could not be initialized.');
+            }
+        });
+    });
 }

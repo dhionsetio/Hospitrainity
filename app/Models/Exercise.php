@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Exercise extends Model
 {
@@ -22,10 +23,8 @@ class Exercise extends Model
     ];
 
     /**
-     * Ini adalah bagian yang paling penting.
-     * Baris ini memberitahu Laravel untuk otomatis mengubah
-     * kolom 'content' dari array menjadi JSON saat menyimpan,
-     * dan sebaliknya saat mengambil.
+     * Cast exercise content between its PHP array representation and the
+     * JSON value stored by the database.
      */
     protected $casts = [
         'content' => 'array',
@@ -34,6 +33,11 @@ class Exercise extends Model
     public function lesson(): BelongsTo
     {
         return $this->belongsTo(Lesson::class);
+    }
+
+    public function scores(): HasMany
+    {
+        return $this->hasMany(ExerciseScore::class);
     }
 
     public function scopeCurriculumOrder(Builder $query): Builder

@@ -14,12 +14,13 @@ class CanonicalCurriculumController extends Controller
         private readonly CurriculumAttemptService $attempts,
     ) {}
 
-    public function chapter(string $chapter): View
+    public function chapter(Request $request, string $chapter): View
     {
-        $curriculumChapter = $this->curriculum->chapter($chapter);
+        $curriculumChapter = $this->curriculum->chapter($chapter, $request->user());
         abort_if($curriculumChapter === null, 404);
+        $showCurriculumEvidence = $request->user()->isSuperAdmin();
 
-        return view('curriculum.chapter', compact('curriculumChapter'));
+        return view('curriculum.chapter', compact('curriculumChapter', 'showCurriculumEvidence'));
     }
 
     public function activity(Request $request, string $activity): View
@@ -27,22 +28,48 @@ class CanonicalCurriculumController extends Controller
         $this->attempts->markViewed($request->user(), $activity);
         $curriculumActivity = $this->curriculum->activity($activity, $request->user());
         abort_if($curriculumActivity === null, 404);
+        $showCurriculumEvidence = $request->user()->isSuperAdmin();
 
-        return view('curriculum.activity', compact('curriculumActivity'));
+        return view('curriculum.activity', compact('curriculumActivity', 'showCurriculumEvidence'));
     }
 
     public function confidence(Request $request): View
     {
         $confidenceHistory = $this->attempts->confidenceHistory($request->user());
+        $showCurriculumEvidence = $request->user()->isSuperAdmin();
 
-        return view('curriculum.confidence-history', compact('confidenceHistory'));
+        return view('curriculum.confidence-history', compact('confidenceHistory', 'showCurriculumEvidence'));
     }
 
-    public function section(string $section): View
+    public function section(Request $request, string $section): View
     {
-        $curriculumSection = $this->curriculum->section($section);
+        $curriculumSection = $this->curriculum->section($section, $request->user());
         abort_if($curriculumSection === null, 404);
+        $showCurriculumEvidence = $request->user()->isSuperAdmin();
 
-        return view('curriculum.section', compact('curriculumSection'));
+        $existingReflections = app(\App\Services\Reflections\WarmUpReflectionService::class)
+            ->existingForSection($request->user(), $curriculumSection['code']);
+
+        return view('curriculum.section', compact('curriculumSection', 'showCurriculumEvidence', 'existingReflections'));
+    }
+
+    public function checkpoint(Request $request, string $chapter, int $step): View
+    {
+        $curriculumChapter = $this->curriculum->chapter($chapter, $request->user());
+        abort_if($curriculumChapter === null, 404);
+
+        $steps = collect($curriculumChapter['steps']);
+        $curriculumStep = $steps->firstWhere('number', $step);
+        abort_if($curriculumStep === null, 404);
+
+        $nextStep = $steps->firstWhere('number', $step + 1);
+        $showCurriculumEvidence = $request->user()->isSuperAdmin();
+
+        return view('curriculum.checkpoint', compact(
+            'curriculumChapter',
+            'curriculumStep',
+            'nextStep',
+            'showCurriculumEvidence',
+        ));
     }
 }

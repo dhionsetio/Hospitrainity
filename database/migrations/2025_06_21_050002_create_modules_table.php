@@ -12,14 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('modules', function (Blueprint $table) {
-            $table->id(); // Kunci utama
-            $table->string('title'); // Judul modul, cth: "Percakapan Dasar"
-            $table->string('slug')->unique(); // Versi judul yang ramah-URL
-            $table->text('description')->nullable(); // Deskripsi singkat modul
-            $table->enum('level', ['beginner', 'intermediate', 'advanced'])->default('beginner'); // Tingkat kesulitan
-            $table->integer('order')->default(0); // Urutan modul
-            $table->boolean('is_published')->default(false); // Status publikasi
-            $table->timestamps(); // created_at dan updated_at
+            $table->id(); // Primary key
+            $table->string('title'); // Module title, for example, "Basic Conversation"
+            $table->string('slug')->unique(); // URL-friendly title form
+            $table->text('description')->nullable(); // Short module description
+            $table->enum('level', ['beginner', 'intermediate', 'advanced'])->default('beginner'); // Difficulty level
+            $table->integer('order')->default(0); // Module sequence
+            $table->boolean('is_published')->default(false); // Publication status
+            $table->timestamps(); // created_at and updated_at
         });
     }
 

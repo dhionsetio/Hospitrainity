@@ -3,11 +3,15 @@
 namespace App\Services\Curriculum;
 
 use App\Models\CurriculumDraft;
+use App\Services\CurriculumStepPlanner;
 use Illuminate\Support\Collection;
 
 final class CurriculumDraftPreviewRepository
 {
-    public function __construct(private readonly CurriculumDraftProjection $projection) {}
+    public function __construct(
+        private readonly CurriculumDraftProjection $projection,
+        private readonly CurriculumStepPlanner $steps,
+    ) {}
 
     /** @return Collection<int, array<string, mixed>> */
     public function chapters(CurriculumDraft $draft): Collection
@@ -42,6 +46,21 @@ final class CurriculumDraftPreviewRepository
         $activities = $entities->where('entity_type', 'activity')->keyBy('parent_code');
         $outcomes = $entities->where('entity_type', 'outcome')->keyBy('code');
 
+        $sectionModels = $sections->map(function (array $section) use ($activities): array {
+            $activity = $activities[$section['code']] ?? null;
+
+            return [
+                'code' => $section['code'], 'title' => $this->sanitizeSectionTitle($section['payload']['title']),
+                'order' => (int) $section['position'], 'status' => 'draft preview',
+                'source_locator' => $section['payload']['source_locator'] ?? null,
+                'activity' => $activity === null ? null : [
+                    'code' => $activity['code'], 'title' => $activity['payload']['title'],
+                    'response_form' => $activity['payload']['response_form'],
+                    'scoring_mode' => $activity['payload']['scoring_mode'],
+                ],
+            ];
+        })->values();
+
         return [
             'code' => $chapter['code'], 'title' => $chapter['payload']['title'],
             'module' => (int) $chapter['payload']['module'], 'status' => 'draft preview',
@@ -50,20 +69,8 @@ final class CurriculumDraftPreviewRepository
                 fn (string $outcomeCode): ?array => isset($outcomes[$outcomeCode])
                     ? array_merge(['code' => $outcomeCode], $outcomes[$outcomeCode]['payload']) : null,
             )->filter()->values(),
-            'sections' => $sections->map(function (array $section) use ($activities): array {
-                $activity = $activities[$section['code']] ?? null;
-
-                return [
-                    'code' => $section['code'], 'title' => $section['payload']['title'],
-                    'order' => (int) $section['position'], 'status' => 'draft preview',
-                    'source_locator' => $section['payload']['source_locator'] ?? null,
-                    'activity' => $activity === null ? null : [
-                        'code' => $activity['code'], 'title' => $activity['payload']['title'],
-                        'response_form' => $activity['payload']['response_form'],
-                        'scoring_mode' => $activity['payload']['scoring_mode'],
-                    ],
-                ];
-            })->values(),
+            'sections' => $sectionModels,
+            'steps' => $this->steps->group($sectionModels),
             'package' => (object) ['content_version' => $draft->content_version],
         ];
     }
@@ -87,7 +94,19 @@ final class CurriculumDraftPreviewRepository
         if ($current === false) {
             return null;
         }
-        $nav = fn (?array $item): ?array => $item === null ? null : ['code' => $item['code'], 'title' => $item['payload']['title']];
+        $nav = fn (?array $item): ?array => $item === null ? null : ['code' => $item['code'], 'title' => $this->sanitizeSectionTitle($item['payload']['title'])];
+        $chapterSections = $sequence
+            ->filter(fn (array $item): bool => $item['parent_code'] === $chapter['code'])
+            ->values()
+            ->map(fn (array $item): array => [
+                'code' => $item['code'],
+                'title' => $this->sanitizeSectionTitle($item['payload']['title']),
+                'order' => (int) $item['position'],
+            ]);
+        $step = $this->steps->context($chapterSections, $section['code']);
+        if ($step === null) {
+            return null;
+        }
         $routePrefix = auth()->user()?->isSuperAdmin() ? 'superadmin' : 'admin';
         $blocks = array_map(function (array $block) use ($draft, $routePrefix): array {
             if (is_string($block['asset']['id'] ?? null)) {
@@ -98,7 +117,7 @@ final class CurriculumDraftPreviewRepository
         }, array_values($section['payload']['blocks'] ?? []));
 
         return [
-            'code' => $section['code'], 'title' => $section['payload']['title'], 'order' => (int) $section['position'],
+            'code' => $section['code'], 'title' => $this->sanitizeSectionTitle($section['payload']['title']), 'order' => (int) $section['position'],
             'status' => 'draft preview', 'blocks' => $blocks,
             'chapter' => ['code' => $chapter['code'], 'title' => $chapter['payload']['title'], 'module' => (int) $chapter['payload']['module']],
             'activity' => $activity === null ? null : ['code' => $activity['code'], 'title' => $activity['payload']['title'], 'response_form' => $activity['payload']['response_form']],
@@ -107,6 +126,7 @@ final class CurriculumDraftPreviewRepository
                 'previous' => $nav($current > 0 ? $sequence[$current - 1] : null),
                 'next' => $nav($current + 1 < $sequence->count() ? $sequence[$current + 1] : null),
             ],
+            'step' => $step,
             'package' => (object) ['content_version' => $draft->content_version],
         ];
     }
@@ -136,7 +156,7 @@ final class CurriculumDraftPreviewRepository
             'guidance' => $activity['payload']['guidance'] ?? null,
             'completion_rule' => $activity['payload']['completion_rule'] ?? null,
             'chapter' => ['code' => $chapter['code'], 'title' => $chapter['payload']['title'], 'module' => (int) $chapter['payload']['module']],
-            'section' => ['code' => $section['code'], 'title' => $section['payload']['title']],
+            'section' => ['code' => $section['code'], 'title' => $this->sanitizeSectionTitle($section['payload']['title'])],
             'prompts' => $prompts->map(function (array $prompt) use ($models, $draft): array {
                 $answer = ($models[$prompt['code']] ?? collect())->firstWhere('entity_type', 'answer-model');
 
@@ -165,5 +185,10 @@ final class CurriculumDraftPreviewRepository
             'completed' => false,
             'package' => (object) ['content_version' => $draft->content_version],
         ];
+    }
+
+    private function sanitizeSectionTitle(string $title): string
+    {
+        return (string) preg_replace('/^\s*Step\s+\d+[\.\:\-\s]*/i', '', $title);
     }
 }

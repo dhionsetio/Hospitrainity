@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Contracts\Validation\Validator as ValidatorContract;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 use Illuminate\Validation\Validator;
@@ -56,6 +57,10 @@ abstract class CanonicalAttemptRequest extends FormRequest
             }
         }
         $rules['self_checks'] = ['nullable', 'array:'.implode(',', $openCodes)];
+        $rules['rubric_scores'] = ['nullable', 'array'];
+        $rules['rubric_scores.*'] = ['nullable', 'integer', 'min:0'];
+        $rules['audio'] = ['nullable', 'array'];
+        $rules['audio.*'] = ['nullable', 'file', 'mimes:mp3,ogg,wav,webm', 'max:10240'];
 
         return $rules;
     }
@@ -63,7 +68,7 @@ abstract class CanonicalAttemptRequest extends FormRequest
     public function after(): array
     {
         return [function (Validator $validator): void {
-            $allowed = ['_token', 'attempt_key', 'intent', 'responses', 'self_checks'];
+            $allowed = ['_token', 'attempt_key', 'intent', 'responses', 'self_checks', 'rubric_scores', 'audio'];
             $unexpected = array_values(array_diff(array_keys($this->all()), $allowed));
             if ($unexpected !== []) {
                 $validator->errors()->add('request', 'Unexpected request fields: '.implode(', ', $unexpected).'.');
@@ -82,6 +87,45 @@ abstract class CanonicalAttemptRequest extends FormRequest
                 $validator->errors()->add('intent', 'Only the Chapter 1 baseline may be explicitly skipped.');
             }
         }];
+    }
+
+    protected function failedValidation(ValidatorContract $validator): void
+    {
+        $this->forgetOpenResponseInput();
+
+        parent::failedValidation($validator);
+    }
+
+    private function forgetOpenResponseInput(): void
+    {
+        $openResponseCodes = collect($this->definition()['prompts'])
+            ->reject(static fn (array $prompt): bool => in_array(
+                $prompt['payload']['response_form'] ?? null,
+                ['selection', 'ordering', 'rating'],
+                true,
+            ))
+            ->keys()
+            ->all();
+
+        foreach ([$this, $this->container->make('request')] as $request) {
+            $responses = $request->input('responses');
+
+            if (! is_array($responses)) {
+                $request->offsetUnset('responses');
+
+                continue;
+            }
+
+            foreach ($openResponseCodes as $code) {
+                unset($responses[$code]);
+            }
+
+            if ($responses === []) {
+                $request->offsetUnset('responses');
+            } else {
+                $request->merge(['responses' => $responses]);
+            }
+        }
     }
 
     /** @return array<string, string> */

@@ -1,0 +1,31 @@
+<?php
+
+return [
+    'title' => 'Saved writing',
+    'intro' => 'Continue a draft or review writing you submitted in this learning context.',
+    'empty' => 'You have no saved writing here yet.',
+    'edit_title' => 'Save your response',
+    'response_label' => 'Your response',
+    'kind_label' => 'Save as',
+    'assessment' => 'Practice answer',
+    'journal' => 'Private journal note',
+    'draft' => 'Draft',
+    'submitted_state' => 'Submitted',
+    'submitted_assessments' => 'Submitted assessments',
+    'submitted_assessments_intro' => 'Responses the learner submitted for this Class appear here. Private journal drafts are not included.',
+    'submitted_at' => 'Submitted :time',
+    'save_draft' => 'Save draft',
+    'submit' => 'Submit response',
+    'saved' => 'Draft saved.',
+    'submitted' => 'Response submitted.',
+    'privacy_note' => 'Drafts stay private. Submitted responses cannot be changed.',
+    'updated' => 'Updated :time',
+    'back_to_activity' => 'Back to activity',
+    'back_to_saved' => 'View saved writing',
+    'validation' => [
+        'body_required' => 'Enter a response before saving.',
+        'body_max' => 'Keep your response within :max characters.',
+        'submitted_immutable' => 'This response was already submitted and cannot be changed.',
+        'key_reused' => 'This draft belongs to a different activity. Reload the page and try again.',
+    ],
+];

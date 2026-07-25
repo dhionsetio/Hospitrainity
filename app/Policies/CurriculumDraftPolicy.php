@@ -52,12 +52,17 @@ class CurriculumDraftPolicy
 
     public function publish(User $user, CurriculumDraft $draft): bool
     {
-        return $user->isSuperAdmin() && $draft->status === CurriculumDraftStatus::Approved;
+        // B01 containment: editorial approval is not release approval. Keep the
+        // legacy route fail-closed until named evidence exists for every gate.
+        return false;
     }
 
     public function rollback(User $user, CurriculumDraft $draft): bool
     {
-        return $user->isSuperAdmin()
+        // B01/B17 containment: production rollback requires an independently
+        // rehearsed approved-release workflow, not the legacy draft action.
+        return ! app()->isProduction()
+            && $user->isSuperAdmin()
             && $draft->status === CurriculumDraftStatus::Published
             && $draft->publication_run_id !== null
             && $draft->published_package_id !== null

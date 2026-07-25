@@ -8,6 +8,7 @@ export default defineConfig({
     testDir: './tests/E2E',
     fullyParallel: false,
     forbidOnly: Boolean(process.env.CI),
+    maxFailures: process.env.CI ? 0 : 1,
     retries: process.env.CI ? 1 : 0,
     workers: 1,
     globalSetup: './scripts/e2e/start-server.mjs',
@@ -17,6 +18,7 @@ export default defineConfig({
     reporter: [
         ['line'],
         ['html', { open: 'never', outputFolder: path.join(artifactRoot, 'playwright-report') }],
+        ['json', { outputFile: path.join(artifactRoot, 'results.json') }],
     ],
     use: {
         baseURL,
@@ -27,6 +29,22 @@ export default defineConfig({
         {
             name: 'chromium',
             use: { ...devices['Desktop Chrome'] },
+        },
+        {
+            name: 'webkit',
+            use: { ...devices['Desktop Safari'] },
+        },
+        {
+            name: 'mobile-chromium',
+            use: { ...devices['Pixel 7'] },
+        },
+        {
+            name: 'mobile-webkit',
+            use: { ...devices['iPhone 15'] },
+        },
+        {
+            name: 'firefox',
+            use: { ...devices['Desktop Firefox'] },
         },
     ],
 });

@@ -1,0 +1,89 @@
+{
+    "schema_version": "1.0.0",
+    "batches": ["B02", "B05"],
+    "captured_at": "2026-07-20T11:02:43+07:00",
+    "state": "approved_expand_first_architecture_implemented_and_verified",
+    "authority": {
+        "thesis_sha256": "c38ac625a2f7a34bb004e6b68183d748bc6c1d3c1c9896c3f791909072496d34",
+        "learning_materials_sha256": "7f8a2c62db6884498f7a1c2de56e79e39609262944a685fe7eb97f702444cbb4",
+        "roadmap_sha256": "465099eb07881dc5f32ee6b3f06fc7d0e080971313a1eab2b290316bc7e5c5a9",
+        "matches_prior_authority": true
+    },
+    "source_control": {
+        "branch": "codex/ng-b01-release-containment",
+        "base_commit": "17e21871930ad220a4dce8be5fa12233cc1c0fbd",
+        "base_tree": "099a2253f60cffc649b04b294673d7f7531579af",
+        "remote_mutation": false,
+        "commit_created": false
+    },
+    "implementation": {
+        "migration_files": 26,
+        "routes_total": 166,
+        "routes_named": 163,
+        "architecture": "personal self-study plus approved institution learning scopes; explicit tenant work roles; separate content capability",
+        "demo_accounts_present": 3,
+        "demo_accounts_enabled": 3,
+        "authoritative_records_deleted": 0,
+        "authoritative_sessions_deleted": 0
+    },
+    "authoritative_database": {
+        "backup_path": "storage/app/backup-snapshots/b02-b05-before-tenant-role-migration-final-20260720-1050.sqlite",
+        "backup_sha256": "ff51f0427cd815eb738e6ba554657650f9559627ce86a99f284f6eff66549311",
+        "backup_bytes": 4329472,
+        "migration": "2026_07_20_000013_establish_tenant_roles_and_join_codes",
+        "migration_batch": 12,
+        "after_sha256": "b268f9e8c190c21aebeb8258c2126c4d6b93c2d2710c81611b6769a664fc2bb7",
+        "handoff_sha256_after_retained_session_activity": "26dfa31f52156afbffbc5c5a334750b73e4de613a00c37ffcc48b4fc89be2c4f",
+        "after_bytes": 4329472,
+        "integrity_check": "ok",
+        "foreign_key_violations": 0,
+        "before": {
+            "migrations": 25,
+            "users": 3,
+            "enabled_users": 3,
+            "sessions": 1,
+            "institutions": 2,
+            "memberships": 1,
+            "completions": 1,
+            "curriculum_attempts": 4,
+            "curriculum_activity_progress": 4
+        },
+        "after": {
+            "migrations": 26,
+            "users": 3,
+            "enabled_users": 3,
+            "sessions": 1,
+            "institutions": 2,
+            "memberships": 1,
+            "completions": 1,
+            "curriculum_attempts": 4,
+            "curriculum_activity_progress": 4,
+            "platform_role_assignments": 1,
+            "institution_role_assignments": 1,
+            "user_capability_assignments": 0,
+            "join_codes": 0,
+            "join_requests": 0,
+            "nonpersonal_historical_progress_rows": 0
+        }
+    },
+    "verification": {
+        "laravel": {"tests": 293, "assertions": 4533, "failures": 0, "duration_seconds": 125.39},
+        "node": {"tests": 50, "failures": 0},
+        "eslint": "passed with zero warnings",
+        "pint": "passed",
+        "vite": {"status": "passed", "modules_transformed": 11},
+        "composer": {"security_advisories": 0, "abandoned_packages": 0},
+        "npm": {"vulnerabilities": 0, "dependencies_reported": 246},
+        "traceability": "passed after checkpoint refresh",
+        "secret_scan": {"status": "passed", "unallowlisted_findings": 0},
+        "browser": {
+            "passed": 36,
+            "failed": 0,
+            "projects": ["desktop Chromium", "desktop WebKit", "Pixel 7 Chromium emulation", "iPhone 15 WebKit emulation"],
+            "firefox": "host launch stalled before first page; 120-second timeout; no application assertion",
+            "opera": "not directly tested"
+        },
+        "deployment_check": {"ready": false, "checks": 23, "passed": 12, "failed_expected_gates": 11}
+    },
+    "checkpoint": "docs/checkpoints/NG-B02-B05-ARCHITECTURE-CHECKPOINT.md"
+}

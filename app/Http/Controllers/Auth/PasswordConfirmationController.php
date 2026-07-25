@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Enums\WorkContextRole;
 use App\Http\Controllers\Controller;
+use App\Services\WorkContext;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -41,14 +43,22 @@ class PasswordConfirmationController extends Controller
      * Resolve only the privileged destinations that deliberately share this
      * confirmation screen. Never trust a pre-authentication intended URL.
      *
-     * @return array{context: 'audit'|'users', url: string}
+     * @return array{context: 'audit'|'users'|'institution_roles'|'privacy'|'privacy_admin'|'security', url: string}
      */
     private function destination(Request $request): array
     {
-        $fallback = [
-            'context' => 'users',
-            'url' => route('superadmin.users.index', absolute: false),
-        ];
+        $workRole = app(WorkContext::class)->current($request, $request->user());
+        $fallback = $workRole === WorkContextRole::InstitutionAdmin
+            ? [
+                'context' => 'institution_roles',
+                'url' => route('supervisor.institution-roles.index', absolute: false),
+            ]
+            : [
+                'context' => 'users',
+                'url' => $workRole === WorkContextRole::SystemAdmin
+                    ? route('superadmin.users.index', absolute: false)
+                    : route($workRole->landingRoute(), absolute: false),
+            ];
         $intended = $request->session()->get('url.intended');
 
         if (! is_string($intended) || $intended === '' || strlen($intended) > 2048) {
@@ -72,6 +82,11 @@ class PasswordConfirmationController extends Controller
         }
 
         $destinations = [
+            route('security.confirm', absolute: false) => [
+                'context' => 'security',
+                'filters' => [],
+                'destination' => route('security.index', absolute: false),
+            ],
             route('superadmin.audit.index', absolute: false) => [
                 'context' => 'audit',
                 'filters' => [
@@ -91,8 +106,23 @@ class PasswordConfirmationController extends Controller
                     'verification' => 20,
                 ],
             ],
+            route('supervisor.institution-roles.index', absolute: false) => [
+                'context' => 'institution_roles',
+                'filters' => [],
+            ],
+            route('superadmin.institution-roles.index', absolute: false) => [
+                'context' => 'institution_roles',
+                'filters' => [],
+            ],
         ];
         $target = $destinations[$parts['path']] ?? null;
+
+        if (preg_match('#\A/privacy/requests/sensitive/(access-export|deletion)\z#', $parts['path']) === 1) {
+            $target = ['context' => 'privacy', 'filters' => []];
+        }
+        if (preg_match('#\A/superadmin/privacy-requests(?:/[0-9a-fA-F-]{36})?\z#', $parts['path']) === 1) {
+            $target = ['context' => 'privacy_admin', 'filters' => ['status' => 30]];
+        }
 
         if ($target === null) {
             return $fallback;
@@ -111,7 +141,7 @@ class PasswordConfirmationController extends Controller
 
         return [
             'context' => $target['context'],
-            'url' => $parts['path'].($query === [] ? '' : '?'.http_build_query($query)),
+            'url' => ($target['destination'] ?? $parts['path']).($query === [] ? '' : '?'.http_build_query($query)),
         ];
     }
 }

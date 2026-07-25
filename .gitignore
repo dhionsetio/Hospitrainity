@@ -11,6 +11,7 @@
 /playwright-report/
 /test-results/
 *.docx
+!tests/Fixtures/curriculum/authority/Hospitrainity.docx
 *.sqlite
 *.sqlite-*
 *.sqlite3

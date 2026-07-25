@@ -9,11 +9,11 @@
     <div class="flex min-h-screen flex-col bg-neutral-100 md:flex-row">
         @include('superadmin.sidebar')
         <main class="min-w-0 flex-1 p-6 md:p-10">
-            <a href="{{ route($routePrefix.'.curriculum-drafts.show', $draft) }}" class="font-semibold text-indigo-700 underline">&larr; {{ __('admin.return_to_draft') }}</a>
+            <x-back-control :href="route($routePrefix.'.curriculum-drafts.show', $draft)" :label="__('admin.return_to_draft')" />
             <header class="mt-4 rounded-xl bg-white p-6 shadow">
-                <div class="flex flex-wrap gap-2"><span class="rounded-full bg-indigo-100 px-3 py-1 font-semibold text-indigo-800">{{ $entity->entity_type }}</span>@if($entity->archived_at)<span class="rounded-full bg-amber-100 px-3 py-1 font-semibold text-amber-900">{{ __('admin.archived') }}</span>@endif</div>
+                <div class="flex flex-wrap gap-2"><span class="rounded-full bg-indigo-100 px-3 py-1 font-semibold text-indigo-800">{{ __('admin.entity_types.'.$entity->entity_type) }}</span>@if($entity->archived_at)<span class="rounded-full bg-amber-100 px-3 py-1 font-semibold text-amber-900">{{ __('admin.archived') }}</span>@endif</div>
                 <h1 class="mt-3 break-words text-3xl font-bold text-neutral-950">{{ $entity->payload['title'] ?? $entity->payload['statement'] ?? $entity->code }}</h1>
-                <p class="mt-2 font-mono text-sm text-neutral-600">{{ $entity->code }} &middot; {{ __('admin.revision') }} {{ $entity->revision }} &middot; {{ $entity->source_path }}</p>
+                <p class="mt-2 text-sm text-neutral-600">{{ $entity->code }}@if(Auth::user()->isSuperAdmin()) <span class="font-mono">&middot; {{ __('admin.revision') }} {{ $entity->revision }} &middot; {{ $entity->source_path }}</span>@endif</p>
             </header>
 
             @foreach(['success' => 'border-green-300 bg-green-50 text-green-950', 'warning' => 'border-amber-300 bg-amber-50 text-amber-950'] as $key => $style)
@@ -36,7 +36,7 @@
                         @if($entity->entity_type === 'outcome')
                             <label class="block text-sm font-semibold">{{ __('admin.parent_module') }}<input name="module" type="number" min="1" max="7" required value="{{ $entity->payload['module'] }}" class="mt-1 block w-full rounded-md border-neutral-300"></label>
                             <label class="block text-sm font-semibold md:col-span-2">{{ __('admin.statement') }}<textarea name="statement" required maxlength="2000" rows="4" class="mt-1 block w-full rounded-md border-neutral-300">{{ $entity->payload['statement'] }}</textarea></label>
-                            <label class="block text-sm font-semibold">{{ __('admin.outcome_type') }}<select name="outcome_type" required class="mt-1 block w-full rounded-md border-neutral-300">@foreach(['knowledge','performance','reflection'] as $type)<option value="{{ $type }}" @selected($entity->payload['type'] === $type)>{{ $type }}</option>@endforeach</select></label>
+                            <label class="block text-sm font-semibold">{{ __('admin.outcome_type') }}<select name="outcome_type" required class="mt-1 block w-full rounded-md border-neutral-300">@foreach(['knowledge','performance','reflection'] as $type)<option value="{{ $type }}" @selected($entity->payload['type'] === $type)>{{ __('admin.outcome_types.'.$type) }}</option>@endforeach</select></label>
                             <label class="block text-sm font-semibold">{{ __('admin.provisional_band') }}<input name="provisional_band" required maxlength="30" value="{{ $entity->payload['provisional_band'] }}" class="mt-1 block w-full rounded-md border-neutral-300"></label>
                         @endif
                         <div class="md:col-span-2"><button class="rounded-md bg-indigo-700 px-5 py-2 font-semibold text-white">{{ __('admin.save') }}</button></div>
@@ -57,14 +57,14 @@
                     <p class="mt-2 text-sm text-neutral-600">{{ __('admin.block_payload_help') }}</p>
 
                     @if($editable && !$entity->archived_at)
-                        <div class="mt-5 space-y-3">@foreach($blockTypes as $type)<details class="rounded-lg border border-neutral-200 p-4"><summary class="cursor-pointer font-semibold text-indigo-800">{{ __('admin.add_block') }}: {{ $type->value }}</summary><form method="POST" action="{{ route($routePrefix.'.curriculum-drafts.blocks.store', [$draft, $entity]) }}" class="mt-4 grid gap-4">@csrf<input type="hidden" name="draft_revision" value="{{ $draft->revision }}"><input type="hidden" name="entity_revision" value="{{ $entity->revision }}"><input type="hidden" name="block_type" value="{{ $type->value }}">@include('superadmin.curriculum-drafts.partials.block-fields', ['type' => $type->value, 'payload' => [], 'selectedAssetId' => null])<button class="justify-self-start rounded-md bg-indigo-700 px-5 py-2 font-semibold text-white">{{ __('admin.add_block') }}</button></form></details>@endforeach</div>
+                        <div class="mt-5 space-y-3">@foreach($blockTypes as $type)<details class="rounded-lg border border-neutral-200 p-4"><summary class="cursor-pointer font-semibold text-indigo-800">{{ __('admin.add_block') }}: {{ __('admin.block_types.'.$type->value) }}</summary><form method="POST" action="{{ route($routePrefix.'.curriculum-drafts.blocks.store', [$draft, $entity]) }}" class="mt-4 grid gap-4">@csrf<input type="hidden" name="draft_revision" value="{{ $draft->revision }}"><input type="hidden" name="entity_revision" value="{{ $entity->revision }}"><input type="hidden" name="block_type" value="{{ $type->value }}">@include('superadmin.curriculum-drafts.partials.block-fields', ['type' => $type->value, 'payload' => [], 'selectedAssetId' => null])<button class="justify-self-start rounded-md bg-indigo-700 px-5 py-2 font-semibold text-white">{{ __('admin.add_block') }}</button></form></details>@endforeach</div>
                     @endif
 
                     <ol class="mt-6 space-y-4">
                         @foreach($entity->blocks as $block)
                             @php($editablePayload = collect($block->payload)->except(['id','type','order','language','provenance_kind','source_locator'])->all())
                             <li class="rounded-lg border {{ $block->archived_at ? 'border-amber-300 bg-amber-50' : 'border-neutral-200' }} p-4">
-                                <div class="flex flex-wrap items-center justify-between gap-2"><p class="font-semibold"><span class="font-mono text-indigo-700">{{ $block->position }}.</span> {{ $block->block_type }}</p><span class="font-mono text-xs text-neutral-500">{{ $block->block_uuid }} &middot; r{{ $block->revision }}</span></div>
+                                <div class="flex flex-wrap items-center justify-between gap-2"><p class="font-semibold"><span class="text-indigo-700">{{ $block->position }}.</span> {{ __('admin.block_types.'.$block->block_type) }}</p>@if(Auth::user()->isSuperAdmin())<span class="font-mono text-xs text-neutral-500">{{ $block->block_uuid }} &middot; r{{ $block->revision }}</span>@endif</div>
                                 @if($editable)
                                     <form method="POST" action="{{ route($routePrefix.'.curriculum-drafts.blocks.update', [$draft, $block]) }}" class="mt-3 grid gap-4">@csrf @method('PATCH')<input type="hidden" name="draft_revision" value="{{ $draft->revision }}"><input type="hidden" name="block_revision" value="{{ $block->revision }}">@include('superadmin.curriculum-drafts.partials.block-fields', ['type' => $block->block_type, 'payload' => $editablePayload, 'selectedAssetId' => $block->asset?->public_id])<button class="justify-self-start rounded-md bg-indigo-700 px-4 py-2 font-semibold text-white">{{ __('admin.save') }}</button></form>
                                     <div class="mt-3 flex flex-wrap gap-3">

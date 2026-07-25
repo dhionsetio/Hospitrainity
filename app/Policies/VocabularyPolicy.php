@@ -2,8 +2,10 @@
 
 namespace App\Policies;
 
+use App\Enums\WorkContextRole;
 use App\Models\User;
 use App\Models\Vocabulary;
+use App\Services\WorkContext;
 use Illuminate\Auth\Access\Response;
 
 class VocabularyPolicy
@@ -15,7 +17,7 @@ class VocabularyPolicy
 
     public function view(User $user, Vocabulary $vocabulary): Response
     {
-        $published = $user->isLearner()
+        $published = app(WorkContext::class)->current(request(), $user) === WorkContextRole::Learner
             && $vocabulary->lesson()
                 ->whereHas('module', fn ($query) => $query->where('is_published', true))
                 ->exists();

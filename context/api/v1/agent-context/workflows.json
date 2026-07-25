@@ -1,0 +1,182 @@
+{
+    "meta": {
+        "id": "hospitrainity-agent-context",
+        "api_version": "1.0.0",
+        "contract": "read_only",
+        "scope": "non_user_specific",
+        "included": [
+            "workflows"
+        ],
+        "data_excluded": [
+            "credentials_and_secrets",
+            "personal_data",
+            "learner_responses_and_progress",
+            "draft_curriculum_payloads",
+            "model_answers_and_release_evidence"
+        ]
+    },
+    "links": {
+        "self": "/api/v1/agent-context/workflows",
+        "index": "/api/v1/agent-context",
+        "openapi": "/api/v1/agent-context/openapi",
+        "focused_section_template": "/api/v1/agent-context/{section}"
+    },
+    "available_sections": [
+        {
+            "key": "product",
+            "description": "Purpose, audiences, supported experiences, and explicit non-goals.",
+            "endpoint": "/api/v1/agent-context/product"
+        },
+        {
+            "key": "domain",
+            "description": "Roles, scopes, lifecycle states, entity relationships, and invariants.",
+            "endpoint": "/api/v1/agent-context/domain"
+        },
+        {
+            "key": "capabilities",
+            "description": "What each actor can do and which exercise contracts are available.",
+            "endpoint": "/api/v1/agent-context/capabilities"
+        },
+        {
+            "key": "workflows",
+            "description": "Ordered registration, enrollment, learning, authoring, release, and privacy flows.",
+            "endpoint": "/api/v1/agent-context/workflows"
+        },
+        {
+            "key": "architecture",
+            "description": "Runtime layers, sources of truth, storage boundaries, and operational dependencies.",
+            "endpoint": "/api/v1/agent-context/architecture"
+        },
+        {
+            "key": "curriculum",
+            "description": "Safe outline and counts from the currently deliverable curriculum package.",
+            "endpoint": "/api/v1/agent-context/curriculum"
+        },
+        {
+            "key": "routes",
+            "description": "Live named-route inventory with inferred access requirements and no controller source.",
+            "endpoint": "/api/v1/agent-context/routes"
+        },
+        {
+            "key": "glossary",
+            "description": "Short, canonical definitions for commonly confused Hospitrainity terms.",
+            "endpoint": "/api/v1/agent-context/glossary"
+        }
+    ],
+    "sections": {
+        "workflows": {
+            "personal_registration": {
+                "actor": "visitor",
+                "steps": [
+                    "accept registration policies",
+                    "create personal learner account",
+                    "verify email",
+                    "complete onboarding",
+                    "select personal learning context"
+                ],
+                "result": "Verified personal Learner account with no institution access."
+            },
+            "targeted_invitation": {
+                "actor": "authorized institution staff",
+                "steps": [
+                    "issue email-bound expiring invitation",
+                    "deliver single-use link",
+                    "recipient authenticates or registers with matching email",
+                    "recipient accepts invitation"
+                ],
+                "guards": [
+                    "institution scope",
+                    "canonical email match",
+                    "expiry",
+                    "revocation",
+                    "single use"
+                ],
+                "result": "Active institution membership with Learner role only."
+            },
+            "classroom_code_enrollment": {
+                "actor": "learner and authorized institution staff",
+                "steps": [
+                    "staff issues bounded reusable code",
+                    "learner redeems code",
+                    "system creates pending request",
+                    "staff approves or rejects request"
+                ],
+                "guards": [
+                    "hashed code storage",
+                    "expiry",
+                    "use limit",
+                    "selected institution scope"
+                ],
+                "result": "Approval creates an institution Learner membership; rejection creates none."
+            },
+            "learning_delivery": {
+                "actor": "verified learner",
+                "steps": [
+                    "select learning context",
+                    "open chapter",
+                    "work through bounded learning steps and sections",
+                    "attempt or self-check activity",
+                    "record progress in selected scope"
+                ],
+                "guards": [
+                    "deliverable active package",
+                    "published entities only",
+                    "validated response contract",
+                    "scope ownership"
+                ],
+                "result": "Versioned attempt and progress evidence in exactly one learning scope."
+            },
+            "institution_supervision": {
+                "actor": "instructor or institution admin",
+                "steps": [
+                    "select work and institution context",
+                    "open supervisor dashboard",
+                    "inspect an authorized learner aggregate or detail"
+                ],
+                "guards": [
+                    "active membership",
+                    "current institution role",
+                    "strong MFA",
+                    "institution-attributed progress only"
+                ],
+                "result": "No personal or other-institution learning evidence is returned."
+            },
+            "curriculum_authoring_and_release": {
+                "actor": "content author and system admin",
+                "steps": [
+                    "create isolated draft",
+                    "author or import quarantined content",
+                    "validate",
+                    "review and request changes if needed",
+                    "approve draft",
+                    "system admin confirms and publishes"
+                ],
+                "guards": [
+                    "immutable source/release checksums",
+                    "role separation",
+                    "recent password for publication",
+                    "human evidence gates for production"
+                ],
+                "result": "One versioned active package; generated projections derive from the same source."
+            },
+            "privacy_request": {
+                "actor": "authenticated account owner and authorized system admin",
+                "steps": [
+                    "owner submits typed request",
+                    "staff verifies and reviews",
+                    "staff approves, denies, or places a hold",
+                    "approved operation executes",
+                    "owner receives bounded result or export"
+                ],
+                "guards": [
+                    "owner authorization",
+                    "recent password for sensitive requests",
+                    "encrypted private export",
+                    "signed expiring download",
+                    "append-only lifecycle evidence"
+                ],
+                "result": "Auditable request outcome without exposing another user's data."
+            }
+        }
+    }
+}

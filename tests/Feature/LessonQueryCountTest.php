@@ -31,7 +31,8 @@ class LessonQueryCountTest extends TestCase
         $large = $this->countQueries($user, $lesson);
 
         $this->assertSame($small, $large, "Lesson query count grew from {$small} to {$large}.");
-        $this->assertLessThanOrEqual(15, $large);
+        // Includes the fixed B03 account-wide privileged-role assurance query.
+        $this->assertLessThanOrEqual(20, $large);
 
         $response = $this->actingAs($user)->get(route('lessons.show', $lesson));
         $loadedLesson = $response->viewData('lesson');

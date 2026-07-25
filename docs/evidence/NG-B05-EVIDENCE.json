@@ -1,0 +1,99 @@
+{
+    "schema_version": "1.0.0",
+    "batch": "B05",
+    "date": "2026-07-20",
+    "branch": "codex/ng-b05-onboarding-search-help",
+    "parent_commit": "d16b87cac036fb5d1561739079c96ec95ae85f34",
+    "migration": {
+        "name": "2026_07_20_000017_create_onboarding_and_search_foundation",
+        "batch": 16,
+        "backup_path": "storage/app/backup-snapshots/b05-first-use-search-20260720-175223.sqlite",
+        "backup_bytes": 4329472,
+        "backup_sha256": "2285f58e28876bc4d6df5f26c88da0ea3074cee9d418249eac08a323e48b8895",
+        "postflight_bytes": 4329472,
+        "postflight_sha256": "56e0cbf3875a699f41353bc414cdde4b09065769830e245df65454c10a26adf8",
+        "sqlite_integrity": "ok",
+        "foreign_key_violations": 0,
+        "demo_accounts_present": 3,
+        "demo_accounts_enabled": 3,
+        "onboarding_state_rows": 0,
+        "pre_existing_business_counts_preserved": true,
+        "authoritative_business_rows_deleted": 0
+    },
+    "search_index": {
+        "active_generation_id": "019f7f28-052a-7015-a0da-3982a9b86b53",
+        "source_fingerprint": "79fb772098ffd176fe43ef27b1ef9a713f370816ec93c2d855baf7c57f33be91",
+        "active_generation_count": 1,
+        "document_count": 223,
+        "term_count": 10511,
+        "unpublished_document_count": 0,
+        "source_types": {
+            "activity": 25,
+            "glossary": 20,
+            "help": 14,
+            "module": 7,
+            "section": 85,
+            "vocabulary": 72
+        },
+        "locales": {
+            "en": 206,
+            "id": 17
+        },
+        "excluded_classes": [
+            "drafts",
+            "prompt_items",
+            "answer_models",
+            "users",
+            "private_responses"
+        ]
+    },
+    "verification": {
+        "laravel_tests": 335,
+        "laravel_assertions": 5307,
+        "laravel_duration_seconds": 264.51,
+        "phpstan_errors": 0,
+        "phpstan_final_memory_limit": "512M",
+        "phpstan_initial_concurrent_status": "incomplete_after_configured_128M_worker_limit_exhaustion",
+        "node_tests": 50,
+        "playwright_passed": 52,
+        "playwright_run": "storage/framework/testing/e2e-b05-supported-20260720-1745",
+        "playwright_projects_passed": [
+            "chromium",
+            "webkit",
+            "mobile-chromium",
+            "mobile-webkit"
+        ],
+        "firefox_run": "storage/framework/testing/e2e-b05-20260720-1735",
+        "firefox_status": "blocked_before_navigation_by_host_swgl_framebuffer_startup_failure",
+        "firefox_unexpected_tests": 1,
+        "traceability_findings": 43,
+        "tracked_files_scanned": 1671,
+        "reviewed_allowlisted_secret_findings": 2,
+        "unallowlisted_secret_findings": 0,
+        "vite_version": "6.4.3",
+        "npm_vulnerabilities": 0,
+        "composer_advisories": 0,
+        "composer_abandoned_packages": 0,
+        "build": "passed",
+        "lint": "passed",
+        "governance": "passed"
+    },
+    "implemented_scope": {
+        "onboarding": "three explicit role-aware steps with separate per-user/per-role state and advance, skip, resume, and restart behavior",
+        "search": "bounded indexed published modules, sections, vocabulary, activities, Help, and glossary",
+        "help": "seven topics and ten glossary terms per supported locale plus an evidence-bounded About page",
+        "next_actions": "server-derived Learner, Institution Supervisor, Content Admin, and System Admin priorities with truthful empty states",
+        "analytics": "no behavioral analytics or event stream",
+        "study_protocol": "docs/research/NG-B05-FORMATIVE-FIRST-USE-PROTOCOL.md"
+    },
+    "external_gates": [
+        "B17 supervisor/ethics approval and execution of the two-round moderated intended-user study",
+        "qualified legal approval for final production trust and support wording",
+        "B06 institution, course, class/cohort, enrollment, and assignment domain decisions",
+        "B08 lecturer authoring and source/evidence-view usability",
+        "B10 bounded aggregate data-view and query-count evidence",
+        "branded Chrome, Safari, Edge, Firefox, and Opera coverage",
+        "physical Windows, macOS, Android, and iOS coverage",
+        "screen-reader and qualified human accessibility review"
+    ]
+}

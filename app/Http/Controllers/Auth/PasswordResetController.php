@@ -4,13 +4,15 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Rules\SecurePassword;
+use App\Services\SecurityEventRecorder;
 use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Str;
-use Illuminate\Validation\Rules\Password as PasswordRule;
 use Illuminate\View\View;
 
 /**
@@ -30,7 +32,10 @@ class PasswordResetController extends Controller
         $request->merge(['email' => User::canonicalEmail($request->input('email'))]);
         $request->validate(['email' => ['required', 'email']]);
 
-        Password::sendResetLink($request->only('email'));
+        Password::sendResetLink([
+            ...$request->only('email'),
+            'disabled_at' => null,
+        ]);
 
         // Do not reveal account existence, broker throttling, or mail outcomes.
         // The route limiter independently returns HTTP 429 when it is exceeded.
@@ -48,17 +53,20 @@ class PasswordResetController extends Controller
         ]);
     }
 
-    public function reset(Request $request): RedirectResponse
+    public function reset(Request $request, SecurityEventRecorder $events): RedirectResponse
     {
         $request->merge(['email' => User::canonicalEmail($request->input('email'))]);
         $request->validate([
             'token' => ['required'],
             'email' => ['required', 'email'],
-            'password' => ['required', 'confirmed', PasswordRule::defaults()],
+            'password' => ['required', 'confirmed', new SecurePassword([$request->input('email')])],
         ]);
 
         $status = Password::reset(
-            $request->only('email', 'password', 'password_confirmation', 'token'),
+            [
+                ...$request->only('email', 'password', 'password_confirmation', 'token'),
+                'disabled_at' => null,
+            ],
             function (User $user, string $password) {
                 $user->forceFill([
                     'password' => Hash::make($password),
@@ -66,9 +74,13 @@ class PasswordResetController extends Controller
 
                 $user->save();
 
+                DB::table('sessions')->where('user_id', $user->getKey())->delete();
+
                 event(new PasswordReset($user));
             }
         );
+
+        $events->record('authentication.password_reset', $status === Password::PASSWORD_RESET ? 'allowed' : 'denied', null, $request->input('email'), $request, severity: $status === Password::PASSWORD_RESET ? 'notice' : 'warning');
 
         return $status === Password::PASSWORD_RESET
             ? redirect()->route('login')->with('status', __($status))

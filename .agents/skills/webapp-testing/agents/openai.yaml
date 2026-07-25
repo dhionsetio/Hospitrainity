@@ -1,0 +1,7 @@
+interface:
+  display_name: "Web App Testing"
+  short_description: "Automatically test and debug local web apps with Python Playwright."
+  default_prompt: "Use $webapp-testing to test this local web application."
+
+policy:
+  allow_implicit_invocation: false

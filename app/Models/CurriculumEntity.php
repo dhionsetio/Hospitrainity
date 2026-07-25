@@ -6,6 +6,7 @@ use App\Models\Concerns\Completable;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class CurriculumEntity extends Model
 {
@@ -32,9 +33,22 @@ class CurriculumEntity extends Model
         return ['payload' => 'array'];
     }
 
+    /** @return array<string, mixed> */
+    public function payloadData(): array
+    {
+        $payload = $this->getAttribute('payload');
+
+        return is_array($payload) ? $payload : [];
+    }
+
     public function package(): BelongsTo
     {
         return $this->belongsTo(CurriculumPackage::class, 'curriculum_package_id');
+    }
+
+    public function courseRevisionModules(): HasMany
+    {
+        return $this->hasMany(CourseRevisionModule::class);
     }
 
     public function scopeInActivePackage(Builder $query): Builder

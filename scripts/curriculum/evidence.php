@@ -36,7 +36,7 @@ try {
     $projection['generated_from'] = 'Hospitrainity.docx via the deterministic scripts/curriculum source compiler; framework metadata migrated from 0.3.0-draft.';
     $projection['disclaimer'] = 'This development projection exposes all seven compiled chapters for local verification; chapter lifecycle status does not constitute release approval of 0.4.0-draft. CF-7 release review remains open. Earlier CP-14 evidence records a Project Owner verdict consolidated across the ESP/CEFR, hospitality-practitioner, and accessibility roles rather than three independently conducted specialist reviews; it must not be represented as independent specialist certification. Provisional CEFR bands remain working hypotheses and must not be presented as certified CEFR levels.';
     $projection['notice'] = 'Source-fidelity development package generated from the authoritative DOCX. CF-7 technical evidence does not authorize publication; final publication remains gated by the recorded human decisions and reviews.';
-    $projection['title'] = 'Hospitrainity — Hospitality English';
+    $projection['title'] = 'Hospitrainity: Hospitality English';
     $standaloneBytes = filesize($arguments['standalone']);
     $standaloneHash = hash_file('sha256', $arguments['standalone']);
     if (! is_int($standaloneBytes) || ! is_string($standaloneHash)) {

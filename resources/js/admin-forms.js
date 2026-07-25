@@ -228,6 +228,39 @@ const exerciseDefaults = {
         words: [{ word: '', category_id: 'group-1' }],
     },
     sequencing: { steps: ['', ''] },
+    information: { body: '', media_url: '', media_type: '' },
+    writing: {
+        prompt: '',
+        min_words: 5,
+        max_words: 100,
+        keywords: [{ text: '', weight: 1, required: false, case_sensitive: false }],
+        model_answer: '',
+        accept_spelling_errors: true,
+    },
+    drag_the_words: {
+        text: '',
+        distractors: [],
+        show_solution: true,
+        instant_feedback: false,
+    },
+    drag_and_drop: {
+        background_image: '',
+        draggables: [{ id: 'd1', label: '', image: '', multiple: false }],
+        drop_zones: [{ id: 'z1', label: '', x: 0, y: 0, width: 100, height: 50, single: true, correct_draggable_ids: ['d1'] }],
+        single_point: false,
+        show_solution: true,
+    },
+    question_set: {
+        exercise_ids: [],
+        pass_percentage: 70,
+        feedback_ranges: [
+            { from: 0, to: 49, message: 'Keep practicing!' },
+            { from: 50, to: 79, message: 'Good effort!' },
+            { from: 80, to: 100, message: 'Excellent practice!' },
+        ],
+        allow_retry: true,
+        show_solution: true,
+    },
 };
 
 function defaultExerciseContent(type) {
@@ -255,6 +288,125 @@ function exerciseAdminComponent() {
 
     return {
         ...component,
+
+        migrationText: '',
+        suggestions: [],
+
+        analyzeMigrationText() {
+            const raw = (this.migrationText || '').trim();
+            if (!raw) {
+                this.suggestions = [];
+                return;
+            }
+            const results = [];
+
+            if (/\*[^*]+\*/.test(raw)) {
+                results.push({
+                    type: 'drag_the_words',
+                    label: 'Drag the words',
+                    reason: 'Contains *word* gap markers.',
+                    confidence: 'High',
+                    apply: () => {
+                        this.exercise.type = 'drag_the_words';
+                        this.exercise.content = defaultExerciseContent('drag_the_words');
+                        this.exercise.content.text = raw;
+                    },
+                });
+                results.push({
+                    type: 'fill_in_the_blank',
+                    label: 'Fill in the blank',
+                    reason: 'Contains *word* or ___ gap markers.',
+                    confidence: 'Medium',
+                    apply: () => {
+                        this.exercise.type = 'fill_in_the_blank';
+                        this.exercise.content = defaultExerciseContent('fill_in_the_blank');
+                        this.exercise.content.sentence_template = raw.replace(/\*([^*]+)\*/g, '___');
+                    },
+                });
+            }
+
+            if (/\[[xX]\]|\([A-D]\)|A\)|B\)|C\)/.test(raw)) {
+                results.push({
+                    type: 'multiple_choice_quiz',
+                    label: 'Multiple-choice quiz',
+                    reason: 'Contains multiple choice option markers [x] or (A).',
+                    confidence: 'High',
+                    apply: () => {
+                        this.exercise.type = 'multiple_choice_quiz';
+                        this.exercise.content = defaultExerciseContent('multiple_choice_quiz');
+                        const lines = raw.split('\n').map(l => l.trim()).filter(Boolean);
+                        this.exercise.content.question_text = lines[0] || 'Question?';
+                        this.exercise.content.options = lines.slice(1).map(l => l.replace(/^\[[xX ]\]|\([A-D]\)|^[A-D]\)\s*/, '').trim());
+                    },
+                });
+            }
+
+            if (/^\s*1\.\s+.+\n\s*2\.\s+/m.test(raw)) {
+                results.push({
+                    type: 'sequencing',
+                    label: 'Sequencing',
+                    reason: 'Contains an ordered numbered list (1., 2., 3.).',
+                    confidence: 'High',
+                    apply: () => {
+                        this.exercise.type = 'sequencing';
+                        this.exercise.content = defaultExerciseContent('sequencing');
+                        const lines = raw.split('\n').filter(l => /^\s*\d+\./.test(l)).map(l => l.replace(/^\s*\d+\.\s*/, '').trim());
+                        if (lines.length > 0) this.exercise.content.steps = lines;
+                    },
+                });
+            }
+
+            if (/->|=>|:/.test(raw) && !results.some(r => r.type === 'drag_the_words')) {
+                results.push({
+                    type: 'matching_game',
+                    label: 'Matching game',
+                    reason: 'Contains question-answer pairs separated by -> or :',
+                    confidence: 'Medium',
+                    apply: () => {
+                        this.exercise.type = 'matching_game';
+                        this.exercise.content = defaultExerciseContent('matching_game');
+                        const pairs = raw.split('\n').map(l => {
+                            const parts = l.split(/->|=>|:/);
+                            return { question: parts[0]?.trim() || '', answer: parts[1]?.trim() || '' };
+                        }).filter(p => p.question && p.answer);
+                        if (pairs.length > 0) this.exercise.content.pairs = pairs;
+                    },
+                });
+            }
+
+            if (results.length === 0) {
+                results.push({
+                    type: 'writing',
+                    label: 'Open text / Essay writing',
+                    reason: 'Open prompt without structured choices.',
+                    confidence: 'Recommended',
+                    apply: () => {
+                        this.exercise.type = 'writing';
+                        this.exercise.content = defaultExerciseContent('writing');
+                        this.exercise.content.prompt = raw;
+                    },
+                });
+                results.push({
+                    type: 'information',
+                    label: 'Information block',
+                    reason: 'Informational text body.',
+                    confidence: 'Alternative',
+                    apply: () => {
+                        this.exercise.type = 'information';
+                        this.exercise.content = defaultExerciseContent('information');
+                        this.exercise.content.body = raw;
+                    },
+                });
+            }
+
+            this.suggestions = results;
+        },
+
+        applySuggestion(suggestion) {
+            suggestion.apply();
+            this.suggestions = [];
+            this.migrationText = '';
+        },
 
         openEdit(event) {
             component.openEdit.call(this, event);
@@ -307,6 +459,37 @@ function exerciseAdminComponent() {
                 word: '',
                 category_id: this.exercise.content.categories[0]?.id || '',
             });
+        },
+
+        addKeyword() {
+            this.exercise.content.keywords.push({ text: '', weight: 1, required: false, case_sensitive: false });
+        },
+
+        addDraggable() {
+            const nextId = `d${this.exercise.content.draggables.length + 1}`;
+            this.exercise.content.draggables.push({ id: nextId, label: '', image: '', multiple: false });
+        },
+
+        addDropZone() {
+            const nextId = `z${this.exercise.content.drop_zones.length + 1}`;
+            const firstDraggableId = this.exercise.content.draggables[0]?.id || '';
+            this.exercise.content.drop_zones.push({
+                id: nextId,
+                label: '',
+                x: 0,
+                y: 0,
+                width: 100,
+                height: 50,
+                single: true,
+                correct_draggable_ids: firstDraggableId ? [firstDraggableId] : [],
+            });
+        },
+
+        addFeedbackRange() {
+            if (!this.exercise.content.feedback_ranges) {
+                this.exercise.content.feedback_ranges = [];
+            }
+            this.exercise.content.feedback_ranges.push({ from: 0, to: 100, message: '' });
         },
     };
 }

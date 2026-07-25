@@ -2,8 +2,11 @@
 
 namespace App\Models;
 
+use App\Services\Curriculum\CurriculumReleaseGuard;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
+use RuntimeException;
 
 class CurriculumPackage extends Model
 {
@@ -50,8 +53,28 @@ class CurriculumPackage extends Model
         return $this->hasMany(CurriculumLink::class);
     }
 
+    public function release(): HasOne
+    {
+        return $this->hasOne(CurriculumRelease::class);
+    }
+
+    public function courseRevisions(): HasMany
+    {
+        return $this->hasMany(CourseRevision::class);
+    }
+
     public static function active(): ?self
     {
-        return static::query()->where('is_active', true)->first();
+        $packages = static::query()->with('release')->where('is_active', true)->limit(2)->get();
+        if ($packages->count() > 1) {
+            throw new RuntimeException('Multiple curriculum packages are marked active; delivery is fail-closed.');
+        }
+
+        $package = $packages->first();
+        if ($package !== null) {
+            app(CurriculumReleaseGuard::class)->assertDeliverable($package);
+        }
+
+        return $package;
     }
 }

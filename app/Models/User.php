@@ -2,22 +2,33 @@
 
 namespace App\Models;
 
+use App\Enums\AccountDisableReason;
+use App\Enums\InstitutionMembershipStatus;
+use App\Enums\InstitutionRole;
+use App\Enums\LegacyInstitutionState;
+use App\Enums\PlatformRole;
+use App\Enums\UserCapability;
 use App\Enums\UserRole;
 use App\Services\CurriculumProgressService;
+use App\Services\Time\IanaTimeZone;
 use Database\Factories\UserFactory;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Str;
+use Laravel\Passkeys\Contracts\PasskeyUser;
+use Laravel\Passkeys\PasskeyAuthenticatable;
+use Stringable;
 
-class User extends Authenticatable implements MustVerifyEmail
+class User extends Authenticatable implements MustVerifyEmail, PasskeyUser
 {
     /** @use HasFactory<UserFactory> */
-    use HasFactory, Notifiable;
+    use HasFactory, Notifiable, PasskeyAuthenticatable;
 
     /**
      * How long a computed overall-progress value stays cached.
@@ -33,10 +44,35 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     protected $fillable = [
         'name',
+        'first_name',
+        'middle_name',
+        'last_name',
+        'gender',
+        'occupation',
+        'occupation_other',
+        'prefix',
         'instansi',
         'email',
         'password',
+        'timezone',
     ];
+
+    /**
+     * Get formatted full display name including prefix if present.
+     */
+    public function formattedName(): string
+    {
+        if ($this->first_name !== null && $this->first_name !== '') {
+            return trim(implode(' ', array_filter([
+                $this->prefix !== null && $this->prefix !== 'None' ? $this->prefix : null,
+                $this->first_name,
+                $this->middle_name,
+                $this->last_name,
+            ])));
+        }
+
+        return $this->name;
+    }
 
     /**
      * The attributes that should be hidden for serialization.
@@ -46,6 +82,7 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $hidden = [
         'password',
         'remember_token',
+        'two_factor_secret',
     ];
 
     /**
@@ -57,13 +94,24 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return [
             'email_verified_at' => 'datetime',
+            'disabled_at' => 'immutable_datetime',
+            'two_factor_confirmed_at' => 'immutable_datetime',
+            'disabled_reason_code' => AccountDisableReason::class,
             'password' => 'hashed',
             'role' => UserRole::class,
+            'legacy_institution_state' => LegacyInstitutionState::class,
+            'ui_high_contrast' => 'boolean',
+            'ui_no_audio' => 'boolean',
+            'learning_streak_enabled' => 'boolean',
         ];
     }
 
     public static function canonicalEmail(mixed $email): string
     {
+        if (! is_string($email) && ! ($email instanceof Stringable)) {
+            return '';
+        }
+
         return Str::lower(trim((string) $email));
     }
 
@@ -74,9 +122,29 @@ class User extends Authenticatable implements MustVerifyEmail
         );
     }
 
+    protected function timezone(): Attribute
+    {
+        return Attribute::make(
+            set: static fn (mixed $value): ?string => IanaTimeZone::nullable($value),
+        );
+    }
+
     public function isSuperAdmin(): bool
     {
-        return $this->role === UserRole::Superadmin;
+        if ($this->role === UserRole::Superadmin) {
+            return true;
+        }
+
+        return $this->exists
+            && $this->platformRoleAssignments()
+                ->where('role', PlatformRole::SystemAdmin->value)
+                ->whereNull('revoked_at')
+                ->exists();
+    }
+
+    public function isDisabled(): bool
+    {
+        return $this->disabled_at !== null;
     }
 
     public function isLearner(): bool
@@ -96,12 +164,127 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function isContentAdministrator(): bool
     {
-        return in_array($this->role, [UserRole::Admin, UserRole::Superadmin], true);
+        if ($this->isSuperAdmin() || $this->role === UserRole::Admin) {
+            return true;
+        }
+
+        return $this->exists
+            && $this->capabilityAssignments()
+                ->where('capability', UserCapability::ContentAuthor->value)
+                ->whereNull('revoked_at')
+                ->exists();
     }
 
     public function completions(): HasMany
     {
         return $this->hasMany(Completion::class);
+    }
+
+    public function onboardingStates(): HasMany
+    {
+        return $this->hasMany(UserOnboardingState::class);
+    }
+
+    public function institutionMemberships(): HasMany
+    {
+        return $this->hasMany(InstitutionMembership::class);
+    }
+
+    public function createdCourses(): HasMany
+    {
+        return $this->hasMany(Course::class, 'created_by_user_id');
+    }
+
+    public function createdCourseOfferings(): HasMany
+    {
+        return $this->hasMany(CourseOffering::class, 'created_by_user_id');
+    }
+
+    public function platformRoleAssignments(): HasMany
+    {
+        return $this->hasMany(PlatformRoleAssignment::class);
+    }
+
+    public function capabilityAssignments(): HasMany
+    {
+        return $this->hasMany(UserCapabilityAssignment::class);
+    }
+
+    public function joinRequests(): HasMany
+    {
+        return $this->hasMany(InstitutionJoinRequest::class);
+    }
+
+    public function privacyRequests(): HasMany
+    {
+        return $this->hasMany(DataSubjectRequest::class);
+    }
+
+    public function policyAcknowledgements(): HasMany
+    {
+        return $this->hasMany(PolicyAcknowledgement::class);
+    }
+
+    public function pushSubscriptions(): HasMany
+    {
+        return $this->hasMany(PushSubscription::class);
+    }
+
+    public function mfaRecoveryCodes(): HasMany
+    {
+        return $this->hasMany(MfaRecoveryCode::class);
+    }
+
+    public function hasConfirmedTotp(): bool
+    {
+        return $this->two_factor_secret !== null && $this->two_factor_confirmed_at !== null;
+    }
+
+    public function hasStrongMfa(): bool
+    {
+        return $this->hasConfirmedTotp() || ($this->exists && $this->passkeys()->exists());
+    }
+
+    public function requiresMfa(): bool
+    {
+        if ($this->isSuperAdmin() || $this->isContentAdministrator() || $this->role !== UserRole::Learner) {
+            return true;
+        }
+
+        if (! $this->exists) {
+            return false;
+        }
+
+        return $this->institutionMemberships()
+            ->where('status', InstitutionMembershipStatus::Active->value)
+            ->whereHas('roleAssignments', fn ($query) => $query
+                ->whereIn('role', [InstitutionRole::Instructor->value, InstitutionRole::InstitutionAdmin->value])
+                ->whereNull('revoked_at'))
+            ->exists();
+    }
+
+    public function hasInstitutionRole(Institution $institution, InstitutionRole ...$roles): bool
+    {
+        if ($roles === []) {
+            return false;
+        }
+
+        return InstitutionRoleAssignment::query()
+            ->whereIn('role', array_map(static fn (InstitutionRole $role): string => $role->value, $roles))
+            ->whereNull('revoked_at')
+            ->whereHas('membership', function ($query) use ($institution): void {
+                $query->where('institution_id', $institution->getKey())
+                    ->where('user_id', $this->getKey())
+                    ->where('status', InstitutionMembershipStatus::Active->value);
+            })
+            ->exists();
+    }
+
+    public function institutions(): BelongsToMany
+    {
+        return $this->belongsToMany(Institution::class, 'institution_memberships')
+            ->withPivot(['status', 'is_default', 'provenance', 'joined_at', 'revoked_at'])
+            ->withTimestamps();
     }
 
     /**

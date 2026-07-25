@@ -8,6 +8,7 @@ use App\Models\Completion;
 use App\Models\Exercise;
 use App\Models\MaterialItem;
 use App\Models\VocabularyItem;
+use App\Services\LearningContext;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -32,7 +33,7 @@ class ProgressController extends Controller
     /** Keep progress payloads bounded even when a client is modified or broken. */
     private const MAX_ITEMS_PER_REQUEST = 100;
 
-    public function store(Request $request): JsonResponse
+    public function store(Request $request, LearningContext $learning): JsonResponse
     {
         $validated = $request->validate([
             'items' => ['required', 'array', 'list', 'min:1', 'max:'.self::MAX_ITEMS_PER_REQUEST],
@@ -41,6 +42,9 @@ class ProgressController extends Controller
         ]);
 
         $user = $request->user();
+        $context = $learning->current($request, $user);
+        abort_if($context['class_invalidated'], 403);
+        abort_if($context['course_enrollment_id'] !== null, 410, __('Legacy progress tracking is unavailable in a Class learning context.'));
 
         // Resolve to a known model class via the allowlist (never from raw input).
         $modelClass = self::COMPLETABLE_TYPES[$validated['type']];
@@ -70,6 +74,10 @@ class ProgressController extends Controller
         $rows = array_map(
             static fn (int $itemId): array => [
                 'user_id' => $user->getKey(),
+                'learning_scope_key' => $context['scope_key'],
+                'institution_membership_id' => $context['membership_id'],
+                'course_offering_id' => null,
+                'course_enrollment_id' => null,
                 'completable_id' => $itemId,
                 'completable_type' => $modelClass,
                 'created_at' => $timestamp,
@@ -81,7 +89,7 @@ class ProgressController extends Controller
         DB::transaction(function () use ($rows): void {
             Completion::upsert(
                 $rows,
-                uniqueBy: ['user_id', 'completable_id', 'completable_type'],
+                uniqueBy: ['user_id', 'learning_scope_key', 'completable_id', 'completable_type'],
                 update: ['updated_at'],
             );
         }, attempts: 3);

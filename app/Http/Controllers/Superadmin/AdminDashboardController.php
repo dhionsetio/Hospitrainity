@@ -8,16 +8,21 @@ use App\Models\CurriculumDraft;
 use App\Models\CurriculumDraftEntity;
 use App\Models\CurriculumPackage;
 use App\Models\Exercise;
+use App\Models\Institution;
 use App\Models\Lesson;
 use App\Models\Material;
 use App\Models\Module;
 use App\Models\User;
 use App\Models\Vocabulary;
+use App\Services\NextActionResolver;
+use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class AdminDashboardController extends Controller
 {
-    public function index(): View
+    public function __construct(private readonly NextActionResolver $nextActions) {}
+
+    public function index(Request $request): View
     {
         $activeCanonicalPackage = CurriculumPackage::active();
         $activeEntityCounts = $activeCanonicalPackage?->entities()
@@ -30,11 +35,7 @@ class AdminDashboardController extends Controller
         $stats = [
             'total_learners' => User::where('role', UserRole::Learner->value)->count(),
             'total_supervisors' => User::where('role', UserRole::Supervisor->value)->count(),
-            'total_institutions' => User::query()
-                ->whereNotNull('instansi')
-                ->where('instansi', '!=', '')
-                ->distinct()
-                ->count('instansi'),
+            'total_institutions' => Institution::query()->count(),
             'active_canonical_chapters' => (int) ($activeEntityCounts['chapter'] ?? 0),
         ];
 
@@ -71,6 +72,7 @@ class AdminDashboardController extends Controller
             'available_entities' => CurriculumDraftEntity::query()->whereNull('archived_at')->count(),
             'archived_entities' => CurriculumDraftEntity::query()->whereNotNull('archived_at')->count(),
         ];
+        $nextAction = $this->nextActions->administration($request, $request->user(), $draftWorkspaceCounts);
 
         return view('superadmin.dashboard', compact(
             'activeCanonicalPackage',
@@ -78,6 +80,7 @@ class AdminDashboardController extends Controller
             'legacyEvidenceCounts',
             'draftWorkspaceCounts',
             'stats',
+            'nextAction',
         ));
     }
 }

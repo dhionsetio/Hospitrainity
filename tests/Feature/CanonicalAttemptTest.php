@@ -51,7 +51,8 @@ class CanonicalAttemptTest extends TestCase
         $this->actingAs($this->learner)
             ->get(route('curriculum.activities.show', 'HSP-C02-ACT-QUIZ'))
             ->assertOk()
-            ->assertSee('Progress state: viewed');
+            ->assertSeeText('Ready to practise')
+            ->assertDontSeeText('Progress state: viewed');
 
         $this->assertDatabaseHas('curriculum_activity_progress', [
             'user_id' => $this->learner->id,
@@ -107,7 +108,12 @@ class CanonicalAttemptTest extends TestCase
             'user_id' => $this->learner->id,
             'activity_code' => $activityCode,
         ]);
-        $this->assertNotNull(CurriculumActivityProgress::query()->sole()->completed_at);
+        $progress = CurriculumActivityProgress::query()->sole();
+        $this->assertNotNull($progress->completed_at);
+        $this->assertSame('fixed-spacing-v1', $progress->review_policy_version);
+        $this->assertSame(0, $progress->review_step);
+        $this->assertNotNull($progress->review_due_at);
+        $this->assertNotNull($progress->last_reviewed_at);
         $this->assertDatabaseCount('completions', 0);
     }
 
@@ -199,7 +205,7 @@ class CanonicalAttemptTest extends TestCase
         $this->actingAs($this->learner);
         $this->get(route('curriculum.activities.show', $orderingPrompt->parent_code))
             ->assertOk()
-            ->assertSee('no dragging is required')
+            ->assertSee(__('Choose an item for each position. You may also use Move up and Move down; no dragging is required.'))
             ->assertSee('data-order-up', escape: false)
             ->assertSee('data-ordering-status', escape: false)
             ->assertDontSee('draggable="true"', escape: false);
@@ -238,8 +244,9 @@ class CanonicalAttemptTest extends TestCase
             ->post(route('curriculum.activities.attempts.store', $activityCode), $payload)
             ->assertRedirect()
             ->assertSessionHasErrors("self_checks.{$openPrompt->code}")
-            ->assertSessionHasInput("responses.{$openPrompt->code}", $rawText);
+            ->assertSessionMissing("_old_input.responses.{$openPrompt->code}");
         $this->assertDatabaseCount('curriculum_attempts', 0);
+        $this->assertStringNotContainsString($rawText, (string) session()->get('_old_input.responses.'.$openPrompt->code, ''));
 
         $payload['self_checks'][$openPrompt->code] = '1';
         $this->post(route('curriculum.activities.attempts.store', $activityCode), $payload)->assertRedirect();
@@ -264,7 +271,11 @@ class CanonicalAttemptTest extends TestCase
         $this->get(route('curriculum.confidence-history'))
             ->assertOk()
             ->assertSee('My confidence history')
-            ->assertSee('not test scores');
+            ->assertSee('These ratings help you reflect on how confident you feel over time.')
+            ->assertDontSee('CEFR evidence')
+            ->assertSeeText('Module 2 confidence check')
+            ->assertDontSeeText('0.4.0-draft')
+            ->assertDontSeeText('HSP-C02-CC-R1');
 
         $baselineCode = 'HSP-C01-ACT-BASELINE';
         $this->post(route('curriculum.activities.attempts.store', $baselineCode), [

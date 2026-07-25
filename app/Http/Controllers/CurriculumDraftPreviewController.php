@@ -27,6 +27,11 @@ class CurriculumDraftPreviewController extends Controller
                 'projection_meta' => ['notice' => __('admin.preview_does_not_record_progress')],
             ],
             'curriculumPreview' => $curriculumDraft,
+            'showCurriculumEvidence' => true,
+            'nextAction' => null,
+            'learningStreak' => 0,
+            'reviewQueue' => [],
+            'classAnnouncements' => collect(),
         ]);
     }
 
@@ -36,7 +41,10 @@ class CurriculumDraftPreviewController extends Controller
         $curriculumChapter = $this->preview->chapter($curriculumDraft, $chapter);
         abort_if($curriculumChapter === null, 404);
 
-        return view('curriculum.chapter', compact('curriculumChapter', 'curriculumDraft') + ['curriculumPreview' => $curriculumDraft]);
+        return view('curriculum.chapter', compact('curriculumChapter', 'curriculumDraft') + [
+            'curriculumPreview' => $curriculumDraft,
+            'showCurriculumEvidence' => true,
+        ]);
     }
 
     public function section(CurriculumDraft $curriculumDraft, string $section): View
@@ -45,7 +53,10 @@ class CurriculumDraftPreviewController extends Controller
         $curriculumSection = $this->preview->section($curriculumDraft, $section);
         abort_if($curriculumSection === null, 404);
 
-        return view('curriculum.section', compact('curriculumSection') + ['curriculumPreview' => $curriculumDraft]);
+        return view('curriculum.section', compact('curriculumSection') + [
+            'curriculumPreview' => $curriculumDraft,
+            'showCurriculumEvidence' => true,
+        ]);
     }
 
     public function activity(CurriculumDraft $curriculumDraft, string $activity): View
@@ -54,7 +65,10 @@ class CurriculumDraftPreviewController extends Controller
         $curriculumActivity = $this->preview->activity($curriculumDraft, $activity);
         abort_if($curriculumActivity === null, 404);
 
-        return view('curriculum.activity', compact('curriculumActivity') + ['curriculumPreview' => $curriculumDraft]);
+        return view('curriculum.activity', compact('curriculumActivity') + [
+            'curriculumPreview' => $curriculumDraft,
+            'showCurriculumEvidence' => true,
+        ]);
     }
 
     public function attempt(

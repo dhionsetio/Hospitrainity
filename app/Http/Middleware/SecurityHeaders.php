@@ -19,7 +19,21 @@ class SecurityHeaders
         }
 
         $response->headers->set('X-Content-Type-Options', 'nosniff');
-        $response->headers->set('Referrer-Policy', 'strict-origin-when-cross-origin');
+        $sensitiveTokenRoute = $request->routeIs(
+            'invitations.accept',
+            'invitations.redeem',
+            'privacy-requests.*',
+            'privacy-exports.*',
+            'superadmin.privacy-requests.*',
+            'security.*',
+            'mfa.*',
+            'passkey.*',
+        );
+        $response->headers->set('Referrer-Policy', $sensitiveTokenRoute ? 'no-referrer' : 'strict-origin-when-cross-origin');
+        if ($sensitiveTokenRoute) {
+            $response->headers->set('Cache-Control', 'no-store, private');
+            $response->headers->set('Pragma', 'no-cache');
+        }
         $response->headers->set('Permissions-Policy', 'camera=(), geolocation=(), microphone=(), payment=(), usb=()');
         $response->headers->set('X-Frame-Options', 'DENY');
         $response->headers->set('X-XSS-Protection', '0');
@@ -44,7 +58,7 @@ class SecurityHeaders
 
     private function contentSecurityPolicy(string $nonce): string
     {
-        return implode('; ', [
+        $directives = [
             "default-src 'self'",
             "base-uri 'self'",
             "form-action 'self'",
@@ -61,7 +75,27 @@ class SecurityHeaders
             'frame-src https://www.youtube.com',
             "manifest-src 'self'",
             "worker-src 'self' blob:",
-        ]).';';
+        ];
+        $reportUri = trim((string) config('security.csp.report_uri'));
+        if ($reportUri !== '' && str_starts_with($reportUri, '/')) {
+            $directives[] = 'report-uri '.$reportUri;
+        }
+
+        if (app()->environment('local')) {
+            foreach ($directives as $index => $directive) {
+                if (str_starts_with($directive, 'script-src ')) {
+                    $directives[$index] .= " 'unsafe-eval' http://127.0.0.1:5173 http://[::1]:5173";
+                } elseif (str_starts_with($directive, 'style-src ')) {
+                    $directives[$index] .= ' http://127.0.0.1:5173 http://[::1]:5173';
+                } elseif (str_starts_with($directive, 'connect-src ')) {
+                    $directives[$index] .= ' ws://127.0.0.1:5173 ws://[::1]:5173 http://127.0.0.1:5173 http://[::1]:5173';
+                } elseif (str_starts_with($directive, 'font-src ')) {
+                    $directives[$index] .= ' http://127.0.0.1:5173 http://[::1]:5173';
+                }
+            }
+        }
+
+        return implode('; ', $directives).';';
     }
 
     private function strictTransportSecurity(): string

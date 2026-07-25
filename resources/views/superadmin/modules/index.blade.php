@@ -26,12 +26,12 @@
             'entity' => $moduleInitial,
         ], JSON_THROW_ON_ERROR));
     @endphp
-    <div x-data="moduleAdmin" data-admin-state="{{ $moduleAdminState }}" class="flex min-h-screen flex-col bg-neutral-100 md:h-screen md:flex-row">
+    <div x-data="moduleAdmin" data-admin-state="{{ $moduleAdminState }}" class="flex min-h-screen flex-col bg-neutral-100 md:flex-row">
 
         @include('superadmin.sidebar')
 
         <!-- Main Content -->
-        <main class="min-w-0 flex-1 p-6 md:overflow-y-auto md:p-10">
+        <main class="min-w-0 flex-1 p-6 md:p-10">
             @include('superadmin.canonical-curriculum-notice')
             <header class="mb-8 flex justify-between items-center">
                 <div>
@@ -74,7 +74,7 @@
                             <td class="px-6 py-4">@if($m->is_published) <span class="text-xs font-semibold bg-green-100 text-green-700 px-2.5 py-0.5 rounded-full">{{ __('admin.published') }}</span> @else <span class="text-xs font-semibold bg-neutral-200 text-neutral-700 px-2.5 py-0.5 rounded-full">{{ __('admin.draft') }}</span> @endif</td>
                             <td class="px-6 py-4 flex items-center gap-3">
                                 @if($legacyCurriculumReadOnly)
-                                    <span class="text-xs font-medium text-neutral-500">{{ __('Read-only evidence') }}</span>
+                                    <span class="text-xs font-semibold text-neutral-700">{{ __('Read-only evidence') }}</span>
                                 @else
                                     <button type="button" @click="openEdit" data-record="{{ base64_encode($m->toJson()) }}" data-action="{{ route('superadmin.modules.update', $m) }}" class="font-medium text-blue-600 hover:underline" aria-label="{{ __('admin.edit_named', ['name' => $m->title]) }}"><i class="fas fa-edit" aria-hidden="true"></i></button>
                                     <form action="{{ route('superadmin.modules.destroy', $m) }}" method="POST" data-confirm-submit="{{ __('admin.confirm_delete_named', ['name' => $m->title]) }}">
@@ -84,6 +84,26 @@
                                 @endif
                             </td>
                         </tr>
+                        @if($legacyCurriculumReadOnly)
+                            <tr class="bg-neutral-50/70">
+                                <td colspan="6" class="px-6 py-3">
+                                    <details>
+                                        <summary class="cursor-pointer font-semibold text-indigo-700 underline">{{ __('View stored details') }}</summary>
+                                        <div class="mt-4 rounded-md border border-neutral-200 bg-white p-4">
+                                            @include('superadmin.partials.legacy-structured-value', ['value' => [
+                                                'record_id' => $m->id,
+                                                'slug' => $m->slug,
+                                                'description' => $m->description,
+                                                'level' => $m->level,
+                                                'display_order' => $m->order,
+                                                'published' => (bool) $m->is_published,
+                                                'lesson_count' => $m->lessons_count,
+                                            ]])
+                                        </div>
+                                    </details>
+                                </td>
+                            </tr>
+                        @endif
                         @empty
                         <tr>
                             <td colspan="6" class="px-6 py-4 text-center text-neutral-500">{{ __('admin.no_modules') }}</td>
@@ -139,7 +159,7 @@
                             <p class="mt-1 text-xs text-neutral-500">{{ __('admin.order_help_global') }}</p>
                         </div>
                         <div class="flex items-center">
-                            <input type="checkbox" name="is_published" id="is_published" value="1" x-model="module.is_published" class="h-4 w-4 text-indigo-600 border-neutral-300 rounded focus:ring-indigo-500">
+                            <input type="checkbox" name="is_published" id="is_published" value="1" x-model="module.is_published" class="h-4 w-4 shrink-0 text-indigo-600 border-neutral-300 rounded focus:ring-indigo-500">
                             <label for="is_published" class="ml-2 block text-sm text-neutral-900">{{ __('admin.publish_module') }}</label>
                         </div>
                     </div>

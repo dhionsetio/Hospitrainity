@@ -173,6 +173,24 @@
             },
             "text": "Guests may forget the exact words you said, but they will always remember how you made them feel. Every chapter trains both sides of that, the right English and the right hospitality.",
             "type": "paragraph"
+        },
+        {
+            "activity_code": "HSP-C01-ACT-BASELINE",
+            "id": "a7940251-419b-5867-b892-06b5bc9cd1a0",
+            "language": "en",
+            "order": 7,
+            "provenance_kind": "derived_navigation",
+            "source_locator": {
+                "artifact": "Hospitrainity.docx",
+                "body_index": 53,
+                "chapter": 1,
+                "heading_path": [
+                    "Welcome and Introduction to Customer Care",
+                    "What customer care means"
+                ],
+                "normalized_text_sha256": "1ee6c9ba53b7ce2c7545a4cd3a4be2a5f419a1065d7ee88afdbea51fd74c5373"
+            },
+            "type": "activity_embed"
         }
     ],
     "chapter_code": "HSP-C01",

@@ -2,6 +2,10 @@
 
 namespace Tests\Feature;
 
+use App\Enums\InstitutionMembershipStatus;
+use App\Enums\InstitutionRole;
+use App\Models\Institution;
+use App\Models\InstitutionMembership;
 use App\Models\User;
 use App\Services\Curriculum\CanonicalCurriculumImporter;
 use App\Services\Curriculum\CanonicalPackageReader;
@@ -66,6 +70,18 @@ class BrandIntegrityTest extends TestCase
 
         foreach (['user', 'supervisor', 'admin', 'superadmin'] as $role) {
             $user = User::factory()->create(['role' => $role, 'email_verified_at' => now()]);
+            if ($role === 'supervisor') {
+                $institution = Institution::query()->where('key', 'hospitrainity-hq')->firstOrFail();
+                InstitutionMembership::query()->create([
+                    'institution_id' => $institution->id,
+                    'user_id' => $user->id,
+                    'status' => InstitutionMembershipStatus::Active,
+                    'is_default' => true,
+                    'provenance' => 'test_fixture',
+                    'joined_at' => now(),
+                ]);
+                $this->grantInstitutionRole($user, InstitutionRole::Instructor, $institution);
+            }
             $route = match ($role) {
                 'user' => 'dashboard',
                 'supervisor' => 'supervisor.dashboard',

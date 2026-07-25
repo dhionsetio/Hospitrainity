@@ -9,7 +9,7 @@
     <main class="container mx-auto px-6 py-8">
         <!-- Header Modul -->
         <div class="mb-8">
-            <a href="{{ route('dashboard') }}" class="text-sm text-indigo-600 hover:underline">&larr; {{ __('Back to Dashboard') }}</a>
+            <x-back-control :href="route('dashboard')" :label="__('Back to Dashboard')" />
             <h1 class="text-4xl font-bold text-neutral-800 mt-2">{{ $module->title }}</h1>
             <p class="text-neutral-600 mt-2">{{ $module->description }}</p>
         </div>

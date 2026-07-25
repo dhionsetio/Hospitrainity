@@ -18,7 +18,6 @@ use App\Services\Curriculum\CurriculumDraftPreviewRepository;
 use App\Services\Curriculum\CurriculumDraftReview;
 use App\Services\Curriculum\CurriculumDraftWorkspace;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
 use RuntimeException;
@@ -75,7 +74,7 @@ class CurriculumDraftAuthoringTest extends TestCase
 
         $this->assertSame($activeBefore->id, CurriculumPackage::active()?->id);
         $this->assertSame($activeBefore->entities()->count(), $draft->entities()->count());
-        $this->assertSame(774, CurriculumDraftBlock::query()->where('curriculum_draft_id', $draft->id)->count());
+        $this->assertSame(776, CurriculumDraftBlock::query()->where('curriculum_draft_id', $draft->id)->count());
         $chapter = CurriculumDraftEntity::query()->where('curriculum_draft_id', $draft->id)->where('code', 'HSP-C01')->sole();
 
         $payload = [
@@ -105,8 +104,8 @@ class CurriculumDraftAuthoringTest extends TestCase
             ->get(route('admin.curriculum-drafts.preview.activities.show', [$draft, 'HSP-C02-ACT-PRACTICE']))
             ->assertOk()
             ->assertSee(__('admin.draft_preview'))
-            ->assertSee('preview not recorded')
-            ->assertSee('HSP-C02-PR-I1');
+            ->assertSee(__('admin.preview_does_not_record_progress'))
+            ->assertSeeText('Your responses');
 
         $this->assertDatabaseCount((new CurriculumAttempt)->getTable(), 0);
         $this->assertDatabaseCount((new CurriculumActivityProgress)->getTable(), 0);
@@ -332,7 +331,7 @@ class CurriculumDraftAuthoringTest extends TestCase
         $this->assertDatabaseCount('curriculum_packages', 0);
     }
 
-    public function test_publication_creates_an_immutable_version_and_recorded_rollback_restores_prior_delivery(): void
+    public function test_publication_is_contained_until_named_release_gates_close(): void
     {
         $this->importActive();
         $superadmin = User::factory()->create(['role' => UserRole::Superadmin]);
@@ -346,26 +345,19 @@ class CurriculumDraftAuthoringTest extends TestCase
         ])->assertRedirect(route('password.confirm'));
         $this->actingAs($superadmin)->withSession($this->passwordConfirmedSession())
             ->post(route('superadmin.curriculum-drafts.publish', $draft), ['draft_revision' => $draft->revision])
-            ->assertRedirect()->assertSessionHas('success');
+            ->assertForbidden();
 
         $draft->refresh();
-        $published = CurriculumPackage::active();
-        $this->assertSame(CurriculumDraftStatus::Published, $draft->status);
-        $this->assertSame('0.4.1', $published?->content_version);
-        $this->assertNotSame($prior->id, $published?->id);
-        $this->assertFalse($prior->fresh()->is_active);
-        $this->assertFileExists($published->source_path.'/package.json');
-        $this->assertStringNotContainsString('-draft', $published->content_version);
-        $this->assertSame(0, Artisan::call('hospitrainity:curriculum', ['action' => 'verify']));
-
-        $this->actingAs($superadmin)->withSession($this->passwordConfirmedSession())
-            ->post(route('superadmin.curriculum-drafts.rollback', $draft), ['draft_revision' => $draft->revision])
-            ->assertRedirect()->assertSessionHas('success');
-
-        $this->assertSame($prior->content_version, CurriculumPackage::active()?->content_version);
-        $this->assertNotNull($draft->fresh()->base_package_id);
-        $this->assertGreaterThan(0, CurriculumDraftEntity::query()->where('curriculum_draft_id', $draft->id)->whereNotNull('source_entity_id')->count());
-        $this->assertDatabaseHas('curriculum_draft_events', ['curriculum_draft_id' => $draft->id, 'event_type' => 'publication_rolled_back']);
+        $this->assertSame(CurriculumDraftStatus::Approved, $draft->status);
+        $this->assertSame($prior->id, CurriculumPackage::active()?->id);
+        $this->assertTrue($prior->fresh()->is_active);
+        $this->assertDatabaseCount('curriculum_packages', 1);
+        $this->assertDatabaseCount('curriculum_releases', 1);
+        $this->actingAs($superadmin)
+            ->get(route('superadmin.curriculum-drafts.show', $draft))
+            ->assertOk()
+            ->assertSeeText('Release activation is contained until every required human approval gate has named evidence.')
+            ->assertDontSeeText(__('admin.publish_version'));
     }
 
     private function importActive(): void

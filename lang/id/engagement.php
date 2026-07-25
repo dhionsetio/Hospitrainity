@@ -1,0 +1,27 @@
+<?php
+
+return [
+    'practice_tools' => 'Alat latihan',
+    'practice_tools_intro' => 'Cari bantuan dari mata kuliah atau lanjutkan tulisan yang Anda simpan.',
+    'assistant' => 'Tanya asisten mata kuliah',
+    'assistant_description' => 'Temukan jawaban dan halaman terkait dari mata kuliah Anda saat ini.',
+    'saved_writing' => 'Buka tulisan tersimpan',
+    'saved_writing_description' => 'Lanjutkan draf pribadi atau tinjau jawaban yang telah dikirim.',
+    'review_title' => 'Latihan tinjauan',
+    'review_due' => 'Siap ditinjau',
+    'review_empty' => 'Belum ada aktivitas yang perlu ditinjau.',
+    'open_review' => 'Tinjau sekarang',
+    'streak' => 'Rangkaian belajar :count hari',
+    'streak_zero' => 'Selesaikan satu aktivitas hari ini untuk memulai rangkaian belajar.',
+    'streak_note' => 'Rangkaian menghitung hari belajar yang berbeda. Ini tidak memengaruhi nilai atau progres.',
+    'show_streak' => 'Tampilkan rangkaian belajar saya',
+    'show_streak_help' => 'Tampilkan hari belajar berturut-turut di dasbor. Anda dapat menonaktifkannya kapan saja.',
+    'save_response' => 'Simpan jawaban ini',
+    'save_response_help' => 'Simpan draf pribadi atau kirim salinan tulisan ini.',
+    'listen_lesson' => 'Dengarkan pelajaran ini',
+    'stop_listening' => 'Berhenti mendengarkan',
+    'listening_started' => 'Pelajaran sedang dibacakan.',
+    'listening_finished' => 'Pembacaan pelajaran selesai.',
+    'listening_stopped' => 'Pembacaan pelajaran dihentikan.',
+    'listening_failed' => 'Browser Anda tidak dapat membacakan pelajaran ini. Anda tetap dapat membaca teksnya.',
+];

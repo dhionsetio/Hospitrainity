@@ -8,7 +8,7 @@
 
     <main class="container mx-auto px-6 py-8">
         <div class="mb-8">
-            <a href="{{ route('modules.show', $lesson->module) }}" class="text-sm text-indigo-600 hover:underline">&larr; {{ __('Back to Module:') }} {{ $lesson->module->title }}</a>
+            <x-back-control :href="route('modules.show', $lesson->module)" :label="__('Back to Module:').' '.$lesson->module->title" />
             <h1 class="text-4xl font-bold text-neutral-800 mt-2">{{ $lesson->title }}</h1>
         </div>
 

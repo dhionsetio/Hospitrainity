@@ -2,7 +2,11 @@
 
 namespace Tests\Feature;
 
+use App\Enums\InstitutionMembershipStatus;
+use App\Enums\InstitutionRole;
 use App\Models\Exercise;
+use App\Models\Institution;
+use App\Models\InstitutionMembership;
 use App\Models\Lesson;
 use App\Models\Material;
 use App\Models\Module;
@@ -26,6 +30,7 @@ class RoleRouteMatrixTest extends TestCase
         'superadmin.curriculum-exercises.index',
         'superadmin.legacy-evidence.index',
         'superadmin.progress.index',
+        'superadmin.invitations.index',
     ];
 
     private const CONTENT_ADMIN_ROUTES = [
@@ -55,6 +60,8 @@ class RoleRouteMatrixTest extends TestCase
     public function test_supervisor_can_only_use_supervisor_routes(): void
     {
         $supervisor = User::factory()->create(['role' => 'supervisor']);
+        $this->addHqMembership($supervisor);
+        $this->grantInstitutionRole($supervisor, InstitutionRole::Instructor);
         $fixture = $this->learnerFixture();
 
         $this->actingAs($supervisor)->get(route('supervisor.dashboard'))->assertOk();
@@ -66,6 +73,7 @@ class RoleRouteMatrixTest extends TestCase
     public function test_content_admin_can_only_use_approved_admin_routes(): void
     {
         $admin = User::factory()->create(['role' => 'admin']);
+        $this->addHqMembership($admin);
         $fixture = $this->learnerFixture();
 
         $this->assertAdministrationRouteStatus($admin, self::CONTENT_ADMIN_ROUTES, 200);
@@ -143,5 +151,18 @@ class RoleRouteMatrixTest extends TestCase
         foreach ($routeNames as $routeName) {
             $this->actingAs($user)->get(route($routeName))->assertStatus($status);
         }
+    }
+
+    private function addHqMembership(User $user): void
+    {
+        $institution = Institution::query()->where('key', 'hospitrainity-hq')->firstOrFail();
+        InstitutionMembership::query()->create([
+            'institution_id' => $institution->id,
+            'user_id' => $user->id,
+            'status' => InstitutionMembershipStatus::Active,
+            'is_default' => true,
+            'provenance' => 'test_fixture',
+            'joined_at' => now(),
+        ]);
     }
 }

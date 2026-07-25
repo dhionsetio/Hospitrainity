@@ -2,11 +2,14 @@
 
 namespace Tests\Feature;
 
+use App\Enums\InstitutionRole;
 use App\Models\User;
+use App\Services\MfaService;
 use Illuminate\Database\QueryException;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\URL;
+use PragmaRX\Google2FA\Google2FA;
 use Tests\TestCase;
 
 class RoleLandingRedirectTest extends TestCase
@@ -31,6 +34,9 @@ class RoleLandingRedirectTest extends TestCase
 
         foreach (self::LANDINGS as $role => $routeName) {
             $user = User::factory()->create(['role' => $role]);
+            if ($role === 'supervisor') {
+                $this->grantInstitutionRole($user, InstitutionRole::Instructor);
+            }
 
             foreach ($guestPages as $page) {
                 $this->actingAs($user)->get($page)->assertRedirect(route($routeName));
@@ -54,13 +60,32 @@ class RoleLandingRedirectTest extends TestCase
                     'password' => 'password',
                     'role' => $role,
                 ]);
+                if ($role === 'supervisor') {
+                    $this->grantInstitutionRole($user, InstitutionRole::Instructor);
+                }
 
-                $this->withSession(['url.intended' => $intended])
+                $secret = null;
+                $recoveryCode = null;
+                if ($role !== 'user') {
+                    $mfa = app(MfaService::class);
+                    $secret = $mfa->beginTotp($user);
+                    $recoveryCode = $mfa->confirmTotp($user->fresh(), (new Google2FA)->getCurrentOtp($secret))[0];
+                }
+
+                $login = $this->withSession(['url.intended' => $intended])
                     ->post('/login', [
                         'email' => $user->email,
                         'password' => 'password',
-                    ])
-                    ->assertRedirect(route($routeName));
+                    ]);
+
+                if ($secret === null) {
+                    $login->assertRedirect(route($routeName));
+                } else {
+                    $login->assertRedirect(route('mfa.challenge'));
+                    $this->post(route('mfa.challenge.store'), [
+                        'recovery_code' => $recoveryCode,
+                    ])->assertRedirect(route($routeName));
+                }
 
                 $this->post(route('logout'));
             }
@@ -71,6 +96,9 @@ class RoleLandingRedirectTest extends TestCase
     {
         foreach (self::LANDINGS as $role => $routeName) {
             $user = User::factory()->create(['role' => $role]);
+            if ($role === 'supervisor') {
+                $this->grantInstitutionRole($user, InstitutionRole::Instructor);
+            }
 
             $this->actingAs($user)
                 ->withSession(['url.intended' => '/dashboard'])
@@ -88,6 +116,9 @@ class RoleLandingRedirectTest extends TestCase
     {
         foreach (self::LANDINGS as $role => $routeName) {
             $user = User::factory()->unverified()->create(['role' => $role]);
+            if ($role === 'supervisor') {
+                $this->grantInstitutionRole($user, InstitutionRole::Instructor);
+            }
             $verificationUrl = URL::temporarySignedRoute(
                 'verification.verify',
                 now()->addMinutes(30),

@@ -2,8 +2,10 @@
 
 namespace App\Policies;
 
+use App\Enums\WorkContextRole;
 use App\Models\Module;
 use App\Models\User;
+use App\Services\WorkContext;
 use Illuminate\Auth\Access\Response;
 
 class ModulePolicy
@@ -15,7 +17,7 @@ class ModulePolicy
 
     public function view(User $user, Module $module): Response
     {
-        return $user->isLearner() && $module->is_published
+        return app(WorkContext::class)->current(request(), $user) === WorkContextRole::Learner && $module->is_published
             ? Response::allow()
             : Response::denyAsNotFound();
     }

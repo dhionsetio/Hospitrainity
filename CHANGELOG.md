@@ -4,6 +4,18 @@ This changelog tracks the phased hardening & improvement work executed against
 the Laravel source. Each phase is delivered as a checkpoint (Source.zip +
 Standalone.html). See the companion roadmap for the full plan.
 
+## Native Engine Upgrade — Lumi Integration & Practice Scoring (2026-07-24)
+
+- Integrated Lumi/H5P interactive concepts natively into Hospitrainity's existing engine without installing AGPL-3.0 H5P runtimes.
+- Added 4 new interactive exercise types: `information` (inline media & text block), `writing` (essay with word counter, keyword matching & Damerau-Levenshtein spelling tolerance), `drag_the_words` (drag words into sentence gaps), and `drag_and_drop` (drag items onto image target areas).
+- Created a dedicated `exercise_scores` table (`id`, `user_id`, `learning_scope_key`, `institution_membership_id`, `exercise_id`, `score`, `max_score`, `response_data`, timestamps) with unique constraint `(user_id, learning_scope_key, exercise_id)` to persist points and max points separately from binary completion tracking.
+- Added `ScoreController@store` endpoint (`POST /scores/store`) with tenant-scoped `LearningContext` checks, published-ancestor validation, score upper-bound verification, and 3-attempt transaction retries.
+- Added `saveScore()` to `resources/js/progress.js` with CSRF headers, signal support, and persistence error handling.
+- Implemented End-of-Lesson Summary Screen displaying compliant, neutral practice feedback vocabulary ("Items Completed", "Exercises Finished", "Practice Results", "You answered :correct of :total correctly"), conforming strictly to PRODUCT.md and DESIGN.md constraints.
+- Extended superadmin exercise authoring index view (`superadmin/exercises/index.blade.php`) and `admin-forms.js` with Alpine.js form templates and default content initializers for all 4 new types.
+- Updated `CanonicalExerciseTemplateRegistry.php` and `ExerciseRequest.php` JSON schema validation rules and cross-validation checks.
+- Added `tests/Feature/ExerciseScoreTest.php` verifying score persistence, validation bounds, unpublished exercise guard, and superadmin CRUD for new types; all PHPUnit tests and Pint formatting pass cleanly.
+
 ---
 
 ## Next-generation B00 — authority freeze and trustworthy baseline (2026-07-19)

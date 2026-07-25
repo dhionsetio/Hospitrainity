@@ -1,0 +1,7 @@
+interface:
+  display_name: "Frontend Design (Anthropic)"
+  short_description: "Create new UI with distinctive visual direction and implementation."
+  default_prompt: "Use $frontend-design for this frontend design task."
+
+policy:
+  allow_implicit_invocation: false

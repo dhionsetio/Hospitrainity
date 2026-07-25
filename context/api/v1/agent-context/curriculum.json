@@ -1,0 +1,859 @@
+{
+    "meta": {
+        "id": "hospitrainity-agent-context",
+        "api_version": "1.0.0",
+        "contract": "read_only",
+        "scope": "non_user_specific",
+        "included": [
+            "curriculum"
+        ],
+        "data_excluded": [
+            "credentials_and_secrets",
+            "personal_data",
+            "learner_responses_and_progress",
+            "draft_curriculum_payloads",
+            "model_answers_and_release_evidence"
+        ]
+    },
+    "links": {
+        "self": "/api/v1/agent-context/curriculum",
+        "index": "/api/v1/agent-context",
+        "openapi": "/api/v1/agent-context/openapi",
+        "focused_section_template": "/api/v1/agent-context/{section}"
+    },
+    "available_sections": [
+        {
+            "key": "product",
+            "description": "Purpose, audiences, supported experiences, and explicit non-goals.",
+            "endpoint": "/api/v1/agent-context/product"
+        },
+        {
+            "key": "domain",
+            "description": "Roles, scopes, lifecycle states, entity relationships, and invariants.",
+            "endpoint": "/api/v1/agent-context/domain"
+        },
+        {
+            "key": "capabilities",
+            "description": "What each actor can do and which exercise contracts are available.",
+            "endpoint": "/api/v1/agent-context/capabilities"
+        },
+        {
+            "key": "workflows",
+            "description": "Ordered registration, enrollment, learning, authoring, release, and privacy flows.",
+            "endpoint": "/api/v1/agent-context/workflows"
+        },
+        {
+            "key": "architecture",
+            "description": "Runtime layers, sources of truth, storage boundaries, and operational dependencies.",
+            "endpoint": "/api/v1/agent-context/architecture"
+        },
+        {
+            "key": "curriculum",
+            "description": "Safe outline and counts from the currently deliverable curriculum package.",
+            "endpoint": "/api/v1/agent-context/curriculum"
+        },
+        {
+            "key": "routes",
+            "description": "Live named-route inventory with inferred access requirements and no controller source.",
+            "endpoint": "/api/v1/agent-context/routes"
+        },
+        {
+            "key": "glossary",
+            "description": "Short, canonical definitions for commonly confused Hospitrainity terms.",
+            "endpoint": "/api/v1/agent-context/glossary"
+        }
+    ],
+    "sections": {
+        "curriculum": {
+            "available": true,
+            "status": "deliverable",
+            "package": {
+                "name": "hospitrainity",
+                "content_version": "0.4.0-draft",
+                "schema_version": "2.0.0",
+                "lifecycle_status": "draft",
+                "release_state": "draft",
+                "preview_only": true,
+                "imported_at": "2026-07-23T23:59:13+00:00"
+            },
+            "published_entity_counts": {
+                "activity": 25,
+                "answer-model": 96,
+                "chapter": 7,
+                "feedback-model": 96,
+                "lesson-section": 85,
+                "prompt-item": 124,
+                "rubric": 6
+            },
+            "outline": [
+                {
+                    "code": "HSP-C01",
+                    "title": "Welcome and Introduction to Customer Care",
+                    "module": 1,
+                    "published_outcome_count": 0,
+                    "sections": [
+                        {
+                            "code": "HSP-C01-LS-01",
+                            "title": "Warm-Up",
+                            "position": 1,
+                            "activities": []
+                        },
+                        {
+                            "code": "HSP-C01-LS-02",
+                            "title": "How this book works",
+                            "position": 2,
+                            "activities": []
+                        },
+                        {
+                            "code": "HSP-C01-LS-03",
+                            "title": "What customer care means",
+                            "position": 3,
+                            "activities": []
+                        },
+                        {
+                            "code": "HSP-C01-LS-04",
+                            "title": "Three ideas behind great service",
+                            "position": 4,
+                            "activities": []
+                        },
+                        {
+                            "code": "HSP-C01-LS-05",
+                            "title": "The one skill that runs through everything: positive language",
+                            "position": 5,
+                            "activities": []
+                        },
+                        {
+                            "code": "HSP-C01-LS-06",
+                            "title": "Where you are starting from",
+                            "position": 6,
+                            "activities": [
+                                {
+                                    "code": "HSP-C01-ACT-BASELINE",
+                                    "title": "Where you are starting from",
+                                    "response_form": "rating",
+                                    "channel": "written",
+                                    "participation": "individual"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "HSP-C01-LS-07",
+                            "title": "What is inside this book",
+                            "position": 7,
+                            "activities": []
+                        }
+                    ]
+                },
+                {
+                    "code": "HSP-C02",
+                    "title": "Front Desk and Check-In",
+                    "module": 2,
+                    "published_outcome_count": 0,
+                    "sections": [
+                        {
+                            "code": "HSP-C02-LS-01",
+                            "title": "Warm-Up",
+                            "position": 1,
+                            "activities": []
+                        },
+                        {
+                            "code": "HSP-C02-LS-02",
+                            "title": "Why this matters",
+                            "position": 2,
+                            "activities": []
+                        },
+                        {
+                            "code": "HSP-C02-LS-03",
+                            "title": "Step 1. The scenario",
+                            "position": 3,
+                            "activities": []
+                        },
+                        {
+                            "code": "HSP-C02-LS-04",
+                            "title": "Step 2. Key vocabulary",
+                            "position": 4,
+                            "activities": []
+                        },
+                        {
+                            "code": "HSP-C02-LS-05",
+                            "title": "Step 3. Useful phrases, grouped by what they do",
+                            "position": 5,
+                            "activities": []
+                        },
+                        {
+                            "code": "HSP-C02-LS-06",
+                            "title": "Step 4. Model dialogue",
+                            "position": 6,
+                            "activities": []
+                        },
+                        {
+                            "code": "HSP-C02-LS-07",
+                            "title": "Common mistakes to avoid",
+                            "position": 7,
+                            "activities": []
+                        },
+                        {
+                            "code": "HSP-C02-LS-08",
+                            "title": "Step 5. Practice",
+                            "position": 8,
+                            "activities": [
+                                {
+                                    "code": "HSP-C02-ACT-PRACTICE",
+                                    "title": "Step 5. Practice",
+                                    "response_form": "mixed",
+                                    "channel": "spoken_ftf",
+                                    "participation": "individual"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "HSP-C02-LS-09",
+                            "title": "Step 6. Role-play",
+                            "position": 9,
+                            "activities": [
+                                {
+                                    "code": "HSP-C02-ACT-ROLEPLAY",
+                                    "title": "Step 6. Role-play",
+                                    "response_form": "mixed",
+                                    "channel": "spoken_ftf",
+                                    "participation": "staff_guest"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "HSP-C02-LS-10",
+                            "title": "Step 7. Quiz",
+                            "position": 10,
+                            "activities": [
+                                {
+                                    "code": "HSP-C02-ACT-QUIZ",
+                                    "title": "Step 7. Quiz",
+                                    "response_form": "selection",
+                                    "channel": "spoken_ftf",
+                                    "participation": "individual"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "HSP-C02-LS-11",
+                            "title": "Step 8. Confidence check",
+                            "position": 11,
+                            "activities": [
+                                {
+                                    "code": "HSP-C02-ACT-CONFIDENCE",
+                                    "title": "Step 8. Confidence check",
+                                    "response_form": "rating",
+                                    "channel": "spoken_ftf",
+                                    "participation": "individual"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "HSP-C02-LS-12",
+                            "title": "Take it further",
+                            "position": 12,
+                            "activities": []
+                        },
+                        {
+                            "code": "HSP-C02-LS-13",
+                            "title": "Further reading",
+                            "position": 13,
+                            "activities": []
+                        }
+                    ]
+                },
+                {
+                    "code": "HSP-C03",
+                    "title": "Dealing with Customers on the Phone",
+                    "module": 3,
+                    "published_outcome_count": 0,
+                    "sections": [
+                        {
+                            "code": "HSP-C03-LS-01",
+                            "title": "Warm-Up",
+                            "position": 1,
+                            "activities": []
+                        },
+                        {
+                            "code": "HSP-C03-LS-02",
+                            "title": "Why this matters",
+                            "position": 2,
+                            "activities": []
+                        },
+                        {
+                            "code": "HSP-C03-LS-03",
+                            "title": "Step 1. The scenario",
+                            "position": 3,
+                            "activities": []
+                        },
+                        {
+                            "code": "HSP-C03-LS-04",
+                            "title": "Step 2. Key vocabulary",
+                            "position": 4,
+                            "activities": []
+                        },
+                        {
+                            "code": "HSP-C03-LS-05",
+                            "title": "Step 3. Useful phrases, grouped by what they do",
+                            "position": 5,
+                            "activities": []
+                        },
+                        {
+                            "code": "HSP-C03-LS-06",
+                            "title": "Step 4. Model dialogue",
+                            "position": 6,
+                            "activities": []
+                        },
+                        {
+                            "code": "HSP-C03-LS-07",
+                            "title": "Common mistakes to avoid",
+                            "position": 7,
+                            "activities": []
+                        },
+                        {
+                            "code": "HSP-C03-LS-08",
+                            "title": "Step 5. Practice",
+                            "position": 8,
+                            "activities": [
+                                {
+                                    "code": "HSP-C03-ACT-PRACTICE",
+                                    "title": "Step 5. Practice",
+                                    "response_form": "mixed",
+                                    "channel": "telecommunications",
+                                    "participation": "individual"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "HSP-C03-LS-09",
+                            "title": "Step 6. Role-play",
+                            "position": 9,
+                            "activities": [
+                                {
+                                    "code": "HSP-C03-ACT-ROLEPLAY",
+                                    "title": "Step 6. Role-play",
+                                    "response_form": "mixed",
+                                    "channel": "telecommunications",
+                                    "participation": "staff_guest"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "HSP-C03-LS-10",
+                            "title": "Step 7. Quiz",
+                            "position": 10,
+                            "activities": [
+                                {
+                                    "code": "HSP-C03-ACT-QUIZ",
+                                    "title": "Step 7. Quiz",
+                                    "response_form": "selection",
+                                    "channel": "telecommunications",
+                                    "participation": "individual"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "HSP-C03-LS-11",
+                            "title": "Step 8. Confidence check",
+                            "position": 11,
+                            "activities": [
+                                {
+                                    "code": "HSP-C03-ACT-CONFIDENCE",
+                                    "title": "Step 8. Confidence check",
+                                    "response_form": "rating",
+                                    "channel": "telecommunications",
+                                    "participation": "individual"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "HSP-C03-LS-12",
+                            "title": "Take it further",
+                            "position": 12,
+                            "activities": []
+                        },
+                        {
+                            "code": "HSP-C03-LS-13",
+                            "title": "Further reading",
+                            "position": 13,
+                            "activities": []
+                        }
+                    ]
+                },
+                {
+                    "code": "HSP-C04",
+                    "title": "The Guest-Services Hotline",
+                    "module": 4,
+                    "published_outcome_count": 0,
+                    "sections": [
+                        {
+                            "code": "HSP-C04-LS-01",
+                            "title": "Warm-Up",
+                            "position": 1,
+                            "activities": []
+                        },
+                        {
+                            "code": "HSP-C04-LS-02",
+                            "title": "Why this matters",
+                            "position": 2,
+                            "activities": []
+                        },
+                        {
+                            "code": "HSP-C04-LS-03",
+                            "title": "Step 1. The scenario",
+                            "position": 3,
+                            "activities": []
+                        },
+                        {
+                            "code": "HSP-C04-LS-04",
+                            "title": "Step 2. Key vocabulary",
+                            "position": 4,
+                            "activities": []
+                        },
+                        {
+                            "code": "HSP-C04-LS-05",
+                            "title": "Step 3. Useful phrases, grouped by what they do",
+                            "position": 5,
+                            "activities": []
+                        },
+                        {
+                            "code": "HSP-C04-LS-06",
+                            "title": "Step 4. Model dialogue",
+                            "position": 6,
+                            "activities": []
+                        },
+                        {
+                            "code": "HSP-C04-LS-07",
+                            "title": "Common mistakes to avoid",
+                            "position": 7,
+                            "activities": []
+                        },
+                        {
+                            "code": "HSP-C04-LS-08",
+                            "title": "Step 5. Practice",
+                            "position": 8,
+                            "activities": [
+                                {
+                                    "code": "HSP-C04-ACT-PRACTICE",
+                                    "title": "Step 5. Practice",
+                                    "response_form": "mixed",
+                                    "channel": "telecommunications",
+                                    "participation": "individual"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "HSP-C04-LS-09",
+                            "title": "Step 6. Role-play",
+                            "position": 9,
+                            "activities": [
+                                {
+                                    "code": "HSP-C04-ACT-ROLEPLAY",
+                                    "title": "Step 6. Role-play",
+                                    "response_form": "mixed",
+                                    "channel": "telecommunications",
+                                    "participation": "staff_guest"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "HSP-C04-LS-10",
+                            "title": "Step 7. Quiz",
+                            "position": 10,
+                            "activities": [
+                                {
+                                    "code": "HSP-C04-ACT-QUIZ",
+                                    "title": "Step 7. Quiz",
+                                    "response_form": "selection",
+                                    "channel": "telecommunications",
+                                    "participation": "individual"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "HSP-C04-LS-11",
+                            "title": "Step 8. Confidence check",
+                            "position": 11,
+                            "activities": [
+                                {
+                                    "code": "HSP-C04-ACT-CONFIDENCE",
+                                    "title": "Step 8. Confidence check",
+                                    "response_form": "rating",
+                                    "channel": "telecommunications",
+                                    "participation": "individual"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "HSP-C04-LS-12",
+                            "title": "Take it further",
+                            "position": 12,
+                            "activities": []
+                        },
+                        {
+                            "code": "HSP-C04-LS-13",
+                            "title": "Further reading",
+                            "position": 13,
+                            "activities": []
+                        }
+                    ]
+                },
+                {
+                    "code": "HSP-C05",
+                    "title": "Customer Care Through Writing",
+                    "module": 5,
+                    "published_outcome_count": 0,
+                    "sections": [
+                        {
+                            "code": "HSP-C05-LS-01",
+                            "title": "Warm-Up",
+                            "position": 1,
+                            "activities": []
+                        },
+                        {
+                            "code": "HSP-C05-LS-02",
+                            "title": "Why this matters",
+                            "position": 2,
+                            "activities": []
+                        },
+                        {
+                            "code": "HSP-C05-LS-03",
+                            "title": "Step 1. The scenario",
+                            "position": 3,
+                            "activities": []
+                        },
+                        {
+                            "code": "HSP-C05-LS-04",
+                            "title": "Step 2. Key vocabulary",
+                            "position": 4,
+                            "activities": []
+                        },
+                        {
+                            "code": "HSP-C05-LS-05",
+                            "title": "Step 3. Useful phrases, grouped by what they do",
+                            "position": 5,
+                            "activities": []
+                        },
+                        {
+                            "code": "HSP-C05-LS-06",
+                            "title": "Step 4. Model email",
+                            "position": 6,
+                            "activities": []
+                        },
+                        {
+                            "code": "HSP-C05-LS-07",
+                            "title": "Common mistakes to avoid",
+                            "position": 7,
+                            "activities": []
+                        },
+                        {
+                            "code": "HSP-C05-LS-08",
+                            "title": "Step 5. Practice",
+                            "position": 8,
+                            "activities": [
+                                {
+                                    "code": "HSP-C05-ACT-PRACTICE",
+                                    "title": "Step 5. Practice",
+                                    "response_form": "mixed",
+                                    "channel": "written_correspondence",
+                                    "participation": "individual"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "HSP-C05-LS-09",
+                            "title": "Step 6. Role-play (drafting)",
+                            "position": 9,
+                            "activities": [
+                                {
+                                    "code": "HSP-C05-ACT-ROLEPLAY",
+                                    "title": "Step 6. Role-play (drafting)",
+                                    "response_form": "mixed",
+                                    "channel": "written_correspondence",
+                                    "participation": "staff_guest"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "HSP-C05-LS-10",
+                            "title": "Step 7. Quiz",
+                            "position": 10,
+                            "activities": [
+                                {
+                                    "code": "HSP-C05-ACT-QUIZ",
+                                    "title": "Step 7. Quiz",
+                                    "response_form": "selection",
+                                    "channel": "written_correspondence",
+                                    "participation": "individual"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "HSP-C05-LS-11",
+                            "title": "Step 8. Confidence check",
+                            "position": 11,
+                            "activities": [
+                                {
+                                    "code": "HSP-C05-ACT-CONFIDENCE",
+                                    "title": "Step 8. Confidence check",
+                                    "response_form": "rating",
+                                    "channel": "written_correspondence",
+                                    "participation": "individual"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "HSP-C05-LS-12",
+                            "title": "Take it further",
+                            "position": 12,
+                            "activities": []
+                        },
+                        {
+                            "code": "HSP-C05-LS-13",
+                            "title": "Further reading",
+                            "position": 13,
+                            "activities": []
+                        }
+                    ]
+                },
+                {
+                    "code": "HSP-C06",
+                    "title": "Online and Social Media Customer Service",
+                    "module": 6,
+                    "published_outcome_count": 0,
+                    "sections": [
+                        {
+                            "code": "HSP-C06-LS-01",
+                            "title": "Warm-Up",
+                            "position": 1,
+                            "activities": []
+                        },
+                        {
+                            "code": "HSP-C06-LS-02",
+                            "title": "Why this matters",
+                            "position": 2,
+                            "activities": []
+                        },
+                        {
+                            "code": "HSP-C06-LS-03",
+                            "title": "Step 1. The scenario",
+                            "position": 3,
+                            "activities": []
+                        },
+                        {
+                            "code": "HSP-C06-LS-04",
+                            "title": "Step 2. Key vocabulary",
+                            "position": 4,
+                            "activities": []
+                        },
+                        {
+                            "code": "HSP-C06-LS-05",
+                            "title": "Step 3. Useful phrases, grouped by what they do",
+                            "position": 5,
+                            "activities": []
+                        },
+                        {
+                            "code": "HSP-C06-LS-06",
+                            "title": "Step 4. Model chat exchange",
+                            "position": 6,
+                            "activities": []
+                        },
+                        {
+                            "code": "HSP-C06-LS-07",
+                            "title": "Common mistakes to avoid",
+                            "position": 7,
+                            "activities": []
+                        },
+                        {
+                            "code": "HSP-C06-LS-08",
+                            "title": "Step 5. Practice",
+                            "position": 8,
+                            "activities": [
+                                {
+                                    "code": "HSP-C06-ACT-PRACTICE",
+                                    "title": "Step 5. Practice",
+                                    "response_form": "mixed",
+                                    "channel": "social_public_reply",
+                                    "participation": "individual"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "HSP-C06-LS-09",
+                            "title": "Step 6. Role-play",
+                            "position": 9,
+                            "activities": [
+                                {
+                                    "code": "HSP-C06-ACT-ROLEPLAY",
+                                    "title": "Step 6. Role-play",
+                                    "response_form": "mixed",
+                                    "channel": "social_public_reply",
+                                    "participation": "staff_guest"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "HSP-C06-LS-10",
+                            "title": "Step 7. Quiz",
+                            "position": 10,
+                            "activities": [
+                                {
+                                    "code": "HSP-C06-ACT-QUIZ",
+                                    "title": "Step 7. Quiz",
+                                    "response_form": "selection",
+                                    "channel": "social_public_reply",
+                                    "participation": "individual"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "HSP-C06-LS-11",
+                            "title": "Step 8. Confidence check",
+                            "position": 11,
+                            "activities": [
+                                {
+                                    "code": "HSP-C06-ACT-CONFIDENCE",
+                                    "title": "Step 8. Confidence check",
+                                    "response_form": "rating",
+                                    "channel": "social_public_reply",
+                                    "participation": "individual"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "HSP-C06-LS-12",
+                            "title": "Take it further",
+                            "position": 12,
+                            "activities": []
+                        },
+                        {
+                            "code": "HSP-C06-LS-13",
+                            "title": "Further reading",
+                            "position": 13,
+                            "activities": []
+                        }
+                    ]
+                },
+                {
+                    "code": "HSP-C07",
+                    "title": "Dealing with Problems and Complaints",
+                    "module": 7,
+                    "published_outcome_count": 0,
+                    "sections": [
+                        {
+                            "code": "HSP-C07-LS-01",
+                            "title": "Warm-Up",
+                            "position": 1,
+                            "activities": []
+                        },
+                        {
+                            "code": "HSP-C07-LS-02",
+                            "title": "Why this matters",
+                            "position": 2,
+                            "activities": []
+                        },
+                        {
+                            "code": "HSP-C07-LS-03",
+                            "title": "Step 1. The scenario and the framework",
+                            "position": 3,
+                            "activities": []
+                        },
+                        {
+                            "code": "HSP-C07-LS-04",
+                            "title": "Step 2. Key vocabulary",
+                            "position": 4,
+                            "activities": []
+                        },
+                        {
+                            "code": "HSP-C07-LS-05",
+                            "title": "Step 3. Useful phrases, mapped to the framework",
+                            "position": 5,
+                            "activities": []
+                        },
+                        {
+                            "code": "HSP-C07-LS-06",
+                            "title": "Step 4. Model dialogue and letter",
+                            "position": 6,
+                            "activities": []
+                        },
+                        {
+                            "code": "HSP-C07-LS-07",
+                            "title": "Common mistakes to avoid",
+                            "position": 7,
+                            "activities": []
+                        },
+                        {
+                            "code": "HSP-C07-LS-08",
+                            "title": "Step 5. Practice",
+                            "position": 8,
+                            "activities": [
+                                {
+                                    "code": "HSP-C07-ACT-PRACTICE",
+                                    "title": "Step 5. Practice",
+                                    "response_form": "mixed",
+                                    "channel": "spoken_ftf",
+                                    "participation": "individual"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "HSP-C07-LS-09",
+                            "title": "Step 6. Role-play",
+                            "position": 9,
+                            "activities": [
+                                {
+                                    "code": "HSP-C07-ACT-ROLEPLAY",
+                                    "title": "Step 6. Role-play",
+                                    "response_form": "mixed",
+                                    "channel": "spoken_ftf",
+                                    "participation": "staff_guest"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "HSP-C07-LS-10",
+                            "title": "Step 7. Quiz",
+                            "position": 10,
+                            "activities": [
+                                {
+                                    "code": "HSP-C07-ACT-QUIZ",
+                                    "title": "Step 7. Quiz",
+                                    "response_form": "selection",
+                                    "channel": "spoken_ftf",
+                                    "participation": "individual"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "HSP-C07-LS-11",
+                            "title": "Step 8. Confidence check",
+                            "position": 11,
+                            "activities": [
+                                {
+                                    "code": "HSP-C07-ACT-CONFIDENCE",
+                                    "title": "Step 8. Confidence check",
+                                    "response_form": "rating",
+                                    "channel": "spoken_ftf",
+                                    "participation": "individual"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "HSP-C07-LS-12",
+                            "title": "Take it further",
+                            "position": 12,
+                            "activities": []
+                        },
+                        {
+                            "code": "HSP-C07-LS-13",
+                            "title": "Further reading",
+                            "position": 13,
+                            "activities": []
+                        }
+                    ]
+                }
+            ],
+            "detail_boundary": "This API returns navigation-level curriculum context only. Prompt bodies, choices, answers, rubrics, source locators, and learner evidence are intentionally excluded."
+        }
+    }
+}

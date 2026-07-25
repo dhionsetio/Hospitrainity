@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="hospitrainity-checkpoint" content="CF-7-technical">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hospitrainity — Hospitality English</title>
+<title>Hospitrainity: Hospitality English</title>
 <style>
 :root{
   --bg:#F7F7F5; --surface:#FFFFFF; --surface-2:#FBFBFA;
@@ -188,14 +188,12 @@ function viewHome(){
     '<div class="m"><b>'+s.activities+'</b><span>Activities</span></div>'+
     '<div class="m"><b>'+s.prompts+'</b><span>Prompts</span></div>'+
     '</div></section>';
-  h+=noticeBlock();
   h+='<h2 class="section-title">The seven modules</h2><div class="grid">';
   (DATA.chapters||[]).forEach(function(c){
     var progress=chapterProgress(c);
     h+='<a class="card" href="#/chapter/'+encodeURIComponent(c.code)+'">'+
       '<div class="kicker">Module '+c.module+'</div>'+
       '<h3>'+esc(c.title)+'</h3>'+
-      '<div class="badges">'+stateBadge(c.status)+'</div>'+
       '<div class="stats"><span>'+(c.sections||[]).length+' sections</span><span>'+(c.activities||[]).length+' activities</span></div>'+
       '<div class="session-progress">This page session: '+progress.completed+' of '+progress.total+' completed</div>'+
       '</a>';
@@ -210,16 +208,9 @@ function viewChapter(code){
   var c=chapterByCode(code);
   if(!c)return notFound();
   var h=crumb([{label:'Modules',href:'#/'},{label:'Module '+c.module}]);
-  h+='<div class="page-head"><div class="kicker">Module '+c.module+'</div><h1>'+esc(c.title)+'</h1><div class="badges">'+stateBadge(c.status)+badge('CF-7 release pending','blue')+'</div></div>';
-  var moduleNotice=({
-    draft:'This chapter is in early drafting and is included only for development review.',
-    review:'This chapter is under review and is included only for development verification.',
-    approved:'This chapter has a reviewed content state, but the current package is not approved for release.',
-    published:'This chapter is visible in the development build. Its package lifecycle flag controls local delivery; it does not constitute release approval.'
-  })[c.status]||'This chapter\u2019s package state is provisional.';
-  h+='<div class="notice" role="note" style="margin-bottom:20px"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1L1 14h14L8 1zm0 4v4M8 11.5v.5" stroke="currentColor" stroke-width="1.4" fill="none"/></svg><span>'+esc(moduleNotice)+'</span></div>';
+  h+='<div class="page-head"><div class="kicker">Module '+c.module+'</div><h1>'+esc(c.title)+'</h1></div>';
   h+='<div class="panel"><h3>Learning outcomes</h3><ul class="olist">';
-  (c.outcome_codes||[]).forEach(function(oc){var o=OM[oc];h+='<li><span class="oc">'+esc(oc)+'</span><span>'+(o?esc(o.statement):'')+(o&&o.provisional_band?' '+badge('band: '+o.provisional_band):'')+'</span></li>';});
+  (c.outcome_codes||[]).forEach(function(oc){var o=OM[oc];h+='<li><span>'+(o?esc(o.statement):'')+'</span></li>';});
   h+='</ul></div>';
   h+='<div class="panel"><h3>Lesson sections</h3><ol class="sec-list">';
   (c.sections||[]).forEach(function(sec){h+='<li><span class="num" aria-hidden="true">'+sec.order+'</span><span>'+esc(sec.title)+'</span></li>';});
@@ -228,8 +219,8 @@ function viewChapter(code){
     h+='<h2 class="section-title">Activities &amp; assessment</h2><div class="act-list">';
     (c.activities||[]).forEach(function(a){
       var attempt=sessionAttempt(a.code);
-      h+='<article class="act"><div class="top"><h3>'+esc(a.title)+'</h3><span class="lesson">'+esc(a.lesson_code)+'</span></div>'+
-        '<div class="badges">'+badge(a.cefr_activity,'brand')+badge(a.pedagogical_function.replace(/_/g,' '))+badge(a.response_form.replace(/_/g,' '))+badge(a.channel.replace(/_/g,' '))+(attempt?badge(attempt.state==='completed'?'Completed this session':'Model reviewed this session',attempt.state==='completed'?'green':'blue'):'')+'</div>'+
+      h+='<article class="act"><div class="top"><h3>'+esc(a.title)+'</h3></div>'+
+        (attempt?'<div class="badges">'+badge(attempt.state==='completed'?'Completed this session':'Model reviewed this session',attempt.state==='completed'?'green':'blue')+'</div>':'')+
         '<a class="act-link" href="#/activity/'+encodeURIComponent(a.code)+'">Open activity ('+(a.prompts||[]).length+' prompts) →</a></article>';
     });
     h+='</div>';
@@ -256,7 +247,6 @@ function renderPrompt(p,attempt){
   var selfChecked=Boolean(attempt&&attempt.self_checks&&attempt.self_checks[p.code]);
   var result=attempt&&attempt.results?attempt.results[p.code]:null;
   var h='<article class="response-card" id="prompt-'+esc(p.code)+'" data-prompt-code="'+esc(p.code)+'" data-response-form="'+esc(p.response_form)+'" tabindex="-1">';
-  h+='<div class="prompt"><div class="pc">'+esc(p.code)+' · '+esc(String(p.scoring_mode||'unscored').replace(/_/g,' '))+'</div></div>';
   if(p.response_form==='selection'){
     h+='<fieldset><legend>'+esc(p.stem)+'</legend><div class="choice-list">';
     (p.choices||[]).forEach(function(choice){h+='<label class="choice"><input type="radio" name="'+responseName(p.code,false)+'" value="'+esc(choice.id)+'"'+checkedAttr(response,choice.id)+'><span><strong>'+esc(String(choice.label||'').toUpperCase())+'.</strong> '+esc(choice.text)+'</span></label>';});
@@ -284,12 +274,10 @@ function viewActivity(code){
   if(!r)return notFound();
   var a=r.a,c=r.c,attempt=sessionAttempt(a.code);
   var h=crumb([{label:'Modules',href:'#/'},{label:'Module '+c.module,href:'#/chapter/'+encodeURIComponent(c.code)},{label:a.title}]);
-  h+='<div class="page-head"><div class="kicker">'+esc(c.title)+' · '+esc(a.lesson_code)+'</div><h1>'+esc(a.title)+'</h1></div>';
+  h+='<div class="page-head"><div class="kicker">'+esc(c.title)+'</div><h1>'+esc(a.title)+'</h1></div>';
   h+='<div class="session-note" role="note"><strong>Session-only offline practice</strong>Responses, self-checks, and completion exist only in this open page and are cleared by reload or closing the file. Nothing is stored in localStorage/sessionStorage or synchronized to Hospitrainity.</div>';
   if(attempt)h+='<section class="attempt-result" id="attempt-result" tabindex="-1"><h2>'+(attempt.state==='completed'?'Activity completed in this page session':'Models reviewed without completing the activity')+'</h2><p>'+esc(attempt.message)+'</p></section>';
-  h+='<div class="panel"><div class="badges">'+badge('CEFR activity: '+a.cefr_activity,'brand')+badge('function: '+a.pedagogical_function.replace(/_/g,' '))+badge('response: '+a.response_form.replace(/_/g,' '))+badge('channel: '+a.channel.replace(/_/g,' '))+badge('participation: '+a.participation)+badge('scoring: '+a.scoring_mode.replace(/_/g,' '))+badge('timing: '+a.timing)+'</div>';
-  if((a.accessibility||[]).length)h+='<div class="badges" style="margin-top:8px">'+a.accessibility.map(function(x){return badge(x.replace(/_/g,' '),'green');}).join('')+'</div>';
-  h+='</div><div id="attempt-errors"></div><form class="attempt-form" data-session-attempt-form data-activity-code="'+esc(a.code)+'" novalidate>';
+  h+='<div id="attempt-errors"></div><form class="attempt-form" data-session-attempt-form data-activity-code="'+esc(a.code)+'" novalidate>';
   (a.prompts||[]).forEach(function(p){h+=renderPrompt(p,attempt);});
   if(a.rubric){
     h+='<div class="panel rubric"><h2 class="section-title">Self-assessment rubric</h2><div role="region" aria-label="Self-assessment rubric" tabindex="0" style="overflow-x:auto"><table><thead><tr><th scope="col">Criterion</th><th scope="col">Levels</th></tr></thead><tbody>';
@@ -303,12 +291,11 @@ function viewActivity(code){
 function viewOutcomes(){
   var h=crumb([{label:'Modules',href:'#/'},{label:'Learning outcomes'}]);
   h+='<div class="page-head"><div class="kicker">Reference</div><h1>Learning outcomes</h1></div>';
-  h+=noticeBlock();
   var byMod={};(DATA.outcomes||[]).forEach(function(o){(byMod[o.module]=byMod[o.module]||[]).push(o);});
   Object.keys(byMod).sort(function(a,b){return a-b;}).forEach(function(m){
     var ch=(DATA.chapters||[]).filter(function(c){return c.module==m;})[0];
-    h+='<div class="panel"><h3>Module '+m+(ch?' — '+esc(ch.title):'')+'</h3><ul class="olist">';
-    byMod[m].forEach(function(o){h+='<li><span class="oc">'+esc(o.id)+'</span><span>'+esc(o.statement)+' '+badge(o.type)+badge('band: '+o.provisional_band)+'</span></li>';});
+    h+='<div class="panel"><h3>Module '+m+(ch?': '+esc(ch.title):'')+'</h3><ul class="olist">';
+    byMod[m].forEach(function(o){h+='<li><span>'+esc(o.statement)+'</span></li>';});
     h+='</ul></div>';
   });
   return h;
@@ -422,31 +409,16 @@ function viewConfidence(){
   var h=crumb([{label:'Modules',href:'#/'},{label:'Confidence this session'}]);
   h+='<div class="page-head"><div class="kicker">Private page memory</div><h1>Confidence this session</h1></div><div class="session-note" role="note"><strong>Self-reflection only</strong>These ratings are not proficiency, test, or CEFR evidence. They are held only in page memory, are not synchronized, and disappear on reload or close.</div>';
   if(!entries.length)return h+'<div class="panel"><p class="empty">No completed baseline or confidence check exists in this page session.</p></div>';
-  entries.forEach(function(entry){h+='<article class="panel"><h2 class="section-title">'+esc(entry.activity.title)+'</h2><p class="response-help">'+esc(entry.activity.code)+(entry.activity.code==='HSP-C01-ACT-BASELINE'?' · baseline':' · current chapter reflection')+'</p><ul class="olist">';entry.ratings.forEach(function(rating){h+='<li><span class="oc">'+esc(rating.code)+'</span><span>'+esc(rating.statement)+' '+badge('rating '+rating.rating+' of 5','blue')+'</span></li>';});h+='</ul></article>';});
+  entries.forEach(function(entry){h+='<article class="panel"><h2 class="section-title">'+esc(entry.activity.title)+'</h2><ul class="olist">';entry.ratings.forEach(function(rating){h+='<li><span>'+esc(rating.statement)+' '+badge('rating '+rating.rating+' of 5','blue')+'</span></li>';});h+='</ul></article>';});
   return h;
 }
-function workflowTable(){
-  var w=DATA.workflow; if(!w||!w.modules)return '';
-  var rows=w.modules.map(function(m){return '<tr><td>Module '+m.module+'</td><td>'+stateBadge(m.state)+'</td><td>'+esc(w.gate.id)+' '+esc(w.gate.status)+'</td></tr>';}).join('');
-  return '<table class="wf"><thead><tr><th>Module</th><th>Package content state</th><th>Release gate</th></tr></thead><tbody>'+rows+'</tbody></table>'+
-    '<p style="font-size:13px;color:var(--text-soft)">Release gate <strong>'+esc(w.gate.id)+'</strong>: <strong>'+esc(w.gate.status)+'</strong>. Package content state controls development visibility and is not evidence of release approval.</p>';
-}
 function viewAbout(){
-  var m=DATA.meta;
   var h=crumb([{label:'Modules',href:'#/'},{label:'About'}]);
-  h+='<div class="page-head"><div class="kicker">About this build</div><h1>Provenance &amp; status</h1></div>';
+  h+='<div class="page-head"><div class="kicker">About</div><h1>Hospitrainity offline course</h1></div>';
   h+='<div class="panel prose">'+
-    '<p>This offline course is a <strong>generated projection</strong> of the validated Hospitrainity curriculum package. Every module, section, activity and prompt on this site is rendered from the canonical package; generated output is not hand-edited.</p>'+
-    '<h3>Source &amp; version</h3>'+
-    '<p>Source of truth: <code>'+esc(m.source_artifact)+'</code><br>Content version: <code>'+esc(m.content_version)+'</code><br>Lifecycle status: <code>'+esc(m.status)+'</code><br>Checkpoint: <code>'+esc(m.checkpoint)+'</code><br>Generated from: <code>'+esc(m.generated_from)+'</code></p>'+
-    '<h3>Content &amp; release status</h3>'+
-    '<p>Chapter lifecycle fields control inclusion in this development projection. They do not prove release approval or independent specialist review. The package remains a development draft until the separate CF-7 release gate is closed on recorded evidence.</p>'+
-    workflowTable()+
-    '<h3>Verification status</h3>'+
-    '<p>This development build has automated schema, reference, checksum, deterministic-build, application, JavaScript, and browser critical-path evidence. Those checks are not a substitute for the qualified content, accessibility, and release reviews required by CF-7.</p>'+
-    '<h3>Offline response privacy</h3><p>Interactive responses and completion are held in page memory only. Reloading or closing this file clears them. The standalone does not use browser storage, does not synchronize with the Laravel application, and is not suitable as a tamper-resistant examination because its answer models are necessarily packaged inside the offline file.</p>'+
-    '<p>Release policy: this build is for <strong>development verification only</strong>. Public release remains held while <code>'+esc((DATA.workflow&&DATA.workflow.gate&&DATA.workflow.gate.id)||'CF-7')+'</code> is <code>'+esc((DATA.workflow&&DATA.workflow.gate&&DATA.workflow.gate.status)||'open')+'</code>.</p>'+
-    '<h3>Important limitation</h3><p>'+esc(m.disclaimer)+'</p>'+
+    '<p>Hospitrainity helps hospitality staff practise practical English for guest service.</p>'+
+    '<h3>Offline privacy</h3><p>Your responses and completion status stay only in this open page. Reloading or closing the file clears them. This offline course does not use browser storage and does not synchronize with the main Hospitrainity website.</p>'+
+    '<h3>Practice only</h3><p>The answer models are included in this offline file, so it is intended for learning and self-checking rather than supervised exams.</p>'+
     '</div>';
   return h;
 }
@@ -484,7 +456,7 @@ app.addEventListener('click',function(event){
   var focusTarget=button.disabled?item.querySelector(button.matches('[data-order-up]')?'[data-order-down]':'[data-order-up]'):button;
   if(focusTarget)focusTarget.focus();
 });
-foot.innerHTML='<div>'+esc(DATA.meta.product)+' · v'+esc(DATA.meta.content_version)+' · session data clears on reload · <a href="#/about">About &amp; sourcing</a></div>';
+foot.innerHTML='<div>'+esc(DATA.meta.product)+' &middot; responses clear on reload &middot; <a href="#/about">About</a></div>';
 window.addEventListener('hashchange',router);
 router();
 </script>

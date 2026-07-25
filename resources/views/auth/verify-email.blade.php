@@ -4,7 +4,7 @@
 @section('bodyClass', 'bg-neutral-50 flex items-center justify-center min-h-screen')
 
 @section('content')
-    <div class="w-full max-w-md p-8 space-y-6 bg-white rounded-lg shadow-md">
+    <main class="w-full max-w-md p-8 space-y-6 bg-white rounded-lg shadow-md">
         <div class="text-center">
             <a href="/" class="text-3xl font-bold text-indigo-600">Hospitrainity</a>
             <h1 class="mt-4 text-2xl font-bold text-neutral-900">{{ __('Verify your email address') }}</h1>
@@ -36,5 +36,5 @@
                 </button>
             </form>
         </div>
-    </div>
+    </main>
 @endsection

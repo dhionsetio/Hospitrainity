@@ -1,0 +1,67 @@
+{
+    "schema_version": "1.0.0",
+    "batch": "B03",
+    "date": "2026-07-20",
+    "branch": "codex/ng-b03-security-assurance",
+    "parent_commit": "dd4a320",
+    "migration": {
+        "name": "2026_07_20_000015_create_security_assurance_tables",
+        "batch": 14,
+        "backup_path": "storage/app/backup-snapshots/b03-presecurity-20260720-144046.sqlite",
+        "backup_sha256": "1d4fbd470334199a24490d55e3e00f740566fc51bff18d861013934256f1111c",
+        "sqlite_integrity": "ok",
+        "foreign_key_violations": 0,
+        "users_before": 3,
+        "users_after": 3,
+        "enabled_users_after": 3,
+        "authoritative_rows_deleted": 0
+    },
+    "password_benchmark": {
+        "iterations": 5,
+        "bcrypt_cost_12_median_ms": 214.2,
+        "argon2id_parameters": "memory=65536KiB,time=4,threads=1",
+        "argon2id_median_ms": 216.3
+    },
+    "verification": {
+        "focused_laravel_tests": 10,
+        "focused_laravel_assertions": 63,
+        "laravel_tests": 319,
+        "laravel_assertions": 4826,
+        "phpstan_new_errors": 0,
+        "phpstan_legacy_baseline_findings": 440,
+        "node_tests": 50,
+        "playwright_passed": 40,
+        "playwright_projects_passed": [
+            "chromium",
+            "webkit",
+            "mobile-chromium",
+            "mobile-webkit"
+        ],
+        "firefox_status": "blocked_before_navigation_by_host_swgl_framebuffer_startup_failure",
+        "traceability_findings": 43,
+        "tracked_files_scanned": 1605,
+        "unallowlisted_secret_findings": 0,
+        "npm_vulnerabilities": 0,
+        "composer_advisories": 0,
+        "composer_abandoned_packages": 0,
+        "vite_version": "6.4.3",
+        "build": "passed",
+        "lint": "passed",
+        "governance": "passed"
+    },
+    "local_open_gates": [
+        "privileged demo accounts require real authenticator enrollment",
+        "ClamAV executable is not installed on this host",
+        "Firefox application coverage is blocked by the host graphics startup failure"
+    ],
+    "external_gates": [
+        "production topology, TLS, queues, scheduler, mail, secrets, monitoring, and backup services",
+        "second privileged recovery controller and dual-control exercise",
+        "tamper-aware central logging and alert exercise",
+        "production scanner/CDR operation and quarantine lifecycle",
+        "backup/private-storage restore rehearsal",
+        "approved SAST and DAST",
+        "independent penetration test",
+        "physical passkey, branded browser, device, and assistive-technology evidence"
+    ]
+}

@@ -6,34 +6,28 @@
 @section('content')
     <header class="sticky top-0 z-50 bg-white shadow-sm">
         <nav class="container mx-auto flex items-center justify-between px-6 py-4" aria-label="{{ __('Primary navigation') }}">
-            <a href="/" class="text-2xl font-bold text-indigo-600">Hospitrainity</a>
+            <a href="/" aria-label="{{ __('Hospitrainity home') }}">
+                <x-brand-logo class="h-8 w-auto" />
+            </a>
             <div class="hidden items-center space-x-6 md:flex">
-                <a href="#features" class="text-neutral-600 transition duration-300 hover:text-indigo-600">{{ __('Features') }}</a>
-                <a href="#get-started" class="text-neutral-600 transition duration-300 hover:text-indigo-600">{{ __('Get Started') }}</a>
+                <a href="#how-learning-works" class="text-neutral-600 transition duration-300 hover:text-indigo-600">{{ __('How learning works') }}</a>
+                <a href="{{ route('about') }}" class="text-neutral-600 transition duration-300 hover:text-indigo-600">{{ __('About') }}</a>
+                <a href="{{ route('help.index') }}" class="text-neutral-600 transition duration-300 hover:text-indigo-600">{{ __('Help') }}</a>
             </div>
             <div class="hidden items-center space-x-4 md:flex">
-                <div class="flex items-center gap-1 text-sm text-neutral-500" aria-label="{{ __('Language') }}">
-                    <a href="{{ route('locale.switch', 'en') }}" class="font-medium hover:text-indigo-600" lang="en" hreflang="en">EN</a>
-                    <span aria-hidden="true">|</span>
-                    <a href="{{ route('locale.switch', 'id') }}" class="font-medium hover:text-indigo-600" lang="id" hreflang="id">ID</a>
-                </div>
-                <a href="{{ route('login') }}" class="font-medium text-indigo-700 hover:text-indigo-900">{{ __('Login') }}</a>
-                <a href="{{ route('register') }}" class="rounded-lg bg-indigo-600 px-4 py-2 text-white transition duration-300 hover:bg-indigo-700">{{ __('Create an Account') }}</a>
+                <x-language-switcher compact />
+                <x-button :href="route('login')" variant="primary" data-login-modal-open>{{ __('Sign in') }}</x-button>
             </div>
             <button class="rounded md:hidden" id="mobile-menu-button" type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="{{ __('Open navigation') }}" data-open-label="{{ __('Open navigation') }}" data-close-label="{{ __('Close navigation') }}">
                 <i class="fas fa-bars text-2xl text-neutral-700" aria-hidden="true"></i>
             </button>
         </nav>
         <div class="hidden border-t border-neutral-100 md:hidden" id="mobile-menu">
-            <a href="#features" class="block px-4 py-2 text-sm hover:bg-neutral-100">{{ __('Features') }}</a>
-            <a href="#get-started" class="block px-4 py-2 text-sm hover:bg-neutral-100">{{ __('Get Started') }}</a>
-            <div class="flex items-center gap-2 px-4 py-2 text-sm text-neutral-500" aria-label="{{ __('Language') }}">
-                <a href="{{ route('locale.switch', 'en') }}" class="font-medium hover:text-indigo-600" lang="en" hreflang="en">EN</a>
-                <span aria-hidden="true">|</span>
-                <a href="{{ route('locale.switch', 'id') }}" class="font-medium hover:text-indigo-600" lang="id" hreflang="id">ID</a>
-            </div>
-            <a href="{{ route('login') }}" class="block px-4 py-2 text-center text-sm font-medium text-indigo-700 hover:bg-neutral-100">{{ __('Login') }}</a>
-            <a href="{{ route('register') }}" class="block rounded-b-lg bg-indigo-600 px-4 py-2 text-center text-sm text-white hover:bg-indigo-700">{{ __('Create an Account') }}</a>
+            <a href="#how-learning-works" class="block px-4 py-2 text-sm hover:bg-neutral-100">{{ __('How learning works') }}</a>
+            <a href="{{ route('about') }}" class="block px-4 py-2 text-sm hover:bg-neutral-100">{{ __('About') }}</a>
+            <a href="{{ route('help.index') }}" class="block px-4 py-2 text-sm hover:bg-neutral-100">{{ __('Help') }}</a>
+            <x-language-switcher class="px-2 py-2" />
+            <a href="{{ route('login') }}" data-login-modal-open class="block rounded-b-lg bg-indigo-600 px-4 py-3 text-center text-sm font-medium text-white hover:bg-indigo-700">{{ __('Sign in') }}</a>
         </div>
     </header>
 
@@ -48,8 +42,8 @@
                         {{ __('Work through structured modules, vocabulary, materials, and interactive exercises while tracking completed activities.') }}
                     </p>
                     <div class="mt-8 flex flex-col justify-center gap-4 sm:flex-row lg:justify-start">
-                        <a href="{{ route('register') }}" class="rounded-lg bg-indigo-600 px-8 py-3 text-lg font-medium text-white transition duration-300 hover:bg-indigo-700">{{ __('Create an Account') }}</a>
-                        <a href="#features" class="rounded-lg bg-neutral-200 px-8 py-3 text-lg font-medium text-neutral-800 transition duration-300 hover:bg-neutral-300">{{ __('Explore Features') }}</a>
+                        <a href="{{ route('help.show', 'invitations-and-codes') }}" class="rounded-lg bg-indigo-600 px-8 py-3 text-lg font-medium text-white transition duration-300 hover:bg-indigo-700">{{ __('How Invitations Work') }}</a>
+                        <a href="#how-learning-works" class="rounded-lg bg-neutral-200 px-8 py-3 text-lg font-medium text-neutral-800 transition duration-300 hover:bg-neutral-300">{{ __('Explore how learning works') }}</a>
                     </div>
                 </div>
 
@@ -82,7 +76,7 @@
             </div>
         </section>
 
-        <section id="features" class="bg-white py-20">
+        <section id="how-learning-works" class="scroll-mt-24 bg-white py-20">
             <div class="container mx-auto px-6">
                 <h2 class="mb-12 text-center text-3xl font-bold text-neutral-800">{{ __('What You Can Do in Hospitrainity') }}</h2>
                 <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
@@ -114,16 +108,36 @@
         <section id="get-started" class="bg-indigo-700 text-white">
             <div class="container mx-auto px-6 py-20 text-center">
                 <h2 class="mb-4 text-3xl font-bold">{{ __('Ready to Start Practicing?') }}</h2>
-                <p class="mx-auto mb-8 max-w-2xl text-lg text-indigo-100">{{ __('Create an account to access the hospitality English modules available to your institution.') }}</p>
-                <a href="{{ route('register') }}" class="rounded-lg bg-white px-8 py-3 text-lg font-medium text-indigo-700 transition duration-300 hover:bg-neutral-100">{{ __('Create an Account') }}</a>
+                <p class="mx-auto mb-8 max-w-2xl text-lg text-indigo-100">{{ __('Learn independently with a verified account, or ask authorized institution staff for an invitation or classroom code.') }}</p>
+                <div class="flex flex-wrap justify-center gap-3">
+                    <a href="{{ route('help.show', 'invitations-and-codes') }}" class="rounded-lg bg-white px-8 py-3 text-lg font-medium text-indigo-700 transition duration-300 hover:bg-neutral-100">{{ __('How Invitations Work') }}</a>
+                    <a href="{{ route('help.index') }}" class="rounded-lg border border-white px-8 py-3 text-lg font-medium text-white transition duration-300 hover:bg-indigo-800">{{ __('Help') }}</a>
+                </div>
             </div>
         </section>
     </main>
 
-    <footer class="bg-neutral-800 text-white">
-        <div class="container mx-auto px-6 py-8 text-center md:text-left">
-            <a href="/" class="text-2xl font-bold">Hospitrainity</a>
-            <p class="mt-2 text-neutral-400">{{ __('© :year Hospitrainity. All rights reserved.', ['year' => now()->year]) }}</p>
+    <!-- Login Modal -->
+    <div id="login-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden" role="dialog" aria-modal="true" aria-labelledby="login-modal-title">
+        <!-- Darkened Backdrop -->
+        <div class="fixed inset-0 bg-neutral-900/60 backdrop-blur-sm transition-opacity" data-login-modal-close></div>
+
+        <!-- Dialog Container -->
+        <div class="relative w-full max-w-md rounded-2xl bg-white dark:bg-neutral-900 p-8 shadow-2xl transition-all border border-neutral-200 dark:border-neutral-800 z-10">
+            <button type="button" class="absolute top-4 right-4 text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-200 p-2 rounded-lg" data-login-modal-close aria-label="{{ __('Close dialog') }}">
+                <i class="fas fa-times text-xl" aria-hidden="true"></i>
+            </button>
+
+            <div class="text-center">
+                <a href="/" aria-label="{{ __('Hospitrainity home') }}" class="inline-block">
+                    <x-brand-logo class="h-10 w-auto mx-auto" />
+                </a>
+                <h2 id="login-modal-title" class="mt-4 text-2xl font-bold text-neutral-900 dark:text-white">
+                    {{ __('Sign in to your account') }}
+                </h2>
+            </div>
+
+            @include('auth.partials.login-form')
         </div>
-    </footer>
+    </div>
 @endsection

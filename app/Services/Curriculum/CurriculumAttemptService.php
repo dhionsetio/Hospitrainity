@@ -7,20 +7,31 @@ use App\Models\CurriculumAttempt;
 use App\Models\CurriculumDraft;
 use App\Models\CurriculumDraftEntity;
 use App\Models\CurriculumEntity;
-use App\Models\CurriculumPackage;
 use App\Models\CurriculumResponse;
 use App\Models\User;
+use App\Services\Engagement\ReviewScheduleService;
+use App\Services\LearningContentScope;
+use App\Services\LearningContext;
+use Carbon\CarbonImmutable;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\ValidationException;
 
 final class CurriculumAttemptService
 {
+    public function __construct(
+        private readonly LearningContext $learningContext,
+        private readonly LearningContentScope $contentScope,
+        private readonly ReviewScheduleService $reviewSchedule,
+    ) {}
+
     public function markViewed(User $user, string $activityCode): void
     {
-        $definition = $this->definition($activityCode);
-        DB::transaction(function () use ($user, $definition): void {
-            $progress = $this->progress($user, $definition);
+        $definition = $this->definition($activityCode, $user);
+        $context = $this->learningContext->current(request(), $user);
+        DB::transaction(function () use ($user, $definition, $context): void {
+            $progress = $this->progress($user, $definition, $context);
             if ($progress->viewed_at === null) {
                 $progress->forceFill(['viewed_at' => now()])->save();
             }
@@ -30,7 +41,8 @@ final class CurriculumAttemptService
     /** @param array<string, mixed> $validated @return array<string, mixed> */
     public function submit(User $user, string $activityCode, array $validated): array
     {
-        $definition = $this->definition($activityCode);
+        $definition = $this->definition($activityCode, $user);
+        $context = $this->learningContext->current(request(), $user);
         $applicationKey = (string) config('app.key');
         if ($applicationKey === '') {
             throw new \RuntimeException('APP_KEY is required to protect canonical attempt idempotency fingerprints.');
@@ -39,20 +51,25 @@ final class CurriculumAttemptService
             'intent' => $validated['intent'],
             'responses' => $validated['responses'] ?? [],
             'self_checks' => $validated['self_checks'] ?? [],
+            'rubric_scores' => $validated['rubric_scores'] ?? [],
         ]), $applicationKey);
 
-        return DB::transaction(function () use ($user, $definition, $validated, $submissionHmacSha256): array {
+        return DB::transaction(function () use ($user, $definition, $validated, $submissionHmacSha256, $context): array {
             $package = $definition['package'];
             $activity = $definition['activity'];
             $now = now();
             $identity = [
                 'user_id' => $user->id,
+                'learning_scope_key' => $context['scope_key'],
                 'package_name' => $package->package_name,
                 'content_version' => $package->content_version,
                 'activity_code' => $activity->code,
                 'idempotency_key' => $validated['attempt_key'],
             ];
             $attempt = CurriculumAttempt::query()->firstOrCreate($identity, [
+                'institution_membership_id' => $context['membership_id'],
+                'course_offering_id' => $context['course_offering_id'],
+                'course_enrollment_id' => $context['course_enrollment_id'],
                 'activity_source_sha256' => $activity->source_sha256,
                 'submission_hmac_sha256' => $submissionHmacSha256,
                 'intent' => $validated['intent'],
@@ -67,19 +84,32 @@ final class CurriculumAttemptService
                     ]);
                 }
 
-                return $this->result($existing->load('responses'), $definition, reused: true);
+                return $this->result($existing->load('responses'), $definition, reused: true, rubricScores: $validated['rubric_scores'] ?? []);
             }
 
             $intent = $validated['intent'];
             $attempt->events()->create(['event_type' => 'started', 'occurred_at' => $now]);
-            $progress = $this->progress($user, $definition);
+            $progress = $this->progress($user, $definition, $context);
             $progress->forceFill([
                 'viewed_at' => $progress->viewed_at ?? $now,
                 'started_at' => $progress->started_at ?? $now,
             ])->save();
 
+            if (! empty($validated['rubric_scores']) && is_array($validated['rubric_scores'])) {
+                $attempt->events()->create(['event_type' => 'rubric_self_assessment', 'occurred_at' => $now]);
+            }
+
+            if (! empty($validated['audio']) && is_array($validated['audio'])) {
+                foreach ($validated['audio'] as $promptCode => $file) {
+                    if ($file instanceof UploadedFile && $file->isValid()) {
+                        $extension = strtolower($file->getClientOriginalExtension() ?: 'ogg');
+                        $file->storeAs('attempts/'.$attempt->id, $promptCode.'.'.$extension, 'curriculum_private');
+                    }
+                }
+            }
+
             if ($intent === 'show_model') {
-                return $this->result($attempt, $definition);
+                return $this->result($attempt, $definition, rubricScores: $validated['rubric_scores'] ?? []);
             }
             if ($intent === 'skip_baseline') {
                 $attempt->forceFill([
@@ -91,18 +121,22 @@ final class CurriculumAttemptService
                 $progress->forceFill(['baseline_skipped_at' => $now, 'completed_at' => $now])->save();
                 User::forgetAllProgressCaches();
 
-                return $this->result($attempt, $definition);
+                return $this->result($attempt, $definition, rubricScores: $validated['rubric_scores'] ?? []);
             }
 
             $selfChecked = false;
+            $objectiveResults = [];
             foreach ($definition['prompts'] as $prompt) {
                 $code = $prompt->code;
                 $form = $prompt->payload['response_form'];
                 $mode = $prompt->payload['scoring_mode'];
-                $value = $validated['responses'][$code];
+                $value = $validated['responses'][$code] ?? null;
                 $responsePresent = is_array($value) ? $value !== [] : trim((string) $value) !== '';
                 $checked = (bool) ($validated['self_checks'][$code] ?? false);
                 $isCorrect = $this->score($prompt, $definition['answers'][$code] ?? null, $value);
+                if (is_bool($isCorrect)) {
+                    $objectiveResults[] = $isCorrect;
+                }
                 $stored = $this->minimizedResponse($form, $mode, $value);
 
                 $attempt->responses()->create([
@@ -133,9 +167,14 @@ final class CurriculumAttemptService
                 'self_checked_at' => $selfChecked ? $now : $progress->self_checked_at,
                 'completed_at' => $now,
             ])->save();
+            $this->reviewSchedule->schedule(
+                $progress,
+                CarbonImmutable::instance($now),
+                $objectiveResults,
+            );
             User::forgetAllProgressCaches();
 
-            return $this->result($attempt->load('responses'), $definition);
+            return $this->result($attempt->load('responses'), $definition, rubricScores: $validated['rubric_scores'] ?? []);
         }, attempts: 3);
     }
 
@@ -180,6 +219,7 @@ final class CurriculumAttemptService
     {
         $attempts = CurriculumAttempt::query()
             ->where('user_id', $user->id)
+            ->where('learning_scope_key', $this->learningContext->current(request(), $user)['scope_key'])
             ->where('state', 'completed')
             ->whereHas('responses', static fn ($query) => $query->where('response_form', 'rating'))
             ->with(['responses' => static fn ($query) => $query->where('response_form', 'rating')->orderBy('prompt_code')])
@@ -222,9 +262,10 @@ final class CurriculumAttemptService
     }
 
     /** @return array<string, mixed> */
-    private function definition(string $activityCode): array
+    private function definition(string $activityCode, User $user): array
     {
-        $package = CurriculumPackage::active();
+        $scope = $this->contentScope->current(request(), $user);
+        $package = $scope['package'];
         abort_if($package === null, 404);
         $activity = CurriculumEntity::query()
             ->where('curriculum_package_id', $package->id)
@@ -232,7 +273,7 @@ final class CurriculumAttemptService
             ->published()
             ->where('code', $activityCode)
             ->first();
-        abort_if($activity === null, 404);
+        abort_if($activity === null || ! $this->contentScope->allowsEntity($scope, $activity), 404);
         $prompts = CurriculumEntity::query()
             ->where('curriculum_package_id', $package->id)
             ->where('entity_type', 'prompt-item')
@@ -286,16 +327,23 @@ final class CurriculumAttemptService
         return compact('draft', 'activity', 'prompts', 'answers', 'feedback');
     }
 
-    private function progress(User $user, array $definition): CurriculumActivityProgress
+    /** @param array{scope_key: string, membership_id: int|null, course_offering_id: string|null, course_enrollment_id: int|null} $context */
+    private function progress(User $user, array $definition, array $context): CurriculumActivityProgress
     {
         $package = $definition['package'];
         $activity = $definition['activity'];
         $progress = CurriculumActivityProgress::query()->firstOrCreate([
             'user_id' => $user->id,
+            'learning_scope_key' => $context['scope_key'],
             'package_name' => $package->package_name,
             'content_version' => $package->content_version,
             'activity_code' => $activity->code,
-        ], ['section_code' => $activity->parent_code]);
+        ], [
+            'institution_membership_id' => $context['membership_id'],
+            'course_offering_id' => $context['course_offering_id'],
+            'course_enrollment_id' => $context['course_enrollment_id'],
+            'section_code' => $activity->parent_code,
+        ]);
 
         return CurriculumActivityProgress::query()->whereKey($progress->id)->lockForUpdate()->firstOrFail();
     }
@@ -337,7 +385,7 @@ final class CurriculumAttemptService
     }
 
     /** @return array<string, mixed> */
-    private function result(CurriculumAttempt $attempt, array $definition, bool $reused = false): array
+    private function result(CurriculumAttempt $attempt, array $definition, bool $reused = false, array $rubricScores = []): array
     {
         $storedResponses = $attempt->relationLoaded('responses') ? $attempt->responses->keyBy('prompt_code') : collect();
         $responses = $storedResponses->map(static fn (CurriculumResponse $response): array => [
@@ -353,6 +401,7 @@ final class CurriculumAttemptService
             definition: $definition,
             reused: $reused,
             attemptId: $attempt->id,
+            rubricScores: $rubricScores,
         );
     }
 
@@ -369,6 +418,7 @@ final class CurriculumAttemptService
         array $definition,
         bool $reused = false,
         int|string|null $attemptId = null,
+        array $rubricScores = [],
     ): array {
         $promptResults = [];
         foreach ($definition['prompts'] as $prompt) {
@@ -410,6 +460,7 @@ final class CurriculumAttemptService
             'reused' => $reused,
             'model_without_attempt' => $intent === 'show_model',
             'prompt_results' => $promptResults,
+            'rubric_scores' => $rubricScores,
         ];
     }
 }

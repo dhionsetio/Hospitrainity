@@ -19,6 +19,8 @@ class CurriculumActivityProgress extends Model
             'self_checked_at' => 'datetime',
             'completed_at' => 'datetime',
             'baseline_skipped_at' => 'datetime',
+            'review_due_at' => 'immutable_datetime',
+            'last_reviewed_at' => 'immutable_datetime',
         ];
     }
 }

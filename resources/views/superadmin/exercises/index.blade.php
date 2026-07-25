@@ -30,6 +30,11 @@
             'pronunciation_drill' => __('admin.exercise_types.pronunciation_drill'),
             'sound_sorting' => __('admin.exercise_types.sound_sorting'),
             'sequencing' => __('admin.exercise_types.sequencing'),
+            'information' => __('admin.exercise_types.information'),
+            'writing' => __('admin.exercise_types.writing'),
+            'drag_the_words' => __('admin.exercise_types.drag_the_words'),
+            'drag_and_drop' => __('admin.exercise_types.drag_and_drop'),
+            'question_set' => __('admin.exercise_types.question_set'),
         ];
         $exerciseAdminState = base64_encode(json_encode([
             'isModalOpen' => ! $legacyCurriculumReadOnly && $errors->any(),
@@ -44,9 +49,9 @@
     @endphp
 
     <div x-data="exerciseAdmin" data-admin-state="{{ $exerciseAdminState }}">
-        <div class="flex min-h-screen flex-col md:h-screen md:flex-row">
+        <div class="flex min-h-screen flex-col md:flex-row">
             @include('superadmin.sidebar')
-            <main class="min-w-0 flex-1 p-6 md:overflow-y-auto md:p-10">
+            <main class="min-w-0 flex-1 p-6 md:p-10">
                 @include('superadmin.canonical-curriculum-notice')
                 <header class="mb-8 flex justify-between items-center">
                     <div>
@@ -78,7 +83,7 @@
                                     <td class="px-6 py-4">{{ $exercise->order }}</td>
                                     <td class="px-6 py-4 flex items-center gap-3">
                                         @if($legacyCurriculumReadOnly)
-                                            <span class="text-xs font-medium text-neutral-500">{{ __('Read-only evidence') }}</span>
+                                            <span class="text-xs font-semibold text-neutral-700">{{ __('Read-only evidence') }}</span>
                                         @else
                                             <button type="button" @click="openEdit" data-record="{{ base64_encode($exercise->toJson()) }}" data-action="{{ route('superadmin.exercises.update', $exercise) }}" class="font-medium text-blue-600 hover:underline" aria-label="{{ __('admin.edit_named', ['name' => $exercise->title]) }}"><i class="fas fa-edit" aria-hidden="true"></i></button>
                                             <form action="{{ route('superadmin.exercises.destroy', $exercise) }}" method="POST" data-confirm-submit="{{ __('admin.confirm_delete_named', ['name' => $exercise->title]) }}">
@@ -88,6 +93,25 @@
                                         @endif
                                     </td>
                                 </tr>
+                                @if($legacyCurriculumReadOnly)
+                                    <tr class="bg-neutral-50/70">
+                                        <td colspan="5" class="px-6 py-3">
+                                            <details>
+                                                <summary class="cursor-pointer font-semibold text-indigo-700 underline">{{ __('View stored details') }}</summary>
+                                                <div class="mt-4 rounded-md border border-neutral-200 bg-white p-4">
+                                                    @include('superadmin.partials.legacy-structured-value', ['value' => [
+                                                        'record_id' => $exercise->id,
+                                                        'title' => $exercise->title,
+                                                        'type' => $exercise->type,
+                                                        'parent_lesson' => $exercise->lesson->title ?? null,
+                                                        'display_order' => $exercise->order,
+                                                        'content' => $exercise->content,
+                                                    ]])
+                                                </div>
+                                            </details>
+                                        </td>
+                                    </tr>
+                                @endif
                             @empty
                                 <tr><td colspan="5" class="px-6 py-4 text-center">{{ __('admin.no_exercises') }}</td></tr>
                             @endforelse
@@ -142,6 +166,34 @@
                     </div>
 
                     <div class="mt-6 border-t pt-5 space-y-4">
+                        <details class="mb-5 rounded-lg border border-indigo-200 bg-indigo-50/60 p-3 text-sm">
+                            <summary class="cursor-pointer font-bold text-indigo-900 flex items-center gap-2">
+                                <i class="fa-solid fa-wand-magic-sparkles text-indigo-600"></i>
+                                {{ __('Content Migration Assistant (Type Suggestions)') }}
+                            </summary>
+                            <div class="mt-3 space-y-3">
+                                <p class="text-xs text-neutral-700">{{ __('Paste raw curriculum text below to see rule-based suggestions for exercise types.') }}</p>
+                                <textarea x-model="migrationText" @input="analyzeMigrationText" rows="3" placeholder="{{ __('Paste raw exercise text, asterisks gaps, or choices here...') }}" class="w-full rounded-md border-neutral-300 text-xs font-mono"></textarea>
+                                <template x-if="suggestions.length > 0">
+                                    <div class="space-y-2">
+                                        <p class="text-xs font-bold text-neutral-800">{{ __('Suggested Exercise Types:') }}</p>
+                                        <div class="grid gap-2 sm:grid-cols-2">
+                                            <template x-for="s in suggestions" :key="s.type">
+                                                <div class="flex items-center justify-between rounded-md border border-indigo-200 bg-white p-2 text-xs">
+                                                    <div>
+                                                        <span class="font-bold text-indigo-900" x-text="s.label"></span>
+                                                        <span class="ml-1 rounded bg-indigo-100 px-1 py-0.5 text-[10px] text-indigo-800 font-semibold" x-text="s.confidence"></span>
+                                                        <p class="text-[11px] text-neutral-600 mt-0.5" x-text="s.reason"></p>
+                                                    </div>
+                                                    <button type="button" @click="applySuggestion(s)" class="ml-2 rounded bg-indigo-600 px-2 py-1 text-white font-semibold hover:bg-indigo-700 cursor-pointer">{{ __('Apply') }}</button>
+                                                </div>
+                                            </template>
+                                        </div>
+                                    </div>
+                                </template>
+                            </div>
+                        </details>
+
                         <h3 class="text-lg font-medium text-neutral-800">{{ __('admin.exercise_content') }}</h3>
 
                         <template x-if="exercise.type === 'matching_game'">
@@ -174,6 +226,16 @@
                         <template x-if="exercise.type === 'sound_sorting'"><div class="space-y-5"><div><p class="text-sm font-medium">{{ __('admin.categories') }}</p><template x-for="(category, index) in exercise.content.categories" :key="index"><div class="mt-2 grid grid-cols-[1fr_1fr_auto] gap-2"><input required type="text" :name="contentObjectName('categories', index, 'id')" x-model="category.id" placeholder="{{ __('admin.unique_id') }}" aria-label="{{ __('admin.unique_id') }}" class="rounded-md border-neutral-300"><input required type="text" :name="contentObjectName('categories', index, 'name')" x-model="category.name" placeholder="{{ __('Name') }}" aria-label="{{ __('admin.category_name') }}" class="rounded-md border-neutral-300"><button type="button" @click="removeAt('categories', index)" :disabled="exercise.content.categories.length === 1" aria-label="{{ __('admin.remove_category') }}" class="text-red-600 disabled:opacity-40">&times;</button></div></template><button type="button" @click="addSoundCategory" class="mt-2 text-sm text-indigo-600">+ {{ __('admin.add_category') }}</button></div><div><p class="text-sm font-medium">{{ __('admin.words') }}</p><template x-for="(word, index) in exercise.content.words" :key="index"><div class="mt-2 grid grid-cols-[1fr_1fr_auto] gap-2"><input required type="text" :name="contentObjectName('words', index, 'word')" x-model="word.word" placeholder="{{ __('admin.word') }}" aria-label="{{ __('admin.word') }}" class="rounded-md border-neutral-300"><select required :name="contentObjectName('words', index, 'category_id')" x-model="word.category_id" aria-label="{{ __('admin.category') }}" class="rounded-md border-neutral-300"><option value="">{{ __('admin.select_category') }}</option><template x-for="category in exercise.content.categories" :key="category.id"><option :value="category.id" x-text="category.name || category.id"></option></template></select><button type="button" @click="removeAt('words', index)" :disabled="exercise.content.words.length === 1" aria-label="{{ __('admin.remove_word') }}" class="text-red-600 disabled:opacity-40">&times;</button></div></template><button type="button" @click="addSoundWord" class="mt-2 text-sm text-indigo-600">+ {{ __('admin.add_word') }}</button></div></div></template>
 
                         <template x-if="exercise.type === 'sequencing'"><div><p class="text-sm font-medium">{{ __('admin.steps_in_order') }}</p><template x-for="(step, index) in exercise.content.steps" :key="index"><div class="mt-2 flex gap-2"><input required type="text" :name="contentListName('steps', index)" x-model="exercise.content.steps[index]" aria-label="{{ __('admin.step') }}" class="flex-1 rounded-md border-neutral-300"><button type="button" @click="removeAt('steps', index)" :disabled="exercise.content.steps.length <= 2" aria-label="{{ __('admin.remove_step') }}" class="text-red-600 disabled:opacity-40">&times;</button></div></template><button type="button" @click="addString('steps')" class="mt-2 text-sm text-indigo-600">+ {{ __('admin.add_step') }}</button></div></template>
+
+                        <template x-if="exercise.type === 'information'"><div class="space-y-3"><label class="block text-sm font-medium">{{ __('Information Body') }}<textarea required name="content[body]" x-model="exercise.content.body" rows="4" class="mt-1 w-full rounded-md border-neutral-300"></textarea></label><div class="grid grid-cols-2 gap-4"><label class="block text-sm font-medium">{{ __('Media URL (Optional)') }}<input type="text" name="content[media_url]" x-model="exercise.content.media_url" placeholder="/storage/..." class="mt-1 w-full rounded-md border-neutral-300"></label><label class="block text-sm font-medium">{{ __('Media Type') }}<select name="content[media_type]" x-model="exercise.content.media_type" class="mt-1 w-full rounded-md border-neutral-300"><option value="">{{ __('None') }}</option><option value="image">{{ __('Image') }}</option><option value="video">{{ __('Video') }}</option></select></label></div></div></template>
+
+                        <template x-if="exercise.type === 'writing'"><div class="space-y-4"><label class="block text-sm font-medium">{{ __('Prompt Text') }}<textarea required name="content[prompt]" x-model="exercise.content.prompt" rows="3" class="mt-1 w-full rounded-md border-neutral-300"></textarea></label><div class="grid grid-cols-2 gap-4"><label class="block text-sm font-medium">{{ __('Minimum Words') }}<input type="number" min="1" name="content[min_words]" x-model.number="exercise.content.min_words" class="mt-1 w-full rounded-md border-neutral-300"></label><label class="block text-sm font-medium">{{ __('Maximum Words') }}<input type="number" min="1" name="content[max_words]" x-model.number="exercise.content.max_words" class="mt-1 w-full rounded-md border-neutral-300"></label></div><div><p class="text-sm font-medium mb-2">{{ __('Scoring Keywords') }}</p><template x-for="(kw, index) in exercise.content.keywords" :key="index"><div class="grid grid-cols-[1fr_5rem_auto] gap-2 mb-2"><input required type="text" :name="contentObjectName('keywords', index, 'text')" x-model="kw.text" placeholder="{{ __('Keyword or phrase') }}" class="rounded-md border-neutral-300"><input required type="number" min="0" max="10" :name="contentObjectName('keywords', index, 'weight')" x-model.number="kw.weight" placeholder="{{ __('Weight') }}" class="rounded-md border-neutral-300"><button type="button" @click="removeAt('keywords', index)" :disabled="exercise.content.keywords.length <= 1" class="text-red-600 disabled:opacity-40">&times;</button></div></template><button type="button" @click="addKeyword" class="text-sm text-indigo-600">+ {{ __('Add Keyword') }}</button></div><label class="block text-sm font-medium">{{ __('Model Answer (Optional Reference)') }}<textarea name="content[model_answer]" x-model="exercise.content.model_answer" rows="2" class="mt-1 w-full rounded-md border-neutral-300"></textarea></label></div></template>
+
+                        <template x-if="exercise.type === 'drag_the_words'"><div class="space-y-3"><label class="block text-sm font-medium">{{ __('Sentence with *word* gaps') }}<textarea required name="content[text]" x-model="exercise.content.text" rows="3" placeholder="The guest is *checking in* at the *front desk*." class="mt-1 w-full rounded-md border-neutral-300"></textarea></label><div><p class="text-sm font-medium mb-1">{{ __('Distractors (Extra draggable words)') }}</p><template x-for="(dis, index) in exercise.content.distractors" :key="index"><div class="flex gap-2 mb-2"><input required type="text" :name="contentListName('distractors', index)" x-model="exercise.content.distractors[index]" placeholder="{{ __('Distractor word') }}" class="flex-1 rounded-md border-neutral-300"><button type="button" @click="removeAt('distractors', index)" class="text-red-600">&times;</button></div></template><button type="button" @click="addString('distractors')" class="text-sm text-indigo-600">+ {{ __('Add Distractor') }}</button></div></div></template>
+
+                        <template x-if="exercise.type === 'drag_and_drop'"><div class="space-y-4"><label class="block text-sm font-medium">{{ __('Background Image URL') }}<input type="text" name="content[background_image]" x-model="exercise.content.background_image" placeholder="/storage/curriculum/exercises/lobby.png" class="mt-1 w-full rounded-md border-neutral-300"></label><div><p class="text-sm font-medium mb-2">{{ __('Draggable Items') }}</p><template x-for="(d, index) in exercise.content.draggables" :key="index"><div class="grid grid-cols-[6rem_1fr_auto] gap-2 mb-2"><input required type="text" :name="contentObjectName('draggables', index, 'id')" x-model="d.id" placeholder="ID (d1)" class="rounded-md border-neutral-300"><input required type="text" :name="contentObjectName('draggables', index, 'label')" x-model="d.label" placeholder="Label" class="rounded-md border-neutral-300"><button type="button" @click="removeAt('draggables', index)" :disabled="exercise.content.draggables.length <= 1" class="text-red-600 disabled:opacity-40">&times;</button></div></template><button type="button" @click="addDraggable" class="text-sm text-indigo-600">+ {{ __('Add Draggable') }}</button></div><div><p class="text-sm font-medium mb-2">{{ __('Drop Target Zones') }}</p><template x-for="(z, index) in exercise.content.drop_zones" :key="index"><div class="border p-3 rounded-md space-y-2 mb-2 bg-neutral-50"><div class="grid grid-cols-2 gap-2"><input required type="text" :name="contentObjectName('drop_zones', index, 'id')" x-model="z.id" placeholder="Zone ID (z1)" class="rounded-md border-neutral-300"><input required type="text" :name="contentObjectName('drop_zones', index, 'label')" x-model="z.label" placeholder="Zone Label" class="rounded-md border-neutral-300"></div><div class="grid grid-cols-4 gap-2"><input required type="number" min="0" :name="contentObjectName('drop_zones', index, 'x')" x-model.number="z.x" placeholder="X" class="rounded-md border-neutral-300"><input required type="number" min="0" :name="contentObjectName('drop_zones', index, 'y')" x-model.number="z.y" placeholder="Y" class="rounded-md border-neutral-300"><input required type="number" min="1" :name="contentObjectName('drop_zones', index, 'width')" x-model.number="z.width" placeholder="Width" class="rounded-md border-neutral-300"><input required type="number" min="1" :name="contentObjectName('drop_zones', index, 'height')" x-model.number="z.height" placeholder="Height" class="rounded-md border-neutral-300"></div><div class="flex items-center gap-2"><p class="text-xs text-neutral-600 font-semibold">{{ __('Correct Draggable ID:') }}</p><input required type="text" :name="contentObjectName('drop_zones', index, 'correct_draggable_ids[0]')" x-model="z.correct_draggable_ids[0]" placeholder="d1" class="rounded-md border-neutral-300 flex-1"><button type="button" @click="removeAt('drop_zones', index)" :disabled="exercise.content.drop_zones.length <= 1" class="text-red-600 text-sm ml-auto">&times; {{ __('Remove Zone') }}</button></div></div></template><button type="button" @click="addDropZone" class="text-sm text-indigo-600">+ {{ __('Add Target Zone') }}</button></div></div></template>
+
+                        <template x-if="exercise.type === 'question_set'"><div class="space-y-4 border p-4 rounded-lg bg-indigo-50/40"><div><p class="text-sm font-semibold text-neutral-800 mb-1">{{ __('Referenced Exercise IDs') }}</p><p class="text-xs text-neutral-600 mb-2">{{ __('Enter comma-separated exercise IDs included in this quiz set.') }}</p><input type="text" placeholder="1, 2, 3" :value="(exercise.content.exercise_ids || []).join(', ')" @input="exercise.content.exercise_ids = $event.target.value.split(',').map(v => parseInt(v.trim())).filter(v => !isNaN(v))" class="w-full rounded-md border-neutral-300"><template x-for="(id, index) in exercise.content.exercise_ids" :key="index"><input type="hidden" :name="contentListName('exercise_ids', index)" :value="id"></template></div><div class="grid grid-cols-2 gap-4"><label class="block text-sm font-semibold text-neutral-800">{{ __('Pass Target (%)') }}<input type="number" min="1" max="100" name="content[pass_percentage]" x-model.number="exercise.content.pass_percentage" class="mt-1 w-full rounded-md border-neutral-300"></label><div class="flex items-center gap-4 pt-6"><label class="inline-flex items-center text-sm"><input type="checkbox" name="content[allow_retry]" x-model="exercise.content.allow_retry" value="1" class="shrink-0 rounded border-neutral-300 text-indigo-600"><span class="ml-2">{{ __('Allow Retry') }}</span></label><label class="inline-flex items-center text-sm"><input type="checkbox" name="content[show_solution]" x-model="exercise.content.show_solution" value="1" class="shrink-0 rounded border-neutral-300 text-indigo-600"><span class="ml-2">{{ __('Show Solution') }}</span></label></div></div><div><div class="flex items-center justify-between mb-2"><p class="text-sm font-semibold text-neutral-800">{{ __('Range Feedback Bands') }}</p><button type="button" @click="addFeedbackRange" class="text-xs text-indigo-600 font-semibold">+ {{ __('Add Range Band') }}</button></div><template x-for="(fb, index) in (exercise.content.feedback_ranges || [])" :key="index"><div class="grid grid-cols-[4rem_4rem_1fr_auto] gap-2 mb-2 items-center"><input required type="number" min="0" max="100" :name="contentObjectName('feedback_ranges', index, 'from')" x-model.number="fb.from" placeholder="From %" class="rounded-md border-neutral-300 text-xs"><input required type="number" min="0" max="100" :name="contentObjectName('feedback_ranges', index, 'to')" x-model.number="fb.to" placeholder="To %" class="rounded-md border-neutral-300 text-xs"><input required type="text" :name="contentObjectName('feedback_ranges', index, 'message')" x-model="fb.message" placeholder="{{ __('Feedback message...') }}" class="rounded-md border-neutral-300 text-xs"><button type="button" @click="removeAt('feedback_ranges', index)" class="text-red-600 text-xs">&times;</button></div></template></div></div></template>
                     </div>
 
                     <div class="mt-8 border-t pt-5 flex justify-end gap-3">

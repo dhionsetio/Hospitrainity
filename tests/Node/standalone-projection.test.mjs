@@ -204,13 +204,12 @@ test('standalone model reveal is explicit and never marks completion', () => {
     dom.window.close();
 });
 
-test('standalone executes status routes and presents development limitations truthfully', () => {
+test('standalone keeps build details out of the learner interface', () => {
     const { dom, runtimeErrors } = installDom('#/about');
     const about = dom.window.document.querySelector('main').textContent;
-    assert.match(about, /development verification only/i);
-    assert.match(about, /page memory only/i);
+    assert.match(about, /open page/i);
     assert.match(about, /does not synchronize/i);
-    assert.match(about, /CF-7/);
+    assert.doesNotMatch(about, /CF-7|checksum|content version|lifecycle|source of truth/i);
     assert.doesNotMatch(html, /closed CP-02 approval gate/i);
     assert.doesNotMatch(html, /phase-09\/curriculum\.sql/i);
     assert.doesNotMatch(html, /24 activities \/ 102 prompts/i);
@@ -218,8 +217,7 @@ test('standalone executes status routes and presents development limitations tru
     navigate(dom, '#/chapter/HSP-C02');
     const chapter = dom.window.document.querySelector('main').textContent;
     assert.match(chapter, /Front Desk and Check-In/);
-    assert.match(chapter, /CF-7 release pending/);
-    assert.match(chapter, /does not constitute release approval/i);
+    assert.doesNotMatch(chapter, /CF-7|lifecycle|release approval|HSP-C02|CEFR activity/i);
     assert.deepEqual(runtimeErrors, []);
     dom.window.close();
 });

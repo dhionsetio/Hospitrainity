@@ -56,7 +56,7 @@ class CurriculumExerciseAuthoringTest extends TestCase
     {
         $registry = app(CanonicalExerciseTemplateRegistry::class);
         $this->assertSame(ExerciseRequest::TYPES, array_keys($registry->all()));
-        $this->assertCount(12, $registry->enabledTypes());
+        $this->assertCount(17, $registry->enabledTypes());
         $this->assertSame(
             ['spelling_quiz', 'listening_task'],
             array_keys(array_filter($registry->all(), static fn (array $definition): bool => $definition['enabled'] === false)),
@@ -113,7 +113,7 @@ class CurriculumExerciseAuthoringTest extends TestCase
                 ->assertOk()->assertSee($payload['title'])->assertSee($payload['items'][0]['stem']);
         }
 
-        $this->assertSame(12, $draft->entities()->where('entity_type', 'activity')->whereNotNull('payload->template_type')->count());
+        $this->assertSame(17, $draft->entities()->where('entity_type', 'activity')->whereNotNull('payload->template_type')->count());
         $selectionPrompts = $draft->entities()->where('entity_type', 'prompt-item')->where('payload->response_form', 'selection')->get();
         foreach ($selectionPrompts as $prompt) {
             $answer = $draft->entities()->where('entity_type', 'answer-model')->where('parent_code', $prompt->code)->sole();
@@ -230,7 +230,7 @@ class CurriculumExerciseAuthoringTest extends TestCase
                     && $result['prompt_results'][$prompts[1]->code]['is_correct'] === false;
             });
         $this->get(route('admin.curriculum-drafts.preview.activities.show', [$draft, $activity->code]))
-            ->assertOk()->assertSee('Correct')->assertSee('Not yet correct')->assertSee('Review the second choice.');
+            ->assertOk()->assertSee('Correct')->assertSee('Incorrect')->assertSee('Review the second choice.');
 
         $this->assertDatabaseCount((new CurriculumAttempt)->getTable(), 0);
         $this->assertDatabaseCount((new CurriculumActivityProgress)->getTable(), 0);
@@ -300,6 +300,10 @@ class CurriculumExerciseAuthoringTest extends TestCase
         $draft = $review->validate($draft, $superadmin, $draft->revision);
         $this->assertSame('valid', $draft->validation_report['status'], json_encode($draft->validation_report));
         $draft = $review->approve($draft, $superadmin, $draft->revision, 'ADM-4 canonical validation and preview were reviewed.');
+        // This characterization test needs two synthetic delivered versions to
+        // prove historical attempts remain version-bound. The release guard
+        // also requires APP_ENV=testing, so this cannot widen runtime behavior.
+        config()->set('curriculum.release.allow_unapproved_replacement_for_tests', true);
         $review->publish($draft, $superadmin, $draft->revision);
 
         $live = $this->actingAs($learner)->get(route('curriculum.activities.show', $activity->code))

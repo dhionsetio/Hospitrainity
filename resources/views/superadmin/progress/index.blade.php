@@ -14,10 +14,9 @@
                     <p class="mt-2 max-w-3xl text-neutral-600">{{ __('admin.learner_progress_description') }}</p>
                 </div>
                 <div>
-                    <button type="button" disabled aria-disabled="true" class="cursor-not-allowed rounded-md bg-neutral-200 px-4 py-2 font-semibold text-neutral-500">
-                        {{ __('admin.csv_export_unavailable') }}
-                    </button>
-                    <p class="mt-1 max-w-xs text-xs text-neutral-500">{{ __('admin.progress_export_disabled_short') }}</p>
+                    <x-button :href="route('superadmin.progress.export', request()->query())" variant="primary" class="inline-flex items-center gap-2">
+                        <i class="fas fa-file-csv" aria-hidden="true"></i> {{ __('Export CSV') }}
+                    </x-button>
                 </div>
             </header>
 
@@ -58,7 +57,7 @@
                             <option value="">{{ __('admin.all_package_versions') }}</option>
                             @foreach($options['versions']->unique('content_version') as $version)
                                 <option value="{{ $version['content_version'] }}" @selected(($filters['version'] ?? '') === $version['content_version'])>
-                                    {{ $version['content_version'] }}{{ $version['is_active'] ? ' — '.__('admin.active') : '' }}
+                                    {{ $version['content_version'] }}{{ $version['is_active'] ? ', '.__('admin.active') : '' }}
                                 </option>
                             @endforeach
                         </select>
@@ -69,7 +68,7 @@
                             <option value="">{{ __('admin.all_modules') }}</option>
                             @foreach($options['modules'] as $module)
                                 <option value="{{ $module['code'] }}" @selected(($filters['module'] ?? '') === $module['code'])>
-                                    {{ $module['module'] ? __('admin.module_number', ['number' => $module['module']]).' — ' : '' }}{{ $module['title'] }}
+                                    {{ $module['module'] ? __('admin.module_number', ['number' => $module['module']]).': ' : '' }}{{ $module['title'] }}
                                 </option>
                             @endforeach
                         </select>
@@ -108,7 +107,29 @@
                     <h2 id="learner-results-title" class="text-lg font-semibold text-neutral-900">{{ __('admin.learner_results') }}</h2>
                     <p class="mt-1 text-sm text-neutral-500">{{ trans_choice('admin.learners_found', $learners->total(), ['count' => $learners->total()]) }}</p>
                 </div>
-                <div class="overflow-x-auto">
+                <div class="divide-y divide-neutral-200 md:hidden">
+                    @forelse($learners as $row)
+                        @php($learner = $row['learner'])
+                        @php($summary = $row['summary'])
+                        <article class="space-y-4 p-5">
+                            <div>
+                                <h3 class="font-semibold text-neutral-900">{{ $learner->name }}</h3>
+                                <p class="break-all text-sm text-neutral-600">{{ $learner->email }}</p>
+                            </div>
+                            <dl class="grid grid-cols-2 gap-3 text-sm">
+                                <div class="col-span-2"><dt class="font-semibold text-neutral-700">{{ __('admin.institution') }}</dt><dd>{{ $learner->instansi }}</dd></div>
+                                <div><dt class="font-semibold text-neutral-700">{{ __('admin.current_completion') }}</dt><dd class="tabular-nums">{{ $summary['overall_percent'] }}%</dd></div>
+                                <div><dt class="font-semibold text-neutral-700">{{ __('admin.progress_status') }}</dt><dd>{{ __('admin.progress_states.'.$summary['latest_state']) }}</dd></div>
+                                <div><dt class="font-semibold text-neutral-700">{{ __('admin.attempts') }}</dt><dd class="tabular-nums">{{ $summary['attempt_count'] }}</dd></div>
+                                <div><dt class="font-semibold text-neutral-700">{{ __('admin.last_activity') }}</dt><dd>{{ $summary['last_activity_at']?->format('Y-m-d H:i') ?? __('admin.no_activity_recorded') }}</dd></div>
+                            </dl>
+                            <a href="{{ route('superadmin.progress.learners.show', $learner) }}" class="inline-flex min-h-11 items-center font-semibold text-indigo-700 underline underline-offset-2">{{ __('admin.view_progress_detail') }}</a>
+                        </article>
+                    @empty
+                        <p class="p-6 text-center text-neutral-500">{{ __('admin.no_progress_results') }}</p>
+                    @endforelse
+                </div>
+                <div class="hidden overflow-x-auto md:block">
                     <table class="w-full text-left text-sm text-neutral-700">
                         <caption class="sr-only">{{ __('admin.global_learner_progress_table') }}</caption>
                         <thead class="bg-neutral-50 text-xs uppercase text-neutral-600">

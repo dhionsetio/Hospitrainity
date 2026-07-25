@@ -2,18 +2,23 @@
 
 namespace Tests\Feature;
 
+use App\Enums\CurriculumApprovalGate;
+use App\Enums\CurriculumReleaseState;
 use App\Models\Completion;
 use App\Models\CurriculumActivityProgress;
 use App\Models\CurriculumAttempt;
 use App\Models\CurriculumEntity;
 use App\Models\CurriculumImportRun;
 use App\Models\CurriculumPackage;
+use App\Models\CurriculumRelease;
+use App\Models\LearnerTextResponse;
 use App\Models\User;
 use App\Services\CanonicalCurriculumRepository;
 use App\Services\Curriculum\CanonicalCurriculumImporter;
 use App\Services\Curriculum\CanonicalPackage;
 use App\Services\Curriculum\CanonicalPackageReader;
 use App\Services\Curriculum\CurriculumAttemptService;
+use App\Services\Curriculum\CurriculumReleaseLifecycle;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
@@ -111,6 +116,29 @@ class CanonicalCurriculumImportTest extends TestCase
         $this->assertDatabaseCount('curriculum_import_runs', 2);
     }
 
+    public function test_production_rollback_refuses_an_undeliverable_snapshot_before_mutation(): void
+    {
+        $source = app(CanonicalPackageReader::class)->read();
+        $importer = app(CanonicalCurriculumImporter::class);
+        $import = $importer->import($source);
+        $activeId = CurriculumPackage::query()->where('is_active', true)->value('id');
+        $entityCount = CurriculumEntity::query()->count();
+        $this->app['env'] = 'production';
+
+        $failure = null;
+        try {
+            $importer->rollback($import['rollback']['path']);
+        } catch (\RuntimeException $exception) {
+            $failure = $exception;
+        }
+
+        $this->assertInstanceOf(\RuntimeException::class, $failure);
+        $this->assertStringContainsString('Production rollback refused', $failure->getMessage());
+        $this->assertSame($activeId, CurriculumPackage::query()->where('is_active', true)->value('id'));
+        $this->assertSame($entityCount, CurriculumEntity::query()->count());
+        $this->assertDatabaseCount('curriculum_import_runs', 1);
+    }
+
     public function test_failed_import_restores_every_database_table(): void
     {
         $source = app(CanonicalPackageReader::class)->read();
@@ -200,6 +228,7 @@ class CanonicalCurriculumImportTest extends TestCase
             ]);
         }
 
+        config()->set('curriculum.release.allow_unapproved_replacement_for_tests', true);
         app(CanonicalCurriculumImporter::class)->import($source);
 
         $mapped = CurriculumActivityProgress::query()->where('user_id', $learner->id)->get();
@@ -216,15 +245,33 @@ class CanonicalCurriculumImportTest extends TestCase
         $this->actingAs($learner)
             ->get(route('curriculum.activities.show', $legacyActivities->first()['code']))
             ->assertOk()
-            ->assertSee('A legacy reveal-only completion exists.')
-            ->assertSee('does not count as a completed response attempt for this version.');
+            ->assertDontSee('A legacy reveal-only completion exists.')
+            ->assertDontSee('does not count as a completed response attempt for this version.');
     }
 
-    public function test_repair_projection_restores_canonical_rows_without_losing_completion_or_attempt_history(): void
+    public function test_repair_projection_and_rollback_preserve_attempts_completions_and_saved_responses(): void
     {
         $source = app(CanonicalPackageReader::class)->read();
         $importer = app(CanonicalCurriculumImporter::class);
         $importer->import($source);
+        $reviewer = User::factory()->create(['role' => 'superadmin']);
+        $release = CurriculumRelease::query()->sole();
+        $release = app(CurriculumReleaseLifecycle::class)->transition(
+            $release,
+            CurriculumReleaseState::Draft,
+            CurriculumReleaseState::InReview,
+            $reviewer,
+            'Preserve formal review evidence across projection repair and rollback.',
+        );
+        app(CurriculumReleaseLifecycle::class)->approveGate(
+            $release,
+            CurriculumApprovalGate::Content,
+            $reviewer,
+            'Content Evidence Reviewer',
+            'Test qualification for rollback preservation',
+            hash('sha256', 'rollback-preservation-evidence'),
+        );
+        $releaseId = $release->id;
         $learner = User::factory()->create(['role' => 'user', 'email_verified_at' => now()]);
         $activity = CurriculumEntity::query()->where('code', 'HSP-C02-ACT-QUIZ')->sole();
         $originalActivityId = $activity->id;
@@ -245,20 +292,41 @@ class CanonicalCurriculumImportTest extends TestCase
             'completable_id' => $originalActivityId,
         ]);
         $beforeAttemptId = CurriculumAttempt::query()->sole()->id;
+        $responseActivity = CurriculumEntity::query()->where('code', 'HSP-C02-ACT-ROLEPLAY')->sole();
+        $responsePrompt = CurriculumEntity::query()->where('code', 'HSP-C02-RP-FREE')->sole();
+        $savedBody = 'Good evening. We have a room available, and I can help you check in.';
+        $savedResponse = LearnerTextResponse::query()->create([
+            'user_id' => $learner->id,
+            'response_key' => (string) Str::uuid(),
+            'learning_scope_key' => 'personal:'.$learner->id,
+            'curriculum_package_id' => $responseActivity->curriculum_package_id,
+            'activity_entity_id' => $responseActivity->id,
+            'prompt_entity_id' => $responsePrompt->id,
+            'activity_source_sha256' => $responseActivity->source_sha256,
+            'prompt_source_sha256' => $responsePrompt->source_sha256,
+            'kind' => 'assessment',
+            'state' => 'submitted',
+            'body' => $savedBody,
+            'body_hmac_sha256' => hash_hmac('sha256', $savedBody, (string) config('app.key')),
+            'submitted_at' => now(),
+        ]);
+        $savedResponseId = $savedResponse->id;
+        $savedActivityId = $responseActivity->id;
+        $savedPromptId = $responsePrompt->id;
 
-        $corruptPayload = $activity->payload;
+        $corruptPayload = $responseActivity->payload;
         $corruptPayload['title'] = 'Injected projection corruption';
         DB::table('curriculum_entities')
-            ->where('id', $activity->id)
+            ->where('id', $responseActivity->id)
             ->update(['payload' => json_encode($corruptPayload, JSON_THROW_ON_ERROR)]);
         $this->assertSame('repair_projection', $importer->plan($source)['status']);
 
         $repair = $importer->import($source);
 
         $this->assertSame('imported', $repair['status']);
-        $repairedActivity = CurriculumEntity::query()->where('code', $activity->code)->sole();
-        $this->assertSame($originalActivityId, $repairedActivity->id);
-        $this->assertSame('Step 7. Quiz', $repairedActivity->payload['title']);
+        $repairedResponseActivity = CurriculumEntity::query()->where('code', $responseActivity->code)->sole();
+        $this->assertSame($savedActivityId, $repairedResponseActivity->id);
+        $this->assertSame('Step 6. Role-play', $repairedResponseActivity->payload['title']);
         $this->assertDatabaseHas('completions', [
             'user_id' => $learner->id,
             'completable_type' => CurriculumEntity::class,
@@ -268,14 +336,25 @@ class CanonicalCurriculumImportTest extends TestCase
         $this->assertDatabaseCount('curriculum_responses', 8);
         $this->assertDatabaseCount('curriculum_attempt_events', 3);
         $this->assertNotNull(CurriculumActivityProgress::query()->where('activity_code', $activity->code)->sole()->completed_at);
+        $repairedResponse = LearnerTextResponse::query()->findOrFail($savedResponseId);
+        $this->assertSame($savedBody, $repairedResponse->body);
+        $this->assertSame($savedActivityId, $repairedResponse->activity_entity_id);
+        $this->assertSame($savedPromptId, $repairedResponse->prompt_entity_id);
         $this->assertSame('verified', $importer->verify($source)['status']);
 
         $rollback = $importer->rollback($repair['rollback']['path']);
         $this->assertSame('rolled_back', $rollback['status']);
-        $this->assertSame('Injected projection corruption', CurriculumEntity::query()->where('code', $activity->code)->sole()->payload['title']);
+        $this->assertSame('Injected projection corruption', CurriculumEntity::query()->where('code', $responseActivity->code)->sole()->payload['title']);
         $this->assertDatabaseHas('curriculum_attempts', ['id' => $beforeAttemptId, 'state' => 'completed']);
         $this->assertDatabaseCount('curriculum_responses', 8);
         $this->assertDatabaseCount('curriculum_attempt_events', 3);
         $this->assertNotNull(CurriculumActivityProgress::query()->where('activity_code', $activity->code)->sole()->completed_at);
+        $rolledBackResponse = LearnerTextResponse::query()->findOrFail($savedResponseId);
+        $this->assertSame($savedBody, $rolledBackResponse->body);
+        $this->assertSame($savedActivityId, $rolledBackResponse->activity_entity_id);
+        $this->assertSame($savedPromptId, $rolledBackResponse->prompt_entity_id);
+        $this->assertDatabaseHas('curriculum_releases', ['id' => $releaseId, 'state' => CurriculumReleaseState::InReview->value]);
+        $this->assertDatabaseHas('curriculum_release_approvals', ['curriculum_release_id' => $releaseId, 'gate' => CurriculumApprovalGate::Content->value]);
+        $this->assertDatabaseCount('curriculum_release_events', 2);
     }
 }

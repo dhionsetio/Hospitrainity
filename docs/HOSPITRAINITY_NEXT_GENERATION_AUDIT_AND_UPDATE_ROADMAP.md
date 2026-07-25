@@ -1,12 +1,41 @@
 # Hospitrainity next-generation multi-role audit and AI-executable update roadmap
 
-Document version: 1.1.0  
-Audit date: 2026-07-19 (Asia/Jakarta)  
-Implementation status: AUDIT AND PLAN ONLY; NO FEATURE IMPLEMENTATION AUTHORIZED BY THIS DOCUMENT  
+Document version: 1.1.9  
+Audit date: 2026-07-19; authority candidate review 2026-07-22 (Asia/Jakarta)  
+Implementation status: B00 through B06 and the consolidated tester update are locally complete; Firefox launch remains environment-blocked  
 Intended executor: GPT-5.6 Sol / Codex or a comparably capable repository-editing agent  
 Scope: Guest, learner (database role value user), Supervisor, Admin, Superadmin, curriculum fidelity, thesis alignment, responsive/mobile experience, accessibility, application security, privacy, lecturer operations, assessments, analytics, communications, scheduling, exam integrity, account deletion, engineering quality, and release operations
 
 Revision 1.1.0 scope: corrected the shared time/timezone dependency without changing batch count or order; normalized every finding to the evidence/impact/fix/acceptance structure, including six pre-existing P1 field omissions; added complete finding-level traceability; clarified that competitor observations are official-public-source benchmarking rather than authenticated hands-on product audits; and removed the assumed first-use study sample size. This revision intentionally does not add a mandatory per-batch technical-design artifact and does not split or add implementation batches.
+
+Revision 1.1.1 scope: refreshed the thesis authority hash after a confirmed 2026-07-21 file change and repeated the complete thesis product-intent audit before further implementation. The current thesis preserves the existing user, cross-device, easy-navigation, engagement, validation, and AI-conflict boundaries. Batch count and order are unchanged. Evidence is recorded in `docs/checkpoints/NG-AUTHORITY-DRIFT-2026-07-21.md`.
+
+Revision 1.1.2 scope: records the owner's complete B06 approval and the cross-batch requirement for a fully usable, institution-scoped Instructor workspace. It also schedules UI implementation as checkpointed vertical slices after the owning domain contracts exist. Batch count and dependency order are unchanged.
+
+Revision 1.1.3 scope: refreshed the thesis authority hash after a second confirmed 2026-07-21 byte change and repeated the complete thesis product-intent audit. The current manuscript preserves the accepted audience, cross-device, navigation, engagement, validation, outcome-claim, and AI-conflict boundaries. B06 decisions, batch order, and UI sequencing are unchanged. Evidence is recorded in `docs/checkpoints/NG-AUTHORITY-DRIFT-2026-07-21-02.md`.
+
+Revision 1.1.4 scope: records completion of the B06-A expand-only domain, relationship-authorization, immutable Course Revision, and shared Clock/TimeContext foundation. B06 remains in progress: UI-R02 is the next checkpoint, followed by B06-B Class/roster operations and B06-C cutover verification. No browser-visible B06 capability is claimed by B06-A.
+
+Revision 1.1.5 scope: records completion of the UI-R02 responsive learner shell against the verified B06-A context boundary. B06 remains in progress: B06-B Class/roster operations is next, followed by B06-C cutover verification. UI-R02 adds no lecturer-facing Course/Class behavior and makes no branded-browser, physical-device, production, engagement, or accessibility-conformance claim.
+
+Revision 1.1.6 scope: records completion of B06-B Class and roster operations. Institution Admins can create and administer Classes; assigned Instructors receive exact-Class management; approved invitation, classroom-code, manual-enrollment, status, transfer, teaching-team, lifecycle, safe-copy, and synthetic-preview workflows are implemented with retained history and privacy-bounded roster fields. B06 remains in progress at B06-C context cutover and final verification. No production, physical-device, branded-browser, lecturer-usability, or independent-conformance claim is made.
+
+Revision 1.1.7 scope: records local technical completion of B06-C and B06. Learner delivery, attempts, progress, completion, search, invitation acceptance, and Instructor progress access now use the exact active Class enrollment and immutable Course Revision. Stale and cross-Class access fails closed, retained history remains linked, and the full 374-test PHP regression passed. Main-database migration, production operations, specialist review, physical-device/branded-browser evidence, lecturer usability, and later Instructor capabilities remain open. B07 is not authorized until its mandatory questionnaire is answered and recorded.
+
+Revision 1.1.8 scope: records the owner's 2026-07-22 authorization to run the remaining work as one consolidated tester update, use the documented recommendations without further routine questionnaires, and implement the supplied v0.8 learning-content research and CEFR claims while keeping their lack of independent review explicit. A deterministic, non-active v0.8 candidate bundle now compiles from the supplied DOCX. The active authority configuration and v0.4 package remain unchanged until the external authority file is replaced with approval and the candidate is transformed into the active package contract. Evidence and resume instructions are in `docs/checkpoints/NG-AUTHORITY-CANDIDATE-2026-07-22.md`.
+
+Revision 1.1.9 scope: records local completion of the consolidated tester implementation. The full Laravel suite passed 389 tests with 5,931 assertions; 60 Playwright journeys passed across desktop Chromium, desktop WebKit, mobile Chromium, and mobile WebKit; and the Python visual verifier passed 31 learner checks. Firefox failed during browser launch before application navigation, leaving 14 Firefox journeys unrun. The v0.8 candidate remains verified and inactive. No external authority replacement, main-database migration, or production deployment occurred. Exact evidence and next-agent boundaries are in `docs/checkpoints/NG-CONSOLIDATED-TESTER-UPDATE-2026-07-22.md`.
+
+## Current execution handoff
+
+- Last completed domain checkpoint: B06-C on 2026-07-22.
+- Current delivery mode: one consolidated tester update. The owner waived routine B07 through B17 questionnaire pauses and accepted the roadmap recommendations as defaults.
+- Active learning authority: the existing `Hospitrainity.docx`, SHA-256 `7F8A2C62DB6884498F7A1C2DE56E79E39609262944A685FE7EB97F702444CBB4`.
+- Validated replacement candidate: `Hospitrainity New.docx` v0.8.0-draft, SHA-256 `5DE098DCDCC6405093004F6253A1DEF2F5DC4D85BC1CCACF1416376F3A77569B`.
+- Candidate compiler: `scripts/curriculum/compile_next.php`; verifier: `scripts/curriculum/verify_next.php`.
+- Candidate state: deterministic and structurally validated, but not active. It contains 7 chapters, 88 source sections, 28 outcomes, 151 activities or response items, and 13 vocabulary or phrase nodes. Its 18 external relationship records have no hyperlink anchors in the document body, so their labels remain unmapped.
+- Consolidated tester state: locally implemented and integrated. The available Laravel, static, build, governance, and four non-Firefox browser-project gates pass. Firefox remains unverified because its local headless runtime failed before navigation.
+- Do not redo B00 through B06 or rerun questionnaires. Resume from the latest checkpoint, preserve concurrent working-tree changes, and follow the exact next actions in Section 22.
 
 ## 0. Executor hard rules
 
@@ -15,9 +44,9 @@ The future AI MUST treat this section as an execution contract.
 1. Read this entire document, the current repository instructions, the thesis DOCX, the Hospitrainity learning-materials DOCX, and the latest accepted checkpoint documents before changing code.
 2. Recalculate both authority-document SHA-256 hashes before every batch. If either differs from section 2, STOP, report the mismatch, and repeat the affected source audit before implementation.
 3. Do not claim that this 2026-07-19 audit proves the future repository state. Re-run the baseline commands and inspect all changes made after this document.
-4. Do not infer product, visual, pedagogical, grading, privacy, retention, institutional, notification, AI, proctoring, or deployment preferences. Run the mandatory questionnaire for the selected batch and WAIT for the owner's answers before editing.
-5. A user answer such as Continue authorizes only the next agreed batch. It does not answer unanswered questionnaire items and does not authorize later batches.
-6. Keep one batch per user checkpoint unless the owner explicitly authorizes a different boundary. Never silently start the next batch.
+4. Use the recorded owner decisions and roadmap recommendations. The owner authorized one consolidated tester update on 2026-07-22 and waived routine B07 through B17 questionnaire pauses. Ask only when an undiscoverable choice requires credentials, a vendor contract, an external write, destructive data action, production deployment, or material scope expansion.
+5. Continue from the latest checkpoint. Do not restart completed batches or interpret the questionnaire waiver as permission for unapproved external writes, production deployment, or destructive operations.
+6. Preserve internal batch ownership and acceptance checks for traceability, but one consolidated delivery checkpoint may cover several batches.
 7. Preserve working CF-1 through CF-7 and ADM-0 through ADM-6 behavior unless a batch explicitly replaces it and regression tests prove the replacement.
 8. Never mutate an active/published canonical package in place. Author in an isolated draft, validate, preview, approve, publish a new immutable version, retain provenance, and preserve rollback.
 9. Never invent learning prose, hotel facts, translations, answer variants, assessment rules, CEFR claims, source approvals, research findings, or production configuration.
@@ -66,11 +95,16 @@ Severity:
 
 1. Thesis/vision authority:
    C:\Users\dhion\Desktop\Documents\000 - Thesis Dhion Setio\Revisi 30 Juni 2026\Dhion Setio - Thesis Revise 7-18.docx
-   SHA-256: C38AC625A2F7A34BB004E6B68183D748BC6C1D3C1C9896C3F791909072496D34
+   SHA-256: BA64B2EB69673E84FC83E21D4617CD111691EE6340FC2F4331948FE6AF5EC132
 2. Learning-content authority:
    C:\Users\dhion\Desktop\Documents\000 - Thesis Dhion Setio\Revisi 30 Juni 2026\Learning Materials - Fixed\Hospitrainity.docx
    SHA-256: 7F8A2C62DB6884498F7A1C2DE56E79E39609262944A685FE7EB97F702444CBB4
-3. Accepted implementation/history:
+3. Validated replacement candidate, not yet active:
+   C:\Users\dhion\Downloads\Hospitrainity New.docx
+   SHA-256: 5DE098DCDCC6405093004F6253A1DEF2F5DC4D85BC1CCACF1416376F3A77569B
+   Version marker: v0.8.0-draft
+   State: deterministic candidate compilation passed; external authority replacement and active-package transformation remain open.
+4. Accepted implementation/history:
    docs/HOSPITRAINITY_SOURCE_FIDELITY_AUDIT_AND_UPDATE_ROADMAP.md
    docs/HOSPITRAINITY_IMPLEMENTATION_CHECKPOINTS.md
    docs/decisions/ADM-0-administration-capability-matrix.md
@@ -628,9 +662,9 @@ Impact: middleware, confirmation, accessibility, or role-display changes can dri
 Required fix: B08/B17 characterize route middleware/names and form markup first, then move coherent route groups to bounded route files and repeated UI to accessible components with explicit inputs. Preserve server policies and avoid a framework rewrite or universal component that erases semantic differences.  
 Acceptance: route inventory/middleware/name snapshots remain stable; component variants have keyboard/error/confirmation/role tests; no hidden navigation is treated as authorization; duplication is reduced only where behavior is demonstrably shared.
 
-## 11. Mandatory pre-batch questionnaire protocol
+## 11. Questionnaire inventory and consolidated execution override
 
-This applies even when an implementation appears technically obvious.
+The list below remains an audit inventory. For the current consolidated tester update, the owner's 2026-07-22 direction supersedes the routine pause: use the documented recommendations and do not send B07 through B17 questionnaires again. Stop only for credentials, a vendor contract, an external write, destructive data action, production deployment, or another material scope expansion that the repository cannot resolve.
 
 1. At the start of the selected batch, perform a read-only repository/source drift check.
 2. Enumerate every choice in that batch under these headings: product behavior, roles/scope, information architecture, visual interaction, content/pedagogy, grading, notifications, privacy/retention, accessibility/accommodations, security/abuse, migration/compatibility, deployment/rollout.
@@ -972,6 +1006,7 @@ Rollback: content/navigation changes are versioned; retain old copy for comparis
 
 Priority: P1 core LMS.  
 Dependencies: B01 normalized institution/invitation; B02 privacy; B03 security; B04 shell.  
+Decision state: approved and locally completed 2026-07-22 through B06-A, UI-R02, B06-B, and B06-C; see `docs/decisions/NG-B06-DECISIONS.md`, `docs/checkpoints/NG-B06-A-FOUNDATION-2026-07-21.md`, `docs/checkpoints/UI-R02-RESPONSIVE-LEARNER-SHELL-2026-07-21.md`, `docs/checkpoints/NG-B06-B-CLASS-ROSTER-2026-07-21.md`, and `docs/checkpoints/NG-B06-C-CLASS-LEARNING-CUTOVER-2026-07-22.md`. Production and specialist-review gates remain open. Implementation must preserve the scoped content-release boundary recorded there.  
 Addresses: NG-P1-009, the shared time foundation for NG-P2-026, and foundation for questions 11–16.
 
 Mandatory questionnaire:
@@ -1900,6 +1935,6 @@ The roadmap is not complete merely because every batch has code. Completion requ
 
 Use this prompt only with both authority DOCX files attached/provided:
 
-    Read AGENTS.md and the complete file docs/HOSPITRAINITY_NEXT_GENERATION_AUDIT_AND_UPDATE_ROADMAP.md. Do not edit yet. Recalculate both authority DOCX hashes, inspect repository/version-control drift since 2026-07-19, rerun the applicable baseline gates, and report discrepancies. Then begin only Batch B00. Before any mutation, send the complete B00 mandatory questionnaire, including every newly discovered preference, and wait for my answers. Do not infer preferences, do not start B01, do not mutate the main database, and do not claim production/thesis/accessibility/security validation beyond evidence. At the checkpoint, report changes, migrations/data impact, exact tests, browser/device evidence, limitations, rollback, and next batch.
+    Read AGENTS.md, this roadmap, docs/checkpoints/NG-B06-C-CLASS-LEARNING-CUTOVER-2026-07-22.md, docs/checkpoints/NG-AUTHORITY-CANDIDATE-2026-07-22.md, and docs/checkpoints/NG-CONSOLIDATED-TESTER-UPDATE-2026-07-22.md. Preserve the dirty working tree and do not restart B00 through B06 or send routine B07 through B17 questionnaires. Confirm the thesis hash BA64B2EB69673E84FC83E21D4617CD111691EE6340FC2F4331948FE6AF5EC132, active learning-authority hash 7F8A2C62DB6884498F7A1C2DE56E79E39609262944A685FE7EB97F702444CBB4, and replacement-candidate hash 5DE098DCDCC6405093004F6253A1DEF2F5DC4D85BC1CCACF1416376F3A77569B. The consolidated tester implementation is locally complete: 389 Laravel tests with 5,931 assertions passed; 60 Playwright journeys passed across desktop Chromium, desktop WebKit, mobile Chromium, and mobile WebKit; and 31 Python Chromium visual checks passed. Firefox failed during browser launch before application navigation, so 14 Firefox journeys remain unverified. Treat the v0.8 candidate as verified but not runtime-active. Do not create an adapter or promote content by inventing the missing activity hierarchy, answer or feedback models, response-group mapping, block provenance, outcome classifications, visibility behavior, lifecycle state, or release evidence. No external DOCX replacement, authority-config switch, active-package mutation, main-database migration, or production deployment has occurred. Begin read-only, inspect the requested scope, and avoid repeating completed work. If asked to activate v0.8, first record a reviewed canonical-contract decision for all eight incompatibilities. If asked to release, reproduce Firefox on a compatible host and treat migration, production configuration, deployment, specialist review, assistive-technology review, physical-device testing, and security testing as separate evidence gates. Root remains the only owner of shared routes, config, migrations, lockfiles, importer, governance hashes, external authority writes, active-package selection, main-database migration, and deployment. Do not claim independent academic, CEFR, accessibility, security, legal, production, physical-device, Firefox, or all-browser validation without evidence.
 
 End of roadmap.

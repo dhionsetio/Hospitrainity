@@ -26,9 +26,9 @@
         ], JSON_THROW_ON_ERROR));
     @endphp
     <div x-data="vocabularyAdmin" data-admin-state="{{ $vocabularyAdminState }}">
-        <div class="flex min-h-screen flex-col md:h-screen md:flex-row">
+        <div class="flex min-h-screen flex-col md:flex-row">
             @include('superadmin.sidebar')
-            <main class="min-w-0 flex-1 p-6 md:overflow-y-auto md:p-10">
+            <main class="min-w-0 flex-1 p-6 md:p-10">
                 @include('superadmin.canonical-curriculum-notice')
                 <header class="mb-8 flex justify-between items-center">
                     <div>
@@ -68,7 +68,7 @@
                                 <td class="px-6 py-4">{{ $vocabulary->items->count() }}</td>
                                 <td class="px-6 py-4 flex items-center gap-3">
                                     @if($legacyCurriculumReadOnly)
-                                        <span class="text-xs font-medium text-neutral-500">{{ __('Read-only evidence') }}</span>
+                                        <span class="text-xs font-semibold text-neutral-700">{{ __('Read-only evidence') }}</span>
                                     @else
                                         <button type="button" @click="openEdit" data-record="{{ base64_encode($vocabulary->toJson()) }}" data-action="{{ route('superadmin.vocabularies.update', $vocabulary) }}" class="font-medium text-blue-600 hover:underline" aria-label="{{ __('admin.edit_named', ['name' => $vocabulary->category]) }}"><i class="fas fa-edit" aria-hidden="true"></i></button>
                                         <form action="{{ route('superadmin.vocabularies.destroy', $vocabulary) }}" method="POST" data-confirm-submit="{{ __('admin.confirm_delete_named', ['name' => $vocabulary->category]) }}">
@@ -78,6 +78,29 @@
                                     @endif
                                 </td>
                             </tr>
+                            @if($legacyCurriculumReadOnly)
+                                <tr class="bg-neutral-50/70">
+                                    <td colspan="5" class="px-6 py-3">
+                                        <details>
+                                            <summary class="cursor-pointer font-semibold text-indigo-700 underline">{{ __('View stored details') }}</summary>
+                                            <div class="mt-4 rounded-md border border-neutral-200 bg-white p-4">
+                                                @include('superadmin.partials.legacy-structured-value', ['value' => [
+                                                    'record_id' => $vocabulary->id,
+                                                    'category' => $vocabulary->category,
+                                                    'parent_lesson' => $vocabulary->lesson->title ?? null,
+                                                    'display_order' => $vocabulary->order,
+                                                    'items' => $vocabulary->items->map(fn ($item) => [
+                                                        'term' => $item->term,
+                                                        'details' => $item->details,
+                                                        'media_url' => $item->media_url,
+                                                        'display_order' => $item->order,
+                                                    ])->all(),
+                                                ]])
+                                            </div>
+                                        </details>
+                                    </td>
+                                </tr>
+                            @endif
                             @empty
                             <tr>
                                 <td colspan="5" class="px-6 py-4 text-center">{{ __('admin.no_vocabulary') }}</td>

@@ -10,6 +10,7 @@ use App\Models\User;
 use App\Models\Vocabulary;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Route;
+use Tests\Feature\Concerns\InstallsCanonicalCurriculumFixture;
 use Tests\TestCase;
 
 /**
@@ -28,6 +29,7 @@ use Tests\TestCase;
  */
 class AdminRouteSmokeTest extends TestCase
 {
+    use InstallsCanonicalCurriculumFixture;
     use RefreshDatabase;
 
     /** Admin screens that must render (HTTP 200) for a superadmin. */
@@ -73,6 +75,24 @@ class AdminRouteSmokeTest extends TestCase
 
             $response->assertOk(); // no 500 and no redirect away from the screen
         }
+    }
+
+    public function test_content_admin_dashboard_hides_system_evidence_details(): void
+    {
+        $package = $this->installCanonicalCurriculumFixture();
+        $admin = User::factory()->create(['role' => 'admin']);
+
+        $this->actingAs($admin)
+            ->get(route('admin.dashboard'))
+            ->assertOk()
+            ->assertSeeText('Published learning content is ready.')
+            ->assertSeeText('Learning content')
+            ->assertDontSeeText('Technical evidence')
+            ->assertDontSeeText('Schema version')
+            ->assertDontSeeText('Package lifecycle status')
+            ->assertDontSeeText($package->content_version)
+            ->assertDontSeeText($package->source_tree_sha256)
+            ->assertDontSeeText('Legacy evidence');
     }
 
     public function test_paginated_admin_indexes_render_with_populated_second_pages(): void

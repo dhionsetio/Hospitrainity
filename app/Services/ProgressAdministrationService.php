@@ -226,14 +226,29 @@ final class ProgressAdministrationService
      *
      * @return array<string, mixed>
      */
-    public function learnerDetail(User $learner, ?string $packageName, ?string $contentVersion): array
-    {
-        $inventory = $this->versionInventoryFor($learner);
+    public function learnerDetail(
+        User $learner,
+        ?string $packageName,
+        ?string $contentVersion,
+        ?int $institutionMembershipId = null,
+        ?string $courseOfferingId = null,
+        ?int $courseEnrollmentId = null,
+        ?int $curriculumPackageId = null,
+        ?array $allowedChapterCodes = null,
+    ): array {
+        $inventory = $this->versionInventoryFor(
+            $learner,
+            $institutionMembershipId,
+            $courseOfferingId,
+            $courseEnrollmentId,
+            $curriculumPackageId,
+        );
         [$packageName, $contentVersion] = $this->resolveSelection(
             $learner,
             $inventory,
             $packageName,
             $contentVersion,
+            $curriculumPackageId !== null,
         );
 
         $package = $packageName !== null && $contentVersion !== null
@@ -251,6 +266,9 @@ final class ProgressAdministrationService
                     'completed_at', 'baseline_skipped_at', 'updated_at',
                 ])
                 ->where('user_id', $learner->id)
+                ->when($institutionMembershipId !== null, fn ($query) => $query->where('institution_membership_id', $institutionMembershipId))
+                ->when($courseOfferingId !== null, fn ($query) => $query->where('course_offering_id', $courseOfferingId))
+                ->when($courseEnrollmentId !== null, fn ($query) => $query->where('course_enrollment_id', $courseEnrollmentId))
                 ->where('package_name', $packageName)
                 ->where('content_version', $contentVersion)
                 ->get()
@@ -260,6 +278,9 @@ final class ProgressAdministrationService
         $attemptCounts = $packageName !== null && $contentVersion !== null
             ? DB::table('curriculum_attempts')
                 ->where('user_id', $learner->id)
+                ->when($institutionMembershipId !== null, fn ($query) => $query->where('institution_membership_id', $institutionMembershipId))
+                ->when($courseOfferingId !== null, fn ($query) => $query->where('course_offering_id', $courseOfferingId))
+                ->when($courseEnrollmentId !== null, fn ($query) => $query->where('course_enrollment_id', $courseEnrollmentId))
                 ->where('package_name', $packageName)
                 ->where('content_version', $contentVersion)
                 ->selectRaw('activity_code, COUNT(id) as attempt_count, MAX(created_at) as last_attempt_at')
@@ -273,6 +294,7 @@ final class ProgressAdministrationService
             ->get(['id', 'curriculum_package_id', 'code', 'entity_type', 'parent_code', 'position', 'lifecycle_status', 'payload'])
             ?? collect();
         $chapters = $entities->where('entity_type', 'chapter')
+            ->when($allowedChapterCodes !== null, static fn (Collection $chapters): Collection => $chapters->whereIn('code', $allowedChapterCodes))
             ->sortBy(static fn (CurriculumEntity $chapter): string => sprintf(
                 '%08d|%08d|%s',
                 (int) ($chapter->payload['module'] ?? PHP_INT_MAX),
@@ -455,9 +477,15 @@ final class ProgressAdministrationService
     }
 
     /** @return Collection<int, array<string, mixed>> */
-    private function versionInventoryFor(User $learner): Collection
-    {
+    private function versionInventoryFor(
+        User $learner,
+        ?int $institutionMembershipId = null,
+        ?string $courseOfferingId = null,
+        ?int $courseEnrollmentId = null,
+        ?int $curriculumPackageId = null,
+    ): Collection {
         $packages = CurriculumPackage::query()
+            ->when($curriculumPackageId !== null, fn ($query) => $query->whereKey($curriculumPackageId))
             ->orderByDesc('is_active')
             ->orderByDesc('imported_at')
             ->get(['id', 'package_name', 'content_version', 'lifecycle_status', 'is_active', 'imported_at'])
@@ -471,6 +499,9 @@ final class ProgressAdministrationService
             ]);
         $progress = CurriculumActivityProgress::query()
             ->where('user_id', $learner->id)
+            ->when($institutionMembershipId !== null, fn ($query) => $query->where('institution_membership_id', $institutionMembershipId))
+            ->when($courseOfferingId !== null, fn ($query) => $query->where('course_offering_id', $courseOfferingId))
+            ->when($courseEnrollmentId !== null, fn ($query) => $query->where('course_enrollment_id', $courseEnrollmentId))
             ->selectRaw('package_name, content_version, MAX(updated_at) as last_activity_at')
             ->groupBy('package_name', 'content_version')
             ->get()
@@ -510,15 +541,20 @@ final class ProgressAdministrationService
         Collection $inventory,
         ?string $packageName,
         ?string $contentVersion,
+        bool $restrictToInventory = false,
     ): array {
         if ($contentVersion !== null) {
-            if ($packageName !== null) {
+            if (! $restrictToInventory && $packageName !== null) {
                 return [$packageName, $contentVersion];
             }
 
-            $match = $inventory->firstWhere('content_version', $contentVersion);
+            $match = $inventory->first(static fn (array $item): bool => $item['content_version'] === $contentVersion
+                && ($packageName === null || $item['package_name'] === $packageName)
+            );
 
-            return [$match['package_name'] ?? null, $contentVersion];
+            if ($match !== null) {
+                return [$match['package_name'], $match['content_version']];
+            }
         }
 
         $active = $inventory->firstWhere('is_active', true);

@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Models\Completion;
+use App\Models\Institution;
 use App\Models\Lesson;
 use App\Models\Module;
 use App\Models\User;
@@ -87,6 +88,18 @@ class CurriculumProgressService
     public function overallForUser(User $user): int
     {
         return $this->overallForUsers(collect([$user]))[$user->getKey()] ?? 0;
+    }
+
+    /** @param Collection<int, User> $users @return array<int|string, int> */
+    public function overallForInstitution(Collection $users, Institution $institution): array
+    {
+        if ($this->canonicalCurriculum->isActive()) {
+            return $this->canonicalCurriculum->overallForInstitution($users, $institution);
+        }
+
+        // Legacy delivery cannot prove institution attribution for historical
+        // rows. Return zero rather than exposing personal completions to staff.
+        return $users->mapWithKeys(static fn (User $user): array => [$user->getKey() => 0])->all();
     }
 
     /** @param array<string, true> $completedKeys */

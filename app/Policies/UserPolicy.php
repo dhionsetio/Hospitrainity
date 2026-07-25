@@ -2,11 +2,18 @@
 
 namespace App\Policies;
 
+use App\Enums\InstitutionMembershipStatus;
+use App\Enums\InstitutionRole;
 use App\Models\User;
+use App\Services\InstitutionAccessService;
+use App\Services\InstitutionContext;
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Auth\Access\Response;
 
 class UserPolicy
 {
+    public function __construct(private readonly InstitutionAccessService $access) {}
+
     public function viewAny(User $actor): bool
     {
         return $actor->isSuperAdmin();
@@ -34,7 +41,13 @@ class UserPolicy
 
     public function viewLearnerProgress(User $actor, User $learner): Response
     {
-        if (! $learner->isLearner()) {
+        if (! $learner->isLearner()
+            && ! $learner->institutionMemberships()
+                ->where('status', InstitutionMembershipStatus::Active->value)
+                ->whereHas('roleAssignments', fn ($query) => $query
+                    ->where('role', InstitutionRole::Learner->value)
+                    ->whereNull('revoked_at'))
+                ->exists()) {
             return Response::denyAsNotFound();
         }
 
@@ -42,11 +55,22 @@ class UserPolicy
             return Response::allow();
         }
 
-        $institution = (string) $actor->instansi;
-        if ($actor->isSupervisor()
-            && trim($institution) !== ''
-            && hash_equals($institution, (string) $learner->instansi)) {
-            return Response::allow();
+        try {
+            $institution = app(InstitutionContext::class)->current(request(), $actor);
+        } catch (AuthorizationException) {
+            return Response::denyAsNotFound();
+        }
+
+        if ($this->access->canManageLearners($actor, $institution)) {
+            if ($learner->institutionMemberships()
+                ->where('institution_id', $institution->getKey())
+                ->where('status', InstitutionMembershipStatus::Active->value)
+                ->whereHas('roleAssignments', fn ($query) => $query
+                    ->where('role', InstitutionRole::Learner->value)
+                    ->whereNull('revoked_at'))
+                ->exists()) {
+                return Response::allow();
+            }
         }
 
         return Response::denyAsNotFound();

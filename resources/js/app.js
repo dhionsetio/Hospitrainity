@@ -4,6 +4,12 @@ import { createMediaController, isPlaybackCancellation } from './media-playback'
 import { registerAdminComponents } from './admin-forms';
 import { initializeCanonicalActivity } from './canonical-activity';
 import { initializeExerciseAuthoring } from './canonical-exercise-authoring';
+import { initializePushNotifications } from './push-notifications';
+import { initializePasskeys } from './passkeys';
+import { initializeLessonListening } from './lesson-listening';
+import { initPasswordStrengthMeter } from './password-strength';
+import { initCurriculumAccordion } from './curriculum-accordion';
+import { initReflectionRecorder } from './reflection-recorder';
 
 registerAdminComponents(Alpine);
 window.Alpine = Alpine;
@@ -17,6 +23,103 @@ window.HospitrainityMedia = Object.freeze({ createMediaController, isPlaybackCan
 function initializePageInteractions() {
     initializeCanonicalActivity();
     initializeExerciseAuthoring();
+    initializePushNotifications();
+    initializePasskeys();
+    initializeLessonListening();
+    initPasswordStrengthMeter();
+    initCurriculumAccordion();
+    initReflectionRecorder();
+
+    const priorityFocusTarget = document.querySelector('[data-focus-errors], [data-focus-status]');
+    if (priorityFocusTarget instanceof HTMLElement) {
+        window.requestAnimationFrame(() => priorityFocusTarget.focus());
+    }
+
+    document.querySelectorAll('[data-shell-drawer-open]').forEach((openButton) => {
+        if (!(openButton instanceof HTMLButtonElement)) return;
+        const drawer = document.getElementById(openButton.getAttribute('aria-controls') || '');
+        if (!(drawer instanceof HTMLDialogElement)) return;
+        const closeButton = drawer.querySelector('[data-shell-drawer-close]');
+        const closeDrawer = () => {
+            if (drawer.open) drawer.close();
+        };
+
+        openButton.addEventListener('click', () => {
+            drawer.showModal();
+            document.body.style.overflow = 'hidden';
+            if (closeButton instanceof HTMLElement) closeButton.focus();
+        });
+        closeButton?.addEventListener('click', closeDrawer);
+        drawer.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeDrawer));
+        drawer.addEventListener('click', (event) => {
+            if (event.target === drawer) closeDrawer();
+        });
+        drawer.addEventListener('close', () => {
+            document.body.style.removeProperty('overflow');
+            openButton.focus();
+        });
+    });
+
+    const shellDisclosures = Array.from(document.querySelectorAll('[data-shell-disclosure]'));
+    const setShellDisclosureOpen = (disclosure, open, returnFocus = false) => {
+        const button = disclosure.querySelector('[data-shell-disclosure-button]');
+        const panel = disclosure.querySelector('[data-shell-disclosure-panel]');
+        if (!(button instanceof HTMLButtonElement) || !(panel instanceof HTMLElement)) return;
+
+        panel.hidden = !open;
+        button.setAttribute('aria-expanded', String(open));
+        button.setAttribute(
+            'aria-label',
+            open ? button.dataset.closeLabel : button.dataset.openLabel,
+        );
+        if (returnFocus) button.focus();
+    };
+    const closeOtherShellDisclosures = (current) => {
+        shellDisclosures.forEach((disclosure) => {
+            if (disclosure !== current) setShellDisclosureOpen(disclosure, false);
+        });
+    };
+
+    shellDisclosures.forEach((disclosure) => {
+        const button = disclosure.querySelector('[data-shell-disclosure-button]');
+        const panel = disclosure.querySelector('[data-shell-disclosure-panel]');
+        if (!(button instanceof HTMLButtonElement) || !(panel instanceof HTMLElement)) return;
+
+        button.addEventListener('click', () => {
+            const willOpen = button.getAttribute('aria-expanded') !== 'true';
+            closeOtherShellDisclosures(disclosure);
+            setShellDisclosureOpen(disclosure, willOpen);
+        });
+        disclosure.querySelectorAll('[data-shell-disclosure-close]').forEach((closeButton) => {
+            closeButton.addEventListener('click', () => setShellDisclosureOpen(disclosure, false, true));
+        });
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key !== 'Escape') return;
+
+        const openDisclosure = shellDisclosures.find((disclosure) => (
+            disclosure.querySelector('[data-shell-disclosure-button]')?.getAttribute('aria-expanded') === 'true'
+        ));
+        if (!openDisclosure) return;
+
+        event.preventDefault();
+        setShellDisclosureOpen(openDisclosure, false, true);
+    });
+
+    document.addEventListener('focusin', (event) => {
+        if (!(event.target instanceof Node)) return;
+        shellDisclosures.forEach((disclosure) => {
+            if (!disclosure.contains(event.target)) setShellDisclosureOpen(disclosure, false);
+        });
+    });
+
+    window.addEventListener('click', (event) => {
+        if (!(event.target instanceof Node)) return;
+        shellDisclosures.forEach((disclosure) => {
+            if (!disclosure.contains(event.target)) setShellDisclosureOpen(disclosure, false);
+        });
+    });
 
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -106,6 +209,83 @@ function initializePageInteractions() {
         }
     });
 
+    // Login modal controller
+    const loginModal = document.getElementById('login-modal');
+    const openLoginButtons = document.querySelectorAll('[data-login-modal-open]');
+    const closeLoginButtons = document.querySelectorAll('[data-login-modal-close]');
+    let lastActiveElement = null;
+
+    const setLoginModalOpen = (open) => {
+        if (!loginModal) return;
+        if (open) {
+            lastActiveElement = document.activeElement;
+            loginModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            const emailInput = loginModal.querySelector('#email-address');
+            if (emailInput instanceof HTMLElement) emailInput.focus();
+        } else {
+            loginModal.classList.add('hidden');
+            document.body.style.removeProperty('overflow');
+            if (lastActiveElement instanceof HTMLElement) lastActiveElement.focus();
+        }
+    };
+
+    openLoginButtons.forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            setLoginModalOpen(true);
+        });
+    });
+
+    closeLoginButtons.forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            setLoginModalOpen(false);
+        });
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && loginModal && !loginModal.classList.contains('hidden')) {
+            setLoginModalOpen(false);
+        }
+    });
+
+    // Theme toggle controller
+    const themeButtons = document.querySelectorAll('[data-theme-toggle]');
+    const updateThemeUI = (isDark) => {
+        document.documentElement.classList.toggle('dark', isDark);
+        document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+        document.cookie = `hospitrainity_theme=${isDark ? 'dark' : 'light'};path=/;max-age=31536000;SameSite=Lax`;
+        themeButtons.forEach((btn) => {
+            btn.setAttribute('aria-pressed', String(isDark));
+            const label = btn.querySelector('[data-theme-label]');
+            if (label) label.textContent = isDark ? btn.dataset.labelLight : btn.dataset.labelDark;
+            const icon = btn.querySelector('[data-theme-icon]');
+            if (icon) {
+                icon.className = isDark ? 'fas fa-sun fa-fw text-amber-400' : 'fas fa-moon fa-fw text-neutral-600';
+            }
+        });
+    };
+
+    const initialIsDark = document.documentElement.classList.contains('dark');
+    themeButtons.forEach((btn) => {
+        btn.setAttribute('aria-pressed', String(initialIsDark));
+        const label = btn.querySelector('[data-theme-label]');
+        if (label) label.textContent = initialIsDark ? btn.dataset.labelLight : btn.dataset.labelDark;
+        const icon = btn.querySelector('[data-theme-icon]');
+        if (icon) {
+            icon.className = initialIsDark ? 'fas fa-sun fa-fw text-amber-400' : 'fas fa-moon fa-fw text-neutral-600';
+        }
+    });
+
+    themeButtons.forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const isDark = document.documentElement.classList.contains('dark');
+            updateThemeUI(!isDark);
+        });
+    });
+
     document.addEventListener('submit', (event) => {
         const form = event.target;
         if (!(form instanceof HTMLFormElement) || !form.matches('[data-confirm-submit]')) return;
@@ -114,6 +294,13 @@ function initializePageInteractions() {
         if (!window.confirm(form.dataset.confirmSubmit || fallback)) {
             event.preventDefault();
         }
+    });
+
+    document.addEventListener('submit', (event) => {
+        if (event.defaultPrevented || !(event.submitter instanceof HTMLButtonElement)) return;
+
+        event.submitter.dataset.submitting = 'true';
+        event.submitter.setAttribute('aria-busy', 'true');
     });
 
     document.querySelectorAll('[data-progress-filter-form]').forEach((form) => {
