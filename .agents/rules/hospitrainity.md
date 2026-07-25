@@ -15,8 +15,15 @@
 - Do NOT change the enabled exercise-template counts in
   `CanonicalExerciseTemplateRegistry` (19 templates, 17 enabled).
 - Do NOT weaken upload security. Reflection media is PRIVATE: quarantine then
-  promote on a private disk, magic-byte inspection, and enqueue deletions via
-  `PendingMediaDeletion`. Never expose data across institutions.
+  promote on a private disk, magic-byte inspection, and reference-counted enqueue
+  deletions via `PendingMediaDeletion`. Never expose data across institutions.
+  Content-addressed media files (deduplicated by SHA256) must NEVER be deleted
+  inline (`Storage::delete`) upon model deletion or inside database transactions;
+  only enqueue into `PendingMediaDeletion` when the remaining reference count
+  reaches 0.
+- Blade views (`resources/views/**/*.blade.php`) MUST NEVER perform database queries
+  directly (`Model::query()`). All queries must be executed in controllers or domain
+  services (respecting scope keys) and passed to views as parameters.
 
 ## Style and i18n
 - Plain, beginner-friendly language in all UI copy.
@@ -27,7 +34,13 @@
   identical keys (LangParityTest and TranslationInventoryTest enforce this).
 - Accessibility: one `<main>` and one `<h1>` per page, working skip-link,
   named buttons, alt text on images, `aria-*` on dialogs, `shrink-0` on
-  radio/checkbox inputs (AccessibilityMarkupTest enforces this).
+  radio/checkbox inputs (AccessibilityMarkupTest enforces this). In Blade templates,
+  place `class="shrink-0 ..."` BEFORE any `value="{{ $model->id }}"` attributes
+  containing Blade arrow syntax (`->`) to ensure regex parsers match full attributes.
+- JS Audio/Media Capture: In-browser recording logic MUST be implemented as a testable
+  factory (`createReflectionRecorder({ mediaDevices, MediaRecorderCtor, strings })`)
+  with injected dependencies, paired with a thin DOM adapter (`initReflectionRecorder`)
+  reading localized `data-*` attributes.
 
 ## Test contracts (must stay green - never weaken them)
 - Put new PHP tests under `tests/Feature` or `tests/Unit`, extend

@@ -6,10 +6,8 @@
 @section('content')
     @php($legacyCurriculumReadOnly = true)
     @php($editable = $draft->status === \App\Enums\CurriculumDraftStatus::Draft)
-    <div class="flex min-h-screen flex-col bg-neutral-100 md:flex-row">
-        @include('superadmin.sidebar')
-        <main class="min-w-0 flex-1 p-6 md:p-10">
-            <x-back-control :href="route($routePrefix.'.curriculum-drafts.show', $draft)" :label="$draft->title" />
+    <main class="container mx-auto max-w-7xl px-4 py-6 sm:px-6 sm:py-8">
+        <x-back-control :href="route($routePrefix.'.curriculum-drafts.show', $draft)" :label="$draft->title" />
             <header class="mt-4 rounded-xl bg-white p-6 shadow">
                 @if(Auth::user()->isSuperAdmin())
                     <p class="text-sm font-semibold uppercase tracking-wide text-indigo-700">{{ __('admin.registry_version') }} {{ \App\Services\Curriculum\CanonicalExerciseTemplateRegistry::VERSION }}</p>
@@ -59,5 +57,4 @@
                 </div>
             </section>
         </main>
-    </div>
 @endsection

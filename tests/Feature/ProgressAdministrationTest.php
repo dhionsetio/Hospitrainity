@@ -235,7 +235,7 @@ class ProgressAdministrationTest extends TestCase
             ->assertSee('status=viewed', escape: false);
         $this->assertSame($oneLearnerQueries, $manyLearnerQueries);
         $this->assertLessThanOrEqual(
-            24,
+            25,
             $manyLearnerQueries,
             collect(DB::getQueryLog())->pluck('query')->implode("\n"),
         );

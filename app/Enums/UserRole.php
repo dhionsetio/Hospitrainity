@@ -31,6 +31,16 @@ enum UserRole: string
         };
     }
 
+    public function label(): string
+    {
+        return match ($this) {
+            self::Learner => __('roles.learner'),
+            self::Supervisor => __('roles.supervisor'),
+            self::Admin => __('roles.admin'),
+            self::Superadmin => __('roles.superadmin'),
+        };
+    }
+
     public function isElevated(): bool
     {
         return $this !== self::Learner;

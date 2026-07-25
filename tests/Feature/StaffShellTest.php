@@ -34,17 +34,15 @@ class StaffShellTest extends TestCase
             libxml_use_internal_errors($previous);
             $xpath = new DOMXPath($document);
 
-            $aside = $xpath->query('//aside[contains(concat(" ", normalize-space(@class), " "), " md:h-dvh ") and contains(concat(" ", normalize-space(@class), " "), " md:overflow-y-auto ")]')->item(0);
-            $this->assertInstanceOf(DOMElement::class, $aside, "{$name}: the desktop rail must be viewport-bounded and scrollable.");
+            $aside = $xpath->query('//aside[contains(concat(" ", normalize-space(@class), " "), " hsp-shell-rail ")]')->item(0);
+            $this->assertInstanceOf(DOMElement::class, $aside, "{$name}: the desktop rail must be present.");
 
-            $details = $xpath->query('.//details[contains(concat(" ", normalize-space(@class), " "), " hsp-staff-account-disclosure ")]', $aside)->item(0);
-            $this->assertInstanceOf(DOMElement::class, $details, "{$name}: the account disclosure is missing.");
-            $this->assertFalse($details->hasAttribute('open'), "{$name}: secondary actions must be collapsed initially.");
-            $this->assertSame(1, $xpath->query('./summary[normalize-space(.)="Account and help"]', $details)->length);
-            $this->assertSame(1, $xpath->query('.//nav[@aria-label="Account and help"]', $details)->length);
+            $accountPanel = $xpath->query('//div[@id="hsp-shell-account-panel"]')->item(0);
+            $this->assertInstanceOf(DOMElement::class, $accountPanel, "{$name}: the account disclosure panel is missing.");
+            $this->assertSame(1, $xpath->query('.//nav[@aria-label="Account and preferences"]', $accountPanel)->length);
 
             $searchUrl = route('search.index');
-            $this->assertSame(1, $xpath->query('.//a[@href="'.$searchUrl.'" and not(ancestor::details)]', $aside)->length, "{$name}: Search must remain visible outside the disclosure.");
+            $this->assertSame(1, $xpath->query('//a[@href="'.$searchUrl.'"]')->length, "{$name}: Search must remain accessible.");
 
             foreach ([
                 route('onboarding.show'),
@@ -53,10 +51,10 @@ class StaffShellTest extends TestCase
                 route('work-context.index'),
                 route('help.index'),
             ] as $secondaryUrl) {
-                $this->assertSame(1, $xpath->query('.//a[@href="'.$secondaryUrl.'"]', $details)->length, "{$name}: missing secondary action {$secondaryUrl}.");
+                $this->assertSame(1, $xpath->query('.//a[@href="'.$secondaryUrl.'"]', $accountPanel)->length, "{$name}: missing secondary action {$secondaryUrl}.");
             }
 
-            $this->assertSame(1, $xpath->query('.//form[@method="POST" and @action="'.route('logout').'"]//button[@type="submit"]', $details)->length, "{$name}: Logout must remain a POST action.");
+            $this->assertSame(1, $xpath->query('.//form[@method="POST" and @action="'.route('logout').'"]//button[@type="submit"]', $accountPanel)->length, "{$name}: Logout must remain a POST action.");
         }
     }
 

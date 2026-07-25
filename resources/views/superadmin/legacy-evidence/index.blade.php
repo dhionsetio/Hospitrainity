@@ -4,11 +4,8 @@
 @section('bodyClass', 'bg-neutral-100')
 
 @section('content')
-    <div class="flex min-h-screen flex-col bg-neutral-100 md:flex-row">
-        @include('superadmin.sidebar')
-
-        <main class="min-w-0 flex-1 p-6 md:p-10">
-            <header class="rounded-xl border border-amber-300 bg-amber-50 p-6">
+    <main class="container mx-auto max-w-7xl px-4 py-6 sm:px-6 sm:py-8">
+        <header class="rounded-xl border border-amber-300 bg-amber-50 p-6">
                 <div class="flex flex-wrap items-start justify-between gap-4">
                     <div>
                         <h1 class="text-3xl font-bold text-amber-950">{{ __('admin.legacy_evidence') }}</h1>
@@ -40,5 +37,4 @@
                 @endforeach
             </section>
         </main>
-    </div>
 @endsection

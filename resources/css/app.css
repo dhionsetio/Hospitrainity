@@ -2090,3 +2090,15 @@ html[data-motion="reduce"] :is(.hsp-shell-nav__item, .hsp-shell-bottom-nav__item
         animation-duration: 1.5s;
     }
 }
+
+/* Update 4.1 Theme Contrast Utility Token Overrides */
+[class~="hover:text-neutral-700"]:hover { color: #404040; }
+.dark [class~="dark:text-neutral-500"] { color: #737373; }
+[class~="bg-indigo-50/50"] { background-color: rgba(238, 242, 255, 0.5); }
+.dark [class~="dark:border-indigo-900/50"] { border-color: rgba(49, 46, 129, 0.5); }
+.dark [class~="dark:bg-indigo-950/30"] { background-color: rgba(30, 27, 75, 0.3); }
+.dark [class~="dark:text-indigo-200"] { color: #c7d2fe; }
+.dark [class~="dark:text-indigo-300"] { color: #a5b4fc; }
+[class~="hover:text-emerald-600"]:hover { color: #059669; }
+[class~="hover:text-red-600"]:hover { color: #dc2626; }
+

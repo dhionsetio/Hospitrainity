@@ -6,10 +6,8 @@
 @section('content')
     @php($legacyCurriculumReadOnly = true)
     @php($editable = $draft->status === \App\Enums\CurriculumDraftStatus::Draft)
-    <div class="flex min-h-screen flex-col bg-neutral-100 md:flex-row">
-        @include('superadmin.sidebar')
-        <main class="min-w-0 flex-1 p-6 md:p-10">
-            <x-back-control :href="route($routePrefix.'.curriculum-drafts.show', $draft)" :label="__('admin.return_to_draft')" />
+    <main class="container mx-auto max-w-7xl px-4 py-6 sm:px-6 sm:py-8">
+        <x-back-control :href="route($routePrefix.'.curriculum-drafts.show', $draft)" :label="__('admin.return_to_draft')" />
             <header class="mt-4 rounded-xl bg-white p-6 shadow">
                 <div class="flex flex-wrap gap-2"><span class="rounded-full bg-indigo-100 px-3 py-1 font-semibold text-indigo-800">{{ __('admin.entity_types.'.$entity->entity_type) }}</span>@if($entity->archived_at)<span class="rounded-full bg-amber-100 px-3 py-1 font-semibold text-amber-900">{{ __('admin.archived') }}</span>@endif</div>
                 <h1 class="mt-3 break-words text-3xl font-bold text-neutral-950">{{ $entity->payload['title'] ?? $entity->payload['statement'] ?? $entity->code }}</h1>
@@ -80,5 +78,4 @@
                 </section>
             @endif
         </main>
-    </div>
 @endsection

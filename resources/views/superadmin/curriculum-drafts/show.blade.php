@@ -6,11 +6,8 @@
 @section('content')
     @php($legacyCurriculumReadOnly = true)
     @php($editable = $draft->status === \App\Enums\CurriculumDraftStatus::Draft)
-    <div class="flex min-h-screen flex-col bg-neutral-100 md:flex-row">
-        @include('superadmin.sidebar')
-
-        <main class="min-w-0 flex-1 p-6 md:p-10">
-            <x-back-control :href="route($routePrefix.'.curriculum-drafts.index')" :label="__('admin.canonical_drafts')" />
+    <main class="container mx-auto max-w-7xl px-4 py-6 sm:px-6 sm:py-8">
+        <x-back-control :href="route($routePrefix.'.curriculum-drafts.index')" :label="__('admin.canonical_drafts')" />
             <header class="mt-4 flex flex-wrap items-start justify-between gap-4 rounded-xl bg-white p-6 shadow">
                 <div>
                     <div class="flex flex-wrap gap-2"><span class="rounded-full bg-indigo-100 px-3 py-1 font-semibold text-indigo-800">{{ __('admin.'.$draft->status->value) }}</span><span class="rounded-full bg-neutral-100 px-3 py-1 font-mono text-neutral-700">{{ $draft->content_version }}</span></div>
@@ -168,5 +165,4 @@
 
             <section class="mt-6 rounded-xl bg-white p-6 shadow"><h2 class="text-xl font-bold">{{ __('admin.lifecycle_events') }}</h2><div class="mt-4 overflow-x-auto"><table class="min-w-full text-left text-sm"><thead><tr class="border-b"><th class="p-2">{{ __('admin.event') }}</th><th class="p-2">{{ __('admin.status') }}</th><th class="p-2">{{ __('admin.actor') }}</th><th class="p-2">{{ __('admin.revision') }}</th><th class="p-2">{{ __('admin.reason') }}</th><th class="p-2">{{ __('admin.time') }}</th></tr></thead><tbody class="divide-y">@foreach($draft->events as $event)<tr><td class="p-2">{{ str_replace('_', ' ', $event->event_type) }}</td><td class="p-2">{{ $event->from_status }}@if($event->to_status) &rarr; {{ $event->to_status }}@endif</td><td class="p-2">{{ $event->actor?->name ?? __('admin.not_available') }}</td><td class="p-2">{{ $event->revision }}</td><td class="p-2">{{ $event->reason }}</td><td class="p-2">{{ $event->created_at?->format('Y-m-d H:i:s') }}</td></tr>@endforeach</tbody></table></div></section>
         </main>
-    </div>
 @endsection

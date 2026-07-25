@@ -5,12 +5,9 @@
 
 @section('content')
     @php($legacyCurriculumReadOnly = Auth::user()->isAdmin() || $activeCanonicalPackage !== null)
-    <div class="flex min-h-screen flex-col bg-neutral-100 md:flex-row">
-        @include('superadmin.sidebar')
-
-        <main class="min-w-0 flex-1 p-6 md:p-10">
-            @include('superadmin.canonical-curriculum-notice')
-            <header class="mb-8">
+    <main class="container mx-auto max-w-7xl px-4 py-6 sm:px-6 sm:py-8">
+        @include('superadmin.canonical-curriculum-notice')
+        <header class="mb-8">
                 <h1 class="text-3xl font-bold text-neutral-800">{{ __('admin.welcome_name', ['name' => Auth::user()->name]) }}</h1>
                 <p class="text-neutral-500">{{ __('admin.platform_summary') }}</p>
                 @include('partials.next-action', ['nextAction' => $nextAction])
@@ -173,5 +170,4 @@
                 @endif
             </div>
         </main>
-    </div>
 @endsection

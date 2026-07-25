@@ -4,12 +4,8 @@
 @section('bodyClass', 'bg-neutral-100')
 
 @section('content')
-    <div class="flex min-h-screen flex-col bg-neutral-100 md:flex-row">
-        @include('supervisor.sidebar')
-
-        <!-- Main Content -->
-        <main class="min-w-0 flex-1 p-6 md:p-10">
-            <header class="mb-8">
+    <main class="container mx-auto max-w-7xl px-4 py-6 sm:px-6 sm:py-8">
+        <header class="mb-8">
                 <h1 class="text-3xl font-bold text-neutral-800">{{ __('admin.team_progress') }}</h1>
                 <p class="text-neutral-500">{{ __('admin.monitor_institution_progress') }}</p>
                 @include('partials.next-action', ['nextAction' => $nextAction])
@@ -71,5 +67,4 @@
                 <div class="p-4">{{ $users->links() }}</div>
             </section>
         </main>
-    </div>
 @endsection

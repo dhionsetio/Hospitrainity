@@ -10,11 +10,8 @@
         $availableCodes = $offering->joinCodes->filter(fn ($code) => $code->isRedeemable());
         $availableInvitations = $offering->invitations->filter(fn ($invitation) => $invitation->isRedeemable());
     @endphp
-    <div class="flex min-h-screen flex-col bg-neutral-100 md:flex-row">
-        @include('supervisor.sidebar')
-
-        <main class="min-w-0 flex-1 p-4 pb-24 sm:p-6 md:p-10">
-            <div class="mx-auto max-w-6xl">
+    <main class="container mx-auto max-w-7xl px-4 py-6 sm:px-6 sm:py-8">
+        <div class="mx-auto max-w-6xl">
                 <a href="{{ route('supervisor.classes.index') }}" class="inline-flex min-h-11 items-center gap-2 font-semibold text-indigo-800 hover:text-indigo-950"><i class="fas fa-arrow-left" aria-hidden="true"></i>{{ __('classes.back_to_classes') }}</a>
 
                 <header class="mt-4 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
@@ -242,5 +239,4 @@
                 @endif
             </div>
         </main>
-    </div>
 @endsection

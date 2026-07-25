@@ -4,11 +4,8 @@
 @section('bodyClass', 'bg-neutral-100')
 
 @section('content')
-    <div class="flex min-h-screen flex-col bg-neutral-100 md:flex-row">
-        @include($routePrefix === 'supervisor' ? 'supervisor.sidebar' : 'superadmin.sidebar')
-
-        <main class="min-w-0 flex-1 space-y-8 p-6 md:p-10">
-            <header>
+    <main class="container mx-auto max-w-7xl px-4 py-6 sm:px-6 sm:py-8 space-y-8">
+        <header>
                 <h1 class="text-3xl font-bold text-neutral-900">{{ __('Institution staff roles') }}</h1>
                 <p class="mt-2 max-w-3xl text-neutral-600">{{ __('Institution Admins may manage Instructor access in this institution. Only System Admin may manage Institution Admin access.') }}</p>
             </header>
@@ -95,5 +92,4 @@
                 </table>
             </section>
         </main>
-    </div>
 @endsection

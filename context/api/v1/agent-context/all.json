@@ -1424,10 +1424,10 @@
         },
         "routes": {
             "inventory_kind": "live_named_routes",
-            "route_count": 244,
+            "route_count": 249,
             "counts_by_audience": {
                 "agent_integration": 3,
-                "authenticated_account": 39,
+                "authenticated_account": 44,
                 "content_author": 40,
                 "institution_staff": 35,
                 "learner": 26,
@@ -1749,6 +1749,111 @@
                         "authenticated": true,
                         "bearer_token": false,
                         "verified_email": false,
+                        "strong_mfa": false,
+                        "recent_password": false,
+                        "signed_url": false,
+                        "rate_limited": false,
+                        "legacy_roles": [],
+                        "record_policies": []
+                    }
+                },
+                {
+                    "name": "notifications.index",
+                    "methods": [
+                        "GET"
+                    ],
+                    "uri": "/notifications",
+                    "audience": "authenticated_account",
+                    "mutation": false,
+                    "requirements": {
+                        "guest_only": false,
+                        "authenticated": true,
+                        "bearer_token": false,
+                        "verified_email": true,
+                        "strong_mfa": false,
+                        "recent_password": false,
+                        "signed_url": false,
+                        "rate_limited": false,
+                        "legacy_roles": [],
+                        "record_policies": []
+                    }
+                },
+                {
+                    "name": "notifications.panel",
+                    "methods": [
+                        "GET"
+                    ],
+                    "uri": "/notifications/panel",
+                    "audience": "authenticated_account",
+                    "mutation": false,
+                    "requirements": {
+                        "guest_only": false,
+                        "authenticated": true,
+                        "bearer_token": false,
+                        "verified_email": true,
+                        "strong_mfa": false,
+                        "recent_password": false,
+                        "signed_url": false,
+                        "rate_limited": false,
+                        "legacy_roles": [],
+                        "record_policies": []
+                    }
+                },
+                {
+                    "name": "notifications.readAll",
+                    "methods": [
+                        "PATCH"
+                    ],
+                    "uri": "/notifications/read-all",
+                    "audience": "authenticated_account",
+                    "mutation": true,
+                    "requirements": {
+                        "guest_only": false,
+                        "authenticated": true,
+                        "bearer_token": false,
+                        "verified_email": true,
+                        "strong_mfa": false,
+                        "recent_password": false,
+                        "signed_url": false,
+                        "rate_limited": false,
+                        "legacy_roles": [],
+                        "record_policies": []
+                    }
+                },
+                {
+                    "name": "notifications.destroy",
+                    "methods": [
+                        "DELETE"
+                    ],
+                    "uri": "/notifications/{id}",
+                    "audience": "authenticated_account",
+                    "mutation": true,
+                    "requirements": {
+                        "guest_only": false,
+                        "authenticated": true,
+                        "bearer_token": false,
+                        "verified_email": true,
+                        "strong_mfa": false,
+                        "recent_password": false,
+                        "signed_url": false,
+                        "rate_limited": false,
+                        "legacy_roles": [],
+                        "record_policies": []
+                    }
+                },
+                {
+                    "name": "notifications.read",
+                    "methods": [
+                        "PATCH"
+                    ],
+                    "uri": "/notifications/{id}/read",
+                    "audience": "authenticated_account",
+                    "mutation": true,
+                    "requirements": {
+                        "guest_only": false,
+                        "authenticated": true,
+                        "bearer_token": false,
+                        "verified_email": true,
                         "strong_mfa": false,
                         "recent_password": false,
                         "signed_url": false,

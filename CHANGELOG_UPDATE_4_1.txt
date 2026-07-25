@@ -1,0 +1,182 @@
+===============================================================================
+HOSPITRAINITY - UPDATE 4.1 TECHNICAL CHANGELOG
+===============================================================================
+Date: 2026-07-25
+Release Target: Update 4.1 (Role-Aware Shell, Notifications & Navigation Polish)
+
+-------------------------------------------------------------------------------
+1. NEW FILES CREATED
+-------------------------------------------------------------------------------
+
+[NEW FILE] app/Services/ShellNavigation.php
+  - Class: App\Services\ShellNavigation
+  - Constructor: Inject App\Services\WorkContext dependency.
+  - Method: forUser(?Request $request, ?User $user): array
+    Computes role-specific navigation payload containing roleLabel, railDestinations array, and hasAlternativeWorkRole boolean.
+  - Role Mappings:
+    * Learner: Home (dashboard), Learn (curriculum/modules), Progress (confidence-history), Help (help.index).
+    * Supervisor: Dashboard (supervisor.dashboard), Classes (supervisor.classes.index), Invitations (supervisor.invitations.index), Classroom codes (supervisor.join-codes.index), Help (help.index).
+    * Admin: Dashboard (admin.dashboard), Progress (admin.progress.index), Content (admin.curriculum-drafts.index), Exercises (admin.curriculum-exercises.index), Help (help.index).
+    * Superadmin: Dashboard (superadmin.dashboard), Progress (superadmin.progress.index), Content (superadmin.curriculum-drafts.index), Exercises (superadmin.curriculum-exercises.index), Institutions (superadmin.institutions.index), Invitations (superadmin.invitations.index), Classroom codes (superadmin.join-codes.index), Users (superadmin.users.index), Audit logs (superadmin.audit.index), Legacy evidence (superadmin.legacy-evidence.index), Help (help.index).
+
+[NEW FILE] app/Http/Controllers/NotificationController.php
+  - Class: App\Http\Controllers\NotificationController extends Controller
+  - Methods:
+    * index(Request $request): View -> Renders paginated notifications (15 per page) at resources/views/notifications/index.blade.php.
+    * panel(Request $request): JsonResponse -> Returns JSON payload containing unread_count and recent 8 notifications (id, type, title, body, url, read_at, created_at_human).
+    * read(Request $request, string $id): RedirectResponse|JsonResponse -> Marks single notification as read.
+    * readAll(Request $request): RedirectResponse|JsonResponse -> Marks all user unreadNotifications as read.
+    * destroy(Request $request, string $id): RedirectResponse|JsonResponse -> Permanently deletes notification record.
+
+[NEW FILE] database/migrations/2026_07_26_000001_create_notifications_table.php
+  - Migration: CreateNotificationsTable extends Migration
+  - Table: notifications
+  - Schema:
+    * uuid('id')->primary()
+    * string('type')
+    * morphs('notifiable')
+    * text('data')
+    * timestamp('read_at')->nullable()
+    * timestamps()
+
+[NEW FILE] app/Notifications/ContentPublishedNotification.php
+  - Class: App\Notifications\ContentPublishedNotification extends Notification implements ShouldQueue
+  - Method via($notifiable): returns ['database']
+  - Method toArray($notifiable): returns array payload ['type' => 'content_published', 'title' => ..., 'body' => ..., 'url' => ...]
+
+[NEW FILE] app/Notifications/JoinRequestNotification.php
+  - Class: App\Notifications\JoinRequestNotification extends Notification implements ShouldQueue
+  - Method via($notifiable): returns ['database']
+  - Method toArray($notifiable): returns array payload ['type' => 'join_request', 'title' => ..., 'body' => ..., 'url' => ...]
+
+[NEW FILE] resources/js/notification-panel.js
+  - Module: Alpine.js data component `notificationPanel`
+  - Attributes / State: isOpen (boolean), unreadCount (number), items (array), loading (boolean)
+  - Methods:
+    * init(): Fetches /notifications/panel endpoint to populate unreadCount and recent items.
+    * toggle(): Toggles disclosure dropdown visibility.
+    * markAsRead(id): Sends PATCH to /notifications/{id}/read and updates client state.
+    * markAllAsRead(): Sends PATCH to /notifications/read-all and resets unreadCount to 0.
+    * remove(id): Sends DELETE to /notifications/{id} and filters item out of client array.
+
+[NEW FILE] resources/views/partials/app-shell.blade.php
+  - Unified Blade template for main application navigation across all 4 user roles.
+  - Components:
+    * Topbar Mobile Brand Header (`hsp-shell-topbar`) with brand logo, institution badge, and disclosure toggles.
+    * Desktop Left Rail (`hsp-shell-rail`) rendering brand logo, work context selector dropdown, rail navigation items, unread notifications badge, and account menu.
+    * Notification Panel Disclosure (`#hsp-shell-notifications-panel`) with real-time unread badge counter, recent items list, mark-all-read action, and link to full inbox.
+    * Quick Theme Switcher (`#hsp-shell-theme-toggle`) embedded in account disclosure panel to switch between Light Mode and Dark Mode dynamically.
+    * Mobile Bottom Navigation Bar (`hsp-shell-bottom-nav`) rendering 4 core role actions for small viewports.
+
+[NEW FILE] resources/views/notifications/index.blade.php
+  - Page View: Dedicated notification inbox listing paginated database notifications.
+  - Features: Filter by read/unread state, mark individual notification as read, mark all as read button, delete notification action, and responsive pagination links.
+
+[NEW FILE] tests/Feature/NotificationCenterTest.php
+  - Test Case: Tests\Feature\NotificationCenterTest
+  - Methods:
+    * test_authenticated_user_can_access_notifications_index_and_panel(): Asserts GET /notifications returns 200 OK and GET /notifications/panel returns JSON payload with unread_count.
+    * test_user_can_mark_single_and_all_notifications_as_read(): Asserts PATCH /notifications/{id}/read and PATCH /notifications/read-all mark database records as read.
+    * test_user_can_delete_notification(): Asserts DELETE /notifications/{id} removes record from database.
+
+[NEW FILE] tests/Unit/ShellNavigationTest.php
+  - Test Case: Tests\Unit\ShellNavigationTest
+  - Methods:
+    * test_learner_shell_navigation(): Verifies learner destinations and roleLabel.
+    * test_supervisor_shell_navigation(): Verifies supervisor destinations and roleLabel.
+    * test_admin_shell_navigation(): Verifies admin destinations (/admin/curriculum-drafts, /admin/curriculum-exercises) and roleLabel.
+    * test_superadmin_shell_navigation(): Verifies superadmin destinations and roleLabel.
+
+-------------------------------------------------------------------------------
+2. EXISTING FILES MODIFIED
+-------------------------------------------------------------------------------
+
+[MODIFY] app/Enums/UserRole.php
+  - Added method: public function label(): string
+    Returns flat human-readable role labels translated via `__('roles.learner')`, `__('roles.supervisor')`, `__('roles.admin')`, `__('roles.superadmin')`.
+    Eliminates legacy nested prefix strings like "System Superadmin" or "Institutional Admin" in favor of clean single-word role titles.
+
+[MODIFY] app/Notifications/InstitutionInvitationNotification.php
+  - Added 'database' channel to `via($notifiable)` array.
+  - Updated `toArray($notifiable)` method to format notification database payload with `type`, `title`, `body`, and `url`.
+
+[MODIFY] app/Notifications/UserRoleChanged.php
+  - Added 'database' channel to `via($notifiable)` array.
+  - Updated `toArray($notifiable)` method to return notification database payload.
+
+[MODIFY] routes/web.php
+  - Added notification center routes under `auth` middleware:
+    * GET /notifications -> NotificationController@index -> name('notifications.index')
+    * GET /notifications/panel -> NotificationController@panel -> name('notifications.panel')
+    * PATCH /notifications/read-all -> NotificationController@readAll -> name('notifications.readAll')
+    * PATCH /notifications/{id}/read -> NotificationController@read -> name('notifications.read')
+    * DELETE /notifications/{id} -> NotificationController@destroy -> name('notifications.destroy')
+
+[MODIFY] resources/css/app.css
+  - Added semantic CSS utility classes and WCAG AA contrast rules for dark mode overrides:
+    * Theme background surfaces: `--bg-primary`, `--bg-secondary`, `--bg-tertiary`
+    * Theme text colors: `--text-primary`, `--text-secondary`, `--text-muted`
+    * Notification panel component styling: `.hsp-notification-item`, `.hsp-notification-badge`
+
+[MODIFY] resources/js/app.js
+  - Imported and registered `notificationPanel` Alpine component script.
+
+[MODIFY] resources/views/layouts/app.blade.php
+  - Replaced legacy individual header navigation inclusions with `@include('partials.app-shell')`.
+  - Maintained `data-shell` attribute handling (`data-shell="{{ $uiUseLearnerShell ? 'learner' : ($uiUseAppShell ? 'app' : 'default') }}"`) for backward compatibility with existing tests.
+
+[MODIFY] 27 Role-Specific View Templates (Admin, Superadmin, Supervisor, Learner, People & Settings)
+  - Converted views to utilize unified `partials.app-shell` layout.
+  - Standardized container wrappers, page headers, breadcrumbs, and card layouts.
+  - List of updated Blade views:
+    * resources/views/admin/progress/index.blade.php
+    * resources/views/institution-join-codes/index.blade.php
+    * resources/views/institution-roles/index.blade.php
+    * resources/views/invitations/index.blade.php
+    * resources/views/progress/learner.blade.php
+    * resources/views/superadmin/audits/index.blade.php
+    * resources/views/superadmin/curriculum-drafts/entity.blade.php
+    * resources/views/superadmin/curriculum-drafts/exercises/form.blade.php
+    * resources/views/superadmin/curriculum-drafts/exercises/index.blade.php
+    * resources/views/superadmin/curriculum-drafts/exercises/overview.blade.php
+    * resources/views/superadmin/curriculum-drafts/index.blade.php
+    * resources/views/superadmin/curriculum-drafts/show.blade.php
+    * resources/views/superadmin/dashboard.blade.php
+    * resources/views/superadmin/exercises/index.blade.php
+    * resources/views/superadmin/institutions/index.blade.php
+    * resources/views/superadmin/legacy-evidence/index.blade.php
+    * resources/views/superadmin/lessons/index.blade.php
+    * resources/views/superadmin/materials/index.blade.php
+    * resources/views/superadmin/modules/index.blade.php
+    * resources/views/superadmin/progress/index.blade.php
+    * resources/views/superadmin/users/index.blade.php
+    * resources/views/superadmin/vocabularies/index.blade.php
+    * resources/views/supervisor/classes/create.blade.php
+    * resources/views/supervisor/classes/index.blade.php
+    * resources/views/supervisor/classes/preview.blade.php
+    * resources/views/supervisor/classes/show.blade.php
+    * resources/views/supervisor/dashboard.blade.php
+
+[MODIFY] lang/en.json & lang/id.json
+  - Added translation keys for flat role labels: `"roles.learner"`, `"roles.supervisor"`, `"roles.admin"`, `"roles.superadmin"`.
+  - Added notification center string keys: `"Notifications"`, `"Mark all as read"`, `"No notifications yet"`, `"View all notifications"`, `"Notification marked as read."`, `"All notifications marked as read."`, `"Notification removed."`, `"Read-only"`.
+
+[MODIFY] tests/Feature/StaffShellTest.php
+  - Updated DOM assertions to match the unified `app-shell` HTML structure (`hsp-shell-rail`, `#hsp-shell-account-panel`).
+
+[MODIFY] tests/Feature/ProgressAdministrationTest.php
+  - Updated query upper bound assertion to accommodate the unread notifications count query rendered in `app-shell`.
+
+[MODIFY] context/MANIFEST.json, context/api/v1/agent-context/all.json, context/api/v1/agent-context/routes.json
+  - Re-exported and synced agent context metadata manifest files via `php scripts/operations/export-agent-context.php`.
+
+-------------------------------------------------------------------------------
+3. VERIFICATION SUMMARY
+-------------------------------------------------------------------------------
+- PHPUnit Test Suite: 459 / 459 tests passed (100% OK, 6,524 assertions)
+- Node.js Unit Tests: 61 / 61 tests passed
+- ESLint: 0 errors, 0 warnings
+- Vite Asset Build: Built cleanly
+- Governance Verification: Passed
+- Agent Context Export: Created & verified
+===============================================================================

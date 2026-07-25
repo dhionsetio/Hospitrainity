@@ -4,11 +4,8 @@
 @section('bodyClass', 'bg-neutral-100')
 
 @section('content')
-    <div class="flex min-h-screen flex-col bg-neutral-100 md:flex-row">
-        @include('supervisor.sidebar')
-
-        <main class="min-w-0 flex-1 p-4 pb-24 sm:p-6 md:p-10">
-            <header class="mx-auto flex max-w-6xl flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+    <main class="container mx-auto max-w-7xl px-4 py-6 sm:px-6 sm:py-8">
+        <header class="mx-auto flex max-w-6xl flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
                 <div>
                     <p class="text-sm font-semibold text-indigo-700">{{ $institution->displayName(app()->getLocale()) }}</p>
                     <h1 class="mt-1 text-3xl font-bold text-neutral-950">{{ __('classes.index_title') }}</h1>
@@ -67,5 +64,4 @@
                 <div class="mt-6">{{ $classes->links() }}</div>
             </section>
         </main>
-    </div>
 @endsection

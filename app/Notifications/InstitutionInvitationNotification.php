@@ -22,7 +22,19 @@ class InstitutionInvitationNotification extends Notification
     {
         // Deliberately synchronous: a raw invitation URL must not be serialized
         // into the jobs table or retained in failed-job payloads.
-        return ['mail'];
+        return ['mail', 'database'];
+    }
+
+    public function toArray(object $notifiable): array
+    {
+        return [
+            'type' => 'institution_invitation',
+            'title' => __('Institution Invitation'),
+            'body' => __('You have been invited to join :institution.', [
+                'institution' => $this->institution->displayName(app()->getLocale()),
+            ]),
+            'url' => route('invitations.index'),
+        ];
     }
 
     public function toMail(object $notifiable): MailMessage

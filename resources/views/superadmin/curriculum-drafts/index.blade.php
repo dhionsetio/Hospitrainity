@@ -5,11 +5,8 @@
 
 @section('content')
     @php($legacyCurriculumReadOnly = true)
-    <div class="flex min-h-screen flex-col bg-neutral-100 md:flex-row">
-        @include('superadmin.sidebar')
-
-        <main class="min-w-0 flex-1 p-6 md:p-10">
-            <header class="mb-8">
+    <main class="container mx-auto max-w-7xl px-4 py-6 sm:px-6 sm:py-8">
+        <header class="mb-8">
                 <h1 class="text-3xl font-bold text-neutral-950">{{ __('admin.canonical_drafts') }}</h1>
                 <p class="mt-2 max-w-4xl text-neutral-600">{{ __('admin.canonical_drafts_description') }}</p>
             </header>
@@ -78,8 +75,6 @@
                         @endforelse
                     </tbody>
                 </table>
-            </div>
             <div class="mt-5">{{ $drafts->links() }}</div>
         </main>
-    </div>
 @endsection

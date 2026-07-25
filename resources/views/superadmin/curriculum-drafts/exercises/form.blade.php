@@ -7,10 +7,8 @@
     @php($legacyCurriculumReadOnly = true)
     @php($editable = $draft->status === \App\Enums\CurriculumDraftStatus::Draft)
     @php($items = old('items', $formData['items']))
-    <div class="flex min-h-screen flex-col bg-neutral-100 md:flex-row">
-        @include('superadmin.sidebar')
-        <main class="min-w-0 flex-1 p-6 md:p-10">
-            <x-back-control :href="route($routePrefix.'.curriculum-drafts.exercises.index', $draft)" :label="__('admin.exercise_builder')" />
+    <main class="container mx-auto max-w-7xl px-4 py-6 sm:px-6 sm:py-8">
+        <x-back-control :href="route($routePrefix.'.curriculum-drafts.exercises.index', $draft)" :label="__('admin.exercise_builder')" />
             <header class="mt-4 rounded-xl bg-white p-6 shadow">
                 <div class="flex flex-wrap items-start justify-between gap-4">
                     <div><p class="text-sm font-semibold uppercase tracking-wide text-indigo-700">{{ __('admin.exercise_templates.'.$templateType) }}</p><h1 class="mt-2 text-3xl font-bold text-neutral-950">{{ $exercise ? __('admin.edit_exercise') : __('admin.create_exercise') }}</h1><p class="mt-2 max-w-4xl text-neutral-700">{{ __('admin.exercise_template_help.'.$templateType) }}</p></div>
@@ -80,5 +78,4 @@
                 <section class="mt-6 rounded-xl border border-neutral-300 bg-white p-6 shadow" aria-labelledby="duplicate-heading"><h2 id="duplicate-heading" class="text-xl font-bold text-neutral-950">{{ __('admin.duplicate_exercise') }}</h2><p class="mt-2 text-neutral-700">{{ __('admin.duplicate_exercise_help') }}</p><form method="POST" action="{{ route($routePrefix.'.curriculum-drafts.exercises.duplicate', [$draft, $exercise]) }}" class="mt-4 grid gap-3 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end">@csrf<input type="hidden" name="draft_revision" value="{{ $draft->revision }}"><label class="min-w-0 text-sm font-semibold">{{ __('admin.target_lesson_section') }}<select name="section_code" required class="mt-1 block w-full max-w-full rounded-md border-neutral-300"><option value="">{{ __('admin.choose_lesson_section') }}</option>@foreach($sections->where('code', '!=', $exercise->parent_code) as $section)<option value="{{ $section->code }}">{{ $section->parent_code }} · {{ $section->payload['title'] }}</option>@endforeach</select></label><button class="rounded-md border border-indigo-700 px-4 py-2 font-semibold text-indigo-800">{{ __('admin.duplicate') }}</button></form></section>
             @endif
         </main>
-    </div>
 @endsection

@@ -4,15 +4,8 @@
 @section('bodyClass', 'bg-neutral-100')
 
 @section('content')
-    <div class="flex min-h-screen flex-col bg-neutral-100 md:flex-row">
-        @if($administrationRoutePrefix === 'supervisor')
-            @include('supervisor.sidebar')
-        @else
-            @include('superadmin.sidebar')
-        @endif
-
-        <main class="min-w-0 flex-1 p-6 md:p-10">
-            <x-back-control :href="$backUrl ?? route($backRouteName)" :label="__('admin.back_to_progress')" />
+    <main class="container mx-auto max-w-7xl px-4 py-6 sm:px-6 sm:py-8">
+        <x-back-control :href="$backUrl ?? route($backRouteName)" :label="__('admin.back_to_progress')" />
             <header class="mt-5">
                 <h1 class="text-3xl font-bold text-neutral-900">{{ $detail['learner']->name }}</h1>
                 <p class="mt-2 text-neutral-600">
@@ -235,5 +228,4 @@
                 @endif
             </div>
         </main>
-    </div>
 @endsection

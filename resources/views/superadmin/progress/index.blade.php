@@ -4,11 +4,8 @@
 @section('bodyClass', 'bg-neutral-100')
 
 @section('content')
-    <div class="flex min-h-screen flex-col bg-neutral-100 md:flex-row">
-        @include('superadmin.sidebar')
-
-        <main class="min-w-0 flex-1 p-6 md:p-10">
-            <header class="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+    <main class="container mx-auto max-w-7xl px-4 py-6 sm:px-6 sm:py-8">
+        <header class="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                 <div>
                     <h1 class="text-3xl font-bold text-neutral-900">{{ __('admin.learner_progress') }}</h1>
                     <p class="mt-2 max-w-3xl text-neutral-600">{{ __('admin.learner_progress_description') }}</p>
@@ -175,5 +172,4 @@
                 <div class="border-t border-neutral-200 p-4">{{ $learners->links() }}</div>
             </section>
         </main>
-    </div>
 @endsection

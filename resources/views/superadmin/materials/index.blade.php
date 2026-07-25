@@ -26,11 +26,9 @@
         ], JSON_THROW_ON_ERROR));
     @endphp
     <div x-data="materialAdmin" data-admin-state="{{ $materialAdminState }}">
-        <div class="flex min-h-screen flex-col md:flex-row">
-            @include('superadmin.sidebar')
-            <main class="min-w-0 flex-1 p-6 md:p-10">
-                @include('superadmin.canonical-curriculum-notice')
-                <header class="mb-8 flex justify-between items-center">
+        <main class="container mx-auto max-w-7xl px-4 py-6 sm:px-6 sm:py-8">
+            @include('superadmin.canonical-curriculum-notice')
+            <header class="mb-8 flex justify-between items-center">
                     <div>
                         <h1 class="text-3xl font-bold">{{ $legacyCurriculumReadOnly ? __('admin.legacy_material_evidence') : __('admin.material_management') }}</h1>
                         <p class="text-neutral-500">{{ $legacyCurriculumReadOnly ? __('admin.legacy_evidence_description') : __('admin.material_management_description') }}</p>

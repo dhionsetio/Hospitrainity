@@ -20,7 +20,20 @@ class UserRoleChanged extends Notification implements ShouldQueue
     /** @return list<string> */
     public function via(object $notifiable): array
     {
-        return ['mail'];
+        return ['mail', 'database'];
+    }
+
+    public function toArray(object $notifiable): array
+    {
+        return [
+            'type' => 'user_role_changed',
+            'title' => __('Account Role Updated'),
+            'body' => __('Your role was updated from :old to :new.', [
+                'old' => $this->oldRole->label(),
+                'new' => $this->newRole->label(),
+            ]),
+            'url' => route('dashboard'),
+        ];
     }
 
     public function toMail(object $notifiable): MailMessage

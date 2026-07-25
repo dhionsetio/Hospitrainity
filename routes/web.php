@@ -28,6 +28,7 @@ use App\Http\Controllers\DisplayPreferenceController;
 use App\Http\Controllers\ExerciseController;
 use App\Http\Controllers\HelpController;
 use App\Http\Controllers\InstitutionEnrollmentController;
+use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\InstitutionInvitationController;
 use App\Http\Controllers\InstitutionJoinCodeController;
 use App\Http\Controllers\InstitutionJoinRequestController;
@@ -226,6 +227,13 @@ Route::post('/institution', ActiveInstitutionController::class)
     ->name('institution.select');
 
 Route::middleware(['auth', 'verified'])->group(function (): void {
+    Route::get('/notifications', [NotificationController::class, 'index'])->name('notifications.index');
+    Route::get('/notifications/panel', [NotificationController::class, 'panel'])
+        ->middleware('throttle:60,1')->name('notifications.panel');
+    Route::patch('/notifications/read-all', [NotificationController::class, 'readAll'])->name('notifications.readAll');
+    Route::patch('/notifications/{id}/read', [NotificationController::class, 'read'])->name('notifications.read');
+    Route::delete('/notifications/{id}', [NotificationController::class, 'destroy'])->name('notifications.destroy');
+
     Route::get('/search', [SearchController::class, 'index'])->name('search.index');
     Route::get('/getting-started', [OnboardingController::class, 'show'])->name('onboarding.show');
     Route::patch('/getting-started', [OnboardingController::class, 'update'])
@@ -250,6 +258,7 @@ Route::middleware(['auth', 'verified'])->group(function (): void {
         ->name('privacy-exports.download');
     Route::post('/push-subscriptions', [PushSubscriptionController::class, 'store'])
         ->middleware('throttle:push-subscription')->name('push-subscriptions.store');
+
     Route::delete('/push-subscriptions/{pushSubscription}', [PushSubscriptionController::class, 'destroy'])
         ->middleware('throttle:push-subscription')->name('push-subscriptions.destroy');
     Route::post('/push-subscriptions/test', [PushSubscriptionController::class, 'test'])
