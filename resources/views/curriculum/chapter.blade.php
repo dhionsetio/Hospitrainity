@@ -17,6 +17,12 @@
             :label="isset($curriculumPreview) ? __('Return to curriculum preview') : __('Return to dashboard')"
         />
 
+        <nav aria-label="{{ __('Breadcrumb') }}" class="mt-2 flex items-center gap-2 text-xs text-neutral-500">
+            <a href="{{ route('dashboard') }}" class="text-neutral-600 hover:underline">{{ __('Dashboard') }}</a>
+            <i class="fa-solid fa-chevron-right text-[10px] text-neutral-400" aria-hidden="true"></i>
+            <span class="font-medium text-neutral-900 truncate" aria-current="page">{{ __('Module :number', ['number' => $curriculumChapter['module']]) }}</span>
+        </nav>
+
         @php
             $displayTitle = ($curriculumChapter['module'] === 1) ? __('Introduction to Customer Care') : $curriculumChapter['title'];
             $totalStepsCount = count($curriculumChapter['steps']);
@@ -76,51 +82,49 @@
             <div class="hsp-learning-journey mt-6">
                 @foreach ($curriculumChapter['steps'] as $step)
                     <section class="hsp-learning-step relative pb-6" aria-labelledby="learning-step-{{ $step['number'] }}">
-                        <div class="flex items-start gap-4">
-                            <button type="button"
-                                    data-step-trigger="step-{{ $step['number'] }}"
-                                    aria-expanded="false"
-                                    aria-controls="step-content-{{ $step['number'] }}"
-                                    aria-label="{{ __('Toggle Learning step :number sections', ['number' => $step['number']]) }}"
-                                    class="hsp-learning-step__marker cursor-pointer transition-transform hover:scale-105 focus:ring-4 focus:ring-indigo-300">
-                                {{ $step['number'] }}
-                            </button>
-                            <div class="flex-1">
-                                <header class="flex flex-wrap items-baseline justify-between gap-2 pt-1">
-                                    <h3 id="learning-step-{{ $step['number'] }}" class="text-xl font-bold text-neutral-900">{{ __('Learning step :number', ['number' => $step['number']]) }}</h3>
-                                    <p class="text-sm font-semibold text-neutral-600">{{ trans_choice(':count section|:count sections', $step['count'], ['count' => $step['count']]) }}</p>
-                                </header>
-                                <div data-step-content="step-{{ $step['number'] }}" id="step-content-{{ $step['number'] }}" class="mt-4">
-                                    <ol class="grid gap-3 md:grid-cols-2">
-                                        @foreach($step['sections'] as $section)
-                                            @php
-                                                $sectionUrl = isset($curriculumPreview)
-                                                    ? route((Auth::user()->isSuperAdmin() ? 'superadmin' : 'admin').'.curriculum-drafts.preview.sections.show', [$curriculumPreview, $section['code']])
-                                                    : route('curriculum.sections.show', $section['code']);
-                                            @endphp
-                                            <li class="hsp-lesson-item">
-                                                <a href="{{ $sectionUrl }}" class="hsp-lesson-link group">
-                                                    <span class="hsp-lesson-link__number">{{ $loop->iteration }}</span>
-                                                    <span class="min-w-0 flex-1">
-                                                        <span class="block font-bold text-neutral-900 group-hover:text-indigo-800">{{ $section['title'] }}</span>
-                                                        <span class="mt-1 flex items-center gap-2 text-sm text-neutral-600">
-                                                            <i class="fa-solid {{ $section['activity'] ? 'fa-bolt' : 'fa-book-open' }}" aria-hidden="true"></i>
-                                                            {{ $section['activity'] ? __('Practice included') : __('Short lesson') }}
-                                                        </span>
+                        <button type="button"
+                                data-step-trigger="step-{{ $step['number'] }}"
+                                aria-expanded="false"
+                                aria-controls="step-content-{{ $step['number'] }}"
+                                aria-label="{{ __('Toggle Learning step :number sections', ['number' => $step['number']]) }}"
+                                class="hsp-learning-step__marker cursor-pointer transition-transform hover:scale-105 focus:ring-4 focus:ring-indigo-300">
+                            {{ $step['number'] }}
+                        </button>
+                        <div class="hsp-learning-step__body">
+                            <header class="flex flex-wrap items-baseline justify-between gap-2 pt-1">
+                                <h3 id="learning-step-{{ $step['number'] }}" class="text-xl font-bold text-neutral-900">{{ __('Learning step :number', ['number' => $step['number']]) }}</h3>
+                                <p class="text-sm font-semibold text-neutral-600">{{ trans_choice(':count section|:count sections', $step['count'], ['count' => $step['count']]) }}</p>
+                            </header>
+                            <div data-step-content="step-{{ $step['number'] }}" id="step-content-{{ $step['number'] }}" class="mt-4">
+                                <ol class="grid gap-3 md:grid-cols-2">
+                                    @foreach($step['sections'] as $section)
+                                        @php
+                                            $sectionUrl = isset($curriculumPreview)
+                                                ? route((Auth::user()->isSuperAdmin() ? 'superadmin' : 'admin').'.curriculum-drafts.preview.sections.show', [$curriculumPreview, $section['code']])
+                                                : route('curriculum.sections.show', $section['code']);
+                                        @endphp
+                                        <li class="hsp-lesson-item">
+                                            <a href="{{ $sectionUrl }}" class="hsp-lesson-link group">
+                                                <span class="hsp-lesson-link__number">{{ $loop->iteration }}</span>
+                                                <span class="min-w-0 flex-1">
+                                                    <span class="block font-bold text-neutral-900 group-hover:text-indigo-800">{{ $section['title'] }}</span>
+                                                    <span class="mt-1 flex items-center gap-2 text-sm text-neutral-600">
+                                                        <i class="fa-solid {{ $section['activity'] ? 'fa-bolt' : 'fa-book-open' }}" aria-hidden="true"></i>
+                                                        {{ $section['activity'] ? __('Practice included') : __('Short lesson') }}
                                                     </span>
-                                                    <i class="fa-solid fa-arrow-right hsp-card-link__arrow" aria-hidden="true"></i>
-                                                    <span class="sr-only">{{ __('Open section') }}</span>
-                                                </a>
-                                                @if($showCurriculumEvidence && Auth::user()?->isSuperAdmin())
-                                                    <details class="border-t border-neutral-200 px-4 py-3 text-sm text-neutral-700">
-                                                        <summary class="cursor-pointer font-semibold text-indigo-800">{{ __('Section evidence') }}</summary>
-                                                        <p class="mt-2 font-mono text-xs">{{ $section['code'] }}@if($section['activity']) · {{ $section['activity']['response_form'] }} · {{ $section['activity']['scoring_mode'] }}@endif</p>
-                                                    </details>
-                                                @endif
-                                            </li>
-                                        @endforeach
-                                    </ol>
-                                </div>
+                                                </span>
+                                                <i class="fa-solid fa-arrow-right hsp-card-link__arrow" aria-hidden="true"></i>
+                                                <span class="sr-only">{{ __('Open section') }}</span>
+                                            </a>
+                                            @if($showCurriculumEvidence && Auth::user()?->isSuperAdmin())
+                                                <details class="border-t border-neutral-200 px-4 py-3 text-sm text-neutral-700">
+                                                    <summary class="cursor-pointer font-semibold text-indigo-800">{{ __('Section evidence') }}</summary>
+                                                    <p class="mt-2 font-mono text-xs">{{ $section['code'] }}@if($section['activity']) · {{ $section['activity']['response_form'] }} · {{ $section['activity']['scoring_mode'] }}@endif</p>
+                                                </details>
+                                            @endif
+                                        </li>
+                                    @endforeach
+                                </ol>
                             </div>
                         </div>
                     </section>

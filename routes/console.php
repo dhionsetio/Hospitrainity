@@ -264,3 +264,7 @@ Artisan::command('hospitrainity:privacy-retention {--execute}', function () {
 Schedule::command('hospitrainity:privacy-retention --execute')
     ->dailyAt('02:30')
     ->withoutOverlapping();
+
+Schedule::command('learning:process-pending-media-deletions')
+    ->hourly()
+    ->withoutOverlapping();

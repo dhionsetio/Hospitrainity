@@ -2,7 +2,7 @@
     "archive_format": "hospitrainity-portable-agent-context",
     "archive_format_version": "1.0.0",
     "context_api_version": "1.0.0",
-    "generated_at": "2026-07-24T20:05:53+00:00",
+    "generated_at": "2026-07-24T23:55:04+00:00",
     "curriculum_snapshot": {
         "status": "deliverable",
         "content_version": "0.4.0-draft"
@@ -38,8 +38,8 @@
         },
         {
             "path": "api/v1/agent-context/all.json",
-            "sha256": "7f01d8a47295ce31dfce3509568ae700148149196f1ebdfd1822948405ca4c3f",
-            "bytes": 288404
+            "sha256": "f94c88dac17c31d707ede90526c58ee7c715c2ed80e8e46412812010e057068c",
+            "bytes": 290286
         },
         {
             "path": "api/v1/agent-context/architecture.json",
@@ -83,8 +83,8 @@
         },
         {
             "path": "api/v1/agent-context/routes.json",
-            "sha256": "67e4097be31d429cd81e462d5adb0931fecbe22a3c4b44bbe444b59ff3e3c62e",
-            "bytes": 224008
+            "sha256": "66cfe46fe248bd983b92309c0747230a9c1e484d748355f0bbfc706a5911eafe",
+            "bytes": 225890
         },
         {
             "path": "api/v1/agent-context/workflows.json",

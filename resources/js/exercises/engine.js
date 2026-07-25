@@ -7,7 +7,6 @@ let returnUrl = "";
 let progressUrl = "";
 let scoreUrl = "";
 let exerciseScores = {};
-let isShowingSummary = false;
 let progressSavePending = false;
 let retryProgressAction = null;
 let selectedItems = { question: null, answer: null };
@@ -1359,7 +1358,6 @@ function renderDragAndDrop(content) {
 }
 
 function renderSummaryScreen() {
-    isShowingSummary = true;
     mediaController?.stop();
     ui.title.textContent = t("summaryTitle", "Summary & Submit");
     setMediaStatus();
@@ -1425,7 +1423,6 @@ function renderSummaryScreen() {
     });
     setButtonLabel(restartBtn, t("restartPracticeLabel", "Restart Practice"), "fas fa-redo mr-2");
     restartBtn.addEventListener("click", () => {
-        isShowingSummary = false;
         currentExerciseIndex = 0;
         renderCurrentExercise();
     });
@@ -1487,7 +1484,6 @@ function initExercises() {
     progressUrl = dataElement.dataset.progressUrl || "";
     scoreUrl = dataElement.dataset.scoreUrl || "/scores/store";
     exerciseScores = {};
-    isShowingSummary = false;
     currentExerciseIndex = 0;
     progressSavePending = false;
     retryProgressAction = null;

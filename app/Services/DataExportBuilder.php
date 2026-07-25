@@ -87,6 +87,26 @@ class DataExportBuilder
             ->get(['policy_type', 'locale', 'version', 'content_sha256', 'acknowledged_at', 'source'])
             ->map(fn ($row): array => (array) $row)->all();
 
+        $reflections = \App\Models\WarmUpReflection::query()
+            ->where('user_id', $user->getKey())
+            ->with('attachments')
+            ->orderBy('created_at')
+            ->get();
+
+        $savedReflections = $reflections
+            ->map(static fn (\App\Models\WarmUpReflection $reflection): array => [
+                'chapter_code' => $reflection->chapter_code,
+                'section_code' => $reflection->section_code,
+                'prompt_index' => $reflection->prompt_index,
+                'state' => $reflection->state,
+                'response' => $reflection->body,
+                'attachment_count' => $reflection->attachments->count(),
+                'submitted_at' => $reflection->submitted_at?->toIso8601String(),
+                'created_at' => $reflection->created_at?->toIso8601String(),
+                'updated_at' => $reflection->updated_at?->toIso8601String(),
+            ])
+            ->all();
+
         $temporary = tempnam(sys_get_temp_dir(), 'hospitrainity-export-');
         if ($temporary === false) {
             throw new RuntimeException('export_temp_unavailable');
@@ -103,7 +123,21 @@ class DataExportBuilder
             $zip->addFromString('progress.csv', $this->csv($progress));
             $zip->addFromString('attempts.csv', $this->csv($attempts));
             $zip->addFromString('saved-writing.csv', $this->csv($savedWriting));
+            $zip->addFromString('warm-up-reflections.csv', $this->csv($savedReflections));
             $zip->addFromString('policy-acknowledgements.csv', $this->csv($acknowledgements));
+
+            foreach ($reflections as $reflection) {
+                foreach ($reflection->attachments as $attachment) {
+                    $disk = \Illuminate\Support\Facades\Storage::disk($attachment->disk);
+                    if ($disk->exists($attachment->storage_path)) {
+                        $content = $disk->get($attachment->storage_path);
+                        if ($content !== null) {
+                            $zip->addFromString('media/reflections/'.$attachment->id.'-'.$attachment->original_name, $content);
+                        }
+                    }
+                }
+            }
+
             $zip->close();
 
             $bytes = file_get_contents($temporary);

@@ -112,6 +112,14 @@ class LearnerProgressController extends Controller
                 ->with(['activity', 'prompt'])
                 ->latest('submitted_at')
                 ->get(),
+            'submittedReflections' => \App\Models\WarmUpReflection::query()
+                ->where('user_id', $learner->getKey())
+                ->where('course_offering_id', $offering->getKey())
+                ->where('course_enrollment_id', $enrollment->getKey())
+                ->where('state', 'submitted')
+                ->with('attachments')
+                ->latest('submitted_at')
+                ->get(),
         ]);
     }
 }

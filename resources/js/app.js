@@ -9,6 +9,7 @@ import { initializePasskeys } from './passkeys';
 import { initializeLessonListening } from './lesson-listening';
 import { initPasswordStrengthMeter } from './password-strength';
 import { initCurriculumAccordion } from './curriculum-accordion';
+import { initReflectionRecorder } from './reflection-recorder';
 
 registerAdminComponents(Alpine);
 window.Alpine = Alpine;
@@ -27,6 +28,7 @@ function initializePageInteractions() {
     initializeLessonListening();
     initPasswordStrengthMeter();
     initCurriculumAccordion();
+    initReflectionRecorder();
 
     const priorityFocusTarget = document.querySelector('[data-focus-errors], [data-focus-status]');
     if (priorityFocusTarget instanceof HTMLElement) {

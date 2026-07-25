@@ -35,6 +35,7 @@ use App\Http\Controllers\InstitutionRoleAssignmentController;
 use App\Http\Controllers\InvitationAcceptanceController;
 use App\Http\Controllers\LearnerTextResponseController;
 use App\Http\Controllers\LearningContextController;
+use App\Http\Controllers\WarmUpReflectionController;
 use App\Http\Controllers\LegacyEvidenceController;
 use App\Http\Controllers\LessonController;
 use App\Http\Controllers\MaterialController;
@@ -355,6 +356,11 @@ Route::middleware(['auth', 'verified', 'role:user'])->group(function () {
     Route::post('/curriculum/activities/{activity}/responses/{prompt}', [LearnerTextResponseController::class, 'store'])
         ->middleware('throttle:30,1')
         ->name('responses.store');
+    Route::post('/curriculum/sections/{section}/reflections/{prompt}', [WarmUpReflectionController::class, 'store'])
+        ->middleware('throttle:30,1')
+        ->name('curriculum.reflections.store');
+    Route::get('/curriculum/reflections/{reflection}/attachments/{attachment}', [WarmUpReflectionController::class, 'attachment'])
+        ->name('curriculum.reflections.attachments.show');
     Route::get('/curriculum/confidence-history', [CanonicalCurriculumController::class, 'confidence'])
         ->name('curriculum.confidence-history');
     Route::get('/curriculum/sections/{section}', [CanonicalCurriculumController::class, 'section'])

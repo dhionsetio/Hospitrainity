@@ -44,6 +44,12 @@ class LearnerProgressController extends Controller
             'administrationRoutePrefix' => 'superadmin',
             'detailRouteName' => 'superadmin.progress.learners.show',
             'backRouteName' => 'superadmin.progress.index',
+            'submittedReflections' => \App\Models\WarmUpReflection::query()
+                ->where('user_id', $learner->getKey())
+                ->where('state', 'submitted')
+                ->with('attachments')
+                ->latest('submitted_at')
+                ->get(),
         ]);
     }
 

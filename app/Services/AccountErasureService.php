@@ -108,6 +108,14 @@ class AccountErasureService
             ->where('user_id', $request->user_id)
             ->whereNull('institution_membership_id')
             ->delete();
+
+        $personalReflections = \App\Models\WarmUpReflection::query()
+            ->where('user_id', $request->user_id)
+            ->whereNull('institution_membership_id')
+            ->get();
+        foreach ($personalReflections as $reflection) {
+            $reflection->delete();
+        }
     }
 
     private function close_memberships(DataSubjectRequest $request): void

@@ -39,6 +39,14 @@
             :label="__('Return to Module :number', ['number' => $curriculumSection['chapter']['module']])"
         />
 
+        <nav aria-label="{{ __('Breadcrumb') }}" class="mt-2 flex items-center gap-2 text-xs text-neutral-500">
+            <a href="{{ route('dashboard') }}" class="text-neutral-600 hover:underline">{{ __('Dashboard') }}</a>
+            <i class="fa-solid fa-chevron-right text-[10px] text-neutral-400" aria-hidden="true"></i>
+            <a href="{{ route('curriculum.chapters.show', $curriculumSection['chapter']['code']) }}" class="text-neutral-600 hover:underline">{{ __('Module :number', ['number' => $curriculumSection['chapter']['module']]) }}</a>
+            <i class="fa-solid fa-chevron-right text-[10px] text-neutral-400" aria-hidden="true"></i>
+            <span class="font-medium text-neutral-900 truncate" aria-current="page">{{ $curriculumSection['title'] }}</span>
+        </nav>
+
         <header class="mt-4 rounded-xl bg-white p-5 shadow sm:p-7">
             <p class="text-sm font-semibold text-indigo-700">{{ __('Learning step :number of :total', ['number' => $curriculumSection['step']['number'], 'total' => $curriculumSection['step']['total']]) }}</p>
             <p class="mt-1 text-sm text-neutral-600">{{ __('Part :number of :total in this step', ['number' => $curriculumSection['step']['position'], 'total' => $curriculumSection['step']['count']]) }}</p>
@@ -97,12 +105,14 @@
 
         @if($curriculumSection['is_warm_up'] ?? false)
             @include('curriculum.partials.warm-up', [
+                'sectionCode' => $curriculumSection['code'],
                 'step' => $curriculumSection['step'],
                 'title' => $displayTitle,
                 'blocks' => $curriculumSection['blocks'],
                 'audioUrl' => collect($curriculumSection['blocks'])->firstWhere('asset.kind', 'audio')['asset']['url'] ?? null,
                 'activity' => $curriculumSection['activity'],
                 'navigation' => $curriculumSection['navigation'],
+                'existingReflections' => $existingReflections ?? collect(),
             ])
         @else
             <article id="lesson-content" class="hsp-lesson-content mt-6 space-y-5" aria-label="{{ $curriculumSection['title'] }}">

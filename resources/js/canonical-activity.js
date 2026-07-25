@@ -141,7 +141,7 @@ export function initializeCanonicalActivity(root = document, currentLocation = w
                 }
                 recordBtn.classList.remove('bg-indigo-700');
                 recordBtn.classList.add('animate-pulse', 'bg-red-700');
-            } catch (err) {
+            } catch {
                 alert('Microphone access could not be initialized.');
             }
         });

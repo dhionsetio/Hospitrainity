@@ -1424,13 +1424,13 @@
         },
         "routes": {
             "inventory_kind": "live_named_routes",
-            "route_count": 242,
+            "route_count": 244,
             "counts_by_audience": {
                 "agent_integration": 3,
                 "authenticated_account": 39,
                 "content_author": 40,
                 "institution_staff": 35,
-                "learner": 24,
+                "learner": 26,
                 "public": 12,
                 "system_admin": 78,
                 "visitor": 11
@@ -4234,6 +4234,29 @@
                     }
                 },
                 {
+                    "name": "curriculum.reflections.attachments.show",
+                    "methods": [
+                        "GET"
+                    ],
+                    "uri": "/curriculum/reflections/{reflection}/attachments/{attachment}",
+                    "audience": "learner",
+                    "mutation": false,
+                    "requirements": {
+                        "guest_only": false,
+                        "authenticated": true,
+                        "bearer_token": false,
+                        "verified_email": true,
+                        "strong_mfa": false,
+                        "recent_password": false,
+                        "signed_url": false,
+                        "rate_limited": false,
+                        "legacy_roles": [
+                            "user"
+                        ],
+                        "record_policies": []
+                    }
+                },
+                {
                     "name": "curriculum.sections.show",
                     "methods": [
                         "GET"
@@ -4250,6 +4273,29 @@
                         "recent_password": false,
                         "signed_url": false,
                         "rate_limited": false,
+                        "legacy_roles": [
+                            "user"
+                        ],
+                        "record_policies": []
+                    }
+                },
+                {
+                    "name": "curriculum.reflections.store",
+                    "methods": [
+                        "POST"
+                    ],
+                    "uri": "/curriculum/sections/{section}/reflections/{prompt}",
+                    "audience": "learner",
+                    "mutation": true,
+                    "requirements": {
+                        "guest_only": false,
+                        "authenticated": true,
+                        "bearer_token": false,
+                        "verified_email": true,
+                        "strong_mfa": false,
+                        "recent_password": false,
+                        "signed_url": false,
+                        "rate_limited": true,
                         "legacy_roles": [
                             "user"
                         ],

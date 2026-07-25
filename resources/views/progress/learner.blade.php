@@ -93,6 +93,46 @@
                 @endif
             @endisset
 
+            @isset($submittedReflections)
+                @if($submittedReflections->isNotEmpty())
+                    <section class="mt-6 rounded-xl bg-white p-6 shadow-sm" aria-labelledby="submitted-reflections-heading">
+                        <h2 id="submitted-reflections-heading" class="text-2xl font-bold text-neutral-950">{{ __('Warm-Up Reflections') }}</h2>
+                        <p class="mt-2 text-neutral-600">{{ __('Submitted warm-up reflections and attached learner recordings.') }}</p>
+                        <div class="mt-5 space-y-4">
+                            @foreach($submittedReflections as $reflection)
+                                <article class="rounded-lg border border-neutral-200 p-4 space-y-3">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 text-xs font-semibold text-neutral-600">
+                                        <span class="text-indigo-700">{{ $reflection->chapter_code }} &middot; {{ $reflection->section_code }} (Question #{{ $reflection->prompt_index + 1 }})</span>
+                                        <span>{{ $reflection->submitted_at?->diffForHumans() }}</span>
+                                    </div>
+                                    @if(!empty($reflection->body))
+                                        <p class="whitespace-pre-wrap rounded-lg bg-neutral-50 p-4 leading-7 text-neutral-800 text-sm">{{ $reflection->body }}</p>
+                                    @endif
+                                    @if($reflection->attachments->isNotEmpty())
+                                        <div class="space-y-2 border-t border-neutral-100 pt-2">
+                                            <p class="text-xs font-semibold text-neutral-600">{{ __('Learner Media Attachments:') }}</p>
+                                            @foreach($reflection->attachments as $attachment)
+                                                <div class="flex items-center gap-3">
+                                                    @if(str_starts_with($attachment->detected_mime, 'audio/'))
+                                                        <audio controls class="h-9 w-full max-w-md">
+                                                            <source src="{{ route('curriculum.reflections.attachments.show', [$reflection->id, $attachment->id]) }}" type="{{ $attachment->detected_mime }}">
+                                                        </audio>
+                                                    @elseif(str_starts_with($attachment->detected_mime, 'video/'))
+                                                        <video controls class="max-h-48 rounded border border-neutral-200">
+                                                            <source src="{{ route('curriculum.reflections.attachments.show', [$reflection->id, $attachment->id]) }}" type="{{ $attachment->detected_mime }}">
+                                                        </video>
+                                                    @endif
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                    @endif
+                                </article>
+                            @endforeach
+                        </div>
+                    </section>
+                @endif
+            @endisset
+
             <div class="mt-6 space-y-6">
                 @forelse($detail['hierarchy'] as $chapter)
                     <section class="rounded-lg bg-white p-6 shadow-sm" aria-labelledby="chapter-{{ $chapter['code'] }}">

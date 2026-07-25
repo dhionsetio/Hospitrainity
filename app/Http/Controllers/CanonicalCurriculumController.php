@@ -47,7 +47,10 @@ class CanonicalCurriculumController extends Controller
         abort_if($curriculumSection === null, 404);
         $showCurriculumEvidence = $request->user()->isSuperAdmin();
 
-        return view('curriculum.section', compact('curriculumSection', 'showCurriculumEvidence'));
+        $existingReflections = app(\App\Services\Reflections\WarmUpReflectionService::class)
+            ->existingForSection($request->user(), $curriculumSection['code']);
+
+        return view('curriculum.section', compact('curriculumSection', 'showCurriculumEvidence', 'existingReflections'));
     }
 
     public function checkpoint(Request $request, string $chapter, int $step): View
